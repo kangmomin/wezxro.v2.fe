@@ -28576,10 +28576,6 @@ div.tagsinput span.tag a {
 /*-------------------------------------------------------------------*/
 /* === Landing screens === */
 /* Auth */
-.auth .login-half-bg {
-  background: url("/theme/default/images/3946511.jpg");
-  background-size: cover;
-}
 
 .auth .register-half-bg {
   background: url("https://via.placeholder.com/735x767");
