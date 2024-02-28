@@ -1,13 +1,10 @@
-// +page.server.js
-
-import { KR_NAME, EN_NAME } from '$env/static/private';
-
-/** @type {import('./$types').PageLoad} */
 export function load({ fetch, params }) {
+    const env = import.meta.env
+
     return {
-        envs: {
-            KR_NAME,
-            EN_NAME
+        props: {
+            "KR_NAME": env.VITE_KR_NAME,
+            "EN_NAME": env.VITE_EN_NAME
         }
     }
 }

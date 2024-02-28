@@ -1,16 +1,11 @@
 <script>
-	/** @type {import('./$types').PageLoad} */
 	export let data
-
-	const { EN_NAME, KR_NAME }= data.envs
-
-	/**
-	 * @type {Boolean}
-	 */
-	export let isLogin = true
+	let isLogin = false
+	const EN_NAME = data.props.KR_NAME,
+			KR_NAME = data.props.KR_NAME
 </script>
 
-
+<svelte:head>
 <head>
 	<!-- Start Meta -->
 	<meta charset="UTF-8">
@@ -40,6 +35,7 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="/public/assets/sass/style.css">
 </head>
+</svelte:head>
 
 <body>
 <!-- Preloader end -->

@@ -1,4 +1,6 @@
 "use strict";
+const host = "http://localhost:8080"
+
 function General(){
     var self = this;
     this.init= function(){
@@ -40,7 +42,7 @@ function General(){
             _action = PATH + 'add_funds/process',
             _redirect = _that.data("redirect"),
             _data = _that.serialize();
-        _data         = _data + '&' + $.param({token:token});
+        _data = _data + '&' + $.param({token:token});
         $.post(_action, _data, function(_result){
             setTimeout(function(){
               pageOverlay.hide();
@@ -607,57 +609,109 @@ function General(){
         })
 
         // callback actionForm
-        $(document).on("submit", ".actionForm", function () {
+        $(document).on("submit", ".actionForm", function (event) {
             pageOverlay.show();
             event.preventDefault();
-            var _that       = $(this),
-                _action     = _that.attr("action"),
-                _redirect   = _that.data("redirect");
+
+            var _that = $(this),
+                _action = _that.attr("action"),
+                _redirect = _that.data("redirect"),
+                _data = {};
+
             if ($("#mass_order").hasClass("active")) {
-                var _data = $("#mass_order").find("input[name!=mass_order]").serialize();
-                var _mass_order_array = [];
+                var formInputs = _that.find("input[name!=mass_order]").serializeArray();
+                formInputs.forEach(function(input) {
+                    _data[input.name] = input.value;
+                });
+
                 var _mass_orders = $("#mass_order").find("textarea[name=mass_order]").val();
                 if (_mass_orders.length > 0) {
-                    _mass_orders = _mass_orders.split(/\n/);
-                    for (var i = 0; i < _mass_orders.length; i++) {
-                        // only push this line if it contains a non whitespace character.
-                        if (/\S/.test(_mass_orders[i])) {
-                            _mass_order_array.push($.trim(_mass_orders[i]));
+                    _mass_orders = _mass_orders.split(/\n/).filter(function(line) {
+                        return /\S/.test(line); // only include non-empty lines
+                    }).map(function(line) {
+                        return $.trim(line);
+                    });
+                    _data["mass_order"] = _mass_orders;
+                }
+            } else {
+                _data = _that.serializeArray().reduce(function(obj, item) {
+                    obj[item.name] = item.value;
+                    return obj;
+                }, {});
+            }
+
+            $.ajax({
+                url: `${host}${_action}`,
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(_data),
+                success: function (_result) {
+                    setTimeout(function () {
+                        pageOverlay.hide();
+                    }, 500);
+
+                    // 응답이 JSON 형식인지 확인 후 필요한 경우 파싱
+                    if (is_json(_result)) {
+                        _result = JSON.parse(_result);
+                    }
+
+                    // 에러 응답 처리
+                    if (_result.status === 'ERROR') {
+                        notify(_result.data.message, "error");
+                        setTimeout(function () {
+                            removeToast(); // Toast 메시지 제거
+                        }, 3000);
+                    }
+                    // 성공 응답 처리
+                    else if (_result.status === 'success') {
+                        setTimeout(function () {
+                            notify(_result.message, _result.status);
+                        }, 500);
+                        setTimeout(function () {
+                            if (typeof _redirect != "undefined") {
+                                reloadPage(_redirect);
+                            }
+                        }, 500);
+                    }
+                    // 기타 응답 처리
+                    else {
+                        setTimeout(function () {
+                            $("#result_notification").html(_result);
+                        }, 1500);
+                    }
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    pageOverlay.hide();
+                    if (xhr.status >= 400 && xhr.status < 500) {
+                        // 서버 응답이 JSON 형식인지 확인
+                        if (is_json(xhr.responseText)) {
+                            var errorResponse = JSON.parse(xhr.responseText);
+                            // 에러 메시지 표시
+                            notify(errorResponse.data.message, "error");
+                            setTimeout(function () {
+                                removeToast(); // Toast 메시지 제거
+                            }, 3000);
+                        } else {
+                            // JSON 형식이 아닌 경우 일반 텍스트로 에러 메시지 표시
+                            notify("An error occurred: " + xhr.statusText, "error");
                         }
+                    } else {
+                        // 그 외 서버 에러 처리
+                        notify("Server error occurred.", "error");
                     }
                 }
-                var _data = _data + '&' + $.param({ mass_order: _mass_order_array, token: token });
-            } else {
-                var _token = _that.find("input[name=token]").val();
-                var _data = _that.serialize();
-                if (typeof _token == "undefined") {
-                    _data = _data + '&' + $.param({ token: token });
-                }
-            }
-            
-            $.post(_action, _data, function (_result) {
-                setTimeout(function () {
-                    pageOverlay.hide();
-                }, 1500)
+            });
 
-                if (is_json(_result)) {
-                    _result = JSON.parse(_result);
-                    setTimeout(function () {
-                        notify(_result.message, _result.status);
-                    }, 1500)
-                    setTimeout(function () {
-                        if (_result.status == 'success' && typeof _redirect != "undefined") {
-                            reloadPage(_redirect);
-                        }
-                    }, 2000)
-                } else {
-                    setTimeout(function () {
-                        $("#result_notification").html(_result);
-                    }, 1500)
-                }
-            })
             return false;
-        })
+        });
+
+        function removeToast() {
+            let toast = document.getElementsByClassName("jq-toast-wrap")[0];
+            if (toast === null || toast.innerHTML == null) return
+
+            toast.innerHTML = ""
+        }
+
 
         // actionFormWithoutToast
         $(document).on("submit", ".actionFormWithoutToast", function(){

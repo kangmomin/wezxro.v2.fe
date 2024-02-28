@@ -25,6 +25,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"dotenv": "^16.4.5"
+		"dotenv": "^16.4.5",
+		"jquery": "^3.7.1"
 	}
 }

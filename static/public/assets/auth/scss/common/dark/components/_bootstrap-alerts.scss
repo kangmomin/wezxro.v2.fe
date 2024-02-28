@@ -1,0 +1,19 @@
+/* Bootstrap Alerts */
+
+.alert {
+  font-size: $default-font-size;
+  i {
+    font-size: 1.25rem;
+    margin-right: 1.25rem;
+    vertical-align: middle;
+    line-height: .5;
+  }
+}
+
+@mixin alert-variant($color) {
+  color: $color;
+}
+@mixin alert-variant-fill($color) {
+  color: lighten($color, 80%);
+  background: $color;
+}
