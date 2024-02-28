@@ -645,62 +645,71 @@ function General(){
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify(_data),
-                success: function (_result) {
-                    setTimeout(function () {
-                        pageOverlay.hide();
-                    }, 500);
-
-                    // 응답이 JSON 형식인지 확인 후 필요한 경우 파싱
-                    if (is_json(_result)) {
-                        _result = JSON.parse(_result);
+                beforeSend: function(xhr) {
+                    if (_action !== "/u/login" && _action !== "/u/join") {
+                        var accessToken = localStorage.getItem("accessToken");
+                        if (accessToken) {
+                            xhr.setRequestHeader("X-Auth-Token", accessToken);
+                        }
                     }
+                },
+                success: function (_result, textStatus, xhr) {
+                    setTimeout(() => pageOverlay.hide(), 500);
 
-                    // 에러 응답 처리
-                    if (_result.status === 'ERROR') {
-                        notify(_result.data.message, "error");
-                        setTimeout(function () {
-                            removeToast(); // Toast 메시지 제거
-                        }, 3000);
-                    }
-                    // 성공 응답 처리
-                    else if (_result.status === 'success') {
-                        setTimeout(function () {
-                            notify(_result.message, _result.status);
-                        }, 500);
-                        setTimeout(function () {
-                            if (typeof _redirect != "undefined") {
-                                reloadPage(_redirect);
+                    // 응답 헤더에서 Content-Type을 체크하여 응답 타입 결정
+                    var contentType = xhr.getResponseHeader("Content-Type");
+                    if (contentType.includes("application/json")) {
+
+                        // 응답이 JSON인 경우
+                        if (typeof _result === "string") {
+                            _result = JSON.parse(_result);
+                        }
+                        if (_result.status === 'ERROR') {
+                            notify(_result.data.message, "error");
+                            setTimeout(removeToast, 3000);
+                            return;
+                        }
+
+                        if (_action === "/u/login" && _result.status === 'SUCCESS') {
+                            localStorage.setItem("accessToken", _result.data.accessToken);
+                            localStorage.setItem("refreshToken", _result.data.refreshToken);
+                            notify("로그인 성공", "success");
+                            if (typeof _redirect !== "undefined") {
+                                setTimeout(() => reloadPage(_redirect), 500);
                             }
-                        }, 500);
-                    }
-                    // 기타 응답 처리
-                    else {
-                        setTimeout(function () {
-                            $("#result_notification").html(_result);
-                        }, 1500);
+                            return
+                        }
+
+                        if (_result.status === 'SUCCESS') {
+                            setTimeout(removeToast, 3000);
+                            notify(_result.data.message, "success");
+                            if (typeof _redirect !== "undefined") {
+                                setTimeout(() => reloadPage(_redirect), 500);
+                            }
+                        }
+                    } else if (contentType.includes("text/html")) {
+                        // 응답이 HTML인 경우
+                        $("#result_notification").html(_result);
+                        console.log("HTML response");
                     }
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     pageOverlay.hide();
+                    let message = "Server error occurred.";
                     if (xhr.status >= 400 && xhr.status < 500) {
-                        // 서버 응답이 JSON 형식인지 확인
-                        if (is_json(xhr.responseText)) {
-                            var errorResponse = JSON.parse(xhr.responseText);
-                            // 에러 메시지 표시
-                            notify(errorResponse.data.message, "error");
-                            setTimeout(function () {
-                                removeToast(); // Toast 메시지 제거
-                            }, 3000);
-                        } else {
-                            // JSON 형식이 아닌 경우 일반 텍스트로 에러 메시지 표시
-                            notify("An error occurred: " + xhr.statusText, "error");
+                        try {
+                            const errorResponse = JSON.parse(xhr.responseText);
+                            message = errorResponse.data.message || "An error occurred: " + xhr.statusText;
+                        } catch (e) {
+                            message = "An error occurred: " + xhr.statusText;
                         }
-                    } else {
-                        // 그 외 서버 에러 처리
-                        notify("Server error occurred.", "error");
                     }
+                    notify(message, "error");
+                    setTimeout(removeToast, 3000);
                 }
             });
+
+
 
             return false;
         });
