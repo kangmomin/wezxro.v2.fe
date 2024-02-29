@@ -1,8 +1,15 @@
 <script>
+	import {onMount} from "svelte";
+
 	export let data
 	let isLogin = false
 	const EN_NAME = data.props.KR_NAME,
 			KR_NAME = data.props.KR_NAME
+
+	onMount(() => {
+		let token = localStorage.getItem("accessToken");
+		if (token) isLogin = true
+	})
 </script>
 
 <svelte:head>
@@ -51,7 +58,7 @@
 				<div class="header__area-box-main-menu one meanmenu-responsive">
 					<ul id="mobilemenu">
 						{#if isLogin }
-							<li><a href="/order">대시보드</a> </li>
+							<li><a href="/dashboard/statistic">대시보드</a> </li>
 						{ :else }
 							<li><a href="/login">로그인</a> </li>
 							<li><a href="/join">회원가입</a> </li>

@@ -146,32 +146,32 @@
 
 <!-- General scripts -->
 <svelte:head>
-<script type="text/javascript" src="/assets/js/vendors/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="/assets/js/vendors/jquery.sparkline.min.js"></script>
-<script type="text/javascript" src="/assets/js/vendors/selectize.min.js"></script>
-<script type="text/javascript" src="/assets/admin/vendors/autosize/autosize.min.js"></script>
-<script type="text/javascript" src="/assets/admin/vendors/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+<script type="text/javascript" src="/public/assets/js/vendors/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/public/assets/js/vendors/jquery.sparkline.min.js"></script>
+<script type="text/javascript" src="/public/assets/js/vendors/selectize.min.js"></script>
+<script type="text/javascript" src="/public/assets/admin/vendors/autosize/autosize.min.js"></script>
+<script type="text/javascript" src="/public/assets/admin/vendors/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 <!-- Core scripts -->
-<script src="/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="/public/assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
 <!-- Core scripts -->
-<script type="text/javascript" src="/assets/js/core.js"></script>
-<script type="text/javascript" src="/assets/admin/dist/js/admin-core.min.js"></script>
-<script type="text/javascript" src="/assets/admin/dist/js/customizer.js"></script>
+<script type="text/javascript" src="/public/assets/js/core.js"></script>
+<script type="text/javascript" src="/public/assets/admin/dist/js/admin-core.min.js"></script>
+<script type="text/javascript" src="/public/assets/admin/dist/js/customizer.js"></script>
 
 <!-- toast -->
-<script type="text/javascript" src="/assets/plugins/jquery-toast/js/jquery.toast.js"></script>
+<script type="text/javascript" src="/public/assets/plugins/jquery-toast/js/jquery.toast.js"></script>
 <!-- emoji picker -->
-<script src="/assets/plugins/emoji-picker/lib/js/config.js"></script>
-<script src="/assets/plugins/emoji-picker/lib/js/util.js"></script>
-<script src="/assets/plugins/emoji-picker/lib/js/jquery.emojiarea.js"></script>
-<script src="/assets/plugins/emoji-picker/lib/js/emoji-picker.js"></script>
+<script src="/public/assets/plugins/emoji-picker/lib/js/config.js"></script>
+<script src="/public/assets/plugins/emoji-picker/lib/js/util.js"></script>
+<script src="/public/assets/plugins/emoji-picker/lib/js/jquery.emojiarea.js"></script>
+<script src="/public/assets/plugins/emoji-picker/lib/js/emoji-picker.js"></script>
 <!-- flags icon -->
-<script type="text/javascript" src="/assets/plugins/flags/js/docs.js"></script>
+<script type="text/javascript" src="/public/assets/plugins/flags/js/docs.js"></script>
 
-<script type="text/javascript" src="/assets/js/chart_template.js"></script>
-<script type="text/javascript" src="/assets/admin/vendors/js/notify.min.js"></script>
+<script type="text/javascript" src="/public/assets/js/chart_template.js"></script>
+<script type="text/javascript" src="/public/assets/admin/vendors/js/notify.min.js"></script>
 <!-- general JS -->
-<script type="text/javascript" src="/assets/js/process.js"></script>
-<script type="text/javascript" src="/assets/js/general.js"></script>
+<script type="text/javascript" src="/public/assets/js/process.js"></script>
+<script type="text/javascript" src="/public/assets/js/general.js"></script>
 </svelte:head>

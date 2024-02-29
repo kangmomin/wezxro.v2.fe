@@ -1,9 +1,22 @@
 <script>
-    const isUnread = true
-    const name = "test"
-    const money = "2,000"
-    const EN_NAME = "WEZXRO"
-    const path = "statistics"
+    import {onMount} from "svelte";
+    export let data
+
+    const isUnread = false
+    let name = "UserName"
+    let money = "2,000"
+    const EN_NAME = data.props.EN_NAME
+    let path = "statistics"
+
+    onMount(() => {
+        const userName = localStorage.getItem("userName");
+        let userMoney = localStorage.getItem("money");
+        if (userName) name = userName
+        if (userMoney) money = userMoney
+
+        path = window.location.pathname.split("/")[2];
+        console.log(path)
+    })
 
 </script>
 
@@ -18,7 +31,7 @@
         <meta content="                                                           " name="keywords">
         <title>{EN_NAME}</title>
 
-        <link href="/public/assets/uploads/user54ceb91256e8190e474aa752a6e0650a2df5ba37/logo.png" rel="shortcut icon"
+        <link href="/public/assets/logo/logo.png" rel="shortcut icon"
               type="image/x-icon">
         <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
         <meta content="yes" name="apple-mobile-web-app-capable">
@@ -28,21 +41,21 @@
         <link href="https://fonts.googleapis/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext"
               rel="stylesheet">
 
-        <script src="/assets/js/vendors/jquery-3.2.1.min.js"></script>
-        <link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/assets/plugins/emoji/emojionearea.min.css" media="screen" rel="stylesheet" type="text/css">
-        <script src="/assets/plugins/emoji/emojionearea.min.js" type="text/javascript"></script>
+        <script src="/public/assets/js/vendors/jquery-3.2.1.min.js"></script>
+        <link href="/public/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/public/assets/plugins/emoji/emojionearea.min.css" media="screen" rel="stylesheet" type="text/css">
+        <script src="/public/assets/plugins/emoji/emojionearea.min.js" type="text/javascript"></script>
 
         <!-- c3.js Charts Plugin -->
-        <link href="/assets/plugins/charts-c3/c3.css" rel="stylesheet">
-        <script src="/assets/plugins/charts-c3/d3.v3.min.js"></script>
-        <script src="/assets/plugins/charts-c3/c3.min.js"></script>
-        <link href="/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
-        <link href="/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
+        <link href="/public/assets/plugins/charts-c3/c3.css" rel="stylesheet">
+        <script src="/public/assets/plugins/charts-c3/d3.v3.min.js"></script>
+        <script src="/public/assets/plugins/charts-c3/c3.min.js"></script>
+        <link href="/public/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
+        <link href="/public/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
         <!-- vendor -->
-        <link href="/assets/admin/vendors/css/vendor.css" rel="stylesheet">
-        <link href="/assets/admin/dist/css/admin-core.css" rel="stylesheet"/>
-        <link href="/assets/admin/dist/css/layout.css" rel="stylesheet">
+        <link href="/public/assets/admin/vendors/css/vendor.css" rel="stylesheet">
+        <link href="/public/assets/admin/dist/css/admin-core.css" rel="stylesheet"/>
+        <link href="/public/assets/admin/dist/css/layout.css" rel="stylesheet">
     </head>
 </svelte:head>
 
@@ -54,10 +67,10 @@
             </span>
         </a>
 
-        <a class="navbar-brand text-inherit mr-md-3" href="..">
+        <a class="navbar-brand text-inherit mr-md-3" href="../../routes">
             <img alt="Website Logo"
                  class="d-md-none navbar-brand-logo"
-                 src="/public/assets/uploads/user54ceb91256e8190e474aa752a6e0650a2df5ba37/logo.png">
+                 src="/public/assets/logo/logo.png">
         </a>
 
         <ul class="nav navbar-menu align-items-center order-1 order-lg-2">
@@ -101,10 +114,9 @@
         }
     </style>
 
-
     <aside class="navbar navbar-side navbar-fixed js-sidebar" id="aside">
         <div class="mobile-logo">
-            <a class="navbar-brand text-inherit" href="./statistics">
+            <a class="navbar-brand text-inherit" href="/">
                 <h1 style="margin-top: 0.5rem;"> { EN_NAME }</h1>
             </a>
         </div>
@@ -112,12 +124,13 @@
             <ul class="navbar-nav mb-md-4" id="menu">
 
                 <li class="nav-item">
-                    <a class="nav-link { path === 'statistics' ? 'active' : '' }" data-placement="right"
-                       data-toggle="tooltip" href="./statistics" title="대시보드">
+                    <a class="nav-link { path === 'statistic' ? 'active' : '' }" data-placement="right"
+                       data-toggle="tooltip" href="../../routes/dashboard/statistic" title="대시보드">
+                    <link>
                     <span class="nav-icon">
                 <i class="fe fe-bar-chart"></i>
               </span>
-                    <span class="nav-text { path === 'statistics' ? 'active' : ''}">
+                    <span class="nav-text { path === 'statistic' ? 'active' : ''}">
                         대시보드
                     </span>
                     </a>
@@ -134,12 +147,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a add-order class="nav-link { path === 'add-order' ? 'active' : ''}" data-placement="right"
+                    <a class="nav-link { path === 'add-order' ? 'active' : ''}" data-placement="right"
                        data-toggle="tooltip" href="./add-order" title="주문하기">
                     <span class="nav-icon">
                 <i class="fe fe-shopping-cart"></i>
               </span>
-                        <span add-order class="nav-text { path === 'add-order' ? 'active' : ''}">
+                        <span class="nav-text { path === 'add-order' ? 'active' : ''}">
                         주문하기
                     </span>
                     </a>
@@ -169,4 +182,6 @@
             </ul>
         </div>
     </aside>
+
+    <slot></slot>
 </div>
