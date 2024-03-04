@@ -125,8 +125,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link { path === 'statistic' ? 'active' : '' }" data-placement="right"
-                       data-toggle="tooltip" href="../../routes/dashboard/statistic" title="대시보드">
-                    <link>
+                       data-toggle="tooltip" href="/dashboard/statistic" title="대시보드">
                     <span class="nav-icon">
                 <i class="fe fe-bar-chart"></i>
               </span>
