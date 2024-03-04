@@ -1,4 +1,3 @@
-import axios from "axios";
 import numeral from "numeral"
 
 export async function load() {

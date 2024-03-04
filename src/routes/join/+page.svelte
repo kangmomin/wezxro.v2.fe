@@ -122,7 +122,7 @@
                         <i class="ti-lock text-primary"></i>
                       </span>
                                     </div>
-                                    <input type="hidden" class="form-control" name="key" id="key" value="{data.props.KEY}"/>
+                                    <input type="hidden" class="form-control" name="key" id="key" value="{data.props.CLIENT_KEY}"/>
                                     <input type="password" class="form-control form-control-lg border-left-0" name="password"
                                            placeholder="비밀번호를 입력해주세요." value="">
                                 </div>

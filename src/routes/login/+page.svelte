@@ -78,7 +78,7 @@
                         </div>
                         <h4 style="font-weight: 700;">{EN_NAME}에 오신 것을 환영합니다.</h4>
                         <h6 class="font-weight-light" style="font-weight: 300;">서비스 이용을 위해 로그인해주세요.</h6>
-                        <form id="signin" class="pt-3 actionForm" action="/u/login" data-redirect="/statistics" method="POST">
+                        <form id="signin" class="pt-3 actionForm" action="/u/login" data-redirect="/dashboard/statistic" method="POST">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail">이메일</label>
@@ -101,7 +101,7 @@
                       <i class="ti-lock text-primary"></i>
                     </span>
                                     </div>
-                                    <input type="hidden" class="form-control" name="key" id="key" value="{data.props.KEY}"/>
+                                    <input type="hidden" class="form-control" name="key" id="key" value="{data.props.CLIENT_KEY}"/>
                                     <input type="password" class="form-control form-control-lg border-left-0" name="password"
                                            id="password" placeholder="비밀번호를 입력해주세요." value="" required>
                                 </div>

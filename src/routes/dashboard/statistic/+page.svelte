@@ -9,13 +9,39 @@
         money,
         totalOrder,
         orderStatusCnt,
-        dailyOrderCount
+        dailyOrderCount,
+        props
     } = data
 
     /**
      * @typedef {{[key: string]: any}} DailyCharData
      */
-    onMount(() => {
+    onMount(async () => {
+        const host = props.HOST
+
+        try {
+            let token = localStorage.getItem("accessToken");
+
+            if (!token) window.location.href ="/login"
+
+            const response = await fetch(`${host}/dashboard`, {
+                method: "GET",
+                headers: {
+                    "X-Auth-Token": token
+                }
+            });
+
+            // Check if the request was successful
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+
+            const data = await response.json(); // or .text() for text response
+            console.log(data); // Process your data here
+        } catch (error) {
+            console.error('There was a problem with your fetch operation:', error);
+        }
+
         /**
          * @type {DailyCharData}
          */
@@ -67,7 +93,7 @@
                 "부분완료됨": orderStatusCnt.partials || 0,
                 "접수중": orderStatusCnt.inprogress || 0
             });
-        }, 10)
+        }, 100)
     });
 
     function getPastWeekDates() {
