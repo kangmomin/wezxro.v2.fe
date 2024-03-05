@@ -35,7 +35,7 @@
         return categoryList
     }
 
-    const loadService = async () => {
+    const loadService = async () => {``
         let serviceList = await api.get("/s/list");
         if (serviceList === null) {
             alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
