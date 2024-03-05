@@ -1,23 +1,14 @@
 <script>
     import {onMount} from "svelte";
+    import {writable} from "svelte/store";
+    import {page} from "$app/stores";
+
     export let data
 
     const isUnread = false
     let name = "UserName"
     let money = "2,000"
     const EN_NAME = data.props.EN_NAME
-    let path = "statistics"
-
-    onMount(() => {
-        const userName = localStorage.getItem("userName");
-        let userMoney = localStorage.getItem("money");
-        if (userName) name = userName
-        if (userMoney) money = userMoney
-
-        path = window.location.pathname.split("/")[2];
-        console.log(path)
-    })
-
 </script>
 
 <svelte:head>
@@ -123,57 +114,57 @@
         <div class="flex-fill scroll-bar">
             <ul class="navbar-nav mb-md-4" id="menu">
 
-                <li class="nav-item">
-                    <a class="nav-link { path === 'statistic' ? 'active' : '' }" data-placement="right"
+                <li class="nav-item" >
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/statistic'} data-placement="right"
                        data-toggle="tooltip" href="/dashboard/statistic" title="대시보드">
                     <span class="nav-icon">
                 <i class="fe fe-bar-chart"></i>
               </span>
-                    <span class="nav-text { path === 'statistic' ? 'active' : ''}">
+                    <span class="nav-text" class:active={$page.url.pathname === '/dashboard/statistic'}>
                         대시보드
                     </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link { path === 'order' ? 'active' : ''}" data-placement="right" data-toggle="tooltip"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order'} data-placement="right" data-toggle="tooltip"
                        href="./order" title="주문 내역">
                     <span class="nav-icon">
                 <i class="fe fe-calendar"></i>
               </span>
-                        <span class="nav-text { path === 'order' ? 'active' : ''}">
+                        <span class="nav-text" class:active={$page.url.pathname === '/dashboard/order'}>
                         주문 내역
                     </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link { path === 'add-order' ? 'active' : ''}" data-placement="right"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/add-order'} data-placement="right"
                        data-toggle="tooltip" href="./add-order" title="주문하기">
                     <span class="nav-icon">
                 <i class="fe fe-shopping-cart"></i>
               </span>
-                        <span class="nav-text { path === 'add-order' ? 'active' : ''}">
+                        <span class="nav-text" class:active={$page.url.pathname === '/dashboard/add-order'}>
                         주문하기
                     </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link { path === 'services' ? 'active' : ''}" href="./services"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/services'} href="./services"
                        data-placement="right" data-toggle="tooltip" title="서비스 목록">
                         <span class="nav-icon">
-                            <i class="fa fa-list-ul"></i>
+                            <i class="fa fa-list-ul" class:active={$page.url.pathname === '/dashboard/services'}></i>
                         </span>
-                        <span class="nav-text { path === 'services' ? 'active' : ''} ">
+                        <span class="nav-text ">
                             서비스 목록
                         </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link { path === 'transactions' ? 'active' : ''} " href="./transactions"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/transactions'} href="./transactions"
                        data-placement="right" data-toggle="tooltip" title="충전하기">
                         <span class="nav-icon">
                             <i class="fa fa-credit-card"></i>
                         </span>
-                        <span class="nav-text { path === 'transactions' ? 'active' : ''} ">
+                        <span class="nav-text" class:active={$page.url.pathname === '/dashboard/transactions'}>
                             충전 신청
                         </span>
                     </a>
