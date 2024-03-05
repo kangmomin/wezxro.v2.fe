@@ -1,64 +1,7 @@
 <script>
-    import axios from "axios";
     import {onMount} from "svelte";
+    import {api} from "$lib/util/ApiProvider.js";
 
-    export let data;
-
-    const {
-        props
-    } = data
-
-    let expiry = ""
-
-    const loadCategory = async () => {
-        try {
-            let token = localStorage.getItem("accessToken");
-            if (!token) location.href = "/login"
-            const response = await axios.get(`${props.HOST}/c/list`, {
-                headers: {
-                    "X-Auth-Token": token,
-                    "Content-Type": "application/json"
-                },
-            });
-
-            if (response.status > 299) {
-                if (response.data.message) alert(response.data.message)
-                else alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
-
-                location.href = "/dashboard/statistic"
-            }
-
-            return response.data.data
-        } catch (e) {
-            alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
-            location.href = "/dashboard/statistic"
-        }
-    }
-
-    const loadService = async () => {
-        try {
-            let token = localStorage.getItem("accessToken");
-            if (!token) location.href = "/login"
-            const response = await axios.get(`${props.HOST}/s/list`, {
-                headers: {
-                    "X-Auth-Token": token,
-                    "Content-Type": "application/json"
-                },
-            });
-
-            if (response.status > 299) {
-                if (response.data.message) alert(response.data.message)
-                else alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
-
-                location.href = "/dashboard/statistic"
-            }
-
-            return response.data.data
-        } catch (e) {
-            alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
-            location.href = "/dashboard/statistic"
-        }
-    }
     /**
      * @typedef CategoryList
      * @property {Number} categoryId
@@ -74,6 +17,33 @@
     let category = [],
     /** @type {ServiceList[]} */
         service = []
+    export let data;
+
+    const {
+        props
+    } = data
+
+    let expiry = ""
+
+    const loadCategory = async () => {
+        let categoryList = await api.get("/c/list");
+        if (categoryList === null) {
+            alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
+            location.href = "/dashboard/statistic"
+        }
+
+        return categoryList
+    }
+
+    const loadService = async () => {
+        let serviceList = await api.get("/s/list");
+        if (serviceList === null) {
+            alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
+            location.href = "/dashboard/statistic"
+        }
+
+        return serviceList
+    }
 
     onMount(() => {
         loadCategory().then(categories => {
