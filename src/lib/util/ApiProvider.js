@@ -3,6 +3,12 @@ import {env} from "$lib/config.js";
 
 const host = env.HOST
 
+const unAuthorizedHandler = () => {
+    localStorage.removeItem("accessToken")
+    localStorage.removeItem("refreshToken")
+    location.href = "/login"
+}
+
 export const api = {
     get: async (endPoint) => {
         try {
@@ -11,11 +17,12 @@ export const api = {
             const response = await axios.get(`${host}${endPoint}`, {
                 headers: {
                     "X-Auth-Token": token,
-                    "Content-Type": "application/json"
                 },
+                responseType: "json",
             });
 
             if (response.status > 299) {
+
                 if (response.data.message) alert(response.data.message)
                 else return null
 
@@ -24,7 +31,7 @@ export const api = {
 
             return response.data.data
         } catch (e) {
-            return null
+            unAuthorizedHandler()
         }
     }
 }
