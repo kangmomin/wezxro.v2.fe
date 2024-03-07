@@ -11,28 +11,39 @@ const unAuthorizedHandler = () => {
 
 export const api = {
     get: async (endPoint) => {
-        try {
-            let token = localStorage.getItem("accessToken");
-            if (!token) location.href = "/login"
-            const response = await axios.get(`${host}${endPoint}`, {
-                headers: {
-                    "X-Auth-Token": token,
-                },
-                responseType: "json",
-            });
+        return await request("get", endPoint)
+    },
+    post: async (endPoint, body) => {
+        return await request("post", endPoint, body)
+    }
+}
 
-            if (response.status > 299) {
+async function request(method, endPoint, data = null) {
+    try {
+        let token = localStorage.getItem("accessToken");
+        if (!token) location.href = "/login"
+        const response = await axios({
+            url: `${host}${endPoint}`,
+            data: data,
+            headers: {
+                "X-Auth-Token": token,
+                "Content-Type": "application/json;charset=UTF-8"
+            },
+            method: method
+        });
 
-                if (response.data.message) alert(response.data.message)
-                else return null
+        if (response.status > 299) {
 
-                location.href = "/dashboard/statistic"
-            }
+            if (response.data.message) alert(response.data.message)
+            else return null
 
-            return response.data.data
-        } catch (e) {
-            if (e.response.status === 401) unAuthorizedHandler()
-            alert(e.response.data.data.message)
+            location.href = "/dashboard/statistic"
         }
+
+        return response.data.data
+    } catch (e) {
+        console.log(e)
+        if (e.response.status === 401) unAuthorizedHandler()
+        alert(e.response.data.data.message)
     }
 }

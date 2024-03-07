@@ -1,6 +1,7 @@
 <script>
     import {writable} from "svelte/store";
     import {onMount} from "svelte";
+    import {api} from "$lib/util/ApiProvider.js";
 
     const result = "default"
     const isDemo = false
@@ -31,6 +32,46 @@
         elementById.style.display = "block"
     }
 
+    /** @type {number} */
+    let payamount = "",
+    /** @type {string} */
+        payname = "",
+    /** @type {string} */
+        business_name,
+    /** @type {string} */
+        business_regno,
+    /** @type {string} */
+        business_owner,
+    /** @type {string} */
+        business_phone,
+    /** @type {string} */
+        business_email,
+    /** @type {string} */
+        personal_phone,
+    /** @type {boolean} */
+        agree_terms,
+    /** @type {boolean} */
+        agree_notices;
+
+    async function addDeposit() {
+        if (!agree_terms || !agree_notices) return alert("약관에 전체 동의를 해주셔야 합니다.")
+        if (payamount === null || payamount < 1000) return alert("충전은 1000원부터 가능합니다")
+        if(payname === null || payname === "") return alert("입금자 명이 없을 시 충전이 정상처리되지 않습니다.")
+
+        let data = await api.post("/d/add", {
+            payamount,
+            payname,
+            business_email,
+            business_phone,
+            business_owner,
+            business_name,
+            business_regno,
+            personal_phone,
+        });
+
+        alert(data.message)
+        location.href = "/dashboard/transactions"
+    }
 </script>
 
 <style>
@@ -42,12 +83,12 @@
 <div class="layout-main d-flex flex-column flex-fill max-w-full">
     <main class="app-content">
         {#if $payform }
-            <div class="modal1 payform" id="payForm" style="display:'block';">
+            <div class="modal1 payform" id="payForm" style="display:'block';" on:submit|preventDefault={addDeposit}>
                 <div class="modal_body" style="height: 850px;">
                     <a class="main-logo" href="./transactions"><img
                             alt="logo" src="/public/assets/logo/logo_white.png"
                             style="height: 80px;"></a>
-                    <form action="./add-deposit" class="form" method="POST">
+                    <form action="" class="form" method="POST">
                         <h4 style="margin-bottom: 18px;">무통장입금 <span style="font-weight: 400;">충전 신청</span></h4>
                         <div class="form-group">
                             {#if !isDemo }
@@ -58,12 +99,12 @@
                             <label class="control-label" for="username"
                                    style="color: black; margin-bottom: 10px; font-size: 16px;">충전
                                 금액을 입력해주세요.</label>
-                            <input class="form-control" name="payamount" type="number">
+                            <input class="form-control" name="payamount" bind:value={payamount} type="number">
                         </div>
                         <div class="form-group" style="margin-top: 18px;">
                             <label class="control-label" for="username"
                                    style="color: black; margin-bottom: 10px; font-size: 16px;">입금자명을 입력해주세요.</label>
-                            <input class="form-control" name="payname" type="text">
+                            <input class="form-control" name="payname" type="text" bind:value={payname}>
                         </div>
 
 
@@ -128,16 +169,12 @@
                                 </div>
                             </div>
                         {/if}
-                        <input class="form-control square" name="payuid" style="display: none;"
-                               type="text"
-                               value="999916a18a5b939afe95290962c4a459">
-                        <input class="form-control square" name="payid" style="display: none;" type="text" value="102">
                         <div class="form-group">
                             <label class="custom-control custom-checkbox">
                 <span class="custom-control-label text-uppercase"
                       style="font-size: 16px; margin-bottom: 8px; font-weight: 400; line-height: 1.5"><input
                         class="custom-control-input"
-                        name="agree" type="checkbox" value="1"> 입금을 신청하실 경우 <span
+                        name="agree" type="checkbox" bind:checked={agree_terms}> 입금을 신청하실 경우 <span
                         style="font-weight: 500;">이용약관</span>에 동의하는 것으로 간주되는 것을 확인하였습니다.</span>
                             </label>
                         </div>
@@ -146,7 +183,7 @@
                 <span class="custom-control-label text-uppercase"
                       style="font-size: 16px; margin-bottom: 8px; font-weight: 400; line-height: 1.5"><input
                         class="custom-control-input"
-                        name="agree" type="checkbox" value="1"> <span
+                        name="agree" type="checkbox" bind:checked={agree_notices}> <span
                         style="font-weight: 500;">충전 신청 후</span> 입금해주셔야 정상적으로 처리됩니다, <span
                         style="font-weight: 500;">유의사항</span> 확인 부탁드립니다.</span>
                             </label>
@@ -157,7 +194,7 @@
                             {#if isDemo }
                                 <div class="nav-link btn btn-info mb-1">둘러보기는 충전할 수 없습니다.</div>
                             { :else }
-                                <button type="submit" class="nav-link btn btn-info mb-1" name="paynow"
+                                <button type="submit" class="nav-link btn btn-info mb-1" name=""
                                         style="width: 100%;">
                                     충전 신청 <span style="font-weight: 400; font-size: 12px;">(1분 이내 자동 처리)</span>
                                 </button>

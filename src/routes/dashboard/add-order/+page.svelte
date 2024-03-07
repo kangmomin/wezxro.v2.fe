@@ -29,7 +29,7 @@
         let categoryList = await api.get("/c/list");
         if (categoryList === null) {
             alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
-            // location.href = "/dashboard/statistic"
+            location.href = "/dashboard/statistic"
         }
 
         return categoryList
