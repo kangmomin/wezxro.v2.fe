@@ -1,6 +1,7 @@
 <script>
     import {onMount} from "svelte";
     import {Chart_template} from "$lib/util/ChartTemplate.js";
+    import {api} from "$lib/util/ApiProvider.js";
 
     export let data
 
@@ -19,33 +20,10 @@
     onMount(async () => {
         const host = props.HOST
 
-        try {
-            let token = localStorage.getItem("accessToken");
-
-            if (!token) window.location.href ="/login"
-
-            const response = await fetch(`${host}/dashboard`, {
-                method: "GET",
-                headers: {
-                    "X-Auth-Token": token
-                }
-            });
-
-            // Check if the request was successful
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.statusText}`);
-            }
-
-            const data = await response.json(); // or .text() for text response
-            console.log(data); // Process your data here
-        } catch (error) {
-            console.error('There was a problem with your fetch operation:', error);
-        }
-
         /**
          * @type {DailyCharData}
          */
-        const data = {}
+        let data = {}
         const status = {
             completed: 0,
             canceled: 0,
@@ -54,6 +32,7 @@
             partials: 0
         }
 
+        data = await api.get("/dashboard")
         dailyOrderCount.forEach(val => {
             data[val.daily] = status
             data[val.daily][val.status] = val.count
