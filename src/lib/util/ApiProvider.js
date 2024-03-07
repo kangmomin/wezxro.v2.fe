@@ -31,7 +31,8 @@ export const api = {
 
             return response.data.data
         } catch (e) {
-            unAuthorizedHandler()
+            if (e.response.status === 401) unAuthorizedHandler()
+            alert(e.response.data.data.message)
         }
     }
 }
