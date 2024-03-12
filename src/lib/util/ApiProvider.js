@@ -42,8 +42,7 @@ async function request(method, endPoint, data = null) {
 
         return response.data.data
     } catch (e) {
-        console.log(e)
-        if (e.response.status === 401) unAuthorizedHandler()
+        if (e.response === undefined || e.response.status === 401) unAuthorizedHandler()
         alert(e.response.data.data.message)
     }
 }
