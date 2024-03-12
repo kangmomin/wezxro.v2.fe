@@ -30,9 +30,8 @@
             partials: 0
         }
 
-        console.log(status)
-
         data = await api.get("/dashboard")
+
         dailyOrderCount.forEach(val => {
             console.log(val)
             data[val.daily] = status

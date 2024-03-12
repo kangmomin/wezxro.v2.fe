@@ -4,6 +4,9 @@ import {env} from "$lib/config.js";
 const host = env.HOST
 
 const unAuthorizedHandler = () => {
+    console.log("401")
+
+    if (localStorage === undefined) return;
     localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
     location.href = "/login"

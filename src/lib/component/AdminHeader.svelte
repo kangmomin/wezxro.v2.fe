@@ -14,7 +14,7 @@
     <meta name="description" content="                                    ">
     <meta name="keywords" content="                                                           ">
     <title>
-        aoiwdj
+        {EN_NAME}
     </title>
 
     <link rel="shortcut icon" type="image/x-icon"
@@ -211,7 +211,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/admin/provider'} href="./provider" data-toggle="tooltip" data-placement="right" title="도매처 관리">
+                    <a class="nav-link" class:active={$page.url.pathname === '/admin/provider'} href="/admin/provider" data-toggle="tooltip" data-placement="right" title="도매처 관리">
                     <span class="nav-icon">
                 <i class="fe fe-link"></i>
               </span>
@@ -245,5 +245,9 @@
         </ul>
     </aside>
 
-    <slot></slot>
+    <div class="layout-main d-flex flex-column flex-fill max-w-full">
+        <main class="app-content">
+            <slot></slot>
+        </main>
+    </div>
 </div>

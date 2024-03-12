@@ -173,5 +173,9 @@
         </div>
     </aside>
 
-    <slot></slot>
+    <div class="layout-main d-flex flex-column flex-fill max-w-full">
+        <main class="app-content">
+            <slot></slot>
+        </main>
+    </div>
 </div>

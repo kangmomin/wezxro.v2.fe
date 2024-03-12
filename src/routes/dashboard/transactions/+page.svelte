@@ -1,6 +1,5 @@
 <script>
     import {writable} from "svelte/store";
-    import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
 
     const result = "default"
@@ -33,7 +32,7 @@
     }
 
     /** @type {number} */
-    let payamount = "",
+    let payamount = 0,
     /** @type {string} */
         payname = "",
     /** @type {string} */
