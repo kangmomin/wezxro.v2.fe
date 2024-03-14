@@ -210,54 +210,63 @@ function getPathMediaByelFinderBrowser(_this, default_selector) {
  */
  function callPostAjax(element, url, data, type, redirect = null) {
   var data_type = (type == 'get-result-html') ? 'html' : 'json';
-  $.post(url, data, function (_result) {
-    console.log(_result);
-    switch (type) {
+  $.ajax({
+    url: host + url,
+    data: data,
+    method: "post",
+    headers: {
+      "Content-Type": data_type,
+      "X-Auth-Token": localStorage.getItem("accessToken")
+    },
+    success:function (_result) {
+      console.log(_result);
+      switch (type) {
 
-      case 'sort':
-        notifyJS(element, _result.status, _result.message);
-        break;
+        case 'sort':
+          notifyJS(element, _result.status, _result.message);
+          break;
 
-      case 'status':
-        notifyJS(element, _result.status, _result.message);
-        break;
+        case 'status':
+          notifyJS(element, _result.status, _result.message);
+          break;
 
-      case 'delete-item':
-        pageOverlay.show();
-        if (_result.status == 'success') {
-          $(".tr_" + _result.ids).remove();
-        }
-        setTimeout(function () {
-          pageOverlay.hide();
-          notify(_result.message, _result.status);
-        }, 2000);
-        break;
-
-      case 'get-result-html':
-        console.log(_result);
-        setTimeout(function () {
-          pageOverlay.hide();
-          $("#result_html").html(_result);
-        }, 1000);
-        break;
-
-      default:
-        setTimeout(function () {
-          pageOverlay.hide();
-          console.log(_result.status);
-          notify(_result.message, _result.status);
+        case 'delete-item':
+          pageOverlay.show();
           if (_result.status == 'success') {
-            if (_result.redirect_url) {
-              var redirect = _result.redirect_url;
-            } else {
-              var redirect = '';
-            }
-            reloadPage(redirect);
+            $(".tr_" + _result.ids).remove();
           }
-        }, 2000);
-        break;
+          setTimeout(function () {
+            pageOverlay.hide();
+            notify(_result.message, _result.status);
+          }, 2000);
+          break;
+
+        case 'get-result-html':
+          console.log(_result);
+          setTimeout(function () {
+            pageOverlay.hide();
+            $("#result_html").html(_result);
+          }, 1000);
+          break;
+
+        default:
+          setTimeout(function () {
+            pageOverlay.hide();
+            console.log(_result.status);
+            notify(_result.message, _result.status);
+            if (_result.status == 'success') {
+              if (_result.redirect_url) {
+                var redirect = _result.redirect_url;
+              } else {
+                var redirect = '';
+              }
+              reloadPage(redirect);
+            }
+          }, 2000);
+          break;
+      }
     }
-  }, data_type);
+  })
 }
 
 /**

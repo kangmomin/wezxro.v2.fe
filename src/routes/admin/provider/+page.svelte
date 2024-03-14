@@ -164,8 +164,8 @@
                             <td class="text-center w-15p"></td>
                             <td class="text-center w-10p"><label class="custom-switch">
                                 <input type="checkbox" name="item_status" data-id="{ p.providerId }"
-                                       data-status={p.status} data-action="./provider/change_status/"
-                                       class="custom-switch-input ajaxToggleItemStatus" checked={p.status === 0}>
+                                       data-status={p.status} data-action="/admin/p/status/"
+                                       class="custom-switch-input ajaxToggleItemStatus" checked={p.status === "ACTIVE"}>
                                 <span class="custom-switch-indicator"></span>
                             </label></td>
                             <td class="text-center w-20p">
