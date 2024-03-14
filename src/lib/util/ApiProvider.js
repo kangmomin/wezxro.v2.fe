@@ -1,11 +1,10 @@
 import axios from "axios";
 import {env} from "$lib/config.js";
+import {onMount} from "svelte";
 
 const host = env.HOST
 
 const unAuthorizedHandler = () => {
-    console.log("401")
-
     if (localStorage === undefined) return;
     localStorage.removeItem("accessToken")
     localStorage.removeItem("refreshToken")
@@ -45,7 +44,9 @@ async function request(method, endPoint, data = null) {
 
         return response.data.data
     } catch (e) {
-        if (e.response === undefined || e.response.status === 401) unAuthorizedHandler()
-        alert(e.response.data.data.message)
+        onMount(() => {
+            if (e.response === undefined || e.response.status === 401) unAuthorizedHandler()
+            alert(e.response.data.data.message)
+        })
     }
 }

@@ -6,8 +6,8 @@
     export let className
     /**@type {string}*/
     export let styleName
-    /** @type {boolean} */
-    export let modalOpen
+    /** @type {Function} */
+    export let toggleModal
 
     /** @type {Provider} */
     let provider = {
@@ -18,7 +18,10 @@
         status: 0,
         balance: 0
     }
-    api.get(`/p/detail/${providerId}`).then(p => provider = p)
+    api.get(`/p/detail/${providerId}`).then(p => {
+        if (p === undefined) return
+        provider = p
+    })
 
     let isActiveStatus = provider.status === 1;
 </script>
@@ -28,9 +31,9 @@
         <div class="modal-content">
             <div class="modal-header bg-pantone">
                 <h4 class="modal-title"><i class="fa fa-edit"></i>Edit ({ provider.name })</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" on:click={() => modalClose(0)}></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" on:click={() => toggleModal(0)}></button>
             </div>
-            <form action="/admin/provider/store/" class="form actionForm"
+            <form action="/admin/p/add" class="form actionForm"
                   data-redirect="/admin/provider" method="POST">
                 <input type="hidden" name="id" value="{provider.providerId}" />
                 <div class="modal-body">
@@ -86,7 +89,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary btn-min-width mr-1 mb-1">Save</button>
-                    <button type="button" class="btn btn-dark" data-dismiss="modal" on:click={() => modalOpen = !modalOpen}>Close</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" on:click={() => toggleModal(0)}>Close</button>
                 </div>
             </form>
         </div>

@@ -1,20 +1,23 @@
 <script>
     import UpdateProvider from "./update/UpdateProvider.svelte";
+    import {onMount} from "svelte";
+    import {api} from "$lib/util/ApiProvider.js";
 
     /** @type {Provider[]} */
-    const providers = []
+    let providers = []
 
     let updateProviderId = 0
-    $: modalOpen = true
+    $: modalOpen = false
 
-    /**
-     * @param {number} providerId
-     */
+    /** @param {number} providerId */
     const toggleModal = (providerId) => {
         updateProviderId = providerId
         modalOpen = !modalOpen
-        console.log(modalOpen)
     }
+
+    api.get("/p/list").then(provider => {
+        providers = provider
+    })
 </script>
 
 <div class="page-title m-b-20">
@@ -210,7 +213,7 @@
 
 <div class="row" id="result_notification">
     {#if modalOpen }
-        <UpdateProvider className="modal show" styleName="display: block" providerId={updateProviderId} modalClose={modalOpen}></UpdateProvider>
+        <UpdateProvider className="modal show" styleName="display: block" providerId={updateProviderId} modalClose={modalOpen} toggleModal={toggleModal}></UpdateProvider>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
