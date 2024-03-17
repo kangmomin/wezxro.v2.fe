@@ -210,7 +210,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt.completed || 0}</h4>
+                                <h4 class="m-0 text-right number">{orderStatusCnt?.completed || 0}</h4>
                                 <small class="text-muted ">완료됨</small>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt.processing || 0}</h4>
+                                <h4 class="m-0 text-right number">{orderStatusCnt?.processing || 0}</h4>
                                 <small class="text-muted ">처리중</small>
                             </div>
                         </div>
@@ -240,7 +240,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt.inprogress || 0}</h4>
+                                <h4 class="m-0 text-right number">{orderStatusCnt?.inprogress || 0}</h4>
                                 <small class="text-muted ">접수중</small>
                             </div>
                         </div>
@@ -255,7 +255,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt.pending || 0}</h4>
+                                <h4 class="m-0 text-right number">{orderStatusCnt?.pending || 0}</h4>
                                 <small class="text-muted ">대기중</small>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt.partials || 0}</h4>
+                                <h4 class="m-0 text-right number">{orderStatusCnt?.partials || 0}</h4>
                                 <small class="text-muted ">부분완료됨</small>
                             </div>
                         </div>
@@ -285,7 +285,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt.canceled || 0}</h4>
+                                <h4 class="m-0 text-right number">{orderStatusCnt?.canceled || 0}</h4>
                                 <small class="text-muted ">취소됨</small>
                             </div>
                         </div>
