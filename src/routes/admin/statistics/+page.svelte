@@ -98,211 +98,203 @@
     }
 </script>
 
-<div class="layout-main d-flex flex-column flex-fill max-w-full">
-    <main class="app-content">
 
-        <div class="row justify-content-center row-card statistics">
-            <!-- header Statistic -->
-            <div class="col-sm-12">
-                <div class="row">
+<div class="row justify-content-center row-card statistics">
+    <!-- header Statistic -->
+    <div class="col-sm-12">
+        <div class="row">
 
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
                                 <span class="stamp stamp-md bg-success-gradient text-white mr-3">
                                     <i class="fe fe-dollar-sign"></i>
                                 </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">₩{money}</h4>
-                                        <small class="text-muted ">예치금 잔액</small>
-                                    </div>
-                                </div>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">₩{money}</h4>
+                                <small class="text-muted ">예치금 잔액</small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
                                 <span class="stamp stamp-md bg-info-gradient text-white mr-3">
                                     <i class="fe fe-dollar-sign"></i>
                                 </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">₩{totalCharge}</h4>
-                                        <small class="text-muted ">총 사용 금액</small>
-                                    </div>
-                                </div>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">₩{totalCharge}</h4>
+                                <small class="text-muted ">총 사용 금액</small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
                                 <span class="stamp stamp-md bg-warning-gradient text-white mr-3">
                                     <i class="fe fe-shopping-cart"></i>
                                 </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{totalOrder}건</h4>
-                                        <small class="text-muted ">총 주문</small>
-                                    </div>
-                                </div>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{totalOrder}건</h4>
+                                <small class="text-muted ">총 주문</small>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
                                 <span class="stamp stamp-md bg-danger-gradient text-white mr-3">
                                     <i class="fa fa-ticket"></i>
                                 </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">0</h4>
-                                        <small class="text-muted ">총 문의</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Chart Area -->
-            <div class="col-sm-12 charts">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">최근 주문 현황</h3>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="p-4 card">
-                                <div id="orders_chart_spline" style="height: 20rem;"></div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="p-4 card">
-                                <div id="orders_chart_pie" style="height: 20rem;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Orders Logs -->
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fe fe-list"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{totalOrder}건</h4>
-                                        <small class="text-muted ">총 주문</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fe fe-check"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{orderStatusCnt.completed || 0}</h4>
-                                        <small class="text-muted ">완료됨</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fe fe-trending-up"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{orderStatusCnt.processing || 0}</h4>
-                                        <small class="text-muted ">처리중</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fe fe-loader"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{orderStatusCnt.inprogress || 0}</h4>
-                                        <small class="text-muted ">접수중</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fe fe-pie-chart"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{orderStatusCnt.pending || 0}</h4>
-                                        <small class="text-muted ">대기중</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fa fa-hourglass-half"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{orderStatusCnt.partials || 0}</h4>
-                                        <small class="text-muted ">부분완료됨</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 item">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md text-primary mr-3">
-                                    <i class="fe fe-x-square"></i>
-                                </span>
-                                <div class="d-flex order-lg-2 ml-auto">
-                                    <div class="ml-2 d-lg-block text-right">
-                                        <h4 class="m-0 text-right number">{orderStatusCnt.canceled || 0}</h4>
-                                        <small class="text-muted ">취소됨</small>
-                                    </div>
-                                </div>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">0</h4>
+                                <small class="text-muted ">총 문의</small>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Chart Area -->
+    <div class="col-sm-12 charts">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">최근 주문 현황</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="p-4 card">
+                        <div id="orders_chart_spline" style="height: 20rem;"></div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="p-4 card">
+                        <div id="orders_chart_pie" style="height: 20rem;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- Top best Sellers -->
-
-
-    </main>
+    <!-- Orders Logs -->
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fe fe-list"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{totalOrder}건</h4>
+                                <small class="text-muted ">총 주문</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fe fe-check"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{orderStatusCnt.completed || 0}</h4>
+                                <small class="text-muted ">완료됨</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fe fe-trending-up"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{orderStatusCnt.processing || 0}</h4>
+                                <small class="text-muted ">처리중</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fe fe-loader"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{orderStatusCnt.inprogress || 0}</h4>
+                                <small class="text-muted ">접수중</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fe fe-pie-chart"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{orderStatusCnt.pending || 0}</h4>
+                                <small class="text-muted ">대기중</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fa fa-hourglass-half"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{orderStatusCnt.partials || 0}</h4>
+                                <small class="text-muted ">부분완료됨</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md text-primary mr-3">
+                                    <i class="fe fe-x-square"></i>
+                                </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{orderStatusCnt.canceled || 0}</h4>
+                                <small class="text-muted ">취소됨</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

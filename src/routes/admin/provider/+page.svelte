@@ -15,8 +15,10 @@
         modalOpen = !modalOpen
     }
 
-    api.get("/p/list").then(provider => {
-        providers = provider
+    onMount(async () => {
+        api.get("/p/list").then(provider => {
+            providers = provider
+        })
     })
 </script>
 
