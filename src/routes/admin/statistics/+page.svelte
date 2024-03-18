@@ -65,12 +65,12 @@
             Chart_template.init()
             Chart_template.chart_spline('#orders_chart_spline', chartData);
             Chart_template.chart_pie('#orders_chart_pie', {
-                "완료됨": orderStatusCnt.completed || 0,
-                "처리중": orderStatusCnt.processing || 0,
-                "취소됨": orderStatusCnt.canceled || 0,
-                "대기중": orderStatusCnt.pending || 0,
-                "부분완료됨": orderStatusCnt.partials || 0,
-                "접수중": orderStatusCnt.inprogress || 0
+                "완료됨": orderStatusCnt?.completed || 0,
+                "처리중": orderStatusCnt?.processing || 0,
+                "취소됨": orderStatusCnt?.canceled || 0,
+                "대기중": orderStatusCnt?.pending || 0,
+                "부분완료됨": orderStatusCnt?.partials || 0,
+                "접수중": orderStatusCnt?.inprogress || 0
             });
         }, 100)
     });

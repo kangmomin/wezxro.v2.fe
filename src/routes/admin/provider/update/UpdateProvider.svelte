@@ -1,6 +1,8 @@
 <script>
     import {api} from "$lib/util/ApiProvider.js";
+    import {onMount} from "svelte";
 
+    /** @type {number} */
     export let providerId
     /**@type {string}*/
     export let className
@@ -18,9 +20,11 @@
         status: 0,
         balance: 0
     }
-    api.get(`/p/detail/${providerId}`).then(p => {
-        if (p === undefined) return
-        provider = p
+    onMount(async () => {
+        api.get(`/p/detail/${providerId}`).then(p => {
+            if (p === undefined) return
+            provider = p
+        })
     })
 
     let isActiveStatus = provider.status === 1;

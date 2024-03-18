@@ -3,6 +3,6 @@
  * @property {number} categoryId
  * @property {string} name
  * @property {number} sort
- * @property {string} status
+ * @property {number} status
  * @property {string} clientId
  */

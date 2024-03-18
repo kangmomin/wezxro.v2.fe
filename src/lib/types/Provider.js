@@ -4,6 +4,6 @@
  * @property {string} name
  * @property {string} apiKey
  * @property {string} apiUrl
- * @property {string} status
+ * @property {number} status
  * @property {number} balance
  */

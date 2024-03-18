@@ -171,7 +171,6 @@ function Admin() {
             var status = 0;
             if (element.is(":checked")) status = 1;
             var data = $.param({ token: token, status: status });
-            console.log(data);
             callPostAjax(element, url, data, 'status');
         });
 
@@ -181,7 +180,7 @@ function Admin() {
                 id = element.data('id'),
                 url = element.data('url') + id,
                 sort = element.val();
-            var data = $.param({ token: token, sort: sort });
+            var data = $.param({ sort: sort });
             callPostAjax(element, url, data, 'sort');
         });
 
@@ -202,7 +201,6 @@ function Admin() {
             event.preventDefault();
             var element = $(this),
                 type = element.data("type");
-            console.log(type);
             
             if ((type == 'delete' || type == 'all_deactive' || type == 'clear_all' || type == 'empty')) {
                 if (!confirm_notice('deleteItems')) {
