@@ -34,19 +34,9 @@ async function request(method, endPoint, data = null) {
             method: method
         });
 
-        if (response.status > 299) {
-
-            if (response.data.message) alert(response.data.message)
-            else return null
-
-            location.href = "/dashboard/statistic"
-        }
-
         return response.data.data
     } catch (e) {
-        onMount(() => {
-            if (e.response === undefined || e.response.status === 401) unAuthorizedHandler()
-            alert(e.response.data.data.message)
-        })
+        if (e.response === undefined || e.response.status === 401) unAuthorizedHandler()
+        alert(e.response.data.data.message)
     }
 }
