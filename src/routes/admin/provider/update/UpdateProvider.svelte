@@ -12,7 +12,14 @@
     export let toggleModal
 
     /** @type {Provider} */
-    let provider = {
+    let provider = providerId === 0 ? {
+        providerId: 0,
+        status: 0,
+        name: "",
+        apiKey: "",
+        apiUrl: "",
+        balance: 0
+    } : {
         providerId: 0,
         name: "대기중",
         apiKey: "대기중",
@@ -20,7 +27,9 @@
         status: 0,
         balance: 0
     }
+
     onMount(async () => {
+        if (providerId === 0) return
         api.get(`/p/detail/${providerId}`).then(p => {
             if (p === undefined) return
             provider = p
