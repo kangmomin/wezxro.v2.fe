@@ -1,5 +1,5 @@
 /**
- * @typedef Service
+ * @typedef ApiService
  * @property {number} serviceId
  * @property {string} clientId
  * @property {number} providerId
@@ -13,4 +13,7 @@
  * @property {string} description
  * @property {number} status
  * @property {number} originalRate
+ * @property {boolean} dripfeed
+ * @property {boolean} refill
+ * @property {boolean} cancel
  */

@@ -233,7 +233,7 @@ function Admin() {
                 pageOverlay.hide();
                 return false;
             }
-            var pathname = element.data("url") + "?" + "sort_by=" + id;
+            var pathname = element.data("url") + "?" + "categoryId=" + id;
             window.location.href = pathname;
         })
 
