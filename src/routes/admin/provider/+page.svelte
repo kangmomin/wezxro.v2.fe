@@ -6,6 +6,9 @@
     /** @type {Provider[]} */
     let providers = []
 
+    let activeCnt = 0
+    let deactiveCnt = 0
+
     let updateProviderId = 0
     $: modalOpen = false
 
@@ -16,9 +19,13 @@
     }
 
     onMount(async () => {
-        api.get("/p/list").then(provider => {
+        api.get("/admin/p/list").then(provider => {
             providers = provider
+            providers.forEach((e) => {
+                e.status === 1 ? activeCnt++ : deactiveCnt++
+            })
         })
+
     })
 </script>
 
@@ -60,12 +67,12 @@
                             <a class="btn " href="./provider?status=1">
                                 Active
                                 <span class="badge badge-pill bg-indigo">
-                          {providers.filter(obj => obj.status === 1).length}
+                          {activeCnt}
                         </span>
                             </a>
                             <a class="btn " href="./provider?status=0">Deactive <span
                                     class="badge badge-pill bg-indigo">
-                          {providers.filter(obj => obj.status === 0).length}
+                          {deactiveCnt}
                         </span></a>
 
                         </div>
@@ -167,7 +174,7 @@
                             <td class="text-center w-10p"><label class="custom-switch">
                                 <input type="checkbox" name="item_status" data-id="{ p.providerId }"
                                        data-status={p.status} data-action="/admin/p/status/"
-                                       class="custom-switch-input ajaxToggleItemStatus" checked={p.status === "ACTIVE"}>
+                                       class="custom-switch-input ajaxToggleItemStatus" checked={p.status === 1}>
                                 <span class="custom-switch-indicator"></span>
                             </label></td>
                             <td class="text-center w-20p">
@@ -215,7 +222,7 @@
 
 <div class="row" id="result_notification">
     {#if modalOpen }
-        <UpdateProvider className="modal show" styleName="display: block" providerId={updateProviderId} modalClose={modalOpen} toggleModal={toggleModal}></UpdateProvider>
+        <UpdateProvider className="modal show" styleName="display: block" providerId={updateProviderId} toggleModal={toggleModal}></UpdateProvider>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
