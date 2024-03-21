@@ -12,9 +12,7 @@
 
     onMount(async () => {
         /** @type {UserInfo} */
-        let userInfo = await api.get("/u/info");
-
-        console.log(userInfo)
+        let userInfo = await api.get("/u/info")
 
         name = userInfo.name
         money = userInfo.money.toLocaleString()
