@@ -36,7 +36,8 @@ async function request(method, endPoint, data = null) {
 
         return response.data.data
     } catch (e) {
-        if (e.response === undefined || e.response.status === 401) unAuthorizedHandler()
+        if (e.response === undefined || e.response.status === 500) return alert("서버 오류가 발생하였습니다.")
+        if (e.response.status === 401) unAuthorizedHandler()
         alert(e.response.data.data.message)
     }
 }

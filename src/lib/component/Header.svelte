@@ -2,12 +2,24 @@
     import {onMount} from "svelte";
     import {writable} from "svelte/store";
     import {page} from "$app/stores";
+    import {api} from "$lib/util/ApiProvider.js";
 
     export let data
 
     const isUnread = false
-    let name = "UserName"
-    let money = "2,000"
+    let name = "로딩중"
+    let money = "로딩중"
+
+    onMount(async () => {
+        /** @type {UserInfo} */
+        let userInfo = await api.get("/u/info");
+
+        console.log(userInfo)
+
+        name = userInfo.name
+        money = userInfo.money.toLocaleString()
+    })
+
     const EN_NAME = data.props.EN_NAME
 </script>
 
