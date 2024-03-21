@@ -139,7 +139,11 @@
 <script src="/public/assets/plugins/aos/dist/aos.js"></script>
 
 <script>
-    AOS.init();
+    import {onMount} from "svelte";
+
+    onMount(() => {
+        AOS.init();
+    })
 </script>
 
 <script src="/public/assets/js/process.js"></script>

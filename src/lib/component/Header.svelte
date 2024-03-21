@@ -150,7 +150,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" class:active={$page.url.pathname === '/dashboard/add-order'} data-placement="right"
-                       data-toggle="tooltip" href="./add-order" title="주문하기">
+                       data-toggle="tooltip" href="/dashboard/add-order" title="주문하기">
                     <span class="nav-icon">
                 <i class="fe fe-shopping-cart"></i>
               </span>
