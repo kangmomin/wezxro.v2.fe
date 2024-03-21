@@ -137,7 +137,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order'} data-placement="right" data-toggle="tooltip"
-                       href="./order" title="주문 내역">
+                       href="/dashboard/order" title="주문 내역">
                     <span class="nav-icon">
                 <i class="fe fe-calendar"></i>
               </span>
@@ -147,18 +147,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/add-order'} data-placement="right"
-                       data-toggle="tooltip" href="/dashboard/add-order" title="주문하기">
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order/add'} data-placement="right"
+                       data-toggle="tooltip" href="/dashboard/order/add" title="주문하기">
                     <span class="nav-icon">
                 <i class="fe fe-shopping-cart"></i>
               </span>
-                        <span class="nav-text" class:active={$page.url.pathname === '/dashboard/add-order'}>
+                        <span class="nav-text" class:active={$page.url.pathname === '/dashboard/order/add'}>
                         주문하기
                     </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/services'} href="./services"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/services'} href="/dashboard/services"
                        data-placement="right" data-toggle="tooltip" title="서비스 목록">
                         <span class="nav-icon">
                             <i class="fa fa-list-ul" class:active={$page.url.pathname === '/dashboard/services'}></i>
@@ -169,7 +169,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/transactions'} href="./transactions"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/transactions'} href="/dashboard/transactions"
                        data-placement="right" data-toggle="tooltip" title="충전하기">
                         <span class="nav-icon">
                             <i class="fa fa-credit-card"></i>
