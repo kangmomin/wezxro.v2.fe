@@ -15,15 +15,15 @@ export async function load() {
     let dailyOrderCount = [
         {
             status: "inprogress",
-            daily: "2024-02-29",
+            daily: "2024-03-22",
             count: 2
         },{
             status: "partials",
-            daily: "2024-02-29",
+            daily: "2024-03-23",
             count: 2
         }, {
             status: "canceled",
-            daily: "2024-02-29",
+            daily: "2024-03-22",
             count: 2
         }
     ]

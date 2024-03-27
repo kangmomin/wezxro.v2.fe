@@ -30,10 +30,15 @@
             partials: 0
         }
 
-        data = await api.get("/dashboard")
+        data = await api.get("/dashboard") || {}
         dailyOrderCount.forEach(val => {
-            data[val.daily] = status
-            data[val.daily][val.status] = val.count
+            if (data[val.daily] === undefined) data = {
+                ...data,
+                [val.daily]: {
+                    ...status
+                }
+            }
+            data[val.daily][val.status] = data[val.daily][val.status] + val.count
         })
 
         const time = getPastWeekDates()
@@ -45,7 +50,7 @@
             "취소됨": [0, 0, 0, 0, 0, 0, 0],
             "대기중": [0, 0, 0, 0, 0, 0, 0],
             "부분완료됨": [0, 0, 0, 0, 0, 0, 0],
-            "접수중": [0, 0, 0, 0, 0, 0, 0]
+            "접수중": [0, 0, 0, 0, 0, 0, 0],
         }
 
         for (const singleData in data) {
@@ -53,11 +58,12 @@
 
             chartData.완료됨[idx] = data[singleData].completed || 0
             chartData.처리중[idx] = data[singleData].processing || 0
-            chartData.취소됨[idx] = data[singleData].inprogress || 0
+            chartData.접수중[idx] = data[singleData].inprogress || 0
             chartData.대기중[idx] = data[singleData].pending || 0
             chartData.부분완료됨[idx] = data[singleData].partials || 0
             chartData.취소됨[idx] = data[singleData].canceled || 0
         }
+
 
         setTimeout(() => {
             Chart_template.init()
