@@ -18,6 +18,12 @@
         modalOpen = !modalOpen
     }
 
+    /** @param {Number} providerId */
+    const syncProvider = (providerId) => {
+        api.post(`/admin/p/sync/${providerId}`, {})
+            .then((res) => res !== null ? alert("동기화하였습니다.") : null)
+    }
+
     onMount(async () => {
         api.get("/admin/p/list").then(provider => {
             providers = provider
@@ -25,7 +31,6 @@
                 e.status === 1 ? activeCnt++ : deactiveCnt++
             })
         })
-
     })
 </script>
 
@@ -191,12 +196,11 @@
                                        data-placement="bottom" title="" data-original-title="Update balance">
                                         <i class="fe fe-dollar-sign"></i>
                                     </a>
-                                    <a href="./provider/sync_services/<%= p.providerId %>"
-                                       class="btn btn-icon btn-outline-info ajaxModal" data-confirm_ms=""
-                                       data-toggle="tooltip"
+                                    <button class="btn btn-icon btn-outline-info"
+                                       data-toggle="tooltip" on:click={() => syncProvider(p.providerId)}
                                        data-placement="bottom" title="Sync services">
                                         <i class="fe fe-refresh-cw"></i>
-                                    </a>
+                                    </button>
                                     <a href="./provider/services/<%= p.providerId %>"
                                        class="btn btn-icon btn-outline-info "
                                        data-confirm_ms="" data-toggle="tooltip" data-placement="bottom"
