@@ -36,9 +36,18 @@ async function request(method, endPoint, data = null) {
 
         return response.data.data
     } catch (e) {
-        if (e.code === "ERR_NETWORK") return unAuthorizedHandler()
-        if (e.response === undefined || e.response.status === 500) return alert("서버 오류가 발생하였습니다.")
-        if (e.response.status === 401) return unAuthorizedHandler()
+        if (e.code === "ERR_NETWORK") {
+            unAuthorizedHandler()
+            return null
+        }
+        if (e.response === undefined || e.response.status === 500) {
+            alert("서버 오류가 발생하였습니다.")
+            return null
+        }
+        if (e.response.status === 401) {
+            unAuthorizedHandler()
+            return null
+        }
         alert(e.response.data.data.message)
     }
 }
