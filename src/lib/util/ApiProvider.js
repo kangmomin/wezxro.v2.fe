@@ -26,7 +26,7 @@ async function request(method, endPoint, data = null) {
         if (!token) location.href = "/login"
         const response = await axios({
             url: `${host}${endPoint}`,
-            data: data,
+            data: data === null ? data : JSON.stringify(data),
             headers: {
                 "X-Auth-Token": token,
                 "Content-Type": "application/json;charset=UTF-8"
@@ -36,10 +36,6 @@ async function request(method, endPoint, data = null) {
 
         return response.data.data
     } catch (e) {
-        if (e.code === "ERR_NETWORK") {
-            unAuthorizedHandler()
-            return null
-        }
         if (e.response === undefined || e.response.status === 500) {
             alert("서버 오류가 발생하였습니다.")
             return null
@@ -49,5 +45,6 @@ async function request(method, endPoint, data = null) {
             return null
         }
         alert(e.response.data.data.message)
+        return null
     }
 }
