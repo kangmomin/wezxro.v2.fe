@@ -110,8 +110,8 @@
                             <div class="my-3 form-footer">
                                 <button type="submit"
                                         class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
-                                <a href="javascript:void(0);" on:click={() => location.href = '/demo-login'}
-                                   class="btn btn-block btn-dark btn-lg font-weight-medium auth-form-btn">둘러보기</a>
+                                <button on:click={() => location.href = '/demo-login'}
+                                   class="btn btn-block btn-dark btn-lg font-weight-medium auth-form-btn">둘러보기</button>
                             </div>
                             <div class="mt-4 font-weight-light">
                                 아직 회원이 아니시라면 <a href="./join" class="text-primary">회원가입</a> 후 이용해주세요.
