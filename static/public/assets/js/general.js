@@ -1,5 +1,5 @@
 "use strict";
-const host = "http://api.wezxro.com:8080"
+const host = "https://api.wezxro.com:8080"
 
 function General(){
     var self = this;
