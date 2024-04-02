@@ -63,7 +63,7 @@
 							<li><a href="/login">로그인</a> </li>
 							<li><a href="/join">회원가입</a> </li>
 						{/if}
-						<li><a href="/demo-login">둘러보기</a> </li>
+<!--						<li><a href="/demo-login">둘러보기</a> </li>-->
 					</ul>
 				</div>
 				<div class="header__area-box-sidebar" style="margin-left: 50px;">
