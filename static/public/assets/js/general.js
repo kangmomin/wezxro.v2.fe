@@ -1,5 +1,5 @@
 "use strict";
-const host = "http://localhost:8080"
+const host = "http://112.144.100.77:8080"
 
 function General(){
     var self = this;
