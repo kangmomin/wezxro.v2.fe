@@ -30,7 +30,7 @@
         <div class="modal-content">
             <div class="modal-header bg-pantone">
                 <h4 class="modal-title"><i class="fa fa-edit"></i>Add New</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" on:click={() => toggleModal()}></button>
             </div>
             <div class="form" id="category_form">
                 <div class="modal-body">
