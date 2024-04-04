@@ -103,8 +103,6 @@
     }
 
     const saveService = () => {
-        console.log(description)
-
         api.post("/admin/s/add", {
             "providerId": providerId,
             "categoryId": saveServiceData.categoryId,

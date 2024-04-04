@@ -1,6 +1,8 @@
 <script>
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
+    import StoreService from "../services/StoreService.svelte";
+    import StoreCategory from "./StoreCategory.svelte";
 
     let activeCnt = 0
 
@@ -8,6 +10,11 @@
      * @type {Category[]}
      */
     let category = []
+    let modalOpen = false
+
+    const toggleModal = () => {
+        modalOpen = !modalOpen
+    }
 
     onMount(async () => {
         api.get("/admin/c/list").then(c => category = c)
@@ -30,10 +37,10 @@
         </div>
         <div class="col-md-3">
             <div class="d-flex">
-                <a class="ml-auto btn btn-outline-primary ajaxModal" href="./category/update">
+                <button class="ml-auto btn btn-outline-primary" on:click={() => toggleModal()}>
                     <span class="fe fe-plus"></span>
                     추가
-                </a>
+                </button>
             </div>
         </div>
     </div>
@@ -179,4 +186,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="row" id="result_notification">
+    {#if modalOpen }
+        <StoreCategory toggleModal={toggleModal}></StoreCategory>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
 </div>
