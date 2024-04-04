@@ -1,6 +1,5 @@
 import axios from "axios";
 import {env} from "$lib/config.js";
-import {onMount} from "svelte";
 
 const host = env.HOST
 
@@ -32,16 +31,18 @@ async function request(method, endPoint, data = null) {
                 "Content-Type": "application/json;charset=UTF-8"
             },
             method: method
-        });
+        })
 
         return response.data.data
     } catch (e) {
-        if (e.response === undefined || e.response.status === 500) {
-            alert("서버 오류가 발생하였습니다.")
-            return null
-        }
+        console.log(e)
         if (e.response.status === 401) {
-            unAuthorizedHandler()
+            alert(e.response.data.data.message)
+            return unAuthorizedHandler()
+        }
+
+        if (e.response.status === 500) {
+            alert("서버 오류가 발생하였습니다.")
             return null
         }
         alert(e.response.data.data.message)
