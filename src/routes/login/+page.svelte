@@ -2,6 +2,11 @@
     export let data
 
     const EN_NAME = data.props.EN_NAME
+    import {onMount} from "svelte";
+
+    onMount(() => {
+        AOS.init();
+    })
 </script>
 
 <svelte:head>
@@ -137,14 +142,6 @@
 <script type="text/javascript" src="/public/assets/plugins/jquery-toast/js/jquery.toast.js"></script>
 
 <script src="/public/assets/plugins/aos/dist/aos.js"></script>
-
-<script>
-    import {onMount} from "svelte";
-
-    onMount(() => {
-        AOS.init();
-    })
-</script>
 
 <script src="/public/assets/js/process.js"></script>
 <script src="/public/assets/js/general.js"></script>
