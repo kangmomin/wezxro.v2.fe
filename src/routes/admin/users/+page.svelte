@@ -1,6 +1,8 @@
 <script>
     import {api} from "$lib/util/ApiProvider.js";
     import {onMount} from "svelte";
+    import StaticRate from "./staticRate/StaticRate.svelte";
+    import {goto} from "$app/navigation";
 
     /**
      * @type {Account[]}
@@ -9,6 +11,40 @@
     let totalCnt = 0
     let activeCnt = 0
     let deactiveCnt = 0
+    let modalStatus = {
+        staticRate: false
+    }
+
+    let updateUserInfo = {
+        email: "",
+        userId: 0,
+        staticRate: 0
+    }
+
+    const toggleModal = {
+        /**
+         * @param {Number} userId
+         * @param {String} userEmail
+         * @param {Number} staticRate
+         */
+        staticRate: (userId, userEmail, staticRate) => {
+            modalStatus.staticRate = !modalStatus.staticRate
+            updateUserInfo.email = userEmail
+            updateUserInfo.userId = userId
+            updateUserInfo.staticRate = staticRate
+        }
+    }
+
+    /**
+     * @param {Number} userId
+     * @param {Number} staticRate
+     */
+    const updateStaticRate = (userId, staticRate) => {
+            userList = userList.map(u => {
+                if (u.userId === userId) u.staticRate = staticRate
+                return u
+            })
+    }
 
     onMount(() => {
         api.get("/admin/u/list").then(res => {
@@ -20,6 +56,13 @@
     })
 
 </script>
+
+<div class="row" id="result_notification">
+    {#if modalStatus.staticRate }
+        <StaticRate updateUserInfo={updateUserInfo} toggleModal={toggleModal.staticRate} updateStaticRate={updateStaticRate}></StaticRate>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+</div>
 
 <div class="page-title m-b-20">
     <div class="row justify-content-between">
@@ -57,8 +100,12 @@
                                     class="badge badge-pill bg-azure">{userList.length}</span></a>
                             <a class="btn " href="./users?status=1">Active <span
                                     class="badge badge-pill bg-indigo">{activeCnt}</span></a>
-                            <a class="btn " href="./users?status=0">Deactive <span
-                                    class="badge badge-pill bg-indigo">{deactiveCnt}</span></a>
+                            <a class="btn " href="./users?status=0">
+                                Deactive
+                                <span class="badge badge-pill bg-indigo">
+                                    {deactiveCnt}
+                                </span>
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-4 search-area">
@@ -70,12 +117,14 @@
                                     <option value="name">Name</option>
                                     <option value="history_ip">History ip</option>
                                 </select>
-                                <button class="btn btn-primary btn-square btn-search" type="button"><span
-                                        class="fe fe-search"></span></button>
+                                <button class="btn btn-primary btn-square btn-search" type="button">
+                                    <span class="fe fe-search"></span>
+                                </button>
                                 <button class="btn btn-outline-danger btn-square btn-clear d-none"
                                         data-original-title="Clear"
-                                        data-placement="bottom" data-toggle="tooltip" title="" type="button"><span
-                                        class="fe fe-x"></span></button>
+                                        data-placement="bottom" data-toggle="tooltip" title="" type="button">
+                                    <span class="fe fe-x"></span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -164,7 +213,7 @@
                             </td>
                             <td class="text-center w-10p">{ a.money }</td>
                             <td class="text-center w-10p">
-                                <button type="button" class="btn btn-square btn-outline-info btn-sm">
+                                <button type="button" class="btn btn-square btn-outline-info btn-sm" on:click={() => toggleModal.staticRate(a.userId, a.email, a.staticRate)}>
                                     <i class="fe fe-plus mr-2"></i>Static Rate
                                 </button>
                             </td>

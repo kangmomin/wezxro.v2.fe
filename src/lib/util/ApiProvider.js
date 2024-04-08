@@ -16,6 +16,9 @@ export const api = {
     },
     post: async (endPoint, body) => {
         return await request("post", endPoint, body)
+    },
+    patch: async (endPoint, body) => {
+        return await request("patch", endPoint, body)
     }
 }
 
