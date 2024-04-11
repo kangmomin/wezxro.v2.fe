@@ -1,9 +1,36 @@
 <script>
 
+    import {onMount} from "svelte";
+    import {api} from "$lib/util/ApiProvider.js";
+
     /** @type {Category[]} */
-    const category = []
+    let category = []
     /** @type {Service[]} */
-    const services = []
+    let services = []
+
+    let selectedCategory = 0
+
+    onMount(async () => {
+        api.get("/c/list").then(res => {
+            if (res === null) return
+
+            category = res
+        })
+
+    })
+
+    const loadService = () => {
+        let url = `/s/list?category=${selectedCategory}`
+
+        if (selectedCategory !== 0) {
+            url = `/s/list`
+        }
+        api.get(url).then(res => {
+            if (res === null) return
+
+            services = res
+        })
+    }
 </script>
 
 <section class="page-title">
@@ -15,8 +42,8 @@
         </div>
         <div class="col-md-3">
             <div class="form-group ">
-                <select class="form-control order_by ajaxChange" data-url="/services/sort/" name="status">
-                    <option value="0">전체 카테고리</option>
+                <select class="form-control order_by" name="status" bind:value={selectedCategory}>
+                    <option value="0" selected={true}>전체 카테고리</option>
                     { #each category as c }
                         <option value="{ c.categoryId }">{ c.name }</option>
                     {/each}
@@ -31,10 +58,12 @@
             <div class="card-header">
                 <h3 class="card-title">테스트</h3>
                 <div class="card-options">
-                    <a class="card-options-collapse" data-toggle="card-collapse" href="#"><i
-                            class="fe fe-chevron-up"></i></a>
-                    <a class="card-options-remove" data-toggle="card-remove" href="#"><i
-                            class="fe fe-x"></i></a>
+                    <div class="card-options-collapse" data-toggle="card-collapse">
+                        <i class="fe fe-chevron-up"></i>
+                    </div>
+                    <div class="card-options-remove" data-toggle="card-remove">
+                        <i class="fe fe-x"></i>
+                    </div>
                 </div>
             </div>
             <div class="table-responsive">
