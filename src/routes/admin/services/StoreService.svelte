@@ -109,12 +109,12 @@
             "apiServiceId": Number(saveServiceData.service),
             "name": saveServiceData.name,
             "type": saveServiceData.type.toUpperCase(),
-            "rate": saveServiceData.rate,
+            "rate": Number(saveServiceData.rate),
             "status": saveServiceData.status,
-            "min": saveServiceData.min,
-            "max": saveServiceData.max,
+            "min": Number(saveServiceData.min),
+            "max": Number(saveServiceData.max),
             "description": description,
-            "originalRate": saveServiceData.originalRate
+            "originalRate": Number(saveServiceData.originalRate)
         }).then(res => {
             if (res === null) return
             alert("서비스를 저장하였습니다.")
