@@ -3,25 +3,16 @@
     import {Chart_template} from "$lib/util/ChartTemplate.js";
     import {api} from "$lib/util/ApiProvider.js";
 
-    export let data
-
-    const {
-        totalCharge,
-        money,
-        totalOrder,
-        orderStatusCnt,
-        dailyOrderCount,
-        props
-    } = data
+    let totalUsed = 0,
+        balance = 0,
+        totalOrder = 0,
+        /** @type {Object[]} */
+        orderStatusCnt = []
 
     /**
      * @typedef {{[key: string]: any}} DailyCharData
      */
     onMount(async () => {
-        /**
-         * @type {DailyCharData}
-         */
-        let data = {}
         const status = {
             completed: 0,
             canceled: 0,
@@ -30,16 +21,12 @@
             partials: 0
         }
 
-        data = await api.get("/dashboard") || {}
-        dailyOrderCount.forEach(val => {
-            if (data[val.daily] === undefined) data = {
-                ...data,
-                [val.daily]: {
-                    ...status
-                }
-            }
-            data[val.daily][val.status] = data[val.daily][val.status] + val.count
-        })
+        const data = await api.get("/dashboard")
+
+        totalUsed = data.totalUsed
+        balance = data.balance
+        totalOrder = data.totalOrder
+        orderStatusCnt = data.orderStatusCnt
 
         const time = getPastWeekDates()
 
@@ -115,7 +102,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">₩{money}</h4>
+                                <h4 class="m-0 text-right number">₩{balance}</h4>
                                 <small class="text-muted ">예치금 잔액</small>
                             </div>
                         </div>
@@ -130,7 +117,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">₩{totalCharge}</h4>
+                                <h4 class="m-0 text-right number">₩{totalUsed}</h4>
                                 <small class="text-muted ">총 사용 금액</small>
                             </div>
                         </div>
