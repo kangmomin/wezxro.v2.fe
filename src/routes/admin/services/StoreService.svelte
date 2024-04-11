@@ -108,7 +108,7 @@
             "categoryId": saveServiceData.categoryId,
             "apiServiceId": Number(saveServiceData.service),
             "name": saveServiceData.name,
-            "type": saveServiceData.type.toUpperCase(),
+            "type": saveServiceData.type.toUpperCase().replaceAll(" ", "_"),
             "rate": Number(saveServiceData.rate),
             "status": saveServiceData.status,
             "min": Number(saveServiceData.min),
