@@ -106,7 +106,7 @@
         api.post("/admin/s/add", {
             "providerId": providerId,
             "categoryId": saveServiceData.categoryId,
-            "apiServiceId": saveServiceData.service,
+            "apiServiceId": Number(saveServiceData.service),
             "name": saveServiceData.name,
             "type": saveServiceData.type.toUpperCase(),
             "rate": saveServiceData.rate,
