@@ -7,15 +7,10 @@
      * @property {Number} categoryId
      * @property {String} name
      */
-    /**
-     * @typedef ServiceList
-     * @property {Number} serviceId
-     * @property {String} name
-     */
 
     /** @type {CategoryList[]} */
     let category = [],
-        /** @type {ServiceList[]} */
+        /** @type {Service[]} */
         service = []
     export let data;
 
@@ -23,6 +18,18 @@
         props
     } = data
 
+    /**
+     * @Type {Number}
+     */
+    let selectedCategoryId = 0
+    /**
+     * @Type {Number}
+     */
+    let selectedServiceId = 0
+    /**
+     * @type {Service}
+     */
+    let serviceDetail = {}
     let expiry = ""
 
     const loadCategory = async () => {
@@ -36,14 +43,23 @@
     }
 
     const loadService = async () => {
-        ``
-        let serviceList = await api.get("/s/list");
+
+        if (selectedCategoryId === 0)
+            return alert("카테고리를 먼저 선택하여주십시오.")
+
+        let serviceList = await api.get(`/s/list?category=${selectedCategoryId}`);
         if (serviceList === null) {
-            alert("카테고리를 가져오는 중 서버 에러가 발생했습니다.")
             location.href = "/dashboard/statistic"
         }
 
         return serviceList
+    }
+
+    const updateServiceDetail = () => {
+        service.forEach(s => {
+            if (s.serviceId === selectedServiceId)
+                serviceDetail = s
+        })
     }
 
     onMount(() => {
@@ -74,10 +90,10 @@
             </div>
             <div class="card-body">
                 <div class="tab-content">
-                    <div id="new_order" class="tab-pane fade in active show">
-                        <form class="form actionForm" action="./order/ajax_add_order" data-redirect="./add-order"
-                              method="POST"
-                              id="form-field">
+                    <div class="tab-pane fade in active show" id="new_order">
+                        <form action="./order/ajax_add_order" class="form actionForm" data-redirect="./add-order"
+                              id="form-field"
+                              method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="content-header-title">
@@ -85,10 +101,9 @@
                                     </div>
                                     <div class="form-group">
                                         <label style="margin-bottom: 8px;">카테고리를 먼저 선택해주세요.</label>
-                                        <select name="category_id" class="form-control square ajaxChangeCategory"
-                                                data-url="/c/list"
-                                                on:change={() => loadService().then(s => service = s)} id="select">
-                                            <option> 카테고리를 먼저 선택해주세요.</option>
+                                        <select bind:value={selectedCategoryId} class="form-control square ajaxChangeCategory"
+                                                data-url="/c/list" id="select"
+                                                name="category_id" on:change={() => loadService().then(s => service = s)}>
                                             { #each category as e }
                                                 <option value='{e.categoryId}'>
                                                     { e.name }
@@ -98,9 +113,8 @@
                                     </div>
                                     <div class="form-group" id="result_onChange">
                                         <label style="margin-bottom: 8px;">서비스를 선택해주세요.</label>
-                                        <select name="service_id" class="form-control square ajaxChangeService"
-                                                data-url="./add-order/get_service/" id="services">
-                                            <option> 서비스를 선택해주세요.</option>
+                                        <select bind:value={selectedServiceId} class="form-control square" id="services"
+                                                name="service_id" on:change={() => updateServiceDetail()}>
                                             {#each service as s}
                                                 <option value='{s.serviceId}'>
                                                     { s.name }
@@ -114,32 +128,32 @@
                                         <div class="col-md-4  col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label>Minimum Amount</label>
-                                                <input class="form-control square" name="service_min" type="text"
-                                                       value="" readonly>
+                                                <input class="form-control square" name="service_min" readonly
+                                                       type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4  col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label>Maximum Amount</label>
-                                                <input class="form-control square" name="service_max" type="text"
-                                                       value="" readonly>
+                                                <input class="form-control square" name="service_max" readonly
+                                                       type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4  col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label>Price per 1000</label>
-                                                <input class="form-control square" name="service_price" type="text"
-                                                       value="" readonly>
+                                                <input class="form-control square" name="service_price" readonly
+                                                       type="text">
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group order-default-link">
                                         <label style="margin-bottom: 8px;">서비스 링크를 입력해주세요.</label>
-                                        <input class="form-control square" type="text" name="link"
-                                               placeholder="https://" id="">
+                                        <input class="form-control square" id="" name="link"
+                                               placeholder="https://" type="text">
                                     </div>
 
                                     <div class="form-group order-default-quantity">
@@ -147,48 +161,48 @@
                                         <input class="form-control square ajaxQuantity" name="quantity" type="number">
                                     </div>
 
-                                    <div class="form-group order-comments d-none">
+                                    <div class="form-group order-comments">
                                         <label style="margin-bottom: 8px;">댓글 내용을 입력해주세요(한 줄에 한 글).</label>
-                                        <textarea rows="10" name="comments"
-                                                  class="form-control square ajax_custom_comments"></textarea>
+                                        <textarea class="form-control square ajax_custom_comments" name="comments"
+                                                  rows="10"></textarea>
                                     </div>
 
-                                    <div class="form-group order-comments-custom-package d-none">
+                                    <div class="form-group order-comments-custom-package">
                                         <label for="" style="margin-bottom: 8px;">댓글 내용을 입력해주세요(한 줄에 한 글).</label>
-                                        <textarea rows="10" name="comments_custom_package"
-                                                  class="form-control square"></textarea>
+                                        <textarea class="form-control square" name="comments_custom_package"
+                                                  rows="10"></textarea>
                                     </div>
 
-                                    <div class="form-group order-usernames d-none">
+                                    <div class="form-group order-usernames">
                                         <label for="" style="margin-bottom: 8px;">인스타그램 아이디를 입력해주세요.</label>
-                                        <input type="text" class="form-control input-tags" name="usernames"
+                                        <input class="form-control input-tags" name="usernames" type="text"
                                                value="usenameA,usenameB,usenameC,usenameD">
                                     </div>
 
-                                    <div class="form-group order-usernames-custom d-none">
+                                    <div class="form-group order-usernames-custom">
                                         <label for="" style="margin-bottom: 8px;">인스타그램 아이디를 입력해주세요.</label>
-                                        <textarea rows="10" name="usernames_custom"
-                                                  class="form-control square ajax_custom_lists"></textarea>
+                                        <textarea class="form-control square ajax_custom_lists" name="usernames_custom"
+                                                  rows="10"></textarea>
                                     </div>
 
-                                    <div class="form-group order-hashtags d-none">
+                                    <div class="form-group order-hashtags">
                                         <label for="">Hashtags (Format: #hashtag)</label>
-                                        <input type="text" class="form-control input-tags" name="hashtags"
+                                        <input class="form-control input-tags" name="hashtags" type="text"
                                                value="#goodphoto,#love,#nice,#sunny">
                                     </div>
 
-                                    <div class="form-group order-hashtag d-none">
+                                    <div class="form-group order-hashtag">
                                         <label for="">Hashtag </label>
-                                        <input class="form-control square" type="text" name="hashtag">
+                                        <input class="form-control square" name="hashtag" type="text">
                                     </div>
 
-                                    <div class="form-group order-username d-none">
+                                    <div class="form-group order-username">
                                         <label for="">Username</label>
                                         <input class="form-control square" name="username" type="text">
                                     </div>
 
                                     <!-- Mentions Media Likers -->
-                                    <div class="form-group order-media d-none">
+                                    <div class="form-group order-media">
                                         <label for="">Media Url</label>
                                         <input class="form-control square" name="media_url" type="link">
                                     </div>
@@ -199,37 +213,37 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">인스타그램 아이디</label>
-                                                <input class="form-control square" type="text" name="sub_username">
+                                                <input class="form-control square" name="sub_username" type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">적용 게시물 수</label>
-                                                <input class="form-control square" type="number" placeholder="최소 1개 이상"
-                                                       name="sub_posts">
+                                                <input class="form-control square" name="sub_posts" placeholder="최소 1개 이상"
+                                                       type="number">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">수량</label>
-                                                <input class="form-control square" type="number" name="sub_min"
-                                                       placeholder="최소 수량">
+                                                <input class="form-control square" name="sub_min" placeholder="최소 수량"
+                                                       type="number">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">&nbsp;</label>
-                                                <input class="form-control square" type="number" name="sub_max"
-                                                       placeholder="최대 수량">
+                                                <input class="form-control square" name="sub_max" placeholder="최대 수량"
+                                                       type="number">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">지연 (분)</label>
-                                                <select name="sub_delay" class="form-control square">
+                                                <select class="form-control square" name="sub_delay">
                                                     <option value="0">딜레이 없음</option>
                                                     <option value="5">5</option>
                                                     <option value="10">10</option>
@@ -245,12 +259,12 @@
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">만료일자</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control datepicker"
-                                                           on:keydown={() => {return false}} name="expiry"
-                                                           placeholder="" id="expiry" value={expiry}>
+                                                    <input class="form-control datepicker" id="expiry"
+                                                           name="expiry" on:keydown={() => {return false}}
+                                                           placeholder="" type="text" value={expiry}>
                                                     <span class="input-group-append">
-                                <button class="btn btn-info" type="button"
-                                        on:click={() => {expiry = ''}}><i
+                                <button class="btn btn-info" on:click={() => {expiry = ''}}
+                                        type="button"><i
                                         class="fe fe-trash-2"></i></button>
                               </span>
                                                 </div>
@@ -258,13 +272,13 @@
                                         </div>
                                     </div>
                                     <div class="form-group" id="result_total_charge">
-                                        <input type="hidden" name="total_charge" value="0.00">
-                                        <input type="hidden" name="currency_symbol" value="₩">
+                                        <input name="total_charge" type="hidden" value="0.00">
+                                        <input name="currency_symbol" type="hidden" value="₩">
                                         <p class="btn btn-info total_charge">총 비용 <span class="charge_number">₩0</span>
                                         </p>
 
                                         <div class="alert alert-icon alert-danger d-none" role="alert">
-                                            <i class="fe fe-alert-triangle mr-2" aria-hidden="true"></i>Order amount
+                                            <i aria-hidden="true" class="fe fe-alert-triangle mr-2"></i>Order amount
                                             exceeds available
                                             funds!
                                         </div>
@@ -272,15 +286,15 @@
 
                                     <div class="form-group">
                                         <label class="custom-control custom-checkbox">
-                          <span class="custom-control-label text-uppercase"><input type="checkbox"
-                                                                                   class="custom-control-input"
-                                                                                   name="agree"> 이용약관 및 개인정보처리방침에 동의합니다.</span>
+                          <span class="custom-control-label text-uppercase"><input class="custom-control-input"
+                                                                                   name="agree"
+                                                                                   type="checkbox"> 이용약관 및 개인정보처리방침에 동의합니다.</span>
                                         </label>
                                     </div>
 
                                     <div class="form-actions left">
-                                        <button type="submit" class="btn btn-primary btn-min-width mr-1 mb-1"
-                                                id="submit">
+                                        <button class="btn btn-primary btn-min-width mr-1 mb-1" id="submit"
+                                                type="submit">
                                             주문하기
                                         </button>
 
@@ -295,33 +309,32 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">서비스 이름을 확인해주세요.</label>
-                                                <input type="hidden" name="service_id" id="service_id" value="">
-                                                <input class="form-control square" name="service_name" type="text"
-                                                       readonly>
+                                                <input class="form-control square" name="service_name"
+                                                       readonly type="text" bind:value={serviceDetail.name}>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4  col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">최소 주문 수량</label>
-                                                <input class="form-control square" name="service_min" type="text"
-                                                       readonly>
+                                                <input class="form-control square" name="service_min" readonly
+                                                       type="text" bind:value={serviceDetail.min}>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4  col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">최대 주문 수량</label>
-                                                <input class="form-control square" name="service_max" type="text"
-                                                       readonly>
+                                                <input class="form-control square" name="service_max" readonly
+                                                       type="text" bind:value={serviceDetail.max}>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4  col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <label style="margin-bottom: 8px;">1천개 당 가격</label>
-                                                <input class="form-control square" name="service_price" type="text"
-                                                       readonly/>
+                                                <input class="form-control square" name="service_price" readonly
+                                                       type="text" bind:value={serviceDetail.rate}/>
                                             </div>
                                         </div>
 
@@ -329,9 +342,8 @@
                                             <div class="form-group">
                                                 <label for="userinput8" style="margin-bottom: 8px;">서비스 설명을
                                                     확인해주세요.</label>
-                                                <textarea rows="10" name="service_desc" class="form-control square"
-                                                          readonly>
-                        </textarea>
+                                                <textarea class="form-control square" name="service_desc" readonly
+                                                          rows="10" bind:value={serviceDetail.description}></textarea>
                                             </div>
                                         </div>
 
@@ -340,8 +352,8 @@
                             </div>
                         </form>
                     </div>
-                    <div id="mass_order" class="tab-pane fade">
-                        <form class="form actionForm" action="./order/ajax_mass_order" data-redirect="./order/log"
+                    <div class="tab-pane fade" id="mass_order">
+                        <form action="./order/ajax_mass_order" class="form actionForm" data-redirect="./order/log"
                               method="POST">
                             <div class="x_content row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -349,12 +361,12 @@
                                         <h6> One order per line in format</h6>
                                     </div>
                                     <div class="form-group">
-                        <textarea id="editor" rows="14" name="mass_order" class="form-control square"
-                                  placeholder="service_id|quantity|link"></textarea>
+                        <textarea class="form-control square" id="editor" name="mass_order" placeholder="service_id|quantity|link"
+                                  rows="14"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" name="agree">
+                                            <input class="custom-control-input" name="agree" type="checkbox">
                                             <span class="custom-control-label text-uppercase">Yes, i have confirmed the order!</span>
                                         </label>
                                     </div>
@@ -374,7 +386,7 @@
                                 </div>
                             </div>
                             <div class="form-actions left">
-                                <button type="submit" class="btn round btn-primary btn-min-width mr-1 mb-1">
+                                <button class="btn round btn-primary btn-min-width mr-1 mb-1" type="submit">
                                     Place order
                                 </button>
                             </div>
