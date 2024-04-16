@@ -1,6 +1,7 @@
 /**
  * @typedef ApiService
  * @property {number} serviceId
+ * @property {number} service
  * @property {string} clientId
  * @property {number} providerId
  * @property {number} categoryId

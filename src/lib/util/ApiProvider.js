@@ -1,5 +1,6 @@
 import axios from "axios";
 import {env} from "$lib/config.js";
+import {goto} from "$app/navigation";
 
 const host = env.HOST
 
@@ -42,6 +43,11 @@ async function request(method, endPoint, data = null) {
         if (e.response.status === 401) {
             alert(e.response.data.data.message)
             return unAuthorizedHandler()
+        }
+
+        if (e.response.status === 403) {
+            alert(e.response.data.data.message)
+            await goto("/")
         }
 
         if (e.response.status === 500) {
