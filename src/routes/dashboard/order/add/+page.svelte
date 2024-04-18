@@ -98,7 +98,7 @@
     }
 
     const updateCharge = () => {
-        serviceAddInfo.totalCharge = serviceDetail.rate * serviceAddInfo.quantity
+        serviceAddInfo.totalCharge = (serviceDetail.rate / 1000) * serviceAddInfo.quantity
     }
 
     onMount(() => {
