@@ -170,7 +170,8 @@
 
                                     {#if serviceDetail.type !== "PACKAGE" &&
                                     serviceDetail.type !== "MENTIONS_CUSTOM_LIST" &&
-                                    serviceDetail.type !== "COMMENTS_REPLIES"
+                                    serviceDetail.type !== "COMMENTS_REPLIES" &&
+                                    serviceDetail.type !== "CUSTOM_COMMENTS"
                                     }
                                         <div class="form-group order-default-quantity">
                                             <label style="margin-bottom: 8px;">서비스 수량을 입력해주세요.</label>
