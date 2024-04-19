@@ -32,6 +32,7 @@
                 <div class="modal-body">
                     <div class="o-auto" style="height: 10rem; overflow: auto;">
                         <ul class="list-unstyled list-separated services-group-items">
+                            <h1>기존 금액 그대로 적용시 1. 반만 적용하려할 시 0.5</h1>
                             <div class="s-items">
                                 <input type="number" class="form-control" name="staticRate" bind:value="{updateUserInfo.staticRate}">
                             </div>
