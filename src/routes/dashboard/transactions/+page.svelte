@@ -1,6 +1,7 @@
 <script>
     import {writable} from "svelte/store";
     import {api} from "$lib/util/ApiProvider.js";
+    import {onMount} from "svelte";
 
     const result = "default"
     const isDemo = false
@@ -12,15 +13,23 @@
 
     /**
      * @typedef Deposit
-     * @property {number} pay
+     * @property {number} amount
      * @property {number} depositId
-     * @property {Date} created
+     * @property {String} updatedAt
      */
 
     /**
      * @type {Deposit[]}
      */
-    const deposit = []
+    let deposit = []
+
+    onMount(() => {
+        api.get("/d/list").then(res => {
+            if (res == null) return
+
+            deposit = res
+        })
+    })
 
     const payform = writable(false);
 
@@ -265,7 +274,7 @@
                            style="margin-top: 22px; width: 100%; font-size: 24px;"
                            type="button" value="무통장 입금"/>
                     <div class="row">
-                        <div class="col-md-12 data-empty text-center">
+                        <div class="col-md-12 data-empty text-center" style="height: auto">
                             {#if deposit.length > 0 }
                                 <div class="row">
                                     <div class="col-md-12 col-xl-12" style="margin-top: 24px;">
@@ -287,21 +296,21 @@
                                                         </td>
                                                         <td class="text-center w-10p">무통장 입금</td>
                                                         <td class="text-center w-10p">
-                                                            {e.pay.toLocaleString()}원
+                                                            {Number(e.amount).toLocaleString()}원
                                                         </td>
                                                         <td class="text-center w-5p text-muted"
                                                             style="line-height: 1.5;">
-                                                            {e.created}
+                                                            {e.updatedAt.replace("T", " ").split(".")[0]}
                                                         </td>
                                                     </tr>
-                                                { /each      }
+                                                {/each}
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
                             {:else}
-                                <div class="content">
+                                <div class="content" style="padding-bottom: 150px">
                                     데이터가 없습니다.
                                 </div>
                             {/if}
@@ -313,21 +322,20 @@
         <div class="col-md-6">
             <div class="row card justify-content-between"
                  style="padding-left: 24px; padding-right: 24px; padding-top: 36px; padding-bottom: 36px;">
-                <form action="./files/rtpay.php" class="form" method="POST">
-                    <div class="col-md-12">
-                        <h2>유의사항</h2>
-                        <h4 style="margin-bottom: 8px; font-weight: 400;">꼭 <strong>유의사항</strong>을 확인 후
-                            충전해주세요.
-                        </h4>
-                        <h6 style="margin-top: 24px; font-size: 16px; font-weight: 400;">
-                            <li style="margin-bottom: 12px;">결제 금액과 입금자 명이 동일해야 합니다.</li>
-                            <li style="margin-bottom: 12px;">충전 신청 후 입금해주셔야 정상적으로 처리됩니다.</li>
-                            <li style="margin-bottom: 12px;">세금 계산서나 현금영수증은 충전시 같이 신청 부탁드립니다.</li>
-                            <li style="margin-bottom: 12px;">충전한 포인트는 환불 및 양도가 불가능 합니다.</li>
-                            <li style="margin-bottom: 12px;">오류가 발생하거나 문제가 생기면 고객센터로 연락 부탁드립니다.</li>
-                        </h6>
-                    </div>
-                </form>
+                <div class="col-md-12">
+                    <h2>유의사항</h2>
+                    <h4 style="margin-bottom: 8px; font-weight: 400;">꼭 <strong>유의사항</strong>을 확인 후
+                        충전해주세요.
+                    </h4>
+                    <h6 style="margin-top: 24px; font-size: 16px; font-weight: 400;">
+                        <li style="margin-bottom: 12px;">결제 금액과 입금자 명이 동일해야 합니다.</li>
+                        <li style="margin-bottom: 12px;">충전 신청 후 입금해주셔야 정상적으로 처리됩니다.</li>
+                        <li style="margin-bottom: 12px;">세금 계산서나 현금영수증은 충전시 같이 신청 부탁드립니다.</li>
+                        <li style="margin-bottom: 12px;">충전한 포인트는 환불 및 양도가 불가능 합니다.</li>
+                        <li style="margin-bottom: 12px;">오류가 발생하거나 문제가 생기면 고객센터로 연락 부탁드립니다.</li>
+                        <li style="margin-bottom: 12px;">충전 신청 후 10분 내로 입금하셔야합니다.</li>
+                    </h6>
+                </div>
             </div>
         </div>
     </div>
