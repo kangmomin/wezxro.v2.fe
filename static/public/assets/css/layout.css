@@ -170,6 +170,7 @@ body{
 
 .data-empty .content{
   padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 .data-empty .content .title{
