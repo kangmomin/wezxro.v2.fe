@@ -92,8 +92,10 @@
 
     const addOrder = () => {
 
-        if (serviceAddInfo.hashtags.indexOf("#") === -1) return alert("해시태그는 #을 써야합니다.")
-        if (serviceAddInfo.hashtag.indexOf("#") === -1) return alert("해시태그는 #을 써야합니다.")
+        if (serviceAddInfo.hashtags !== "" &&
+            serviceAddInfo.hashtags.indexOf("#") === -1) return alert("해시태그는 #을 써야합니다.")
+        if (serviceAddInfo.hashtag !== "" &&
+            serviceAddInfo.hashtag.indexOf("#") === -1) return alert("해시태그는 #을 써야합니다.")
 
         api.post("/o/add", serviceAddInfo).then(res => {
             if (res == null) return;
