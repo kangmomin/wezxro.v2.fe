@@ -91,6 +91,10 @@
     }
 
     const addOrder = () => {
+
+        if (serviceAddInfo.hashtags.indexOf("#") === -1) return alert("해시태그는 #을 써야합니다.")
+        if (serviceAddInfo.hashtag.indexOf("#") === -1) return alert("해시태그는 #을 써야합니다.")
+
         api.post("/o/add", serviceAddInfo).then(res => {
             if (res == null) return;
             goto("/dashboard/order")
@@ -321,7 +325,7 @@
                                         </div>
                                     {/if}
                                     <div class="form-group">
-                                        <p class="btn btn-info total_charge">총 비용 ₩<span
+                                        <p class="btn btn-info">총 비용 ₩<span
                                                 bind:textContent={serviceAddInfo.totalCharge} class="charge_number"
                                                 contenteditable="false">0</span>
                                         </p>
