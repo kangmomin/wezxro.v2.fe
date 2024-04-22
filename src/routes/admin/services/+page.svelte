@@ -10,6 +10,8 @@
     let category = []
     /** @type {Service[]} */
     let services = []
+    /** @type {Service | null} */
+    let updateServiceData = null
 
     $: modalOpen = false
 
@@ -21,6 +23,13 @@
 
     const toggleModal = () => {
         modalOpen = !modalOpen
+    }
+
+    /**
+     * @param {Service} service
+     */
+    const updateService = (service) => {
+        updateServiceData = service
     }
 </script>
 
@@ -191,17 +200,23 @@
                                 <div class="item-action dropdown">
                                     <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
                                             class="fe fe-more-vertical"></i></a>
-                                    <div class="dropdown-menu"><a href="./services/update/{e.serviceId}"
-                                                                  class="dropdown-item ajaxModal"
-                                                                  data-confirm_ms=""><i
-                                            class="dropdown-icon fe fe-edit"></i> Edit</a><a
-                                            href="./services/delete_custom_rate/{e.serviceId}"
+                                    <div class="dropdown-menu">
+                                        <button class="dropdown-item" on:click={() => updateService(e)}>
+                                            <i class="dropdown-icon fe fe-edit"></i>
+                                            Edit
+                                        </button>
+                                        <a href="./services/delete_custom_rate/{e.serviceId}"
                                             class="dropdown-item ajaxDeleteItem"
-                                            data-confirm_ms="Are you sure you want to delete custom rates for this service?"><i
-                                            class="dropdown-icon fe fe-trash"></i> Delete custom rates</a><a
-                                            href="./services/delete/{e.serviceId}" class="dropdown-item ajaxDeleteItem"
-                                            data-confirm_ms="정말 서비스를 삭제하시겠습니까?" data-redirect="/admin/services"><i
-                                            class="dropdown-icon fe fe-trash-2"></i> Delete</a></div>
+                                            data-confirm_ms="Are you sure you want to delete custom rates for this service?">
+                                            <i class="dropdown-icon fe fe-trash"></i>
+                                            Delete custom rates
+                                        </a>
+                                        <a href="./services/delete/{e.serviceId}" class="dropdown-item ajaxDeleteItem"
+                                            data-confirm_ms="정말 서비스를 삭제하시겠습니까?" data-redirect="/admin/services">
+                                            <i class="dropdown-icon fe fe-trash-2"></i>
+                                            Delete
+                                        </a>
+                                    </div>
                                 </div>
                             </td>
                         </tr>
@@ -215,7 +230,7 @@
 
 <div class="row" id="result_notification">
     {#if modalOpen }
-        <StoreService category={category} className="modal show" styleName="display: block; overflow: auto" toggleModal={toggleModal}></StoreService>
+        <StoreService updateServiceData={updateServiceData} category={category} className="modal show" styleName="display: block; overflow: auto" toggleModal={toggleModal}></StoreService>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>

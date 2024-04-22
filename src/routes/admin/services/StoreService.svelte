@@ -11,6 +11,9 @@
     /** @type {Category[]} */
     export let category
 
+    /** @type {Service|null} */
+    export let updateServiceData = null
+
     // 업데이트 용으로 사용시엔 true로 변경해야함
     const isUpdate = false
 
@@ -19,32 +22,6 @@
 
     /** @type {String[]} */
     let providerCategory = []
-
-    /**
-     * @type {ApiService}
-     * 추가될 서비스의 정보
-     */
-    let apiService
-
-    /** @type {ApiService[]} */
-    let services = []
-
-    onMount(() => {
-        api.get(`/admin/p/list`).then(p => providers = p)
-    })
-
-    let type = "",
-        originalRate = 0,
-        apiServiceId = 0,
-        providerId = 0,
-        searchServiceId = 0,
-        searchCategory = "",
-        description = ""
-
-    /**
-     * 서비스 소개 부분을 위한 변수
-     */
-    let intro = ""
 
     /**
      * 서비스 저장을 위한 객체
@@ -66,6 +43,37 @@
         type: "",
     }
 
+    /**
+     * @type {ApiService}
+     * 추가될 서비스의 정보
+     */
+    let apiService
+
+    /** @type {ApiService[]} */
+    let services = []
+
+    onMount(() => {
+        if (updateServiceData !== null) {
+            saveServiceData = updateServiceData
+        }
+
+        api.get(`/admin/p/list`).then(p => providers = p)
+    })
+
+    let type = "",
+        originalRate = 0,
+        apiServiceId = 0,
+        providerId = 0,
+        searchServiceId = 0,
+        searchCategory = "",
+        description = ""
+
+    /**
+     * 서비스 소개 부분을 위한 변수
+     */
+    let intro = ""
+
+
     const categoriesByProvider = () => {
         api.get(`/admin/p/category/${providerId}`).then((c) => {
             providerCategory = c
@@ -83,6 +91,13 @@
             saveServiceData.categoryId = categoryId
             saveServiceData.originalRate = saveServiceData.rate
         })
+    }
+
+    /**
+     * @param {Number} serviceId
+     */
+    const getServiceById = async (serviceId) => {
+        saveServiceData = await api.get(`/s/detail/${serviceId}`)
     }
 
     const servicesByCategory = () => {
