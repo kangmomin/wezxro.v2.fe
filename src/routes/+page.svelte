@@ -51,7 +51,7 @@
 	<div class="container custom-container">
 		<div class="header__area-box">
 			<div class="header__area-box-logo">
-				<a href="/"> <img src="/public/assets\logo\logo_fit.png" alt=""> </a>
+				<a href="/"> <img src="/public/assets/logo/logo_fit.png" alt=""> </a>
 				<div class="responsive-menu"></div>
 			</div>
 			<div class="header_gp" style="display: flex; align-items: center;">
