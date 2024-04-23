@@ -41,6 +41,9 @@
         searchCategory = "",
         description = ""
 
+    /** @type {Object} */
+    let servicesTag
+
     /**
      * 서비스 소개 부분을 위한 변수
      */
@@ -88,13 +91,18 @@
     const servicesByCategory = () => {
         if (providerId === 0) alert("도매처를 먼저 선택하여주십시오.")
 
-        api.get(`/admin/p/services/${providerId}?category=${searchCategory}`).then(
-            /**
-             * @param {ApiService[]} s
-             */ s => {
-            if (s === null) return
-            services = s;
-        })
+        servicesTag = ""
+
+        setTimeout(() => {
+            api.get(`/admin/p/services/${providerId}?category=${searchCategory}`).then(
+                /**
+                 * @param {ApiService[]} s
+                 */ s => {
+                    if (s === null) return;
+
+                    services = s;
+                })
+        }, 100)
     }
 
     const updateService = () => {
@@ -214,8 +222,9 @@
                                         <div class="loader"></div>
                                         <div class="dimmer-content">
                                             <label>Service</label>
-                                            <select class="form-control" bind:value={apiServiceId} on:change={() => updateService()} name="api_service_id">
-                                                <option value="0">Choose Service</option>
+                                            <select class="form-control" id="services" bind:value={apiServiceId}
+                                                    on:change={() => updateService()} name="api_service_id"
+                                                    bind:this={servicesTag}>
                                                 {#each services as s}
                                                     {intro = `ID${s.service} - (${s.rate}) - ${s.name}`}
                                                     <option value={s.service}>{intro.length > 72 ? intro.slice(0, 72) + "..." : intro}</option>
