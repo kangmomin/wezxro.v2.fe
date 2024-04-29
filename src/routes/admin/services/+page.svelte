@@ -1,17 +1,15 @@
-<script>
+<script lang="ts">
     import {page} from "$app/stores";
     import {onMount} from "svelte";
-    import {api} from "$lib/util/ApiProvider.js";
+    import {api} from "../../../lib/util/ApiProvider";
     import StoreService from "./StoreService.svelte";
+    import type {CategoryListDto} from "../../../lib/types/category/CategoryListDto";
+    import type {ServiceListDto} from "../../../lib/types/service/ServiceListDto";
 
-    /** @type {number} */
-    let categoryId = Number($page.url.searchParams.get("categoryId") || "0");
-    /** @type {Category[]} */
-    let category = []
-    /** @type {Service[]} */
-    let services = []
-    /** @type {Service | null} */
-    let updateServiceData = null
+    let categoryId: number = Number($page.url.searchParams.get("categoryId") || "0");
+    let category: CategoryListDto[] = []
+    let services: ServiceListDto[] = []
+    let updateServiceData: ServiceListDto|null = null
 
     $: modalOpen = false
 
@@ -25,11 +23,9 @@
         modalOpen = !modalOpen
     }
 
-    /**
-     * @param {Service} service
-     */
-    const updateService = (service) => {
+    const updateService = (service: ServiceListDto) => {
         updateServiceData = service
+        toggleModal()
     }
 </script>
 
@@ -99,8 +95,8 @@
                                       href="./services/bulk_action/delete_custom_rates"><i class="dropdown-icon fe fe-trash"></i>
                             Delete custom
                             rates</a><a class="dropdown-item ajaxActionOptions" data-type="delete"
-                                        href="./services/bulk_action/delete"><i
-                                class="dropdown-icon fe fe-trash-2"></i> Delete</a>
+                                        href="./services/bulk_action/delete">
+                            <i class="dropdown-icon fe fe-trash-2"></i> Delete</a>
                         </div>
                     </div>
                 </div>

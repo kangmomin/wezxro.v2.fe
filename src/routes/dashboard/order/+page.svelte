@@ -1,21 +1,14 @@
-<script>
+<script lang="ts">
+    import type OrderListDto from '$lib/types/order/OrderListDto';
+    import { onMount } from 'svelte';
+    import { api } from '$lib/util/ApiProvider';
 
-    /**
-     * @typedef Order
-     * @property {number} orderId
-     * @property {number} serviceId
-     * @property {string} serviceName
-     * @property {string} link
-     * @property {number} count
-     * @property {number} charge
-     * @property {number} startCount
-     * @property {number} remain
-     * @property {Date} createdAt
-     * @property {String} status
-     */
+    let orders: OrderListDto[]|null = []
 
-    /** @type {Order[]} */
-    const orders = []
+    onMount(async () => {
+        orders = await api.get("/o/list");
+        if (orders === null) return;
+    })
 </script>
 
 
@@ -98,19 +91,17 @@
             <div class="table-responsive">
                 <table class="table table-hover table-bordered table-vcenter card-table">
                     {#if (orders.length < 1) }
-                        <thead>
-                        </thead>
                         <div class="content">
                             데이터가 없습니다.
                         </div>
                     {:else}
                         <thead>
-                        <tr>
-                            <th class="">주문 번호</th>
-                            <th class="text-center">주문 상세 정보</th>
-                            <th class="text-center">등록일자</th>
-                            <th class="text-center">상태</th>
-                        </tr>
+                            <tr>
+                                <th class="">주문 번호</th>
+                                <th class="text-center">주문 상세 정보</th>
+                                <th class="text-center">등록일자</th>
+                                <th class="text-center">상태</th>
+                            </tr>
                         </thead>
                         <tbody>
                         { #each orders as e }

@@ -1,13 +1,11 @@
-<script>
+<script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
     import {onMount} from "svelte";
-    import StaticRate from "./staticRate/StaticRate.svelte";
-    import {goto} from "$app/navigation";
+    import StaticRate from "./StaticRate.svelte";
+    import type {UserListDto} from "$lib/types/Account/UserListDto";
+    import type UpdateUserInfo from '$lib/types/Account/UpdateUserInfo';
 
-    /**
-     * @type {Account[]}
-     */
-    let userList = []
+    let userList: UserListDto[] = []
     let totalCnt = 0
     let activeCnt = 0
     let deactiveCnt = 0
@@ -15,19 +13,14 @@
         staticRate: false
     }
 
-    let updateUserInfo = {
-        email: "",
-        userId: 0,
-        staticRate: 0
+    let updateUserInfo: UpdateUserInfo = {
+        email: '',
+        staticRate: 0,
+        userId: 0
     }
 
     const toggleModal = {
-        /**
-         * @param {Number} userId
-         * @param {String} userEmail
-         * @param {Number} staticRate
-         */
-        staticRate: (userId, userEmail, staticRate) => {
+        staticRate: (userId: number, userEmail: string, staticRate: number) => {
             modalStatus.staticRate = !modalStatus.staticRate
             updateUserInfo.email = userEmail
             updateUserInfo.userId = userId
@@ -35,11 +28,7 @@
         }
     }
 
-    /**
-     * @param {Number} userId
-     * @param {Number} staticRate
-     */
-    const updateStaticRate = (userId, staticRate) => {
+    const updateStaticRate = (userId: number, staticRate: number) => {
             userList = userList.map(u => {
                 if (u.userId === userId) u.staticRate = staticRate
                 return u

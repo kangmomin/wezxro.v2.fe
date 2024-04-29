@@ -1,42 +1,54 @@
-<script>
+<script lang="ts">
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
     import {goto} from "$app/navigation";
+    import type { CategoryListDto } from '$lib/types/category/CategoryListDto';
+    import type { ServiceListDto } from '$lib/types/service/ServiceListDto';
+    import type { ServiceAddInfo } from '$lib/types/service/ServiceAddInfo';
 
-    /**
-     * @typedef CategoryList
-     * @property {Number} categoryId
-     * @property {String} name
-     */
 
-    /** @type {CategoryList[]} */
-    let category = [],
-        /** @type {Service[]} */
-        service = []
+    let category: CategoryListDto[] = [],
+        service: ServiceListDto[]  = []
     export let data;
 
-    const {
-        props
-    } = data
-
-    /**
-     * @Type {Number}
-     */
     let selectedCategoryId = 0
-    /**
-     * @Type {Number}
-     */
     let selectedServiceId = 0
-    /**
-     * @type {Service}
-     */
-    let serviceDetail = {}
-    let expiry = ""
 
-    /**
-     * @type {ServiceAddInfo}
-     */
-    let serviceAddInfo = {}
+    let serviceDetail: ServiceListDto = {
+        apiServiceId: 0,
+        description: '',
+        max: 0,
+        min: 0,
+        name: '',
+        providerId: 0,
+        rate: 0,
+        serviceId: 0,
+        status: 0,
+        type: ''
+    }
+    let expiry = ''
+
+    let serviceAddInfo: ServiceAddInfo = {
+        serviceType: "",
+        serviceId: selectedServiceId,
+        categoryId: selectedCategoryId,
+        link: "",
+        quantity: 0,
+        comments: "",
+        commentsCustomPackage: "",
+        usernames: "",
+        usernamesCustom: "",
+        hashtags: "",
+        hashtag: "",
+        username: "",
+        mediaUrl: "",
+        subPosts: 0,
+        subMin: 0,
+        subMax: 0,
+        subDelay: 0,
+        expiry: "",
+        totalCharge: 0,
+    }
 
     const loadCategory = async () => {
         let categoryList = await api.get("/c/list");

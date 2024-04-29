@@ -1,25 +1,21 @@
-<script>
+<script lang="ts">
     import UpdateProvider from "./update/UpdateProvider.svelte";
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
+    import type ProviderListDto from '$lib/types/provider/ProviderListDto';
 
-    /** @type {Provider[]} */
-    let providers = []
-
+    let providers: ProviderListDto[] = []
     let activeCnt = 0
     let deactiveCnt = 0
-
     let updateProviderId = 0
     $: modalOpen = false
 
-    /** @param {number} providerId */
-    const toggleModal = (providerId) => {
+    const toggleModal = (providerId: number) => {
         updateProviderId = providerId
         modalOpen = !modalOpen
     }
 
-    /** @param {Number} providerId */
-    const syncProvider = (providerId) => {
+    const syncProvider = (providerId: number) => {
         api.post(`/admin/p/sync/${providerId}`, {})
             .then((res) => res !== null ? alert("동기화하였습니다.") : null)
     }

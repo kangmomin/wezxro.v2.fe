@@ -1,30 +1,20 @@
-<script>
+<script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
     import {onMount} from "svelte";
+    import BasicStatus from '$lib/types/common/BasicStatus';
+    import type ProviderDetailDto from '$lib/types/provider/ProviderDetailDto';
 
-    /** @type {number} */
-    export let providerId
-    /**@type {string}*/
-    export let className
-    /**@type {string}*/
-    export let styleName
-    /** @type {Function} */
-    export let toggleModal
+    export let providerId: number
+    export let className: string
+    export let styleName: string
+    export let toggleModal: Function
 
-    /** @type {Provider} */
-    let provider = providerId === 0 ? {
+    let provider: ProviderDetailDto = {
         providerId: 0,
         status: 0,
-        name: "",
-        apiKey: "",
-        apiUrl: "",
-        balance: 0
-    } : {
-        providerId: 0,
-        name: "대기중",
-        apiKey: "대기중",
-        apiUrl: "대기중",
-        status: 0,
+        name: providerId === 0 ? "" : "대기중",
+        apiKey: providerId === 0 ? "" : "대기중",
+        apiUrl: providerId === 0 ? "" : "대기중",
         balance: 0
     }
 
@@ -35,8 +25,6 @@
             provider = p
         })
     })
-
-    let isActiveStatus = provider.status === 1;
 </script>
 
 <div id="main-modal-content" class={className} style={styleName}>
@@ -85,8 +73,8 @@
                             <div class="form-group">
                                 <label>Status</label>
                                 <select name="status" class="form-control">
-                                    <option value="1" selected={isActiveStatus}>Active</option>
-                                    <option value="0" selected={!isActiveStatus}>Deactive</option>
+                                    <option value="1" selected={provider.status === 1}>Active</option>
+                                    <option value="0" selected={provider.status === 0}>Deactive</option>
                                 </select>
 
                             </div>

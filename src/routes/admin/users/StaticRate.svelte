@@ -1,14 +1,10 @@
-<script>
+<script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
-    import {goto} from "$app/navigation";
+    import type UpdateUserInfo from "$lib/types/Account/UpdateUserInfo.ts";
 
-    export let updateUserInfo
-
-    /** @type {Function} */
-    export let toggleModal
-
-    /** @type {Function} */
-    export let updateStaticRate
+    export let updateUserInfo: UpdateUserInfo
+    export let toggleModal: Function
+    export let updateStaticRate: Function
 
     const saveStaticRate = () => {
         api.patch(`/admin/u/static-rate/update/${updateUserInfo.userId}`, {
@@ -32,7 +28,7 @@
                 <div class="modal-body">
                     <div class="o-auto" style="height: 10rem; overflow: auto;">
                         <ul class="list-unstyled list-separated services-group-items">
-                            <h1>기존 금액 그대로 적용시 1. 반만 적용하려할 시 0.5</h1>
+                            <h3>기존 금액 그대로 적용시 1. 반만 적용하려할 시 0.5</h3>
                             <div class="s-items">
                                 <input type="number" class="form-control" name="staticRate" bind:value="{updateUserInfo.staticRate}">
                             </div>

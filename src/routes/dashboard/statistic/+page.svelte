@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
     import {onMount} from "svelte";
     import {Chart_template} from "$lib/util/ChartTemplate.js";
     import {api} from "$lib/util/ApiProvider.js";
+    import type {OrderStatusCnt} from "$lib/types/OrderStatusCnt";
+    import type StringObject from "$lib/types/common/StringObject";
 
     let totalUsed = 0,
         balance = 0,
         totalOrder = 0,
-        /** @type {OrderStatusCnt[]} */
-        orderStatusCnt = []
-    const status = {
+        orderStatusCnt: OrderStatusCnt[] = []
+    const status: StringObject = {
         completed: 0,
         canceled: 0,
         processing: 0,

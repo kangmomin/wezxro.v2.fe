@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {writable} from "svelte/store";
     import {api} from "$lib/util/ApiProvider.js";
     import {onMount} from "svelte";
@@ -11,17 +11,7 @@
         props
     } = data
 
-    /**
-     * @typedef Deposit
-     * @property {number} amount
-     * @property {number} depositId
-     * @property {String} updatedAt
-     */
-
-    /**
-     * @type {Deposit[]}
-     */
-    let deposit = []
+    let deposit: DepositListDto[] = []
 
     onMount(() => {
         api.get("/d/list").then(res => {
@@ -40,26 +30,16 @@
         elementById.style.display = "block"
     }
 
-    /** @type {number} */
     let payamount = 0,
-        /** @type {string} */
         payname = "",
-        /** @type {string} */
-        business_name,
-        /** @type {string} */
-        business_regno,
-        /** @type {string} */
-        business_owner,
-        /** @type {string} */
-        business_phone,
-        /** @type {string} */
-        business_email,
-        /** @type {string} */
-        personal_phone,
-        /** @type {boolean} */
-        agree_terms,
-        /** @type {boolean} */
-        agree_notices;
+        business_name: string,
+        business_regno: string,
+        business_owner: string,
+        business_phone: string,
+        business_email: string,
+        personal_phone: string,
+        agree_terms: boolean,
+        agree_notices: boolean;
 
     async function addDeposit() {
         if (!agree_terms || !agree_notices) return alert("약관에 전체 동의를 해주셔야 합니다.")

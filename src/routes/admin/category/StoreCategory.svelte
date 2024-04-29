@@ -1,9 +1,8 @@
-<script>
+<script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
     import {goto} from "$app/navigation";
 
-    /** @type {Function} */
-    export let toggleModal
+    export let toggleModal: Function
 
     let category = {
         name: "",

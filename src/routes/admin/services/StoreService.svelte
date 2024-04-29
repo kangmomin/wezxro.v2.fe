@@ -1,35 +1,62 @@
-<script>
+<script lang="ts">
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
+    import ApiService from "src/types/provider/ApiService";
+    import ProviderListDto from "$lib/types/provider/ProviderListDto";
+    import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
 
-    /**@type {string}*/
-    export let className
-    /**@type {string}*/
-    export let styleName
-    /**@type {Function}*/
-    export let toggleModal
-    /** @type {Category[]} */
-    export let category
+    export let className: string
+    export let styleName: string
+    export let toggleModal: Function
+    export let category: CategoryListDto[]
+    /** @type {Service|null} */
+    export let updateServiceData
 
     // 업데이트 용으로 사용시엔 true로 변경해야함
-    const isUpdate = false
+    let isUpdate = false
+    let providers: ProviderListDto[] = []
+    let providerCategory: string[] = []
 
-    /**@type {Provider[]}*/
-    let providers = []
-
-    /** @type {String[]} */
-    let providerCategory = []
-
-    /**
-     * @type {ApiService}
-     * 추가될 서비스의 정보
-     */
-    let apiService
+    /** 추가될 서비스의 정보 */
+    let apiService: ApiService
 
     /** @type {ApiService[]} */
     let services = []
 
     onMount(() => {
+        if (updateServiceData !== null) {
+            searchServiceId = updateServiceData.apiServiceId
+            providerId = updateServiceData.providerId
+
+            searchServiceById()
+
+            saveServiceData = {
+                service: updateServiceData.apiServiceId,
+                description: updateServiceData.description,
+                categoryId: updateServiceData.categoryId,
+                max: updateServiceData.max,
+                min: updateServiceData.min,
+                rate: updateServiceData.rate,
+                status: updateServiceData.status,
+                type: updateServiceData.type.toLowerCase(),
+                originalRate: updateServiceData.originalRate,
+                name: updateServiceData.name,
+                providerId: updateServiceData.providerId,
+                refill: false,
+                cancel: false,
+                dripfeed: false
+            }
+
+            apiService = {
+                serviceId: saveServiceData.serviceId,
+                ...saveServiceData
+            }
+
+            console.log(apiService)
+
+            isUpdate = true
+        }
+
         api.get(`/admin/p/list`).then(p => providers = p)
     })
 

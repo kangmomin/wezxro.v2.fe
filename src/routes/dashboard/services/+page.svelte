@@ -1,12 +1,12 @@
-<script>
+<script lang="ts">
 
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
+    import type { ServiceListDto } from '$lib/types/service/ServiceListDto';
+    import type { CategoryListDto } from '$lib/types/category/CategoryListDto';
 
-    /** @type {Category[]} */
-    let category = []
-    /** @type {Service[]} */
-    let services = []
+    let category: CategoryListDto[] = []
+    let services: ServiceListDto[] = []
 
     let selectedCategory = 0
 
@@ -19,10 +19,14 @@
 
     })
 
+    onMount(() => {
+        loadService()
+    })
+
     const loadService = () => {
         let url = `/s/list?category=${selectedCategory}`
 
-        if (selectedCategory !== 0) {
+        if (selectedCategory === 0) {
             url = `/s/list`
         }
         api.get(url).then(res => {
@@ -43,7 +47,7 @@
         <div class="col-md-3">
             <div class="form-group ">
                 <select class="form-control order_by" name="status" bind:value={selectedCategory}>
-                    <option value="0" selected={true}>전체 카테고리</option>
+                    <option value="0" selected={selectedCategory === 0}>전체 카테고리</option>
                     { #each category as c }
                         <option value="{ c.categoryId }">{ c.name }</option>
                     {/each}

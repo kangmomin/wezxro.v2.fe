@@ -1,0 +1,5 @@
+export default {
+	ACTIVE: "ACTIVE",
+	DEACTIVE: "DEACTIVE",
+	DELETED: "DELETED"
+}

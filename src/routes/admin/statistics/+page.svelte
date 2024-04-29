@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import {onMount} from "svelte";
     import {Chart_template} from "$lib/util/ChartTemplate.js";
     import {api} from "$lib/util/ApiProvider.js";
@@ -11,17 +11,11 @@
         totalOrder,
         orderStatusCnt,
         dailyOrderCount,
-        props
     } = data
 
-    /**
-     * @typedef {{[key: string]: any}} DailyCharData
-     */
     onMount(async () => {
-        /**
-         * @type {DailyCharData}
-         */
-        let data = {}
+        /** daily chart data */
+        let data: {[key: string]: any} = {}
         const status = {
             completed: 0,
             canceled: 0,
@@ -33,7 +27,6 @@
         data = await api.get("/dashboard")
 
         dailyOrderCount.forEach(val => {
-            console.log(val)
             data[val.daily] = status
             data[val.daily][val.status] = val.count
         })
