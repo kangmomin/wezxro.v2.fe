@@ -1,10 +1,10 @@
 export default interface ApiService {
     serviceId: number
     service: number
-    clientId: string
+    clientId: string|null
     providerId: number
     categoryId: number
-    apiServiceId: number
+    apiServiceId: number|null
     name: string
     type: string
     rate: number

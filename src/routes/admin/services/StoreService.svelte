@@ -1,27 +1,38 @@
 <script lang="ts">
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
-    import ApiService from "src/types/provider/ApiService";
-    import ProviderListDto from "$lib/types/provider/ProviderListDto";
+    import type ApiService from "$lib/types/provider/ApiService";
+    import type ProviderListDto from "$lib/types/provider/ProviderListDto";
     import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
 
     export let className: string
     export let styleName: string
     export let toggleModal: Function
     export let category: CategoryListDto[]
-    /** @type {Service|null} */
-    export let updateServiceData
+
+    interface UpdateServiceDto {
+        description: string
+        providerId: number
+        apiServiceId: number
+        categoryId: number
+        max: number
+        min: number
+        rate: number
+        status: number
+        originalRate: number
+        name: string
+        type: string
+    }
+
+    export let updateServiceData: UpdateServiceDto
 
     // 업데이트 용으로 사용시엔 true로 변경해야함
     let isUpdate = false
     let providers: ProviderListDto[] = []
     let providerCategory: string[] = []
-
     /** 추가될 서비스의 정보 */
-    let apiService: ApiService
-
-    /** @type {ApiService[]} */
-    let services = []
+    let apiService: SaveServiceDto
+    let services: ApiService[] = []
 
     onMount(() => {
         if (updateServiceData !== null) {
@@ -31,7 +42,7 @@
             searchServiceById()
 
             saveServiceData = {
-                service: updateServiceData.apiServiceId,
+                apiServiceId: updateServiceData.apiServiceId,
                 description: updateServiceData.description,
                 categoryId: updateServiceData.categoryId,
                 max: updateServiceData.max,
@@ -42,17 +53,16 @@
                 originalRate: updateServiceData.originalRate,
                 name: updateServiceData.name,
                 providerId: updateServiceData.providerId,
+                serviceId: null,
                 refill: false,
                 cancel: false,
                 dripfeed: false
             }
 
             apiService = {
-                serviceId: saveServiceData.serviceId,
-                ...saveServiceData
+                ...saveServiceData,
+                status: saveServiceData.status
             }
-
-            console.log(apiService)
 
             isUpdate = true
         }
@@ -76,24 +86,43 @@
      */
     let intro = ""
 
+    interface SaveServiceDto {
+        serviceId: number|null
+        apiServiceId: number
+        rate: number
+        description: string
+        max: number
+        cancel: boolean
+        categoryId: number
+        name: string
+        dripfeed: boolean
+        min: number
+        originalRate: number
+        providerId: number
+        refill: boolean
+        status: number
+        type: string
+    }
+
     /**
      * 서비스 저장을 위한 객체
      */
-    let saveServiceData = {
-        service: 0,
-        rate: 0,
-        description: "",
-        max: 0,
+    let saveServiceData: SaveServiceDto = {
+        apiServiceId: 0,
         cancel: false,
         categoryId: 0,
-        name: "",
+        description: '',
         dripfeed: false,
+        max: 0,
         min: 0,
+        name: '',
         originalRate: 0,
         providerId: 0,
+        rate: 0,
         refill: false,
+        serviceId: null,
         status: 0,
-        type: "",
+        type: ''
     }
 
     const categoriesByProvider = () => {
@@ -121,10 +150,7 @@
         servicesTag = ""
 
         setTimeout(() => {
-            api.get(`/admin/p/services/${providerId}?category=${searchCategory}`).then(
-                /**
-                 * @param {ApiService[]} s
-                 */ s => {
+            api.get(`/admin/p/services/${providerId}?category=${searchCategory}`).then(s => {
                     if (s === null) return;
 
                     services = s;
@@ -141,7 +167,7 @@
         api.post("/admin/s/add", {
             "providerId": providerId,
             "categoryId": saveServiceData.categoryId,
-            "apiServiceId": Number(saveServiceData.service),
+            "apiServiceId": Number(saveServiceData.apiServiceId),
             "name": saveServiceData.name,
             "type": saveServiceData.type.toUpperCase().replaceAll(" ", "_"),
             "rate": Number(saveServiceData.rate),
