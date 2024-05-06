@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import type UpdateUserInfo from "$lib/types/Account/UpdateUserInfo";
     import {api} from "$lib/util/ApiProvider";
+    import type UpdateMoneyDto from "$lib/types/Account/UpdateMoneyDto.js";
 
     export let toggleModal: Function
-    export let userInfo: UpdateUserInfo
+    export let updateMoneyUserInfo: UpdateMoneyDto
 
     let amount: number = 0
     let password: string = ""
@@ -12,10 +12,10 @@
     const addFund = () => {
         api.patch("/admin/u/money/add", {
             amount, password,
-            userId: userInfo.userId
+            userId: updateMoneyUserInfo.userId
         }).then(res => {
             if (res === null) return
-            toggleModal(userInfo.userId, userInfo.email, true)
+            toggleModal(updateMoneyUserInfo.userId, updateMoneyUserInfo.email, updateMoneyUserInfo.balance, true)
         })
     }
 </script>
@@ -26,7 +26,7 @@
             <div class="modal-header bg-pantone">
                 <h4 class="modal-title">
                     <i class="fa fa-edit"></i>
-                    Add funds ({ userInfo.email })
+                    Add funds ({ updateMoneyUserInfo.email })
                 </h4>
                 <button aria-label="Close" class="close" data-dismiss="modal" type="button"></button>
             </div>
@@ -59,7 +59,9 @@
                     <button class="btn btn-primary btn-min-width mr-1 mb-1"
                             on:click={() => addFund()}>Save</button>
                     <button class="btn btn-dark" data-dismiss="modal"
-                            on:click={toggleModal(userInfo.userId, userInfo.email)}>Close</button>
+                            on:click={toggleModal(updateMoneyUserInfo.userId,
+                                                    updateMoneyUserInfo.email,
+                                                    updateMoneyUserInfo.balance,)}>Close</button>
                 </div>
             </div>
         </div>

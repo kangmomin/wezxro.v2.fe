@@ -5,24 +5,26 @@
     import type {UserListDto} from "$lib/types/Account/UserListDto";
     import type UpdateUserInfo from '$lib/types/Account/UpdateUserInfo';
     import AddFund from "./AddFund.svelte";
+    import type UpdateMoneyDto from "$lib/types/Account/UpdateMoneyDto";
+    import SetBalance from "./SetBalance.svelte";
 
     let userList: UserListDto[] = []
     let totalCnt: number = 0
     let activeCnt = 0
     let deactiveCnt = 0
-    let addFundUserInfo: UpdateUserInfo = {
-        email: "", staticRate: 0, userId: 0
+    let updateFundUserInfo: UpdateMoneyDto = {
+        email: "", balance: 0, password: "", userId: 0
     }
-    let modalStatus = {
-        staticRate: false,
-        addFund: false
+    let updateUserInfo: UpdateUserInfo = {
+        email: '', staticRate: 0, userId: 0
     }
 
-    let updateUserInfo: UpdateUserInfo = {
-        email: '',
-        staticRate: 0,
-        userId: 0
+    let modalStatus = {
+        staticRate: false,
+        addFund: false,
+        setFund: false
     }
+
 
     const toggleModal = {
         staticRate: (userId: number, userEmail: string, staticRate: number) => {
@@ -32,9 +34,17 @@
             updateUserInfo.staticRate = staticRate
         },
         addFund: (userId: number, userEmail: string, isDone = false) => {
-            addFundUserInfo.userId = userId
-            addFundUserInfo.email = userEmail
+            updateFundUserInfo.userId = userId
+            updateFundUserInfo.email = userEmail
             modalStatus.addFund = !modalStatus.addFund
+
+            if (isDone) syncUserList()
+        },
+        setBalance: (userId: number, userEmail: string, userBalance: number, isDone = false) => {
+            updateFundUserInfo.userId = userId
+            updateFundUserInfo.email = userEmail
+            updateFundUserInfo.balance = userBalance
+            modalStatus.setFund = !modalStatus.setFund
 
             if (isDone) syncUserList()
         }
@@ -64,7 +74,11 @@
         <div class="modal-backdrop fade show"></div>
     {/if}
     {#if modalStatus.addFund }
-        <AddFund userInfo={addFundUserInfo} toggleModal={toggleModal.addFund}></AddFund>
+        <AddFund updateMoneyUserInfo={updateFundUserInfo} toggleModal={toggleModal.addFund}></AddFund>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+    {#if modalStatus.setFund }
+        <SetBalance updateMoneyUserInfo={updateFundUserInfo} toggleModal={toggleModal.setBalance}></SetBalance>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
@@ -253,15 +267,16 @@
                                             <i class="dropdown-icon fe fe-eye"></i>
                                             View User
                                         </a>
-                                        <button class="dropdown-item" on:click={() => toggleModal.addFund(a.userId, a.email)}>
+                                        <button class="dropdown-item"
+                                                on:click={() => toggleModal.addFund(a.userId, a.email)}>
                                             <i class="dropdown-icon fe fe-dollar-sign"></i>
                                             잔액 추가
                                         </button>
-                                        <a href="./users/edit_funds/<%= a.userId %>" class="dropdown-item ajaxModal"
-                                           data-confirm_ms="">
+                                        <button class="dropdown-item"
+                                                on:click={() => toggleModal.setBalance(a.userId, a.email, a.money)}>
                                             <i class="dropdown-icon fe fe-credit-card"></i>
-                                            Set balance
-                                        </a>
+                                            잔액 설정
+                                        </button>
                                         <a href="./users/set_password/<%= a.userId %>" class="dropdown-item ajaxModal"
                                            data-confirm_ms="">
                                             <i class="dropdown-icon fe fe-lock"></i>
