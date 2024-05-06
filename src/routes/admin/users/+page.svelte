@@ -4,13 +4,18 @@
     import StaticRate from "./StaticRate.svelte";
     import type {UserListDto} from "$lib/types/Account/UserListDto";
     import type UpdateUserInfo from '$lib/types/Account/UpdateUserInfo';
+    import AddFund from "./AddFund.svelte";
 
     let userList: UserListDto[] = []
-    let totalCnt = 0
+    let totalCnt: number = 0
     let activeCnt = 0
     let deactiveCnt = 0
+    let addFundUserInfo: UpdateUserInfo = {
+        email: "", staticRate: 0, userId: 0
+    }
     let modalStatus = {
-        staticRate: false
+        staticRate: false,
+        addFund: false
     }
 
     let updateUserInfo: UpdateUserInfo = {
@@ -25,6 +30,13 @@
             updateUserInfo.email = userEmail
             updateUserInfo.userId = userId
             updateUserInfo.staticRate = staticRate
+        },
+        addFund: (userId: number, userEmail: string, isDone = false) => {
+            addFundUserInfo.userId = userId
+            addFundUserInfo.email = userEmail
+            modalStatus.addFund = !modalStatus.addFund
+
+            if (isDone) syncUserList()
         }
     }
 
@@ -35,20 +47,24 @@
             })
     }
 
-    onMount(() => {
-        api.get("/admin/u/list").then(res => {
-            userList = res.accountList
-            activeCnt = res.activateCnt
-            deactiveCnt = res.deactivateCnt
-            totalCnt = res.totalCnt
-        })
+    const syncUserList = () => api.get("/admin/u/list").then(res => {
+        userList = res.accountList
+        activeCnt = res.activateCnt
+        deactiveCnt = res.deactivateCnt
+        totalCnt = res.totalCnt
     })
+
+    onMount(() => syncUserList())
 
 </script>
 
 <div class="row" id="result_notification">
     {#if modalStatus.staticRate }
         <StaticRate updateUserInfo={updateUserInfo} toggleModal={toggleModal.staticRate} updateStaticRate={updateStaticRate}></StaticRate>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+    {#if modalStatus.addFund }
+        <AddFund userInfo={addFundUserInfo} toggleModal={toggleModal.addFund}></AddFund>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
@@ -237,11 +253,10 @@
                                             <i class="dropdown-icon fe fe-eye"></i>
                                             View User
                                         </a>
-                                        <a href="./users/add_funds/<%= a.userId %>" class="dropdown-item ajaxModal"
-                                           data-confirm_ms="">
+                                        <button class="dropdown-item" on:click={() => toggleModal.addFund(a.userId, a.email)}>
                                             <i class="dropdown-icon fe fe-dollar-sign"></i>
-                                            Add Funds
-                                        </a>
+                                            잔액 추가
+                                        </button>
                                         <a href="./users/edit_funds/<%= a.userId %>" class="dropdown-item ajaxModal"
                                            data-confirm_ms="">
                                             <i class="dropdown-icon fe fe-credit-card"></i>
