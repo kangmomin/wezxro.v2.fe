@@ -10,7 +10,7 @@
     let password: string = ""
 
     const addFund = () => {
-        api.patch("/admin/u/fund", {
+        api.patch("/admin/u/money/add", {
             amount, password,
             userId: userInfo.userId
         }).then(res => {
