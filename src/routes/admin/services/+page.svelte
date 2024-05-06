@@ -1,10 +1,10 @@
 <script lang="ts">
     import {page} from "$app/stores";
     import {onMount} from "svelte";
-    import {api} from "../../../lib/util/ApiProvider";
+    import {api} from "$lib/util/ApiProvider";
     import StoreService from "./StoreService.svelte";
-    import type {CategoryListDto} from "../../../lib/types/category/CategoryListDto";
-    import type {ServiceListDto} from "../../../lib/types/service/ServiceListDto";
+    import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
+    import type {ServiceListDto} from "$lib/types/service/ServiceListDto";
 
     let categoryId: number = Number($page.url.searchParams.get("categoryId") || "0");
     let category: CategoryListDto[] = []
