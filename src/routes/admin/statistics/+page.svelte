@@ -105,7 +105,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">₩{money}</h4>
+                                <h4 class="m-0 text-right number">₩{money || 0}</h4>
                                 <small class="text-muted ">예치금 잔액</small>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">₩{totalCharge}</h4>
+                                <h4 class="m-0 text-right number">₩{totalCharge || 0}</h4>
                                 <small class="text-muted ">총 사용 금액</small>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{totalOrder}건</h4>
+                                <h4 class="m-0 text-right number">{totalOrder || 0}건</h4>
                                 <small class="text-muted ">총 주문</small>
                             </div>
                         </div>
@@ -191,7 +191,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{totalOrder}건</h4>
+                                <h4 class="m-0 text-right number">{totalOrder || 0}건</h4>
                                 <small class="text-muted ">총 주문</small>
                             </div>
                         </div>
