@@ -80,6 +80,8 @@
             status: newStatus, userId
         }).then(res => {
             if (res === null) return;
+
+            syncUserList()
         })
     }
 
