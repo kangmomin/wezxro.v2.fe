@@ -7,9 +7,10 @@
     import AddFund from "./AddFund.svelte";
     import type UpdateMoneyDto from "$lib/types/Account/UpdateMoneyDto";
     import SetBalance from "./SetBalance.svelte";
+    import SetPassword from "./SetPassword.svelte";
+    import BasicStatus from "$lib/types/common/BasicStatus";
 
     let userList: UserListDto[] = []
-    let totalCnt: number = 0
     let activeCnt = 0
     let deactiveCnt = 0
     let updateFundUserInfo: UpdateMoneyDto = {
@@ -22,7 +23,8 @@
     let modalStatus = {
         staticRate: false,
         addFund: false,
-        setFund: false
+        setFund: false,
+        setPassword: false
     }
 
 
@@ -47,6 +49,11 @@
             modalStatus.setFund = !modalStatus.setFund
 
             if (isDone) syncUserList()
+        },
+        setPassword: (userId: number, userEmail: string) => {
+            updateUserInfo.userId = userId
+            updateUserInfo.email = userEmail
+            modalStatus.setPassword = !modalStatus.setPassword
         }
     }
 
@@ -61,7 +68,6 @@
         userList = res.accountList
         activeCnt = res.activateCnt
         deactiveCnt = res.deactivateCnt
-        totalCnt = res.totalCnt
     })
 
     onMount(() => syncUserList())
@@ -79,6 +85,10 @@
     {/if}
     {#if modalStatus.setFund }
         <SetBalance updateMoneyUserInfo={updateFundUserInfo} toggleModal={toggleModal.setBalance}></SetBalance>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+    {#if modalStatus.setPassword }
+        <SetPassword user={updateUserInfo} toggleModal={toggleModal.setPassword}></SetPassword>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
@@ -105,11 +115,6 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">필터</h3>
-                <div class="card-options">
-                    <a class="card-options-collapse" data-toggle="card-collapse" href="#"><i
-                            class="fe fe-chevron-up"></i></a>
-                    <a class="card-options-remove" data-toggle="card-remove" href="#"><i class="fe fe-x"></i></a>
-                </div>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -277,11 +282,11 @@
                                             <i class="dropdown-icon fe fe-credit-card"></i>
                                             잔액 설정
                                         </button>
-                                        <a href="./users/set_password/<%= a.userId %>" class="dropdown-item ajaxModal"
-                                           data-confirm_ms="">
+                                        <button style="cursor: pointer" class="dropdown-item"
+                                                on:click={() => toggleModal.setPassword(a.userId, a.email)}>
                                             <i class="dropdown-icon fe fe-lock"></i>
-                                            Set Password
-                                        </a>
+                                            비밀번호 설정
+                                        </button>
                                         <a href="./users/mail/<%= a.userId %>" class="dropdown-item ajaxModal"
                                            data-confirm_ms="">
                                             <i class="dropdown-icon fe fe-mail"></i>
