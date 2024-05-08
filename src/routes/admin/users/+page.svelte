@@ -70,6 +70,19 @@
         deactiveCnt = res.deactivateCnt
     })
 
+    const updateStatus = (userId: number, status: string) => {
+        let newStatus
+
+        if (status === BasicStatus.ACTIVE) newStatus = BasicStatus.DEACTIVE
+        if (status === BasicStatus.DEACTIVE) newStatus = BasicStatus.ACTIVE
+
+        api.patch("/admin/u/status/update", {
+            status: newStatus, userId
+        }).then(res => {
+            if (res === null) return;
+        })
+    }
+
     onMount(() => syncUserList())
 
 </script>
@@ -246,21 +259,20 @@
                                     <i class="fe fe-plus mr-2"></i>Custom Rate
                                 </button>
                             </td>
-                            <td class="text-center text-muted w-5p">user</td>
+                            <td class="text-center text-muted w-5p">{a.role}</td>
                             <td class="text-center w-15p">{a.createdAt}</td>
                             <td class="text-center w-5p">
                                 <label class="custom-switch">
-                                    <input type="checkbox" name="item_status" data-id="<%= a.userId %>"
-                                           data-status="<%= a.status %>" data-action="./users/change_status/"
-                                           class="custom-switch-input ajaxToggleItemStatus"
-                                           checked={ a.status === "ACTIVE" }>
+                                    <input type="checkbox" name="item_status" class="custom-switch-input"
+                                           checked={ a.status === BasicStatus.ACTIVE } on:change={() => updateStatus(a.userId, a.status)}>
                                     <span class="custom-switch-indicator"></span>
                                 </label>
                             </td>
                             <td class="text-center w-5p">
-                                <div class="item-action dropdown">
-                                    <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                                            class="fe fe-more-vertical"></i></a>
+                                <div style="cursor: pointer" class="item-action dropdown">
+                                    <i data-toggle="dropdown" class="icon">
+                                        <i class="fe fe-more-vertical"></i>
+                                    </i>
                                     <div class="dropdown-menu">
                                         <a href="./users/update/<%= a.userId %>"
                                            class="dropdown-item ajaxModal" data-confirm_ms="">
@@ -272,12 +284,12 @@
                                             <i class="dropdown-icon fe fe-eye"></i>
                                             View User
                                         </a>
-                                        <button class="dropdown-item"
+                                        <button style="cursor: pointer" class="dropdown-item"
                                                 on:click={() => toggleModal.addFund(a.userId, a.email)}>
                                             <i class="dropdown-icon fe fe-dollar-sign"></i>
                                             잔액 추가
                                         </button>
-                                        <button class="dropdown-item"
+                                        <button style="cursor: pointer" class="dropdown-item"
                                                 on:click={() => toggleModal.setBalance(a.userId, a.email, a.money)}>
                                             <i class="dropdown-icon fe fe-credit-card"></i>
                                             잔액 설정
