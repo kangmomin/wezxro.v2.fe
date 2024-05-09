@@ -9,10 +9,12 @@
     import SetBalance from "./SetBalance.svelte";
     import SetPassword from "./SetPassword.svelte";
     import BasicStatus from "$lib/types/common/BasicStatus";
+    import SendMail from "./SendMail.svelte";
 
     let userList: UserListDto[] = []
     let activeCnt = 0
     let deactiveCnt = 0
+    let userMail = ""
     let updateFundUserInfo: UpdateMoneyDto = {
         email: "", balance: 0, password: "", userId: 0
     }
@@ -24,7 +26,8 @@
         staticRate: false,
         addFund: false,
         setFund: false,
-        setPassword: false
+        setPassword: false,
+        sendMail: false
     }
 
 
@@ -54,6 +57,10 @@
             updateUserInfo.userId = userId
             updateUserInfo.email = userEmail
             modalStatus.setPassword = !modalStatus.setPassword
+        },
+        sendMail: (userEmail: string) => {
+            userMail = userEmail
+            modalStatus.sendMail = !modalStatus.sendMail
         }
     }
 
@@ -104,6 +111,10 @@
     {/if}
     {#if modalStatus.setPassword }
         <SetPassword user={updateUserInfo} toggleModal={toggleModal.setPassword}></SetPassword>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+    {#if modalStatus.sendMail}
+        <SendMail userEmail="{userMail}" toggleModal="{toggleModal.sendMail}"></SendMail>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
@@ -301,11 +312,11 @@
                                             <i class="dropdown-icon fe fe-lock"></i>
                                             비밀번호 설정
                                         </button>
-                                        <a href="./users/mail/<%= a.userId %>" class="dropdown-item ajaxModal"
-                                           data-confirm_ms="">
+                                        <button style="cursor: pointer" class="dropdown-item"
+                                                on:click={() => toggleModal.sendMail(a.email)}>
                                             <i class="dropdown-icon fe fe-mail"></i>
-                                            Send Mail
-                                        </a>
+                                            메일 보내기
+                                        </button>
                                         <a href="./users/info/<%= a.userId %>" class="dropdown-item ajaxModal"
                                            data-confirm_ms="">
                                             <i class="dropdown-icon fe fe-help-circle"></i>
