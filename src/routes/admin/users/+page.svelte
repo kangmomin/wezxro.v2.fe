@@ -71,6 +71,19 @@
             })
     }
 
+    const deleteAccount = (userId: number) => {
+        if (!confirm("정말 삭제하시겠습니까?")) return;
+
+        api.patch("/admin/u/status/update", {
+            userId, status: BasicStatus.DELETED
+        }).then(res => {
+            if (res === null) return;
+
+            alert("유저를 삭제하였습니다.")
+            syncUserList()
+        })
+    }
+
     const syncUserList = () => api.get("/admin/u/list").then(res => {
         userList = res.accountList
         activeCnt = res.activateCnt
@@ -322,11 +335,10 @@
                                             <i class="dropdown-icon fe fe-help-circle"></i>
                                             More detail
                                         </a>
-                                        <a href="./users/delete/<%= a.userId %>" class="dropdown-item ajaxDeleteItem"
-                                           data-confirm_ms="정말로 삭제하시겠습니까?">
+                                        <button class="dropdown-item" on:click={() => deleteAccount(a.userId)}>
                                             <i class="dropdown-icon fe fe-trash-2"></i>
-                                            Delete
-                                        </a>
+                                            삭제
+                                        </button>
                                     </div>
                                 </div>
                             </td>
