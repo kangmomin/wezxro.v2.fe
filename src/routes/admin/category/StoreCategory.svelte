@@ -1,25 +1,58 @@
 <script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
     import {goto} from "$app/navigation";
+    import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
+    import {onMount} from "svelte";
 
     export let toggleModal: Function
+    export let categoryInfo: CategoryListDto
 
     let category = {
         name: "",
         sort: 0,
-        status: 1
+        status: "ACTIVE"
     }
+
+    let isUpdate = false
+
+    onMount(() => {
+        if (categoryInfo.categoryId !== 0) {
+            category = {
+                name: categoryInfo.name,
+                sort: categoryInfo.sort,
+                status: categoryInfo.status ? "ACTIVE" : "DEACTIVE"
+            }
+
+            isUpdate = true
+        }
+    })
 
     const saveData = () => {
         api.post("/admin/c/add", category).then(res => {
             if (res === null) return;
-            alert("데이터를 저장하였습니다.")
+            alert("카테고리를 저장하였습니다.")
+            toggleModal(true)
+
             category = {
                 name: "",
                 sort: 0,
-                status: 1
+                status: "ACTIVE"
             }
-            goto(window.location.pathname)
+            categoryInfo = {categoryId: 0, name: "", sort: 0, status: 0}
+        })
+    }
+    const updateData = () => {
+        api.patch(`/admin/c/update/${categoryInfo.categoryId}`, category).then(res => {
+            if (res === null) return;
+            alert("카테고리를 수정하였습니다.")
+            toggleModal(true)
+
+            category = {
+                name: "",
+                sort: 0,
+                status: "ACTIVE"
+            }
+            categoryInfo = {categoryId: 0, name: "", sort: 0, status: 0}
         })
     }
 </script>
@@ -28,7 +61,7 @@
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header bg-pantone">
-                <h4 class="modal-title"><i class="fa fa-edit"></i>Add New</h4>
+                <h4 class="modal-title"><i class="fa fa-edit"></i>{isUpdate ? "카테고리 수정" : "카테고리 생성"}</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" on:click={() => toggleModal()}></button>
             </div>
             <div class="form" id="category_form">
@@ -36,33 +69,34 @@
                     <div class="row justify-content-md-center">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" name="name" bind:value={category.name} class="form-control"/>
+                                <label for="name">이름</label>
+                                <input id="name" type="text" name="name" bind:value={category.name} class="form-control"/>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Sort</label>
-                                <input type="number" name="sort" bind:value={category.sort} class="form-control"/>
+                                <label for="sort">정렬 번호</label>
+                                <input id="sort" type="number" name="sort" bind:value={category.sort} class="form-control"/>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Status</label>
-                                <select name="status" class="form-control" bind:value={category.status}>
-                                    <option value="1">Active</option>
-                                    <option value="0">Deactive</option>
+                                <label for="status">활성화/비활성화</label>
+                                <select id="status" class="form-control" bind:value={category.status}>
+                                    <option value="ACTIVE">활성화</option>
+                                    <option value="DEACTIVE">비활성화</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-min-width mr-1 mb-1" on:click={() => saveData()}>
-                        Save
+                    <button type="submit" class="btn btn-primary btn-min-width mr-1 mb-1"
+                            on:click={() => isUpdate ? updateData() : saveData()}>
+                        저장
                     </button>
-                    <button type="button" class="btn btn-dark" data-dismiss="modal" on:click={() => toggleModal()}>
-                        Close
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" on:click={() => toggleModal(true)}>
+                        취소
                     </button>
                 </div>
             </div>

@@ -9,12 +9,15 @@
     let category: CategoryListDto[] = []
     let modalOpen = false
     let updateSortVal: {[key: number]: any} = {}
+    let updateCategoryDto: CategoryListDto = {categoryId: 0, name: "", sort: 0, status: 0}
 
-    const toggleModal = () => {
+    const toggleModal = (isDone: boolean = false) => {
         modalOpen = !modalOpen
+        if (isDone) syncCategory()
+        updateCategoryDto = {categoryId: 0, name: "", sort: 0, status: 0}
     }
 
-    onMount(async () => {
+    const syncCategory = () => {
         api.get("/admin/c/list").then(c => {
             category = c
 
@@ -22,7 +25,9 @@
                 updateSortVal[val.categoryId] = val.sort
             })
         })
-    })
+    }
+
+    onMount(() => syncCategory())
 
     const updateStatus = (categoryId: number) => {
         api.patch(`/admin/c/status/${categoryId}`).then(res => {
@@ -43,6 +48,12 @@
 
                 alert(res.message)
             })
+    }
+
+    const updateCategory = (e: CategoryListDto) => {
+        updateCategoryDto = {categoryId: 0, name: "", sort: 0, status: 0}
+        updateCategoryDto = e
+        toggleModal()
     }
 </script>
 
@@ -183,10 +194,10 @@
                                 <div class="item-action dropdown">
                                     <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
                                             class="fe fe-more-vertical"></i></a>
-                                    <div class="dropdown-menu"><a href="/admin/category/update/{e.categoryId}"
-                                                                  class="dropdown-item ajaxModal" data-confirm_ms=""><i
-                                            class="dropdown-icon fe fe-edit"></i>
-                                        Edit</a>
+                                    <div class="dropdown-menu">
+                                        <button on:click={() => {updateCategory(e)}} class="dropdown-item">
+                                            <i class="dropdown-icon fe fe-edit"></i> 수정
+                                        </button>
                                         <a href="/admin/category/delete/{e.categoryId}"
                                            class="dropdown-item ajaxDeleteItem"
                                            data-confirm_ms="카테고리를 정말로 삭제하시겠습니까?"
@@ -205,7 +216,7 @@
 
 <div class="row" id="result_notification">
     {#if modalOpen }
-        <StoreCategory toggleModal={toggleModal}></StoreCategory>
+        <StoreCategory categoryInfo="{updateCategoryDto}" toggleModal={toggleModal}></StoreCategory>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
