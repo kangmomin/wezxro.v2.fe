@@ -8,17 +8,41 @@
     let activeCnt = 0
     let category: CategoryListDto[] = []
     let modalOpen = false
+    let updateSortVal: {[key: number]: any} = {}
 
     const toggleModal = () => {
         modalOpen = !modalOpen
     }
 
     onMount(async () => {
-        api.get("/admin/c/list").then(c => category = c)
+        api.get("/admin/c/list").then(c => {
+            category = c
+
+            category.forEach(val => {
+                updateSortVal[val.categoryId] = val.sort
+            })
+        })
     })
 
-    function toggleStatus(status: number) {
+    const updateStatus = (categoryId: number) => {
+        api.patch(`/admin/c/status/${categoryId}`).then(res => {
+            if (res === null) return
 
+            setTimeout(() => {
+                alert(res.message)
+            }, 200)
+        })
+    }
+
+    const updateSort = (categoryId: number) => {
+        let sort = updateSortVal[categoryId];
+
+        api.patch(`/admin/c/sort/${categoryId}`, { sort })
+            .then(res => {
+                if (res === null) return
+
+                alert(res.message)
+            })
     }
 </script>
 
@@ -130,10 +154,10 @@
                         <tr class="tr_">
                             <th class="text-center w-1">
                                 <div class="custom-controls-stacked">
-                                    <label class="form-check"><input type="checkbox"
-                                                                     class="form-check-input check-item check_1"
-                                                                     name="ids[]" value="{e.categoryId}"><span
-                                            class="custom-control-label"></span>
+                                    <label class="form-check">
+                                        <input type="checkbox" class="form-check-input check-item check_1"
+                                               value="{e.categoryId}">
+                                        <span class="custom-control-label"></span>
                                     </label>
                                 </div>
                             </th>
@@ -145,17 +169,14 @@
                                     {e.name}
                                 </div>
                             </td>
-                            <td class="text-center w-10p"><input type="text"
-                                                                 class="form-control text-center ajaxChangeSort"
-                                                                 data-url="/admin/c/sort/"
-                                                                 data-id="{e.categoryId}" min="1" style="width:65px;"
-                                                                 id="sort" value="{e.sort}"></td>
-                            <td class="text-center w-10p"><label class="custom-switch">
-                                <input type="checkbox" name="item_status" data-id="{e.categoryId}"
-                                       data-status="{e.status === 1}"
-                                       data-action="/admin/c/status/"
-                                       class="custom-switch-input ajaxToggleItemStatus"
-                                       checked={e.status === 1}>
+                            <td class="text-center w-10p">
+                                <input type="number" class="form-control text-center" min="1" style="width:65px;"
+                                       id="sort" value="{updateSortVal[e.categoryId]}" on:change={() => updateSort(e.categoryId)}>
+                            </td>
+                            <td class="text-center w-10p">
+                                <label for={`status_${e.categoryId}`} class="custom-switch">
+                                <input id={`status_${e.categoryId}`} type="checkbox" class="custom-switch-input" checked={e.status === 1}
+                                    on:change={() => updateStatus(e.categoryId)}>
                                 <span class="custom-switch-indicator"></span>
                             </label></td>
                             <td class="text-center w-10p">
