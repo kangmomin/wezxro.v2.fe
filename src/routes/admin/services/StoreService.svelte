@@ -332,7 +332,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="status">활성화/비활성화</label>
-                                <select class="form-control" id="status">
+                                <select class="form-control" id="status" bind:value={saveServiceData.status}>
                                     <option value="ACTIVE">활성화</option>
                                     <option value="DEACTIVE">비활성화</option>
                                 </select>
