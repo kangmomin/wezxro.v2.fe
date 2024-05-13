@@ -1,5 +1,4 @@
 export default interface ApiService {
-    serviceId: number
     service: number
     clientId: string|null
     providerId: number

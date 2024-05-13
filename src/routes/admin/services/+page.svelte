@@ -5,11 +5,26 @@
     import StoreService from "./StoreService.svelte";
     import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
     import type {ServiceListDto} from "$lib/types/service/ServiceListDto";
+    import type {UpdateServiceDto} from "$lib/types/service/UpdateServiceDto";
 
     let categoryId: number = Number($page.url.searchParams.get("categoryId") || "0");
     let category: CategoryListDto[] = []
     let services: ServiceListDto[] = []
-    let updateServiceData: ServiceListDto|null = null
+    let updateServiceData: UpdateServiceDto|null = {
+        categoryId: 0,
+        originalRate: 0,
+        apiServiceId: 0,
+        description: "",
+        max: 0,
+        min: 0,
+        name: "",
+        providerId: 0,
+        rate: 0,
+        serviceId: 0,
+        status: 0,
+        type: ""
+    }
+    let isUpdate = false
 
     $: modalOpen = false
 
@@ -19,13 +34,50 @@
         api.get(`/admin/s/list?category=${categoryId}`).then(s => services = s)
     })
 
-    const toggleModal = () => {
+    const syncData = () => {
+        api.get(`/admin/c/list`).then(c => category = c)
+
+        api.get(`/admin/s/list?category=${categoryId}`).then(s => services = s)
+    }
+
+    const toggleModal = (isDone: boolean = false) => {
+        isUpdate = false
+        updateServiceData = {
+            apiServiceId: 0,
+            categoryId: 0,
+            description: "",
+            max: 0,
+            min: 0,
+            name: "",
+            originalRate: 0,
+            providerId: 0,
+            rate: 0,
+            serviceId: 0,
+            status: 0,
+            type: ""
+        }
         modalOpen = !modalOpen
+        if (isDone) syncData()
+
     }
 
     const updateService = (service: ServiceListDto) => {
-        updateServiceData = service
-        toggleModal()
+        updateServiceData = {
+            serviceId: service.serviceId,
+            apiServiceId: service.apiServiceId,
+            categoryId: service.categoryId,
+            originalRate: service.originalRate,
+            description: service.description,
+            max: service.max,
+            min: service.min,
+            name: service.name,
+            providerId: service.providerId,
+            rate: service.rate,
+            status: service.status,
+            type: service.type
+        }
+        isUpdate = true
+        modalOpen = !modalOpen
     }
 </script>
 
@@ -199,7 +251,7 @@
                                     <div class="dropdown-menu">
                                         <button class="dropdown-item" on:click={() => updateService(e)}>
                                             <i class="dropdown-icon fe fe-edit"></i>
-                                            Edit
+                                            수정
                                         </button>
                                         <a href="./services/delete_custom_rate/{e.serviceId}"
                                             class="dropdown-item ajaxDeleteItem"
@@ -226,7 +278,7 @@
 
 <div class="row" id="result_notification">
     {#if modalOpen }
-        <StoreService updateServiceData={updateServiceData} category={category} className="modal show" styleName="display: block; overflow: auto" toggleModal={toggleModal}></StoreService>
+        <StoreService isUpdate="{isUpdate}" updateServiceData={updateServiceData} category={category} className="modal show" styleName="display: block; overflow: auto" toggleModal={toggleModal}></StoreService>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>

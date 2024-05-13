@@ -4,109 +4,34 @@
     import type ApiService from "$lib/types/provider/ApiService";
     import type ProviderListDto from "$lib/types/provider/ProviderListDto";
     import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
+    import type {UpdateServiceDto} from "$lib/types/service/UpdateServiceDto";
+    import type {SaveServiceDto} from "$lib/types/service/SaveServiceDto.js";
 
     export let className: string
     export let styleName: string
     export let toggleModal: Function
     export let category: CategoryListDto[]
 
-    interface UpdateServiceDto {
-        description: string
-        providerId: number
-        apiServiceId: number
-        categoryId: number
-        max: number
-        min: number
-        rate: number
-        status: number
-        originalRate: number
-        name: string
-        type: string
-    }
-
-    export let updateServiceData: UpdateServiceDto
+    export let updateServiceData: UpdateServiceDto|null
 
     // 업데이트 용으로 사용시엔 true로 변경해야함
-    let isUpdate = false
+    export let isUpdate = false
     let providers: ProviderListDto[] = []
     let providerCategory: string[] = []
-    /** 추가될 서비스의 정보 */
-    let apiService: SaveServiceDto
-    let services: ApiService[] = []
+    let apiMax: number = 0,
+        apiMin: number = 0
 
-    onMount(() => {
-        if (updateServiceData !== null) {
-            searchServiceId = updateServiceData.apiServiceId
-            providerId = updateServiceData.providerId
-
-            searchServiceById()
-
-            saveServiceData = {
-                apiServiceId: updateServiceData.apiServiceId,
-                description: updateServiceData.description,
-                categoryId: updateServiceData.categoryId,
-                max: updateServiceData.max,
-                min: updateServiceData.min,
-                rate: updateServiceData.rate,
-                status: updateServiceData.status,
-                type: updateServiceData.type.toLowerCase(),
-                originalRate: updateServiceData.originalRate,
-                name: updateServiceData.name,
-                providerId: updateServiceData.providerId,
-                serviceId: null,
-                refill: false,
-                cancel: false,
-                dripfeed: false
-            }
-
-            apiService = {
-                ...saveServiceData,
-                status: saveServiceData.status
-            }
-
-            isUpdate = true
-        }
-
-        api.get(`/admin/p/list`).then(p => providers = p)
-    })
+    /** 도매처 서비스 들의 정보 */
+    let apiServices: ApiService[] = []
 
     let type = "",
-        originalRate = 0,
-        apiServiceId = 0,
         providerId = 0,
         searchServiceId = 0,
         searchCategory = "",
-        description = ""
+        /** 서비스 소개 부분을 위한 변수 */
+        intro = ""
 
-    /** @type {Object} */
-    let servicesTag
-
-    /**
-     * 서비스 소개 부분을 위한 변수
-     */
-    let intro = ""
-
-    interface SaveServiceDto {
-        serviceId: number|null
-        apiServiceId: number
-        rate: number
-        description: string
-        max: number
-        cancel: boolean
-        categoryId: number
-        name: string
-        dripfeed: boolean
-        min: number
-        originalRate: number
-        providerId: number
-        refill: boolean
-        status: number
-        type: string
-    }
-
-    /**
-     * 서비스 저장을 위한 객체
-     */
+    /** 서비스 저장을 위한 객체 */
     let saveServiceData: SaveServiceDto = {
         apiServiceId: 0,
         cancel: false,
@@ -121,9 +46,44 @@
         rate: 0,
         refill: false,
         serviceId: null,
-        status: 0,
+        status: "ACTIVE",
         type: ''
     }
+
+    onMount(async () => {
+        if (updateServiceData !== null && updateServiceData.apiServiceId !== 0) {
+            searchServiceId = updateServiceData.apiServiceId
+            providerId = updateServiceData.providerId
+
+            await searchServiceById()
+            categoriesByProvider()
+
+
+            saveServiceData = {
+                apiServiceId: updateServiceData.apiServiceId,
+                description: updateServiceData.description,
+                categoryId: updateServiceData.categoryId,
+                max: updateServiceData.max,
+                min: updateServiceData.min,
+                rate: updateServiceData.rate,
+                status: updateServiceData.status === 1 ? "ACTIVE" : "DEACTIVE",
+                type: updateServiceData.type.toLowerCase(),
+                originalRate: updateServiceData.originalRate,
+                name: updateServiceData.name,
+                providerId: updateServiceData.providerId,
+                serviceId: updateServiceData.serviceId,
+                refill: false,
+                cancel: false,
+                dripfeed: false
+            }
+
+            isUpdate = true
+
+            syncService()
+        }
+
+        api.get(`/admin/p/list`).then(p => providers = p)
+    })
 
     const categoriesByProvider = () => {
         api.get(`/admin/p/category/${providerId}`).then((c) => {
@@ -131,39 +91,65 @@
         })
     }
 
-    const searchServiceById = () => {
+    const searchServiceById = async () => {
         if (providerId === 0) alert("도매처를 먼저 선택하여주십시오.")
 
-        api.get(`/admin/p/service?serviceId=${searchServiceId}&providerId=${providerId}`).then(s => {
-            if (s === null) return
-            const categoryId = saveServiceData.categoryId
-            saveServiceData = s
-            saveServiceData.status = 1
-            saveServiceData.categoryId = categoryId
-            saveServiceData.originalRate = saveServiceData.rate
-        })
+        const s:ApiService|null = (await api.get(`/admin/p/service?serviceId=${searchServiceId}&providerId=${providerId}`))
+        if (s === null) return
+
+        apiMax = s.max
+        apiMin = s.min
+        saveServiceData.originalRate = s.rate
+        saveServiceData.apiServiceId = s.service!!
+
+        return
     }
 
     const servicesByCategory = () => {
         if (providerId === 0) alert("도매처를 먼저 선택하여주십시오.")
 
-        servicesTag = ""
-
         setTimeout(() => {
             api.get(`/admin/p/services/${providerId}?category=${searchCategory}`).then(s => {
                     if (s === null) return;
 
-                    services = s;
+                    apiServices = s;
                 })
         }, 100)
     }
 
-    const updateService = () => {
-        searchServiceId = apiServiceId
+    const syncService = () => {
+        searchServiceId = saveServiceData.apiServiceId
         searchServiceById()
     }
 
+    const updateService = () => {
+        if (apiMin > saveServiceData.min) return alert("최소 주문 수량이 도매처보다 적습니다.")
+        if (apiMax < saveServiceData.max) return alert("최대 주문 수량이 도매처보다 많습니다.")
+        if (saveServiceData.min > saveServiceData.max) return alert("최소 주문 수량이 최대 주문 수량보다 많습니다.")
+
+        api.patch(`/admin/s/update/${saveServiceData.serviceId}`, {
+            "providerId": providerId,
+            "categoryId": saveServiceData.categoryId,
+            "apiServiceId": Number(saveServiceData.apiServiceId),
+            "name": saveServiceData.name,
+            "type": saveServiceData.type.toUpperCase().replaceAll(" ", "_"),
+            "rate": Number(saveServiceData.rate),
+            "status": saveServiceData.status,
+            "min": Number(saveServiceData.min),
+            "max": Number(saveServiceData.max),
+            "description": saveServiceData.description,
+            "originalRate": Number(saveServiceData.originalRate)
+        }).then(res => {
+            if (res === null) return
+            alert("서비스를 저장하였습니다.")
+            toggleModal(true)
+        })
+    }
+
     const saveService = () => {
+        if (apiMin > saveServiceData.min) return alert("최소 주문 수량이 도매처보다 적습니다.")
+        if (apiMax < saveServiceData.max) return alert("최대 주문 수량이 도매처보다 많습니다.")
+
         api.post("/admin/s/add", {
             "providerId": providerId,
             "categoryId": saveServiceData.categoryId,
@@ -174,12 +160,12 @@
             "status": saveServiceData.status,
             "min": Number(saveServiceData.min),
             "max": Number(saveServiceData.max),
-            "description": description,
+            "description": saveServiceData.description,
             "originalRate": Number(saveServiceData.originalRate)
         }).then(res => {
             if (res === null) return
             alert("서비스를 저장하였습니다.")
-            toggleModal()
+            toggleModal(true)
         })
     }
 </script>
@@ -189,43 +175,29 @@
         <div class="modal-content">
             <div class="modal-header bg-pantone">
                 <h4 class="modal-title"><i
-                        class="fa fa-edit"></i> { isUpdate ? `Edit Service[${apiService.serviceId}]` : "Add new"}</h4>
+                        class="fa fa-edit"></i> { isUpdate ? `서비스 수정[${saveServiceData.serviceId}]` : "서비스 추가"}</h4>
                 <button aria-label="Close" class="close" data-dismiss="modal" on:click={() => toggleModal()} type="button"></button>
             </div>
             <div class="form">
-                <input name="id" type="hidden" value="{isUpdate ? apiService.serviceId : ''}"/>
-                <input name="api_service_id" type="hidden" value="{isUpdate ? apiService.apiServiceId : ''}"/>
-                <input name="api_service_type" type="hidden" value="{ isUpdate ? apiService.type : '' }"/>
-                <input name="api_service_dripfeed" type="hidden" value="{isUpdate ? apiService.dripfeed : ''}"/>
-                <input name="api_service_refill" type="hidden" value="{isUpdate ? apiService.refill : ''}"/>
                 <div class="modal-body">
                     <div class="row justify-content-md-center">
                         <div class="col-md-12 col-sm-12 col-xs-12 emoji-picker-container">
                             <div class="form-group">
-                                <label>Service name</label>
-                                <input class="form-control" data-emojiable="true" name="name"
-                                       type="text" value="{ isUpdate ? apiService.name : '' }"/>
+                                <label for="name">서비스 이름</label>
+                                <input class="form-control" data-emojiable={!isUpdate} id="name"
+                                       type="text" bind:value={saveServiceData.name}/>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Category</label>
-                                <select class="form-control" name="category" bind:value={saveServiceData.categoryId}>
-                                    <option value="0" selected={!isUpdate}>Choose Service</option>
+                                <label for="category">카테고리</label>
+                                <select class="form-control" id="category" bind:value={saveServiceData.categoryId}>
                                     {#each category as e}
                                         <option value="{e.categoryId}"
-                                                selected={isUpdate ? (apiService.categoryId === e.categoryId) : false}>
+                                                selected={isUpdate ? (saveServiceData.categoryId === e.categoryId) : false}>
                                             {e.name}
                                         </option>
                                     {/each}
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label>Mode</label>
-                                <select class="form-control" name="add_type">
-                                    <option selected value="api">API</option>
                                 </select>
                             </div>
                         </div>
@@ -233,11 +205,11 @@
                             <fieldset class="form-fieldset api-mode">
                                 <div class="">
                                     <div class="form-group">
-                                        <label>Provider</label>
-                                        <select class="form-control" name="api_provider_id" bind:value={providerId} on:change={() => categoriesByProvider()}>
+                                        <label for="api_provider_id">도매처</label>
+                                        <select class="form-control" id="api_provider_id" bind:value={providerId} on:change={() => categoriesByProvider()}>
                                             {#each providers as e}
                                                 <option value="{ e.providerId }"
-                                                        selected={isUpdate ? (apiService.providerId === e.providerId) : false }>
+                                                        selected={isUpdate ? (saveServiceData.providerId === e.providerId) : false }>
                                                     {e.name}
                                                 </option>
                                             {/each}
@@ -248,8 +220,8 @@
                                     <div class="dimmer">
                                         <div class="loader"></div>
                                         <div class="dimmer-content">
-                                            <label>Category</label>
-                                            <select class="form-control" on:change={() => servicesByCategory()} bind:value={searchCategory}>
+                                            <label for="categoryName">도매처 카테고리</label>
+                                            <select class="form-control" id="categoryName" on:change={() => servicesByCategory()} bind:value={searchCategory}>
                                                     <option value="0">Choose category</option>
                                                     {#each providerCategory as c }
                                                         <option value="{encodeURIComponent(c)}">{c}</option>
@@ -262,8 +234,8 @@
                                     <div class="dimmer">
                                         <div class="loader"></div>
                                         <div class="dimmer-content">
-                                            <label>Service id</label>
-                                            <input class="form-control" name="serviceId" type="text" bind:value={searchServiceId} >
+                                            <label for="serviceId">도매처 서비스 아이디</label>
+                                            <input class="form-control" id="serviceId" type="text" bind:value={searchServiceId} >
                                             <br/>
                                             <input class="form-control" type="button" value="검색하기" on:click={() => searchServiceById()}>
                                         </div>
@@ -274,31 +246,46 @@
                                     <div class="dimmer">
                                         <div class="loader"></div>
                                         <div class="dimmer-content">
-                                            <label>Service</label>
-                                            <select class="form-control" id="services" bind:value={apiServiceId}
-                                                    on:change={() => updateService()} name="api_service_id"
-                                                    bind:this={servicesTag}>
-                                                {#each services as s}
+                                            <label for="services">도매처 서비스</label>
+                                            <select class="form-control" id="services" bind:value={saveServiceData.apiServiceId}
+                                                    on:change={() => syncService()} name="api_service_id">
+                                                {#each apiServices as s}
                                                     {intro = `ID${s.service} - (${s.rate}) - ${s.name}`}
-                                                    <option value={s.service}>{intro.length > 72 ? intro.slice(0, 72) + "..." : intro}</option>
+                                                    {Number(searchServiceId) === Number(s.service)}
+                                                    <option value={s.service} selected="{Number(searchServiceId) === Number(s.service)}">
+                                                        {intro.length > 72 ? intro.slice(0, 72) + "..." : intro}
+                                                    </option>
                                                 {/each}
                                             </select>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="">
-                                    <div class="form-group">
-                                        <label>Original Rate per 1000</label>
-                                        <input class="form-control" name="original_price" readonly={true} type="text" bind:value={saveServiceData.originalRate} />
+                                <div class="row justify-content-md-center">
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="min">도매처 최소 주문 수량</label>
+                                            <input class="form-control" id="min" type="number" readonly max="{apiMin}" bind:value={apiMin}/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="max">도매처 최대 주문 수량</label>
+                                            <input class="form-control" id="max" type="number" readonly max="{apiMax}" bind:value={apiMax}/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="rate">도매처 1000개 당 금액($)</label>
+                                            <input class="form-control" id="rate" type="text" readonly bind:value={saveServiceData.originalRate}/>
+                                        </div>
                                     </div>
                                 </div>
                             </fieldset>
                             <fieldset class="form-fieldset manual-mode d-none">
                                 <div class="">
                                     <div class="form-group">
-                                        <label>Service Type</label>
-                                        <select class="form-control" name="service_type" bind:value={type}>
+                                        <label for="service_type">서비스 타입</label>
+                                        <select class="form-control" id="service_type" bind:value={type}>
                                             <option value="default">Default</option>
                                             <option value="subscriptions">Subscriptions</option>
                                             <option value="custom_comments">Custom comments</option>
@@ -313,57 +300,55 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="">
+                                <div>
                                     <div class="form-group">
-                                        <label>Dripdfeed</label>
-                                        <select class="form-control" name="dripfeed">
-                                            <option value="0">Deactive</option>
-                                            <option value="1">Active</option>
+                                        <label for="dripfeed">Dripdfeed</label>
+                                        <select class="form-control" id="dripfeed">
+                                            <option value="DEACTIVE">비활성화</option>
+                                            <option value="ACTIVE">활성화</option>
                                         </select>
-
                                     </div>
                                 </div>
                             </fieldset>
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Min order</label>
-                                <input class="form-control" name="min" type="number" bind:value={saveServiceData.min}/>
+                                <label for="min">최소 주문 수량</label>
+                                <input class="form-control" id="min" type="number" min="{apiMin}" max="{apiMax}" bind:value={saveServiceData.min}/>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Max order</label>
-                                <input class="form-control" name="max" type="number" bind:value={saveServiceData.max}/>
+                                <label for="max">최대 주문 수량</label>
+                                <input class="form-control" id="max" type="number" min={apiMin} max="{apiMax}" bind:value={saveServiceData.max}/>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Rate per 1000</label>
-                                <input class="form-control" name="price" type="text" bind:value={saveServiceData.rate}/>
-
+                                <label for="rate">1000개 당 금액 설정(₩)</label>
+                                <input class="form-control" id="rate" type="text" bind:value={saveServiceData.rate}/>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Status</label>
-                                <select class="form-control" name="status">
-                                    <option value="1">Active</option>
-                                    <option value="0">Deactive</option>
+                                <label for="status">활성화/비활성화</label>
+                                <select class="form-control" id="status">
+                                    <option value="ACTIVE">활성화</option>
+                                    <option value="DEACTIVE">비활성화</option>
                                 </select>
 
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Description</label>
-                                <textarea class="form-control" cols="40" name="desc" rows="10" bind:value={ description }></textarea>
+                                <label for="description">소개글</label>
+                                <textarea id="description" class="form-control" cols="40" name="desc" rows="10" bind:value={saveServiceData.description}></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary btn-min-width mr-1 mb-1" type="submit" on:click={() => saveService()}>Save</button>
+                    <button class="btn btn-primary btn-min-width mr-1 mb-1" type="submit" on:click={() => isUpdate ? updateService() : saveService()}>Save</button>
                     <button class="btn btn-dark" data-dismiss="modal" type="button" on:click={() => toggleModal()}>Close</button>
                 </div>
             </div>
