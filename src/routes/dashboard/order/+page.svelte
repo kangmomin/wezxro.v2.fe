@@ -3,11 +3,12 @@
     import { onMount } from 'svelte';
     import { api } from '$lib/util/ApiProvider';
 
-    let orders: OrderListDto[]|null = []
+    let orders: OrderListDto[] = []
 
     onMount(async () => {
-        orders = await api.get("/o/list");
-        if (orders === null) return;
+        let res = await api.get("/o/list");
+        if (res === null) return;
+        orders = res.data
     })
 </script>
 
