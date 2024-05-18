@@ -155,7 +155,7 @@
                 </li>
                 <h6 class="navbar-heading first"><span class="text">서비스 및 주문 관리</span></h6>
                 <li class="nav-item">
-                    <a class="nav-link " class:active={$page.url.pathname === '/admin/order'} href="./order" data-toggle="tooltip" data-placement="right" title="주문 관리">
+                    <a class="nav-link " class:active={$page.url.pathname === '/admin/orders'} href="./orders" data-toggle="tooltip" data-placement="right" title="주문 관리">
                     <span class="nav-icon">
                 <i class="fe fe-shopping-cart"></i>
               </span>
