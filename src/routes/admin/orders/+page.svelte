@@ -3,8 +3,34 @@
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider";
     import type AdminOrderListDto from "$lib/types/order/AdminOrderListDto";
+    import UpdateOrder from "./UpdateOrder.svelte";
 
     let orders: AdminOrderListDto[] = []
+    let modalOpen: boolean = false
+    const updateOrderDtoInit = (): AdminOrderListDto => {
+        return {
+            apiOrderId: 0,
+            charge: 0,
+            count: 0,
+            createdAt: new Date(),
+            email: "",
+            link: "",
+            orderId: 0,
+            providerName: "",
+            remain: 0,
+            serviceId: 0,
+            serviceName: "",
+            startCount: 0,
+            status: {
+                status: "",
+                charge: 0,
+                count: 0,
+                date: ""
+            }
+        }
+    }
+    let updateOrderDto: AdminOrderListDto = updateOrderDtoInit()
+
 
     onMount(() => {
         syncOrders()
@@ -17,6 +43,15 @@
             orders = res
         })
     }
+
+    const toggleModal = (orderInfo: AdminOrderListDto|null, isDone: boolean = false) => {
+        updateOrderDto = orderInfo ?? updateOrderDtoInit()
+        modalOpen = !modalOpen
+
+        if (isDone) syncOrders()
+    }
+
+    const deleteOrder = (orderId: number) => {}
 </script>
 
 <style>
@@ -25,6 +60,14 @@
         font-weight: 400;
     }
 </style>
+
+<div class="row" id="result_notification">
+    {#if modalOpen }
+        <UpdateOrder orderInfo={updateOrderDto} toggleModal={toggleModal}></UpdateOrder>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+</div>
+
 <div class="page-title m-b-20">
     <div class="row justify-content-between">
         <div class="col-md-2">
@@ -79,7 +122,8 @@
                             </select>
                             <button class="btn btn-primary btn-square btn-search" type="button"><span
                                     class="fe fe-search"></span></button>
-                            <button class="btn btn-outline-danger btn-square btn-clear d-none" data-original-title="Clear"
+                            <button class="btn btn-outline-danger btn-square btn-clear d-none"
+                                    data-original-title="Clear"
                                     data-placement="bottom" data-toggle="tooltip" title="" type="button"><span
                                     class="fe fe-x"></span>
                             </button>
@@ -133,8 +177,8 @@
                                 </label>
                             </div>
                         </th>
-                        <th class="">Order ID</th>
-                        <th class="">user</th>
+                        <th class="text-center">Order ID</th>
+                        <th class="text-center">user</th>
                         <th class="text-center">Order Details</th>
                         <th class="text-center">Created</th>
                         <th class="text-center">Status</th>
@@ -149,7 +193,7 @@
                                 <div class="custom-controls-stacked">
                                     <label class="form-check">
                                         <input type="checkbox" class="form-check-input check-item check_1"
-                                               name="ids[]" value="order.orderId">
+                                               name="ids[]" value="{order.orderId}">
                                         <span class="custom-control-label"></span>
                                     </label>
                                 </div>
@@ -166,30 +210,35 @@
                                 <div>
                                     <ul style="margin: 0px;">
                                         <li>Provider: {order.providerName} (ID:{order.apiOrderId})</li>
-                                        <li>Link: <a href="https://anon.ws/?order.link" target="_blank">{order.link}</a>
+                                        <li>Link: <a href="https://anon.ws/?{order.link}"
+                                                     target="_blank">{order.link}</a>
                                         </li>
                                         <li>Quantity: {Number(order.count).toLocaleString()}</li>
                                         <li>Charge: ₩{order.charge}
-<!--                                            (0.0098 /<span class="text-info">199.9902</span>)-->
+                                            <!--                                            (0.0098 /<span class="text-info">199.9902</span>)-->
                                         </li>
                                         <li>Start counter: {Number(order.startCount).toLocaleString()}</li>
                                         <li>Remain: {Number(order.remain).toLocaleString()}</li>
                                     </ul>
                                 </div>
                             </td>
-                            <td class="text-center w-10p text-muted">{order.createdAt}</td>
+                            <td class="text-center w-10p text-muted">{order.createdAt.toLocaleString("ko-KR", { timeZone: 'UTC' })}</td>
                             <td class="text-center w-10p"><span class="badge bg-green">{order.status}</span></td>
                             <td class="text-center w-5p">
                                 <div class="item-action dropdown">
-                                    <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                                            class="fe fe-more-vertical"></i></a>
-                                    <div class="dropdown-menu"><a href="/admin/order/update/order.orderId"
-                                                                  class="dropdown-item ajaxModal" data-confirm_ms=""><i
-                                            class="dropdown-icon fe fe-edit"></i>
-                                        Edit</a><a href="/admin/order/delete/order.orderId"
-                                                   class="dropdown-item ajaxDeleteItem"
-                                                   data-confirm_ms="정말로 삭제하시겠습니까?"><i
-                                            class="dropdown-icon fe fe-trash-2"></i> Delete</a></div>
+                                    <p data-toggle="dropdown" class="icon cursor-pointer">
+                                        <i class="fe fe-more-vertical"></i>
+                                    </p>
+                                    <div class="dropdown-menu">
+                                        <button on:click={() => toggleModal(order)} class="dropdown-item">
+                                            <i class="dropdown-icon fe fe-edit"></i>
+                                            수정
+                                        </button>
+                                        <button on:click={() => deleteOrder(order.orderId)} class="dropdown-item">
+                                            <i class="dropdown-icon fe fe-trash-2"></i>
+                                            삭제
+                                        </button>
+                                    </div>
                                 </div>
                             </td>
                         </tr>

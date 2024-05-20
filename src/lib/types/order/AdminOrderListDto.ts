@@ -1,4 +1,4 @@
-import type {OrderStatusCnt} from "$lib/types/OrderStatusCnt";
+import OrderStatus from "$lib/types/order/constant/OrderStatus";
 
 export default interface AdminOrderListDto {
     orderId: number,
@@ -13,5 +13,5 @@ export default interface AdminOrderListDto {
     startCount: number,
     remain: number,
     createdAt: Date,
-    status: OrderStatusCnt,
+    status: string,
 }
