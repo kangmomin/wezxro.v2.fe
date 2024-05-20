@@ -177,11 +177,11 @@
                                 </label>
                             </div>
                         </th>
-                        <th class="text-center">Order ID</th>
-                        <th class="text-center">user</th>
-                        <th class="text-center">Order Details</th>
-                        <th class="text-center">Created</th>
-                        <th class="text-center">Status</th>
+                        <th class="text-center">주문 ID</th>
+                        <th class="text-center">주문 고객</th>
+                        <th class="text-center">주문 정보</th>
+                        <th class="text-center">주문일</th>
+                        <th class="text-center">주문 상태</th>
                         <th class="text-center">관리</th>
                     </tr>
                     </thead>
@@ -209,16 +209,16 @@
                                 </div>
                                 <div>
                                     <ul style="margin: 0px;">
-                                        <li>Provider: {order.providerName} (ID:{order.apiOrderId})</li>
-                                        <li>Link: <a href="https://anon.ws/?{order.link}"
+                                        <li>도매처: {order.providerName} (ID:{order.apiOrderId})</li>
+                                        <li>링크: <a href="https://anon.ws/?{order.link}"
                                                      target="_blank">{order.link}</a>
                                         </li>
-                                        <li>Quantity: {Number(order.count).toLocaleString()}</li>
-                                        <li>Charge: ₩{order.charge}
+                                        <li>주문 수량: {Number(order.count).toLocaleString()}</li>
+                                        <li>주문 금액: ₩{order.charge}
                                             <!--                                            (0.0098 /<span class="text-info">199.9902</span>)-->
                                         </li>
-                                        <li>Start counter: {Number(order.startCount).toLocaleString()}</li>
-                                        <li>Remain: {Number(order.remain).toLocaleString()}</li>
+                                        <li>진행된 주문 수량: {Number(order.startCount).toLocaleString()}</li>
+                                        <li>남은 주문 수량: {Number(order.remain).toLocaleString()}</li>
                                     </ul>
                                 </div>
                             </td>
