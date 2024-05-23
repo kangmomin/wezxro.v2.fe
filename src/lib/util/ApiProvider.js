@@ -26,7 +26,7 @@ export const api = {
 async function request(method, endPoint, data = null) {
     try {
         let token = localStorage.getItem("accessToken");
-        if (!token) location.href = "/login"
+        if (!token && endPoint !== "/u/login" && endPoint !== "/u/join") location.href = "/login"
         const response = await axios({
             url: `${host}${endPoint}`,
             data: data === null ? data : JSON.stringify(data),
@@ -37,9 +37,11 @@ async function request(method, endPoint, data = null) {
             method: method
         })
 
-        console.log(response)
+        if (response.data.status === "ERROR" && endPoint !== "/u/login") {
+            if (response.data.data.code === "A204") {
+                unAuthorizedHandler()
+            }
 
-        if (response.data.status === "ERROR") {
             alert(response.data.data.message)
             return null
         }
