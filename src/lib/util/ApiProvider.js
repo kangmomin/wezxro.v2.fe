@@ -37,6 +37,13 @@ async function request(method, endPoint, data = null) {
             method: method
         })
 
+        console.log(response)
+
+        if (response.data.status === "ERROR") {
+            alert(response.data.data.message)
+            return null
+        }
+
         return response.data.data
     } catch (e) {
         console.log(e)
