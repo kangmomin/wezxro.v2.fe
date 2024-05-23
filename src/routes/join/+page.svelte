@@ -1,8 +1,26 @@
 
 <script>
+    import {api} from "$lib/util/ApiProvider.js";
+
     export let data
 
     const EN_NAME = data.props.EN_NAME
+    const joinInfo = {
+        email: "",
+        password: "",
+        name: "",
+        key: data.props.CLIENT_KEY
+    }
+
+    const join = async () => {
+        let res = await api.post("/u/join", joinInfo);
+        console.log(res)
+
+        if (res === null) return;
+
+        alert(res.message)
+        location.href = "/login"
+    }
 </script>
 
 <svelte:head>
@@ -83,8 +101,7 @@
                         </div>
                         <h4 style="font-weight: 700;">{EN_NAME}에 오신 것을 환영합니다.</h4>
                         <h6 class="font-weight-light" style="font-weight: 300;">서비스 이용을 위해 회원으로 가입해주세요.</h6>
-                        <form id="signin" class="pt-3 actionForm form" action="/u/join"
-                              data-redirect="/login" method="POST">
+                        <div id="signin" class="pt-3 ">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail">이름</label>
@@ -95,7 +112,7 @@
                       </span>
                                     </div>
                                     <input type="text" class="form-control form-control-lg border-left-0" name="name"
-                                           placeholder="이름을 입력해주세요.">
+                                           placeholder="이름을 입력해주세요." bind:value={joinInfo.name}>
                                 </div>
                             </div>
 
@@ -108,7 +125,7 @@
                       </span>
                                     </div>
                                     <input type="email" class="form-control form-control-lg border-left-0" name="email"
-                                           placeholder="이메일을 입력해주세요.">
+                                           placeholder="이메일을 입력해주세요." bind:value="{joinInfo.email}">
                                 </div>
                             </div>
 
@@ -124,20 +141,7 @@
                                     </div>
                                     <input type="hidden" class="form-control" name="key" id="key" value="{data.props.CLIENT_KEY}"/>
                                     <input type="password" class="form-control form-control-lg border-left-0" name="password"
-                                           placeholder="비밀번호를 입력해주세요." value="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputPassword">추천인 코드 (없으시면 공란)</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend bg-transparent">
-                      <span class="input-group-text bg-transparent border-right-0">
-                        <i class="ti-face-smile text-primary"></i>
-                      </span>
-                                    </div>
-                                    <input type="text" class="form-control form-control-lg border-left-0" name="referral" value=""
-                                           placeholder="추천인이 있을 경우 추천 번호를 입력해주세요.">
+                                           placeholder="비밀번호를 입력해주세요." bind:value={joinInfo.password}>
                                 </div>
                             </div>
 
@@ -151,15 +155,17 @@
                             </div>
 
                             <div class="my-3 form-footer">
-                                <button type="submit"
-                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">회원가입</button>
+                                <button
+                                        class="btn btn-block btn-primary btn-lg font-weight-medium"
+                                        on:click={() => join()}>
+                                    회원가입</button>
                             </div>
 
                             <div class="mt-4 font-weight-light">
                                 이미 가입하셨다면 바로 <a href="/login" class="text-primary">로그인</a>해주세요.
                             </div>
 
-                        </form>
+                        </div>
 
                     </div>
                 </div>

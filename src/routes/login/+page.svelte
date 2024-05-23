@@ -1,12 +1,29 @@
 <script>
+    import {api} from "$lib/util/ApiProvider.js";
+
     export let data
 
     const EN_NAME = data.props.EN_NAME
     import {onMount} from "svelte";
+    import {goto} from "$app/navigation";
 
     onMount(() => {
         AOS.init();
     })
+
+    const loginInfo = {
+        key: data.props.CLIENT_KEY,
+        password: "",
+        email: ""
+    }
+
+    const login = async () => {
+        const res = await api.post("/u/login", loginInfo)
+
+        if (res === null) return;
+        alert("로그인 완료됐습니다.")
+        await goto("/dashboard/statistic")
+    }
 </script>
 
 <svelte:head>
@@ -83,7 +100,7 @@
                         </div>
                         <h4 style="font-weight: 700;">{EN_NAME}에 오신 것을 환영합니다.</h4>
                         <h6 class="font-weight-light" style="font-weight: 300;">서비스 이용을 위해 로그인해주세요.</h6>
-                        <form id="signin" class="pt-3 actionForm" action="/u/login" data-redirect="/dashboard/statistic" method="POST">
+                        <div id="signin" class="pt-3">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail">이메일</label>
@@ -94,7 +111,7 @@
                     </span>
                                     </div>
                                     <input type="email" class="form-control form-control-lg border-left-0" name="email" id="email"
-                                           placeholder="이메일을 입력해주세요." value="" required>
+                                           placeholder="이메일을 입력해주세요." bind:value={loginInfo.email} required>
                                 </div>
                             </div>
 
@@ -106,22 +123,21 @@
                       <i class="ti-lock text-primary"></i>
                     </span>
                                     </div>
-                                    <input type="hidden" class="form-control" name="key" id="key" value="{data.props.CLIENT_KEY}"/>
                                     <input type="password" class="form-control form-control-lg border-left-0" name="password"
-                                           id="password" placeholder="비밀번호를 입력해주세요." value="" required>
+                                           id="password" placeholder="비밀번호를 입력해주세요." bind:value={loginInfo.password} required>
                                 </div>
                             </div>
 
                             <div class="my-3 form-footer">
                                 <button type="submit"
-                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">로그인</button>
+                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" on:click={() => login()}>로그인</button>
                                 <button on:click={() => location.href = '/demo-login'}
                                    class="btn btn-block btn-dark btn-lg font-weight-medium auth-form-btn">둘러보기</button>
                             </div>
                             <div class="mt-4 font-weight-light">
-                                아직 회원이 아니시라면 <a href="./join" class="text-primary">회원가입</a> 후 이용해주세요.
+                                아직 회원이 아니시라면 <a href="/join" class="text-primary">회원가입</a> 후 이용해주세요.
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 login-half-bg d-flex flex-row">
