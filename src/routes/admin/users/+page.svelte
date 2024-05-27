@@ -10,6 +10,7 @@
     import SetPassword from "./SetPassword.svelte";
     import BasicStatus from "$lib/types/common/BasicStatus";
     import SendMail from "./SendMail.svelte";
+    import {goto} from "$app/navigation";
 
     let userList: UserListDto[] = []
     let activeCnt = 0
@@ -103,6 +104,18 @@
 
             syncUserList()
         })
+    }
+
+    const viewUser = async (userId: number) => {
+        if (!confirm(`정말 해당 유저[${userId}]로 로그인 하시겠습니까?`)) return
+
+        let res = await api.post(`/admin/u/view-user/${userId}`);
+
+        if (res === null) return;
+        localStorage.setItem("accessToken", res.accessToken)
+        localStorage.setItem("refreshToken", res.refreshToken)
+        alert("로그인 완료됐습니다.")
+        await goto("/dashboard/statistic")
     }
 
     onMount(() => syncUserList())
@@ -305,11 +318,10 @@
                                             <i class="dropdown-icon fe fe-edit"></i>
                                             Edit
                                         </a>
-                                        <a href="./users/view_user/<%= a.userId %>"
-                                           class="dropdown-item ajaxViewUser" data-confirm_ms="">
+                                        <button class="dropdown-item" on:click={() => viewUser(a.userId)}>
                                             <i class="dropdown-icon fe fe-eye"></i>
-                                            View User
-                                        </a>
+                                            로그인하기
+                                        </button>
                                         <button style="cursor: pointer" class="dropdown-item"
                                                 on:click={() => toggleModal.addFund(a.userId, a.email)}>
                                             <i class="dropdown-icon fe fe-dollar-sign"></i>
