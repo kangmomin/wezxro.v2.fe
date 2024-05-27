@@ -14,7 +14,9 @@
     const toggleModal = (isDone: boolean = false) => {
         modalOpen = !modalOpen
         if (isDone) syncCategory()
-        updateCategoryDto = {categoryId: 0, name: "", sort: 0, status: 0}
+        setTimeout(() => {
+            updateCategoryDto = {categoryId: 0, name: "", sort: 0, status: 0}
+        }, 1000)
     }
 
     const syncCategory = () => {
