@@ -10,7 +10,8 @@
     let updateProviderId = 0
     $: modalOpen = false
 
-    const toggleModal = (providerId: number) => {
+    const toggleModal = (providerId: number, isDone: boolean = false) => {
+        if (isDone) syncData()
         updateProviderId = providerId
         modalOpen = !modalOpen
     }
@@ -19,15 +20,16 @@
         api.post(`/admin/p/sync/${providerId}`, {})
             .then((res) => res !== null ? alert("동기화하였습니다.") : null)
     }
-
-    onMount(async () => {
+    const syncData = () => {
         api.get("/admin/p/list").then(provider => {
             providers = provider
             providers.forEach((e) => {
                 e.status === 1 ? activeCnt++ : deactiveCnt++
             })
         })
-    })
+    }
+
+    onMount(() => syncData())
 </script>
 
 <div class="page-title m-b-20">
@@ -171,7 +173,9 @@
                             <td class="text-center w-10p">
                                 {p.balance}
                             </td>
-                            <td class="text-center w-15p"></td>
+                            <td class="text-center w-15p">
+                                {p.description}
+                            </td>
                             <td class="text-center w-10p"><label class="custom-switch">
                                 <input type="checkbox" name="item_status" data-id="{ p.providerId }"
                                        data-status={p.status} data-action="/admin/p/status/"
@@ -180,12 +184,9 @@
                             </label></td>
                             <td class="text-center w-20p">
                                 <div class="btn-group">
-                                    <a href="./provider/update/<%= p.providerId %>"
-                                       class="btn btn-icon btn-outline-info ajaxModal" data-confirm_ms=""
-                                       data-toggle="tooltip"
-                                       data-placement="bottom" title="Edit">
+                                    <button class="btn btn-icon btn-outline-info" on:click={() => toggleModal(p.providerId)}>
                                         <i class="fe fe-edit"></i>
-                                    </a>
+                                    </button>
                                     <a href="/admin/provider/balance/<%= p.providerId %>"
                                        class="btn btn-icon btn-outline-info ajaxUpdateApiProvider" data-confirm_ms=""
                                        data-toggle="tooltip"

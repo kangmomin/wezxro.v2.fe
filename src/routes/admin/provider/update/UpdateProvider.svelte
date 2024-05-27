@@ -10,33 +10,62 @@
     export let toggleModal: Function
 
     let provider: ProviderDetailDto = {
+        description: "",
         providerId: 0,
-        status: 0,
+        status: 1,
         name: providerId === 0 ? "" : "대기중",
         apiKey: providerId === 0 ? "" : "대기중",
         apiUrl: providerId === 0 ? "" : "대기중",
         balance: 0
     }
 
+    let providerName = ""
+
+    let isUpdate = false
+
     onMount(async () => {
         if (providerId === 0) return
-        api.get(`/p/detail/${providerId}`).then(p => {
+        isUpdate = true
+        api.get(`/admin/p/detail/${providerId}`).then(p => {
             if (p === undefined) return
             provider = p
+            providerName = provider.name
         })
+
     })
+
+    const saveProvider = async () => {
+        let res = await api.post("/admin/p/add", {
+            ...provider,
+            key: provider.apiKey,
+            url: provider.apiUrl
+        });
+
+        if (res === null) return
+        toggleModal(0, true)
+    }
+    const updateProvider = async () => {
+        let res = await api.patch("/admin/p/update", {
+            ...provider,
+            key: provider.apiKey,
+            url: provider.apiUrl
+        });
+
+        if (res === null) return
+        alert(res.message)
+
+        toggleModal(0, true)
+    }
 </script>
 
 <div id="main-modal-content" class={className} style={styleName}>
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header bg-pantone">
-                <h4 class="modal-title"><i class="fa fa-edit"></i>Edit ({ provider.name })</h4>
+                <h4 class="modal-title"><i class="fa fa-edit"></i>{isUpdate ? ` 도매처 수정(${providerName})` : " 도매처 추가"}</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" on:click={() => toggleModal(0)}></button>
             </div>
-            <form action="/admin/p/add" class="form actionForm"
-                  data-redirect="/admin/provider" method="POST">
-                <input type="hidden" name="id" value="{provider.providerId}" />
+            <div class="form">
                 <div class="modal-body">
                     <div class="row justify-content-md-center">
                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -48,51 +77,46 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" name="name" value="{provider.name}" class="form-control" />
-
+                                <label for="name">Name</label>
+                                <input type="text" id="name" bind:value="{provider.name}" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>API URL</label>
-                                <input type="text" name="url" value="{provider.apiUrl}"
+                                <label for="url">API URL</label>
+                                <input type="text" id="url" bind:value="{provider.apiUrl}"
                                        class="form-control" />
-
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>API Key</label>
-                                <input type="text" name="key" value="{provider.apiKey}"
-                                       class="form-control" />
-
+                                <label for="key">API Key</label>
+                                <input type="text" id="key" bind:value="{provider.apiKey}" class="form-control" />
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <label>Status</label>
-                                <select name="status" class="form-control">
-                                    <option value="1" selected={provider.status === 1}>Active</option>
-                                    <option value="0" selected={provider.status === 0}>Deactive</option>
+                                <label for="status">Status</label>
+                                <select id="status" class="form-control" bind:value={provider.status}>
+                                    <option value="ACTIVE" selected={provider.status === 1}>활성화</option>
+                                    <option value="DEACTIVE" selected={provider.status === 0}>비활성화</option>
                                 </select>
 
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" cols="40" rows="3" class="form-control"></textarea>
-
+                                <label for="description">설명</label>
+                                <textarea id="description" bind:value={provider.description} cols="40" rows="3" class="form-control"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-min-width mr-1 mb-1">Save</button>
-                    <button type="button" class="btn btn-dark" data-dismiss="modal" on:click={() => toggleModal(0)}>Close</button>
+                    <button type="button" class="btn btn-primary btn-min-width mr-1 mb-1" on:click={() => isUpdate ? updateProvider() : saveProvider()}>저장</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" on:click={() => toggleModal(0)}>취소</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

@@ -4,5 +4,6 @@ export default interface ProviderDetailDto {
 	name: string,
 	apiKey: string,
 	apiUrl: string,
-	balance: number
+	balance: number,
+	description: string
 }
