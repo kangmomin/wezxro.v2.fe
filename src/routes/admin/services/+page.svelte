@@ -61,6 +61,15 @@
 
     }
 
+    const deleteService = async (serviceId: number) => {
+        if (confirm("정말 삭제하시겠습니까?") && !confirm("복구 할 수 없습니다. 정말 하시겠습니까?")) return
+
+        let res = await api.delete(`/admin/s/delete/${serviceId}`);
+        if (res === null) return;
+        alert("서비스를 삭제하였습니다.")
+        syncData()
+    }
+
     const updateService = (service: ServiceListDto) => {
         updateServiceData = {
             serviceId: service.serviceId,
@@ -259,11 +268,10 @@
                                             <i class="dropdown-icon fe fe-trash"></i>
                                             Delete custom rates
                                         </a>
-                                        <a href="./services/delete/{e.serviceId}" class="dropdown-item ajaxDeleteItem"
-                                            data-confirm_ms="정말 서비스를 삭제하시겠습니까?" data-redirect="/admin/services">
+                                        <button on:click={() => deleteService(e.serviceId)} class="dropdown-item">
                                             <i class="dropdown-icon fe fe-trash-2"></i>
-                                            Delete
-                                        </a>
+                                            삭제
+                                        </button>
                                     </div>
                                 </div>
                             </td>
