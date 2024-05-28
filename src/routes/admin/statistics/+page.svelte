@@ -2,34 +2,32 @@
     import {onMount} from "svelte";
     import {Chart_template} from "$lib/util/ChartTemplate.js";
     import {api} from "$lib/util/ApiProvider.js";
+    import type {OrderStatusCnt} from "$lib/types/OrderStatusCnt";
+    import type StringObject from "$lib/types/common/StringObject";
 
-    export let data
+    let totalUsed = 0,
+        balance = 0,
+        totalOrder = 0,
+        orderStatusCnt: OrderStatusCnt[] = []
+    const status: StringObject = {
+        completed: 0,
+        canceled: 0,
+        processing: 0,
+        inprogress: 0,
+        partials: 0,
+        pending: 0
+    }
 
-    const {
-        totalCharge,
-        money,
-        totalOrder,
-        orderStatusCnt,
-        dailyOrderCount,
-    } = data
-
+    /**
+     * @typedef {{[key: string]: any}} DailyCharData
+     */
     onMount(async () => {
-        /** daily chart data */
-        let data: {[key: string]: any} = {}
-        const status = {
-            completed: 0,
-            canceled: 0,
-            processing: 0,
-            inprogress: 0,
-            partials: 0
-        }
+        const data = await api.get("/admin/dashboard")
 
-        data = await api.get("/dashboard")
-
-        dailyOrderCount.forEach(val => {
-            data[val.daily] = status
-            data[val.daily][val.status] = val.count
-        })
+        totalUsed = data.totalUsed
+        balance = data.balance
+        totalOrder = data.totalOrder
+        orderStatusCnt = data.orderStatusCnt
 
         const time = getPastWeekDates()
 
@@ -40,30 +38,34 @@
             "취소됨": [0, 0, 0, 0, 0, 0, 0],
             "대기중": [0, 0, 0, 0, 0, 0, 0],
             "부분완료됨": [0, 0, 0, 0, 0, 0, 0],
-            "접수중": [0, 0, 0, 0, 0, 0, 0]
+            "접수중": [0, 0, 0, 0, 0, 0, 0],
         }
 
-        for (const singleData in data) {
-            const idx = time.indexOf(singleData)
+        for (const singleData of orderStatusCnt) {
+            const idx = time.indexOf(singleData.date)
 
-            chartData.완료됨[idx] = data[singleData].completed || 0
-            chartData.처리중[idx] = data[singleData].processing || 0
-            chartData.취소됨[idx] = data[singleData].inprogress || 0
-            chartData.대기중[idx] = data[singleData].pending || 0
-            chartData.부분완료됨[idx] = data[singleData].partials || 0
-            chartData.취소됨[idx] = data[singleData].canceled || 0
+            if (singleData.status === "COMPLETED") chartData.완료됨[idx]++
+            if (singleData.status === "PROCESSING") chartData.처리중[idx]++
+            if (singleData.status === "INPROGRESS") chartData.접수중[idx]++
+            if (singleData.status === "PENDING") chartData.대기중[idx]++
+            if (singleData.status === "PARTIALS") chartData.부분완료됨[idx]++
+            if (singleData.status === "CANCELED") chartData.취소됨[idx]++
         }
+
+        orderStatusCnt.forEach(val => {
+            status[val.status.toLowerCase()]++
+        })
 
         setTimeout(() => {
             Chart_template.init()
             Chart_template.chart_spline('#orders_chart_spline', chartData);
             Chart_template.chart_pie('#orders_chart_pie', {
-                "완료됨": orderStatusCnt?.completed || 0,
-                "처리중": orderStatusCnt?.processing || 0,
-                "취소됨": orderStatusCnt?.canceled || 0,
-                "대기중": orderStatusCnt?.pending || 0,
-                "부분완료됨": orderStatusCnt?.partials || 0,
-                "접수중": orderStatusCnt?.inprogress || 0
+                "완료됨": status.completed || 0,
+                "처리중": status.processing || 0,
+                "취소됨": status.canceled || 0,
+                "대기중": status.pending || 0,
+                "부분완료됨": status.partials || 0,
+                "접수중": status.inprogress || 0
             });
         }, 100)
     });
@@ -105,7 +107,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">₩{money || 0}</h4>
+                                <h4 class="m-0 text-right number">₩{balance || 0}</h4>
                                 <small class="text-muted ">예치금 잔액</small>
                             </div>
                         </div>
@@ -120,7 +122,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">₩{totalCharge || 0}</h4>
+                                <h4 class="m-0 text-right number">₩{totalUsed || 0}</h4>
                                 <small class="text-muted ">총 사용 금액</small>
                             </div>
                         </div>
@@ -206,7 +208,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt?.completed || 0}</h4>
+                                <h4 class="m-0 text-right number">{status.completed}</h4>
                                 <small class="text-muted ">완료됨</small>
                             </div>
                         </div>
@@ -221,7 +223,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt?.processing || 0}</h4>
+                                <h4 class="m-0 text-right number">{status.processing}</h4>
                                 <small class="text-muted ">처리중</small>
                             </div>
                         </div>
@@ -236,7 +238,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt?.inprogress || 0}</h4>
+                                <h4 class="m-0 text-right number">{status.inprogress}</h4>
                                 <small class="text-muted ">접수중</small>
                             </div>
                         </div>
@@ -251,7 +253,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt?.pending || 0}</h4>
+                                <h4 class="m-0 text-right number">{status.pending}</h4>
                                 <small class="text-muted ">대기중</small>
                             </div>
                         </div>
@@ -266,7 +268,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt?.partials || 0}</h4>
+                                <h4 class="m-0 text-right number">{status.partials}</h4>
                                 <small class="text-muted ">부분완료됨</small>
                             </div>
                         </div>
@@ -281,7 +283,7 @@
                                 </span>
                         <div class="d-flex order-lg-2 ml-auto">
                             <div class="ml-2 d-lg-block text-right">
-                                <h4 class="m-0 text-right number">{orderStatusCnt?.canceled || 0}</h4>
+                                <h4 class="m-0 text-right number">{status.canceled}</h4>
                                 <small class="text-muted ">취소됨</small>
                             </div>
                         </div>
