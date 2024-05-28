@@ -215,12 +215,6 @@
                                        data-placement="bottom" title="Sync services">
                                         <i class="fe fe-refresh-cw"></i>
                                     </button>
-                                    <a href="./provider/services/<%= p.providerId %>"
-                                       class="btn btn-icon btn-outline-info "
-                                       data-confirm_ms="" data-toggle="tooltip" data-placement="bottom"
-                                       title="Services Lists">
-                                        <i class="fe fe-list"></i>
-                                    </a>
                                     <button class="btn btn-icon btn-outline-info" on:click={() => deleteProvider(p.providerId)}>
                                         <i class="fe fe-trash-2"></i>
                                     </button>
