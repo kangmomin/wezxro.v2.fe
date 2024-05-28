@@ -38,6 +38,18 @@
     }
 
     onMount(() => syncData())
+
+    const deleteProvider = async (providerId: number) => {
+        if (confirm("정말 삭제하시겠습니까? 하위 서비스까지 전부 삭제됩니다.") &&
+            !confirm("추후 데이터를 복구할 수 없습니다. 삭제하시겠습니까?")) return
+
+        const res = await api.delete(`/admin/p/delete/${providerId}`);
+
+        if (res === null) return;
+        alert(res.message)
+
+        syncData()
+    }
 </script>
 
 <div class="page-title m-b-20">
@@ -209,12 +221,9 @@
                                        title="Services Lists">
                                         <i class="fe fe-list"></i>
                                     </a>
-                                    <a href="./provider/delete/<%= p.providerId %>"
-                                       class="btn btn-icon btn-outline-info ajaxDeleteItem"
-                                       data-confirm_ms="정말로 삭제하시겠습니까?" data-toggle="tooltip"
-                                       data-placement="bottom" title="Delete">
+                                    <button class="btn btn-icon btn-outline-info" on:click={() => deleteProvider(p.providerId)}>
                                         <i class="fe fe-trash-2"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
