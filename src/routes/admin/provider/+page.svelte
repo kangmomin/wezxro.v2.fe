@@ -20,6 +20,14 @@
         api.post(`/admin/p/sync/${providerId}`, {})
             .then((res) => res !== null ? alert("동기화하였습니다.") : null)
     }
+    const syncBalance = async (providerId: number) => {
+        let res = await api.post(`/admin/p/sync/balance/${providerId}`);
+        if (res === null) return
+
+        alert(res.message)
+        syncData()
+    }
+
     const syncData = () => {
         api.get("/admin/p/list").then(provider => {
             providers = provider
@@ -187,12 +195,9 @@
                                     <button class="btn btn-icon btn-outline-info" on:click={() => toggleModal(p.providerId)}>
                                         <i class="fe fe-edit"></i>
                                     </button>
-                                    <a href="/admin/provider/balance/<%= p.providerId %>"
-                                       class="btn btn-icon btn-outline-info ajaxUpdateApiProvider" data-confirm_ms=""
-                                       data-toggle="tooltip"
-                                       data-placement="bottom" title="" data-original-title="Update balance">
+                                    <button on:click={() => syncBalance(p.providerId)} class="btn btn-icon btn-outline-info">
                                         <i class="fe fe-dollar-sign"></i>
-                                    </a>
+                                    </button>
                                     <button class="btn btn-icon btn-outline-info"
                                        data-toggle="tooltip" on:click={() => syncProvider(p.providerId)}
                                        data-placement="bottom" title="Sync services">
