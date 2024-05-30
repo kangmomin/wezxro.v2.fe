@@ -101,6 +101,7 @@
         apiMin = s.min
         saveServiceData.originalRate = s.rate
         saveServiceData.apiServiceId = s.service!!
+        saveServiceData.type = s.type!!
 
         return
     }
