@@ -77,6 +77,7 @@
                 dripfeed: false
             }
 
+
             isUpdate = true
 
             syncService()
@@ -106,16 +107,16 @@
         return
     }
 
-    const servicesByCategory = () => {
+    const servicesByCategory = async () => {
         if (providerId === 0) alert("도매처를 먼저 선택하여주십시오.")
+        apiServices = []
+        setTimeout(async () => {
+            const res = await api.get(`/admin/p/services/${providerId}?category=${searchCategory}`)
+            if (res === null) return;
 
-        setTimeout(() => {
-            api.get(`/admin/p/services/${providerId}?category=${searchCategory}`).then(s => {
-                    if (s === null) return;
-
-                    apiServices = s;
-                })
-        }, 100)
+            saveServiceData.apiServiceId = 0
+            apiServices = res
+        }, 1)
     }
 
     const syncService = () => {
@@ -223,7 +224,6 @@
                                         <div class="dimmer-content">
                                             <label for="categoryName">도매처 카테고리</label>
                                             <select class="form-control" id="categoryName" on:change={() => servicesByCategory()} bind:value={searchCategory}>
-                                                    <option value="0">Choose category</option>
                                                     {#each providerCategory as c }
                                                         <option value="{encodeURIComponent(c)}">{c}</option>
                                                     {/each}
