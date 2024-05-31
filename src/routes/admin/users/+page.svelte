@@ -11,6 +11,7 @@
     import BasicStatus from "$lib/types/common/BasicStatus";
     import SendMail from "./SendMail.svelte";
     import {goto} from "$app/navigation";
+    import CustomRate from "./CustomRate.svelte";
 
     let userList: UserListDto[] = []
     let activeCnt = 0
@@ -28,7 +29,8 @@
         addFund: false,
         setFund: false,
         setPassword: false,
-        sendMail: false
+        sendMail: false,
+        customRate: false
     }
 
 
@@ -62,6 +64,12 @@
         sendMail: (userEmail: string) => {
             userMail = userEmail
             modalStatus.sendMail = !modalStatus.sendMail
+        },
+        customRate: (userEmail: string, userId: number) => {
+            updateUserInfo.email = userEmail
+            updateUserInfo.userId = userId
+
+            modalStatus.customRate = !modalStatus.customRate
         }
     }
 
@@ -141,6 +149,10 @@
     {/if}
     {#if modalStatus.sendMail}
         <SendMail userEmail="{userMail}" toggleModal="{toggleModal.sendMail}"></SendMail>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
+    {#if modalStatus.customRate}
+        <CustomRate u="{updateUserInfo}" toggleModal="{toggleModal.customRate}"></CustomRate>
         <div class="modal-backdrop fade show"></div>
     {/if}
 </div>
@@ -294,7 +306,7 @@
                                 </button>
                             </td>
                             <td class="text-center w-10p">
-                                <button type="button" class="btn btn-square btn-outline-info btn-sm">
+                                <button type="button" class="btn btn-square btn-outline-info btn-sm" on:click={() => toggleModal.customRate(a.email, a.userId)}>
                                     <i class="fe fe-plus mr-2"></i>Custom Rate
                                 </button>
                             </td>
