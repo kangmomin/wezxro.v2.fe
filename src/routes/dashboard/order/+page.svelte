@@ -8,7 +8,7 @@
     onMount(async () => {
         let res = await api.get("/o/list");
         if (res === null) return;
-        orders = res.data
+        orders = res
     })
 </script>
 
