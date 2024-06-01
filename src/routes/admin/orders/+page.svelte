@@ -4,6 +4,7 @@
     import {api} from "$lib/util/ApiProvider";
     import type AdminOrderListDto from "$lib/types/order/AdminOrderListDto";
     import UpdateOrder from "./UpdateOrder.svelte";
+    import {dateFormat} from "$lib/util/DateFormatter";
 
     let orders: AdminOrderListDto[] = []
     let modalOpen: boolean = false
@@ -198,11 +199,11 @@
                                     </label>
                                 </div>
                             </th>
-                            <td class="w-5p">
+                            <td class="w-5p text-center">
                                 {order.orderId}
                                 <div class="text-muted small"></div>
                             </td>
-                            <td class="text-muted w-10p">{order.email}</td>
+                            <td class="text-muted w-10p text-center">{order.email}</td>
                             <td>
                                 <div class="title">
                                     <h6>{order.serviceId} - {order.serviceName}</h6>
@@ -222,7 +223,9 @@
                                     </ul>
                                 </div>
                             </td>
-                            <td class="text-center w-10p text-muted">{order.createdAt.toLocaleString("ko-KR", { timeZone: 'UTC' })}</td>
+                            <td class="text-center w-10p text-muted">
+                                {dateFormat(order.createdAt)}
+                            </td>
                             <td class="text-center w-10p"><span class="badge bg-green">{order.status}</span></td>
                             <td class="text-center w-5p">
                                 <div class="item-action dropdown">
