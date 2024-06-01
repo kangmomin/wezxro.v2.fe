@@ -50,6 +50,13 @@
 
         syncData()
     }
+
+    const updateStatus = async (providerId: number, nowStatus: boolean) => {
+        if (nowStatus && !confirm("하위의 모든 서비스가 비활성화 됩니다. 그래도 비활성화 하시겠습니까?")) return
+        const res = await api.patch(`/admin/p/status/${providerId}`);
+        if (res === null) return;
+        alert(res.message)
+    }
 </script>
 
 <div class="page-title m-b-20">
@@ -196,12 +203,13 @@
                             <td class="text-center w-15p">
                                 {p.description}
                             </td>
-                            <td class="text-center w-10p"><label class="custom-switch">
-                                <input type="checkbox" name="item_status" data-id="{ p.providerId }"
-                                       data-status={p.status} data-action="/admin/p/status/"
-                                       class="custom-switch-input ajaxToggleItemStatus" checked={p.status === 1}>
-                                <span class="custom-switch-indicator"></span>
-                            </label></td>
+                            <td class="text-center w-10p">
+                                <label class="custom-switch">
+                                    <input type="checkbox" class="custom-switch-input"
+                                        on:change={() => updateStatus(p.providerId, p.status === 1)} checked="{p.status === 1}">
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </td>
                             <td class="text-center w-20p">
                                 <div class="btn-group">
                                     <button class="btn btn-icon btn-outline-info" on:click={() => toggleModal(p.providerId)}>
