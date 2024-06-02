@@ -5,5 +5,5 @@ export interface AdminDepositListDto {
 	email: string,
 	status: string,
 	note: string,
-	updatedAt: string
+	updatedAt: Date
 }
