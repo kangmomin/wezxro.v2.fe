@@ -77,6 +77,21 @@
         setTimeout(() => initUpdateDepositInfo(), 100)
     }
 
+    const deleteDeposit = async (depositId: string) => {
+        if (isNaN(depositId)) return alert("충전이 완료된 기록만 수정 가능합니다.")
+
+        if (confirm("충전 기록을 삭제하시겠습니까?") &&
+            !confirm("삭제 이후엔 되돌릴 수 없습니다.\n정말 삭제하시겠습니까?")) return
+
+        const res = await api.delete(`/admin/d/delete/${depositId}`);
+
+        if (res === null) return
+
+        alert(res.message)
+
+        syncData()
+    }
+
 </script>
 
 {#if modalStatus}
@@ -195,7 +210,7 @@
                                         <button class="dropdown-item" on:click={() => toggleModal(d)}>
                                             <i class="dropdown-icon fe fe-edit"></i> 수정
                                         </button>
-                                        <button class="dropdown-item">
+                                        <button class="dropdown-item" on:click={() => deleteDeposit(d.depositId)}>
                                             <i class="dropdown-icon fe fe-trash-2"></i> 삭제
                                         </button>
                                     </div>
