@@ -2,6 +2,7 @@
     import type {AdminDepositListDto} from "$lib/types/deposit/AdminDepositListDto";
     import {api} from "$lib/util/ApiProvider";
     import {onMount} from "svelte";
+    import {dateFormat} from "$lib/util/DateFormatter";
 
     let deposits: AdminDepositListDto[] = []
     let cancel = 0
@@ -15,7 +16,7 @@
 
         if (res === null) return
 
-        deposits = res.data
+        deposits = res
 
         pending = 0
         done = 0
@@ -129,13 +130,12 @@
                     {#each deposits as d, idx}
                         <tr class="tr_depoist{d.depositId}">
                             <td class="text-center text-muted">{idx}</td>
-                            <td>{d.email}</td>
+                            <td>{d.name}</td>
                             <td class="text-center w-10p">{d.depositId}</td>
                             <td class="text-center w-10p">무통장 입금</td>
                             <td class="text-center w-10p">{d.amount}</td>
-                            <td class="text-center w-5p text-muted"></td>
                             <td class="text-center w-10p">{d.note}</td>
-                            <td class="text-center w-10p text-muted">{d.updatedAt}</td>
+                            <td class="text-center w-10p text-muted">{dateFormat(d.updatedAt)}</td>
                             <td class="text-center w-5p">
                                 {#if (d.status === 'DONE')}
                                     <span class="badge bg-green-lt">결제완료</span>
@@ -147,15 +147,15 @@
                             </td>
                             <td class="text-center w-5p">
                                 <div class="item-action dropdown">
-                                    <button data-toggle="dropdown" class="icon">
+                                    <span data-toggle="dropdown" class="icon cursor-pointer">
                                         <i class="fe fe-more-vertical"></i>
-                                    </button>
+                                    </span>
                                     <div class="dropdown-menu">
                                         <button class="dropdown-item">
-                                            <i class="dropdown-icon fe fe-edit"></i> Edit
+                                            <i class="dropdown-icon fe fe-edit"></i> 수정
                                         </button>
                                         <button class="dropdown-item">
-                                            <i class="dropdown-icon fe fe-trash-2"></i> Delete
+                                            <i class="dropdown-icon fe fe-trash-2"></i> 삭제
                                         </button>
                                     </div>
                                 </div>

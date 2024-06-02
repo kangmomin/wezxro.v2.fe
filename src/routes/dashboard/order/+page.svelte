@@ -2,6 +2,7 @@
     import type OrderListDto from '$lib/types/order/OrderListDto';
     import { onMount } from 'svelte';
     import { api } from '$lib/util/ApiProvider';
+    import {dateFormat} from "$lib/util/DateFormatter";
 
     let orders: OrderListDto[] = []
 
@@ -128,7 +129,7 @@
                                     </div>
                                 </td>
                                 <td class="text-center w-10p">
-                                    { e.createdAt }
+                                    { dateFormat(e.createdAt) }
                                 </td>
                                 <td class="text-center w-10p"><span class="badge bg-green">
                             { e.status }
