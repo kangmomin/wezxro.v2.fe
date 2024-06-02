@@ -88,6 +88,18 @@
         isUpdate = true
         modalOpen = !modalOpen
     }
+
+    const updateStatus = async (serviceId: number) => {
+        let res = await api.patch(`/admin/s/status/${serviceId}`);
+
+        if (res === null) {
+            let e = document.getElementById(`statusSwitch${serviceId}`);
+            e.checked = !e.checked
+            return
+        }
+
+        alert(res.message)
+    }
 </script>
 
 <div class="page-title m-b-20">
@@ -245,14 +257,14 @@
                             <td class="text-center w-5p">
                                 {e.description.length > 10 ? e.description.slice(0, 10) + "..." : e.description}
                             </td>
-                            <td class="text-center w-5p"><label class="custom-switch">
-                                <input type="checkbox" name="item_status" data-id="{e.serviceId}"
-                                       data-status="{e.status}"
-                                       data-action="/admin/s/status/"
-                                       class="custom-switch-input ajaxToggleItemStatus"
-                                       checked={e.status === 1}>
-                                <span class="custom-switch-indicator"></span>
-                            </label></td>
+                            <td class="text-center w-5p">
+                                <label class="custom-switch">
+                                    <input type="checkbox" on:click={() => updateStatus(e.serviceId)}
+                                           id="statusSwitch{e.serviceId}"
+                                           class="custom-switch-input" checked={e.status === 1}>
+                                    <span class="custom-switch-indicator"></span>
+                                </label>
+                            </td>
                             <td class="text-center w-5p">
                                 <div class="item-action dropdown">
                                     <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
