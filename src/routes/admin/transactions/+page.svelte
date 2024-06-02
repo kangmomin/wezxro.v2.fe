@@ -3,11 +3,22 @@
     import {api} from "$lib/util/ApiProvider";
     import {onMount} from "svelte";
     import {dateFormat} from "$lib/util/DateFormatter";
+    import UpdateDeposit from "./UpdateDeposit.svelte";
 
     let deposits: AdminDepositListDto[] = []
+    let updateDepositInfo: AdminDepositListDto = {
+        amount: 0,
+        depositId: "",
+        email: "",
+        name: "",
+        note: "",
+        status: "",
+        updatedAt: new Date()
+    }
     let cancel = 0
     let pending = 0
     let done = 0
+    let modalStatus = false;
 
     const syncData = async (status: string | null = null) => {
         let endPoint = "/admin/d/list";
@@ -40,8 +51,38 @@
         syncData()
     })
 
+    const initUpdateDepositInfo = () => {
+        updateDepositInfo = {
+            amount: 0,
+            depositId: "",
+            email: "",
+            name: "",
+            note: "",
+            status: "",
+            updatedAt: new Date()
+        }
+    }
+
+    const toggleModal = (depositInfo: AdminDepositListDto|null, isDone = false) => {
+        if (isDone) {
+            syncData()
+            initUpdateDepositInfo()
+        }
+
+        if (depositInfo === null) return modalStatus = false
+
+        updateDepositInfo = depositInfo
+        modalStatus = !modalStatus
+
+        setTimeout(() => initUpdateDepositInfo(), 100)
+    }
+
 </script>
 
+{#if modalStatus}
+    <UpdateDeposit depositInfo={updateDepositInfo} toggleModal="{toggleModal}"></UpdateDeposit>
+    <div class="modal-backdrop fade show"></div>
+{/if}
 <div class="page-title m-b-20">
     <div class="row justify-content-between">
         <div class="col-md-2">
@@ -151,7 +192,7 @@
                                         <i class="fe fe-more-vertical"></i>
                                     </span>
                                     <div class="dropdown-menu">
-                                        <button class="dropdown-item">
+                                        <button class="dropdown-item" on:click={() => toggleModal(d)}>
                                             <i class="dropdown-icon fe fe-edit"></i> 수정
                                         </button>
                                         <button class="dropdown-item">
