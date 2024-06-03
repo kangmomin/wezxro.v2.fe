@@ -12,17 +12,32 @@
     import SendMail from "./SendMail.svelte";
     import {goto} from "$app/navigation";
     import CustomRate from "./CustomRate.svelte";
+    import {dateFormat} from "$lib/util/DateFormatter";
+    import UpdateAccount from "./UpdateAccount.svelte";
 
     let userList: UserListDto[] = []
     let activeCnt = 0
     let deactiveCnt = 0
     let userMail = ""
+    const initUpdateUserAllInfo = () => {
+        return {
+            createdAt: new Date(),
+            email: "",
+            money: 0,
+            name: "",
+            role: "",
+            staticRate: 0,
+            status: "",
+            userId: 0
+        }
+    }
     let updateFundUserInfo: UpdateMoneyDto = {
         email: "", balance: 0, password: "", userId: 0
     }
     let updateUserInfo: UpdateUserInfo = {
         email: '', staticRate: 0, userId: 0
     }
+    let updateUserAllInfo: UserListDto = initUpdateUserAllInfo()
 
     let modalStatus = {
         staticRate: false,
@@ -30,7 +45,8 @@
         setFund: false,
         setPassword: false,
         sendMail: false,
-        customRate: false
+        customRate: false,
+        updateAccount: false,
     }
 
 
@@ -70,6 +86,12 @@
             updateUserInfo.userId = userId
 
             modalStatus.customRate = !modalStatus.customRate
+        },
+        updateAccount: (user: UserListDto | null, isDone = false) => {
+            updateUserAllInfo = user ?? initUpdateUserAllInfo()
+
+            if (isDone) syncUserList()
+            modalStatus.updateAccount = !modalStatus.updateAccount
         }
     }
 
@@ -155,13 +177,18 @@
         <CustomRate u="{updateUserInfo}" toggleModal="{toggleModal.customRate}"></CustomRate>
         <div class="modal-backdrop fade show"></div>
     {/if}
+    {#if modalStatus.updateAccount}
+        <UpdateAccount user="{updateUserAllInfo}" toggleModal="{toggleModal.updateAccount}"></UpdateAccount>
+        <div class="modal-backdrop fade show"></div>
+    {/if}
 </div>
 
 <div class="page-title m-b-20">
     <div class="row justify-content-between">
         <div class="col-md-2">
             <h1 class="page-title">
-                <span class="fe fe-users"></span> 회원 관리
+                <span class="fe fe-users"></span>
+                회원 관리
             </h1>
         </div>
         <div class="col-md-3">
@@ -184,12 +211,20 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="btn-group w-30 m-b-10">
-                            <a class="btn " href="./users?status=3">All <span
-                                    class="badge badge-pill bg-azure">{userList.length}</span></a>
-                            <a class="btn " href="./users?status=1">Active <span
-                                    class="badge badge-pill bg-indigo">{activeCnt}</span></a>
+                            <a class="btn " href="./users?status=3">
+                                전체
+                                <span class="badge badge-pill bg-azure">
+                                    {userList.length}
+                                </span>
+                            </a>
+                            <a class="btn " href="./users?status=1">
+                                활성화
+                                <span class="badge badge-pill bg-indigo">
+                                    {activeCnt}
+                                </span>
+                            </a>
                             <a class="btn " href="./users?status=0">
-                                Deactive
+                                비활성화
                                 <span class="badge badge-pill bg-indigo">
                                     {deactiveCnt}
                                 </span>
@@ -302,16 +337,16 @@
                             <td class="text-center w-10p">{ a.money }</td>
                             <td class="text-center w-10p">
                                 <button type="button" class="btn btn-square btn-outline-info btn-sm" on:click={() => toggleModal.staticRate(a.userId, a.email, a.staticRate)}>
-                                    <i class="fe fe-plus mr-2"></i>Static Rate
+                                    <i class="fe fe-plus mr-2"></i>전체 감가액
                                 </button>
                             </td>
                             <td class="text-center w-10p">
                                 <button type="button" class="btn btn-square btn-outline-info btn-sm" on:click={() => toggleModal.customRate(a.email, a.userId)}>
-                                    <i class="fe fe-plus mr-2"></i>Custom Rate
+                                    <i class="fe fe-plus mr-2"></i>특정 감가액
                                 </button>
                             </td>
                             <td class="text-center text-muted w-5p">{a.role}</td>
-                            <td class="text-center w-15p">{a.createdAt}</td>
+                            <td class="text-center w-15p">{dateFormat(a.createdAt)}</td>
                             <td class="text-center w-5p">
                                 <label class="custom-switch">
                                     <input type="checkbox" name="item_status" class="custom-switch-input"
@@ -325,11 +360,10 @@
                                         <i class="fe fe-more-vertical"></i>
                                     </i>
                                     <div class="dropdown-menu">
-                                        <a href="./users/update/<%= a.userId %>"
-                                           class="dropdown-item ajaxModal" data-confirm_ms="">
+                                        <button class="dropdown-item" on:click={() => toggleModal.updateAccount(a)}>
                                             <i class="dropdown-icon fe fe-edit"></i>
-                                            Edit
-                                        </a>
+                                            수정
+                                        </button>
                                         <button class="dropdown-item" on:click={() => viewUser(a.userId)}>
                                             <i class="dropdown-icon fe fe-eye"></i>
                                             로그인하기
