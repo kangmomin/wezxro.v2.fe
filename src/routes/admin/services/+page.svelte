@@ -100,6 +100,14 @@
 
         alert(res.message)
     }
+
+    const deleteAllCustomRates = async (serviceId: number) => {
+        const res = await api.delete(`/admin/s/custom-rate/${serviceId}`);
+
+        if (res === null) return
+
+        alert(res.message)
+    }
 </script>
 
 <div class="page-title m-b-20">
@@ -267,19 +275,18 @@
                             </td>
                             <td class="text-center w-5p">
                                 <div class="item-action dropdown">
-                                    <a href="javascript:void(0)" data-toggle="dropdown" class="icon"><i
-                                            class="fe fe-more-vertical"></i></a>
+                                    <span data-toggle="dropdown" class="icon cursor-pointer">
+                                        <i class="fe fe-more-vertical"></i>
+                                    </span>
                                     <div class="dropdown-menu">
                                         <button class="dropdown-item" on:click={() => updateService(e)}>
                                             <i class="dropdown-icon fe fe-edit"></i>
                                             수정
                                         </button>
-                                        <a href="./services/delete_custom_rate/{e.serviceId}"
-                                            class="dropdown-item ajaxDeleteItem"
-                                            data-confirm_ms="Are you sure you want to delete custom rates for this service?">
+                                        <button class="dropdown-item" on:click={() => deleteAllCustomRates(e.serviceId)}>
                                             <i class="dropdown-icon fe fe-trash"></i>
-                                            Delete custom rates
-                                        </a>
+                                            개별 감가액 전체 삭제
+                                        </button>
                                         <button on:click={() => deleteService(e.serviceId)} class="dropdown-item">
                                             <i class="dropdown-icon fe fe-trash-2"></i>
                                             삭제
