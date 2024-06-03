@@ -15,7 +15,8 @@
         processing: 0,
         inprogress: 0,
         partials: 0,
-        pending: 0
+        pending: 0,
+        deleted: 0
     }
 
     /**
@@ -39,6 +40,7 @@
             "대기중": [0, 0, 0, 0, 0, 0, 0],
             "부분완료됨": [0, 0, 0, 0, 0, 0, 0],
             "접수중": [0, 0, 0, 0, 0, 0, 0],
+            "삭제됨": [0, 0, 0, 0, 0, 0, 0],
         }
 
         for (const singleData of orderStatusCnt) {
@@ -50,6 +52,7 @@
             if (singleData.status === "PENDING") chartData.대기중[idx]++
             if (singleData.status === "PARTIALS") chartData.부분완료됨[idx]++
             if (singleData.status === "CANCELED") chartData.취소됨[idx]++
+            if (singleData.status === "DELETED") chartData.삭제됨[idx]++
         }
 
         orderStatusCnt.forEach(val => {
@@ -65,7 +68,8 @@
                 "취소됨": status.canceled || 0,
                 "대기중": status.pending || 0,
                 "부분완료됨": status.partials || 0,
-                "접수중": status.inprogress || 0
+                "접수중": status.inprogress || 0,
+                "삭제됨": status.deleted || 0
             });
         }, 100)
     });
@@ -285,6 +289,21 @@
                             <div class="ml-2 d-lg-block text-right">
                                 <h4 class="m-0 text-right number">{status.canceled}</h4>
                                 <small class="text-muted ">취소됨</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 item">
+                <div class="card p-3">
+                    <div class="d-flex align-items-center">
+                        <span class="stamp stamp-md text-primary mr-3">
+                            <i class="fe fe-x-square"></i>
+                        </span>
+                        <div class="d-flex order-lg-2 ml-auto">
+                            <div class="ml-2 d-lg-block text-right">
+                                <h4 class="m-0 text-right number">{status.deleted}</h4>
+                                <small class="text-muted ">삭제됨</small>
                             </div>
                         </div>
                     </div>

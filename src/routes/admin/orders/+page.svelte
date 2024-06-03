@@ -52,7 +52,16 @@
         if (isDone) syncOrders()
     }
 
-    const deleteOrder = (orderId: number) => {}
+    const deleteOrder = async (orderId: number) => {
+        if (confirm("정말 삭제하시겠습니까?") && !confirm("복구할 수 없습니다.")) return
+
+        const res = await api.delete(`/admin/o/delete/${orderId}`);
+
+        if (res === null) return;
+
+        alert(res.message)
+        syncOrders()
+    }
 </script>
 
 <style>
