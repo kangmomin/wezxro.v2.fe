@@ -14,21 +14,33 @@
 
     })
 
-    const updateOrder = () => {
-
-        console.log(`newOrderInfo: ${JSON.stringify(newOrderInfo)}`)
-        console.log(`orderInfo: ${JSON.stringify(orderInfo)}`)
-
+    const updateOrder = async () => {
         if (newOrderInfo.status !== orderInfo.status &&
-            newOrderInfo.status === OrderStatus.CANCELED) cancelOrder(orderInfo.orderId)
+            newOrderInfo.status === OrderStatus.CANCELED) {
+            let cancelRes = await cancelOrder(orderInfo.orderId);
+
+            if (cancelRes !== null) return
+        }
+
+        const res = await api.patch("/admin/o/update", {
+            orderId: newOrderInfo.orderId,
+            startCnt: newOrderInfo.startCount,
+            remains: newOrderInfo.remain,
+            status: newOrderInfo.status,
+            link: newOrderInfo.link
+        })
+
+        if (res === null) return
+        alert(res.message)
+
+        toggleModal(null, true)
     }
 
     const cancelOrder = async (orderId: number) => {
         let res = await api.patch(`/admin/o/cancel/${orderId}`);
 
-        if (res === null) return;
-
-        alert(res.message)
+        if (res === null) return "error";
+        return null
     }
 
 </script>
