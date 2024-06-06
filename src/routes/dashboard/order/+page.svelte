@@ -119,7 +119,7 @@
                                             </h6>
                                         </div>
                                         <div>
-                                            주문 링크 | <a href="https://anon.ws/?{ e.link }" target="_blank">
+                                            주문 링크 | <a href="{ e.link }" target="_blank">
                                             { e.link }
                                         </a><br>주문 수량 | { e.count }<br>
                                             주문 금액 | { e.charge }원<br>
