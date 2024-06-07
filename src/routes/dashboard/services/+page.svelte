@@ -92,7 +92,7 @@
                                 <div>{ s.rate }</div>
                             </td>
                             <td class="text-center w-10p text-muted">{ s.min } / { s.max }</td>
-                            <td class="text-center w-5p">
+                            <td class="text-center w-20p">
                                 { s.description.length > 50 ? s.description.substring(0, 50) + '...' : s.description}
                             </td>
                         </tr>
