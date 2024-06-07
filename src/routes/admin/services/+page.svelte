@@ -165,18 +165,22 @@
                         <button class="btn btn-outline-primary dropdown-toggle"
                                 data-toggle="dropdown" type="button">Actions <span
                                 class="fe fe-chevrons-down"></span></button>
-                        <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item ajaxActionOptions"
-                                                                          data-type="active"
-                                                                          href="./services/bulk_action/active"><i
-                                class="dropdown-icon fe fe-check-square"></i> Active</a><a
-                                class="dropdown-item ajaxActionOptions" data-type="deactive"
-                                href="./services/bulk_action/deactive"><i class="dropdown-icon fe fe-x-square"></i>
-                            Deactive
-                            All</a><a class="dropdown-item ajaxActionOptions" data-type="delete_custom_rates"
-                                      href="./services/bulk_action/delete_custom_rates"><i class="dropdown-icon fe fe-trash"></i>
-                            Delete custom
-                            rates</a><a class="dropdown-item ajaxActionOptions" data-type="delete"
-                                        href="./services/bulk_action/delete">
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item ajaxActionOptions" data-type="active" href="./services/bulk_action/active">
+                                <i class="dropdown-icon fe fe-check-square"></i>
+                                Active
+                            </a>
+                            <a class="dropdown-item ajaxActionOptions" data-type="deactive"
+                                href="./services/bulk_action/deactive">
+                                <i class="dropdown-icon fe fe-x-square"></i>
+                                Deactive All
+                            </a>
+                            <a class="dropdown-item ajaxActionOptions" data-type="delete_custom_rates"
+                              href="./services/bulk_action/delete_custom_rates">
+                                <i class="dropdown-icon fe fe-trash"></i>
+                                Delete custom rates
+                            </a>
+                            <a class="dropdown-item ajaxActionOptions" data-type="delete" href="./services/bulk_action/delete">
                             <i class="dropdown-icon fe fe-trash-2"></i> Delete</a>
                         </div>
                     </div>
@@ -262,7 +266,7 @@
                             <td class="text-center w-10p text-muted">
                                 {e.min} / {e.max}
                             </td>
-                            <td class="text-center w-5p">
+                            <td class="text-center w-20p">
                                 {e.description.length > 10 ? e.description.slice(0, 10) + "..." : e.description}
                             </td>
                             <td class="text-center w-5p">
