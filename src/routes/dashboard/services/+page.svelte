@@ -47,7 +47,7 @@
         <div class="col-md-3">
             <div class="form-group ">
                 <select class="form-control order_by" name="status" bind:value={selectedCategory}>
-                    <option value="0" selected={selectedCategory === 0}>전체 카테고리</option>
+                    <option value="0">전체 카테고리</option>
                     { #each category as c }
                         <option value="{ c.categoryId }">{ c.name }</option>
                     {/each}
@@ -60,7 +60,7 @@
     <div class="col-md-12 col-xl-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">테스트</h3>
+                <h3 class="card-title">{selectedCategory === 0 ? "전체 카테고리" : category[selectedCategory].name}</h3>
                 <div class="card-options">
                     <div class="card-options-collapse" data-toggle="card-collapse">
                         <i class="fe fe-chevron-up"></i>
@@ -92,7 +92,9 @@
                                 <div>{ s.rate }</div>
                             </td>
                             <td class="text-center w-10p text-muted">{ s.min } / { s.max }</td>
-                            <td class="text-center w-5p">{ s.description }</td>
+                            <td class="text-center w-5p">
+                                { s.description.length > 50 ? s.description.substring(0, 50) + '...' : s.description}
+                            </td>
                         </tr>
                     {/each}
                     </tbody>

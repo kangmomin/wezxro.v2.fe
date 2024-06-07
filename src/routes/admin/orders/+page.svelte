@@ -220,7 +220,7 @@
                                 <div>
                                     <ul style="margin: 0px;">
                                         <li>도매처: {order.providerName} (ID:{order.apiOrderId})</li>
-                                        <li>링크: <a href="https://anon.ws/?{order.link}"
+                                        <li>링크: <a href="{order.link}"
                                                      target="_blank">{order.link}</a>
                                         </li>
                                         <li>주문 수량: {Number(order.count).toLocaleString()}</li>
