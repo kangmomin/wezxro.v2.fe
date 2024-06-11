@@ -92,8 +92,12 @@
                                 <div>{ s.rate }</div>
                             </td>
                             <td class="text-center w-10p text-muted">{ s.min } / { s.max }</td>
-                            <td class="text-center w-5p">
-                                { s.description.length > 50 ? s.description.substring(0, 50) + '...' : s.description}
+                            <td class=" w-30p">
+                                <span class="">
+                                    {@html "▶" + (s.description)
+                                        .replace(/-/g, '<br>-')
+                                    .split("▶")[1]}
+                                </span>
                             </td>
                         </tr>
                     {/each}

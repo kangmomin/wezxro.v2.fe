@@ -33,7 +33,7 @@
     }
 
     onMount(async () => {
-        userCustomRate()
+        await userCustomRate()
 
         let res = await api.get("/admin/s/list");
 
@@ -42,7 +42,9 @@
     })
 
     const addCustomRate = (e: Event | null) => {
-        let serviceInfo = JSON.parse(e?.target?.value);
+        const text = e?.target?.value;
+        if (text === "0") return
+        let serviceInfo = JSON.parse(text);
 
         let isValid = true
         crs.forEach(cr => {
@@ -67,6 +69,18 @@
         });
     }
 
+    const deleteAllCustomRate = async () => {
+        if (!confirm("해당 유저의 모든 개별 감가액을 삭제하시겠습니까?")) return
+
+        const res = await api.delete(`/admin/u/custom-rate/all/${u.userId}`);
+
+        if (res === null) return
+
+        alert(res.message)
+
+        toggleModal()
+    }
+
 </script>
 <div class="modal show" id="main-modal-content" style="display: block">
     <div class="modal-dialog modal-lg">
@@ -82,6 +96,7 @@
                             <div class="form-group">
                                 <select name="service-id" on:change={addCustomRate}
                                         class="select-service-item form-control custom-select">
+                                    <option value='0'>서비스를 선택해주세요</option>
                                     {#each services as s}
                                         <option
                                                 value='{`{"serviceId":"${s.serviceId}","rate":${s.rate},"originalRate":${s.originalRate},"serviceName":"${s.name}"}`}'
@@ -123,7 +138,7 @@
                 </div>
                 <div class="card-footer text-right">
                     <div class="d-flex">
-                        <a href="javascript:void(0)" class="btn btn-info btn-remove-items">전체 삭제</a>
+                        <button class="btn btn-info btn-remove-items" on:click={() => deleteAllCustomRate()}>전체 삭제</button>
                         <button on:click={() => saveCustomRate()} class="btn btn-primary ml-auto mr-2">
                             저장
                         </button>

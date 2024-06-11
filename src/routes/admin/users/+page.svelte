@@ -342,7 +342,7 @@
                             </td>
                             <td class="text-center w-10p">
                                 <button type="button" class="btn btn-square btn-outline-info btn-sm" on:click={() => toggleModal.customRate(a.email, a.userId)}>
-                                    <i class="fe fe-plus mr-2"></i>특정 감가액
+                                    <i class="fe fe-plus mr-2"></i>개별 감가액
                                 </button>
                             </td>
                             <td class="text-center text-muted w-5p">{a.role}</td>
