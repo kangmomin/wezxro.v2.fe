@@ -103,6 +103,9 @@
         saveServiceData.originalRate = s.rate
         saveServiceData.apiServiceId = s.service!!
         saveServiceData.type = s.type!!
+        saveServiceData.cancel = s.cancel
+        saveServiceData.refill = s.refill
+        saveServiceData.dripfeed = s.dripfeed
 
         return
     }
@@ -140,7 +143,9 @@
             "min": Number(saveServiceData.min),
             "max": Number(saveServiceData.max),
             "description": saveServiceData.description,
-            "originalRate": Number(saveServiceData.originalRate)
+            "originalRate": Number(saveServiceData.originalRate),
+            "refill": saveServiceData.refill,
+            "cancel": saveServiceData.cancel
         }).then(res => {
             if (res === null) return
             alert("서비스를 저장하였습니다.")
@@ -163,7 +168,9 @@
             "min": Number(saveServiceData.min),
             "max": Number(saveServiceData.max),
             "description": saveServiceData.description,
-            "originalRate": Number(saveServiceData.originalRate)
+            "originalRate": Number(saveServiceData.originalRate),
+            "refill": saveServiceData.refill,
+            "cancel": saveServiceData.cancel
         }).then(res => {
             if (res === null) return
             alert("서비스를 저장하였습니다.")
