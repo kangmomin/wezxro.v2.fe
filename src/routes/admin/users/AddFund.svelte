@@ -11,7 +11,7 @@
 
     const addFund = () => {
         api.patch("/admin/u/money/add", {
-            amount, password,
+            balance: amount, password,
             userId: updateMoneyUserInfo.userId
         }).then(res => {
             if (res === null) return
