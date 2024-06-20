@@ -44,11 +44,7 @@ async function request(method, endPoint, data = null) {
             method: method
         })
 
-        if (response.data.status === "ERROR" && endPoint !== "/u/login") {
-            if (response.data.data.code === "A204") {
-                unAuthorizedHandler()
-            }
-
+        if (response.data.status === "ERROR") {
             alert(response.data.data.message)
             return null
         }
