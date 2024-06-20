@@ -30,6 +30,10 @@ async function request(method, endPoint, data = null) {
     try {
         let token = localStorage.getItem("accessToken");
         if (!token && endPoint !== "/u/login" && endPoint !== "/u/join") location.href = "/login"
+        if (Boolean(localStorage.getItem("isDemo")) && method.toUpperCase() !== "GET") {
+            alert("데모 계정은 접근할 수 없습니다.")
+            return null
+        }
         const response = await axios({
             url: `${host}${endPoint}`,
             data: data === null ? data : JSON.stringify(data),

@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
     import {onMount} from "svelte";
-    import {writable} from "svelte/store";
     import {page} from "$app/stores";
     import {api} from "$lib/util/ApiProvider.js";
+    import type {UserInfo} from "$lib/types/Account/UserInfo";
 
     export let data
 
@@ -11,11 +11,12 @@
     let money = "로딩중"
 
     onMount(async () => {
-        /** @type {UserInfo} */
-        let userInfo = await api.get("/u/info")
+        let userInfo: UserInfo = await api.get("/u/info")
 
         name = userInfo.name
         money = userInfo.money.toLocaleString()
+
+        localStorage.setItem("isDemo", userInfo.isDemo)
     })
 
     const EN_NAME = data.props.EN_NAME

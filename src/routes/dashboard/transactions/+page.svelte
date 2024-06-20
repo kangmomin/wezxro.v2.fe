@@ -4,7 +4,7 @@
     import {onMount} from "svelte";
 
     const result = "default"
-    const isDemo = false
+    let isDemo: boolean | null = null
     let formType = "none"
     export let data
     const {
@@ -14,6 +14,7 @@
     let deposit: DepositListDto[] = []
 
     onMount(() => {
+        isDemo = Boolean(localStorage.getItem("isDemo"))
         api.get("/d/list").then(res => {
             if (res == null) return
 
@@ -77,11 +78,15 @@
             <form action="" class="form" method="POST">
                 <h4 style="margin-bottom: 18px;">무통장입금 <span style="font-weight: 400;">충전 신청</span></h4>
                 <div class="form-group">
-                    {#if !isDemo }
-                        <p style="color: black; margin-bottom: 10px; font-size: 16px;">부산은행 112-2007-03-7109 정화랑</p>
+                    <p style="color: black; margin-bottom: 10px; font-size: 16px;">
+                    {#if isDemo === false }
+                        부산은행 112-2007-03-7109 정화랑
+                    {:else if isDemo === null}
+                        로딩중...
                     {:else}
-                        <p style="color: black; margin-bottom: 10px; font-size: 16px;">충전 계좌는 회원가입 후 표시됩니다.</p>
+                        충전 계좌는 회원가입 후 표시됩니다.
                     {/if}
+                    </p>
                     <label class="control-label" for="username"
                            style="color: black; margin-bottom: 10px; font-size: 16px;">충전
                         금액을 입력해주세요.</label>
