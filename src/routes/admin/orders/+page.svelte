@@ -86,8 +86,8 @@
             if (field === "orderId") return o.orderId === Number(query)
             if (field === "serviceId") return o.serviceId === Number(query)
             if (field === "apiOrderId") return o.apiOrderId === Number(query)
-            if (field === "email") return o.email === query
-            if (field === "link") return o.link === query
+            if (field === "email") return o.email.includes(query)
+            if (field === "link") return o.link.includes(query)
             return true
         })
     }

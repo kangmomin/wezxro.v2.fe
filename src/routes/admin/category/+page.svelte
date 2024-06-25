@@ -76,7 +76,7 @@
 
     const search = () => {
         category = category.filter(c => {
-            return c.name === query
+            return c.name.includes(query)
         })
     }
 </script>

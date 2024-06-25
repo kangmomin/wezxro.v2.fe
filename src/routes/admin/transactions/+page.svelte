@@ -107,7 +107,7 @@
 
     const search = () => {
         deposits = deposits.filter(d => {
-            if (field === "email") return d.email === query
+            if (field === "email") return d.email.includes(query)
             if (field === "note") return d.note.includes(query)
             if (field === "id") return String(d.depositId) === query
         })

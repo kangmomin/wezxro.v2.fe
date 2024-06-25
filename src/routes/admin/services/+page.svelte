@@ -121,7 +121,7 @@
             if (field === "all") return s.name === query || s.serviceId === Number(query) || s.apiServiceId === Number(query)
             if (field === "id") return s.serviceId === Number(query)
             if (field === "apiOrderId") return s.apiServiceId === Number(query)
-            if (field === "name") return s.name === query
+            if (field === "name") return s.name.includes(query)
             return true
         })
     }
