@@ -4,8 +4,10 @@
     import {onMount} from "svelte";
     import {dateFormat} from "$lib/util/DateFormatter";
     import UpdateDeposit from "./UpdateDeposit.svelte";
+    import type AdminOrderListDto from "$lib/types/order/AdminOrderListDto";
 
     let deposits: AdminDepositListDto[] = []
+    let allDeposit: AdminDepositListDto[] = []
     let updateDepositInfo: AdminDepositListDto = {
         amount: 0,
         depositId: "",
@@ -19,6 +21,11 @@
     let pending = 0
     let done = 0
     let modalStatus = false;
+    // for search
+    /** 검색 타입 */
+    let field: string = "id"
+    /** 검색 내용 */
+    let query: string = ""
 
     const syncData = async (status: string | null = null) => {
         let endPoint = "/admin/d/list";
@@ -45,6 +52,8 @@
                     break;
             }
         })
+
+        allDeposit = [...deposits]
     }
 
     onMount(() => {
@@ -78,7 +87,7 @@
     }
 
     const deleteDeposit = async (depositId: string) => {
-        if (isNaN(depositId)) return alert("충전이 완료된 기록만 수정 가능합니다.")
+        if (isNaN(Number(depositId))) return alert("충전이 완료된 기록만 수정 가능합니다.")
 
         if (confirm("충전 기록을 삭제하시겠습니까?") &&
             !confirm("삭제 이후엔 되돌릴 수 없습니다.\n정말 삭제하시겠습니까?")) return
@@ -92,6 +101,17 @@
         syncData()
     }
 
+    const statusFilter = (status: string) => {
+        deposits = status === "ALL" ? [...allDeposit] : allDeposit.filter(d => d.status === status)
+    }
+
+    const search = () => {
+        deposits = deposits.filter(d => {
+            if (field === "email") return d.email === query
+            if (field === "note") return d.note.includes(query)
+            if (field === "id") return String(d.depositId) === query
+        })
+    }
 </script>
 
 {#if modalStatus}
@@ -120,19 +140,19 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="btn-group w-30 m-b-10">
-                            <button class="btn">
+                            <button class="btn" on:click={() => statusFilter("ALL")}>
                                 전체
                                 <span class="badge badge-pill bg-azure">{cancel + pending + done}</span>
                             </button>
-                            <button class="btn">
+                            <button class="btn" on:click={() => statusFilter("DONE")}>
                                 결제완료
                                 <span class="badge badge-pill bg-indigo">{done}</span>
                             </button>
-                            <button class="btn">
+                            <button class="btn" on:click={() => statusFilter("PENDING")}>
                                 대기중
                                 <span class="badge badge-pill bg-indigo">{pending}</span>
                             </button>
-                            <button class="btn">
+                            <button class="btn" on:click={() => statusFilter("CANCELED")}>
                                 취소
                                 <span class="badge badge-pill bg-indigo">{cancel}</span>
                             </button>
@@ -141,13 +161,13 @@
                     <div class="col-md-4 search-area">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" name="query" class="form-control" placeholder="검색" value="">
-                                <select name="field" class="form-control" id="">
-                                    <option value="transaction_id">고유번호</option>
+                                <input type="text" name="query" class="form-control" placeholder="검색" bind:value={query}>
+                                <select name="field" class="form-control" id="" bind:value={field}>
+                                    <option value="id">고유번호</option>
                                     <option value="email">이메일</option>
                                     <option value="note">메모</option>
                                 </select>
-                                <button class="btn btn-primary btn-square btn-search" type="button">
+                                <button class="btn btn-primary btn-square" on:click={() => search()} type="button">
                                     <span class="fe fe-search"></span>
                                 </button>
                                 <button class="btn btn-outline-danger btn-square btn-clear d-none">
