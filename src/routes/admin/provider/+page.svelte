@@ -5,9 +5,12 @@
     import type ProviderListDto from '$lib/types/provider/ProviderListDto';
 
     let providers: ProviderListDto[] = []
+    let allProviders: ProviderListDto[] = []
     let activeCnt = 0
     let deactiveCnt = 0
     let updateProviderId = 0
+    //** 검색을 위한 필드 */
+    let query = ""
     $: modalOpen = false
 
     const toggleModal = (providerId: number, isDone: boolean = false) => {
@@ -31,6 +34,7 @@
     const syncData = () => {
         api.get("/admin/p/list").then(provider => {
             providers = provider
+            allProviders = provider
             providers.forEach((e) => {
                 e.status === 1 ? activeCnt++ : deactiveCnt++
             })
@@ -56,6 +60,16 @@
         const res = await api.patch(`/admin/p/status/${providerId}`);
         if (res === null) return;
         alert(res.message)
+    }
+
+    const statusFilter = (status: number | null) => {
+        providers = status === null ? [...allProviders] : allProviders.filter(p => p.status == status)
+    }
+
+    const search = () => {
+        providers = providers.filter(p => {
+            return p.name.includes(query)
+        })
     }
 </script>
 
@@ -90,32 +104,38 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="btn-group w-30 m-b-10"><a class="btn " href="./provider?status=3">All <span
-                                class="badge badge-pill bg-azure">
-                           {providers.length}
-                        </span></a>
-                            <a class="btn " href="./provider?status=1">
+                        <div class="btn-group w-30 m-b-10">
+                            <button class="btn " on:click={() => statusFilter(null)}>
+                                All
+                                <span
+                                    class="badge badge-pill bg-azure">
+                                   {activeCnt + deactiveCnt}
+                                </span>
+                            </button>
+                            <button class="btn " on:click={() => statusFilter(1)}>
                                 Active
                                 <span class="badge badge-pill bg-indigo">
-                          {activeCnt}
-                        </span>
-                            </a>
-                            <a class="btn " href="./provider?status=0">Deactive <span
-                                    class="badge badge-pill bg-indigo">
-                          {deactiveCnt}
-                        </span></a>
-
+                                  {activeCnt}
+                                </span>
+                            </button>
+                            <button class="btn " on:click={() => statusFilter(0)}>
+                                Deactive
+                                <span class="badge badge-pill bg-indigo">
+                                    {deactiveCnt}
+                                </span>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-4 search-area">
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" name="query" placeholder="검색" type="text" value="">
+                                <input class="form-control" name="query" placeholder="검색" type="text" bind:value={query}>
                                 <select class="form-control" id="" name="field">
                                     <option value="name">이름</option>
                                 </select>
-                                <button class="btn btn-primary btn-square btn-search" type="button"><span
-                                        class="fe fe-search"></span></button>
+                                <button class="btn btn-primary btn-square" on:click={() => search()} type="button">
+                                    <span class="fe fe-search"></span>
+                                </button>
                                 <button class="btn btn-outline-danger btn-square btn-clear d-none"
                                         data-original-title="Clear"
                                         data-placement="bottom" data-toggle="tooltip" title="" type="button"><span
@@ -161,10 +181,11 @@
                     <tr>
                         <th class="text-center w-1">
                             <div class="custom-controls-stacked">
-                                <label class="form-check"><input class="form-check-input check-items check-all"
-                                                                 data-name="check_1"
-                                                                 type="checkbox"><span
-                                        class="custom-control-label"></span>
+                                <label class="form-check">
+                                    <input class="form-check-input check-items check-all"
+                                         data-name="check_1"
+                                         type="checkbox">
+                                    <span class="custom-control-label"></span>
                                 </label>
                             </div>
                         </th>

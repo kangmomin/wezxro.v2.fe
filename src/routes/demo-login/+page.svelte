@@ -14,6 +14,6 @@
         localStorage.setItem("accessToken", res.accessToken)
         localStorage.setItem("refreshToken", res.refreshToken)
         alert("로그인 완료됐습니다.")
-        await goto("/dashboard/statistic")
+        await goto("/")
     })
 </script>

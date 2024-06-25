@@ -14,6 +14,7 @@
     import CustomRate from "./CustomRate.svelte";
     import {dateFormat} from "$lib/util/DateFormatter";
     import UpdateAccount from "./UpdateAccount.svelte";
+    import {env} from "$lib/config";
 
     let userList: UserListDto[] = []
     let activeCnt = 0
@@ -146,6 +147,34 @@
         localStorage.setItem("refreshToken", res.refreshToken)
         alert("로그인 완료됐습니다.")
         await goto("/dashboard/statistic")
+    }
+
+    const exportToExcel = async () => {
+        try {
+            const response = await fetch(`${env.HOST}/admin/u/export`, {
+                method: 'GET',
+                headers: {
+                    "X-Auth-Token": localStorage.getItem("accessToken")
+                }
+            });
+
+            if (!response.ok) {
+                alert("다운로드 하지 못하였습니다.")
+                return
+            }
+
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'users.xlsx';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error downloading the file:', error);
+        }
     }
 
     onMount(() => syncUserList())
@@ -281,8 +310,9 @@
                                 <i class="dropdown-icon fe fe-download"></i>
                                 Export CSV
                             </a>
-                            <a class="dropdown-item " data-type="excel" href="./users/export/excel">
-                                <i class="dropdown-icon fe fe-download"></i> Export excel</a>
+                            <button class="dropdown-item " on:click={() => exportToExcel()}>
+                                <i class="dropdown-icon fe fe-download"></i> Export excel
+                            </button>
                             <a class="dropdown-item ajaxActionOptions" data-type="delete"
                                href="./users/bulk_action/delete">
                                 <i class="dropdown-icon fe fe-trash-2"></i> Delete
@@ -388,11 +418,6 @@
                                             <i class="dropdown-icon fe fe-mail"></i>
                                             메일 보내기
                                         </button>
-                                        <a href="./users/info/<%= a.userId %>" class="dropdown-item ajaxModal"
-                                           data-confirm_ms="">
-                                            <i class="dropdown-icon fe fe-help-circle"></i>
-                                            More detail
-                                        </a>
                                         <button class="dropdown-item" on:click={() => deleteAccount(a.userId)}>
                                             <i class="dropdown-icon fe fe-trash-2"></i>
                                             삭제
