@@ -5,11 +5,16 @@
     import type AdminOrderListDto from "$lib/types/order/AdminOrderListDto";
     import UpdateOrder from "./UpdateOrder.svelte";
     import {dateFormat} from "$lib/util/DateFormatter";
+    import type OrderListDto from "$lib/types/order/OrderListDto";
+    import OrderStatus from "$lib/types/order/constant/OrderStatus";
 
     let orders: AdminOrderListDto[] = []
+    let allOrders: AdminOrderListDto[] = []
+
     let modalOpen: boolean = false
     const updateOrderDtoInit = (): AdminOrderListDto => {
         return {
+            status: "",
             apiOrderId: 0,
             charge: 0,
             count: 0,
@@ -21,13 +26,8 @@
             remain: 0,
             serviceId: 0,
             serviceName: "",
-            startCount: 0,
-            status: {
-                status: "",
-                charge: 0,
-                count: 0,
-                date: ""
-            }
+            startCount: 0
+
         }
     }
     let updateOrderDto: AdminOrderListDto = updateOrderDtoInit()
@@ -41,7 +41,8 @@
         api.get("/admin/o/list").then(res => {
             if (res === null) return;
 
-            orders = res
+            orders = [...res]
+            allOrders = [...res]
         })
     }
 
@@ -61,6 +62,25 @@
 
         alert(res.message)
         syncOrders()
+    }
+
+    const filter = (status: string | null) => {
+        const statusBtns = document.getElementsByClassName("statusBtn");
+
+        for (const statusBtn of statusBtns) {
+            statusBtn.classList.remove("btn-info")
+        }
+
+
+        if (status === null) {
+            orders = [...allOrders]
+            document.getElementById("ALL")!!.classList.add("btn-info")
+
+            return
+        }
+        document.getElementById(status)!!.classList.add("btn-info")
+
+        orders = allOrders.filter(o => o.status === status)
     }
 </script>
 
@@ -91,31 +111,25 @@
                 <div class="col-md-8">
                     <ul class="list-inline mb-0 order_btn_group">
                         <li class="list-inline-item">
-                            <a class="btn btn-primary" href="/admin/order?status=all">전체 </a>
+                            <button class="nav-link btn statusBtn btn-info" id="ALL" on:click={() => filter(null)}>전체</button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=processing">처리중 </a>
+                            <button class="nav-link btn statusBtn" id="PROCESSING" on:click={() => filter(OrderStatus.PROCESSING)}>처리중 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=inprogress">대기중 </a>
+                            <button class="nav-link btn statusBtn " id="PENDING" on:click={() => filter(OrderStatus.PENDING)}>대기중 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=pending">접수중 </a>
+                            <button class="nav-link btn statusBtn " id="INPROGRESS" on:click={() => filter(OrderStatus.INPROGRESS)}>진행중 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=completed">완료됨 </a>
+                            <button class="nav-link btn statusBtn " id="COMPLETED" on:click={() => filter(OrderStatus.COMPLETED)}>완료됨 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=partial">부분완료됨 </a>
+                            <button class="nav-link btn statusBtn " id="PARTIALS" on:click={() => filter(OrderStatus.PARTIALS)}>부분완료됨 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=canceled">취소됨 </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=error">오류 </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="btn " href="/admin/order?status=fail">실패 </a>
+                            <button class="nav-link btn statusBtn " id="CANCELED" on:click={() => filter(OrderStatus.CANCELED)}>취소됨 </button>
                         </li>
                     </ul>
                 </div>
