@@ -60,7 +60,7 @@
     <div class="col-md-12 col-xl-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">{selectedCategory === 0 ? "전체 카테고리" : category[selectedCategory].name}</h3>
+                <h3 class="card-title">{selectedCategory === 0 ? "전체 카테고리" : category[selectedCategory - 1]?.name ?? "전체 카테고리"}</h3>
                 <div class="card-options">
                     <div class="card-options-collapse" data-toggle="card-collapse">
                         <i class="fe fe-chevron-up"></i>
