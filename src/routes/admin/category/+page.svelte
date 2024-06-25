@@ -198,7 +198,7 @@
                             </td>
                             <td class="text-center w-10p">
                                 <input type="number" class="form-control text-center" min="1" style="width:65px;"
-                                       id="sort" value="{updateSortVal[e.categoryId]}" on:change={() => updateSort(e.categoryId)}>
+                                       id="sort" bind:value="{updateSortVal[e.categoryId]}" on:change={() => updateSort(e.categoryId)}>
                             </td>
                             <td class="text-center w-10p">
                                 <label for={`status_${e.categoryId}`} class="custom-switch">
