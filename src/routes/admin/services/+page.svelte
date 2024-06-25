@@ -10,6 +10,12 @@
     let categoryId: number = Number($page.url.searchParams.get("categoryId") || "0");
     let category: CategoryListDto[] = []
     let services: ServiceListDto[] = []
+    let allServices: ServiceListDto[] = []
+
+    //** 검색을 위한 필드 */
+    let query = "",
+        field = "all"
+
     let updateServiceData: UpdateServiceDto|null = {
         categoryId: 0,
         originalRate: 0,
@@ -28,16 +34,15 @@
 
     $: modalOpen = false
 
-    onMount(async () => {
-        api.get(`/admin/c/list`).then(c => category = c)
-
-        api.get(`/admin/s/list?category=${categoryId}`).then(s => services = s)
-    })
+    onMount(() => syncData())
 
     const syncData = () => {
         api.get(`/admin/c/list`).then(c => category = c)
 
-        api.get(`/admin/s/list?category=${categoryId}`).then(s => services = s)
+        api.get(`/admin/s/list?category=${categoryId}`).then(s => {
+            services = s
+            allServices = s
+        })
     }
 
     const toggleModal = (isDone: boolean = false) => {
@@ -94,6 +99,7 @@
 
         if (res === null) {
             let e = document.getElementById(`statusSwitch${serviceId}`);
+            // @ts-ignore
             e.checked = !e.checked
             return
         }
@@ -108,6 +114,17 @@
 
         alert(res.message)
     }
+
+    const search = () => {
+        services = allServices.filter(s => {
+            if (!query) return true
+            if (field === "all") return s.name === query || s.serviceId === Number(query) || s.apiServiceId === Number(query)
+            if (field === "id") return s.serviceId === Number(query)
+            if (field === "apiOrderId") return s.apiServiceId === Number(query)
+            if (field === "name") return s.name === query
+            return true
+        })
+    }
 </script>
 
 <div class="page-title m-b-20">
@@ -120,14 +137,14 @@
         <div class="col-md-4 search-area">
             <div class="form-group">
                 <div class="input-group">
-                    <input class="form-control" name="query" placeholder="검색" type="text" value="">
-                    <select class="form-control" id="" name="field">
+                    <input class="form-control" name="query" placeholder="검색" type="text" bind:value={query}>
+                    <select class="form-control" id="" name="field" bind:value={field}>
                         <option value="all">전체</option>
                         <option value="id">서비스 번호</option>
                         <option value="name">이름</option>
-                        <option value="api_service_id">API service id</option>
+                        <option value="apiServiceId">도매처 서비스 아이디</option>
                     </select>
-                    <button class="btn btn-primary btn-square btn-search" type="button">
+                    <button class="btn btn-primary btn-square" on:click={() => search()} type="button">
                         <span class="fe fe-search"></span>
                     </button>
                     <button class="btn btn-outline-danger btn-square btn-clear d-none" data-original-title="Clear"
