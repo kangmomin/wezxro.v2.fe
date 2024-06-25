@@ -5,11 +5,15 @@
     import StoreCategory from "./StoreCategory.svelte";
     import type { CategoryListDto } from '$lib/types/category/CategoryListDto';
 
-    let activeCnt = 0
+    let activeCnt = 0, deactiveCnt = 0, totalCnt = 0
     let category: CategoryListDto[] = []
+    let allCategory: CategoryListDto[] = []
     let modalOpen = false
     let updateSortVal: {[key: number]: any} = {}
     let updateCategoryDto: CategoryListDto = {categoryId: 0, name: "", sort: 0, status: 0}
+    // for search
+    /** 검색 내용 */
+    let query: string = ""
 
     const toggleModal = (isDone: boolean = false) => {
         modalOpen = !modalOpen
@@ -22,6 +26,7 @@
     const syncCategory = () => {
         api.get("/admin/c/list").then(c => {
             category = c
+            allCategory = c
 
             category.forEach(val => {
                 updateSortVal[val.categoryId] = val.sort
@@ -30,6 +35,9 @@
             activeCnt = category.filter(c => {
                 return c.status === 1
             }).length
+
+            deactiveCnt = category.length - activeCnt
+            totalCnt = category.length
         })
     }
 
@@ -60,6 +68,16 @@
         updateCategoryDto = {categoryId: 0, name: "", sort: 0, status: 0}
         updateCategoryDto = e
         toggleModal()
+    }
+
+    const statusFilter = (status: number | null) => {
+        category = status === null ? [...allCategory] : allCategory.filter(c => c.status === status)
+    }
+
+    const search = () => {
+        category = category.filter(c => {
+            return c.name === query
+        })
     }
 </script>
 
@@ -95,32 +113,33 @@
                 <div class="row">
                     <div class="col-md-8">
                         <div class="btn-group w-30 m-b-10">
-                            <a class="btn " href="/admin/category?status=3">전체 <span
+                            <button class="btn " on:click={() => statusFilter(null)}>전체 <span
                                 class="badge badge-pill bg-azure">
-                                  { category.length }
+                                  { totalCnt }
                                 </span>
-                            </a>
-                            <a class="btn " href="/admin/category?status=1">활성화 <span
+                            </button>
+                            <button class="btn " on:click={() => statusFilter(1)}>활성화 <span
                                 class="badge badge-pill bg-indigo">
                                   { activeCnt }
                                 </span>
-                            </a>
-                            <a class="btn " href="/admin/category?status=1">비활성화 <span
+                            </button>
+                            <button class="btn " on:click={() => statusFilter(0)}>비활성화 <span
                                 class="badge badge-pill bg-indigo">
-                                  { category.length - activeCnt }
+                                  { deactiveCnt }
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-4 search-area">
                         <div class="form-group">
                             <div class="input-group">
-                                <input class="form-control" name="query" placeholder="검색" type="text" value="">
+                                <input class="form-control" name="query" placeholder="검색" type="text" bind:value={query}>
                                 <select class="form-control" id="" name="field">
                                     <option value="name">이름</option>
                                 </select>
-                                <button class="btn btn-primary btn-square btn-search" type="button"><span
-                                        class="fe fe-search"></span></button>
+                                <button class="btn btn-primary btn-square" type="button" on:click={() => search()}>
+                                    <span class="fe fe-search"></span>
+                                </button>
                                 <button class="btn btn-outline-danger btn-square btn-clear d-none" data-original-title="Clear"
                                         data-placement="bottom" data-toggle="tooltip" title="" type="button"><span
                                         class="fe fe-x"></span></button>
