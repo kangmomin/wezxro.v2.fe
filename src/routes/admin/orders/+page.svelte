@@ -81,7 +81,6 @@
             searchOrders = [...orders]
         }
 
-        console.log(searchOrders)
         orders = searchOrders.filter(o => {
             if (!query) return true
             if (field === "orderId") return o.orderId === Number(query)
