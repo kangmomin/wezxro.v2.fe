@@ -3,14 +3,36 @@
     import { onMount } from 'svelte';
     import { api } from '$lib/util/ApiProvider';
     import {dateFormat} from "$lib/util/DateFormatter";
+    import OrderStatus from "$lib/types/order/constant/OrderStatus";
 
     let orders: OrderListDto[] = []
+    let allOrders: OrderListDto[] = []
 
     onMount(async () => {
         let res = await api.get("/o/list");
         if (res === null) return;
-        orders = res
+        orders = [...res]
+        allOrders = [...orders]
     })
+
+    const filter = (status: string | null) => {
+        const statusBtns = document.getElementsByClassName("statusBtn");
+
+        for (const statusBtn of statusBtns) {
+            statusBtn.classList.remove("btn-info")
+        }
+
+
+        if (status === null) {
+            orders = [...allOrders]
+            document.getElementById("ALL")!!.classList.add("btn-info")
+
+            return
+        }
+        document.getElementById(status)!!.classList.add("btn-info")
+
+        orders = allOrders.filter(o => o.status === status)
+    }
 </script>
 
 
@@ -35,24 +57,26 @@
             <div class="row justify-content-between">
                 <div class="col-md-10">
                     <ul class="list-inline mb-0 order_btn_group">
-                        <li class="list-inline-item"><a class="nav-link btn btn-info" href="/order">전체</a></li>
                         <li class="list-inline-item">
-                            <a class="nav-link btn " href="/order?status=processing">처리중 </a>
+                            <button class="nav-link btn statusBtn btn-info" id="ALL" on:click={() => filter(null)}>전체</button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link btn " href="/order?status=inprogress">대기중 </a>
+                            <button class="nav-link btn statusBtn" id="PROCESSING" on:click={() => filter(OrderStatus.PROCESSING)}>처리중 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link btn " href="/order?status=pending">대기중 </a>
+                            <button class="nav-link btn statusBtn " id="PENDING" on:click={() => filter(OrderStatus.PENDING)}>대기중 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link btn " href="/order?status=completed">완료됨 </a>
+                            <button class="nav-link btn statusBtn " id="INPROGRESS" on:click={() => filter(OrderStatus.INPROGRESS)}>진행중 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link btn " href="/order?status=partial">부분완료됨 </a>
+                            <button class="nav-link btn statusBtn " id="COMPLETED" on:click={() => filter(OrderStatus.COMPLETED)}>완료됨 </button>
                         </li>
                         <li class="list-inline-item">
-                            <a class="nav-link btn " href="/orderstatus=canceled">취소됨 </a>
+                            <button class="nav-link btn statusBtn " id="PARTIALS" on:click={() => filter(OrderStatus.PARTIALS)}>부분완료됨 </button>
+                        </li>
+                        <li class="list-inline-item">
+                            <button class="nav-link btn statusBtn " id="CANCELED" on:click={() => filter(OrderStatus.CANCELED)}>취소됨 </button>
                         </li>
                     </ul>
                 </div>
