@@ -11,6 +11,12 @@
     let orders: AdminOrderListDto[] = []
     let allOrders: AdminOrderListDto[] = []
 
+    // for search
+    /** 검색 타입 */
+    let field: string = "id"
+    /** 검색 내용 */
+    let query: string = ""
+
     let modalOpen: boolean = false
     const updateOrderDtoInit = (): AdminOrderListDto => {
         return {
@@ -65,22 +71,38 @@
     }
 
     const filter = (status: string | null) => {
+        let searchOrders: AdminOrderListDto[] = []
+
+        if (status === null) {
+            searchOrders = statusFilter("ALL")
+        } else if (status !==  "none") {
+            searchOrders = statusFilter(status!!)
+        } else if (status === "none") {
+            searchOrders = [...orders]
+        }
+
+        console.log(searchOrders)
+        orders = searchOrders.filter(o => {
+            if (!query) return true
+            if (field === "orderId") return o.orderId === Number(query)
+            if (field === "serviceId") return o.serviceId === Number(query)
+            if (field === "apiOrderId") return o.apiOrderId === Number(query)
+            if (field === "email") return o.email === query
+            if (field === "link") return o.link === query
+            return true
+        })
+    }
+
+    const statusFilter = (status: string): AdminOrderListDto[] => {
         const statusBtns = document.getElementsByClassName("statusBtn");
 
         for (const statusBtn of statusBtns) {
             statusBtn.classList.remove("btn-info")
         }
 
-
-        if (status === null) {
-            orders = [...allOrders]
-            document.getElementById("ALL")!!.classList.add("btn-info")
-
-            return
-        }
         document.getElementById(status)!!.classList.add("btn-info")
 
-        orders = allOrders.filter(o => o.status === status)
+        return status === "ALL" ? [...allOrders] : allOrders.filter(o => o.status === status)
     }
 </script>
 
@@ -136,20 +158,20 @@
                 <div class="col-md-4 search-area">
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" name="query" placeholder="검색" type="text" value="">
-                            <select class="form-control" id="" name="field">
-                                <option value="id">서비스 번호</option>
-                                <option value="api_order_id">API Order id</option>
-                                <option value="link">Link</option>
+                            <input class="form-control" name="query" placeholder="검색" type="text" bind:value={query}>
+                            <select class="form-control" id="" name="field" bind:value={field}>
+                                <option value="orderId">주문 번호</option>
+                                <option value="serviceId">서비스 아이디</option>
+                                <option value="apiOrderId">도매처 주문 번호</option>
+                                <option value="link">링크</option>
                                 <option value="email">이메일</option>
-                                <option value="service_id">Service id</option>
                             </select>
-                            <button class="btn btn-primary btn-square btn-search" type="button"><span
-                                    class="fe fe-search"></span></button>
+                            <button class="btn btn-primary btn-square" on:click={() => filter("none")} type="button">
+                                <span class="fe fe-search"></span>
+                            </button>
                             <button class="btn btn-outline-danger btn-square btn-clear d-none"
-                                    data-original-title="Clear"
-                                    data-placement="bottom" data-toggle="tooltip" title="" type="button"><span
-                                    class="fe fe-x"></span>
+                                    data-original-title="Clear" data-placement="bottom" data-toggle="tooltip" title="" type="button">
+                                <span class="fe fe-x"></span>
                             </button>
                         </div>
                     </div>
