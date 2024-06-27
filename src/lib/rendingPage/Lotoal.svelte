@@ -24,7 +24,7 @@
         <!-- Title of Site -->
         <title>{ EN_NAME } | 더 효율적인 셀프 마케팅 플랫폼</title>
         <!-- Favicons -->
-        <link rel="icon" type="image/png" href="/public/assets\logo\logo_white.png">
+        <link href="/public/assets\logo\{EN_NAME.toLowerCase()}\logo.png" rel="icon" type="image/png">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="/public/assets/css/bootstrap.min.css">
         <!-- font awesome -->
