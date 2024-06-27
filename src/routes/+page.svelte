@@ -2,6 +2,7 @@
 	import Wezxro from "$lib/rendingPage/Wezxro.svelte";
 	import Lotoal from "$lib/rendingPage/Lotoal.svelte";
 	import Adiviy from "$lib/rendingPage/Adiviy.svelte";
+	import Follous from "$lib/rendingPage/Follous.svelte";
 	export let data
 
 </script>
@@ -18,5 +19,8 @@
 {/if}
 {#if data.props.DOMAIN === "adiviy.com"}
 	<Adiviy data="{data}"></Adiviy>
+{/if}
+{#if data.props.DOMAIN === "follous.net"}
+	<Follous data="{data}"></Follous>
 {/if}
 
