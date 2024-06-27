@@ -405,6 +405,7 @@
                                                     확인해주세요.</label>
                                                 <textarea bind:value={serviceDetail.description} class="form-control square"
                                                           name="service_desc"
+                                                          style="height: 285px"
                                                           readonly
                                                           rows="10"></textarea>
                                             </div>
