@@ -3,6 +3,7 @@
 	import Lotoal from "$lib/rendingPage/Lotoal.svelte";
 	import Adiviy from "$lib/rendingPage/Adiviy.svelte";
 	import Follous from "$lib/rendingPage/Follous.svelte";
+	import Prvad from "$lib/rendingPage/Prvad.svelte";
 	export let data
 
 </script>
@@ -22,5 +23,8 @@
 {/if}
 {#if data.props.DOMAIN === "follous.net"}
 	<Follous data="{data}"></Follous>
+{/if}
+{#if data.props.DOMAIN === "prvad.com"}
+	<Prvad data="{data}"></Prvad>
 {/if}
 
