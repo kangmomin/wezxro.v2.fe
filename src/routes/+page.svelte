@@ -5,9 +5,14 @@
 
 </script>
 
+<svelte:head>
+	<link rel="icon" href={data.favicon} />
+</svelte:head>
+
 {#if data.props.DOMAIN === "wezxro.com"}
 	<Wezxro data="{data}"></Wezxro>
 {/if}
 {#if data.props.DOMAIN === "lotoal.com"}
 	<Lotoal data="{data}"></Lotoal>
 {/if}
+

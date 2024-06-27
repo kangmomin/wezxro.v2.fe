@@ -10,6 +10,7 @@
     const {
         props
     } = data
+    const EN_NAME = data.props.EN_NAME
 
     let deposit: DepositListDto[] = []
 
@@ -73,7 +74,7 @@
     <div class="modal1 payform" id="payForm" style="display:'block';" on:submit|preventDefault={addDeposit}>
         <div class="modal_body" style="height: 850px;">
             <a class="main-logo" href="./transactions"><img
-                    alt="logo" src="/public/assets/logo/logo_white.png"
+                    alt="logo" src="public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png"
                     style="height: 80px;"></a>
             <form action="" class="form" method="POST">
                 <h4 style="margin-bottom: 18px;">무통장입금 <span style="font-weight: 400;">충전 신청</span></h4>
@@ -204,7 +205,7 @@
 <div class="modal1 paycompleted" style="display: {result === 'default' ? 'none' : 'block'};">
     <div class="modal_body" style="height: 350px;">
         <a class="main-logo" href="/transactions"><img
-                alt="logo" src="/public/assets/logo/logo_white.png"
+                alt="logo" src="public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png"
                 style="height: 100px;"></a>
         <h4 style="margin-bottom: 18px;"><span style="font-weight: 400;">충전 신청이 </span>완료<span
                 style="font-weight: 400;">되었습니다.</span></h4>

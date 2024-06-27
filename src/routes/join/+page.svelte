@@ -36,7 +36,7 @@
     <title> {EN_NAME} </title>
 
     <link rel="shortcut icon" type="image/x-icon"
-          href="/public/assets/logo/logo_white.png">
+          href="/public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -95,7 +95,7 @@
                         <div class="brand-logo">
                             <a href="/">
                                 <img
-                                        src="/public/assets/logo/logo_white.png"
+                                        src="public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png"
                                         alt="logo">
                             </a>
                         </div>

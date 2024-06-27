@@ -36,7 +36,7 @@
     <title>{EN_NAME} - 로그인</title>
 
     <link rel="shortcut icon" type="image/x-icon"
-          href="/public/assets/logo/logo.png">
+          href="public/assets/logo/{EN_NAME.toLowerCase()}/logo.png">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -92,7 +92,7 @@
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="auth-form-transparent text-left p-3 auth-login-form">
                         <div class="brand-logo">
-                            <a href="./"><img style="width: 200px;" src="/public/assets/logo/logo_white.png"
+                            <a href="./"><img style="width: 200px;" src="public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png"
                                               alt="logo"></a>
                         </div>
                         <h4 style="font-weight: 700;">{EN_NAME}에 오신 것을 환영합니다.</h4>

@@ -17,8 +17,7 @@
         {EN_NAME}
     </title>
 
-    <link rel="shortcut icon" type="image/x-icon"
-          href="/public/assets/logo/logo.png">
+    <link href="/public/assets\logo\{EN_NAME.toLowerCase()}\logo.png" rel="icon" type="image/png">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -89,7 +88,7 @@
         </p>
 
         <a href="./" class="navbar-brand text-inherit mr-md-3">
-            <img src="/public/assets/logo/logo.png" alt="Website Logo"
+            <img src="public/assets/logo/{EN_NAME.toLowerCase()}/logo.png" alt="Website Logo"
                  class="d-md-none navbar-brand-logo">
         </a>
 

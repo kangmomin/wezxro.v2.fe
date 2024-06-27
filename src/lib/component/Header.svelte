@@ -16,49 +16,46 @@
         name = userInfo.name
         money = userInfo.money.toLocaleString()
 
-        localStorage.setItem("isDemo", userInfo.isDemo)
+        localStorage.setItem("isDemo", String(userInfo.isDemo))
     })
 
     const EN_NAME = data.props.EN_NAME
 </script>
 
 <svelte:head>
-    <head>
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-              name="viewport">
-        <meta content="ie=edge" http-equiv="X-UA-Compatible">
-        <meta content="en" http-equiv="Content-Language">
-        <meta content="                                    " name="description">
-        <meta content="                                                           " name="keywords">
-        <title>{EN_NAME}</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta content="en" http-equiv="Content-Language">
+    <meta content="                                    " name="description">
+    <meta content="                                                           " name="keywords">
+    <title>{EN_NAME}</title>
 
-        <link href="/public/assets/logo/logo.png" rel="shortcut icon"
-              type="image/x-icon">
-        <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
-        <meta content="yes" name="apple-mobile-web-app-capable">
-        <meta content="yes" name="mobile-web-app-capable">
-        <meta content="True" name="HandheldFriendly">
-        <meta content="320" name="MobileOptimized">
-        <link href="https://fonts.googleapis/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext"
-              rel="stylesheet">
+    <link href="/public/assets\logo\{EN_NAME.toLowerCase()}\logo.png" rel="icon" type="image/png">
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="True" name="HandheldFriendly">
+    <meta content="320" name="MobileOptimized">
+    <link href="https://fonts.googleapis/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext"
+          rel="stylesheet">
 
-        <script src="/public/assets/js/vendors/jquery-3.2.1.min.js"></script>
-        <link href="/public/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/public/assets/plugins/emoji/emojionearea.min.css" media="screen" rel="stylesheet" type="text/css">
-        <script src="/public/assets/plugins/emoji/emojionearea.min.js" type="text/javascript"></script>
+    <script src="/public/assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <link href="/public/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/assets/plugins/emoji/emojionearea.min.css" media="screen" rel="stylesheet" type="text/css">
+    <script src="/public/assets/plugins/emoji/emojionearea.min.js" type="text/javascript"></script>
 
-        <!-- c3.js Charts Plugin -->
-        <link href="/public/assets/plugins/charts-c3/c3.css" rel="stylesheet">
-        <script src="/public/assets/plugins/charts-c3/d3.v3.min.js"></script>
-        <script src="/public/assets/plugins/charts-c3/c3.min.js"></script>
-        <link href="/public/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
-        <link href="/public/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
-        <!-- vendor -->
-        <link href="/public/assets/admin/vendors/css/vendor.css" rel="stylesheet">
-        <link href="/public/assets/admin/dist/css/admin-core.css" rel="stylesheet"/>
-        <link href="/public/assets/admin/dist/css/layout.css" rel="stylesheet">
-    </head>
+    <!-- c3.js Charts Plugin -->
+    <link href="/public/assets/plugins/charts-c3/c3.css" rel="stylesheet">
+    <script src="/public/assets/plugins/charts-c3/d3.v3.min.js"></script>
+    <script src="/public/assets/plugins/charts-c3/c3.min.js"></script>
+    <link href="/public/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
+    <link href="/public/assets/plugins/flags/css/flag-icon.css" rel="stylesheet">
+    <!-- vendor -->
+    <link href="/public/assets/admin/vendors/css/vendor.css" rel="stylesheet">
+    <link href="/public/assets/admin/dist/css/admin-core.css" rel="stylesheet"/>
+    <link href="/public/assets/admin/dist/css/layout.css" rel="stylesheet">
 </svelte:head>
 
 <header class="navbar navbar-expand-lg js-header">
@@ -72,7 +69,7 @@
         <a class="navbar-brand text-inherit mr-md-3" href="../../routes">
             <img alt="Website Logo"
                  class="d-md-none navbar-brand-logo"
-                 src="/public/assets/logo/logo.png">
+                 src="public/assets/logo/{EN_NAME.toLowerCase()}/logo.png">
         </a>
 
         <ul class="nav navbar-menu align-items-center order-1 order-lg-2">
@@ -125,19 +122,21 @@
         <div class="flex-fill scroll-bar">
             <ul class="navbar-nav mb-md-4" id="menu">
 
-                <li class="nav-item" >
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/statistic'} data-placement="right"
+                <li class="nav-item">
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/statistic'}
+                       data-placement="right"
                        data-toggle="tooltip" href="/dashboard/statistic" title="대시보드">
                     <span class="nav-icon">
                 <i class="fe fe-bar-chart"></i>
               </span>
-                    <span class="nav-text" class:active={$page.url.pathname === '/dashboard/statistic'}>
+                        <span class="nav-text" class:active={$page.url.pathname === '/dashboard/statistic'}>
                         대시보드
                     </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order'} data-placement="right" data-toggle="tooltip"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order'} data-placement="right"
+                       data-toggle="tooltip"
                        href="/dashboard/order" title="주문 내역">
                     <span class="nav-icon">
                 <i class="fe fe-calendar"></i>
@@ -148,7 +147,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order/add'} data-placement="right"
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/order/add'}
+                       data-placement="right"
                        data-toggle="tooltip" href="/dashboard/order/add" title="주문하기">
                     <span class="nav-icon">
                 <i class="fe fe-shopping-cart"></i>
@@ -159,8 +159,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/services'} href="/dashboard/services"
-                       data-placement="right" data-toggle="tooltip" title="서비스 목록">
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/services'}
+                       data-placement="right"
+                       data-toggle="tooltip" href="/dashboard/services" title="서비스 목록">
                         <span class="nav-icon">
                             <i class="fa fa-list-ul" class:active={$page.url.pathname === '/dashboard/services'}></i>
                         </span>
@@ -170,8 +171,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/transactions'} href="/dashboard/transactions"
-                       data-placement="right" data-toggle="tooltip" title="충전하기">
+                    <a class="nav-link" class:active={$page.url.pathname === '/dashboard/transactions'}
+                       data-placement="right"
+                       data-toggle="tooltip" href="/dashboard/transactions" title="충전하기">
                         <span class="nav-icon">
                             <i class="fa fa-credit-card"></i>
                         </span>
