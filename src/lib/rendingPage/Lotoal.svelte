@@ -3,7 +3,7 @@
 
     export let data
     let isLogin = false
-    const EN_NAME = data.props.KR_NAME,
+    const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
 
     onMount(() => {
