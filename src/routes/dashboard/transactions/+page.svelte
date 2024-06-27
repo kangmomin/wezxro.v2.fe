@@ -308,8 +308,8 @@
             <div class="row card justify-content-between"
                  style="padding-left: 24px; padding-right: 24px; padding-top: 36px; padding-bottom: 36px;">
                 <div class="col-md-12">
-                    <h2>유의사항</h2>
-                    <h4 style="margin-bottom: 8px; font-weight: 400;">꼭 <strong>유의사항</strong>을 확인 후
+                    <h2>주의사항</h2>
+                    <h4 style="margin-bottom: 8px; font-weight: 400;">꼭 <strong>주의사항</strong>을 확인 후
                         충전해주세요.
                     </h4>
                     <h6 style="margin-top: 24px; font-size: 16px; font-weight: 400;">
