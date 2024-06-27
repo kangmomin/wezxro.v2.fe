@@ -1,9 +1,13 @@
 <script>
 	import Wezxro from "$lib/rendingPage/Wezxro.svelte";
+	import Lotoal from "$lib/rendingPage/Lotoal.svelte";
 	export let data
 
 </script>
 
 {#if data.props.DOMAIN === "wezxro.com"}
 	<Wezxro data="{data}"></Wezxro>
+{/if}
+{#if data.props.DOMAIN === "lotoal.com"}
+	<Lotoal data="{data}"></Lotoal>
 {/if}
