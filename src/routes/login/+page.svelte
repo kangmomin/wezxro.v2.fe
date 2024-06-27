@@ -4,12 +4,7 @@
     export let data
 
     const EN_NAME = data.props.EN_NAME
-    import {onMount} from "svelte";
     import {goto} from "$app/navigation";
-
-    onMount(() => {
-        AOS.init();
-    })
 
     const loginInfo = {
         key: data.props.CLIENT_KEY,
