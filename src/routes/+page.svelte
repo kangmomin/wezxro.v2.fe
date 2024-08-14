@@ -4,6 +4,7 @@
 	import Adiviy from "$lib/rendingPage/Adiviy.svelte";
 	import Follous from "$lib/rendingPage/Follous.svelte";
 	import Prvad from "$lib/rendingPage/Prvad.svelte";
+	import Parkinad from "$lib/rendingPage/Parkinad.svelte";
 	export let data
 
 </script>
@@ -26,5 +27,8 @@
 {/if}
 {#if data.props.DOMAIN === "prvad.com"}
 	<Prvad data="{data}"></Prvad>
+{/if}
+{#if data.props.DOMAIN === "parkinad.com"}
+	<Parkinad data="{data}"></Parkinad>
 {/if}
 
