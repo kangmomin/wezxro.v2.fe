@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'feather';
+    src: url('/wp-content/plugins/woo-smart-quick-view/assets/libs/feather/fonts/feather.eot');
+    src: url('/wp-content/plugins/woo-smart-quick-view/assets/libs/feather/fonts/feather.eot#iefix') format('embedded-opentype'),
+    url('/wp-content/plugins/woo-smart-quick-view/assets/libs/feather/fonts/feather.ttf') format('truetype'),
+    url('/wp-content/plugins/woo-smart-quick-view/assets/libs/feather/fonts/feather.woff') format('woff'),
+    url('/wp-content/plugins/woo-smart-quick-view/assets/libs/feather/fonts/feather.svg#feather') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
