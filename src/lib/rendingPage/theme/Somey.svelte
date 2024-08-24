@@ -707,8 +707,8 @@
                                                     <div class="col-xl-3 col-lg-6 col-sm-5 col-6">
                                                         <div class="tplogo__area">
                                                             <a class="header-logo tp-el-logo"
-                                                               href="http://localhost:63342/">
-                                                                <img alt="" src="./public/theme/somey/logo-4.png">
+                                                               href="/">
+                                                                <img alt="" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo_fit_black.png">
                                                             </a>
                                                         </div>
                                                     </div>
@@ -6482,38 +6482,6 @@ events.forEach((event) => {
 </script>
 <script id="contact-form-7-js" src="./public/theme/somey/index(1).js.다운로드" type="text/javascript"></script>
 <script id="sourcebuster-js-js" src="./public/theme/somey/sourcebuster.min.js.다운로드" type="text/javascript"></script>
-<script id="wc-order-attribution-js-extra" type="text/javascript">
-    /* <![CDATA[ */
-    var wc_order_attribution = {
-        "params": {
-            "lifetime": 1.0e-5,
-            "session": 30,
-            "base64": false,
-            "ajaxurl": "\/wp-admin\/admin-ajax.php",
-            "prefix": "wc_order_attribution_",
-            "allowTracking": true
-        },
-        "fields": {
-            "source_type": "current.typ",
-            "referrer": "current_add.rf",
-            "utm_campaign": "current.cmp",
-            "utm_source": "current.src",
-            "utm_medium": "current.mdm",
-            "utm_content": "current.cnt",
-            "utm_id": "current.id",
-            "utm_term": "current.trm",
-            "utm_source_platform": "current.plt",
-            "utm_creative_format": "current.fmt",
-            "utm_marketing_tactic": "current.tct",
-            "session_entry": "current_add.ep",
-            "session_start_time": "current_add.fd",
-            "session_pages": "session.pgs",
-            "session_count": "udata.vst",
-            "user_agent": "udata.uag"
-        }
-    };
-    /* ]]> */
-</script>
 <script id="wc-order-attribution-js" src="./public/theme/somey/order-attribution.min.js.다운로드" type="text/javascript"></script>
 <script id="print-js" src="./public/theme/somey/jQuery.print.js.다운로드" type="text/javascript"></script>
 <script id="table-head-fixer-js" src="./public/theme/somey/table-head-fixer.js.다운로드" type="text/javascript"></script>
