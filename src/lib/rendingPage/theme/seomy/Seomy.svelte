@@ -19,8 +19,8 @@
     <title>{EN_NAME}</title>
     <meta content="noindex, nofollow" name="robots">
     <link href="http://fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="http://localhost:63342/feed/" rel="alternate" title="wezxro » 피드" type="application/rss+xml">
-    <link href="http://localhost:63342/comments/feed/" rel="alternate" title="wezxro » 댓글 피드"
+    <link href="/feed/" rel="alternate" title="wezxro » 피드" type="application/rss+xml">
+    <link href="/comments/feed/" rel="alternate" title="wezxro » 댓글 피드"
           type="application/rss+xml">
     <script type="text/javascript">
         /* <![CDATA[ */
@@ -572,16 +572,16 @@
         /* ]]> */
     </script>
     <script id="wp-util-js" src="./public/theme/somey/wp-util.min.js.다운로드" type="text/javascript"></script>
-    <link href="http://localhost:63342/wp-json/" rel="https://api.w.org/">
-    <link href="http://localhost:63342/wp-json/wp/v2/pages/6904" rel="alternate" title="JSON" type="application/json">
-    <link href="http://localhost:63342/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml">
+    <link href="/wp-json/" rel="https://api.w.org/">
+    <link href="/wp-json/wp/v2/pages/6904" rel="alternate" title="JSON" type="application/json">
+    <link href="/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml">
     <meta content="WordPress 6.6.1" name="generator">
     <meta content="WooCommerce 9.1.4" name="generator">
-    <link href="http://localhost:63342/" rel="canonical">
-    <link href="http://localhost:63342/" rel="shortlink">
-    <link href="http://localhost:63342/wp-json/oembed/1.0/embed?url=%2F" rel="alternate" title="oEmbed (JSON)"
+    <link href="/" rel="canonical">
+    <link href="/" rel="shortlink">
+    <link href="/wp-json/oembed/1.0/embed?url=%2F" rel="alternate" title="oEmbed (JSON)"
           type="application/json+oembed">
-    <link href="http://localhost:63342/wp-json/oembed/1.0/embed?url=%2F#038;format=xml" rel="alternate" title="oEmbed (XML)"
+    <link href="/wp-json/oembed/1.0/embed?url=%2F#038;format=xml" rel="alternate" title="oEmbed (XML)"
           type="text/xml+oembed">
     <noscript>
         <style>.woocommerce-product-gallery {
@@ -662,7 +662,7 @@
                                                 <div class="col-lg-6 col-sm-4">
                                                     <div class="header-social d-flex align-items-center">
                                                         <div class="header-social-item tp-el-top-social">
-                                                            <a href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                                            <a href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                                 <svg aria-hidden="true"
                                                                      class="e-font-icon-svg e-fab-facebook"
                                                                      viewBox="0 0 512 512"
@@ -670,7 +670,7 @@
                                                                     <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
                                                                 </svg>
                                                             </a>
-                                                            <a href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                                            <a href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                                 <svg aria-hidden="true"
                                                                      class="e-font-icon-svg e-fab-twitter"
                                                                      viewBox="0 0 512 512"
@@ -678,7 +678,7 @@
                                                                     <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
                                                                 </svg>
                                                             </a>
-                                                            <a href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                                            <a href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                                 <svg aria-hidden="true"
                                                                      class="e-font-icon-svg e-fab-instagram"
                                                                      viewBox="0 0 448 512"
@@ -686,7 +686,7 @@
                                                                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
                                                                 </svg>
                                                             </a>
-                                                            <a href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                                            <a href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                                 <svg aria-hidden="true"
                                                                      class="e-font-icon-svg e-fab-pinterest"
                                                                      viewBox="0 0 496 512"
@@ -707,7 +707,7 @@
                                                     <div class="col-xl-3 col-lg-6 col-sm-5 col-6">
                                                         <div class="tplogo__area">
                                                             <a class="header-logo tp-el-logo"
-                                                               href="/">
+                                                               href="/static">
                                                                 <img alt="" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo_fit_black.png">
                                                             </a>
                                                         </div>
@@ -721,7 +721,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="nav-links"
-                                                                           href="http://localhost:63342/home/"
+                                                                           href="/home/"
                                                                            title="Home"><span>Home</span></a>
                                                                         <div class="tp-submenu submenu has-homemenu  ">
                                                                             <style>.elementor-4004 .elementor-element.elementor-element-da99cd7 {
@@ -841,14 +841,14 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="nav-links"
-                                                                           href="http://localhost:63342/about/"
+                                                                           href="/about/"
                                                                            title="About"><span>About</span></a></li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8297 has-mega-menu has-dropdown menu-item-8297 nav-item"
                                                                         id="menu-item-8297"
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="nav-links"
-                                                                           href="http://localhost:63342/services/"
+                                                                           href="/services/"
                                                                            title="Services"><span>Services</span></a>
                                                                         <div class="tp-submenu submenu has-homemenu  ">
                                                                             <style>.elementor-4024 .elementor-element.elementor-element-e0f097f {
@@ -984,7 +984,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="nav-links"
-                                                                           href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
+                                                                           href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
                                                                            title="Pages"><span>Pages</span></a>
                                                                         <ul aria-labelledby="4024"
                                                                             class="tp-submenu submenu mega-menu" role="menu">
@@ -993,7 +993,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/about/"
+                                                                                   href="/about/"
                                                                                    title="About"><span>About</span></a>
                                                                                 <ul aria-labelledby="4024" class=""
                                                                                     role="menu">
@@ -1002,7 +1002,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/services/"
+                                                                                           href="/services/"
                                                                                            title="Services"><span>Services</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3140 menu-item-3140 nav-item"
@@ -1010,7 +1010,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/team/"
+                                                                                           href="/team/"
                                                                                            title="Team Members"><span>Team Members</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3181 menu-item-3181 nav-item"
@@ -1018,7 +1018,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/team-details/"
+                                                                                           href="/team-details/"
                                                                                            title="Team Details"><span>Team Details</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3211 menu-item-3211 nav-item"
@@ -1026,7 +1026,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/faq/"
+                                                                                           href="/faq/"
                                                                                            title="FAQ"><span>FAQ</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3999 menu-item-3999 nav-item"
@@ -1034,7 +1034,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/contact/"
+                                                                                           href="/contact/"
                                                                                            title="Contact"><span>Contact</span></a>
                                                                                     </li>
                                                                                 </ul>
@@ -1044,7 +1044,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/pricing/"
+                                                                                   href="/pricing/"
                                                                                    title="Pricing"><span>Pricing</span></a>
                                                                                 <ul aria-labelledby="4024" class=""
                                                                                     role="menu">
@@ -1053,7 +1053,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/portfolio/"
+                                                                                           href="/portfolio/"
                                                                                            title="Case Studies 2 Columns"><span>Case Studies 2 Columns</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3540 menu-item-3540 nav-item"
@@ -1061,7 +1061,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/portfolio-2-2/"
+                                                                                           href="/portfolio-2-2/"
                                                                                            title="Case Studies 3 Columns"><span>Case Studies 3 Columns</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-tp-portfolios menu-item-3658 menu-item-3658 nav-item"
@@ -1069,7 +1069,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/tp-portfolios/tips-for-the-good-ui-design/"
+                                                                                           href="/tp-portfolios/tips-for-the-good-ui-design/"
                                                                                            title="Case Studies Details"><span>Case Studies Details</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3996 menu-item-3996 nav-item"
@@ -1077,7 +1077,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/blog-grid/"
+                                                                                           href="/blog-grid/"
                                                                                            title="Blog Grid"><span>Blog Grid</span></a>
                                                                                     </li>
                                                                                 </ul>
@@ -1087,7 +1087,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/blog-list/"
+                                                                                   href="/blog-list/"
                                                                                    title="Blog List"><span>Blog List</span></a>
                                                                                 <ul aria-labelledby="4024" class=""
                                                                                     role="menu">
@@ -1096,7 +1096,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/blog-masonry/"
+                                                                                           href="/blog-masonry/"
                                                                                            title="Blog Masonry"><span>Blog Masonry</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3971 menu-item-3971 nav-item"
@@ -1104,7 +1104,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/shop-2/"
+                                                                                           href="/shop-2/"
                                                                                            title="Shop"><span>Shop</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3973 menu-item-3973 nav-item"
@@ -1112,7 +1112,7 @@
                                                                                         itemscope="itemscope"
                                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                         <a class="dropdown-items"
-                                                                                           href="http://localhost:63342/product/side-bag-woman/"
+                                                                                           href="/product/side-bag-woman/"
                                                                                            title="Shop Details"><span>Shop Details</span></a>
                                                                                     </li>
                                                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3993 menu-item-3993 nav-item"
@@ -1140,7 +1140,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="nav-links"
-                                                                           href="http://localhost:63342/blog/"
+                                                                           href="/blog/"
                                                                            title="Blog"><span>Blog</span></a>
                                                                         <ul aria-labelledby="4024"
                                                                             class="tp-submenu submenu" role="menu">
@@ -1149,7 +1149,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/blog/"
+                                                                                   href="/blog/"
                                                                                    title="Blog Sidebar"><span>Blog Sidebar</span></a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3682 menu-item-3682 nav-item"
@@ -1157,7 +1157,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/blog-grid/"
+                                                                                   href="/blog-grid/"
                                                                                    title="Blog Grid"><span>Blog Grid</span></a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3724 menu-item-3724 nav-item"
@@ -1165,7 +1165,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/blog-masonry/"
+                                                                                   href="/blog-masonry/"
                                                                                    title="Blog Masonry"><span>Blog Masonry</span></a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3718 menu-item-3718 nav-item"
@@ -1173,7 +1173,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/blog-list/"
+                                                                                   href="/blog-list/"
                                                                                    title="Blog List"><span>Blog List</span></a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3798 menu-item-3798 nav-item"
@@ -1181,7 +1181,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/2023/10/03/getting-ready-to-chase-google-sitelinks-2/"
+                                                                                   href="/2023/10/03/getting-ready-to-chase-google-sitelinks-2/"
                                                                                    title="Blog Details"><span>Blog Details</span></a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3802 menu-item-3802 nav-item"
@@ -1189,7 +1189,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/2023/10/03/10-quick-tips-about-blogging-2/"
+                                                                                   href="/2023/10/03/10-quick-tips-about-blogging-2/"
                                                                                    title="Blog Details 2"><span>Blog Details 2</span></a>
                                                                             </li>
                                                                             <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3801 menu-item-3801 nav-item"
@@ -1197,7 +1197,7 @@
                                                                                 itemscope="itemscope"
                                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                                 <a class="dropdown-items"
-                                                                                   href="http://localhost:63342/2023/10/03/success-story-businessman-in-harlem/"
+                                                                                   href="/2023/10/03/success-story-businessman-in-harlem/"
                                                                                    title="Blog Details No Sidebar"><span>Blog Details No Sidebar</span></a>
                                                                             </li>
                                                                         </ul>
@@ -1207,7 +1207,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="nav-links"
-                                                                           href="http://localhost:63342/contact/"
+                                                                           href="/contact/"
                                                                            title="Contact"><span>Contact</span></a>
                                                                     </li>
                                                                 </ul>
@@ -1217,7 +1217,7 @@
                                                     <div class="col-xl-2 col-lg-6 col-sm-7 col-6">
                                                         <div class="header-btn header-btn-4 text-end">
 
-                                                            <a class="blue-btn d-none d-xl-block tp-el-btn1" href="http://localhost:63342/contact/"
+                                                            <a class="blue-btn d-none d-xl-block tp-el-btn1" href="/contact/"
                                                                rel="nofollow"
                                                                target="_self">Contact
                                                                 Us</a>
@@ -1252,7 +1252,7 @@
                                     <div class="offcanvas__content">
                                         <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                                             <div class="offcanvas__logo logo">
-                                                <a class="tp-el-off-logo" href="http://localhost:63342/">
+                                                <a class="tp-el-off-logo" href="/">
                                                     <img alt="" src="./public/theme/somey/logo.png">
                                                 </a>
                                             </div>
@@ -1265,7 +1265,7 @@
                                                         id="menu-item-7900"
                                                         itemscope="itemscope"
                                                         itemtype="https://www.schema.org/SiteNavigationElement">
-                                                        <a class="nav-links" href="http://localhost:63342/home/"
+                                                        <a class="nav-links" href="/home/"
                                                            title="Home"><span>Home</span>
                                                             <button class="dropdown-toggle-btn"><i
                                                                     class="fa-regular fa-angle-right"></i></button>
@@ -1386,13 +1386,13 @@
                                                         id="menu-item-8296"
                                                         itemscope="itemscope"
                                                         itemtype="https://www.schema.org/SiteNavigationElement">
-                                                        <a class="nav-links" href="http://localhost:63342/about/"
+                                                        <a class="nav-links" href="/about/"
                                                            title="About"><span>About</span></a></li>
                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8297 has-mega-menu has-dropdown menu-item-8297 nav-item"
                                                         id="menu-item-8297"
                                                         itemscope="itemscope"
                                                         itemtype="https://www.schema.org/SiteNavigationElement">
-                                                        <a class="nav-links" href="http://localhost:63342/services/"
+                                                        <a class="nav-links" href="/services/"
                                                            title="Services"><span>Services</span>
                                                             <button class="dropdown-toggle-btn"><i
                                                                     class="fa-regular fa-angle-right"></i></button>
@@ -1527,7 +1527,7 @@
                                                         itemscope="itemscope"
                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                         <a class="nav-links"
-                                                           href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
+                                                           href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
                                                            title="Pages"><span>Pages</span>
                                                             <button class="dropdown-toggle-btn"><i
                                                                     class="fa-regular fa-angle-right"></i></button>
@@ -1538,7 +1538,7 @@
                                                                 id="menu-item-8298"
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
-                                                                <a class="dropdown-items" href="http://localhost:63342/about/"
+                                                                <a class="dropdown-items" href="/about/"
                                                                    title="About"><span>About</span></a>
                                                                 <ul aria-labelledby="4024" class="" role="menu">
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8299 menu-item-8299 nav-item"
@@ -1546,7 +1546,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/services/"
+                                                                           href="/services/"
                                                                            title="Services"><span>Services</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3140 menu-item-3140 nav-item"
@@ -1554,7 +1554,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/team/"
+                                                                           href="/team/"
                                                                            title="Team Members"><span>Team Members</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3181 menu-item-3181 nav-item"
@@ -1562,7 +1562,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/team-details/"
+                                                                           href="/team-details/"
                                                                            title="Team Details"><span>Team Details</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3211 menu-item-3211 nav-item"
@@ -1570,7 +1570,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/faq/"
+                                                                           href="/faq/"
                                                                            title="FAQ"><span>FAQ</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3999 menu-item-3999 nav-item"
@@ -1578,7 +1578,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/contact/"
+                                                                           href="/contact/"
                                                                            title="Contact"><span>Contact</span></a>
                                                                     </li>
                                                                 </ul>
@@ -1588,7 +1588,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/pricing/"
+                                                                   href="/pricing/"
                                                                    title="Pricing"><span>Pricing</span></a>
                                                                 <ul aria-labelledby="4024" class="" role="menu">
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3541 menu-item-3541 nav-item"
@@ -1596,7 +1596,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/portfolio/"
+                                                                           href="/portfolio/"
                                                                            title="Case Studies 2 Columns"><span>Case Studies 2 Columns</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3540 menu-item-3540 nav-item"
@@ -1604,7 +1604,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/portfolio-2-2/"
+                                                                           href="/portfolio-2-2/"
                                                                            title="Case Studies 3 Columns"><span>Case Studies 3 Columns</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-tp-portfolios menu-item-3658 menu-item-3658 nav-item"
@@ -1612,7 +1612,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/tp-portfolios/tips-for-the-good-ui-design/"
+                                                                           href="/tp-portfolios/tips-for-the-good-ui-design/"
                                                                            title="Case Studies Details"><span>Case Studies Details</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3996 menu-item-3996 nav-item"
@@ -1620,7 +1620,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/blog-grid/"
+                                                                           href="/blog-grid/"
                                                                            title="Blog Grid"><span>Blog Grid</span></a>
                                                                     </li>
                                                                 </ul>
@@ -1630,7 +1630,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/blog-list/"
+                                                                   href="/blog-list/"
                                                                    title="Blog List"><span>Blog List</span></a>
                                                                 <ul aria-labelledby="4024" class="" role="menu">
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3997 menu-item-3997 nav-item"
@@ -1638,7 +1638,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/blog-masonry/"
+                                                                           href="/blog-masonry/"
                                                                            title="Blog Masonry"><span>Blog Masonry</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3971 menu-item-3971 nav-item"
@@ -1646,7 +1646,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/shop-2/"
+                                                                           href="/shop-2/"
                                                                            title="Shop"><span>Shop</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-post_type menu-item-object-product menu-item-3973 menu-item-3973 nav-item"
@@ -1654,7 +1654,7 @@
                                                                         itemscope="itemscope"
                                                                         itemtype="https://www.schema.org/SiteNavigationElement">
                                                                         <a class="dropdown-items"
-                                                                           href="http://localhost:63342/product/side-bag-woman/"
+                                                                           href="/product/side-bag-woman/"
                                                                            title="Shop Details"><span>Shop Details</span></a>
                                                                     </li>
                                                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3993 menu-item-3993 nav-item"
@@ -1681,7 +1681,7 @@
                                                         id="menu-item-36"
                                                         itemscope="itemscope"
                                                         itemtype="https://www.schema.org/SiteNavigationElement">
-                                                        <a class="nav-links" href="http://localhost:63342/blog/"
+                                                        <a class="nav-links" href="/blog/"
                                                            title="Blog"><span>Blog</span>
                                                             <button class="dropdown-toggle-btn"><i
                                                                     class="fa-regular fa-angle-right"></i></button>
@@ -1693,7 +1693,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/blog/"
+                                                                   href="/blog/"
                                                                    title="Blog Sidebar"><span>Blog Sidebar</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3682 menu-item-3682 nav-item"
@@ -1701,7 +1701,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/blog-grid/"
+                                                                   href="/blog-grid/"
                                                                    title="Blog Grid"><span>Blog Grid</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3724 menu-item-3724 nav-item"
@@ -1709,7 +1709,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/blog-masonry/"
+                                                                   href="/blog-masonry/"
                                                                    title="Blog Masonry"><span>Blog Masonry</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3718 menu-item-3718 nav-item"
@@ -1717,7 +1717,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/blog-list/"
+                                                                   href="/blog-list/"
                                                                    title="Blog List"><span>Blog List</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3798 menu-item-3798 nav-item"
@@ -1725,7 +1725,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/2023/10/03/getting-ready-to-chase-google-sitelinks-2/"
+                                                                   href="/2023/10/03/getting-ready-to-chase-google-sitelinks-2/"
                                                                    title="Blog Details"><span>Blog Details</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3802 menu-item-3802 nav-item"
@@ -1733,7 +1733,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/2023/10/03/10-quick-tips-about-blogging-2/"
+                                                                   href="/2023/10/03/10-quick-tips-about-blogging-2/"
                                                                    title="Blog Details 2"><span>Blog Details 2</span></a>
                                                             </li>
                                                             <li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-3801 menu-item-3801 nav-item"
@@ -1741,7 +1741,7 @@
                                                                 itemscope="itemscope"
                                                                 itemtype="https://www.schema.org/SiteNavigationElement">
                                                                 <a class="dropdown-items"
-                                                                   href="http://localhost:63342/2023/10/03/success-story-businessman-in-harlem/"
+                                                                   href="/2023/10/03/success-story-businessman-in-harlem/"
                                                                    title="Blog Details No Sidebar"><span>Blog Details No Sidebar</span></a>
                                                             </li>
                                                         </ul>
@@ -1750,14 +1750,14 @@
                                                         id="menu-item-38"
                                                         itemscope="itemscope"
                                                         itemtype="https://www.schema.org/SiteNavigationElement">
-                                                        <a class="nav-links" href="http://localhost:63342/contact/"
+                                                        <a class="nav-links" href="/contact/"
                                                            title="Contact"><span>Contact</span></a></li>
                                                 </ul>
                                             </nav>
                                         </div>
 
                                         <div class="offcanvas__btn">
-                                            <a class="tp-btn w-100 tp-el-off-btn" href="http://localhost:63342/contact/" rel="nofollow"
+                                            <a class="tp-btn w-100 tp-el-off-btn" href="/contact/" rel="nofollow"
                                                target="_self">Getting Started</a>
                                         </div>
                                         <div class="offcanvas__contact mb-40">
@@ -1770,28 +1770,28 @@
                                         </div>
                                         <div class="offcanvas__social">
                                             <a class="tp-el-off-social"
-                                               href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                               href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                 <svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-f"
                                                      viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
                                                 </svg>
                                             </a>
                                             <a class="tp-el-off-social"
-                                               href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                               href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                 <svg aria-hidden="true" class="e-font-icon-svg e-fab-twitter"
                                                      viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
                                                 </svg>
                                             </a>
                                             <a class="tp-el-off-social"
-                                               href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                               href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                 <svg aria-hidden="true" class="e-font-icon-svg e-fab-linkedin"
                                                      viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
                                                 </svg>
                                             </a>
                                             <a class="tp-el-off-social"
-                                               href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                                               href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                                 <svg aria-hidden="true" class="e-font-icon-svg e-fab-instagram"
                                                      viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
@@ -1982,7 +1982,7 @@
                                                     <p>We develop digital strategies, products and services appreciated
                                                         by clients.</p>
                                                     <div class="services-btn-4 p-relative">
-                                                        <a href="http://localhost:63342/social-media-marketing/"
+                                                        <a href="/social-media-marketing/"
                                                            rel="nofollow" target="_self">
                                                             <span>Read More</span>
                                                             <i>
@@ -2035,7 +2035,7 @@
                                                     <p>We develop digital strategies, products and services appreciated
                                                         by clients.</p>
                                                     <div class="services-btn-4 p-relative">
-                                                        <a href="http://localhost:63342/social-media-marketing/"
+                                                        <a href="/social-media-marketing/"
                                                            rel="nofollow" target="_self">
                                                             <span>Read More</span>
                                                             <i>
@@ -2110,7 +2110,7 @@
                                                     <p>We develop digital strategies, products and services appreciated
                                                         by clients.</p>
                                                     <div class="services-btn-4 p-relative">
-                                                        <a href="http://localhost:63342/social-media-marketing/"
+                                                        <a href="/social-media-marketing/"
                                                            rel="nofollow" target="_self">
                                                             <span>Read More</span>
                                                             <i>
@@ -2703,7 +2703,7 @@
 
 
                             <div class="tp-el-btn-area">
-                                <a class="blue-btn tp-el-btn" href="http://localhost:63342/social-media-marketing/" rel="nofollow"
+                                <a class="blue-btn tp-el-btn" href="/social-media-marketing/" rel="nofollow"
                                    target="_self">Discover More</a>
                             </div>
 
@@ -4553,7 +4553,7 @@
                                                                                                             <div class="tppricing-4-price  tppricing-4-btn">
                                                                                                                 <p>
                                                                                                                     <a class="tp-el-btn"
-                                                                                                                       href="http://localhost:63342/contact/"
+                                                                                                                       href="/contact/"
                                                                                                                        rel="nofollow"
                                                                                                                        target="_self">Join
                                                                                                                         this
@@ -4565,7 +4565,7 @@
                                                                                                             <div class="tppricing-4-price active tppricing-4-btn">
                                                                                                                 <p>
                                                                                                                     <a class="tp-el-btn"
-                                                                                                                       href="http://localhost:63342/contact/"
+                                                                                                                       href="/contact/"
                                                                                                                        rel="nofollow"
                                                                                                                        target="_self">Join
                                                                                                                         this
@@ -4577,7 +4577,7 @@
                                                                                                             <div class="tppricing-4-price  tppricing-4-btn">
                                                                                                                 <p>
                                                                                                                     <a class="tp-el-btn"
-                                                                                                                       href="http://localhost:63342/contact/"
+                                                                                                                       href="/contact/"
                                                                                                                        rel="nofollow"
                                                                                                                        target="_self">Join
                                                                                                                         this
@@ -4850,7 +4850,7 @@
                                                                                                             <div class="tppricing-4-price  tppricing-4-btn">
                                                                                                                 <p>
                                                                                                                     <a class="tp-el-btn"
-                                                                                                                       href="http://localhost:63342/contact/"
+                                                                                                                       href="/contact/"
                                                                                                                        rel="nofollow"
                                                                                                                        target="_self">Join
                                                                                                                         this
@@ -4862,7 +4862,7 @@
                                                                                                             <div class="tppricing-4-price active tppricing-4-btn">
                                                                                                                 <p>
                                                                                                                     <a class="tp-el-btn"
-                                                                                                                       href="http://localhost:63342/contact/"
+                                                                                                                       href="/contact/"
                                                                                                                        rel="nofollow"
                                                                                                                        target="_self">Join
                                                                                                                         this
@@ -4874,7 +4874,7 @@
                                                                                                             <div class="tppricing-4-price  tppricing-4-btn">
                                                                                                                 <p>
                                                                                                                     <a class="tp-el-btn"
-                                                                                                                       href="http://localhost:63342/contact/"
+                                                                                                                       href="/contact/"
                                                                                                                        rel="nofollow"
                                                                                                                        target="_self">Join
                                                                                                                         this
@@ -5591,7 +5591,7 @@
 
 
                                             <div class="tp-el-btn-area">
-                                                <a class="blue-btn tp-el-btn" href="http://localhost:63342/contact/" rel="nofollow"
+                                                <a class="blue-btn tp-el-btn" href="/contact/" rel="nofollow"
                                                    target="_self">Call us Now</a>
                                             </div>
 
@@ -5618,7 +5618,7 @@
                                                             <p aria-atomic="true" aria-live="polite" role="status"></p>
                                                             <ul></ul>
                                                         </div>
-                                                        <form action="http://localhost:63342/wordpress/?simply_static_page=1#wpcf7-f1660-p6904-o1"
+                                                        <form action="/wordpress/?simply_static_page=1#wpcf7-f1660-p6904-o1"
                                                               aria-label="Contact form" class="wpcf7-form init"
                                                               data-status="init" method="post"
                                                               novalidate="novalidate">
@@ -5787,7 +5787,7 @@
 
 
                                             <div class="tp-el-btn-area">
-                                                <a class="blue-btn tp-el-btn" href="http://localhost:63342/blog/" rel="nofollow"
+                                                <a class="blue-btn tp-el-btn" href="/blog/" rel="nofollow"
                                                    target="_self">More Articles</a>
                                             </div>
 
@@ -5826,7 +5826,7 @@
                                                                         Digital Product</h5>
 
                                                                     <h4 class="tpblog-4-content-title tp-el-rep-title">
-                                                                        <a href="http://localhost:63342/2023/09/07/how-to-increase-your-roi-through-scientific-sem/">How
+                                                                        <a href="/2023/09/07/how-to-increase-your-roi-through-scientific-sem/">How
                                                                             to Increase Your ROI Through</a>
                                                                     </h4>
                                                                     <p class="tp-el-rep-des">Nancy boy Charles down the
@@ -5834,7 +5834,7 @@
                                                                     <div class="tpblog-4-info">
                                                                         <span class="tp-el-rep-date">9월 07, 2023</span>
                                                                         <span><a class="tp-el-rep-ava-name"
-                                                                                 href="http://localhost:63342/author/root/"><i>By</i>
+                                                                                 href="/author/root/"><i>By</i>
                                     Root</a></span>
                                                                     </div>
                                                                 </div>
@@ -5855,7 +5855,7 @@
                                                                         Events</h5>
 
                                                                     <h4 class="tpblog-4-content-title tp-el-rep-title">
-                                                                        <a href="http://localhost:63342/2023/09/07/getting-ready-to-chase-google-sitelinks/">Getting
+                                                                        <a href="/2023/09/07/getting-ready-to-chase-google-sitelinks/">Getting
                                                                             Ready to Chase Google Sitelinks</a>
                                                                     </h4>
                                                                     <p class="tp-el-rep-des">Nancy boy Charles down the
@@ -5863,7 +5863,7 @@
                                                                     <div class="tpblog-4-info">
                                                                         <span class="tp-el-rep-date">9월 07, 2023</span>
                                                                         <span><a class="tp-el-rep-ava-name"
-                                                                                 href="http://localhost:63342/author/root/"><i>By</i>
+                                                                                 href="/author/root/"><i>By</i>
                                     Root</a></span>
                                                                     </div>
                                                                 </div>
@@ -6026,7 +6026,7 @@
 
 
                             <div class="tp-el-btn-area">
-                                <a class="blue-btn tp-el-btn" href="http://localhost:63342/contact/" rel="nofollow"
+                                <a class="blue-btn tp-el-btn" href="/contact/" rel="nofollow"
                                    target="_self">Grow Traffic</a>
                             </div>
 
@@ -6048,7 +6048,7 @@
                                 <div class="footer-widget-link">
                                     <ul>
                                         <li>
-                                            <a class="tp-el-title" href="http://localhost:63342/my-account/" rel="nofollow"
+                                            <a class="tp-el-title" href="/my-account/" rel="nofollow"
                                                target="_self">Home</a>
                                         </li>
                                         <li>
@@ -6061,11 +6061,11 @@
                                             <a class="tp-el-title" rel="nofollow" target="_self">Why SEO?</a>
                                         </li>
                                         <li>
-                                            <a class="tp-el-title" href="http://localhost:63342/team/" rel="nofollow"
+                                            <a class="tp-el-title" href="/team/" rel="nofollow"
                                                target="_self">Team</a>
                                         </li>
                                         <li>
-                                            <a class="tp-el-title" href="http://localhost:63342/pricing/" rel="nofollow"
+                                            <a class="tp-el-title" href="/pricing/" rel="nofollow"
                                                target="_self"> Pricing</a>
                                         </li>
                                     </ul>
@@ -6131,7 +6131,7 @@
                     <div class="elementor-element elementor-element-145879f elementor-widget elementor-widget-html"
                          data-element_type="widget" data-id="145879f" data-widget_type="html.default">
                         <div class="elementor-widget-container">
-                            <form action="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
+                            <form action="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#">
                                 <div class="p-relative">
                                     <div class="footer-widget-newsletter-input mb-15">
                                         <input placeholder="Your Email" type="email">
@@ -6171,19 +6171,19 @@
 
                             <div class="footer-widget-content">
                                 <div class="footer-widget-social2 box-align ele-section">
-                                    <a class="footer-facebook elementor-repeater-item-692e479" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
+                                    <a class="footer-facebook elementor-repeater-item-692e479" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
                                        rel="noopener"
                                        target="_blank"><i
                                             aria-hidden="true" class="tp-el-sicon fa-brands fa-facebook-f"></i></a><a
-                                        class="footer-twitter elementor-repeater-item-87f9806" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
+                                        class="footer-twitter elementor-repeater-item-87f9806" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
                                         rel="noopener"
                                         target="_blank"><i
                                         aria-hidden="true" class="tp-el-sicon fa-brands fa-twitter"></i></a><a
-                                        class="footer-linkedin elementor-repeater-item-c16d875" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
+                                        class="footer-linkedin elementor-repeater-item-c16d875" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
                                         rel="noopener"
                                         target="_blank"><i
                                         aria-hidden="true" class="tp-el-sicon fa-brands fa-linkedin-in"></i></a><a
-                                        class="footer-instagram elementor-repeater-item-8689707" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
+                                        class="footer-instagram elementor-repeater-item-8689707" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#"
                                         rel="noopener"
                                         target="_blank"><i
                                         aria-hidden="true" class="tp-el-sicon fa-brands fa-instagram"></i></a></div>
@@ -6331,7 +6331,7 @@
         <div class="woosc-table" style="background-color: transparent;">
             <div class="woosc-table-inner">
                 <a aria-label="Close"
-                   class="woosc-table-close hint--left" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#close" id="woosc-table-close"><span
+                   class="woosc-table-close hint--left" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#close" id="woosc-table-close"><span
                         class="woosc-table-close-icon"></span></a>
                 <div class="woosc-table-items"></div>
             </div>
@@ -6342,11 +6342,11 @@
                 Click outside to hide the comparison bar
             </div>
             <a aria-label="Print"
-               class="woosc-bar-print hint--top" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#print"></a>
+               class="woosc-bar-print hint--top" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#print"></a>
             <a aria-label="Share"
-               class="woosc-bar-share hint--top" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#share"></a>
+               class="woosc-bar-share hint--top" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#share"></a>
             <a aria-label="Add product"
-               class="woosc-bar-search hint--top" href="http://localhost:63342/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#search"></a>
+               class="woosc-bar-search hint--top" href="/simply-static-1-1723622274/index.html?_ijt=jr6nnedbjtk7ikqvket1cgp0sq&amp;_ij_reload=RELOAD_ON_SAVE#search"></a>
             <div class="woosc-bar-items"></div>
             <div class="woosc-bar-btn woosc-bar-btn-text" style="background-color: rgb(0, 160, 210);">
                 <div class="woosc-bar-btn-icon-wrapper">

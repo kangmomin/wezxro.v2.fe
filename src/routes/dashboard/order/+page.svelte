@@ -86,13 +86,15 @@
                             <div class="input-group">
                                 <input class="form-control" name="query" placeholder="검색" type="text" value="">
 
-                                <button class="btn btn-primary btn-square btn-search" type="button"><span
-                                        class="fe fe-search"></span></button>
+                                <button class="btn btn-primary btn-square btn-search" type="button">
+                                    <span class="fe fe-search"></span>
+                                </button>
                                 <button class="btn btn-outline-danger btn-square btn-clear d-none"
                                         data-original-title="Clear"
                                         data-placement="bottom" data-toggle="tooltip" title=""
-                                        type="button"><span
-                                        class="fe fe-x"></span></button>
+                                        type="button">
+                                    <span class="fe fe-x"></span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -107,12 +109,6 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">주문 처리 현황</h3>
-                <div class="card-options">
-                    <a class="card-options-collapse" data-toggle="card-collapse" href="#"><i
-                            class="fe fe-chevron-up"></i></a>
-                    <a class="card-options-remove" data-toggle="card-remove" href="#"><i
-                            class="fe fe-x"></i></a>
-                </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover table-bordered table-vcenter card-table">
@@ -155,9 +151,9 @@
                                 <td class="text-center w-10p">
                                     { dateFormat(e.createdAt) }
                                 </td>
-                                <td class="text-center w-10p"><span class="badge bg-green">
-                            { e.status }
-                            </span></td>
+                                <td class="text-center w-10p">
+                                    <span class="badge bg-green">{ e.status }</span>
+                                </td>
                             </tr>
                         {/each}
                         </tbody>
