@@ -1,0 +1,127 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.5 Header Style 5
+/*----------------------------------------*/
+.tpmenu-5 {
+    margin-left: -105px;
+    @media #{$xxl} {
+        margin-left: -25px;
+    }
+    @media #{$xl} {
+        margin-left: -15px;
+    }
+}
+.tpheader-btn-5 {
+    & a {
+        background: #FF622D;
+        border-radius: 4px;
+        display: inline-block;
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1;
+        color: var(--tp-common-white);
+        padding: 14px 23.5px;
+    }
+}
+.header-bottom {
+    &__lang {
+        & > ul {
+            & > li {
+                position: relative;
+                list-style: none;
+                &  > a  {
+                    display: flex;
+                    align-items: center;
+                    height: 32px;
+                    padding: 0 5px 0 15px;
+                    border-radius: 30px;
+                    font-weight: 500;
+                    font-size: 14px;
+                    font-family: var(--tp-ff-jakarta);
+                    color:#88898A;
+                    line-height: 0;
+                    & svg {
+                        &.child-1{
+                            margin-right: 2px;
+                            transform: translateY(-1px);
+                        }
+                        &.child-2{
+                            margin-left: 8px;
+                            transition: .4s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__lang-submenu {
+        position: absolute;
+        top: 140%;
+        left: 0px;
+        width: 120px;
+        background: var(--tp-common-white);
+        z-index: 9;
+        box-shadow: 0 30px 70px 6px rgba(11, 6, 70, 0.08);
+        padding: 15px 20px;
+        border-radius: 4px;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.3s);
+        & li {
+        list-style: none;
+            margin-bottom: 7px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:hover {
+                color: var(--tp-text-primary);
+            }
+        }
+        &.open{
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+.header-five {
+    @media #{$lg,$md,$xs} {
+        padding: 15px 0;
+    }
+    & .tpmenu__area ul li > a {
+        font-size: 16px;
+        color: var(--tp-grey-8);
+        font-weight: 500;
+        letter-spacing: 0;
+        padding: 26px 0;
+        font-family: var(--tp-ff-jakarta);
+    }
+    & .tpmenu__area ul li > a:hover {
+        color: var(--tp-common-11);
+    }
+    & .tpmenu__area ul li:hover.has-dropdown a::after {
+        color: var(--tp-common-11);
+    }
+    & .tpmenu__area ul li .submenu li a {
+        color: var(--tp-grey-8);
+    }
+    & .tpmenu__area ul li.has-dropdown > a::after {
+        color: var(--tp-grey-8);
+    }
+    & .tpmenu__area ul li:hover > a {
+        color: var(--tp-common-11);
+    }
+    & .tpmenu__area ul li .submenu li a:hover {
+        color: var(--tp-common-11);
+    }
+    & .tpmenu__area ul li.has-mega-menu .tp-menu-banner ul li a:hover {
+        color: var(--tp-common-11);
+    }
+    & .tpmenu__area ul li.has-mega-menu .tp-menu-banner ul li a {
+        color: var(--tp-grey-8);
+    }
+    & .tpmenu__area ul li.has-mega-menu .tp-menu-banner-btn a {
+        color: var(--tp-common-white);
+    }
+}

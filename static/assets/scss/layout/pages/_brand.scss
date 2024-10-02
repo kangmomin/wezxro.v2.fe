@@ -1,0 +1,209 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.4 Brand css
+/*----------------------------------------*/
+// brand
+.tpbrand {
+    &-item {
+        display: flex !important;
+        min-height: 73px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.tpbrand-item-2 {
+    opacity: .3;
+    @include transition(.3s);
+    text-align: center;
+    &:hover {
+        opacity: 1;
+    }
+    &.slick-slide img {
+        display: inline-block;
+    }
+}
+.brand-5-item {
+    text-align: center;
+    &.slick-slide img {
+        display: inline-block;
+    }
+}
+.brand-content {
+    position: relative;
+    z-index: 1;
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1px;
+        width: 100%;
+        background: var(--tp-common-11);
+        opacity: 0.1;
+        z-index: -1;
+    }
+}
+.brand-title {
+    font-family: var(--tp-ff-jakarta);
+    font-size: 22px;
+    color: var(--tp-grey-8);
+    font-weight: 400;
+    position: relative;
+    line-height: 1;
+    z-index: 1;
+    background: #F3F7F4;
+    margin-bottom: 0;
+    display: inline-block;
+    padding: 0 45px;
+    @media #{$xs} {
+        padding: 0 0;
+    }
+}
+.brand-bg-3 {
+    background: linear-gradient(91.91deg, #501E9C 5.01%, #A44CEE 43.79%, #FF847F 93.65%);
+}
+.brand-wrapper {
+    & .title {
+        padding-top: 75px;
+        padding-bottom: 45px;
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 17px;
+        color: var(--tp-common-white);
+    }
+}
+.tpbrand-active-4 {
+    & .slick-list {
+        z-index: 9;
+    }
+    & .slick-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 40px;
+        z-index: 9;
+        & li {
+            list-style: none;
+            position: relative;
+            font-size: 0;
+            height: 8px;
+            width: 8px;
+            background-color: var(--tp-common-white);
+            cursor: pointer;
+            opacity: 0.4;
+            border-radius: 50%;
+            margin: 0 5px;
+            &.slick-active {
+                border: 2px solid var(--tp-common-white);
+                opacity: 1;
+                height: 12px;
+                width: 12px;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+    & .slick-slide img {
+        display: inline-block;
+        opacity: .6;
+        @include transition (.3s);
+        &:hover {
+            opacity: 1;
+        }
+    }
+    & .tpbrand-item-4 {
+        text-align: center;
+    }
+}
+.brand-4-shape {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: -1;
+}
+.wave-bg .wave {
+	position: absolute;
+	left: 0;
+	bottom: -15px;
+	height: 250px;
+	z-index: 1;
+  width: 100%;
+}
+.wave-bg .wave-1{
+  z-index: 2;
+}
+.wave-bg svg {
+	width: 100%;
+}
+.brand-inner {
+    &-content {
+        background: #4260FF;
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        border-radius: 8px 0px;
+        padding: 45px 66px;
+        margin-left: 40px;
+        @media #{$xxxl} {
+            padding: 45px 40px;
+        }
+        @media #{$xxl} {
+            padding: 45px 40px;
+            margin-left: 10px;
+        }
+        @media #{$xl} {
+            padding: 49.5px 37px;
+            margin-left: -25px;
+        }
+        @media #{$lg} {
+            padding: 25px 40px;
+            margin-left: -50px;
+        }
+        @media #{$md} {
+            padding: 35px 50px;
+            margin-left: 0;
+        }
+        @media #{$xs} {
+            padding: 30px 60px;
+            margin-left: 0;
+            margin-bottom: 30px;
+        }
+    }
+    &-title {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 600;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 13px;
+    }
+}
+.tpbrand-inner-item {
+    @media #{$xs} {
+        display: flex !important;
+        justify-content: center;
+    }
+}
+.trusted-brand {
+    &-active {
+        margin-left: 72px;
+        margin-right: 72px;
+    }
+    &-bg {
+        background: linear-gradient(180deg, rgba(243, 244, 249, 0) 0%, #F3F4F9 100%);
+        border-radius: 20px;
+    }
+    &-item {
+        text-align: center;
+    }
+}

@@ -1,0 +1,222 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.10 Dashbord css
+/*----------------------------------------*/
+.dashbord-bg {
+    padding-top: 50px;
+    padding-bottom: 55px;
+    border-radius: 30px;
+    margin-bottom: 80px;
+    padding-right: 75px;
+    padding-left: 75px;
+    @media #{$xs} {
+        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+.dash-board-shape-wrap {
+    position: relative;
+    z-index: 1;
+}
+.dashbord-bg-shape {
+    &-1 {
+        position: absolute;
+        top: -116px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        text-align: center;
+        z-index: -1;
+        @media #{$xxl} {
+            top: -95px;
+        }
+        @media #{$xl} {
+            top: -85px;
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    &-2 {
+        position: absolute;
+        top: -86px;
+        left: 280px;
+        @media #{$xxxl} {
+            top: -122px;
+        }
+        @media #{$xxl} {
+            top: -95px;
+        }
+        @media #{$xl} {
+            top: -93px;
+            left: 220px;
+        }
+        & span {
+            background: #FF4E97;
+            @include square-btn (10px, $circle: true);
+            display: inline-block;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: -10px;
+                right: 0;
+                margin: 0 auto;
+                text-align: center;
+                transform: translateY( -50%);
+                height: 300%;
+                width: 300%;
+                background: #FF4E97;
+                filter: blur(25px);
+                z-index: -1;
+                animation: scale-lught 1s ease-in-out 1s forwards infinite alternate;
+            }
+        }
+    }
+    &-3 {
+        position: absolute;
+        top: -36px;
+        right: 246px;
+        @media #{$xxxl} {
+            top: -70px;
+        }
+        @media #{$xxl} {
+            top: -55px;
+        }
+        @media #{$xl} {
+            top: -54px;
+            right: 185px;
+        }
+        & span {
+            background: #FF4E97;
+            @include square-btn (10px, $circle: true);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: -10px;
+                right: 0;
+                margin: 0 auto;
+                text-align: center;
+                transform: translateY( -50%);
+                height: 300%;
+                width: 300%;
+                background: #FF4E97;
+                filter: blur(25px);
+                z-index: -1;
+                animation: scale-lught 1s ease-in-out 1s forwards infinite alternate;
+            }
+        }
+    }
+}
+.dashbord-thumb {
+    position: relative;
+    z-index: 1;
+    &-one {
+        position: relative;
+        z-index: 1;
+        @media #{$xs} {
+            margin-bottom: 20px;
+        }
+        & img {
+            border-radius: 20px;
+        }
+    }
+    &-two {
+        margin-bottom: -24px;
+        margin-top: -24px;
+    }
+    &-shape {
+        padding-left: 85px;
+        padding-right: 85px;
+        @media #{$lg,$md,$xs} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &-img {
+            display: flex;
+            background-color: var(--tp-common-white);
+            border-radius: 10px;
+            justify-content: center;
+            @media #{$xs} {
+                margin-bottom: 10px;
+            }
+            & span {
+                display: inline-block;
+                padding: 28px 20px;
+            }
+        }
+    }
+}
+.drive-big-shape {
+    &-one {
+        position: absolute;
+        content: '';
+        top: 44%;
+        right: 0;
+    }
+    &-two {
+        position: absolute;
+        content: '';
+        top: 45%;
+        right: -2%;
+    }
+    &-three {
+        position: absolute;
+        content: '';
+        top: 48%;
+        right: -2%;
+    }
+}
+.tpdrive-thumb-shape {
+    &-one {
+        animation: bannerAnimationTwo 8s infinite linear;
+        position: absolute;
+        top: 4%;
+        right: 48%;
+    }
+    &-two {
+        position: absolute;
+        bottom: 60%;
+        right: 20%;
+        animation: transform 2s infinite linear;
+    }
+    &-three {
+        position: absolute;
+        bottom: 17%;
+        right: 35%;
+        animation: round-shape 7s linear infinite;
+    }
+    &-four {
+        position: absolute;
+        bottom: 20%;
+        right: 30%;
+        animation: round-shape-two 7s linear infinite;
+    }
+    &-five {
+        position: absolute;
+        bottom: 26%;
+        left: 2%;
+        animation: round-shape 7s linear infinite;
+    }
+    &-six {
+        position: absolute;
+        bottom: 22%;
+        left: 0;
+        animation: round-shape-two 7s linear infinite;
+    }
+    &-seven {
+        position: absolute;
+        z-index: -1;
+        top: 15%;
+        left: 26%;
+        animation: updown-two 4s linear 0s infinite alternate;
+    }
+}

@@ -1,0 +1,377 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 Counter css
+/*----------------------------------------*/
+.counter-bg-4 {
+    padding: 45px 180px 45px 180px;
+    z-index: 1;
+    background: linear-gradient(90.97deg, #8A4AF8 2.52%, #A14AF8 99.41%);
+    box-shadow: 0px 20px 20px rgba(64, 16, 120, 0.18);
+    border-radius: 20px;
+    @media #{$md} {
+        padding: 45px 20px 45px 20px;
+    }
+    @media #{$xs} {
+        padding: 45px 15px 5px 15px;
+    }
+}
+.counter-item-4 {
+    @media #{$xs} {
+        margin-bottom: 40px;
+    }
+    &-icon {
+        flex: 0 0 auto;
+        margin-right: 15px;
+    }
+    &-content {
+        & p {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 14px;
+            color: var(--tp-common-white);
+            margin-bottom: 0;
+        }
+    }
+    &-count {
+        font-family: var(--tp-ff-jakarta);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 30px;
+        color: var(--tp-common-white);
+        margin-bottom: 13px;
+    }
+}
+.counter-wrapper {
+    @media #{$xs} {
+        flex-wrap: wrap;
+    }
+}
+.counter-shape-4 {
+    &-1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+    &-2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    &-3 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
+    &-4 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    &-5 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+.optimize {
+    &-shape-1 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    &-shape-2 {
+        position: absolute;
+        top: 165px;
+        left: 0;
+    }
+    &-shape-3 {
+        position: absolute;
+        top: 92px;
+        right: -52px;
+        box-shadow: 20px 20px 20px rgba(1, 15, 28, 0.14);
+        border-radius: 14px;
+        @media #{$lg,$md} {
+            right: -10px;
+        }
+        @media #{$xl} {
+            right: -10px;
+        }
+    }
+}
+.optimize-wrapper {
+    @media #{$xs} {
+        padding-bottom: 80px;
+    }
+    & .tpdrive-bar-title {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 12px;
+        color: var(--tp-common-11);        
+    }
+}
+.tpaward {
+    &-content {
+        & .title {
+            color: var(--tp-common-11);
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 22px;
+        }
+        & p {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 13px;
+            color: #A3A4A5;
+        }
+    }
+}
+.tpaward-border {
+    position: relative;
+    &::after ,
+    &::before {
+        position: absolute;
+        content: ''; 
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 120px;
+        width: 1px;
+        background: #EEEEEE;
+    }
+    &::before {
+        right: 10px;
+        left: auto;
+    }
+}
+.counter-5 {
+    &-icon {
+        flex: 0 0 auto;
+        margin-right: 15px;
+        transform: translateY(6px);
+    }
+    &-count {
+        font-family: var(--tp-ff-jakarta);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 50px;
+        letter-spacing: -0.04em;
+        color: var(--tp-common-black);
+        & i {
+            font-size: 13px;
+            color: rgba(106, 144, 249, 0.7);
+            margin-left: -5px;
+        }
+    }
+    &-content {
+        width: 170px;
+        @media #{$xs} {
+            width: 100%;
+        }
+        & p {
+            font-family: var(--tp-ff-jakarta);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 14px;
+            color: var(--tp-grey-8);
+            margin-bottom: 27px;
+        }
+    }
+    &-bar {
+        & .progress {
+            height: 4px;
+            background-color: #EFEFEF;
+            border-radius: 2px;
+            width: 100%;
+            & .progress-bar {
+                background-color: #6A90F9;
+            }
+        }
+    }
+}
+.counter-5-2 {
+    & .counter-5-count i {
+        color: rgba(252, 138, 89, 0.7);
+    }
+    & .counter-5-bar .progress .progress-bar {
+        background-color: #FC8A59;
+    }
+}
+.counter-5-3 {
+    & .counter-5-count i {
+        color: rgba(12, 200, 179, 0.7);
+    }
+    & .counter-5-bar .progress .progress-bar {
+        background-color: #0CC8B3;
+    }
+}
+.counter-5-4 {
+    & .counter-5-count i {
+        color: rgba(255, 93, 167, 0.7);
+    }
+    & .counter-5-bar .progress .progress-bar {
+        background-color: #FF5EA7;
+    }
+}
+.counter-border {
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 72px 0;
+}
+.inner-counter {
+    position: relative;
+    z-index: 1;
+    padding: 25px 0;
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+    &-shape {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    &-shape-2 {
+        position: absolute;
+        left: -60px;
+        bottom: 2px;
+        z-index: -1;
+    }
+    &-shape-3 {
+        position: absolute;
+        left: 70px;
+        bottom: -6px;
+        z-index: -1;
+    }
+    &-list {
+        & span ,
+        & i {
+            font-family: var(--tp-ff-jakarta);
+            font-style: normal;
+            font-weight: 800;
+            font-size: 50px;
+            line-height: 40px;
+            letter-spacing: -0.02em;
+            color: var(--tp-theme-primary);
+        }
+    }
+    &-info {
+        margin-left: 15px;
+        & span {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            color: var(--tp-grey-8);
+        }
+    }
+}
+.inner-counter-count {
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+}
+.optimize {
+    &-thumb-img {
+        animation: light-2 10s linear infinite;
+    }
+    &-shape {
+        &-4 {
+            position: absolute;
+            bottom: 1px;
+            right: -25px;
+            @media #{$md} {
+                right: 105px
+            }
+            @media #{$xs} {
+                right: 0px
+            }
+        }
+        &-5 {
+            position: absolute;
+            top: 40%;
+            right: -13%;
+            @media #{$lg} {
+                display: none;
+            }
+        }
+        &-6 {
+            position: absolute;
+            top: 28%;
+            left: -10%;
+            box-shadow: 20px 20px 20px rgba(1, 15, 28, 0.14);
+            border-radius: 14px;
+            @media #{$md} {
+                left: -4%;
+            }
+        }
+    }
+    &-seo {
+        & .tpdrive-bar-title {
+            font-weight: 500;
+            font-size: 16px;
+            color: #565764;
+            margin-bottom: 13px;
+            @media #{$xs} {
+                font-size: 14px;
+            }
+        }
+        & .progress-bar span {
+            position: absolute;
+            font-family: var(--tp-ff-dmsans);
+            right: 30px;
+            top: -36px;
+            transform: translateY(-36%);
+            font-weight: 400;
+            font-size: 15px;
+            color: #565764;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        & .yellow-bar.tpdrive-bar-item .progress-bar {
+            background: linear-gradient(269.97deg, #FEAF66 50.92%, rgba(254, 175, 102, 0.2) 106.26%);
+            &  span {
+                border: none;
+            }
+        }
+        & .purple-bar .progress-bar {
+            background: linear-gradient(269.97deg, #9666FE 50.92%, rgba(150, 102, 254, 0.2) 106.26%);
+        }
+        & .progress-bar {
+            background: linear-gradient(269.97deg, #4CDCA5 50.92%, rgba(90, 226, 174, 0.2) 106.26%);
+            border-radius: 20px;
+        }
+        & .tpdrive-bar-progress {
+            border: 1px solid #EFEFEF;
+            border-radius: 20px;
+            padding: 3px 4px;
+        }
+        & .progress {
+            height: 14px;
+        }
+    }
+}
+.company-thumb-inner-mr {
+    @media #{$md} {
+        margin-right: 30px;
+    }
+}
+.company-thumb {
+    @media #{$md,$xs} {
+        margin-bottom: 30px;
+    }
+}

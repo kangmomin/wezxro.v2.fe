@@ -1,0 +1,134 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.2 Header Style 2
+/*----------------------------------------*/
+
+.header-lang {
+    & .icon {
+        margin-right: 10px;
+    }
+    & form {
+        margin-bottom: 5px;
+        & select {
+            background: transparent;
+            border: none;
+            color: var(--tp-common-black);
+            outline: none;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: rgba(1, 15, 28, 0.7);
+            color: var(--tp-ff-dmsans);
+            & option {
+                margin-bottom: 5px;
+            }
+        }
+    }
+} 
+.tpheader {
+    &-btn-two {
+        & a {
+            display: inline-block;
+            font-family: var(--tp-ff-dmsans);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 12px;
+            color: var(--tp-common-11);
+            border: 1.5px solid #010F1C;
+            padding: 16px 25px;
+            @include transition(.3s);
+            &:hover {
+                color: #f5f7f4;
+                background-color: var(--tp-common-11);
+            }
+        }
+    }
+}
+.tptransparent {
+    &__header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        @media #{$xxl} {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        @media #{$lg,$md,$sm} {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        @media #{$xs} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+.offcanvas-open-btn {
+    & i {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+.header-green {
+    @media #{$lg,$md,$xs} {
+        padding-top: 15px;
+    }
+    & .tpmenu__area ul > li > a:hover {
+        color: var(--tp-theme-green);
+    }
+    & .tpmenu__area ul li .submenu li a:hover {
+        color: var(--tp-theme-green);
+    }
+    & .tpmenu__area ul li:hover > a {
+        color: var(--tp-theme-green);
+    }
+    & .tpmenu__area ul li:hover.header-services a::after {
+        color: var(--tp-theme-green);
+    }
+    & .tpmenu__area ul li.has-mega-menu .tp-menu-banner ul li a:hover {
+        color: var(--tp-theme-green);
+    }
+    .tpmenu__area ul li.has-mega-menu .tp-menu-banner-btn a:hover span {
+        transform: rotate(-45deg);
+        color: var(--tp-theme-green);
+    }
+    & .tpmenu__area ul li:hover.has-dropdown a::after {
+        color: var(--tp-theme-green);
+    }
+    & .tpmenu__area ul li .has-homemenu .homemenu:hover .demo-name > span {
+        color: var(--tp-theme-green);
+    }
+}
+.tp-green-mobile {
+    &.tp-main-menu-mobile ul li:hover > a {
+        color: var(--tp-theme-green);
+    }
+    &.tp-main-menu-mobile ul li.has-dropdown > a .dropdown-toggle-btn:hover {
+        background-color: var(--tp-theme-green);
+        border-color: var(--tp-theme-green);
+        color: var(--tp-common-white);
+    }
+    &.tp-main-menu-mobile ul li:hover > a .dropdown-toggle-btn i {
+        color: var(--tp-theme-green);
+    }
+    &.tp-main-menu-mobile ul li.has-dropdown > a.expanded .dropdown-toggle-btn.dropdown-opened {
+        background-color: var(--tp-theme-green);
+        border-color: var(--tp-theme-green);
+        color: var(--tp-common-white);
+    }
+    &.tp-main-menu-mobile ul li.has-dropdown > a.expanded {
+        color:var(--tp-theme-green);
+    }
+}
+.header-spaces,
+.tpheader__three {
+    &.header-sticky {
+        @media #{$lg,$md,$xs} {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+    }
+}

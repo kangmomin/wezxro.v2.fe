@@ -1,0 +1,45 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  2.9 Pagination
+/*----------------------------------------*/
+
+.basic-pagination{
+	& ul{
+		& li{
+			display: inline-block;
+			&:not(:last-child){
+				margin-right: 17px;
+			}
+			& a,
+			& span{
+				display: inline-block;
+				width: 44px;
+				height: 44px;
+				line-height: 39px;
+				text-align: center;
+				@include border-radius(7px);
+				border: 2px solid #4260FF;
+				font-size: 15px;
+				font-weight: 600;
+				font-family: var(--tp-ff-jakarta);
+				& i {
+					color: #4260FF;
+					transform: translateY(-1px);
+					display: inline-block;
+				}
+				&:hover,
+				&.current{
+					background: var(--tp-theme-primary);
+					border-color: var(--tp-theme-primary);
+					color: var(--tp-common-white);
+					& i {
+						color: var(--tp-common-white);
+					}
+				}
+				&.current{
+					width: 140px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,166 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.18 Services-details css
+/*----------------------------------------*/
+
+.services-details {
+    margin-top: -268px;
+    position: relative;
+    z-index: 1;
+    &-bg {
+        padding-top: 360px;
+        padding-bottom: 360px;
+    }
+    &-section {
+        @media #{$md,$xs} {
+            margin-left: 0;
+        }
+        & span {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--tp-theme-primary);  
+            display: inline-block;
+            margin-bottom: 10px;          
+        }
+    }
+    &-title {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 700;
+        font-size: 76px;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: #0E1331;
+        margin-bottom: 60px;
+        @media #{$lg} {
+            font-size: 50px;
+        }
+        @media #{$md} {
+            font-size: 50px;
+        }
+        @media #{$xs} {
+            font-size: 40px;
+            letter-spacing: -0.01em;
+        }
+        & br {
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+    }
+    &-thumb {
+        & img {
+            border-radius: 20px;
+        }
+    }
+    &-content-box {
+        margin-bottom: 30px;
+        & span {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.42;
+            color: #0E1331;
+            display: inline-block;
+            margin-bottom: 22px;
+            @media #{$xs} {
+                font-size: 20px;
+            }
+        }
+        & p {
+            font-family: var(--tp-ff-jakarta);
+            font-size: 16px;
+            line-height: 32px;
+            color: var(--tp-tgrey-8);
+            margin-bottom: 0;
+        }
+    }
+    &-list {
+        & span {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 700;
+            font-size: 26px;
+            line-height: 36px;
+            color: #0E1331;
+            display: inline-block;
+            margin-bottom: 13px;
+        }
+        &-item {
+            & li {
+                font-family: 'Plus Jakarta Sans';
+                font-weight: 500;
+                font-size: 15px;
+                color: var(--tp-grey-8);
+                list-style: none;
+                position: relative;
+                padding-left: 15px;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                &::before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 5px;
+                    width: 5px;
+                    background-color: var(--tp-grey-8);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    &-wrap  {
+        padding-bottom: 95px;
+        border-bottom: 1px solid rgba(12, 19, 56, 0.1);
+    }
+}
+.services-inner-banner {
+    &-shape {
+        &-wrap {
+            position: relative;
+            
+        }
+        &-1 {
+            position: absolute;
+            top: -12%;
+            right: 11%;
+            animation: tpswing 3s ease-in-out 0.1s forwards infinite alternate;
+            transform-origin: bottom left;
+        }
+        &-2 {
+            position: absolute;
+            bottom: 2%;
+            left: -2%;
+            animation: tpswing 3s ease-in-out 0.1s forwards infinite alternate;
+            transform-origin: bottom left;
+        }
+        &-3 {
+            position: absolute;
+            bottom: 48%;
+            left: 14%;
+            animation: tpstar 1.5s forwards infinite alternate;
+        }
+        &-4 {
+            position: absolute;
+            bottom: 42%;
+            left: 15.5%;
+            animation: tpstar 2s forwards infinite alternate;
+        }
+        &-5 {
+            position: absolute;
+            bottom: 48%;
+            left: 16.3%;
+            animation: tpstar 2.2s forwards infinite alternate;
+        }
+        &-6 {
+            position: absolute;
+            top: 14%;
+            right: 15%;
+            animation: tpstar 1s forwards infinite alternate;
+        }
+    }
+}

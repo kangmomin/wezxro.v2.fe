@@ -1,0 +1,68 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.25 Video css
+/*----------------------------------------*/
+.video {
+    &-inner {
+        &-bg {
+            border: 4px solid #010F1C;
+            box-shadow: 30px 30px 40px rgba(1, 15, 28, 0.2);
+            border-radius: 4px;
+            position: relative;
+            & img {
+                @media #{$xs} {                    
+                    height: 400px;
+                    width: 500px;
+                    object-fit: cover;
+                }
+            }
+        }
+        &-content {
+            position: absolute;
+            bottom: 39px;
+            left: 52px;
+            @media #{$lg} {
+                bottom: 20px;
+            }
+            @media #{$md} {
+                bottom: 16px;
+            }
+            @media #{$xs} {
+                bottom: 20px;
+                left: 25px;
+            }
+        }
+        &-title {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 1.2;
+            color: var(--tp-common-white);
+            @media #{$xs} {
+                font-size: 18px;
+            }
+        }
+        &-icon {
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            @media #{$lg} {
+                bottom: 40px;
+            }
+            & a {
+                color: var(--tp-common-white);
+                border: 2px solid var(--tp-common-white);
+                border-radius: 50%;
+                height: 34px;
+                width: 34px;
+                text-align: center;
+                display: inline-block;
+                & span {
+                    display: inline-block;
+                    transform: translateX(2px);
+                }
+            }
+        }
+    }
+}

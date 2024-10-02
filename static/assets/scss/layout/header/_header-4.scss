@@ -1,0 +1,123 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.4 Header Style 4
+/*----------------------------------------*/
+.header {
+    &-offer {
+        & img {
+            margin-right: 10px;
+            animation: light 2.5s linear forwards infinite alternate;
+        }
+        & p{
+            margin-bottom: 0;
+            font-size: 15px;
+            font-family: var(--tp-ff-jakarta);
+            color: var(--tp-grey-8);
+            & span {
+                color: #FF6C66;
+                font-weight: 500;
+            }
+        }
+    }
+    &-social {
+        justify-content: end;
+        & a {
+            display: inline-block;
+            color: #7B8187;
+            font-size: 15px;
+            margin-left: 15px;
+            padding: 17px 0;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:hover {
+                color: var(--tp-theme-blue);
+            }
+        }
+    }
+    &-btn-4 {
+        & .blue-btn {
+            &:hover {
+                background-color: #6E51E6;
+                color: var(--tp-common-white);
+                border: 2px solid #6E51E6;
+            }
+        }
+    }
+}
+.header-bg-4 {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 10px 30px rgba(1, 15, 28, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 100px;
+    padding: 0 15px;
+    @media #{$lg,$md,$xs} {
+        padding: 15px 15px;
+    }
+    @media #{$xs} {
+        margin-top: 15px;
+    }
+}
+.tptransparent__header-4 {
+    & .tpmenu__area ul li {
+        margin: 0 37px 0 0;
+        @media #{$xl} {
+            margin: 0 24px 0 0;
+        }
+        &:last-child{
+            margin-right:  0 0 0 0;
+        }
+    }
+    & .tpmenu__area ul li > a {
+        font-family: var(--tp-ff-jakarta);
+        font-size: 16px;
+        color: var(--tp-text-1);
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 21px 0;
+    }
+    & .tpmenu__area ul li:hover > a {
+        color: var(--tp-theme-blue);
+    }
+    & .tpmenu__area ul li .submenu li a:hover {
+        color: var(--tp-theme-blue);
+    }
+    & .tpmenu__area ul li:hover.has-dropdown a::after {
+        color:  var(--tp-theme-blue);
+    }
+    & .tpmenu__area ul li.has-mega-menu .tp-menu-banner ul li a:hover {
+        color:  var(--tp-theme-blue);
+    }
+}
+.tptransparent__header-4 .header-sticky {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    width: 1230px;
+    margin: auto;
+    top: 20px;
+    z-index: 99;
+    background: rgba(255, 255, 255, 0.9);
+    animation: fadeInDown 500ms ease-in-out 0s normal none 1 running;
+    box-shadow: 0px 20px 40px rgba(37, 9, 62, 0.1);
+    backdrop-filter: blur(16px);
+    @media #{$xl} {
+        width: 1140px
+    }
+    @media #{$lg} {
+        width: 970px;
+    }
+    @media #{$md} {
+        width: 740px;
+    }
+    @media #{$xs} {
+        width: 300px;
+    }
+    @media #{$sm} {
+        width: 580px;
+    }
+    @media #{$ssm} {
+        width: 490px;
+    }
+}

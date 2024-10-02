@@ -1,0 +1,24 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.13 Tab
+/*----------------------------------------*/
+
+.tp-tab{
+    & .nav-tabs{
+        padding: 0;
+        margin: 0;
+        border: 0;
+
+        & .nav-link{
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    }
+}
+.services-tab-anim {
+    & .tab-pane {
+        
+    }
+}

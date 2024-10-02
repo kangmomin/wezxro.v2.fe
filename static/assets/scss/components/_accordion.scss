@@ -1,0 +1,87 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.12 Accordion
+/*----------------------------------------*/
+.accordion-button::after {
+	width: 0;
+	height: 0; 
+	margin-left: auto; 
+}
+
+.tp-accordion {
+    & .accordion-button:not(.collapsed) {
+        color: var(--tp-theme-green);
+        background-color: var(--tp-common-white);
+        box-shadow: none;
+    }
+    & .accordion-button {
+        position: relative;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1;
+        font-family: var(--tp-ff-dmsans);
+        padding: 35px 0px;
+        @include transition(.3s);
+        @media #{$xs} {
+            font-size: 16px;
+        }
+        &::after {
+            content: "\2b";
+            font-family: "Font Awesome 6 Pro";
+            position: absolute;
+            background-image: none;
+            right: 0;
+            width: auto;
+            height: auto;
+            font-weight: 500;
+            font-size: 18px;
+            @include transition(.3s);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:focus {
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+    & .accordion-item {
+        background-color: var(--tp-common-white);
+        border-right: none;
+        border-left: none;
+        border-color: rgba(1, 15, 28, 0.1);
+    }
+    & .accordion-body {
+        padding: 0px 70px 35px 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: var(--tp-ff-dmsans);
+        color: #55585B;
+        @media #{$xs} {
+            padding: 0px 30px 35px 0;
+        }
+    }
+    & .accordion-button:not(.collapsed)::after {
+        background-image: none;
+        transform: translateY(-50%) rotate(135deg);
+        color: var(--tp-theme-green);
+    }
+    &-btn {
+        & a {
+            color: var(--tp-grey-8);
+            font-family: var(--tp-ff-dmsans);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 12px;
+            &:hover {
+                color: var(--tp-theme-green);
+            }
+            & i {
+                font-size: 14px;
+                font-weight: 500;
+                margin-left: 2px;
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+    @use "sass:selector";
+
+    @mixin tp-root($child) {
+        @at-root #{selector.unify(&, $child)} {
+            @content;
+        }
+    }
+
+    @mixin rtl {
+        [dir=rtl] & {
+            @content;
+        }
+    }
+
+    @mixin dark {
+        [tp-theme=tp-theme-dark] & {
+            @content;
+        }
+    }
+
+    // bg color
+    @mixin bg-color($value, $opacity) {
+        background-color: rgba($color: $value, $alpha: $opacity);
+    }
+
+
+    // placeholder input
+    @mixin tp-placeholder {
+        &::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            @content;
+        }
+
+        &::-moz-placeholder {
+            /* Firefox 19+ */
+            @content;
+        }
+
+        &:-moz-placeholder {
+            /* Firefox 18- */
+            @content;
+        }
+
+        &:-ms-input-placeholder {
+            /* IE 10+ */
+            @content;
+        }
+    }
+
+    // animate 
+    @mixin animate($animation, $duration, $repeat, $easing) {
+        -webkit-animation: $animation $duration $repeat $easing;
+        -moz-animation: $animation $duration $repeat $easing;
+        -ms-animation: $animation $duration $repeat $easing;
+        -o-animation: $animation $duration $repeat $easing;
+        animation: $animation $duration $repeat $easing;
+    }
+    // animate 
+    @mixin animation($property) {
+        -webkit-animation: $property;
+           -moz-animation: $property;
+            -ms-animation: $property;
+             -o-animation: $property;
+                animation: $property;
+    }
+    @mixin animation-name($name: fadeInUp, $fill : both) {    
+        animation-name: $name;
+        animation-fill-mode: $fill;
+    }
+    
+    @mixin animation-control($time: .3s , $duration : 1s) {
+        animation-delay: $time;
+        animation-duration: $duration;
+    }
+
+    // filter 
+    @mixin filter($value) {
+        -webkit-filter: $value;
+        filter: $value;
+    }
+
+    // appearance for select
+    @mixin appearance($value) {
+        -webkit-appearance: $value;
+        -moz-appearance: $value;
+        -ms-appearance: $value;
+        -o-appearance: $value;
+        appearance: $value;
+    }
+
+    // keyframes 
+    @mixin keyframes($name) {
+        @-webkit-keyframes #{$name} {
+            @content;
+        }
+
+        @-moz-keyframes #{$name} {
+            @content;
+        }
+
+        @-ms-keyframes #{$name} {
+            @content;
+        }
+
+        @keyframes #{$name} {
+            @content;
+        }
+    }
+
+    //backgroud 
+    @mixin background {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    //transition
+    @mixin transition($time) {
+        -webkit-transition: all $time ease-out 0s;
+        -moz-transition: all $time ease-out 0s;
+        -ms-transition: all $time ease-out 0s;
+        -o-transition: all $time ease-out 0s;
+        transition: all $time ease-out 0s;
+    }
+
+    // transform
+    @mixin transform($transforms) {
+        -webkit-transform: $transforms;
+        -moz-transform: $transforms;
+        -ms-transform: $transforms;
+        -o-transform: $transforms;
+        transform: $transforms;
+    }
+
+    //border
+    @mixin border-radius($man) {
+        -webkit-border-radius: $man;
+        -moz-border-radius: $man;
+        -o-border-radius: $man;
+        -ms-border-radius: $man;
+        border-radius: $man;
+    }
+
+    // sentence case
+    @mixin sentence-case() {
+        text-transform: lowercase;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    // Flexbox display
+    @mixin flexbox() {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
+
+    // Box shadows
+    @mixin box-shadow($shadow) {
+        -webkit-box-shadow: $shadow;
+        -moz-box-shadow: $shadow;
+        -ms-box-shadow: $shadow;
+        -o-box-shadow: $shadow;
+        box-shadow: $shadow;
+    }
+
+
+    //  gradient bg 
+    @mixin tp-gradient($value) {
+        background-image: -webkit-linear-gradient($value);
+        background-image: -moz-linear-gradient($value);
+        background-image: -ms-linear-gradient($value);
+        background-image: -o-linear-gradient($value);
+        background-image:   linear-gradient($value);
+    }
+
+
+    // round-shape
+    @mixin square-btn ($size, $circle: false) {
+        width: $size;
+        height: $size;
+        line-height: $size;
+        text-align: center;
+        @if $circle {
+            border-radius: 50%;
+        }
+    }

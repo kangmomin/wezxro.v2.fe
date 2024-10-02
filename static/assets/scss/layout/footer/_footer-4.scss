@@ -1,0 +1,124 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Footer Style 4
+/*----------------------------------------*/
+
+.footer-bg-4 {
+    background-color: #F2F2F2;
+    & .footer-widget-link ul li a:hover {
+        color: var(--tp-theme-blue);
+    }
+    & .footer-widget-social a i {
+        @include square-btn ( 44px, $circle: true);
+        border: 1px solid var(--tp-common-white);
+        background-color: var(--tp-common-white);
+    }
+    & .footer-widget-copyright2 span a {
+        color: var(--tp-theme-blue);
+    }
+    & .footer-top {
+        border-bottom: none;
+        padding-bottom: 25px;
+    }
+}
+.fooer-btn-4 {
+    & .blue-btn {
+        padding: 13px 30px 14px 30px;
+        font-size: 15px;
+        line-height: 13px;
+    }
+}
+.footer-4-col-4 {
+    margin-left: -30px;
+    @media #{$xs} {
+        margin-left: 0;
+    }
+    & .footer-widget-form-3 {
+        background: var(--tp-common-white);
+    }
+    & .footer-widget-social a:hover i {
+        background-color: var(--tp-theme-blue);
+        color: var(--tp-common-white);
+        border: 1px solid transparent;
+    }
+}
+.footer-4-col-4 {
+    & .footer-widget-newsletter-btn-2 i {
+        @include square-btn (40px, $circle: true);
+        line-height: 36px;
+        background: var(--tp-theme-blue);
+        display: inline-block;
+    }
+    & .footer-widget-newsletter-input input {
+        border-radius: 30px;
+        &:focus {
+            border: 1px solid var(--tp-theme-blue);
+            box-shadow: 2px 2px 0px 1px rgba(120, 90, 252, 0.25);
+        }
+    }
+    & .footer-widget-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 7px;
+    }
+}
+.footer-bottom-4 {
+    & .footer-widget-copyright span {
+        display: block;
+        background-color: var(--tp-common-white);
+        padding: 22px 0;
+        border-radius: 30px;
+    }
+    & .footer-widget-copyright span a {
+        color: var(--tp-theme-blue);
+    }
+    & .footer-widget-copyright {
+        padding: 27px 0 45px 0;
+    }
+}
+.footer-widget-social-4 {
+    & a {
+        @include square-btn (38px, $circle: true);
+        display: inline-block;
+        background: #414EAD;
+        position: relative;
+        z-index: 1;
+        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        &:hover {
+            border-color: transparent;
+            -webkit-transform: translateY(-2px);
+            -ms-transform: translateY(-2px);
+            transform: translateY(-2px);
+            box-shadow: 0px 2px 3px rgba(109, 5, 47, 0.4);
+            &::before {
+                opacity: 1;
+            }
+            & i {
+                color: rgba(255, 255, 255, 1);
+                transform: translateY(-2px);
+            }
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            background: linear-gradient(180deg, #FE2981 0%, #A70647 100%);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        & i {
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
+            font-size: 12px;
+            @include transition(.3s);
+        }
+    }
+}

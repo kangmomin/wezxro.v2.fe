@@ -1,0 +1,250 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.5 Footer Style 5
+/*----------------------------------------*/
+.footer-5 {
+    background-color: #F5F5F5;
+    & .footer-top {
+        padding-bottom: 55px;
+        border-bottom: 1px solid #E6E6E6;
+    }
+    & .footer-widget-social a i {
+        border: 1px solid var(--tp-common-white);
+        background-color: var(--tp-common-white);
+    }
+    & .footer-widget-social a i:hover {
+        border-color: #007CF5;
+    }
+}
+.footer-5-col-1 {
+    & .phone-call {
+        margin-bottom: 12px;
+        & a {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 12px;
+            color: #55585B;
+            background: #FFFFFF;
+            border-radius: 4px;
+            display: inline-block;
+            padding: 14px 31px 12px 31px;
+            & i {
+                margin-right: 8px;
+            }
+        }
+    }
+    & .submit-call {
+        & button {
+            padding: 11px 53.4px 13px;
+        }
+        & .tp-btn {
+            padding: 8px 53.4px 10px;
+        }
+    }
+    & .phone-call-details {
+        &.phone-call a {
+            background: #EDEFFA;
+            &:hover {
+                background: #DDE1F2;
+            }
+        }
+    }
+}
+.footer-5-col-2 {
+    margin-left: 68px;
+    @media #{$lg} {
+        margin-left: 20px;
+    }
+    @media #{$xs,$sm} {
+        margin-left: 0px;
+    }
+    & ul {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        li {
+            width: 50%;
+            flex: 0 0 50%;
+            &:nth-child(even) {
+                padding-left: 15px;
+            }
+        }
+    }
+    & .footer-widget-link {
+        &  ul {
+            & li  {
+                & a {
+                    padding-left: 0;
+                    font-family: var(--tp-ff-jakarta);
+                    color: var(--tp-grey-3);
+                    font-weight: 500;
+                    font-size: 15px;
+                    letter-spacing: 0.02em;
+                    &:hover {
+                        color: var(--tp-common-11);
+                    }
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer-5-col-3 {
+    margin-left: 68px;
+    @media #{$lg} {
+        margin-left: 40px;
+    }
+    @media #{$md,$xs,$sm} {
+        margin-left: 0px;
+    }
+    & .footer-widget-link {
+        &  ul {
+            & li  {
+                & a {
+                    padding-left: 0;
+                    font-family: var(--tp-ff-jakarta);
+                    color: var(--tp-grey-3);
+                    font-weight: 500;
+                    font-size: 15px;
+                    letter-spacing: 0.02em;
+                    &:hover {
+                        color: var(--tp-common-11);
+                    }
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer-5-col-4 {
+    & .footer-widget-link {
+        &  ul {
+            & li  {
+                font-family: var(--tp-ff-jakarta);
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 14px;
+                letter-spacing: 0.02em;
+                margin-bottom: 21px;
+                color: var(--tp-grey-3);
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                & span {
+                    color: #909396;
+                    width: 116px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+.tpfooter-hover {
+    & a {
+        display: inline;
+        background-image: linear-gradient(var(--tp-common-11), var(--tp-common-11)), linear-gradient(var(--tp-common-11), var(--tp-common-11));
+        background-size: 0% 1px, 0 1px;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 0.4s linear;
+        &:hover {
+            color: inherit;
+            background-size: 0 1px, 100% 1px;
+        }
+    }
+}
+.footer-bottom-5 {
+    & .footer-widget-copyright span  {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 22px;
+        color: #909396; 
+        letter-spacing: 0;       
+    }
+    & .footer-widget-copyright span a {
+        color: #FF5527;
+    }
+    & .footer-widget-social a:hover i {
+        background-color: #007CF5;
+    }
+    & .footer-widget-copyright {
+        padding: 40px 0;
+        @media #{$xs} {
+            padding: 20px 0;
+        }
+    }
+    & .footer-widget-social {
+        @media #{$xs} {
+            text-align: center !important; 
+            margin-bottom: 20px;
+        }
+    }
+}
+.footer-bottom-inner {
+    & .footer-widget-copyright span  {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 22px;
+        color: #909396; 
+        letter-spacing: 0;       
+    }
+    & .footer-widget-social a:hover i {
+        background-color: #007CF5;
+    }
+    & .footer-widget-copyright {
+        padding: 40px 0;
+        @media #{$xs} {
+            padding: 20px 0;
+        }
+    }
+    & .footer-widget-social {
+        @media #{$xs} {
+            text-align: center !important; 
+            margin-bottom: 20px;
+        }
+    }
+}
+.footer-inner {
+    & .light-blue-btn {
+        background-color: var(--tp-theme-primary);
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    & .footer-bottom-5 .footer-widget-social a:hover i {
+        background-color: var(--tp-theme-primary);
+        border-color: var(--tp-theme-primary);
+    }
+    & .footer-widget-copyright span a {
+        color: var(--tp-theme-primary);
+    }
+}
+.cta-footer-bg {
+    padding-top: 340px;
+}
+.footer-call {
+    &.footer-5-col-1 .phone-call a {
+        background: #EDEFFA;
+    }
+}
+.seo-audit-f {
+    padding-top: 340px;
+}
+.fw-blog-details {
+    & .footer-widget-social a i {
+        background: #EDEFFA;
+        color: #55585B;
+        border: none;
+        &:hover {
+            color: var(--tp-common-white);
+        }
+    }
+}
