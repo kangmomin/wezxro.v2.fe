@@ -1,0 +1,242 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.9 CTA css
+/*----------------------------------------*/
+.cta {
+    &-content {
+        & p {
+            font-family: var(--tp-ff-jakarta);
+            font-size: 16px;
+            line-height: 26px;
+            color: #565764;
+            margin-bottom: 30px;
+            & br {
+                @media #{$lg} {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-title {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 1.04;
+        letter-spacing: -0.01em;
+        color: var(--tp-common-11);
+        margin-bottom: 20px;
+        @media #{$lg,$xs} {
+            font-size: 40px;
+        }
+    }
+    &-shape-1 {
+        position: absolute;
+        top: 0;
+        right: -110px;
+        animation: bannerAnimationTwo 8s infinite linear;
+        @media #{$xxl} {
+            right: 0;
+        }
+        @media #{$xl,$lg,$md} {
+            right: 40px;
+        }
+    }
+    &-shape-2 {
+        position: absolute;
+        top: 50px;
+        left: -10px;
+        z-index: -1;
+        & img {
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 14px;
+            @media #{$xs} {
+                display: none;
+            }
+        }
+    }
+    &-shape-3 {
+        position: absolute;
+        bottom: 120px;
+        left: 30px;
+        z-index: -2;
+    }
+}
+.cta-inner {
+    &-bg {
+        padding-top: 75px;
+        padding-bottom: 32px;
+        position: relative;
+        overflow: hidden;
+        background-position: center;
+        background-size: cover;
+    }
+    &-title {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 700;
+        font-size: 50px;
+        letter-spacing: -0.02em;
+        color: var(--tp-common-white);
+        margin-bottom: 44px;
+        @media #{$xs} {
+            font-size: 32px;
+        }
+    }
+    &-wrap {
+        background: #FFFFFF;
+        box-shadow: 0px 20px 30px rgba(37, 9, 62, 0.14);
+        border-radius: 6px;
+        padding-right: 7px;
+        margin-bottom: 58px;
+        @media #{$xs} {
+            padding-right: 0;
+            flex-wrap: wrap;
+            justify-content: center !important;
+            padding-bottom: 10px;
+        }
+    }
+    &-input {
+        position: relative;
+        width: 100%;
+        & input {
+            width: 100%;
+            height: 64px;
+            border: 0;
+            background-color: var(--tp-common-white);
+            padding: 0 10px 0 58px;
+            border-radius: 6px;
+            &::placeholder {
+                font-family: var(--tp-ff-jakarta);
+                font-weight: 500;
+                font-size: 15px;
+                color: #8F9397;
+            }
+        }
+        & span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-52%);
+            left: 30px;
+        }
+    }
+    &-btn {
+        flex: 0 0 auto;
+        & .banner-search-btn {
+            background-color: var(--tp-theme-primary);
+            padding: 18px 34px;
+            font-family: var(--tp-ff-jakarta);
+            &:hover {
+                background-color: #3653EB;
+            }
+        }
+    }
+    &-shape {
+        &-1 {
+            position: absolute;
+            top: -12%;
+            right: 11%;
+            animation: tpswing 3s ease-in-out 0.1s forwards infinite alternate;
+            transform-origin: bottom left;
+        }
+        &-2 {
+            position: absolute;
+            bottom: 16%;
+            left: -3%;
+            animation: tpswing 3s ease-in-out 0.1s forwards infinite alternate;
+            transform-origin: bottom left;
+            @media #{$md} {
+                bottom: 0%;
+                left: -12%;
+            }
+            @media #{$xs} {
+                bottom: -10%;
+                left: -17%;
+            }
+        }
+        &-3 {
+            position: absolute;
+            bottom: 35%;
+            left: 15%;
+            animation: tpstar 1.5s  forwards infinite alternate;
+        }
+        &-4 {
+            position: absolute;
+            bottom: 27%;
+            left: 16%;
+            animation: tpstar 2s  forwards infinite alternate;
+        }
+        &-5 {
+            position: absolute;
+            bottom: 33%;
+            left: 17%;
+            animation: tpstar 2.2s  forwards infinite alternate;
+        }
+        &-6 {
+            position: absolute;
+            top: 14%;
+            right: 15%;
+            animation: tpstar 1s  forwards infinite alternate;
+        }
+    }
+}
+.cta {
+    &-award {
+        &-icon {
+            margin-bottom: 15px;
+        }
+        &-title {
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--tp-common-white);
+            margin-bottom: 0;
+        }
+        &-content {
+            & p {
+                font-family: var(--tp-ff-jakarta);
+                font-weight: 600;
+                font-size: 13px;
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+    &-inner-award {
+        @media #{$lg,$md,$xs} {
+        padding-left: 0;
+        padding-right: 0;
+        }  
+        @media #{$xs} {
+            padding-left: 0;
+            padding-right: 0;
+            flex-wrap: wrap;
+            justify-content: center !important;
+        }  
+    }
+}
+.inner-cta-bg {
+    border-radius: 20px;
+    & .keyword-inner-title {
+        line-height: 1.07;
+        margin-bottom: 42px;
+        @media #{$md} {
+            line-height: 1.2;
+        }
+        & br {
+            @media #{$xxl} {
+                display: none;
+            }
+        }
+    }
+    & .keyword-inner {
+        @media #{$md} {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+.cta-position {
+    margin-bottom: -245px;
+    & .keyword-inner-bg {
+        box-shadow: 0px 30px 40px rgba(6, 18, 84, 0.2);
+    }
+}

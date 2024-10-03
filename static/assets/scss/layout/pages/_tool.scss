@@ -1,0 +1,355 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.24 Tool css
+/*----------------------------------------*/
+.toolest {
+    &-bg {
+        background-color: #F5F5F5;
+    }
+    &-thumb {
+        z-index: 1;
+        @media #{$md} {
+            margin-bottom: 100px;
+        }
+        @media #{$xs} {
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        &>img {
+            box-shadow: 0px 30px 60px rgba(1, 15, 28, 0.08);
+            border-radius: 10px;
+        }
+    }
+    &-shape {
+        &-one {
+            position: absolute;
+            right: 5px;
+            bottom: -52px;
+            & img {
+                filter: drop-shadow(-20px 20px 20px rgba(1, 15, 28, 0.1));
+                border-radius: 8px;
+            }
+        }
+        &-two {
+            position: absolute;
+            bottom: -62px;
+            left: 35px;
+            & img {
+                box-shadow: -14px 20px 20px rgba(1, 15, 28, 0.06);
+                border-radius: 100px;
+            }
+        }
+        &-three {
+            position: absolute;
+            top: -70px;
+            left: 35px;
+            animation: leftright 1.2s linear forwards infinite alternate;
+            & img {
+                background: linear-gradient(123.24deg, #FFFFFF 55.95%, rgba(238, 238, 238, 0.7) 91.14%);
+                box-shadow: 0px 20px 50px rgba(1, 15, 28, 0.1);
+                border-radius: 8px;
+            }
+        }
+        &-four {
+            position: absolute;
+            top: -250px;
+            right: -220px;
+            z-index: -1;
+        }
+        &-five {
+            position: absolute;
+            top: -30px;
+            right: 30px;
+            z-index: -1;
+            animation: hero-shape-anim-2 2s linear forwards infinite alternate;
+        }
+    }
+}
+.tp-toolest {
+    &-title-info {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 600;
+        font-size: 20px;
+        color: #A3A4A5;
+        text-align: left;
+        @media #{$xs} {
+            font-size: 18px;
+        }
+    }
+}
+
+.tp-accordion {
+    $self : &;
+    padding-left: 25px;
+    margin-right: -25px;
+    @media #{$md,$xs,$sm,$xs} {
+        padding-left: 0;
+        margin-right: 0;
+    }
+    &-item {
+        padding: 23px 20px 12px 52px;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        transition: all .3s ease-in-out;
+        &.tp-accordion-active{
+            background-color: var(--tp-common-white);
+            box-shadow: 0px 10px 20px rgba(1, 15, 28, 0.08);
+            padding: 32px 20px 39px 52px;
+            margin-top: 20px;
+            #{$self}{
+                &-content{
+                    display: block;
+                }
+                &-progress{
+                    &-dark{
+                        opacity: 1;
+                        visibility: visible; 
+                        height: calc(100% - 40px);
+                        top: 20px;
+                        bottom: auto;
+                    }
+                    &-active{
+                        animation: tp-line-animation 10s linear;
+                        @at-root{
+                            @include keyframes(tp-line-animation){
+                                0%{
+                                    height: 0;
+                                }
+                                100%{
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .tp-toolest-title-info {
+                color: #010F1C;
+                font-weight: 700;
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &-head {
+        display: flex;
+        align-items: center;
+        @media #{$xs} {
+            margin-bottom: 15px;
+        }
+    }
+    &-icon {
+        flex: 0 0 auto;
+        position: relative;
+        display: inline-block;
+        z-index: 1;
+        &-shape {
+            position: absolute;
+            top: -12px;
+            right: -7px;
+            z-index: -1;
+        }
+        & span {
+            @include  square-btn (26px, $circle: true);
+            background-color: #FC8A59; 
+            display: inline-block;
+            position: absolute;
+            left: -9px;
+            top: 25px;
+            z-index: -1;
+        }
+    }
+    &-content {
+        display: none;
+        padding-left: 65px;
+        @media #{$xs} {
+            padding-left: 0;
+        }
+        & p {
+            margin-bottom: 0;
+            font-family: var(--tp-ff-jakarta);
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            text-align: left;
+            color: #96989C;
+            & br {
+                @media #{$lg,$md,$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-progress {
+        
+        &-dark {
+            position: absolute;
+            height: 0;
+            width: 4px;
+            background-color: #F1F1F1;
+            right: 20px;
+            top: auto;
+            bottom: 20px;
+            border-radius: 20px;
+            transition: all .5s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+        }
+        &-active {
+            position: absolute;
+            background: #007CF5;
+            height: 100%;
+            width: 4px;
+        }
+    }
+}
+
+
+.nav-pills .nav-link.active {
+    background-color: transparent;
+    & .tp-accordion-item {
+        background-color: var(--tp-common-white);
+        box-shadow: 0px 10px 20px rgba(1, 15, 28, 0.08);
+        padding: 32px 20px 39px 52px;
+        margin-top: 20px;
+        @media #{$xs} {
+            padding: 32px 20px 39px 25px;
+        }
+    }
+    & .tp-toolest-title-info {
+        color: var(--tp-common-11);
+    }
+    & .tp-accordion-content {
+        display: block;
+    }
+    & .tp-accordion-progress-dark {
+        opacity: 1;
+        visibility: visible;
+        height: calc(100% - 40px);
+        top: 20px;
+        bottom: auto;
+    }
+    & .tp-accordion-progress-active {
+        animation: tp-line-animation 10s linear;
+    }
+}
+.tp-gradient-tab-btn {
+    margin-top: -30px;
+}
+.tp-green-accordion {
+    margin-right: 0;
+    margin-left: -30px;
+    padding-left: 0;
+    @media #{$md,$xs} {
+        margin-left: 0;
+    }
+}
+.tp-accordion-item-2 {
+    & .tp-accordion-icon span {
+        background: #0CC8B3;
+    }
+}
+.tp-accordion-item-3 {
+    & .tp-accordion-icon span {
+        background: #FF5EA7;
+    }
+}
+.tp-accordion-item-4 {
+    & .tp-accordion-icon span {
+        background: #6A90F9;
+    }
+}
+.toolest {
+    &-one {
+        &-thumb {
+            position: relative;
+            margin-top: -77px;
+            z-index: 1;
+            &-one {
+                text-align: end;
+                @media #{$xs} {
+                    text-align: left;
+                }
+            }
+        }
+        &-shape {
+            &-two {
+                & img {
+                    box-shadow: 0px 30px 60px rgba(1, 15, 28, 0.08);
+                    border-radius: 10px;
+                }
+            }
+            &-four {
+                & img {
+                    box-shadow: 0px 20px 50px rgba(1, 15, 28, 0.1);
+                    border-radius: 8px;
+                }
+            }
+            &-five {
+                position: absolute;
+                top: -42%;
+                right: -26%;
+                z-index: -1;
+                @media #{$md,$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-three {
+        &-shape {
+            &-one {
+                position: absolute;
+                top: -60px;
+                left: -50px;
+                @media #{$xl,$lg} {
+                    left: -20px;
+                }
+                & img {
+                    filter: drop-shadow(-20px 20px 20px rgba(1, 15, 28, 0.1));
+                }
+            }
+            &-two {
+                position: absolute;
+                bottom: -112px;
+                right: 0;
+            }
+        }
+    }
+    &-four {
+        &-shape {
+            &-one {
+                position: absolute;
+                top: -100px;
+                left: 200px;
+            }
+            &-two {
+                position: absolute;
+                top: 90px;
+                left: -32px;
+            }
+            &-three {
+                position: absolute;
+                top: 80px;
+                right: 0;
+                animation: upslide 4s linear forwards infinite alternate;
+            }
+            &-six {
+                position: absolute;
+                bottom: -72px;
+                right: 22px;
+                z-index: -1;
+            }
+        }
+    }
+}
+.tp-gradient-tab-details {
+    @media #{$md} {
+        margin-bottom: 80px;
+    }
+}

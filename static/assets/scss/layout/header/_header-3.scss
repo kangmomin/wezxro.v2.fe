@@ -1,0 +1,78 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.3 Header Style 3
+/*----------------------------------------*/
+
+.tp-white-menu {
+    & .tpmenu__area ul li {
+        @media #{$xl} {
+            margin: 0 14px;
+        }
+    }
+    & .tpmenu__area ul li:hover>a {
+        opacity: .7;
+    }
+    & .tpmenu__area ul li a {
+        color: var(--tp-common-white);
+    }
+    & .tpmenu__area ul li .submenu li a {
+        opacity: 1;
+    }
+    & .tpheader-btn-two {
+        a {
+            background: linear-gradient(180deg, #FE2981 0%, #A70647 100%);
+            border-radius: 30px;
+            border: none;
+            color: var(--tp-common-white);
+            padding: 15px 31px;
+            box-shadow: 0px 2px 3px rgba(109, 5, 47, 0.4);
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+    & .offcanvas-open-btn i {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--tp-common-white);
+        opacity: .7;
+    }
+    & .tpmenu__area ul li.has-dropdown>a::after {
+        color: var(--tp-common-white);
+    }
+    & .tp-header-btn {
+        background-color: var(--tp-common-white);
+        color: #0E1331;
+        font-family: var(--tp-ff-jakarta);
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+.tp-header-sign a {
+    font-family: var(--tp-ff-dmsans);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--tp-common-white);
+    text-underline-offset: 12px;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--tp-common-white);
+        bottom: 0;
+    }
+}
+.tpheader {
+    &__three {
+        @media #{$lg,$md,$xs} {
+            padding-top: 15px;
+        }
+    }
+}

@@ -1,0 +1,212 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  4.3 Mobile menu css
+/*----------------------------------------*/
+// mobile menu css
+.tp-main-menu-mobile{
+    & ul{
+        position: static;
+        display: block;
+        box-shadow: none;
+        & > li{
+            list-style: none;
+            position: relative;
+            width: 100%;
+            padding: 0;
+            @media #{$xs} {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &:not(:last-child){
+                & a{
+                    border-bottom: 1px solid rgba($color: #000, $alpha: .1);
+                }
+            }
+            &.has-dropdown{
+                & > a{
+                    & .dropdown-toggle-btn{
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                        font-size: 16px;
+                        color: #7F8387;
+                        font-family: "Font Awesome 6 Pro";
+                        transition: all .3s ease-in-out;
+                        z-index: 1;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 28px;
+                        text-align: center;
+                        border: 1px solid rgba($color: #000, $alpha: .12);
+                        transition: background-color .3s ease-in-out, border-color .3s ease-in-out, color .3s ease-in-out;
+                        border-radius: 4px;
+                        & i{
+                            transition: all .3s ease-in-out;
+                        }
+                        &.dropdown-opened{
+                            & i{
+                                @include transform(rotate(90deg));
+                            }
+                        }
+                        &:hover{
+                            background-color: var(--tp-theme-primary);
+                            border-color: var(--tp-theme-primary);
+                            color: var(--tp-common-white);
+                            & i{
+                                color: var(--tp-common-white);
+                            }
+                        }
+                    }
+                    &.expanded{
+                        color: var(--tp-theme-primary);
+    
+                        & .dropdown-toggle-btn.dropdown-opened{
+                            background-color: var(--tp-theme-primary);
+                            border-color: var(--tp-theme-primary);
+                            color: var(--tp-common-white);
+                            & i{
+                                color: var(--tp-common-white);
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    & a {
+                        &::after{
+                            color: var(--tp-theme-green);
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                & > a{
+                    & span{
+                        border-bottom: 0;
+                    }
+                }
+            }
+            & > a{
+                display: block;
+                font-size: 15px;
+                color: var(--tp-common-black);
+                position: relative;
+                padding: 10px 0;
+                padding-right: 20px;
+                font-family: var(--tp-ff-jakarta);
+                & svg{
+                    @include transform(translateY(-2px));
+                }
+                & > i{
+                    display: inline-block;
+                    width: 11%;
+                    margin-right: 13px;
+                    @include transform(translateY(4px));
+                    font-size: 21px;
+                    line-height: 1;
+                }
+                & .menu-text{
+                    font-size: 16px;
+                    line-height: 11px;
+                    border-bottom: 1px solid #EAEBED;
+                    width: 82%;
+                    display: inline-block;
+                    padding: 19px 0 17px;
+                }
+            }
+            & ul{
+                padding: 0;
+
+                & li{
+                    padding: 0;
+					& a{
+                        margin-left: auto;
+						width: 93%;
+						padding: 10px 5%;
+						text-shadow: none !important;
+						visibility: visible;
+                        padding-left: 0;
+                        padding-right: 20px;
+					}
+
+					& li{
+						& a{
+							width: 88%;
+							padding: 10px 7%;
+                            padding-left: 0;
+                            padding-right: 20px;
+						}
+
+						& li{
+							& a{
+								width: 83%;
+								padding: 10px 9%;
+                                padding-left: 0;
+                                padding-right: 20px;
+							}
+
+							& li{
+								& a{
+									width: 68%;
+									padding: 10px 11%;
+                                    padding-left: 0;
+                                    padding-right: 20px;
+								}
+							}
+						}
+					}
+				}
+            }
+    
+            &:hover{
+                & > a{
+                    color: var(--tp-theme-primary);
+                    &::after{
+                        color: var(--tp-theme-primary);
+                    }
+                    & .dropdown-toggle-btn i{
+                        color: var(--tp-theme-primary);
+                    }
+                }
+    
+                & .mega-menu{
+                    visibility: visible;
+                    opacity: 1;
+                    top: 0;
+                }
+            }
+    
+    
+            & .mega-menu,
+            & .submenu{
+                position: static;
+                min-width: 100%;
+                padding: 0;
+                box-shadow: none;
+                visibility: visible;
+                opacity: 1;
+                display: none;
+
+                & li{
+                    float: none;
+                    display: block;
+                    width: 100%;
+                    padding: 0;
+                    &:hover{
+                        & a{
+                            & .dropdown-toggle-btn{
+                                color: var(--tp-theme-primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    & *ul,
+    & *li{
+        transition: none !important;
+   }
+}

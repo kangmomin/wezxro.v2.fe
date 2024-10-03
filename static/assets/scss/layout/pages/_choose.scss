@@ -1,0 +1,139 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.6 Choose css
+/*----------------------------------------*/
+
+.tpchoose {
+    background-color: var(--tp-common-white) ;
+    border: 1px solid rgba(12, 19, 56, 0.08);
+    @include border-radius (10px);
+    display: block;
+    padding: 32px 30px 33px 30px;
+    @include transition (.3s);
+    @media #{$lg} {
+        padding: 27px 20px 28px 20px;
+    }
+    &:hover {
+        box-shadow: 0px 20px 40px rgba(8, 10, 55, 0.12);
+        border-radius: 14px;
+        & .tpchoose-text i {
+            color: var(--tp-theme-primary);
+            background-color: var(--tp-theme-primary);
+        }
+    }
+    &-bottom {
+        @media #{$xs} {
+            padding-bottom: 0;
+        }
+    }
+    &-text {
+        & span {
+            display: block;
+        }
+        & i {
+            display: block;
+            color: var(--tp-grey-5);
+        }
+    }
+    &-title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color: var(--tp-heading-secondary);
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    &-shape {
+        &-one {
+            position: absolute;
+            bottom: 55px;
+            left: -38px;
+            z-index: -1;
+            @media #{$lg} {
+                left: -15px;
+            }
+        }
+        &-two {
+            position: absolute;
+            bottom: 58px;
+            right: 38px;
+            z-index: -1;
+        }
+        &-three {
+            position: absolute;
+            top: 35px;
+            left: 38px;
+            z-index: -1;
+        }
+    }
+    &-border-anim {
+        -webkit-border-radius: 51% 49% 77% 23%/65% 50% 50% 35%;
+        -moz-border-radius: 51% 49% 77% 23%/65% 50% 50% 35%;
+        border-radius: 51% 49% 77% 23%/65% 50% 50% 35%;
+        -webkit-animation: img-border 5s linear infinite alternate;
+        -moz-animation: img-border 5s linear infinite alternate;
+        -o-animation: img-border 5s linear infinite alternate;
+        animation: img-border 5s linear infinite alternate;
+        transition: all 0.3s ease-out 0s;
+    }
+}
+.tparrow {
+    &-right {
+        position: relative;
+        display: inline-block;
+        &:hover {
+            & i {
+                width: 40px;
+            }
+        }
+        & i {
+            display: inline-block;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: var(--tp-grey-5);
+            font-size: 0;
+            transition: all .25s;
+            
+            & svg {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 14px;
+                right: 0;
+            }
+        }
+    }
+}
+.company {
+    &-title {
+        font-family: var(--tp-ff-jakarta);
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 1.03;
+        margin-bottom: 17px;
+        letter-spacing: -0.02em;
+        color: #010F1C;
+    }
+    &-content {
+        margin-bottom: 50px;
+        & p {
+            font-family: var(--tp-ff-jakarta);
+            font-size: 18px;
+            line-height: 26px;
+            color: var(--tp-grey-8);
+            & br {
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-thumb {
+        & img {
+            border-radius: 10px;
+        }
+    }
+}
