@@ -1,5 +1,3 @@
-import {env} from "$lib/config.js"
-
 export function load({ fetch, params }) {
     const env = import.meta.env
 

@@ -10,8 +10,9 @@
     export let data
 
     import "../../app.css";
+    import Contact from "$lib/rendingPage/theme/seomy/Contact.svelte";
 </script>
 
 {#if data.props.THEME === "SEOMY"}
-    <SeomyAbout data={data} />
+    <Contact data={data} />
 {/if}

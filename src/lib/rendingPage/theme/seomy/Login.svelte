@@ -40,8 +40,8 @@
 
 <body>
    <VersionNotice />
-   <Loader />
-   <Header />
+<!--   <Loader />-->
+   <Header data="{data}" />
 
    <!-- offcanvas area start -->
    <div class="offcanvas__area">
@@ -59,7 +59,7 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-70 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo.svg" alt="logo">
                   </a>
                </div>
@@ -198,7 +198,7 @@
                         </div>
                      </div>
                      <div class="signin-account text-center">
-                        <p>Already have an account? <a href="sign-out.html">Sign Up</a></p>
+                        <p>Already have an account? <a href="/join">Sign Up</a></p>
                      </div>
                      <div class="signin-shape">
                         <img class="signin-shape-4" src="assets/img/shape/about-inner-shape-2.png" alt="">

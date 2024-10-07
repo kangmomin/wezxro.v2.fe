@@ -3,15 +3,15 @@
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Loader from "$lib/component/seomy/Loader.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
-</script>
 
-<!doctype html>
-<html class="no-js" lang="zxx">
+    export let data
+    const {EN_NAME, KR_NAME} = data
+</script>
 
 <head>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <title>Digital Marketing & SEO Agency HTML Template</title>
+    <title>{EN_NAME} - 고객센터</title>
     <meta content="" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
@@ -31,333 +31,10 @@
 </head>
 
 <body>
-<Loader/>
+<!--<Loader/>-->
 <BackToTop/>
 <Header data="{data}"/>
 <div id="scroll-indicator"></div>
-
-<!-- pre loader area start -->
-<div id="loading">
-    <div id="loading-center">
-        <div id="loading-center-absolute">
-            <!-- loading content here -->
-            <div class="tp-preloader-content">
-                <div class="tp-preloader-logo">
-                    <div class="tp-preloader-circle">
-                        <svg fill="none" height="190" viewBox="0 0 380 380" width="190"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="190" cy="190" r="180" stroke="#D9D9D9" stroke-linecap="round"
-                                    stroke-width="6"></circle>
-                            <circle cx="190" cy="190" r="180" stroke="red" stroke-linecap="round"
-                                    stroke-width="6"></circle>
-                        </svg>
-                    </div>
-                    <img alt="" src="assets/img/logo/preloader/preloader-icon.svg">
-                </div>
-                <p class="tp-preloader-subtitle">Loading</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- pre loader area end -->
-
-
-<!-- back to top start -->
-<div class="back-to-top-wrapper">
-    <button class="back-to-top-btn" id="back_to_top" type="button">
-        <svg fill="none" height="7" viewBox="0 0 12 7" width="12" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="1.5"/>
-        </svg>
-    </button>
-</div>
-<!-- back to top end -->
-
-<!-- header-area-start -->
-<header>
-    <div class="tptransparent__header header-1" id="header-sticky">
-        <div class="tp-header-top">
-            <div class="container">
-                <div class="tp-mega-menu-wrapper">
-                    <div class="row align-items-center">
-                        <div class="col-xxl-2 col-xl-2 col-lg-6 col-6">
-                            <div class="tplogo__area">
-                                <a href="index.html">
-                                    <img alt="logo" src="assets/img/logo/logo.svg">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xxl-8 col-xl-7 col-lg-7 d-none d-xl-block">
-                            <div class="tpmenu__area main-mega-menu text-center">
-                                <nav class="tp-main-menu-content">
-                                    <ul>
-                                        <li class="has-dropdown has-mega-menu">
-                                            <a href="index.html">Home</a>
-                                            <div class="tp-submenu submenu has-homemenu tp-mega-menu">
-                                                <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-5">
-                                                    <div class="col homemenu active">
-                                                        <div class="homemenu-thumb">
-                                                            <img alt="" src="assets/img/menu/home-1.jpg">
-                                                        </div>
-                                                        <div class="homemenu-btn">
-                                                            <a class="menu-btn mb-5" href="index.html">Multi Page</a>
-                                                            <a class="menu-btn" href="index-one-page.html">One Page</a>
-                                                        </div>
-                                                        <div class="demo-name">
-                                                            <span>SEO Marketing</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col homemenu">
-                                                        <div class="homemenu-thumb">
-                                                            <img alt="" src="assets/img/menu/home-2.jpg">
-                                                        </div>
-                                                        <div class="homemenu-btn">
-                                                            <a class="menu-btn mb-5" href="index-2.html">Multi Page</a>
-                                                            <a class="menu-btn" href="index-2-one-page.html">One
-                                                                Page</a>
-                                                        </div>
-                                                        <div class="demo-name">
-                                                            <span>SEO Analysis</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col homemenu">
-                                                        <div class="homemenu-thumb">
-                                                            <img alt="" src="assets/img/menu/home-3.jpg">
-                                                        </div>
-                                                        <div class="homemenu-btn">
-                                                            <a class="menu-btn mb-5" href="index-3.html">Multi Page</a>
-                                                            <a class="menu-btn" href="index-3-one-page.html">One
-                                                                Page</a>
-                                                        </div>
-                                                        <div class="demo-name">
-                                                            <span>Business SEO</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col homemenu">
-                                                        <div class="homemenu-thumb">
-                                                            <img alt="" src="assets/img/menu/home-4.jpg">
-                                                        </div>
-                                                        <div class="homemenu-btn">
-                                                            <a class="menu-btn mb-5" href="index-4.html">Multi Page</a>
-                                                            <a class="menu-btn" href="index-4-one-page.html">One
-                                                                Page</a>
-                                                        </div>
-                                                        <div class="demo-name">
-                                                            <span>SEO Agency</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col homemenu">
-                                                        <div class="homemenu-thumb">
-                                                            <img alt="" src="assets/img/menu/home-5.jpg">
-                                                        </div>
-                                                        <div class="homemenu-btn">
-                                                            <a class="menu-btn mb-5" href="index-5.html">Multi Page</a>
-                                                            <a class="menu-btn" href="index-5-one-page.html">One
-                                                                Page</a>
-                                                        </div>
-                                                        <div class="demo-name">
-                                                            <span>SEO Campaign</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li class="header-services has-dropdown has-mega-menu">
-                                            <a href="services.html">Services</a>
-                                            <div class="tp-mega-menu tp-submenu submenu">
-                                                <div class="row">
-                                                    <div class="col-xl-6">
-                                                        <div class="tp-menu-banner">
-                                                            <h5 class="tp-menu-banner-title">Services Overview</h5>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="keyword-search.html">
-                                                                        <span> <img
-                                                                                alt=""
-                                                                                src="assets/img/header-icon/keyword.png"> </span>
-                                                                        Keyword Research
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="seo-audit.html">
-                                                                        <span> <img
-                                                                                alt=""
-                                                                                src="assets/img/header-icon/audit.png"> </span>
-                                                                        SEO Audit Services
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="building-social-services.html">
-                                                                        <span> <img
-                                                                                alt=""
-                                                                                src="assets/img/header-icon/building.png"> </span>
-                                                                        Link Building Services
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="social-media-markiting.html">
-                                                                        <span> <img
-                                                                                alt=""
-                                                                                src="assets/img/header-icon/media.png"> </span>
-                                                                        Social Media Marketing
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="marketing-analysis.html">
-                                                                        <span> <img
-                                                                                alt=""
-                                                                                src="assets/img/header-icon/analysis.png"> </span>
-                                                                        SEO analysis.
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-6">
-                                                        <div class="tp-menu-banner-wrap">
-                                                            <div class="tp-menu-banner-content">
-                                                                <span>SEO Agency</span>
-                                                                <h5 class="tp-menu-banner-title-2">The #1 SEO <br>
-                                                                    agency for fast growing <br> companies.</h5>
-                                                                <div class="tp-menu-banner-btn">
-                                                                    <a href="services.html">
-                                                                        Learn more
-                                                                        <span>
-                                                            <svg fill="none" height="10" viewBox="0 0 9 10" width="9"
-                                                                 xmlns="http://www.w3.org/2000/svg">
-                                                               <path d="M1 1.5L8 8.5" stroke="currentColor"
-                                                                     stroke-linecap="round" stroke-linejoin="round"
-                                                                     stroke-width="1.5"/>
-                                                               <path d="M8 1.5V8.5H1" stroke="currentColor"
-                                                                     stroke-linecap="round" stroke-linejoin="round"
-                                                                     stroke-width="1.5"/>
-                                                            </svg>
-                                                         </span>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="tp-menu-banner-thumb">
-                                                                <img alt=""
-                                                                     src="assets/img/header-icon/header-banner/header-banner-1.png">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="has-dropdown has-megamenu">
-                                            <a href="about.html">Pages</a>
-                                            <ul class="tp-submenu submenu mega-menu mega-menu-container">
-                                                <li>
-                                                    <ul>
-                                                        <li><a href="about.html">About Us</a></li>
-                                                        <li><a href="services.html">Services</a></li>
-                                                        <li><a href="team.html">Team Member</a></li>
-                                                        <li><a href="team-details.html">Team Details</a></li>
-                                                        <li><a href="sign-in.html">Sign In</a></li>
-                                                        <li><a href="sign-out.html">Sign Up</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul>
-                                                        <li><a href="pricing.html">Pricing</a></li>
-                                                        <li><a href="portfolio.html">Case Studies 2 Columns</a></li>
-                                                        <li><a href="portfolio-2.html">Case Studies 3 Columns</a></li>
-                                                        <li><a href="portfolio-details.html">Case Studies Details</a>
-                                                        </li>
-                                                        <li><a href="blog-grid.html">Blog Grid</a></li>
-                                                        <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul>
-                                                        <li><a href="blog-list.html">Blog List</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                                        <li><a href="blog-details-2.html">Blog Details Full Width</a>
-                                                        </li>
-                                                        <li><a href="faq.html">FAQ</a></li>
-                                                        <li><a href="contact.html">Contact</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-dropdown">
-                                            <a href="blog.html">Blog</a>
-                                            <ul class="tp-submenu submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-grid.html">Blog Grid</a></li>
-                                                <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                                <li><a href="blog-list.html">Blog List</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="contact.html">Contact</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xxl-2 col-xl-3 col-lg-6 col-6">
-                            <div class="tpheader__right d-flex align-items-center justify-content-end">
-                                <div class="search-btn-wrap">
-                                    <button class="button-search-toggle">
-                                        <i class="header_search-button far fa-search d-none"></i>
-                                        <i class="header_search-button">
-                                            <svg fill="none" height="20" viewBox="0 0 20 20" width="20"
-                                                 xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
-                                                      stroke="#271D3A" stroke-linecap="round" stroke-linejoin="round"
-                                                      stroke-width="1.5"/>
-                                                <path d="M19.0001 19L17.2001 17.2" stroke="#271D3A" stroke-linecap="round"
-                                                      stroke-linejoin="round" stroke-width="1.5"/>
-                                            </svg>
-                                        </i>
-                                        <i class="header_search-close far fa-times"></i>
-                                    </button>
-                                </div>
-                                <div class="tpheader__btn ml-25 d-none d-sm-block">
-                                    <a class="tp-header-btn" href="contact.html">Get a Quote</a>
-                                </div>
-                                <div class="offcanvas-btn d-xl-none ml-20">
-                                    <button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tp-search-area p-relative">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="tp-search-form p-relative">
-                            <form action="#">
-                                <input placeholder='Try "freelance" or "typography"..."' type="text">
-                                <button class="search-submit-icon" type="submit">
-                                    <i>
-                                        <svg fill="none" height="20" viewBox="0 0 20 20" width="20"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
-                                                  stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                                  stroke-width="1.5"/>
-                                            <path d="M19.0001 19L17.2001 17.2" stroke="currentColor" stroke-linecap="round"
-                                                  stroke-linejoin="round" stroke-width="1.5"/>
-                                        </svg>
-                                    </i>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- header-area-end -->
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -1805,10 +1482,10 @@
                             </form>
                         </div>
                         <div class="tpcontact-shape d-none d-md-block">
-                            <div class="tpcontact-shape-one" data-parallax='{"y": -100, "smoothness": 20}'>
+                            <div class="tpcontact-shape-one" data-parallax='{{"y": -100, "smoothness": 20}}'>
                                 <img alt="" src="assets/img/shape/form-shape-1.png">
                             </div>
-                            <div class="tpcontact-shape-two" data-parallax='{"y": -100, "smoothness": 20}'>
+                            <div class="tpcontact-shape-two" data-parallax='{{"y": -100, "smoothness": 20}}'>
                                 <img alt="" src="assets/img/shape/form-shape-2.png">
                             </div>
                         </div>
