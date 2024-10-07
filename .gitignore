@@ -33,3 +33,4 @@ dist-ssr
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+/src/lib/rendingPage/theme/seomy/새 폴더/
