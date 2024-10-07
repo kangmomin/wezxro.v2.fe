@@ -98,7 +98,7 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="home-main.html">
+                    <a href="/">
                         <img alt="logo" src="assets/img/logo/logo-pink.svg">
                     </a>
                 </div>
@@ -251,7 +251,7 @@
                             <h5 class="title mb-20">Digital Marketing</h5>
                             <p>We develop digital strategies, products and services appreciated by clients.</p>
                             <div class="services-btn-4 p-relative">
-                                <a href="marketing-analysis.html">
+                                <a href="/">
                                     <span>Read More</span>
                                     <i>
                                         <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
@@ -1754,7 +1754,7 @@
                             <a class="phone mb-5" href="tel:0123456789">+(800) 2563 123</a>
                             <a class="mail mb-35" href="mailto:info@company.com">info@company.com</a>
                             <div class="tpcontact-4-content-btn">
-                                <a href="contact.html">Call us Now</a>
+                                <a href="/contact">Call us Now</a>
                             </div>
                         </div>
                     </div>
@@ -1966,7 +1966,7 @@
                                     <li><a href="portfolio.html">Project</a></li>
                                     <li><a href="pricing.html">Plan & Pricing</a></li>
                                     <li><a href="blog-grid.html">Blog</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1979,7 +1979,7 @@
                                     <li><a href="seo-audit.html">SEO Audit</a></li>
                                     <li><a href="building-social-services.html">SEO Services</a></li>
                                     <li><a href="social-media-markiting.html">SEO Marketing</a></li>
-                                    <li><a href="marketing-analysis.html">SEO Analysis</a></li>
+                                    <li><a href="/">SEO Analysis</a></li>
                                     <li><a href="keyword-search.html">SEO Optimization</a></li>
                                     <li><a href="social-media-markiting.html">Social Media</a></li>
                                 </ul>

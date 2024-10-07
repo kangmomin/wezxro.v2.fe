@@ -228,14 +228,14 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo.svg" alt="logo">
                   </a>
                </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn w-100">Getting Started</a>
+               <a href="/contact" class="tp-btn w-100">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
@@ -445,7 +445,7 @@
                         </div>
                      </div>
                      <div class="traffic-btn">
-                        <a href="marketing-analysis.html" class="light-blue-btn">Analysis Now</a>
+                        <a href="/" class="light-blue-btn">Analysis Now</a>
                      </div>
                   </div>
                </div>
@@ -1365,7 +1365,7 @@
                               <li><a href="about.html">About us</a></li>
                               <li><a href="blog-grid.html">SEO Blog</a></li>
                               <li><a href="services.html">Services</a></li>
-                              <li><a href="contact.html">Contact</a></li>
+                              <li><a href="/contact">Contact</a></li>
                               <li><a href="seo-audit.html">Why SEO?</a></li>
                               <li><a href="#"></a></li>
                               <li><a href="team.html">Team</a></li>
@@ -1380,7 +1380,7 @@
                            <ul>
                               <li><a href="seo-audit.html">On Page SEO</a></li>
                               <li><a href="keyword-search.html">Keyword Research</a></li>
-                              <li><a href="marketing-analysis.html">SEO Consulting</a></li>
+                              <li><a href="/">SEO Consulting</a></li>
                               <li><a href="keyword-search.html">Off Page SEO</a></li>
                               <li><a href="seo-audit.html">SEO Audit</a></li>
                            </ul>

@@ -161,7 +161,7 @@
                         <div class="d-md-block">
                            <div class="d-flex align-items-center">
                               <div class="tpheader-btn-two ml-25 d-none d-md-block">
-                                 <a href="contact.html">Free Trial</a>
+                                 <a href="/contact">Free Trial</a>
                               </div>
                               <div class="offcanvas-btn d-xl-none ml-20">
                                  <button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
@@ -193,14 +193,14 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo-light-blue.svg" alt="logo">
                   </a>
                </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn w-100">Getting Started</a>
+               <a href="/contact" class="tp-btn w-100">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
@@ -392,7 +392,7 @@
                         <span>Analyses your ranking</span>
                      </div>
                      <div class="feature-btn">
-                        <a href="marketing-analysis.html" class="radient-btn">Learn More</a>
+                        <a href="/" class="radient-btn">Learn More</a>
                      </div>
                   </div>
                </div>
@@ -846,7 +846,7 @@
                                     <p>Check the on-page optimization for your
                                        website and make sure it is optimized
                                        correctly for important</p>
-                                    <a href="marketing-analysis.html" class="radient-btn">Learn More</a>
+                                    <a href="/" class="radient-btn">Learn More</a>
                                  </div>
                               </div>
                            </div>
@@ -1917,7 +1917,7 @@
                               <li><a href="portfolio.html">Project</a></li>
                               <li><a href="pricing.html">Plan & Pricing</a></li>
                               <li><a href="blog-grid.html">Blog</a></li>
-                              <li><a href="contact.html">Contact Us</a></li>
+                              <li><a href="/contact">Contact Us</a></li>
                            </ul>
                         </div>
                      </div>
@@ -1930,7 +1930,7 @@
                               <li><a href="seo-audit.html">SEO Audit</a></li>
                               <li><a href="building-social-services.html">SEO Services</a></li>
                               <li><a href="social-media-markiting.html">SEO Marketing</a></li>
-                              <li><a href="marketing-analysis.html">SEO Analysis</a></li>
+                              <li><a href="/">SEO Analysis</a></li>
                               <li><a href="keyword-search.html">SEO Optimization</a></li>
                               <li><a href="social-media-markiting.html">Social Media</a></li>
                            </ul>

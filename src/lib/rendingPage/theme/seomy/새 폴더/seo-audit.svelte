@@ -182,7 +182,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="marketing-analysis.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/analysis.png" alt="">
                                                       </span>
                                                       SEO analysis.
@@ -252,7 +252,7 @@
                                           <li><a href="blog-details.html">Blog Details</a></li>
                                           <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                           <li><a href="faq.html">FAQ</a></li>
-                                          <li><a href="contact.html">Contact</a></li>
+                                          <li><a href="/contact">Contact</a></li>
                                        </ul>
                                     </li>
                                  </ul>
@@ -269,7 +269,7 @@
                                  </ul>
                               </li>
                               <li>
-                                 <a href="contact.html">Contact</a>
+                                 <a href="/contact">Contact</a>
                               </li>
                            </ul>
                         </nav>
@@ -282,7 +282,7 @@
                               <a href="sign-in.html">Sign in</a>
                            </div>
                            <div class="tpheader__btn ml-25 d-none d-md-block">
-                              <a href="contact.html" class="tp-header-btn">Get a Quote</a>
+                              <a href="/contact" class="tp-header-btn">Get a Quote</a>
                            </div>
                            <div class="offcanvas-btn d-xl-none ml-20">
                               <button class="offcanvas-open-btn offcanvas-open-btn-white"><i
@@ -314,14 +314,14 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo.svg" alt="logo">
                   </a>
                </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn w-100">Getting Started</a>
+               <a href="/contact" class="tp-btn w-100">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
@@ -424,7 +424,7 @@
                                     </div>
                                     <div class="tpservices-content">
                                        <span>One Page SEO</span>
-                                       <h4 class="tpservices-title"><a href="marketing-analysis.html">Account activation
+                                       <h4 class="tpservices-title"><a href="/">Account activation
                                              <br> if instant
                                              access.</a></h4>
                                     </div>
@@ -739,7 +739,7 @@
                      <h4 class="feature-inner-title-2">Fix your SEO <br> Issues in a few minutes</h4>
                      <p>Looking for 404 errors or redirect chains? Check <br> status codes of any web page.</p>
                      <div class="feature-inner-btn">
-                        <a href="contact.html">Try it now
+                        <a href="/contact">Try it now
                            <span>
                               <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -787,7 +787,7 @@
                      <h4 class="feature-inner-title-2">Check your site health in 4 easy steps</h4>
                      <p>Looking for 404 errors or redirect chains? Check <br> status codes of any web page.</p>
                      <div class="feature-inner-btn">
-                        <a href="contact.html">Try it now
+                        <a href="/contact">Try it now
                            <span>
                               <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -936,7 +936,7 @@
                               <li><a href="about.html">About us</a></li>
                               <li><a href="blog-grid.html">SEO Blog</a></li>
                               <li><a href="services.html">Services</a></li>
-                              <li><a href="contact.html">Contact</a></li>
+                              <li><a href="/contact">Contact</a></li>
                               <li><a href="seo-audit.html">Why SEO?</a></li>
                               <li><a href="#"></a></li>
                               <li><a href="team.html">Team</a></li>
@@ -951,7 +951,7 @@
                            <ul>
                               <li><a href="seo-audit.html">On Page SEO</a></li>
                               <li><a href="keyword-search.html">Keyword Research</a></li>
-                              <li><a href="marketing-analysis.html">SEO Consulting</a></li>
+                              <li><a href="/">SEO Consulting</a></li>
                               <li><a href="keyword-search.html">Off Page SEO</a></li>
                               <li><a href="seo-audit.html">SEO Audit</a></li>
                            </ul>

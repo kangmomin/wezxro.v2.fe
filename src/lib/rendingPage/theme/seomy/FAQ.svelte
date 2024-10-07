@@ -60,14 +60,14 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="home-main.html">
+                    <a href="/">
                         <img src="assets/img/logo/logo.svg" alt="logo">
                     </a>
                 </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-                <a href="contact.html" class="tp-btn w-100">Getting Started</a>
+                <a href="/contact" class="tp-btn w-100">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                 <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>

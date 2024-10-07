@@ -59,14 +59,14 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-70 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo.svg" alt="logo">
                   </a>
                </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn-offcanvas">Getting Started <i
+               <a href="/contact" class="tp-btn-offcanvas">Getting Started <i
                      class="fa-regular fa-chevron-right"></i></a>
             </div>
             <div class="offcanvas__social">

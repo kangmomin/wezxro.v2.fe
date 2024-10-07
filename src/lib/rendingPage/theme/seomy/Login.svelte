@@ -66,7 +66,7 @@
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn-offcanvas">Getting Started <i
+               <a href="/contact" class="tp-btn-offcanvas">Getting Started <i
                      class="fa-regular fa-chevron-right"></i></a>
             </div>
             <div class="offcanvas__social">

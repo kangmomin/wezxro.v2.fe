@@ -173,7 +173,7 @@
                                                       </a>
                                                    </li>
                                                    <li>
-                                                      <a href="marketing-analysis.html">
+                                                      <a href="/">
                                                          <span> <img src="assets/img/header-icon/analysis.png" alt=""> </span>
                                                          SEO analysis.
                                                       </a>
@@ -235,7 +235,7 @@
                                              <li><a href="blog-details.html">Blog Details</a></li>
                                              <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                              <li><a href="faq.html">FAQ</a></li>
-                                             <li><a href="contact.html">Contact</a></li>
+                                             <li><a href="/contact">Contact</a></li>
                                           </ul>
                                        </li>
                                     </ul>
@@ -252,7 +252,7 @@
                                     </ul>
                                  </li>
                                  <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="/contact">Contact</a>
                                  </li>
                               </ul>
                            </nav>
@@ -260,7 +260,7 @@
                      </div>
                      <div class="col-xl-2 col-lg-6 col-sm-7 col-6">
                         <div class="header-btn header-btn-4 text-end">
-                           <a class="blue-btn d-none d-xl-block" href="contact.html">Contact Us</a>
+                           <a class="blue-btn d-none d-xl-block" href="/contact">Contact Us</a>
                            <div class="offcanvas-btn d-xl-none ml-20">
                               <button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
                            </div>
@@ -290,14 +290,14 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo-pink.svg" alt="logo">
                   </a>
                </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn w-100">Getting Started</a>
+               <a href="/contact" class="tp-btn w-100">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
@@ -336,7 +336,7 @@
                         </h4>
                         <p>All in one SEO for your business to give real impact <br> consultancy and analysis.!</p>
                         <div class="banner-4-btn mb-30">
-                           <a href="contact.html" class="blue-btn">Get Started Now</a>
+                           <a href="/contact" class="blue-btn">Get Started Now</a>
                         </div>
                         <div class="contact-4 d-flex align-items-center">
                            <div class="contact-4-icon">
@@ -415,7 +415,7 @@
                         <h5 class="title mb-20">Digital Marketing</h5>
                         <p>We develop digital strategies, products and services appreciated by clients.</p>
                         <div class="services-btn-4 p-relative">
-                           <a href="marketing-analysis.html">
+                           <a href="/">
                               <span>Read More</span>
                               <i>
                                  <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1802,7 +1802,7 @@
                         <a class="phone mb-5" href="tel:0123456789">+(800) 2563 123</a>
                         <a class="mail mb-35" href="mailto:info@company.com">info@company.com</a>
                         <div class="tpcontact-4-content-btn">
-                           <a href="contact.html">Call us Now</a>
+                           <a href="/contact">Call us Now</a>
                         </div>
                      </div>
                   </div>
@@ -1997,7 +1997,7 @@
                                  <li><a href="portfolio.html">Project</a></li>
                                  <li><a href="pricing.html">Plan & Pricing</a></li>
                                  <li><a href="blog-grid.html">Blog</a></li>
-                                 <li><a href="contact.html">Contact Us</a></li>
+                                 <li><a href="/contact">Contact Us</a></li>
                               </ul>
                            </div>
                         </div>
@@ -2010,7 +2010,7 @@
                                  <li><a href="seo-audit.html">SEO Audit</a></li>
                                  <li><a href="building-social-services.html">SEO Services</a></li>
                                  <li><a href="social-media-markiting.html">SEO Marketing</a></li>
-                                 <li><a href="marketing-analysis.html">SEO Analysis</a></li>
+                                 <li><a href="/">SEO Analysis</a></li>
                                  <li><a href="keyword-search.html">SEO Optimization</a></li>
                                  <li><a href="social-media-markiting.html">Social Media</a></li>
                               </ul>

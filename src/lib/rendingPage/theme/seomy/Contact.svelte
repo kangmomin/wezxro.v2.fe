@@ -52,14 +52,14 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="home-main.html">
+                    <a href="/">
                         <img alt="logo" src="assets/img/logo/logo.svg">
                     </a>
                 </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-                <a class="tp-btn w-100" href="contact.html">Getting Started</a>
+                <a class="tp-btn w-100" href="/contact">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                 <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
@@ -598,7 +598,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>One Page SEO</span>
-                                            <h4 class="tpservices-title"><a href="marketing-analysis.html">Account
+                                            <h4 class="tpservices-title"><a href="/">Account
                                                 activation <br> if instant
                                                 access.</a></h4>
                                         </div>
@@ -923,7 +923,7 @@
                                                         <span>up to 10 user + 1.99 per user</span>
                                                     </div>
                                                     <div class="tppricing-btn-two">
-                                                        <a class="tp-btn-blue" href="contact.html">Get Started</a>
+                                                        <a class="tp-btn-blue" href="/contact">Get Started</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -954,7 +954,7 @@
                                                         <span>up to 10 user + 1.99 per user</span>
                                                     </div>
                                                     <div class="tppricing-btn">
-                                                        <a class="tp-btn-blue" href="contact.html">Get Started</a>
+                                                        <a class="tp-btn-blue" href="/contact">Get Started</a>
                                                     </div>
                                                 </div>
                                             </div>

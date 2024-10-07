@@ -170,7 +170,7 @@
                               </button>
                            </div>
                            <div class="tpheader__btn ml-25 d-none d-sm-block">
-                              <a href="contact.html" class="tp-header-btn">Get a Quote</a>
+                              <a href="/contact" class="tp-header-btn">Get a Quote</a>
                            </div>
                            <div class="offcanvas-btn d-xl-none ml-20">
                               <button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
@@ -222,14 +222,14 @@
          <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                <div class="offcanvas__logo logo">
-                  <a href="home-main.html">
+                  <a href="/">
                      <img src="assets/img/logo/logo.svg" alt="logo">
                   </a>
                </div>
             </div>
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
-               <a href="contact.html" class="tp-btn w-100">Getting Started</a>
+               <a href="/contact" class="tp-btn w-100">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
                <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
@@ -729,7 +729,7 @@
                                  </div>
                                  <div class="tpservices-content">
                                     <span>One Page SEO</span>
-                                    <h4 class="tpservices-title"><a href="marketing-analysis.html">Account activation <br> if instant
+                                    <h4 class="tpservices-title"><a href="/">Account activation <br> if instant
                                           access.</a></h4>
                                  </div>
                               </div>
@@ -1024,7 +1024,7 @@
                                              <span>up to 10 user + 1.99 per user</span>
                                           </div>
                                           <div class="tppricing-btn-two">
-                                             <a href="contact.html" class="tp-btn-blue">Get Started</a>
+                                             <a href="/contact" class="tp-btn-blue">Get Started</a>
                                           </div>
                                        </div>
                                     </div>
@@ -1052,7 +1052,7 @@
                                              <span>up to 10 user + 1.99 per user</span>
                                           </div>
                                           <div class="tppricing-btn">
-                                             <a href="contact.html" class="tp-btn-blue">Get Started</a>
+                                             <a href="/contact" class="tp-btn-blue">Get Started</a>
                                           </div>
                                        </div>
                                     </div>
@@ -1608,7 +1608,7 @@
                                  <li><a href="portfolio.html">Project</a></li>
                                  <li><a href="pricing.html">Plan & Pricing</a></li>
                                  <li><a href="blog.html">Blog</a></li>
-                                 <li><a href="contact.html">Contact Us</a></li>
+                                 <li><a href="/contact">Contact Us</a></li>
                               </ul>
                            </div>
                         </div>
@@ -1621,7 +1621,7 @@
                                  <li><a href="seo-audit.html">SEO Audit</a></li>
                                  <li><a href="building-social-services.html">SEO Services</a></li>
                                  <li><a href="#">SEO Marketing</a></li>
-                                 <li><a href="marketing-analysis.html">SEO Analysis</a></li>
+                                 <li><a href="/">SEO Analysis</a></li>
                                  <li><a href="keyword-search.html">SEO Optimization</a></li>
                                  <li><a href="social-media-markiting.html">Social Media</a></li>
                               </ul>

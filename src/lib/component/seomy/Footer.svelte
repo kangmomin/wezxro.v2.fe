@@ -56,7 +56,7 @@
                                     <li><a href="about.html">About us</a></li>
                                     <li><a href="blog-grid.html">SEO Blog</a></li>
                                     <li><a href="services.html">Services</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="/contact">Contact</a></li>
                                     <li><a href="seo-audit.html">Why SEO?</a></li>
                                     <li><a href="#"></a></li>
                                     <li><a href="team.html">Team</a></li>
@@ -71,7 +71,7 @@
                                 <ul>
                                     <li><a href="seo-audit.html">On Page SEO</a></li>
                                     <li><a href="keyword-search.html">Keyword Research</a></li>
-                                    <li><a href="marketing-analysis.html">SEO Consulting</a></li>
+                                    <li><a href="/">SEO Consulting</a></li>
                                     <li><a href="keyword-search.html">Off Page SEO</a></li>
                                     <li><a href="seo-audit.html">SEO Audit</a></li>
                                 </ul>
