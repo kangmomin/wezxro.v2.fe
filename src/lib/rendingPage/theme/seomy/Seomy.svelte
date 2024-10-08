@@ -3,6 +3,7 @@
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import {onMount} from "svelte";
+    import { link } from 'svelte-routing';
 
     export let data
     let isLogin = false
@@ -60,9 +61,6 @@
         <meta content="" name="description">
         <meta content="width=device-width, initial-scale=1" name="viewport">
 
-        <!-- Place favicon.ico in the root directory -->
-        <link href="assets/img/logo/favicon.png" rel="shortcut icon" type="image/x-icon">
-
         <!-- CSS here -->
         <link href="assets/css/bootstrap.css" rel="stylesheet">
         <link href="assets/css/animate.css" rel="stylesheet">
@@ -98,7 +96,7 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="/">
+                    <a href="/" use:link>
                         <img alt="logo" src="assets/img/logo/logo-pink.svg">
                     </a>
                 </div>

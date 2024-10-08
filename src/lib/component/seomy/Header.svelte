@@ -19,7 +19,7 @@
 				<div class="row align-items-center">
 					<div class="col-xl-2 col-lg-6 col-sm-4 col-6">
 						<div class="tplogo__area">
-							<a href="/">
+							<a rel="external" href="/">
 								<img alt="logo" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo_fit_black.png">
 							</a>
 						</div>
@@ -29,25 +29,25 @@
 							<nav class="tp-main-menu-content">
 								<ul>
 									<li class="has-dropdown">
-										<a href="/">{EN_NAME}</a>
+										<a rel="external" href="/">{EN_NAME}</a>
 										<ul class="tp-submenu submenu">
-											<li><a href="/">{EN_NAME}</a></li>
-											<li><a href="/about">ABOUT</a></li>
-											<li><a href="/FAQ">FAQ</a></li>
+											<li><a rel="external" href="/">{EN_NAME}</a></li>
+											<li><a rel="external" href="/about">ABOUT</a></li>
+											<li><a rel="external" href="/FAQ">FAQ</a></li>
 										</ul>
 									</li>
 									<li>
-										<a href="/services">SERVICES</a>
+										<a rel="external" href="/services">SERVICES</a>
 									</li>
 									<li class="has-dropdown">
-										<a href="/">PARTNER</a>
+										<a rel="external" href="/">PARTNER</a>
 										<ul class="tp-submenu submenu">
-											<li><a href="/join-partner">파트너 신청하기</a></li>
-											<li><a href="/portfolios">포트폴리오</a></li>
+											<li><a rel="external" href="/join-partner">파트너 신청하기</a></li>
+											<li><a rel="external" href="/portfolios">포트폴리오</a></li>
 										</ul>
 									</li>
 									<li>
-										<a href="/contact">고객센터</a>
+										<a rel="external" href="/contact">고객센터</a>
 									</li>
 								</ul>
 							</nav>
@@ -57,10 +57,10 @@
 						<div class="tpheader__right  d-flex align-items-center justify-content-end">
 							<div class="d-flex align-items-center">
 								<div class="tpheader__sign d-none d-md-block">
-									<a href="/login">로그인</a>
+									<a rel="external" href="/login">로그인</a>
 								</div>
 								<div class="tpheader__btn ml-25 d-none d-md-block">
-									<a class="tp-header-btn" href="/contact">서비스 이용하기</a>
+									<a class="tp-header-btn" rel="external" href="/contact">서비스 이용하기</a>
 								</div>
 								<div class="offcanvas-btn d-xl-none ml-20">
 									<button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
