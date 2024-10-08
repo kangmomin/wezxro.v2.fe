@@ -162,7 +162,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="seo-audit.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/audit.png" alt=""> </span>
                                                       SEO Audit Services
                                                    </a>
@@ -174,7 +174,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="social-media-markiting.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/media.png" alt=""> </span>
                                                       Social Media Marketing
                                                    </a>
@@ -551,7 +551,7 @@
                         <span>Analyses your ranking</span>
                      </div>
                      <div class="feature-btn">
-                        <a href="seo-audit.html" class="radient-btn">Learn More</a>
+                        <a href="/" class="radient-btn">Learn More</a>
                      </div>
                   </div>
                </div>
@@ -864,7 +864,7 @@
                                     <p>Check the on-page optimization for your
                                        website and make sure it is optimized
                                        correctly for important</p>
-                                    <a href="seo-audit.html" class="radient-btn">Learn More</a>
+                                    <a href="/" class="radient-btn">Learn More</a>
                                  </div>
                               </div>
                            </div>
@@ -929,7 +929,7 @@
                                     <p>Check the on-page optimization for your
                                        website and make sure it is optimized
                                        correctly for important</p>
-                                    <a href="social-media-markiting.html" class="radient-btn">Learn More</a>
+                                    <a href="/" class="radient-btn">Learn More</a>
                                  </div>
                               </div>
                            </div>
@@ -2041,12 +2041,12 @@
                         <h4 class="footer-widget-title mb-15">Services</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="seo-audit.html">SEO Audit</a></li>
+                              <li><a href="/">SEO Audit</a></li>
                               <li><a href="building-social-services.html">SEO Services</a></li>
-                              <li><a href="social-media-markiting.html">SEO Marketing</a></li>
+                              <li><a href="/">SEO Marketing</a></li>
                               <li><a href="/">SEO Analysis</a></li>
                               <li><a href="keyword-search.html">SEO Optimization</a></li>
-                              <li><a href="social-media-markiting.html">Social Media</a></li>
+                              <li><a href="/">Social Media</a></li>
                            </ul>
                         </div>
                      </div>

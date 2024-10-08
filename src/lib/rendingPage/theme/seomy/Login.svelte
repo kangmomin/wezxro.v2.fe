@@ -132,7 +132,7 @@
                               <span></span>
                            </div>
                            <div class="signin-item-content ml-30">
-                              <h4 class="signin-item-title"><a href="social-media-markiting.html">Social  <br> Media Marketing</a></h4>
+                              <h4 class="signin-item-title"><a href="/">Social  <br> Media Marketing</a></h4>
                            </div>
                         </div>
                         <div class="signin-item d-flex align-items-center mb-45">
@@ -144,7 +144,7 @@
                               <span></span>
                            </div>
                            <div class="signin-item-content ml-30">
-                              <h4 class="signin-item-title"><a href="seo-audit.html">SEO <br>Audit Services</a></h4>
+                              <h4 class="signin-item-title"><a href="/">SEO <br>Audit Services</a></h4>
                            </div>
                         </div>
                      </div>
@@ -180,23 +180,6 @@
                            </div>
                         </div>
                      </form>
-                     <div class="signin-social-wrap text-center">
-                        <p>OR</p>
-                     </div>
-                     <div class="signin-social-wrapper mb-30">
-                        <div class="signin-social-item mb-15">
-                           <a href="#">
-                              <img src="assets/img/sign-in/facebook.svg" alt="">
-                              Continue with Facebook
-                           </a>
-                        </div>
-                        <div class="signin-social-item">
-                           <a href="#">
-                              <img src="assets/img/sign-in/google.svg" alt="">
-                              Continue with Google
-                           </a>
-                        </div>
-                     </div>
                      <div class="signin-account text-center">
                         <p>Already have an account? <a href="/join">Sign Up</a></p>
                      </div>

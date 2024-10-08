@@ -1,5 +1,4 @@
 <script>
-    import Loader from "$lib/component/seomy/Loader.svelte";
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
@@ -135,7 +134,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>Social Marketing</span>
-                                            <h4 class="tpservices-title"><a href="seo-audit.html">Instant account activation <br> if instant
+                                            <h4 class="tpservices-title"><a href="/">Instant account activation <br> if instant
                                                 access.</a></h4>
                                         </div>
                                     </div>
@@ -147,7 +146,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>SEO Optimization</span>
-                                            <h4 class="tpservices-title"><a href="seo-audit.html">Services activation <br> if need
+                                            <h4 class="tpservices-title"><a href="/">Services activation <br> if need
                                                 access.</a></h4>
                                         </div>
                                     </div>
@@ -183,7 +182,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>Email Marketing</span>
-                                            <h4 class="tpservices-title"><a href="social-media-markiting.html">Email Marketing activation <br> if instant
+                                            <h4 class="tpservices-title"><a href="/">Email Marketing activation <br> if instant
                                                 access.</a></h4>
                                         </div>
                                     </div>

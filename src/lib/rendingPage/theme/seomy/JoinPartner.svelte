@@ -1,12 +1,13 @@
 <script>
-    import Loader from "$lib/component/seomy/Loader.svelte";
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
+    import {goto} from "$app/navigation";
 
     export let data
     const {EN_NAME, KR_NAME} = data.props
 
+    if (EN_NAME !== "WEZXRO") goto("/error")
 </script>
 <svelte:head>
     <meta charset="utf-8">

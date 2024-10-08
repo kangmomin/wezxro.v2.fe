@@ -1,7 +1,15 @@
 <script>
+	import {onMount} from "svelte";
+
 	export let data
 
 	const {EN_NAME} = data.props
+	let isLogin = false
+
+	onMount(() => {
+		let token = localStorage.getItem("accessToken");
+		if (token) isLogin = true
+	})
 </script>
 
 <header>
@@ -21,9 +29,9 @@
 							<nav class="tp-main-menu-content">
 								<ul>
 									<li class="has-dropdown">
-										<a href="#">{EN_NAME}</a>
+										<a href="/">{EN_NAME}</a>
 										<ul class="tp-submenu submenu">
-											<li><a href="#">{EN_NAME}</a></li>
+											<li><a href="/">{EN_NAME}</a></li>
 											<li><a href="/about">ABOUT</a></li>
 											<li><a href="/FAQ">FAQ</a></li>
 										</ul>

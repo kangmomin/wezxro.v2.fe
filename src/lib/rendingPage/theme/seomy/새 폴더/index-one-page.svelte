@@ -705,7 +705,7 @@
                                  </div>
                                  <div class="tpservices-content">
                                     <span>Social Marketing</span>
-                                    <h4 class="tpservices-title"><a href="seo-audit.html">Instant account activation <br> if instant
+                                    <h4 class="tpservices-title"><a href="/">Instant account activation <br> if instant
                                           access.</a></h4>
                                  </div>
                               </div>
@@ -717,7 +717,7 @@
                                  </div>
                                  <div class="tpservices-content">
                                     <span>SEO Optimization</span>
-                                    <h4 class="tpservices-title"><a href="seo-audit.html">Services activation <br> if need
+                                    <h4 class="tpservices-title"><a href="/">Services activation <br> if need
                                           access.</a></h4>
                                  </div>
                               </div>
@@ -753,7 +753,7 @@
                                  </div>
                                  <div class="tpservices-content">
                                     <span>Email Marketing</span>
-                                    <h4 class="tpservices-title"><a href="social-media-markiting.html">Email Marketing activation <br> if instant
+                                    <h4 class="tpservices-title"><a href="/">Email Marketing activation <br> if instant
                                           access.</a></h4>
                                  </div>
                               </div>
@@ -1618,12 +1618,12 @@
                            <h4 class="footer-widget-title mb-15">Services</h4>
                            <div class="footer-widget-link">
                               <ul>
-                                 <li><a href="seo-audit.html">SEO Audit</a></li>
+                                 <li><a href="/">SEO Audit</a></li>
                                  <li><a href="building-social-services.html">SEO Services</a></li>
                                  <li><a href="#">SEO Marketing</a></li>
                                  <li><a href="/">SEO Analysis</a></li>
                                  <li><a href="keyword-search.html">SEO Optimization</a></li>
-                                 <li><a href="social-media-markiting.html">Social Media</a></li>
+                                 <li><a href="/">Social Media</a></li>
                               </ul>
                            </div>
                         </div>

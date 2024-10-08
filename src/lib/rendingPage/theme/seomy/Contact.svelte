@@ -572,7 +572,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>Social Marketing</span>
-                                            <h4 class="tpservices-title"><a href="seo-audit.html">Instant account
+                                            <h4 class="tpservices-title"><a href="/">Instant account
                                                 activation <br> if instant
                                                 access.</a></h4>
                                         </div>
@@ -585,7 +585,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>SEO Optimization</span>
-                                            <h4 class="tpservices-title"><a href="seo-audit.html">Services activation
+                                            <h4 class="tpservices-title"><a href="/">Services activation
                                                 <br> if need
                                                 access.</a></h4>
                                         </div>
@@ -624,7 +624,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>Email Marketing</span>
-                                            <h4 class="tpservices-title"><a href="social-media-markiting.html">Email
+                                            <h4 class="tpservices-title"><a href="/">Email
                                                 Marketing activation <br> if instant
                                                 access.</a></h4>
                                         </div>

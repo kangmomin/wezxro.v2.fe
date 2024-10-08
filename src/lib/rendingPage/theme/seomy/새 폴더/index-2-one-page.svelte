@@ -1322,12 +1322,12 @@
                         <h4 class="footer-widget-title mb-15">Services</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="seo-audit.html">SEO Audit</a></li>
+                              <li><a href="/">SEO Audit</a></li>
                               <li><a href="building-social-services.html">SEO Services</a></li>
-                              <li><a href="social-media-markiting.html">SEO Marketing</a></li>
+                              <li><a href="/">SEO Marketing</a></li>
                               <li><a href="/">SEO Analysis</a></li>
                               <li><a href="keyword-search.html">SEO Optimization</a></li>
-                              <li><a href="social-media-markiting.html">Social Media</a></li>
+                              <li><a href="/">Social Media</a></li>
                            </ul>
                         </div>
                      </div>

@@ -163,7 +163,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="seo-audit.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/audit.png" alt=""> </span>
                                                       SEO Audit Services
                                                    </a>
@@ -176,7 +176,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="social-media-markiting.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/media.png" alt=""> </span>
                                                       Social Media Marketing
                                                    </a>
@@ -398,7 +398,7 @@
                                     </div>
                                     <div class="tpservices-content">
                                        <span>Social Marketing</span>
-                                       <h4 class="tpservices-title"><a href="seo-audit.html">Instant account activation
+                                       <h4 class="tpservices-title"><a href="/">Instant account activation
                                              <br> if
                                              instant access.</a></h4>
                                     </div>
@@ -411,7 +411,7 @@
                                     </div>
                                     <div class="tpservices-content">
                                        <span>SEO Optimization</span>
-                                       <h4 class="tpservices-title"><a href="seo-audit.html">Services activation <br> if
+                                       <h4 class="tpservices-title"><a href="/">Services activation <br> if
                                              need
                                              access.</a></h4>
                                     </div>
@@ -450,7 +450,7 @@
                                     </div>
                                     <div class="tpservices-content">
                                        <span>Email Marketing</span>
-                                       <h4 class="tpservices-title"><a href="social-media-markiting.html">Email
+                                       <h4 class="tpservices-title"><a href="/">Email
                                              Marketing activation <br> if instant
                                              access.</a></h4>
                                     </div>
@@ -937,7 +937,7 @@
                               <li><a href="blog-grid.html">SEO Blog</a></li>
                               <li><a href="services.html">Services</a></li>
                               <li><a href="/contact">Contact</a></li>
-                              <li><a href="seo-audit.html">Why SEO?</a></li>
+                              <li><a href="/">Why SEO?</a></li>
                               <li><a href="#"></a></li>
                               <li><a href="team.html">Team</a></li>
                            </ul>
@@ -949,11 +949,11 @@
                         <h4 class="footer-widget-title mb-15">Expertise</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="seo-audit.html">On Page SEO</a></li>
+                              <li><a href="/">On Page SEO</a></li>
                               <li><a href="keyword-search.html">Keyword Research</a></li>
                               <li><a href="/">SEO Consulting</a></li>
                               <li><a href="keyword-search.html">Off Page SEO</a></li>
-                              <li><a href="seo-audit.html">SEO Audit</a></li>
+                              <li><a href="/">SEO Audit</a></li>
                            </ul>
                         </div>
                      </div>

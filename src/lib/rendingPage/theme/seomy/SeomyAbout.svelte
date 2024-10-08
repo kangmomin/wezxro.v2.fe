@@ -2,17 +2,13 @@
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
-    import {onMount} from "svelte";
+    import {goto} from "$app/navigation";
 
     export let data
-    let isLogin = false
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
 
-    onMount(() => {
-        let token = localStorage.getItem("accessToken");
-        if (token) isLogin = true
-    })
+    if (EN_NAME !== "WEZXRO") goto("/error")
 </script>
 
 <svelte:head>

@@ -166,7 +166,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="seo-audit.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/audit.png" alt=""> </span>
                                                       SEO Audit Services
                                                    </a>
@@ -179,7 +179,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="social-media-markiting.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/media.png" alt=""> </span>
                                                       Social Media Marketing
                                                    </a>
@@ -547,7 +547,7 @@
                <div class="col-lg-4 col-md-6">
                   <div class="services-inner-item mb-30">
                      <div class="services-inner-content">
-                        <h4 class="services-inner-title"><a href="seo-audit.html">Growing <br> your business</a></h4>
+                        <h4 class="services-inner-title"><a href="/">Growing <br> your business</a></h4>
                         <p>With SEOMY, you get everything you need for a fast website</p>
                      </div>
                      <div class="services-inner-thumb">
@@ -572,7 +572,7 @@
                <div class="col-lg-4 col-md-6">
                   <div class="services-inner-item mb-30">
                      <div class="services-inner-content">
-                        <h4 class="services-inner-title"><a href="social-media-markiting.html">Testing <br> Capabilities</a></h4>
+                        <h4 class="services-inner-title"><a href="/">Testing <br> Capabilities</a></h4>
                         <p>With SEOMY, you get everything you need for a fast website</p>
                      </div>
                      <div class="services-inner-thumb">
@@ -715,7 +715,7 @@
                      <div class="services-inner-2-content text-center">
                         <h4 class="services-inner-2-title">SEO Analytics</h4>
                         <p>A strong social strategy is a <br> road-map to developing customer.</p>
-                        <a href="seo-audit.html">Learn More
+                        <a href="/">Learn More
                            <span>
                               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -734,7 +734,7 @@
                      <div class="services-inner-2-content text-center">
                         <h4 class="services-inner-2-title">Social Marketing</h4>
                         <p>A strong social strategy is a road-map <br> to developing customer.</p>
-                        <a href="social-media-markiting.html">Learn More
+                        <a href="/">Learn More
                            <span>
                               <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -898,7 +898,7 @@
                               <li><a href="blog-grid.html">SEO Blog</a></li>
                               <li><a href="services.html">Services</a></li>
                               <li><a href="/contact">Contact</a></li>
-                              <li><a href="seo-audit.html">Why SEO?</a></li>
+                              <li><a href="/">Why SEO?</a></li>
                               <li><a href="#"></a></li>
                               <li><a href="team.html">Team</a></li>
                            </ul>
@@ -910,11 +910,11 @@
                         <h4 class="footer-widget-title mb-15">Expertise</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="seo-audit.html">On Page SEO</a></li>
+                              <li><a href="/">On Page SEO</a></li>
                               <li><a href="keyword-search.html">Keyword Research</a></li>
                               <li><a href="/">SEO Consulting</a></li>
                               <li><a href="keyword-search.html">Off Page SEO</a></li>
-                              <li><a href="seo-audit.html">SEO Audit</a></li>
+                              <li><a href="/">SEO Audit</a></li>
                            </ul>
                         </div>
                      </div>

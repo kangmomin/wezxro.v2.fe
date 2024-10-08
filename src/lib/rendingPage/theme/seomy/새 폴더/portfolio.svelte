@@ -162,7 +162,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="seo-audit.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/audit.png" alt=""> </span>
                                                       SEO Audit Services
                                                    </a>
@@ -175,7 +175,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="social-media-markiting.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/media.png" alt=""> </span>
                                                       Social Media Marketing
                                                    </a>

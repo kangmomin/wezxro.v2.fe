@@ -24,47 +24,47 @@
 </script>
 
 <svelte:head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="description" content="                                    ">
-    <meta name="keywords" content="                                                           ">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="Content-Language" content="en">
+        <meta name="description" content="                                    ">
+        <meta name="keywords" content="                                                           ">
 
-    <title> {EN_NAME} </title>
+        <title> {EN_NAME} </title>
 
-    <link rel="shortcut icon" type="image/x-icon"
-          href="/public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
-
-    <link rel="stylesheet" href="/public/assets/plugins/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
-    <script src="/public/assets/js/vendors/jquery-3.2.1.min.js"></script>
-
-    <link rel="stylesheet" href="/public/assets/auth/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="/public/assets/auth/vendors/css/vendor.bundle.base.css">
-
-    <!-- Core -->
-    <link rel="stylesheet" href="/public/assets/auth/css/style.css">
+        <link rel="shortcut icon" type="image/x-icon"
+              href="/public/assets/logo/{EN_NAME.toLowerCase()}/logo_white.png">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
 
 
-    <!-- toast -->
-    <link rel="stylesheet" type="text/css"
-          href="/public/assets/plugins/jquery-toast/css/jquery.toast.css">
+        <link rel="stylesheet" href="/public/assets/plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+        <script src="/public/assets/js/vendors/jquery-3.2.1.min.js"></script>
+
+        <link rel="stylesheet" href="/public/assets/auth/vendors/ti-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="/public/assets/auth/vendors/css/vendor.bundle.base.css">
+
+        <!-- Core -->
+        <link rel="stylesheet" href="/public/assets/auth/css/style.css">
 
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="/public/assets/plugins/aos/dist/aos.css" />
-    <link href="/public/assets/css/footer.css" rel="stylesheet">
-</head>
+        <!-- toast -->
+        <link rel="stylesheet" type="text/css"
+              href="/public/assets/plugins/jquery-toast/css/jquery.toast.css">
+
+
+        <!-- AOS -->
+        <link rel="stylesheet" href="/public/assets/plugins/aos/dist/aos.css" />
+        <link href="/public/assets/css/footer.css" rel="stylesheet">
+    </head>
 </svelte:head>
 
 <body class="">

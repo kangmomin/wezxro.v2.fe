@@ -155,7 +155,7 @@
                                                       </a>
                                                    </li>
                                                    <li>
-                                                      <a href="seo-audit.html">
+                                                      <a href="/">
                                                          <span> <img src="assets/img/header-icon/audit.png" alt=""> </span>
                                                          SEO Audit Services
                                                       </a>
@@ -167,7 +167,7 @@
                                                       </a>
                                                    </li>
                                                    <li>
-                                                      <a href="social-media-markiting.html">
+                                                      <a href="/">
                                                          <span> <img src="assets/img/header-icon/media.png" alt=""> </span>
                                                          Social Media Marketing
                                                       </a>
@@ -443,7 +443,7 @@
                         <h5 class="title mb-20">SEO Analytics</h5>
                         <p>We develop digital strategies, products and services appreciated by clients.</p>
                         <div class="services-btn-4 p-relative">
-                           <a href="seo-audit.html">
+                           <a href="/">
                               <span>Read More</span>
                               <i>
                                  <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -484,7 +484,7 @@
                         <h5 class="title mb-20">Social Marketing</h5>
                         <p>We develop digital strategies, products and services appreciated by clients.</p>
                         <div class="services-btn-4 p-relative">
-                           <a href="social-media-markiting.html">
+                           <a href="/">
                               <span>Read More</span>
                               <i>
                                  <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2007,12 +2007,12 @@
                            <h4 class="footer-widget-title mb-15">Services</h4>
                            <div class="footer-widget-link">
                               <ul>
-                                 <li><a href="seo-audit.html">SEO Audit</a></li>
+                                 <li><a href="/">SEO Audit</a></li>
                                  <li><a href="building-social-services.html">SEO Services</a></li>
-                                 <li><a href="social-media-markiting.html">SEO Marketing</a></li>
+                                 <li><a href="/">SEO Marketing</a></li>
                                  <li><a href="/">SEO Analysis</a></li>
                                  <li><a href="keyword-search.html">SEO Optimization</a></li>
-                                 <li><a href="social-media-markiting.html">Social Media</a></li>
+                                 <li><a href="/">Social Media</a></li>
                               </ul>
                            </div>
                         </div>

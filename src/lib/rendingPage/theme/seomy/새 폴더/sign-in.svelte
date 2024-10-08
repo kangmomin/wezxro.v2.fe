@@ -132,7 +132,7 @@
                               <span></span>
                            </div>
                            <div class="signin-item-content ml-30">
-                              <h4 class="signin-item-title"><a href="social-media-markiting.html">Social  <br> Media Marketing</a></h4>
+                              <h4 class="signin-item-title"><a href="/">Social  <br> Media Marketing</a></h4>
                            </div>
                         </div>
                         <div class="signin-item d-flex align-items-center mb-45">
@@ -144,7 +144,7 @@
                               <span></span>
                            </div>
                            <div class="signin-item-content ml-30">
-                              <h4 class="signin-item-title"><a href="seo-audit.html">SEO <br>Audit Services</a></h4>
+                              <h4 class="signin-item-title"><a href="/">SEO <br>Audit Services</a></h4>
                            </div>
                         </div>
                      </div>
