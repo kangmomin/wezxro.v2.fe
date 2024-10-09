@@ -66,10 +66,10 @@
                <div class="row align-items-center">
                   <div class="col-xl-2 col-lg-6 col-sm-4 col-6">
                      <div class="tplogo__area">
-                        <a class="header-logo" href="index.html">
+                        <a class="header-logo" href="/">
                            <img src="assets/img/logo/logo-light-blue.svg" alt="logo">
                         </a>
-                        <a class="sticky-logo" href="index.html">
+                        <a class="sticky-logo" href="/">
                            <img src="assets/img/logo/logo.svg" alt="logo">
                         </a>
                      </div>
@@ -79,7 +79,7 @@
                         <nav class="tp-main-menu-content">
                            <ul>
                               <li class="has-dropdown has-mega-menu">
-                                 <a href="index.html">Home</a>
+                                 <a href="/">Home</a>
                                  <div class="tp-submenu submenu has-homemenu tp-mega-menu">
                                     <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-5">
                                        <div class="col homemenu active">
@@ -87,7 +87,7 @@
                                              <img src="assets/img/menu/home-1.jpg" alt="">
                                           </div>
                                           <div class="homemenu-btn">
-                                             <a class="menu-btn mb-5" href="index.html">Multi Page</a>
+                                             <a class="menu-btn mb-5" href="/">Multi Page</a>
                                              <a class="menu-btn" href="index-one-page.html">One Page</a>
                                           </div>
                                           <div class="demo-name">
@@ -145,9 +145,9 @@
                                     </div>
                                  </div>
                               </li>
-                              <li><a href="about.html">About</a></li>
+                              <li><a href="/about">About</a></li>
                               <li class="header-services has-dropdown has-mega-menu">
-                                 <a href="services.html">Services</a>
+                                 <a href="/services">Services</a>
                                  <div class="tp-mega-menu tp-submenu submenu">
                                     <div class="row">
                                        <div class="col-xl-6">
@@ -155,7 +155,7 @@
                                              <h5 class="tp-menu-banner-title">Services Overview</h5>
                                              <ul>
                                                 <li>
-                                                   <a href="keyword-search.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/keyword.png" alt="">
                                                       </span>
                                                       Keyword Research
@@ -168,7 +168,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="building-social-services.html">
+                                                   <a href="/services">
                                                       <span> <img src="assets/img/header-icon/building.png" alt="">
                                                       </span>
                                                       Link Building Services
@@ -197,7 +197,7 @@
                                                 <h5 class="tp-menu-banner-title-2">The #1 SEO <br> agency for fast
                                                    growing <br> companies.</h5>
                                                 <div class="tp-menu-banner-btn">
-                                                   <a href="services.html">
+                                                   <a href="/services">
                                                       Learn more
                                                       <span>
                                                          <svg width="9" height="10" viewBox="0 0 9 10" fill="none"
@@ -223,12 +223,12 @@
                                  </div>
                               </li>
                               <li class="has-dropdown has-megamenu">
-                                 <a href="about.html">Pages</a>
+                                 <a href="/about">Pages</a>
                                  <ul class="tp-submenu submenu mega-menu">
                                     <li>
                                        <ul>
-                                          <li><a href="about.html">About Us</a></li>
-                                          <li><a href="services.html">Services</a></li>
+                                          <li><a href="/about">About Us</a></li>
+                                          <li><a href="/services">Services</a></li>
                                           <li><a href="team.html">Team Member</a></li>
                                           <li><a href="team-details.html">Team Details</a></li>
                                           <li><a href="sign-in.html">Sign In</a></li>
@@ -237,18 +237,18 @@
                                     </li>
                                     <li>
                                        <ul>
-                                          <li><a href="pricing.html">Pricing</a></li>
-                                          <li><a href="portfolio.html">Case Studies 2 Columns</a></li>
+                                          <li><a href="/">Pricing</a></li>
+                                          <li><a href="/portfolios">Case Studies 2 Columns</a></li>
                                           <li><a href="portfolio-2.html">Case Studies 3 Columns</a></li>
-                                          <li><a href="portfolio-details.html">Case Studies Details</a></li>
-                                          <li><a href="blog-grid.html">Blog Grid</a></li>
+                                          <li><a href="/">Case Studies Details</a></li>
+                                          <li><a href="/">Blog Grid</a></li>
                                           <li><a href="blog-masonry.html">Blog Masonry</a></li>
                                        </ul>
                                     </li>
                                     <li>
                                        <ul>
-                                          <li><a href="blog-list.html">Blog List</a></li>
-                                          <li><a href="blog-details.html">Blog Details</a></li>
+                                          <li><a href="/">Blog List</a></li>
+                                          <li><a href="/">Blog Details</a></li>
                                           <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                           <li><a href="faq.html">FAQ</a></li>
                                           <li><a href="/contact">Contact</a></li>
@@ -260,10 +260,10 @@
                                  <a href="blog.html">Blog</a>
                                  <ul class="tp-submenu submenu">
                                     <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="/">Blog Grid</a></li>
                                     <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="/">Blog List</a></li>
+                                    <li><a href="/">Blog Details</a></li>
                                     <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                  </ul>
                               </li>
@@ -350,7 +350,7 @@
                   <div class="breadcrumb__content breadcrumb__content-2 text-center p-relative z-index-1">
                      <h3 class="breadcrumb__title">Case Studies</h3>
                      <div class="breadcrumb__list">
-                        <span><a href="index.html">Home</a></span>
+                        <span><a href="/">Home</a></span>
                         <span class="dvdr"></span>
                         <span>Case Studies</span>
                      </div>
@@ -387,7 +387,7 @@
                      </div>
                      <div class="portfolio-inner-content">
                         <span>Marketing</span>
-                        <h4 class="portfolio-inner-title"><a href="portfolio-details.html">Online Media Management</a></h4>
+                        <h4 class="portfolio-inner-title"><a href="/">Online Media Management</a></h4>
                      </div>
                   </div>
                </div>
@@ -398,7 +398,7 @@
                      </div>
                      <div class="portfolio-inner-content">
                         <span>DESIGN</span>
-                        <h4 class="portfolio-inner-title"><a href="portfolio-details.html">Tips for the good UI design</a></h4>
+                        <h4 class="portfolio-inner-title"><a href="/">Tips for the good UI design</a></h4>
                      </div>
                   </div>
                </div>
@@ -409,7 +409,7 @@
                      </div>
                      <div class="portfolio-inner-content">
                         <span>Marketing</span>
-                        <h4 class="portfolio-inner-title"><a href="portfolio-details.html">Sony Airpads Max</a></h4>
+                        <h4 class="portfolio-inner-title"><a href="/">Sony Airpads Max</a></h4>
                      </div>
                   </div>
                </div>
@@ -420,7 +420,7 @@
                      </div>
                      <div class="portfolio-inner-content">
                         <span>DESIGN</span>
-                        <h4 class="portfolio-inner-title"><a href="portfolio-details.html">A1_Driven Security Solutions</a></h4>
+                        <h4 class="portfolio-inner-title"><a href="/">A1_Driven Security Solutions</a></h4>
                      </div>
                   </div>
                </div>
@@ -431,7 +431,7 @@
                      </div>
                      <div class="portfolio-inner-content">
                         <span>DESIGN</span>
-                        <h4 class="portfolio-inner-title"><a href="portfolio-details.html">Tips for the good UI design</a></h4>
+                        <h4 class="portfolio-inner-title"><a href="/">Tips for the good UI design</a></h4>
                      </div>
                   </div>
                </div>
@@ -442,7 +442,7 @@
                      </div>
                      <div class="portfolio-inner-content">
                         <span>Branding</span>
-                        <h4 class="portfolio-inner-title"><a href="portfolio-details.html">Twice Profit Than Before</a></h4>
+                        <h4 class="portfolio-inner-title"><a href="/">Twice Profit Than Before</a></h4>
                      </div>
                   </div>
                </div>
@@ -450,7 +450,7 @@
             <div class="row">
                <div class="col-lg-12">
                   <div class="portfolio-inner-btn text-center pt-10">
-                     <a href="portfolio.html">
+                     <a href="/portfolios">
                         <span>
                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
@@ -483,7 +483,7 @@
                   <div class="col-lg-3 col-md-6 col-sm-6">
                      <div class="footer-widget footer-5-col-1 mb-40">
                         <div class="footer-widget-logo mb-20">
-                           <a href="index.html"><img src="assets/img/logo/SEOMY-2.png" alt=""></a>
+                           <a href="/"><img src="assets/img/logo/SEOMY-2.png" alt=""></a>
                         </div>
                         <div class="footer-widget-content">
                            <p class="footer-widget-text mb-20">Best Award-winning SEO agency.!</p>

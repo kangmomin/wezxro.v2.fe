@@ -6,7 +6,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="footer-widget footer-5-col-1 mb-40">
                             <div class="footer-widget-logo mb-20">
-                                <a href="index.html">
+                                <a href="/">
                               <span>
                                  <svg fill="none" height="26" viewBox="0 0 105 26" width="105"
                                       xmlns="http://www.w3.org/2000/svg">
@@ -51,11 +51,11 @@
                             <h4 class="footer-widget-title mb-15">About</h4>
                             <div class="footer-widget-link">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="pricing.html">Pricing</a></li>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="blog-grid.html">SEO Blog</a></li>
-                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/">Pricing</a></li>
+                                    <li><a href="/about">About us</a></li>
+                                    <li><a href="/">SEO Blog</a></li>
+                                    <li><a href="/services">Services</a></li>
                                     <li><a href="/contact">Contact</a></li>
                                     <li><a href="/">Why SEO?</a></li>
                                     <li><a href="#"></a></li>
@@ -70,9 +70,9 @@
                             <div class="footer-widget-link">
                                 <ul>
                                     <li><a href="/">On Page SEO</a></li>
-                                    <li><a href="keyword-search.html">Keyword Research</a></li>
+                                    <li><a href="/">Keyword Research</a></li>
                                     <li><a href="/">SEO Consulting</a></li>
-                                    <li><a href="keyword-search.html">Off Page SEO</a></li>
+                                    <li><a href="/">Off Page SEO</a></li>
                                     <li><a href="/">SEO Audit</a></li>
                                 </ul>
                             </div>

@@ -66,7 +66,7 @@
                <div class="row align-items-center">
                   <div class="col-xl-2 col-lg-6 col-sm-4 col-6">
                      <div class="tplogo__area">
-                        <a href="index.html">
+                        <a href="/">
                            <img src="assets/img/logo/logo-orange.svg" alt="">
                         </a>
                      </div>
@@ -84,7 +84,7 @@
                                              <img src="assets/img/menu/home-1.jpg" alt="">
                                           </div>
                                           <div class="homemenu-btn">
-                                             <a class="menu-btn mb-5" href="index.html">Multi Page</a>
+                                             <a class="menu-btn mb-5" href="/">Multi Page</a>
                                              <a class="menu-btn" href="index-one-page.html">One Page</a>
                                           </div>
                                           <div class="demo-name">
@@ -290,7 +290,7 @@
                         <p>We are a UK based SEO agency and the creators of the famous <br> website crawler and log file
                            analyser tools.</p>
                         <div class="banner-5-btn">
-                           <a class="light-blue-btn mr-20" href="keyword-search.html">Start Free Trial</a>
+                           <a class="light-blue-btn mr-20" href="/">Start Free Trial</a>
                            <span>Already using vault? <a href="sign-in.html">Sign in</a></span>
                         </div>
                      </div>
@@ -897,7 +897,7 @@
                               <span><img src="assets/img/icon/panel-icon-3.png" alt=""></span>
                            </div>
                            <div class="tp-panel-text">
-                              <h4 class="tp-panel-title mb-15"><a href="portfolio-details.html">SEO Electric Website</a></h4>
+                              <h4 class="tp-panel-title mb-15"><a href="/">SEO Electric Website</a></h4>
                               <ul class="tp-panel-meta">
                                  <li>Digital Art</li>
                                  <li>Illustrations</li>
@@ -916,7 +916,7 @@
                               <span><img src="assets/img/icon/panel-icon-3.png" alt=""></span>
                            </div>
                            <div class="tp-panel-text">
-                              <h4 class="tp-panel-title mb-15"><a href="portfolio-details.html">SEO Music Website</a></h4>
+                              <h4 class="tp-panel-title mb-15"><a href="/">SEO Music Website</a></h4>
                               <ul class="tp-panel-meta">
                                  <li>Digital Art</li>
                                  <li>Illustrations</li>
@@ -935,7 +935,7 @@
                               <span><img src="assets/img/icon/panel-icon-3.png" alt=""></span>
                            </div>
                            <div class="tp-panel-text">
-                              <h4 class="tp-panel-title mb-15"><a href="portfolio-details.html">SEO Education Website</a></h4>
+                              <h4 class="tp-panel-title mb-15"><a href="/">SEO Education Website</a></h4>
                               <ul class="tp-panel-meta">
                                  <li>Digital Art</li>
                                  <li>Illustrations</li>
@@ -954,7 +954,7 @@
                               <span><img src="assets/img/icon/panel-icon-3.png" alt=""></span>
                            </div>
                            <div class="tp-panel-text">
-                              <h4 class="tp-panel-title mb-15"><a href="portfolio-details.html">SEO Fashion Website</a></h4>
+                              <h4 class="tp-panel-title mb-15"><a href="/">SEO Fashion Website</a></h4>
                               <ul class="tp-panel-meta">
                                  <li>Digital Art</li>
                                  <li>Illustrations</li>
@@ -1032,7 +1032,7 @@
                            </li>
                         </ul>
                         <div class="seo-5-btn light-blue-border">
-                           <a href="about.html" class="light-blue-btn">Learn More</a>
+                           <a href="/about" class="light-blue-btn">Learn More</a>
                         </div>
                      </div>
                   </div>
@@ -1327,7 +1327,7 @@
                   <div class="col-lg-3 col-md-6 col-sm-6">
                      <div class="footer-widget footer-5-col-1 mb-40">
                         <div class="footer-widget-logo mb-20">
-                           <a href="index.html">
+                           <a href="/">
                               <span>
                                  <svg width="105" height="26" viewBox="0 0 105 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M50.9535 12.563C50.9535 14.8455 50.2042 16.7587 48.6951 18.3133C47.4481 19.5977 45.9818 20.3603 44.296 20.5771V22.7445H45.2593V24.8771C47.8147 24.4891 50.041 23.3332 51.9462 21.4146C54.3437 19.0064 55.5398 16.063 55.5398 12.5844C55.5398 11.5836 55.4355 10.6257 55.2401 9.70788C55.1973 9.49382 55.1411 9.28243 55.0876 9.07371C55.5371 8.92654 55.8582 8.50376 55.8582 8.00606C55.8582 7.73313 55.7592 7.48695 55.6014 7.29429L58.6384 2.81228C58.7214 2.82834 58.5287 2.83904 58.8793 2.83904C59.2298 2.83904 60.0004 2.33599 60.0004 1.71787C60.0004 1.09976 59.4974 0.596703 58.8793 0.596703C58.2611 0.596703 57.7634 1.28707 57.7634 1.71787C57.7634 2.15136 57.841 2.18882 57.9721 2.37345L54.9083 6.89827L54.7398 6.88221C54.5819 6.88221 54.432 6.91432 54.2956 6.97587C54.1323 7.04811 53.9825 7.16317 53.8755 7.29964L48.6737 5.69682C48.6068 5.13758 48.1331 4.71212 47.5632 4.71212C47.1591 4.71212 46.8033 4.92619 46.6052 5.24728C46.5009 5.41586 46.442 5.61387 46.442 5.83329C46.442 6.08482 46.5303 6.31494 46.6721 6.50492L43.3622 11.4445C43.2953 11.4338 43.231 11.4284 43.1641 11.4284C42.546 11.4284 42.043 11.9261 42.043 12.5443C42.043 13.1624 42.546 13.6654 43.1641 13.6654C43.7823 13.6654 44.28 13.1624 44.28 12.5443C44.28 12.2874 44.1917 12.0519 44.0445 11.8592L47.3357 6.9277C47.408 6.94376 47.4776 6.94911 47.5552 6.94911C47.9003 6.94911 48.2107 6.79123 48.4141 6.54506C48.5024 6.63336 48.588 6.71899 48.6763 6.80729C48.8503 6.9946 49.0215 7.17923 49.1794 7.37724C50.3621 8.83021 50.9535 10.5641 50.9535 12.563Z" fill="#FF5527"/>
@@ -1360,11 +1360,11 @@
                         <h4 class="footer-widget-title mb-15">About</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li><a href="about.html">About us</a></li>
-                              <li><a href="blog-grid.html">SEO Blog</a></li>
-                              <li><a href="services.html">Services</a></li>
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/">Pricing</a></li>
+                              <li><a href="/about">About us</a></li>
+                              <li><a href="/">SEO Blog</a></li>
+                              <li><a href="/services">Services</a></li>
                               <li><a href="/contact">Contact</a></li>
                               <li><a href="/">Why SEO?</a></li>
                               <li><a href="#"></a></li>
@@ -1379,9 +1379,9 @@
                         <div class="footer-widget-link">
                            <ul>
                               <li><a href="/">On Page SEO</a></li>
-                              <li><a href="keyword-search.html">Keyword Research</a></li>
+                              <li><a href="/">Keyword Research</a></li>
                               <li><a href="/">SEO Consulting</a></li>
-                              <li><a href="keyword-search.html">Off Page SEO</a></li>
+                              <li><a href="/">Off Page SEO</a></li>
                               <li><a href="/">SEO Audit</a></li>
                            </ul>
                         </div>

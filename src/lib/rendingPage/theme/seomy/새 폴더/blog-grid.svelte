@@ -66,10 +66,10 @@
                <div class="row align-items-center">
                   <div class="col-xl-2 col-lg-6 col-sm-4 col-6">
                      <div class="tplogo__area">
-                        <a class="header-logo" href="index.html">
+                        <a class="header-logo" href="/">
                            <img src="assets/img/logo/logo-light-blue.svg" alt="logo">
                         </a>
-                        <a class="sticky-logo" href="index.html">
+                        <a class="sticky-logo" href="/">
                            <img src="assets/img/logo/logo.svg" alt="logo">
                         </a>
                      </div>
@@ -79,7 +79,7 @@
                         <nav class="tp-main-menu-content">
                            <ul>
                               <li class="has-dropdown has-mega-menu">
-                                 <a href="index.html">Home</a>
+                                 <a href="/">Home</a>
                                  <div class="tp-submenu submenu has-homemenu tp-mega-menu">
                                     <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-5">
                                        <div class="col homemenu active">
@@ -87,7 +87,7 @@
                                              <img src="assets/img/menu/home-1.jpg" alt="">
                                           </div>
                                           <div class="homemenu-btn">
-                                             <a class="menu-btn mb-5" href="index.html">Multi Page</a>
+                                             <a class="menu-btn mb-5" href="/">Multi Page</a>
                                              <a class="menu-btn" href="index-one-page.html">One Page</a>
                                           </div>
                                           <div class="demo-name">
@@ -145,9 +145,9 @@
                                     </div>
                                  </div>
                               </li>
-                              <li><a href="about.html">About</a></li>
+                              <li><a href="/about">About</a></li>
                               <li class="header-services has-dropdown has-mega-menu">
-                                 <a href="services.html">Services</a>
+                                 <a href="/services">Services</a>
                                  <div class="tp-mega-menu tp-submenu submenu">
                                     <div class="row">
                                        <div class="col-xl-6">
@@ -155,7 +155,7 @@
                                              <h5 class="tp-menu-banner-title">Services Overview</h5>
                                              <ul>
                                                 <li>
-                                                   <a href="keyword-search.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/keyword.png" alt=""> </span>
                                                       Keyword Research
                                                    </a>
@@ -167,7 +167,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="building-social-services.html">
+                                                   <a href="/services">
                                                       <span> <img src="assets/img/header-icon/building.png" alt=""> </span>
                                                       Link Building Services
                                                    </a>
@@ -193,7 +193,7 @@
                                                 <span>SEO Agency</span>
                                                 <h5 class="tp-menu-banner-title-2">The #1 SEO <br> agency for fast growing <br> companies.</h5>
                                                 <div class="tp-menu-banner-btn">
-                                                   <a href="services.html">
+                                                   <a href="/services">
                                                       Learn more 
                                                       <span>
                                                          <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,12 +213,12 @@
                                  </div> 
                               </li>
                               <li class="has-dropdown has-megamenu">
-                                 <a href="about.html">Pages</a>
+                                 <a href="/about">Pages</a>
                                  <ul class="tp-submenu submenu mega-menu">
                                     <li>
                                        <ul>
-                                          <li><a href="about.html">About Us</a></li>
-                                          <li><a href="services.html">Services</a></li>
+                                          <li><a href="/about">About Us</a></li>
+                                          <li><a href="/services">Services</a></li>
                                           <li><a href="team.html">Team Member</a></li>
                                           <li><a href="team-details.html">Team Details</a></li>
                                           <li><a href="sign-in.html">Sign In</a></li>
@@ -227,18 +227,18 @@
                                     </li>
                                     <li>
                                        <ul>
-                                          <li><a href="pricing.html">Pricing</a></li>
-                                          <li><a href="portfolio.html">Case Studies 2 Columns</a></li>
+                                          <li><a href="/">Pricing</a></li>
+                                          <li><a href="/portfolios">Case Studies 2 Columns</a></li>
                                           <li><a href="portfolio-2.html">Case Studies 3 Columns</a></li>
-                                          <li><a href="portfolio-details.html">Case Studies Details</a></li>
-                                          <li><a href="blog-grid.html">Blog Grid</a></li>
+                                          <li><a href="/">Case Studies Details</a></li>
+                                          <li><a href="/">Blog Grid</a></li>
                                           <li><a href="blog-masonry.html">Blog Masonry</a></li>
                                        </ul>
                                     </li>
                                     <li>
                                        <ul>
-                                          <li><a href="blog-list.html">Blog List</a></li>
-                                          <li><a href="blog-details.html">Blog Details</a></li>
+                                          <li><a href="/">Blog List</a></li>
+                                          <li><a href="/">Blog Details</a></li>
                                           <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                           <li><a href="faq.html">FAQ</a></li>
                                           <li><a href="/contact">Contact</a></li>
@@ -250,10 +250,10 @@
                                  <a href="blog.html">Blog</a>
                                  <ul class="tp-submenu submenu">
                                     <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="/">Blog Grid</a></li>
                                     <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="/">Blog List</a></li>
+                                    <li><a href="/">Blog Details</a></li>
                                     <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                  </ul>
                               </li>
@@ -340,7 +340,7 @@
                   <div class="breadcrumb__content breadcrumb__content-2 text-center p-relative z-index-1">
                      <h3 class="breadcrumb__title">Blog Grid</h3>
                      <div class="breadcrumb__list">
-                        <span><a href="index.html">Home</a></span>
+                        <span><a href="/">Home</a></span>
                         <span class="dvdr"></span>
                         <span>Blog Grid</span>
                      </div>
@@ -364,12 +364,12 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-1.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-1.jpg" alt=""></a>
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">Technical SEO</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">10 Quick Tips About
+                                    <span><a href="/">Technical SEO</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">10 Quick Tips About
                                           Blogging</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -414,12 +414,12 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-2.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-2.jpg" alt=""></a>
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">LINK BUILDING</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">7 of the Best Examples of
+                                    <span><a href="/">LINK BUILDING</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">7 of the Best Examples of
                                           Beautiful Blog Design</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -464,12 +464,12 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-3.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-3.jpg" alt=""></a>
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">Business</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">Success Story:
+                                    <span><a href="/">Business</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">Success Story:
                                           Businessman in Harlem</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -518,19 +518,19 @@
                                     <div class="swiper-wrapper">
                                        <div class="swiper-slide">
                                           <div class="tpblog-thumb-2">
-                                             <a href="blog-details.html"><img src="assets/img/blog/blog-grid-4.jpg"
+                                             <a href="/"><img src="assets/img/blog/blog-grid-4.jpg"
                                                    alt=""></a>
                                           </div>
                                        </div>
                                        <div class="swiper-slide">
                                           <div class="tpblog-thumb-2">
-                                             <a href="blog-details.html"><img src="assets/img/blog/blog-grid-3.jpg"
+                                             <a href="/"><img src="assets/img/blog/blog-grid-3.jpg"
                                                    alt=""></a>
                                           </div>
                                        </div>
                                        <div class="swiper-slide">
                                           <div class="tpblog-thumb-2">
-                                             <a href="blog-details.html"><img src="assets/img/blog/blog-grid-2.jpg"
+                                             <a href="/"><img src="assets/img/blog/blog-grid-2.jpg"
                                                    alt=""></a>
                                           </div>
                                        </div>
@@ -545,8 +545,8 @@
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">LINK BUILDING</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">Complete Link Building
+                                    <span><a href="/">LINK BUILDING</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">Complete Link Building
                                        Guide for Beginners</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -591,7 +591,7 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2 p-relative">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-5.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-5.jpg" alt=""></a>
                                  <div class="tpblog-video-2">
                                     <a class="popup-video" href="https://www.youtube.com/watch?v=TYYf8zYjP5k">
                                        <i>
@@ -605,8 +605,8 @@
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">Business</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">Content Marketing Tools
+                                    <span><a href="/">Business</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">Content Marketing Tools
                                           To try in 2023</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -651,12 +651,12 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-6.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-6.jpg" alt=""></a>
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">Technical SEO</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">Getting Ready to
+                                    <span><a href="/">Technical SEO</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">Getting Ready to
                                           Chase Google Sitelinks</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -701,12 +701,12 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-7.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-7.jpg" alt=""></a>
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">Marketing</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">Get the Most out of
+                                    <span><a href="/">Marketing</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">Get the Most out of
                                           Simplify by Money Flow</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
@@ -751,12 +751,12 @@
                         <div class="col-lg-6 col-md-6">
                            <div class="tpblog-item-2 mb-30">
                               <div class="tpblog-thumb-2">
-                                 <a href="blog-details.html"><img src="assets/img/blog/blog-grid-8.jpg" alt=""></a>
+                                 <a href="/"><img src="assets/img/blog/blog-grid-8.jpg" alt=""></a>
                               </div>
                               <div class="tpblog-wrap">
                                  <div class="tpblog-content-2">
-                                    <span><a href="blog-details.html">Marketing</a></span>
-                                    <h4 class="tpblog-title-2"><a href="blog-details.html">Get the Most out of Simplify</a></h4>
+                                    <span><a href="/">Marketing</a></span>
+                                    <h4 class="tpblog-title-2"><a href="/">Get the Most out of Simplify</a></h4>
                                  </div>
                                  <div class="tpblog-meta-2">
                                     <span>
@@ -855,12 +855,12 @@
                            <div class="sidebar__post rc__post">
                               <div class="rc__post mb-10 d-flex align-items-center">
                                  <div class="rc__post-thumb mr-20">
-                                    <a href="blog-details.html"><img src="assets/img/blog/sidebar/blog-sm-1.jpg"
+                                    <a href="/"><img src="assets/img/blog/sidebar/blog-sm-1.jpg"
                                           alt=""></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h3 class="rc__post-title">
-                                       <a href="blog-details.html">Unpacking SEO for <br> the Google Local Pack.</a>
+                                       <a href="/">Unpacking SEO for <br> the Google Local Pack.</a>
                                     </h3>
                                     <div class="rc__meta">
                                        <span>Jun 28,2023</span>
@@ -869,12 +869,12 @@
                               </div>
                               <div class="rc__post mb-10 d-flex align-items-center">
                                  <div class="rc__post-thumb mr-20">
-                                    <a href="blog-details.html"><img src="assets/img/blog/sidebar/blog-sm-2.jpg"
+                                    <a href="/"><img src="assets/img/blog/sidebar/blog-sm-2.jpg"
                                           alt=""></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h3 class="rc__post-title">
-                                       <a href="blog-details.html">7 of the Best Examples of Beautiful Blog Design</a>
+                                       <a href="/">7 of the Best Examples of Beautiful Blog Design</a>
                                     </h3>
                                     <div class="rc__meta">
                                        <span>July 21, 2021</span>
@@ -883,12 +883,12 @@
                               </div>
                               <div class="rc__post mb-10 d-flex align-items-center">
                                  <div class="rc__post-thumb mr-20">
-                                    <a href="blog-details.html"><img src="assets/img/blog/sidebar/blog-sm-3.jpg"
+                                    <a href="/"><img src="assets/img/blog/sidebar/blog-sm-3.jpg"
                                           alt=""></a>
                                  </div>
                                  <div class="rc__post-content">
                                     <h3 class="rc__post-title">
-                                       <a href="blog-details.html">Working From Home?
+                                       <a href="/">Working From Home?
                                           Let’s Get Started</a>
                                     </h3>
                                     <div class="rc__meta">
@@ -984,7 +984,7 @@
                   <div class="col-lg-3 col-md-6 col-sm-6">
                      <div class="footer-widget footer-5-col-1 mb-40">
                         <div class="footer-widget-logo mb-20">
-                           <a href="index.html">
+                           <a href="/">
                               <span>
                                  <svg width="105" height="26" viewBox="0 0 105 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M50.953 12.563C50.953 14.8455 50.2038 16.7587 48.6946 18.3133C47.4477 19.5977 45.9813 20.3603 44.2956 20.5771V22.7445H45.2589V24.8771C47.8143 24.4891 50.0406 23.3332 51.9457 21.4146C54.3433 19.0064 55.5394 16.063 55.5394 12.5844C55.5394 11.5836 55.435 10.6257 55.2397 9.70788C55.1969 9.49382 55.1407 9.28243 55.0872 9.07372C55.5367 8.92655 55.8578 8.50376 55.8578 8.00606C55.8578 7.73313 55.7588 7.48695 55.6009 7.29429L58.638 2.81229C58.7209 2.82834 58.5283 2.83905 58.8788 2.83905C59.2293 2.83905 60 2.33599 60 1.71787C60 1.09976 59.4969 0.596704 58.8788 0.596704C58.2607 0.596704 57.763 1.28707 57.763 1.71787C57.763 2.15136 57.8406 2.18882 57.9717 2.37345L54.9079 6.89827L54.7393 6.88222C54.5814 6.88222 54.4316 6.91432 54.2951 6.97587C54.1319 7.04812 53.982 7.16318 53.875 7.29964L48.6732 5.69682C48.6063 5.13758 48.1327 4.71212 47.5627 4.71212C47.1587 4.71212 46.8028 4.92619 46.6048 5.24729C46.5004 5.41586 46.4416 5.61387 46.4416 5.83329C46.4416 6.08482 46.5299 6.31494 46.6717 6.50492L43.3617 11.4445C43.2948 11.4338 43.2306 11.4284 43.1637 11.4284C42.5456 11.4284 42.0425 11.9261 42.0425 12.5443C42.0425 13.1624 42.5456 13.6654 43.1637 13.6654C43.7818 13.6654 44.2795 13.1624 44.2795 12.5443C44.2795 12.2874 44.1912 12.0519 44.044 11.8592L47.3353 6.9277C47.4075 6.94376 47.4771 6.94911 47.5547 6.94911C47.8999 6.94911 48.2103 6.79124 48.4137 6.54506C48.502 6.63336 48.5876 6.71899 48.6759 6.80729C48.8498 6.9946 49.0211 7.17923 49.1789 7.37724C50.3616 8.83021 50.953 10.5641 50.953 12.563Z" fill="#4260FF"/>
@@ -1017,11 +1017,11 @@
                         <h4 class="footer-widget-title mb-15">About</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li><a href="about.html">About us</a></li>
-                              <li><a href="blog-grid.html">SEO Blog</a></li>
-                              <li><a href="services.html">Services</a></li>
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/">Pricing</a></li>
+                              <li><a href="/about">About us</a></li>
+                              <li><a href="/">SEO Blog</a></li>
+                              <li><a href="/services">Services</a></li>
                               <li><a href="/contact">Contact</a></li>
                               <li><a href="/">Why SEO?</a></li>
                               <li><a href="#"></a></li>
@@ -1036,9 +1036,9 @@
                         <div class="footer-widget-link">
                            <ul>
                               <li><a href="/">On Page SEO</a></li>
-                              <li><a href="keyword-search.html">Keyword Research</a></li>
+                              <li><a href="/">Keyword Research</a></li>
                               <li><a href="/">SEO Consulting</a></li>
-                              <li><a href="keyword-search.html">Off Page SEO</a></li>
+                              <li><a href="/">Off Page SEO</a></li>
                               <li><a href="/">SEO Audit</a></li>
                            </ul>
                         </div>

@@ -16,7 +16,7 @@
 
 ### Bug fixes
 
-[octave mode](https://codemirror.net/mode/octave/index.html): Don't mark common punctuation as error.
+[octave mode](https://codemirror.net/mode/octave//): Don't mark common punctuation as error.
 
 [clike mode](https://codemirror.net/mode/clike/): Support nested comments and properly indent lambdas in Kotlin.
 
@@ -54,7 +54,7 @@ Fix a bug that would leave the editor uneditable when a content-covering collaps
 
 [javascript mode](https://codemirror.net/mode/javascript/): Handle numeric separators, strings in arrow parameter defaults, and TypeScript `in` operator in index types.
 
-[sparql mode](https://codemirror.net/mode/sparql/index.html): Allow non-ASCII identifier characters.
+[sparql mode](https://codemirror.net/mode/sparql//): Allow non-ASCII identifier characters.
 
 ## 5.48.0 (2019-06-20)
 
@@ -202,7 +202,7 @@ Don't crash when [`endOperation`](https://codemirror.net/doc/manual.html#endOper
 
 [vim bindings](https://codemirror.net/demo/vim.html): Fix insert mode repeat after visualBlock edits.
 
-[scheme mode](https://codemirror.net/mode/scheme/index.html): Improve highlighting of quoted expressions.
+[scheme mode](https://codemirror.net/mode/scheme//): Improve highlighting of quoted expressions.
 
 [soy mode](https://codemirror.net/mode/soy/): Support injected data and `@param` in comments.
 
@@ -220,9 +220,9 @@ A new [`selectionsMayTouch`](https://codemirror.net/doc/manual.html#option_selec
 
 Fix firing of `gutterContextMenu` event on Firefox.
 
-Add `hintWords` (basic completion) helper to [clojure](https://codemirror.net/mode/clojure/index.html), [mllike](https://codemirror.net/mode/mllike/index.html), [julia](https://codemirror.net/mode/julia/), [shell](https://codemirror.net/mode/shell/), and [r](https://codemirror.net/mode/r/) modes.
+Add `hintWords` (basic completion) helper to [clojure](https://codemirror.net/mode/clojure//), [mllike](https://codemirror.net/mode/mllike//), [julia](https://codemirror.net/mode/julia/), [shell](https://codemirror.net/mode/shell/), and [r](https://codemirror.net/mode/r/) modes.
 
-[clojure mode](https://codemirror.net/mode/clojure/index.html): Clean up and improve.
+[clojure mode](https://codemirror.net/mode/clojure//): Clean up and improve.
 
 ## 5.40.0 (2018-08-25)
 
@@ -394,13 +394,13 @@ New themes: [oceanic-next](https://codemirror.net/demo/theme.html#oceanic-next) 
 
 [swift](https://codemirror.net/mode/swift) and [scala](https://codemirror.net/mode/clike/) modes: Support nested block comments.
 
-[mllike mode](https://codemirror.net/mode/mllike/index.html): Improve OCaml support.
+[mllike mode](https://codemirror.net/mode/mllike//): Improve OCaml support.
 
 [sublime bindings](https://codemirror.net/demo/sublime.html): Use the proper key bindings for `addCursorToNextLine` and `addCursorToPrevLine`.
 
 ### New features
 
-[jsx mode](https://codemirror.net/mode/jsx/index.html): Support JSX fragments.
+[jsx mode](https://codemirror.net/mode/jsx//): Support JSX fragments.
 
 [closetag addon](https://codemirror.net/demo/closetag.html): Add an option to disable auto-indenting.
 
@@ -926,7 +926,7 @@ Push a new package to NPM due to an [NPM bug](https://github.com/npm/npm/issues/
 
 Set `dataTransfer.effectAllowed` in `dragstart` handler to help browsers use the right drag icon.
 
-Add the [mbox mode](https://codemirror.net/mode/mbox/index.html) to `mode/meta.js`.
+Add the [mbox mode](https://codemirror.net/mode/mbox//) to `mode/meta.js`.
 
 ## 5.14.0 (2016-04-20)
 
@@ -938,7 +938,7 @@ Add the [mbox mode](https://codemirror.net/mode/mbox/index.html) to `mode/meta.j
 
 [comment addon](https://codemirror.net/doc/manual.html#addon_comment): Be careful not to mangle multi-line strings.
 
-[Python mode](https://codemirror.net/mode/python/index.html): Improve distinguishing of decorators from `@` operators.
+[Python mode](https://codemirror.net/mode/python//): Improve distinguishing of decorators from `@` operators.
 
 [`findMarks`](https://codemirror.net/doc/manual.html#findMarks): No longer return marks that touch but don't overlap given range.
 
@@ -948,15 +948,15 @@ Add the [mbox mode](https://codemirror.net/mode/mbox/index.html) to `mode/meta.j
 
 [match-highlighter addon](https://codemirror.net/doc/manual.html#addon_match-highlighter): Add `trim` option to disable ignoring of whitespace.
 
-[PowerShell mode](https://codemirror.net/mode/powershell/index.html): Added.
+[PowerShell mode](https://codemirror.net/mode/powershell//): Added.
 
-[Yacas mode](https://codemirror.net/mode/yacas/index.html): Added.
+[Yacas mode](https://codemirror.net/mode/yacas//): Added.
 
-[Web IDL mode](https://codemirror.net/mode/webidl/index.html): Added.
+[Web IDL mode](https://codemirror.net/mode/webidl//): Added.
 
-[SAS mode](https://codemirror.net/mode/sas/index.html): Added.
+[SAS mode](https://codemirror.net/mode/sas//): Added.
 
-[mbox mode](https://codemirror.net/mode/mbox/index.html): Added.
+[mbox mode](https://codemirror.net/mode/mbox//): Added.
 
 ## 5.13.2 (2016-03-23)
 
@@ -970,7 +970,7 @@ Solves a problem where the gutter would sometimes not extend all the way to the 
 
 New DOM event forwarded: [`"dragleave"`](https://codemirror.net/doc/manual.html#event_dom).
 
-[protobuf mode](https://codemirror.net/mode/protobuf/index.html): Newly added.
+[protobuf mode](https://codemirror.net/mode/protobuf//): Newly added.
 
 ### Bugfixes
 
@@ -986,11 +986,11 @@ Fix crash that showed up when atomic ranges and bidi text were combined.
 
 [simplescrollbars addon](https://codemirror.net/doc/manual.html#addon_simplescrollbars): Fix invalid state when deleting at end of document.
 
-[clike mode](https://codemirror.net/mode/clike/index.html): No longer gets confused when a comment starts after an operator.
+[clike mode](https://codemirror.net/mode/clike//): No longer gets confused when a comment starts after an operator.
 
-[markdown mode](https://codemirror.net/mode/markdown/index.html): Now supports CommonMark-style flexible list indentation.
+[markdown mode](https://codemirror.net/mode/markdown//): Now supports CommonMark-style flexible list indentation.
 
-[dylan mode](https://codemirror.net/mode/dylan/index.html): Several improvements and fixes.
+[dylan mode](https://codemirror.net/mode/dylan//): Several improvements and fixes.
 
 ## 5.12.0 (2016-02-19)
 
@@ -1036,21 +1036,21 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 
 ## 5.11.0 (2016-01-20)
 
-* New modes: [JSX](https://codemirror.net/mode/jsx/index.html), [literate Haskell](https://codemirror.net/mode/haskell-literate/index.html)
+* New modes: [JSX](https://codemirror.net/mode/jsx//), [literate Haskell](https://codemirror.net/mode/haskell-literate//)
 * The editor now forwards more [DOM events](https://codemirror.net/doc/manual.html#event_dom): `cut`, `copy`, `paste`, and `touchstart`. It will also forward `mousedown` for drag events
 * Fixes a bug where bookmarks next to collapsed spans were not rendered
-* The [Swift](https://codemirror.net/mode/swift/index.html) mode now supports auto-indentation
-* Frontmatters in the [YAML frontmatter](https://codemirror.net/mode/yaml-frontmatter/index.html) mode are now optional as intended
+* The [Swift](https://codemirror.net/mode/swift//) mode now supports auto-indentation
+* Frontmatters in the [YAML frontmatter](https://codemirror.net/mode/yaml-frontmatter//) mode are now optional as intended
 
 ## 5.10.0 (2015-12-21)
 
 * Modify the way [atomic ranges](https://codemirror.net/doc/manual.html#mark_atomic) are skipped by selection to try and make it less surprising.
-* The [Swift mode](https://codemirror.net/mode/swift/index.html) was rewritten.
+* The [Swift mode](https://codemirror.net/mode/swift//) was rewritten.
 * New addon: [jump-to-line](https://codemirror.net/doc/manual.html#addon_jump-to-line).
 * New method: [`isReadOnly`](https://codemirror.net/doc/manual.html#isReadOnly).
 * The [show-hint addon](https://codemirror.net/doc/manual.html#addon_show-hint) now defaults to picking completions on single click.
 * The object passed to [`"beforeSelectionChange"`](https://codemirror.net/doc/manual.html#event_beforeSelectionChange) events now has an `origin` property.
-* New mode: [Crystal](https://codemirror.net/mode/crystal/index.html).
+* New mode: [Crystal](https://codemirror.net/mode/crystal//).
 
 ## 5.9.0 (2015-11-23)
 
@@ -1063,27 +1063,27 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 ## 5.8.0 (2015-10-20)
 
 * Fixes an infinite loop in the [hardwrap addon](https://codemirror.net/doc/manual.html#addon_hardwrap)
-* New modes: [NSIS](https://codemirror.net/mode/nsis/index.html), [Ceylon](https://codemirror.net/mode/clike/index.html)
-* The Kotlin mode is now a [clike](https://codemirror.net/mode/clike/index.html) dialect, rather than a stand-alone mode
+* New modes: [NSIS](https://codemirror.net/mode/nsis//), [Ceylon](https://codemirror.net/mode/clike//)
+* The Kotlin mode is now a [clike](https://codemirror.net/mode/clike//) dialect, rather than a stand-alone mode
 * New option: [`allowDropFileTypes`](https://codemirror.net/doc/manual.html#option_allowDropFileTypes). Binary files can no longer be dropped into CodeMirror
 * New themes: [bespin](https://codemirror.net/demo/theme.html#bespin), [hopscotch](https://codemirror.net/demo/theme.html#hopscotch), [isotope](https://codemirror.net/demo/theme.html#isotope), [railscasts](https://codemirror.net/demo/theme.html#railscasts)
 
 ## 5.7.0 (2015-09-21)
 
-* New modes: [Vue](https://codemirror.net/mode/vue/index.html), [Oz](https://codemirror.net/mode/oz/index.html), [MscGen](https://codemirror.net/mode/mscgen/index.html) (and dialects), [Closure Stylesheets](https://codemirror.net/mode/css/gss.html)
-* Implement [CommonMark](http://commonmark.org)-style flexible list indent and cross-line code spans in [Markdown](https://codemirror.net/mode/markdown/index.html) mode
+* New modes: [Vue](https://codemirror.net/mode/vue//), [Oz](https://codemirror.net/mode/oz//), [MscGen](https://codemirror.net/mode/mscgen//) (and dialects), [Closure Stylesheets](https://codemirror.net/mode/css/gss.html)
+* Implement [CommonMark](http://commonmark.org)-style flexible list indent and cross-line code spans in [Markdown](https://codemirror.net/mode/markdown//) mode
 * Add a replace-all button to the [search addon](https://codemirror.net/doc/manual.html#addon_search), and make the persistent search dialog transparent when it obscures the match
-* Handle `acync`/`await` and ocal and binary numbers in [JavaScript mode](https://codemirror.net/mode/javascript/index.html)
-* Fix various issues with the [Haxe mode](https://codemirror.net/mode/haxe/index.html)
+* Handle `acync`/`await` and ocal and binary numbers in [JavaScript mode](https://codemirror.net/mode/javascript//)
+* Fix various issues with the [Haxe mode](https://codemirror.net/mode/haxe//)
 * Make the [closebrackets addon](https://codemirror.net/doc/manual.html#addon_closebrackets) select only the wrapped text when wrapping selection in brackets
-* Tokenize properties as properties in the [CoffeeScript mode](https://codemirror.net/mode/coffeescript/index.html)
+* Tokenize properties as properties in the [CoffeeScript mode](https://codemirror.net/mode/coffeescript//)
 * The [placeholder addon](https://codemirror.net/doc/manual.html#addon_placeholder) now accepts a DOM node as well as a string placeholder
 
 ## 5.6.0 (2015-08-20)
 
 * Fix bug where you could paste into a `readOnly` editor
 * Show a cursor at the drop location when dragging over the editor
-* The [Rust mode](https://codemirror.net/mode/rust/index.html) was rewritten to handle modern Rust
+* The [Rust mode](https://codemirror.net/mode/rust//) was rewritten to handle modern Rust
 * The editor and theme CSS was cleaned up. Some selectors are now less specific than before
 * New theme: [abcdef](https://codemirror.net/demo/theme.html#abcdef)
 * Lines longer than [`maxHighlightLength`](https://codemirror.net/doc/manual.html#option_maxHighlightLength) are now less likely to mess up indentation
@@ -1094,24 +1094,24 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 
 *   New option: [`lineSeparator`](https://codemirror.net/doc/manual.html#option_lineSeparator) (with corresponding [method](https://codemirror.net/doc/manual.html#lineSeparator))
 *   New themes: [dracula](https://codemirror.net/demo/theme.html#dracula), [seti](https://codemirror.net/demo/theme.html#seti), [yeti](https://codemirror.net/demo/theme.html#yeti), [material](https://codemirror.net/demo/theme.html#material), and [icecoder](https://codemirror.net/demo/theme.html#icecoder)
-*   New modes: [Brainfuck](https://codemirror.net/mode/brainfuck/index.html), [VHDL](https://codemirror.net/mode/vhdl/index.html), Squirrel ([clike](https://codemirror.net/mode/clike/index.html) dialect)
+*   New modes: [Brainfuck](https://codemirror.net/mode/brainfuck//), [VHDL](https://codemirror.net/mode/vhdl//), Squirrel ([clike](https://codemirror.net/mode/clike//) dialect)
 *   Define a `findPersistent` command in the [search](https://codemirror.net/demo/search.html) addon, for a dialog that stays open as you cycle through matches
 *   From this release on, the NPM module doesn't include documentation and demos
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/5.4.0...5.5.0)
 
 ## 5.4.0 (2015-06-25)
 
-*   New modes: [Twig](https://codemirror.net/mode/twig/index.html), [Elm](https://codemirror.net/mode/elm/index.html), [Factor](https://codemirror.net/mode/factor/index.html), [Swift](https://codemirror.net/mode/swift/index.html)
+*   New modes: [Twig](https://codemirror.net/mode/twig//), [Elm](https://codemirror.net/mode/elm//), [Factor](https://codemirror.net/mode/factor//), [Swift](https://codemirror.net/mode/swift//)
 *   Prefer clipboard API (if available) when pasting
-*   Refined definition highlighting in [clike](https://codemirror.net/mode/clike/index.html) mode
+*   Refined definition highlighting in [clike](https://codemirror.net/mode/clike//) mode
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/5.3.0...5.4.0)
 
 ## 5.3.0 (2015-05-20)
 
 *   Fix several regressions in the [`show-hint`](https://codemirror.net/doc/manual.html#addon_show-hint) addon (`completeSingle` option, `"shown"` and `"close"` events)
 *   The [vim mode](https://codemirror.net/demo/vim.html) API was [documented](https://codemirror.net/doc/manual.html#vimapi)
-*   New modes: [ASN.1](https://codemirror.net/mode/asn.1/index.html), [TTCN](https://codemirror.net/mode/ttcn/index.html), and [TTCN-CFG](https://codemirror.net/mode/ttcn-cfg/index.html)
-*   The [clike](https://codemirror.net/mode/clike/index.html) mode can now deep-indent `switch` statements, and roughly recognizes types and defined identifiers
+*   New modes: [ASN.1](https://codemirror.net/mode/asn.1//), [TTCN](https://codemirror.net/mode/ttcn//), and [TTCN-CFG](https://codemirror.net/mode/ttcn-cfg//)
+*   The [clike](https://codemirror.net/mode/clike//) mode can now deep-indent `switch` statements, and roughly recognizes types and defined identifiers
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/5.2.0...5.3.0)
 
 ## 5.2.0 (2015-04-20)
@@ -1119,8 +1119,8 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 *   Fix several race conditions in [`show-hint`](https://codemirror.net/doc/manual.html#addon_show-hint)'s asynchronous mode
 *   Fix backspace binding in [Sublime bindings](https://codemirror.net/demo/sublime.html)
 *   Change the way IME is handled in the `"textarea"` [input style](https://codemirror.net/doc/manual.html#option_inputStyle)
-*   New modes: [MUMPS](https://codemirror.net/mode/mumps/index.html), [Handlebars](https://codemirror.net/mode/handlebars/index.html)
-*   Rewritten modes: [Django](https://codemirror.net/mode/django/index.html), [Z80](https://codemirror.net/mode/z80/index.html)
+*   New modes: [MUMPS](https://codemirror.net/mode/mumps//), [Handlebars](https://codemirror.net/mode/handlebars//)
+*   Rewritten modes: [Django](https://codemirror.net/mode/django//), [Z80](https://codemirror.net/mode/z80//)
 *   New theme: [Liquibyte](https://codemirror.net/demo/theme.html#liquibyte)
 *   New option: [`lineWiseCopyCut`](https://codemirror.net/doc/manual.html#option_lineWiseCopyCut)
 *   The [Vim mode](https://codemirror.net/demo/vim.html) now supports buffer-local options and the `filetype` setting
@@ -1128,8 +1128,8 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 
 ## 5.1.0 (2015-03-23)
 
-*   New modes: [ASCII armor](https://codemirror.net/mode/asciiarmor/index.html) (PGP data), [Troff](https://codemirror.net/mode/troff/index.html), and [CMake](https://codemirror.net/mode/cmake/index.html).
-*   Remove SmartyMixed mode, rewrite [Smarty](https://codemirror.net/mode/smarty/index.html) mode to supersede it.
+*   New modes: [ASCII armor](https://codemirror.net/mode/asciiarmor//) (PGP data), [Troff](https://codemirror.net/mode/troff//), and [CMake](https://codemirror.net/mode/cmake//).
+*   Remove SmartyMixed mode, rewrite [Smarty](https://codemirror.net/mode/smarty//) mode to supersede it.
 *   New commands in the [merge addon](https://codemirror.net/doc/manual.html#addon_merge): `goNextDiff` and `goPrevDiff`.
 *   The [closebrackets addon](https://codemirror.net/doc/manual.html#addon_closebrackets) can now be configured per mode.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/5.0.0...5.1.0).
@@ -1144,9 +1144,9 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 ## 4.13.0 (2015-02-20)
 
 *   Fix the way the [`closetag`](https://codemirror.net/demo/closetag.html) demo handles the slash character.
-*   New modes: [Forth](https://codemirror.net/mode/forth/index.html), [Stylus](https://codemirror.net/mode/stylus/index.html).
-*   Make the [CSS mode](https://codemirror.net/mode/css/index.html) understand some modern CSS extensions.
-*   Have the [Scala mode](https://codemirror.net/mode/clike/index.html) handle symbols and triple-quoted strings.
+*   New modes: [Forth](https://codemirror.net/mode/forth//), [Stylus](https://codemirror.net/mode/stylus//).
+*   Make the [CSS mode](https://codemirror.net/mode/css//) understand some modern CSS extensions.
+*   Have the [Scala mode](https://codemirror.net/mode/clike//) handle symbols and triple-quoted strings.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.12.0...4.13.0).
 
 ## 4.12.0 (2015-01-22)
@@ -1155,7 +1155,7 @@ Fix a [bug](https://github.com/codemirror/CodeMirror/issues/3834) that caused ph
 *   Adds a `findModeByFileName` to the [mode metadata](https://codemirror.net/doc/manual.html#addon_meta) addon.
 *   [Simple mode](https://codemirror.net/demo/simplemode.html) rules can now contain a `sol` property to only match at the start of a line.
 *   New addon: [`selection-pointer`](https://codemirror.net/doc/manual.html#addon_selection-pointer) to style the mouse cursor over the selection.
-*   Improvements to the [Sass mode](https://codemirror.net/mode/sass/index.html)'s indentation.
+*   Improvements to the [Sass mode](https://codemirror.net/mode/sass//)'s indentation.
 *   The [Vim keymap](https://codemirror.net/demo/vim.html)'s search functionality now supports [scrollbar annotation](https://codemirror.net/doc/manual.html#addon_matchesonscrollbar).
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.11.0...4.12.0).
 
@@ -1172,7 +1172,7 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 *   Overhauled scroll bar handling. Add pluggable [scrollbar implementations](https://codemirror.net/demo/simplescrollbars.html).
 *   Tweaked behavior for the [completion addons](https://codemirror.net/doc/manual.html#addon_show-hint) to not take text after cursor into account.
 *   Two new optional features in the [merge addon](https://codemirror.net/doc/manual.html#addon_merge): aligning editors, and folding unchanged text.
-*   New modes: [Dart](https://codemirror.net/mode/dart/index.html), [EBNF](https://codemirror.net/mode/ebnf/index.html), [spreadsheet](https://codemirror.net/mode/spreadsheet/index.html), and [Soy](https://codemirror.net/mode/soy/index.html).
+*   New modes: [Dart](https://codemirror.net/mode/dart//), [EBNF](https://codemirror.net/mode/ebnf//), [spreadsheet](https://codemirror.net/mode/spreadsheet//), and [Soy](https://codemirror.net/mode/soy//).
 *   New [addon](https://codemirror.net/demo/panel.html) to show persistent panels below/above an editor.
 *   New themes: [zenburn](https://codemirror.net/demo/theme.html#zenburn) and [tomorrow night bright](https://codemirror.net/demo/theme.html#tomorrow-night-bright).
 *   Allow ctrl-click to clear existing cursors.
@@ -1182,18 +1182,18 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 
 *   Built-in support for [multi-stroke key bindings](https://codemirror.net/doc/manual.html#normalizeKeyMap).
 *   New method: [`getLineTokens`](https://codemirror.net/doc/manual.html#getLineTokens).
-*   New modes: [dockerfile](https://codemirror.net/mode/dockerfile/index.html), [IDL](https://codemirror.net/mode/idl/index.html), [Objective C](https://codemirror.net/mode/clike/index.html) (crude).
+*   New modes: [dockerfile](https://codemirror.net/mode/dockerfile//), [IDL](https://codemirror.net/mode/idl//), [Objective C](https://codemirror.net/mode/clike//) (crude).
 *   Support styling of gutter backgrounds, allow `"gutter"` styles in [`addLineClass`](https://codemirror.net/doc/manual.html#addLineClass).
 *   Many improvements to the [Vim mode](https://codemirror.net/demo/vim.html), rewritten visual mode.
-*   Improvements to modes: [gfm](https://codemirror.net/mode/gfm/index.html) (strikethrough), [SPARQL](https://codemirror.net/mode/sparql/index.html) (version 1.1 support), and [sTeX](https://codemirror.net/mode/stex/index.html) (no more runaway math mode).
+*   Improvements to modes: [gfm](https://codemirror.net/mode/gfm//) (strikethrough), [SPARQL](https://codemirror.net/mode/sparql//) (version 1.1 support), and [sTeX](https://codemirror.net/mode/stex//) (no more runaway math mode).
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.7.0...4.8.0).
 
 ## 4.7.0 (2014-10-20)
 
 *   **Incompatible**: The [lint addon](https://codemirror.net/demo/lint.html) now passes the editor's value as first argument to asynchronous lint functions, for consistency. The editor is still passed, as fourth argument.
 *   Improved handling of unicode identifiers in modes for languages that support them.
-*   More mode improvements: [CoffeeScript](https://codemirror.net/mode/coffeescript/index.html) (indentation), [Verilog](https://codemirror.net/mode/verilog/index.html) (indentation), [Scala](https://codemirror.net/mode/clike/index.html) (indentation, triple-quoted strings), and [PHP](https://codemirror.net/mode/php/index.html) (interpolated variables in heredoc strings).
-*   New modes: [Textile](https://codemirror.net/mode/textile/index.html) and [Tornado templates](https://codemirror.net/mode/tornado/index.html).
+*   More mode improvements: [CoffeeScript](https://codemirror.net/mode/coffeescript//) (indentation), [Verilog](https://codemirror.net/mode/verilog//) (indentation), [Scala](https://codemirror.net/mode/clike//) (indentation, triple-quoted strings), and [PHP](https://codemirror.net/mode/php//) (interpolated variables in heredoc strings).
+*   New modes: [Textile](https://codemirror.net/mode/textile//) and [Tornado templates](https://codemirror.net/mode/tornado//).
 *   Experimental new [way to define modes](https://codemirror.net/demo/simplemode.html).
 *   Improvements to the [Vim bindings](https://codemirror.net/demo/vim.html): Arbitrary insert mode key mappings are now possible, and text objects are supported in visual mode.
 *   The mode [meta-information file](https://codemirror.net/mode/meta.js) now includes information about file extensions, and [helper functions](https://codemirror.net/doc/manual.html#addon_meta) `findModeByMIME` and `findModeByExtension`.
@@ -1202,7 +1202,7 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 
 ## 4.6.0 (2014-09-19)
 
-*   New mode: [Modelica](https://codemirror.net/mode/modelica/index.html)
+*   New mode: [Modelica](https://codemirror.net/mode/modelica//)
 *   New method: [`findWordAt`](https://codemirror.net/doc/manual.html#findWordAt)
 *   Make it easier to [use text background styling](https://codemirror.net/demo/markselection.html)
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.5.0...4.6.0).
@@ -1210,7 +1210,7 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 ## 4.5.0 (2014-08-21)
 
 *   Fix several serious bugs with horizontal scrolling
-*   New mode: [Slim](https://codemirror.net/mode/slim/index.html)
+*   New mode: [Slim](https://codemirror.net/mode/slim//)
 *   New command: [`goLineLeftSmart`](https://codemirror.net/doc/manual.html#command_goLineLeftSmart)
 *   More fixes and extensions for the [Vim](https://codemirror.net/demo/vim.html) visual block mode
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.4.0...4.5.0).
@@ -1220,7 +1220,7 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 *   **Note:** Some events might now fire in slightly different order (`"change"` is still guaranteed to fire before `"cursorActivity"`)
 *   Nested operations in multiple editors are now synced (complete at same time, reducing DOM reflows)
 *   Visual block mode for [vim](https://codemirror.net/demo/vim.html) (<C-v>) is nearly complete
-*   New mode: [Kotlin](https://codemirror.net/mode/kotlin/index.html)
+*   New mode: [Kotlin](https://codemirror.net/mode/kotlin//)
 *   Better multi-selection paste for text copied from multiple CodeMirror selections
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.3.0...4.4.0).
 
@@ -1236,9 +1236,9 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 *   Fix problem where some modes were broken by the fact that empty tokens were forbidden.
 *   Several fixes to context menu handling.
 *   On undo, scroll _change_, not cursor, into view.
-*   Rewritten [Jade](https://codemirror.net/mode/jade/index.html) mode.
-*   Various improvements to [Shell](https://codemirror.net/mode/shell/index.html) (support for more syntax) and [Python](https://codemirror.net/mode/python/index.html) (better indentation) modes.
-*   New mode: [Cypher](https://codemirror.net/mode/cypher/index.html).
+*   Rewritten [Jade](https://codemirror.net/mode/jade//) mode.
+*   Various improvements to [Shell](https://codemirror.net/mode/shell//) (support for more syntax) and [Python](https://codemirror.net/mode/python//) (better indentation) modes.
+*   New mode: [Cypher](https://codemirror.net/mode/cypher//).
 *   New theme: [Neo](https://codemirror.net/demo/theme.html#neo).
 *   Support direct styling options (color, line style, width) in the [rulers](https://codemirror.net/doc/manual.html#addon_rulers) addon.
 *   Recognize per-editor configuration for the [show-hint](https://codemirror.net/doc/manual.html#addon_show-hint) and [foldcode](https://codemirror.net/doc/manual.html#addon_foldcode) addons.
@@ -1250,8 +1250,8 @@ Emergency single-patch update to 4.9\. Fixes Firefox-specific problem where the 
 
 *   _Slightly incompatible_: The [`"cursorActivity"`](https://codemirror.net/doc/manual.html#event_cursorActivity) event now fires after all other events for the operation (and only for handlers that were actually registered at the time the activity happened).
 *   New command: [`insertSoftTab`](https://codemirror.net/doc/manual.html#command_insertSoftTab).
-*   New mode: [Django](https://codemirror.net/mode/django/index.html).
-*   Improved modes: [Verilog](https://codemirror.net/mode/verilog/index.html) (rewritten), [Jinja2](https://codemirror.net/mode/jinja2/index.html), [Haxe](https://codemirror.net/mode/haxe/index.html), [PHP](https://codemirror.net/mode/php/index.html) (string interpolation highlighted), [JavaScript](https://codemirror.net/mode/javascript/index.html) (indentation of trailing else, template strings), [LiveScript](https://codemirror.net/mode/livescript/index.html) (multi-line strings).
+*   New mode: [Django](https://codemirror.net/mode/django//).
+*   Improved modes: [Verilog](https://codemirror.net/mode/verilog//) (rewritten), [Jinja2](https://codemirror.net/mode/jinja2//), [Haxe](https://codemirror.net/mode/haxe//), [PHP](https://codemirror.net/mode/php//) (string interpolation highlighted), [JavaScript](https://codemirror.net/mode/javascript//) (indentation of trailing else, template strings), [LiveScript](https://codemirror.net/mode/livescript//) (multi-line strings).
 *   Many small issues from the 3.x→4.x transition were found and fixed.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/4.0.3...4.1.0).
 
@@ -1261,8 +1261,8 @@ Merges the improvements from 4.1 that could easily be applied to the 3.x code. A
 
 ## 3.23.0 (2014-03-20)
 
-*   In the [XML mode](https://codemirror.net/mode/xml/index.html), add `brackets` style to angle brackets, fix case-sensitivity of tags for HTML.
-*   New mode: [Dylan](https://codemirror.net/mode/dylan/index.html).
+*   In the [XML mode](https://codemirror.net/mode/xml//), add `brackets` style to angle brackets, fix case-sensitivity of tags for HTML.
+*   New mode: [Dylan](https://codemirror.net/mode/dylan//).
 *   Many improvements to the [Vim bindings](https://codemirror.net/demo/vim.html).
 
 ## 3.22.0 (2014-02-21)
@@ -1270,7 +1270,7 @@ Merges the improvements from 4.1 that could easily be applied to the 3.x code. A
 *   Adds the [`findMarks`](https://codemirror.net/doc/manual.html#findMarks) method.
 *   New addons: [rulers](https://codemirror.net/doc/manual.html#addon_rulers), markdown-fold, yaml-lint.
 *   New theme: [mdn-like](https://codemirror.net/demo/theme.html#mdn-like).
-*   New mode: [Solr](https://codemirror.net/mode/solr/index.html).
+*   New mode: [Solr](https://codemirror.net/mode/solr//).
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/3.21.0...3.22.0).
 
 ## 3.21.0 (2014-01-16)
@@ -1278,25 +1278,25 @@ Merges the improvements from 4.1 that could easily be applied to the 3.x code. A
 *   Auto-indenting a block will no longer add trailing whitespace to blank lines.
 *   Marking text has a new option [`clearWhenEmpty`](https://codemirror.net/doc/manual.html#markText) to control auto-removal.
 *   Several bugfixes in the handling of bidirectional text.
-*   The [XML](https://codemirror.net/mode/xml/index.html) and [CSS](https://codemirror.net/mode/css/index.html) modes were largely rewritten. [LESS](https://codemirror.net/mode/css/less.html) support was added to the CSS mode.
-*   The OCaml mode was moved to an [mllike](https://codemirror.net/mode/mllike/index.html) mode, F# support added.
+*   The [XML](https://codemirror.net/mode/xml//) and [CSS](https://codemirror.net/mode/css//) modes were largely rewritten. [LESS](https://codemirror.net/mode/css/less.html) support was added to the CSS mode.
+*   The OCaml mode was moved to an [mllike](https://codemirror.net/mode/mllike//) mode, F# support added.
 *   Make it possible to fetch multiple applicable helper values with [`getHelpers`](https://codemirror.net/doc/manual.html#getHelpers), and to register helpers matched on predicates with [`registerGlobalHelper`](https://codemirror.net/doc/manual.html#registerGlobalHelper).
 *   New theme [pastel-on-dark](https://codemirror.net/demo/theme.html#pastel-on-dark).
-*   Better ECMAScript 6 support in [JavaScript](https://codemirror.net/mode/javascript/index.html) mode.
+*   Better ECMAScript 6 support in [JavaScript](https://codemirror.net/mode/javascript//) mode.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/3.20.0...3.21.0).
 
 ## 3.20.0 (2013-11-21)
 
-*   New modes: [Julia](https://codemirror.net/mode/julia/index.html) and [PEG.js](https://codemirror.net/mode/pegjs/index.html).
-*   Support ECMAScript 6 in the [JavaScript mode](https://codemirror.net/mode/javascript/index.html).
-*   Improved indentation for the [CoffeeScript mode](https://codemirror.net/mode/coffeescript/index.html).
+*   New modes: [Julia](https://codemirror.net/mode/julia//) and [PEG.js](https://codemirror.net/mode/pegjs//).
+*   Support ECMAScript 6 in the [JavaScript mode](https://codemirror.net/mode/javascript//).
+*   Improved indentation for the [CoffeeScript mode](https://codemirror.net/mode/coffeescript//).
 *   Make non-printable-character representation [configurable](https://codemirror.net/doc/manual.html#option_specialChars).
 *   Add ‘notification’ functionality to [dialog](https://codemirror.net/doc/manual.html#addon_dialog) addon.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/3.19.0...3.20.0).
 
 ## 3.19.0 (2013-10-21)
 
-*   New modes: [Eiffel](https://codemirror.net/mode/eiffel/index.html), [Gherkin](https://codemirror.net/mode/gherkin/index.html), [MSSQL dialect](https://codemirror.net/mode/sql/?mime=text/x-mssql).
+*   New modes: [Eiffel](https://codemirror.net/mode/eiffel//), [Gherkin](https://codemirror.net/mode/gherkin//), [MSSQL dialect](https://codemirror.net/mode/sql/?mime=text/x-mssql).
 *   New addons: [hardwrap](https://codemirror.net/doc/manual.html#addon_hardwrap), [sql-hint](https://codemirror.net/doc/manual.html#addon_sql-hint).
 *   New theme: [MBO](https://codemirror.net/demo/theme.html#mbo).
 *   Add [support](https://codemirror.net/doc/manual.html#token_style_line) for line-level styling from mode tokenizers.
@@ -1308,7 +1308,7 @@ Emergency release to fix a problem in 3.17 where `.setOption("lineNumbers", fals
 
 ## 3.17.0 (2013-09-23)
 
-*   New modes: [Fortran](https://codemirror.net/mode/fortran/index.html), [Octave](https://codemirror.net/mode/octave/index.html) (Matlab), [TOML](https://codemirror.net/mode/toml/index.html), and [DTD](https://codemirror.net/mode/dtd/index.html).
+*   New modes: [Fortran](https://codemirror.net/mode/fortran//), [Octave](https://codemirror.net/mode/octave//) (Matlab), [TOML](https://codemirror.net/mode/toml//), and [DTD](https://codemirror.net/mode/dtd//).
 *   New addons: [`css-lint`](https://codemirror.net/addon/lint/css-lint.js), [`css-hint`](https://codemirror.net/doc/manual.html#addon_css-hint).
 *   Improve resilience to CSS 'frameworks' that globally mess up `box-sizing`.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/3.16.0...3.17.0).
@@ -1325,7 +1325,7 @@ Emergency release to fix a problem in 3.17 where `.setOption("lineNumbers", fals
 
 ## 3.15.0 (2013-07-29)
 
-*   New modes: [Jade](https://codemirror.net/mode/jade/index.html), [Nginx](https://codemirror.net/mode/nginx/index.html).
+*   New modes: [Jade](https://codemirror.net/mode/jade//), [Nginx](https://codemirror.net/mode/nginx//).
 *   New addons: [Tern](https://codemirror.net/demo/tern.html), [matchtags](https://codemirror.net/doc/manual.html#addon_matchtags), and [foldgutter](https://codemirror.net/doc/manual.html#addon_foldgutter).
 *   Introduced [_helper_](https://codemirror.net/doc/manual.html#getHelper) concept ([context](https://groups.google.com/forum/#!msg/codemirror/cOc0xvUUEUU/nLrX1-qnidgJ)).
 *   New method: [`getModeAt`](https://codemirror.net/doc/manual.html#getModeAt).
@@ -1340,12 +1340,12 @@ Emergency release to fix a problem in 3.17 where `.setOption("lineNumbers", fals
 *   More precise cleanness-tracking using [`changeGeneration`](https://codemirror.net/doc/manual.html#changeGeneration) and [`isClean`](https://codemirror.net/doc/manual.html#isClean).
 *   Many extensions to [Emacs](https://codemirror.net/demo/emacs.html) mode (prefixes, more navigation units, and more).
 *   New events [`"keyHandled"`](https://codemirror.net/doc/manual.html#event_keyHandled) and [`"inputRead"`](https://codemirror.net/doc/manual.html#event_inputRead).
-*   Various improvements to [Ruby](https://codemirror.net/mode/ruby/index.html), [Smarty](https://codemirror.net/mode/smarty/index.html), [SQL](https://codemirror.net/mode/sql/index.html), and [Vim](https://codemirror.net/demo/vim.html) modes.
+*   Various improvements to [Ruby](https://codemirror.net/mode/ruby//), [Smarty](https://codemirror.net/mode/smarty//), [SQL](https://codemirror.net/mode/sql//), and [Vim](https://codemirror.net/demo/vim.html) modes.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/3.13.0...3.14.0).
 
 ## 3.13.0 (2013-05-20)
 
-*   New modes: [COBOL](https://codemirror.net/mode/cobol/index.html) and [HAML](https://codemirror.net/mode/haml/index.html).
+*   New modes: [COBOL](https://codemirror.net/mode/cobol//) and [HAML](https://codemirror.net/mode/haml//).
 *   New options: [`cursorScrollMargin`](https://codemirror.net/doc/manual.html#option_cursorScrollMargin) and [`coverGutterNextToScrollbar`](https://codemirror.net/doc/manual.html#option_coverGutterNextToScrollbar).
 *   New addon: [commenting](https://codemirror.net/doc/manual.html#addon_comment).
 *   More features added to the [Vim keymap](https://codemirror.net/demo/vim.html).
@@ -1353,7 +1353,7 @@ Emergency release to fix a problem in 3.17 where `.setOption("lineNumbers", fals
 
 ## 3.12.0 (2013-04-19)
 
-*   New mode: [GNU assembler](https://codemirror.net/mode/gas/index.html).
+*   New mode: [GNU assembler](https://codemirror.net/mode/gas//).
 *   New options: [`maxHighlightLength`](https://codemirror.net/doc/manual.html#option_maxHighlightLength) and [`historyEventDelay`](https://codemirror.net/doc/manual.html#option_historyEventDelay).
 *   Added [`addToHistory`](https://codemirror.net/doc/manual.html#mark_addToHistory) option for `markText`.
 *   Various fixes to JavaScript tokenization and indentation corner cases.
@@ -1362,10 +1362,10 @@ Emergency release to fix a problem in 3.17 where `.setOption("lineNumbers", fals
 
 ## 3.11.0 (2013-03-20)
 
-*   **Removed code:** `collapserange`, `formatting`, and `simple-hint` addons. `plsql` and `mysql` modes (use [`sql`](https://codemirror.net/mode/sql/index.html) mode).
+*   **Removed code:** `collapserange`, `formatting`, and `simple-hint` addons. `plsql` and `mysql` modes (use [`sql`](https://codemirror.net/mode/sql//) mode).
 *   **Moved code:** the range-finding functions for folding now have [their own files](https://codemirror.net/addon/fold/).
 *   **Changed interface:** the [`continuecomment`](https://codemirror.net/doc/manual.html#addon_continuecomment) addon now exposes an option, rather than a command.
-*   New modes: [SCSS](https://codemirror.net/mode/css/scss.html), [Tcl](https://codemirror.net/mode/tcl/index.html), [LiveScript](https://codemirror.net/mode/livescript/index.html), and [mIRC](https://codemirror.net/mode/mirc/index.html).
+*   New modes: [SCSS](https://codemirror.net/mode/css/scss.html), [Tcl](https://codemirror.net/mode/tcl//), [LiveScript](https://codemirror.net/mode/livescript//), and [mIRC](https://codemirror.net/mode/mirc//).
 *   New addons: [`placeholder`](https://codemirror.net/demo/placeholder.html), [HTML completion](https://codemirror.net/demo/html5complete.html).
 *   New methods: [`hasFocus`](https://codemirror.net/doc/manual.html#hasFocus), [`defaultCharWidth`](https://codemirror.net/doc/manual.html#defaultCharWidth).
 *   New events: [`beforeCursorEnter`](https://codemirror.net/doc/manual.html#event_beforeCursorEnter), [`renderLine`](https://codemirror.net/doc/manual.html#event_renderLine).
@@ -1381,7 +1381,7 @@ Single-bugfix release. Fixes a problem that prevents CodeMirror instances from b
 ## 3.01.0 (2013-01-21)
 
 *   Move all add-ons into an organized directory structure under [`/addon`](https://codemirror.net/addon/). **You might have to adjust your paths.**
-*   New modes: [D](https://codemirror.net/mode/d/index.html), [Sass](https://codemirror.net/mode/sass/index.html), [APL](https://codemirror.net/mode/apl/index.html), [SQL](https://codemirror.net/mode/sql/index.html) (configurable), and [Asterisk](https://codemirror.net/mode/asterisk/index.html).
+*   New modes: [D](https://codemirror.net/mode/d//), [Sass](https://codemirror.net/mode/sass//), [APL](https://codemirror.net/mode/apl//), [SQL](https://codemirror.net/mode/sql//) (configurable), and [Asterisk](https://codemirror.net/mode/asterisk//).
 *   Several bugfixes in right-to-left text support.
 *   Add [`rtlMoveVisually`](https://codemirror.net/doc/manual.html#option_rtlMoveVisually) option.
 *   Improvements to vim keymap.
@@ -1396,14 +1396,14 @@ Single-bugfix release. Fixes a problem that prevents CodeMirror instances from b
 *   **Incompatible:** key handlers may now _return_, rather than _throw_ `CodeMirror.Pass` to signal they didn't handle the key.
 *   Make documents a [first-class construct](https://codemirror.net/doc/manual.html#api_doc), support split views and subviews.
 *   Add a [new module](https://codemirror.net/doc/manual.html#addon_show-hint) for showing completion hints. Deprecate `simple-hint.js`.
-*   Extend [htmlmixed mode](https://codemirror.net/mode/htmlmixed/index.html) to allow custom handling of script types.
+*   Extend [htmlmixed mode](https://codemirror.net/mode/htmlmixed//) to allow custom handling of script types.
 *   Support an `insertLeft` option to [`setBookmark`](https://codemirror.net/doc/manual.html#setBookmark).
 *   Add an [`eachLine`](https://codemirror.net/doc/manual.html#eachLine) method to iterate over a document.
 *   New addon modules: [selection marking](https://codemirror.net/demo/markselection.html), [linting](https://codemirror.net/demo/lint.html), and [automatic bracket closing](https://codemirror.net/demo/closebrackets.html).
 *   Add [`"beforeChange"`](https://codemirror.net/doc/manual.html#event_beforeChange) and [`"beforeSelectionChange"`](https://codemirror.net/doc/manual.html#event_beforeSelectionChange) events.
 *   Add [`"hide"`](https://codemirror.net/doc/manual.html#event_hide) and [`"unhide"`](https://codemirror.net/doc/manual.html#event_unhide) events to marked ranges.
 *   Fix [`coordsChar`](https://codemirror.net/doc/manual.html#coordsChar)'s interpretation of its argument to match the documentation.
-*   New modes: [Turtle](https://codemirror.net/mode/turtle/index.html) and [Q](https://codemirror.net/mode/q/index.html).
+*   New modes: [Turtle](https://codemirror.net/mode/turtle//) and [Q](https://codemirror.net/mode/q//).
 *   Further improvements to the [vim mode](https://codemirror.net/demo/vim.html).
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/v3.01...v3.1).
 
@@ -1418,24 +1418,24 @@ Single-bugfix release. Fixes a problem that prevents CodeMirror instances from b
 
 ## 2.38.0 (2013-01-21)
 
-Integrate some bugfixes, enhancements to the vim keymap, and new modes ([D](https://codemirror.net/mode/d/index.html), [Sass](https://codemirror.net/mode/sass/index.html), [APL](https://codemirror.net/mode/apl/index.html)) from the v3 branch.
+Integrate some bugfixes, enhancements to the vim keymap, and new modes ([D](https://codemirror.net/mode/d//), [Sass](https://codemirror.net/mode/sass//), [APL](https://codemirror.net/mode/apl//)) from the v3 branch.
 
 ## 2.37.0 (2012-12-20)
 
-*   New mode: [SQL](https://codemirror.net/mode/sql/index.html) (will replace [plsql](https://codemirror.net/mode/plsql/index.html) and [mysql](https://codemirror.net/mode/mysql/index.html) modes).
+*   New mode: [SQL](https://codemirror.net/mode/sql//) (will replace [plsql](https://codemirror.net/mode/plsql//) and [mysql](https://codemirror.net/mode/mysql//) modes).
 *   Further work on the new VIM mode.
 *   Fix Cmd/Ctrl keys on recent Operas on OS X.
 *   Full [list of patches](https://github.com/codemirror/CodeMirror/compare/v2.36...v2.37).
 
 ## 2.36.0 (2012-11-20)
 
-*   New mode: [Z80 assembly](https://codemirror.net/mode/z80/index.html).
+*   New mode: [Z80 assembly](https://codemirror.net/mode/z80//).
 *   New theme: [Twilight](https://codemirror.net/demo/theme.html#twilight).
 *   Add command-line compression helper.
 *   Make [`scrollIntoView`](https://codemirror.net/doc/manual.html#scrollIntoView) public.
 *   Add [`defaultTextHeight`](https://codemirror.net/doc/manual.html#defaultTextHeight) method.
 *   Various extensions to the vim keymap.
-*   Make [PHP mode](https://codemirror.net/mode/php/index.html) build on [mixed HTML mode](https://codemirror.net/mode/htmlmixed/index.html).
+*   Make [PHP mode](https://codemirror.net/mode/php//) build on [mixed HTML mode](https://codemirror.net/mode/htmlmixed//).
 *   Add [comment-continuing](https://codemirror.net/doc/manual.html#addon_continuecomment) add-on.
 *   Full [list of patches](https://codemirror.net/https://github.com/codemirror/CodeMirror/compare/v2.35...v2.36).
 
@@ -1450,7 +1450,7 @@ Integrate some bugfixes, enhancements to the vim keymap, and new modes ([D](http
 
 ## 2.34.0 (2012-09-19)
 
-*   New mode: [Common Lisp](https://codemirror.net/mode/commonlisp/index.html).
+*   New mode: [Common Lisp](https://codemirror.net/mode/commonlisp//).
 *   Fix right-click select-all on most browsers.
 *   Change the way highlighting happens:
       Saves memory and CPU cycles.
@@ -1464,7 +1464,7 @@ Integrate some bugfixes, enhancements to the vim keymap, and new modes ([D](http
 
 ## 2.33.0 (2012-08-23)
 
-*   New mode: [Sieve](https://codemirror.net/mode/sieve/index.html).
+*   New mode: [Sieve](https://codemirror.net/mode/sieve//).
 *   New [`getViewPort`](https://codemirror.net/doc/manual.html#getViewport) and [`onViewportChange`](https://codemirror.net/doc/manual.html#option_onViewportChange) API.
 *   [Configurable](https://codemirror.net/doc/manual.html#option_cursorBlinkRate) cursor blink rate.
 *   Make binding a key to `false` disabling handling (again).
@@ -1480,7 +1480,7 @@ Emergency fix for a bug where an editor with line wrapping on IE will break when
 
 ## 2.31.0 (2012-07-20)
 
-*   New modes: [OCaml](https://codemirror.net/mode/ocaml/index.html), [Haxe](https://codemirror.net/mode/haxe/index.html), and [VB.NET](https://codemirror.net/mode/vb/index.html).
+*   New modes: [OCaml](https://codemirror.net/mode/ocaml//), [Haxe](https://codemirror.net/mode/haxe//), and [VB.NET](https://codemirror.net/mode/vb//).
 *   Several fixes to the new scrolling model.
 *   Add a [`setSize`](https://codemirror.net/doc/manual.html#setSize) method for programmatic resizing.
 *   Add [`getHistory`](https://codemirror.net/doc/manual.html#getHistory) and [`setHistory`](https://codemirror.net/doc/manual.html#setHistory) methods.
@@ -1500,8 +1500,8 @@ Emergency fix for a bug where an editor with line wrapping on IE will break when
 
 ## 2.25.0 (2012-05-23)
 
-*   New mode: [Erlang](https://codemirror.net/mode/erlang/index.html).
-*   **Remove xmlpure mode** (use [xml.js](https://codemirror.net/mode/xml/index.html)).
+*   New mode: [Erlang](https://codemirror.net/mode/erlang//).
+*   **Remove xmlpure mode** (use [xml.js](https://codemirror.net/mode/xml//)).
 *   Fix line-wrapping in Opera.
 *   Fix X Windows middle-click paste in Chrome.
 *   Fix bug that broke pasting of huge documents.
@@ -1510,7 +1510,7 @@ Emergency fix for a bug where an editor with line wrapping on IE will break when
 ## 2.24.0 (2012-04-23)
 
 *   **Drop support for Internet Explorer 6**.
-*   New modes: [Shell](https://codemirror.net/mode/shell/index.html), [Tiki wiki](https://codemirror.net/mode/tiki/index.html), [Pig Latin](https://codemirror.net/mode/pig/index.html).
+*   New modes: [Shell](https://codemirror.net/mode/shell//), [Tiki wiki](https://codemirror.net/mode/tiki//), [Pig Latin](https://codemirror.net/mode/pig//).
 *   New themes: [Ambiance](https://codemirror.net/demo/theme.html#ambiance), [Blackboard](https://codemirror.net/demo/theme.html#blackboard).
 *   More control over drag/drop with [`dragDrop`](https://codemirror.net/doc/manual.html#option_dragDrop) and [`onDragEvent`](https://codemirror.net/doc/manual.html#option_onDragEvent) options.
 *   Make HTML mode a bit less pedantic.
@@ -1525,8 +1525,8 @@ Emergency fix for a bug where an editor with line wrapping on IE will break when
     *   Shift-tab: Reset line indentation to default
     *   Ctrl/Cmd-[: Reduce line indentation (old tab behaviour)
     *   Ctrl/Cmd-]: Increase line indentation (old shift-tab behaviour)
-*   New modes: [XQuery](https://codemirror.net/mode/xquery/index.html) and [VBScript](https://codemirror.net/mode/vbscript/index.html).
-*   Two new themes: [lesser-dark](https://codemirror.net/mode/less/index.html) and [xq-dark](https://codemirror.net/mode/xquery/index.html).
+*   New modes: [XQuery](https://codemirror.net/mode/xquery//) and [VBScript](https://codemirror.net/mode/vbscript//).
+*   Two new themes: [lesser-dark](https://codemirror.net/mode/less//) and [xq-dark](https://codemirror.net/mode/xquery//).
 *   Differentiate between background and text styles in [`setLineClass`](https://codemirror.net/doc/manual.html#setLineClass).
 *   Fix drag-and-drop in IE9+.
 *   Extend [`charCoords`](https://codemirror.net/doc/manual.html#charCoords) and [`cursorCoords`](https://codemirror.net/doc/manual.html#cursorCoords) with a `mode` argument.
@@ -1541,12 +1541,12 @@ Emergency fix for a bug where an editor with line wrapping on IE will break when
 *   Make PHP mode more robust.
 *   Support indentation blocks in [code folder](https://codemirror.net/doc/manual.html#addon_foldcode).
 *   Add a script for [highlighting instances of the selection](https://codemirror.net/doc/manual.html#addon_match-highlighter).
-*   New [.properties](https://codemirror.net/mode/properties/index.html) mode.
+*   New [.properties](https://codemirror.net/mode/properties//) mode.
 *   Fix many bugs.
 
 ## 2.21.0 (2012-01-27)
 
-*   Added [LESS](https://codemirror.net/mode/less/index.html), [MySQL](https://codemirror.net/mode/mysql/index.html), [Go](https://codemirror.net/mode/go/index.html), and [Verilog](https://codemirror.net/mode/verilog/index.html) modes.
+*   Added [LESS](https://codemirror.net/mode/less//), [MySQL](https://codemirror.net/mode/mysql//), [Go](https://codemirror.net/mode/go//), and [Verilog](https://codemirror.net/mode/verilog//) modes.
 *   Add [`smartIndent`](https://codemirror.net/doc/manual.html#option_smartIndent) option.
 *   Support a cursor in [`readOnly`](https://codemirror.net/doc/manual.html#option_readOnly)-mode.
 *   Support assigning multiple styles to a token.
@@ -1574,7 +1574,7 @@ Fixes `TextMarker.clear`, which is broken in 2.17.
 ## 2.17.0 (2011-11-21)
 
 *   Add support for [line wrapping](https://codemirror.net/doc/manual.html#option_lineWrapping) and [code folding](https://codemirror.net/doc/manual.html#hideLine).
-*   Add [Github-style Markdown](https://codemirror.net/mode/gfm/index.html) mode.
+*   Add [Github-style Markdown](https://codemirror.net/mode/gfm//) mode.
 *   Add [Monokai](https://codemirror.net/theme/monokai.css) and [Rubyblue](https://codemirror.net/theme/rubyblue.css) themes.
 *   Add [`setBookmark`](https://codemirror.net/doc/manual.html#setBookmark) method.
 *   Move some of the demo code into reusable components under [`lib/util`](https://codemirror.net/addon/).
@@ -1588,7 +1588,7 @@ Fixes `TextMarker.clear`, which is broken in 2.17.
 
 ## 2.16.0 (2011-10-27)
 
-*   Add [Perl](https://codemirror.net/mode/perl/index.html), [Rust](https://codemirror.net/mode/rust/index.html), [TiddlyWiki](https://codemirror.net/mode/tiddlywiki/index.html), and [Groovy](https://codemirror.net/mode/groovy/index.html) modes.
+*   Add [Perl](https://codemirror.net/mode/perl//), [Rust](https://codemirror.net/mode/rust//), [TiddlyWiki](https://codemirror.net/mode/tiddlywiki//), and [Groovy](https://codemirror.net/mode/groovy//) modes.
 *   Dragging text inside the editor now moves, rather than copies.
 *   Add a [`coordsFromIndex`](https://codemirror.net/doc/manual.html#coordsFromIndex) method.
 *   **API change**: `setValue` now no longer clears history. Use [`clearHistory`](https://codemirror.net/doc/manual.html#clearHistory) for that.
@@ -1601,7 +1601,7 @@ Fix bug that snuck into 2.14: Clicking the character that currently has the curs
 
 ## 2.14.0 (2011-09-26)
 
-*   Add [Clojure](https://codemirror.net/mode/clojure/index.html), [Pascal](https://codemirror.net/mode/pascal/index.html), [NTriples](https://codemirror.net/mode/ntriples/index.html), [Jinja2](https://codemirror.net/mode/jinja2/index.html), and [Markdown](https://codemirror.net/mode/markdown/index.html) modes.
+*   Add [Clojure](https://codemirror.net/mode/clojure//), [Pascal](https://codemirror.net/mode/pascal//), [NTriples](https://codemirror.net/mode/ntriples//), [Jinja2](https://codemirror.net/mode/jinja2//), and [Markdown](https://codemirror.net/mode/markdown//) modes.
 *   Add [Cobalt](https://codemirror.net/theme/cobalt.css) and [Eclipse](https://codemirror.net/theme/eclipse.css) themes.
 *   Add a [`fixedGutter`](https://codemirror.net/doc/manual.html#option_fixedGutter) option.
 *   Fix bug with `setValue` breaking cursor movement.
@@ -1610,15 +1610,15 @@ Fix bug that snuck into 2.14: Clicking the character that currently has the curs
 
 ## 2.13.0 (2011-08-23)
 
-*   Add [Ruby](https://codemirror.net/mode/ruby/index.html), [R](https://codemirror.net/mode/r/index.html), [CoffeeScript](https://codemirror.net/mode/coffeescript/index.html), and [Velocity](https://codemirror.net/mode/velocity/index.html) modes.
+*   Add [Ruby](https://codemirror.net/mode/ruby//), [R](https://codemirror.net/mode/r//), [CoffeeScript](https://codemirror.net/mode/coffeescript//), and [Velocity](https://codemirror.net/mode/velocity//) modes.
 *   Add [`getGutterElement`](https://codemirror.net/doc/manual.html#getGutterElement) to API.
 *   Several fixes to scrolling and positioning.
 *   Add [`smartHome`](https://codemirror.net/doc/manual.html#option_smartHome) option.
-*   Add an experimental [pure XML](https://codemirror.net/mode/xmlpure/index.html) mode.
+*   Add an experimental [pure XML](https://codemirror.net/mode/xmlpure//) mode.
 
 ## 2.12.0 (2011-07-25)
 
-*   Add a [SPARQL](https://codemirror.net/mode/sparql/index.html) mode.
+*   Add a [SPARQL](https://codemirror.net/mode/sparql//) mode.
 *   Fix bug with cursor jumping around in an unfocused editor in IE.
 *   Allow key and mouse events to bubble out of the editor. Ignore widget clicks.
 *   Solve cursor flakiness after undo/redo.
@@ -1631,14 +1631,14 @@ Fix bug that snuck into 2.14: Clicking the character that currently has the curs
 
 ## 2.11.0 (2011-07-04)
 
-*   Add a [Scheme mode](https://codemirror.net/mode/scheme/index.html).
+*   Add a [Scheme mode](https://codemirror.net/mode/scheme//).
 *   Add a `replace` method to search cursors, for cursor-preserving replacements.
-*   Make the [C-like mode](https://codemirror.net/mode/clike/index.html) mode more customizable.
+*   Make the [C-like mode](https://codemirror.net/mode/clike//) mode more customizable.
 *   Update XML mode to spot mismatched tags.
 *   Add `getStateAfter` API and `compareState` mode API methods for finer-grained mode magic.
 *   Add a `getScrollerElement` API method to manipulate the scrolling DIV.
 *   Fix drag-and-drop for Firefox.
-*   Add a C# configuration for the [C-like mode](https://codemirror.net/mode/clike/index.html).
+*   Add a C# configuration for the [C-like mode](https://codemirror.net/mode/clike//).
 *   Add [full-screen editing](https://codemirror.net/demo/fullscreen.html) and [mode-changing](https://codemirror.net/demo/changemode.html) demos.
 
 ## 2.10.0 (2011-06-07)
@@ -1647,7 +1647,7 @@ Add a [theme](https://codemirror.net/doc/manual.html#option_theme) system ([demo
 
 ## 2.2.0 (2011-06-07)
 
-*   Add a [Lua mode](https://codemirror.net/mode/lua/index.html).
+*   Add a [Lua mode](https://codemirror.net/mode/lua//).
 *   Fix reverse-searching for a regexp.
 *   Empty lines can no longer break highlighting.
 *   Rework scrolling model (the outer wrapper no longer does the scrolling).
@@ -1658,10 +1658,10 @@ Add a [theme](https://codemirror.net/doc/manual.html#option_theme) system ([demo
 
 ## 2.1.0 (2011-05-26)
 
-*   Add a [Smalltalk mode](https://codemirror.net/mode/smalltalk/index.html).
-*   Add a [reStructuredText mode](https://codemirror.net/mode/rst/index.html).
-*   Add a [Python mode](https://codemirror.net/mode/python/index.html).
-*   Add a [PL/SQL mode](https://codemirror.net/mode/plsql/index.html).
+*   Add a [Smalltalk mode](https://codemirror.net/mode/smalltalk//).
+*   Add a [reStructuredText mode](https://codemirror.net/mode/rst//).
+*   Add a [Python mode](https://codemirror.net/mode/python//).
+*   Add a [PL/SQL mode](https://codemirror.net/mode/plsql//).
 *   `coordsChar` now works
 *   Fix a problem where `onCursorActivity` interfered with `onChange`.
 *   Fix a number of scrolling and mouse-click-position glitches.

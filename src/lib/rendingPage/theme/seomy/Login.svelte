@@ -41,7 +41,7 @@
 <body>
    <VersionNotice />
 <!--   <Loader />-->
-   <Header data="{data}" />
+   <Header {data} />
 
    <!-- offcanvas area start -->
    <div class="offcanvas__area">
@@ -108,7 +108,7 @@
                               <span></span>
                            </div>
                            <div class="signin-item-content ml-30">
-                              <h4 class="signin-item-title"> <a href="keyword-search.html">Keyword  <br> Research</a></h4>
+                              <h4 class="signin-item-title"> <a href="/">Keyword  <br> Research</a></h4>
                            </div>
                         </div>
                         <div class="signin-item d-flex align-items-center mb-45">
@@ -120,7 +120,7 @@
                               <span></span>
                            </div>
                            <div class="signin-item-content ml-30">
-                              <h4 class="signin-item-title"><a href="building-social-services.html"> Link  <br>Building Services</a></h4>
+                              <h4 class="signin-item-title"><a href="/services"> Link  <br>Building Services</a></h4>
                            </div>
                         </div>
                         <div class="signin-item d-flex align-items-center mb-45">

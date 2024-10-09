@@ -32,7 +32,7 @@
 <body>
 <!--   <Loader />-->
 <BackToTop />
-<Header data="{data}" />
+<Header {data} />
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -86,7 +86,7 @@
                     <div class="breadcrumb__content breadcrumb__content-2 text-center p-relative z-index-1">
                         <h3 class="breadcrumb__title">Services</h3>
                         <div class="breadcrumb__list">
-                            <span><a href="index.html">Home</a></span>
+                            <span><a href="/">Home</a></span>
                             <span class="dvdr"></span>
                             <span>SEO Services</span>
                         </div>
@@ -194,7 +194,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>Keyword Research</span>
-                                            <h4 class="tpservices-title"><a href="keyword-search.html">Keyword Research activation <br> if instant access.</a></h4>
+                                            <h4 class="tpservices-title"><a href="/">Keyword Research activation <br> if instant access.</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -317,7 +317,7 @@
                             </li>
                         </ul>
                         <div class="seo-5-btn">
-                            <a href="services.html" class="light-blue-btn">Learn More</a>
+                            <a href="/services" class="light-blue-btn">Learn More</a>
                         </div>
                     </div>
                 </div>

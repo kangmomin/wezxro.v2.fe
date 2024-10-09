@@ -33,7 +33,7 @@
 <body>
 <!--   <Loader />-->
    <BackToTop />
-   <Header data="{data}" />
+   <Header {data} />
 
    <!-- offcanvas area start -->
    <div class="offcanvas__area">

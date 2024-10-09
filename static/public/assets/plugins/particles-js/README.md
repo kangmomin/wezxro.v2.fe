@@ -18,7 +18,7 @@ http://codepen.io/VincentGarreau/pen/pnlso
 
 Load particles.js and configure the particles:
 
-**index.html**
+**/**
 ```html
 <div id="particles-js"></div>
 

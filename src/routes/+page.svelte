@@ -14,18 +14,5 @@
 </svelte:head>
 
 {#if data.props.THEME === "SEOMY"}
-	<Somey data="{data}" />
-{:else if data.props.DOMAIN === "wezxro.com"}
-	<Wezxro data="{data}"></Wezxro>
-{:else if data.props.DOMAIN === "lotoal.com"}
-	<Lotoal data="{data}"></Lotoal>
-{:else if data.props.DOMAIN === "adiviy.com"}
-	<Adiviy data="{data}"></Adiviy>
-{:else if data.props.DOMAIN === "follous.net"}
-	<Follous data="{data}"></Follous>
-{:else if data.props.DOMAIN === "prvad.com"}
-	<Prvad data="{data}"></Prvad>
-{:else if data.props.DOMAIN === "parkinad.com"}
-	<Parkinad data="{data}"></Parkinad>
+	<Somey {data} />
 {/if}
-

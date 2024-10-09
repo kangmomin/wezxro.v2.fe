@@ -33,7 +33,7 @@
 <body>
 <!--<Loader/>-->
 <BackToTop/>
-<Header data="{data}"/>
+<Header {data}/>
 <div id="scroll-indicator"></div>
 
 <!-- offcanvas area start -->
@@ -483,7 +483,7 @@
                                 <span>SEO Analysis</span>
                                 <span>Marketing</span>
                             </div>
-                            <h3 class="tpcase-title"><a href="portfolio-details.html">Online Media Management</a></h3>
+                            <h3 class="tpcase-title"><a href="/">Online Media Management</a></h3>
                         </div>
                     </div>
                 </div>
@@ -497,7 +497,7 @@
                                 <span>SEO Analysis</span>
                                 <span>Marketing</span>
                             </div>
-                            <h3 class="tpcase-title"><a href="portfolio-details.html">Twice Profit Than Before</a></h3>
+                            <h3 class="tpcase-title"><a href="/">Twice Profit Than Before</a></h3>
                         </div>
                     </div>
                 </div>
@@ -511,7 +511,7 @@
                                 <span>SEO Analysis</span>
                                 <span>Marketing</span>
                             </div>
-                            <h3 class="tpcase-title"><a href="portfolio-details.html">Social Engagement</a></h3>
+                            <h3 class="tpcase-title"><a href="/">Social Engagement</a></h3>
                         </div>
                     </div>
                 </div>
@@ -525,7 +525,7 @@
                                 <span>SEO Analysis</span>
                                 <span>Marketing</span>
                             </div>
-                            <h3 class="tpcase-title"><a href="portfolio-details.html">Media Management</a></h3>
+                            <h3 class="tpcase-title"><a href="/">Media Management</a></h3>
                         </div>
                     </div>
                 </div>
@@ -637,7 +637,7 @@
                                         </div>
                                         <div class="tpservices-content">
                                             <span>Keyword Research</span>
-                                            <h4 class="tpservices-title"><a href="keyword-search.html">Keyword Research
+                                            <h4 class="tpservices-title"><a href="/">Keyword Research
                                                 activation <br> if instant access.</a></h4>
                                         </div>
                                     </div>
@@ -769,7 +769,7 @@
                         </div>
                         <div class="row gx-6">
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a class="tpchoose mb-30" href="about.html">
+                                <a class="tpchoose mb-30" href="/about">
                                     <div class="tpchoose-icon mb-25">
                                         <span><img alt="" src="assets/img/icon/choose-icon-1.png"></span>
                                     </div>
@@ -790,7 +790,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a class="tpchoose mb-30" href="about.html">
+                                <a class="tpchoose mb-30" href="/about">
                                     <div class="tpchoose-icon mb-25">
                                         <span><img alt="" src="assets/img/icon/choose-icon-2.png"></span>
                                     </div>
@@ -811,7 +811,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-6">
-                                <a class="tpchoose mb-30" href="about.html">
+                                <a class="tpchoose mb-30" href="/about">
                                     <div class="tpchoose-icon mb-25">
                                         <span><img alt="" src="assets/img/icon/choose-icon-3.png"></span>
                                     </div>
@@ -1276,7 +1276,7 @@
                 </div>
                 <div class="col-lg-6 col-md-4">
                     <div class="tpblog-all mb-60">
-                        <a href="blog-grid.html">See all our Blog
+                        <a href="/">See all our Blog
                             <i>
                                 <svg fill="none" height="12" viewBox="0 0 23 12" width="23"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -1294,14 +1294,14 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="tpblog mb-30">
                         <div class="tpblog-thumb mb-25 fix">
-                            <a href="blog-details.html"><img alt="" src="assets/img/blog/blog-1-bg-1.jpg"></a>
+                            <a href="/"><img alt="" src="assets/img/blog/blog-1-bg-1.jpg"></a>
                         </div>
                         <div class="tpblog-content">
                             <div class="tpblog-tag">
-                                <a href="blog-details.html">SEO Analysis</a>
-                                <a href="blog-details.html">Marketing</a>
+                                <a href="/">SEO Analysis</a>
+                                <a href="/">Marketing</a>
                             </div>
-                            <h3 class="tpblog-title"><a href="blog-details.html">Simple ways to Optimize your Website
+                            <h3 class="tpblog-title"><a href="/">Simple ways to Optimize your Website
                                 For SEO</a></h3>
                             <div class="tpblog-avatar d-flex align-items-center">
                                 <div class="tpblog-avatar-thub mr-10">
@@ -1318,14 +1318,14 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="tpblog mb-30">
                         <div class="tpblog-thumb mb-25 fix">
-                            <a href="blog-details.html"><img alt="" src="assets/img/blog/blog-1-bg-2.jpg"></a>
+                            <a href="/"><img alt="" src="assets/img/blog/blog-1-bg-2.jpg"></a>
                         </div>
                         <div class="tpblog-content">
                             <div class="tpblog-tag">
-                                <a href="blog-details.html">SEO Analysis</a>
-                                <a href="blog-details.html">Marketing</a>
+                                <a href="/">SEO Analysis</a>
+                                <a href="/">Marketing</a>
                             </div>
-                            <h3 class="tpblog-title"><a href="blog-details.html">The Trend of Marketing With <br>
+                            <h3 class="tpblog-title"><a href="/">The Trend of Marketing With <br>
                                 Tiktok, Should or not?</a></h3>
                             <div class="tpblog-avatar d-flex align-items-center">
                                 <div class="tpblog-avatar-thub mr-10">
@@ -1342,14 +1342,14 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="tpblog mb-30">
                         <div class="tpblog-thumb mb-25 fix">
-                            <a href="blog-details.html"><img alt="" src="assets/img/blog/blog-1-bg-3.jpg"></a>
+                            <a href="/"><img alt="" src="assets/img/blog/blog-1-bg-3.jpg"></a>
                         </div>
                         <div class="tpblog-content">
                             <div class="tpblog-tag">
-                                <a href="blog-details.html">SEO Analysis</a>
-                                <a href="blog-details.html">Marketing</a>
+                                <a href="/">SEO Analysis</a>
+                                <a href="/">Marketing</a>
                             </div>
-                            <h3 class="tpblog-title"><a href="blog-details.html">How to Increase Your ROI Through
+                            <h3 class="tpblog-title"><a href="/">How to Increase Your ROI Through
                                 scientific SEM?</a></h3>
                             <div class="tpblog-avatar d-flex align-items-center">
                                 <div class="tpblog-avatar-thub mr-10">

@@ -1,6 +1,6 @@
 var page = require('webpage').create();
 
-page.open("http://localhost:3000/test/index.html", function (status) {
+page.open("http://localhost:3000/test//", function (status) {
   if (status != "success") {
     console.log("page couldn't be loaded successfully");
     phantom.exit(1);

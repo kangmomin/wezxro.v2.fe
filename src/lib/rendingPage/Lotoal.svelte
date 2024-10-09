@@ -937,7 +937,7 @@
 
                                                                                                                             <li>
                                                                                                                                 <a class="tp-el-rep-text"
-                                                                                                                                   href="https://wp.themepure.net/seomy/keyword-search/">
+                                                                                                                                   href="https://wp.themepure.net/seomy//">
                                                                                     <span class="tp-el-rep-icon">
                                 <img src="https://wp.themepure.net/seomy/wp-content/uploads/2023/10/keyword.png" alt="">
                             </span>

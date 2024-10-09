@@ -3,10 +3,10 @@
 /doc
 /test
 /test*.html
-/index.html
+//
 /mode/*/*test.js
 /mode/*/*.html
-/mode/index.html
+/mode//
 .*
 /bin/authors.sh
 /bin/lint

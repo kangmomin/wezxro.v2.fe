@@ -32,7 +32,7 @@ if (bumpOnly) process.exit(0);
 
 child.exec("bash bin/authors.sh", function(){});
 
-rewrite("index.html", function(index) {
+rewrite("/", function(index) {
   return index.replace(/\.zip">\d+\.\d+\.\d+<\/a>/,
                        ".zip\">" + number + "</a>");
 });

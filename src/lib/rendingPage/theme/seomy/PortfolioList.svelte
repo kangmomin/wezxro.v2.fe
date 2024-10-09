@@ -36,7 +36,7 @@
 <body>
 <VersionNotice/>
 <BackToTop />
-<Header data="{data}" />
+<Header {data} />
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -54,7 +54,7 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="/">
+                    <a rel="external" href="/">
                         <img alt="logo" src="assets/img/logo/logo.svg">
                     </a>
                 </div>
@@ -64,15 +64,15 @@
                 <a class="tp-btn w-100" href="/contact">Getting Started</a>
             </div>
             <div class="offcanvas__contact mb-40">
-                <p class="offcanvas__contact-call"><a href="tel:+964-742-44-763">+964 742 44 763</a></p>
-                <p class="offcanvas__contact-mail"><a href="mailto:info@harry.com">info@seomy.com</a></p>
+                <p class="offcanvas__contact-call"><a rel="external" href="tel:+964-742-44-763">+964 742 44 763</a></p>
+                <p class="offcanvas__contact-mail"><a rel="external" href="mailto:info@harry.com">info@seomy.com</a></p>
             </div>
             <div class="offcanvas__social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a rel="external" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a rel="external" href="#"><i class="fab fa-twitter"></i></a>
+                <a rel="external" href="#"><i class="fab fa-youtube"></i></a>
+                <a rel="external" href="#"><i class="fab fa-linkedin"></i></a>
+                <a rel="external" href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </div>

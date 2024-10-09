@@ -24,12 +24,12 @@
   <a href="https://codemirror.net"><h1>CodeMirror</h1><img id=logo src="../../doc/logo.png" alt=""></a>
 
   <ul>
-    <li><a href="../../index.html">Home</a>
+    <li><a href="../..//">Home</a>
     <li><a href="../../doc/manual.html">Manual</a>
     <li><a href="https://github.com/codemirror/codemirror">Code</a>
   </ul>
   <ul>
-    <li><a href="../index.html">Language modes</a>
+    <li><a href="..//">Language modes</a>
     <li><a class=active href="#">NGINX</a>
   </ul>
 </div>
@@ -57,10 +57,10 @@ server {
 
 
   root        /data/www;
-  index       index.html index.php;
+  index       / index.php;
 
   location / {
-    index index.html index.php;     ## Allow a static html file to be shown first
+    index / index.php;     ## Allow a static html file to be shown first
     try_files $uri $uri/ @handler;  ## If missing pass the URI to Magento's front handler
     expires 30d;                    ## Assume all files are cachable
   }
@@ -111,7 +111,7 @@ server {
   server_name         website.com.au www.website.com.au;
 
   root   /data/www;
-  index index.html index.php;
+  index / index.php;
 
   ssl                 on;
   ssl_certificate     /rs/ssl/ssl.crt;
@@ -126,7 +126,7 @@ server {
 
 
   location / {
-    index index.html index.php; ## Allow a static html file to be shown first
+    index / index.php; ## Allow a static html file to be shown first
     try_files $uri $uri/ @handler; ## If missing pass the URI to Magento's front handler
     expires 30d; ## Assume all files are cachable
   }

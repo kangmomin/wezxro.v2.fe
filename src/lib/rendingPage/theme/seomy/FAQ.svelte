@@ -34,7 +34,7 @@
 
 <!--<Loader />-->
 <BackToTop />
-<Header data="{data}" />
+<Header {data} />
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -89,7 +89,7 @@
                     <div class="breadcrumb__content breadcrumb__content-2 text-center p-relative z-index-1">
                         <h3 class="breadcrumb__title">FAQ</h3>
                         <div class="breadcrumb__list">
-                            <span><a href="index.html">Home</a></span>
+                            <span><a href="/">Home</a></span>
                             <span class="dvdr"></span>
                             <span>FAQ</span>
                         </div>

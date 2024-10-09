@@ -70,10 +70,10 @@
                <div class="row align-items-center">
                   <div class="col-xl-2 col-lg-6 col-sm-4 col-6">
                      <div class="tplogo__area">
-                        <a class="header-logo" href="index.html">
+                        <a class="header-logo" href="/">
                            <img src="assets/img/logo/logo-light-blue.svg" alt="logo">
                         </a>
-                        <a class="sticky-logo" href="index.html">
+                        <a class="sticky-logo" href="/">
                            <img src="assets/img/logo/logo.svg" alt="logo">
                         </a>
                      </div>
@@ -83,7 +83,7 @@
                         <nav class="tp-main-menu-content">
                            <ul>
                               <li class="has-dropdown has-mega-menu">
-                                 <a href="index.html">Home</a>
+                                 <a href="/">Home</a>
                                  <div class="tp-submenu submenu has-homemenu tp-mega-menu">
                                     <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-5">
                                        <div class="col homemenu active">
@@ -91,7 +91,7 @@
                                              <img src="assets/img/menu/home-1.jpg" alt="">
                                           </div>
                                           <div class="homemenu-btn">
-                                             <a class="menu-btn mb-5" href="index.html">Multi Page</a>
+                                             <a class="menu-btn mb-5" href="/">Multi Page</a>
                                              <a class="menu-btn" href="index-one-page.html">One Page</a>
                                           </div>
                                           <div class="demo-name">
@@ -149,9 +149,9 @@
                                     </div>
                                  </div>
                               </li>
-                              <li><a href="about.html">About</a></li>
+                              <li><a href="/about">About</a></li>
                               <li class="header-services has-dropdown has-mega-menu">
-                                 <a href="services.html">Services</a>
+                                 <a href="/services">Services</a>
                                  <div class="tp-mega-menu tp-submenu submenu">
                                     <div class="row">
                                        <div class="col-xl-6">
@@ -159,7 +159,7 @@
                                              <h5 class="tp-menu-banner-title">Services Overview</h5>
                                              <ul>
                                                 <li>
-                                                   <a href="keyword-search.html">
+                                                   <a href="/">
                                                       <span> <img src="assets/img/header-icon/keyword.png" alt="">
                                                       </span>
                                                       Keyword Research
@@ -172,7 +172,7 @@
                                                    </a>
                                                 </li>
                                                 <li>
-                                                   <a href="building-social-services.html">
+                                                   <a href="/services">
                                                       <span> <img src="assets/img/header-icon/building.png" alt="">
                                                       </span>
                                                       Link Building Services
@@ -201,7 +201,7 @@
                                                 <h5 class="tp-menu-banner-title-2">The #1 SEO <br> agency for fast
                                                    growing <br> companies.</h5>
                                                 <div class="tp-menu-banner-btn">
-                                                   <a href="services.html">
+                                                   <a href="/services">
                                                       Learn more
                                                       <span>
                                                          <svg width="9" height="10" viewBox="0 0 9 10" fill="none"
@@ -227,12 +227,12 @@
                                  </div>
                               </li>
                               <li class="has-dropdown has-megamenu">
-                                 <a href="about.html">Pages</a>
+                                 <a href="/about">Pages</a>
                                  <ul class="tp-submenu submenu mega-menu">
                                     <li>
                                        <ul>
-                                          <li><a href="about.html">About Us</a></li>
-                                          <li><a href="services.html">Services</a></li>
+                                          <li><a href="/about">About Us</a></li>
+                                          <li><a href="/services">Services</a></li>
                                           <li><a href="team.html">Team Member</a></li>
                                           <li><a href="team-details.html">Team Details</a></li>
                                           <li><a href="sign-in.html">Sign In</a></li>
@@ -241,18 +241,18 @@
                                     </li>
                                     <li>
                                        <ul>
-                                          <li><a href="pricing.html">Pricing</a></li>
-                                          <li><a href="portfolio.html">Case Studies 2 Columns</a></li>
+                                          <li><a href="/">Pricing</a></li>
+                                          <li><a href="/portfolios">Case Studies 2 Columns</a></li>
                                           <li><a href="portfolio-2.html">Case Studies 3 Columns</a></li>
-                                          <li><a href="portfolio-details.html">Case Studies Details</a></li>
-                                          <li><a href="blog-grid.html">Blog Grid</a></li>
+                                          <li><a href="/">Case Studies Details</a></li>
+                                          <li><a href="/">Blog Grid</a></li>
                                           <li><a href="blog-masonry.html">Blog Masonry</a></li>
                                        </ul>
                                     </li>
                                     <li>
                                        <ul>
-                                          <li><a href="blog-list.html">Blog List</a></li>
-                                          <li><a href="blog-details.html">Blog Details</a></li>
+                                          <li><a href="/">Blog List</a></li>
+                                          <li><a href="/">Blog Details</a></li>
                                           <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                           <li><a href="faq.html">FAQ</a></li>
                                           <li><a href="/contact">Contact</a></li>
@@ -264,10 +264,10 @@
                                  <a href="blog.html">Blog</a>
                                  <ul class="tp-submenu submenu">
                                     <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
+                                    <li><a href="/">Blog Grid</a></li>
                                     <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                    <li><a href="blog-list.html">Blog List</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="/">Blog List</a></li>
+                                    <li><a href="/">Blog Details</a></li>
                                     <li><a href="blog-details-2.html">Blog Details Full Width</a></li>
                                  </ul>
                               </li>
@@ -531,9 +531,9 @@
                         </div>
                         <div class="keyword-search-tag">
                            <span>Try</span>
-                           <a href="keyword-search.html">merketing</a>
-                           <a href="keyword-search.html">laptop</a>
-                           <a href="keyword-search.html">iphone</a>
+                           <a href="/">merketing</a>
+                           <a href="/">laptop</a>
+                           <a href="/">iphone</a>
                         </div>
                      </div>
                   </div>
@@ -1332,7 +1332,7 @@
                   <div class="col-lg-3 col-md-6 col-sm-6">
                      <div class="footer-widget footer-5-col-1 mb-40">
                         <div class="footer-widget-logo mb-20">
-                           <a href="index.html">
+                           <a href="/">
                               <span>
                                  <svg width="105" height="26" viewBox="0 0 105 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -1378,11 +1378,11 @@
                         <h4 class="footer-widget-title mb-15">About</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li><a href="about.html">About us</a></li>
-                              <li><a href="blog-grid.html">SEO Blog</a></li>
-                              <li><a href="services.html">Services</a></li>
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/">Pricing</a></li>
+                              <li><a href="/about">About us</a></li>
+                              <li><a href="/">SEO Blog</a></li>
+                              <li><a href="/services">Services</a></li>
                               <li><a href="/contact">Contact</a></li>
                               <li><a href="/">Why SEO?</a></li>
                               <li><a href="#"></a></li>
@@ -1397,9 +1397,9 @@
                         <div class="footer-widget-link">
                            <ul>
                               <li><a href="/">On Page SEO</a></li>
-                              <li><a href="keyword-search.html">Keyword Research</a></li>
+                              <li><a href="/">Keyword Research</a></li>
                               <li><a href="/">SEO Consulting</a></li>
-                              <li><a href="keyword-search.html">Off Page SEO</a></li>
+                              <li><a href="/">Off Page SEO</a></li>
                               <li><a href="/">SEO Audit</a></li>
                            </ul>
                         </div>

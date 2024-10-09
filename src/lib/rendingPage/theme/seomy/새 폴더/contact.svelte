@@ -266,7 +266,7 @@
                   <div class="col-lg-3 col-md-6 col-sm-6">
                      <div class="footer-widget footer-5-col-1 mb-40">
                         <div class="footer-widget-logo mb-20">
-                           <a href="index.html">
+                           <a href="/">
                               <span>
                                  <svg width="105" height="26" viewBox="0 0 105 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M50.953 12.563C50.953 14.8455 50.2038 16.7587 48.6946 18.3133C47.4477 19.5977 45.9813 20.3603 44.2956 20.5771V22.7445H45.2589V24.8771C47.8143 24.4891 50.0406 23.3332 51.9457 21.4146C54.3433 19.0064 55.5394 16.063 55.5394 12.5844C55.5394 11.5836 55.435 10.6257 55.2397 9.70788C55.1969 9.49382 55.1407 9.28243 55.0872 9.07372C55.5367 8.92655 55.8578 8.50376 55.8578 8.00606C55.8578 7.73313 55.7588 7.48695 55.6009 7.29429L58.638 2.81229C58.7209 2.82834 58.5283 2.83905 58.8788 2.83905C59.2293 2.83905 60 2.33599 60 1.71787C60 1.09976 59.4969 0.596704 58.8788 0.596704C58.2607 0.596704 57.763 1.28707 57.763 1.71787C57.763 2.15136 57.8406 2.18882 57.9717 2.37345L54.9079 6.89827L54.7393 6.88222C54.5814 6.88222 54.4316 6.91432 54.2951 6.97587C54.1319 7.04812 53.982 7.16318 53.875 7.29964L48.6732 5.69682C48.6063 5.13758 48.1327 4.71212 47.5627 4.71212C47.1587 4.71212 46.8028 4.92619 46.6048 5.24729C46.5004 5.41586 46.4416 5.61387 46.4416 5.83329C46.4416 6.08482 46.5299 6.31494 46.6717 6.50492L43.3617 11.4445C43.2948 11.4338 43.2306 11.4284 43.1637 11.4284C42.5456 11.4284 42.0425 11.9261 42.0425 12.5443C42.0425 13.1624 42.5456 13.6654 43.1637 13.6654C43.7818 13.6654 44.2795 13.1624 44.2795 12.5443C44.2795 12.2874 44.1912 12.0519 44.044 11.8592L47.3353 6.9277C47.4075 6.94376 47.4771 6.94911 47.5547 6.94911C47.8999 6.94911 48.2103 6.79124 48.4137 6.54506C48.502 6.63336 48.5876 6.71899 48.6759 6.80729C48.8498 6.9946 49.0211 7.17923 49.1789 7.37724C50.3616 8.83021 50.953 10.5641 50.953 12.563Z" fill="#4260FF"/>
@@ -299,11 +299,11 @@
                         <h4 class="footer-widget-title mb-15">About</h4>
                         <div class="footer-widget-link">
                            <ul>
-                              <li><a href="index.html">Home</a></li>
-                              <li><a href="pricing.html">Pricing</a></li>
-                              <li><a href="about.html">About us</a></li>
-                              <li><a href="blog-grid.html">SEO Blog</a></li>
-                              <li><a href="services.html">Services</a></li>
+                              <li><a href="/">Home</a></li>
+                              <li><a href="/">Pricing</a></li>
+                              <li><a href="/about">About us</a></li>
+                              <li><a href="/">SEO Blog</a></li>
+                              <li><a href="/services">Services</a></li>
                               <li><a href="/contact">Contact</a></li>
                               <li><a href="/">Why SEO?</a></li>
                               <li><a href="#"></a></li>
@@ -318,9 +318,9 @@
                         <div class="footer-widget-link">
                            <ul>
                               <li><a href="/">On Page SEO</a></li>
-                              <li><a href="keyword-search.html">Keyword Research</a></li>
+                              <li><a href="/">Keyword Research</a></li>
                               <li><a href="/">SEO Consulting</a></li>
-                              <li><a href="keyword-search.html">Off Page SEO</a></li>
+                              <li><a href="/">Off Page SEO</a></li>
                               <li><a href="/">SEO Audit</a></li>
                            </ul>
                         </div>

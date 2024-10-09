@@ -32,7 +32,7 @@
 <body>
 <VersionNotice/>
 <BackToTop />
-<Header data="{data}" />
+<Header {data} />
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -109,7 +109,7 @@
                             <img alt="" src="assets/img/portfolio/portfolio-2/portfolio-1.jpg">
                         </div>
                         <div class="portfolio-inner-content-2">
-                            <div class="portfolio-inner-title-2"><a href="portfolio-details.html">Ad Campaign</a></div>
+                            <div class="portfolio-inner-title-2"><a href="/">Ad Campaign</a></div>
                             <p>They produce really great content that also performs well when it comes to SEO.</p>
                             <div class="portfolio-inner-tag-2">
                                 <a href="#">Branding</a>
@@ -125,7 +125,7 @@
                             <img alt="" src="assets/img/portfolio/portfolio-2/portfolio-2.jpg">
                         </div>
                         <div class="portfolio-inner-content-2">
-                            <div class="portfolio-inner-title-2"><a href="portfolio-details.html">Digital Art</a></div>
+                            <div class="portfolio-inner-title-2"><a href="/">Digital Art</a></div>
                             <p>They produce really great content that also performs well when it comes to SEO.</p>
                             <div class="portfolio-inner-tag-2">
                                 <a href="#">Branding</a>
@@ -141,7 +141,7 @@
                             <img alt="" src="assets/img/portfolio/portfolio-2/portfolio-3.jpg">
                         </div>
                         <div class="portfolio-inner-content-2">
-                            <div class="portfolio-inner-title-2"><a href="portfolio-details.html">Landing Page</a></div>
+                            <div class="portfolio-inner-title-2"><a href="/">Landing Page</a></div>
                             <p>They produce really great content that also performs well when it comes to SEO.</p>
                             <div class="portfolio-inner-tag-2">
                                 <a href="#">Branding</a>
@@ -157,7 +157,7 @@
                             <img alt="" src="assets/img/portfolio/portfolio-2/portfolio-4.jpg">
                         </div>
                         <div class="portfolio-inner-content-2">
-                            <div class="portfolio-inner-title-2"><a href="portfolio-details.html">Applications</a></div>
+                            <div class="portfolio-inner-title-2"><a href="/">Applications</a></div>
                             <p>They produce really great content that also performs well when it comes to SEO.</p>
                             <div class="portfolio-inner-tag-2">
                                 <a href="#">Branding</a>
@@ -173,7 +173,7 @@
                             <img alt="" src="assets/img/portfolio/portfolio-2/portfolio-5.jpg">
                         </div>
                         <div class="portfolio-inner-content-2">
-                            <div class="portfolio-inner-title-2"><a href="portfolio-details.html">Website</a></div>
+                            <div class="portfolio-inner-title-2"><a href="/">Website</a></div>
                             <p>They produce really great content that also performs well when it comes to SEO.</p>
                             <div class="portfolio-inner-tag-2">
                                 <a href="#">Branding</a>
@@ -189,7 +189,7 @@
                             <img alt="" src="assets/img/portfolio/portfolio-2/portfolio-6.jpg">
                         </div>
                         <div class="portfolio-inner-content-2">
-                            <div class="portfolio-inner-title-2"><a href="portfolio-details.html">Strategic</a></div>
+                            <div class="portfolio-inner-title-2"><a href="/">Strategic</a></div>
                             <p>They produce really great content that also performs well when it comes to SEO.</p>
                             <div class="portfolio-inner-tag-2">
                                 <a href="#">Branding</a>
