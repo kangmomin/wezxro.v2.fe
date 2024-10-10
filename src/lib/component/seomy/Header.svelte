@@ -20,7 +20,7 @@
 					<div class="col-xl-2 col-lg-6 col-sm-4 col-6">
 						<div class="tplogo__area">
 							<a rel="external" href="/">
-								<img alt="logo" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo_fit_black.png">
+								<img alt="logo" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo.png">
 							</a>
 						</div>
 					</div>

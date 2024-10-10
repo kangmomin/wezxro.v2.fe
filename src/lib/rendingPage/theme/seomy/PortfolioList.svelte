@@ -114,7 +114,7 @@
     <!-- portfolio-area-end -->
 
 </main>
-<Footer />
+<Footer {data} />
 
 <!-- JS here -->
 <script src="assets/js/vendor/jquery.js"></script>

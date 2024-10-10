@@ -3,6 +3,7 @@
     import Header from "$lib/component/seomy/Header.svelte";
     import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
     import {goto} from "$app/navigation";
+    import Footer from "$lib/component/seomy/Footer.svelte";
 
     export let data
     const EN_NAME = data.props.EN_NAME,
@@ -631,7 +632,7 @@
 
 </main>
 
-<footer />
+<Footer {data} />
 
 <!-- JS here -->
 <script src="assets/js/vendor/jquery.js"></script>

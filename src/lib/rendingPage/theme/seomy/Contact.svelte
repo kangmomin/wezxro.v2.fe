@@ -1495,7 +1495,7 @@
         </div>
     </section>
     <!-- contact-area-end -->
-    <Footer/>
+    <Footer {data}/>
 </main>
 
 <!-- JS here -->
