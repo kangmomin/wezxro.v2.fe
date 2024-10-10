@@ -7,12 +7,12 @@
     import Parkinad from "$lib/rendingPage/Parkinad.svelte";
     import Somey from "$lib/rendingPage/theme/seomy/Seomy.svelte";
     import SeomyAbout from "$lib/rendingPage/theme/seomy/SeomyAbout.svelte";
+    import PortfolioList from "$lib/rendingPage/theme/seomy/PortfolioList.svelte";
     export let data
-
-    console.log(data.props)
 </script>
 
-
-{#if data.props.THEME === "SEOMY"}
+{#if data.props.EN_NAME === "WEZXRO"}
     <SeomyAbout {data} />
+{:else}
+    <h1>접근 권한이 없는 페이지 입니다.</h1>
 {/if}

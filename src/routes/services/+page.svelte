@@ -12,6 +12,4 @@
     export let data
 </script>
 
-{#if data.props.THEME === "SEOMY"}
-    <Services {data} />
-{/if}
+<Services {data} />

@@ -20,7 +20,7 @@
 					<div class="col-xl-2 col-lg-6 col-sm-4 col-6">
 						<div class="tplogo__area">
 							<a rel="external" href="/">
-								<img alt="logo" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo.png">
+								<img alt="logo" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo_fit_black.png">
 							</a>
 						</div>
 					</div>
@@ -64,8 +64,8 @@
 								<div class="tpheader__sign d-none d-md-block">
 									<a rel="external" href="/login">로그인</a>
 								</div>
-								<div class="tpheader__btn ml-25 d-none d-md-block">
-									<a class="tp-header-btn" rel="external" href="/contact">서비스 이용하기</a>
+								<div class="tpheader__sign ml-25 d-none d-md-block">
+									<a rel="external" href="/join">회원가입</a>
 								</div>
 								<div class="offcanvas-btn d-xl-none ml-20">
 									<button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>

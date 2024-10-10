@@ -8,6 +8,7 @@
     import Somey from "$lib/rendingPage/theme/seomy/Seomy.svelte";
     import SeomyAbout from "$lib/rendingPage/theme/seomy/SeomyAbout.svelte";
     import Contact from "$lib/rendingPage/theme/seomy/Contact.svelte";
+    import PortfolioList from "$lib/rendingPage/theme/seomy/PortfolioList.svelte";
     export let data
 </script>
 
@@ -15,18 +16,4 @@
     <link rel="icon" href={data.favicon} />
 </svelte:head>
 
-{#if data.props.THEME === "SEOMY"}
-    <Contact {data} />
-{:else if data.props.DOMAIN === "wezxro.com"}
-    <Wezxro {data}></Wezxro>
-{:else if data.props.DOMAIN === "lotoal.com"}
-    <Lotoal {data}></Lotoal>
-{:else if data.props.DOMAIN === "adiviy.com"}
-    <Adiviy {data}></Adiviy>
-{:else if data.props.DOMAIN === "follous.net"}
-    <Follous {data}></Follous>
-{:else if data.props.DOMAIN === "prvad.com"}
-    <Prvad {data}></Prvad>
-{:else if data.props.DOMAIN === "parkinad.com"}
-    <Parkinad {data}></Parkinad>
-{/if}
+<Contact {data} />

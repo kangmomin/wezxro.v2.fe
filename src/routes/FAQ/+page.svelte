@@ -11,6 +11,4 @@
     export let data
 </script>
 
-{#if data.props.THEME === "SEOMY"}
-    <FAQ {data} />
-{/if}
+<FAQ {data} />
