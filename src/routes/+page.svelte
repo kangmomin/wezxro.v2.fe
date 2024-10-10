@@ -1,6 +1,7 @@
 <script>
-	import Somey from "$lib/rendingPage/theme/seomy/Seomy.svelte";
-	export let data
+    import Somey from "$lib/rendingPage/theme/seomy/Seomy.svelte";
+
+    export let data
 </script>
 
 <svelte:head>

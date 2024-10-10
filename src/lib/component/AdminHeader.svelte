@@ -1,5 +1,6 @@
 <script>
     import {page} from "$app/stores";
+
     export let data
     const EN_NAME = data.props.EN_NAME
 </script>

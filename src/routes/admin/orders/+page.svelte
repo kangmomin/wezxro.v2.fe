@@ -5,7 +5,6 @@
     import type AdminOrderListDto from "$lib/types/order/AdminOrderListDto";
     import UpdateOrder from "./UpdateOrder.svelte";
     import {dateFormat} from "$lib/util/DateFormatter";
-    import type OrderListDto from "$lib/types/order/OrderListDto";
     import OrderStatus from "$lib/types/order/constant/OrderStatus";
 
     let orders: AdminOrderListDto[] = []

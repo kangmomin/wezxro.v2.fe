@@ -1,5 +1,3 @@
-import OrderStatus from "$lib/types/order/constant/OrderStatus";
-
 export default interface AdminOrderListDto {
     orderId: number,
     serviceId: number,

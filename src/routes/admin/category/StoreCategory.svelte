@@ -1,6 +1,5 @@
 <script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
-    import {goto} from "$app/navigation";
     import type {CategoryListDto} from "$lib/types/category/CategoryListDto";
     import {onMount} from "svelte";
 

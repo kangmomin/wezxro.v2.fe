@@ -4,7 +4,6 @@
     import {onMount} from "svelte";
     import {dateFormat} from "$lib/util/DateFormatter";
     import UpdateDeposit from "./UpdateDeposit.svelte";
-    import type AdminOrderListDto from "$lib/types/order/AdminOrderListDto";
 
     let deposits: AdminDepositListDto[] = []
     let allDeposit: AdminDepositListDto[] = []

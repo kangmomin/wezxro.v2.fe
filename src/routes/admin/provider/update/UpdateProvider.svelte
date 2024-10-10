@@ -1,7 +1,6 @@
 <script lang="ts">
     import {api} from "$lib/util/ApiProvider.js";
     import {onMount} from "svelte";
-    import BasicStatus from '$lib/types/common/BasicStatus';
     import type ProviderDetailDto from '$lib/types/provider/ProviderDetailDto';
 
     export let providerId: number

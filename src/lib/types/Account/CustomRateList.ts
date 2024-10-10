@@ -1,5 +1,3 @@
-import type {Account} from "$lib/types/Account/Account";
-
 export interface CustomRateList {
     id: number,
     serviceId: number,

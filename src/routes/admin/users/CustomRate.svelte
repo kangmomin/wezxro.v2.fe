@@ -4,7 +4,6 @@
     import {api} from "$lib/util/ApiProvider";
     import type UpdateUserInfo from "$lib/types/Account/UpdateUserInfo";
     import type {CustomRateList} from "$lib/types/Account/CustomRateList";
-    import {goto} from "$app/navigation";
 
     export let u: UpdateUserInfo
     export let toggleModal: Function

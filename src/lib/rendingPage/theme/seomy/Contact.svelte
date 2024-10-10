@@ -1,7 +1,6 @@
 <script>
     import Header from "$lib/component/seomy/Header.svelte";
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
-    import Loader from "$lib/component/seomy/Loader.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
 
     export let data

@@ -1,9 +1,8 @@
 <script>
-    import Loader from "$lib/component/seomy/Loader.svelte";
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import {onMount} from "svelte";
-    import { link } from 'svelte-routing';
+    import {link} from 'svelte-routing';
     import Footer from "$lib/component/seomy/Footer.svelte";
 
     export let data

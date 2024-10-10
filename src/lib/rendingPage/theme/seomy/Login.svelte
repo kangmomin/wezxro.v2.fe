@@ -1,10 +1,9 @@
 <script>
-   import Loader from "$lib/component/seomy/Loader.svelte";
-   import Header from "$lib/component/seomy/Header.svelte";
-   import {onMount} from "svelte";
-   import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
+    import Header from "$lib/component/seomy/Header.svelte";
+    import {onMount} from "svelte";
+    import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
 
-   export let data
+    export let data
    let isLogin = false
 
    const EN_NAME = data.props.EN_NAME,

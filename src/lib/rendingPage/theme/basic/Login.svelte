@@ -1,10 +1,10 @@
 <script>
     import {api} from "$lib/util/ApiProvider.js";
+    import {goto} from "$app/navigation";
 
     export let data
 
     const EN_NAME = data.props.EN_NAME
-    import {goto} from "$app/navigation";
 
     const loginInfo = {
         key: data.props.CLIENT_KEY,

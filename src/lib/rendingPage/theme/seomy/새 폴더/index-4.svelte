@@ -1,6 +1,6 @@
 <script>
-   import Loader from "$lib/component/seomy/Loader.svelte";
-   import BackToTop from "$lib/component/seomy/BackToTop.svelte";
+    import Loader from "$lib/component/seomy/Loader.svelte";
+    import BackToTop from "$lib/component/seomy/BackToTop.svelte";
 </script>
 
 <svelte:head>

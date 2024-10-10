@@ -1,7 +1,7 @@
 <script lang="ts">
     import type OrderListDto from '$lib/types/order/OrderListDto';
-    import { onMount } from 'svelte';
-    import { api } from '$lib/util/ApiProvider';
+    import {onMount} from 'svelte';
+    import {api} from '$lib/util/ApiProvider';
     import {dateFormat} from "$lib/util/DateFormatter";
     import OrderStatus from "$lib/types/order/constant/OrderStatus";
 

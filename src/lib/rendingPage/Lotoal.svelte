@@ -1,6 +1,5 @@
 <script>
     import {onMount} from "svelte";
-    import jQuery from 'jquery';
 
     export let data
     let isLogin = false

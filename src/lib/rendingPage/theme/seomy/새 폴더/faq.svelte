@@ -1,12 +1,11 @@
 <script>
-   import BackToTop from "$lib/component/seomy/BackToTop.svelte";
-   import Header from "$lib/component/seomy/Header.svelte";
-   import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
-   import {onMount} from "svelte";
-   import Loader from "$lib/component/seomy/Loader.svelte";
-   import Footer from "$lib/component/seomy/Footer.svelte";
+    import BackToTop from "$lib/component/seomy/BackToTop.svelte";
+    import Header from "$lib/component/seomy/Header.svelte";
+    import {onMount} from "svelte";
+    import Loader from "$lib/component/seomy/Loader.svelte";
+    import Footer from "$lib/component/seomy/Footer.svelte";
 
-   export let data
+    export let data
    let isLogin = false
    const EN_NAME = data.props.EN_NAME,
            KR_NAME = data.props.KR_NAME

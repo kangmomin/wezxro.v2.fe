@@ -2,8 +2,8 @@
 
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
-    import type { ServiceListDto } from '$lib/types/service/ServiceListDto';
-    import type { CategoryListDto } from '$lib/types/category/CategoryListDto';
+    import type {ServiceListDto} from '$lib/types/service/ServiceListDto';
+    import type {CategoryListDto} from '$lib/types/category/CategoryListDto';
 
     let category: CategoryListDto[] = []
     let services: ServiceListDto[] = []

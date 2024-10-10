@@ -1,9 +1,8 @@
 <script lang="ts">
     import {onMount} from "svelte";
     import {api} from "$lib/util/ApiProvider.js";
-    import StoreService from "../services/StoreService.svelte";
     import StoreCategory from "./StoreCategory.svelte";
-    import type { CategoryListDto } from '$lib/types/category/CategoryListDto';
+    import type {CategoryListDto} from '$lib/types/category/CategoryListDto';
 
     let activeCnt = 0, deactiveCnt = 0, totalCnt = 0
     let category: CategoryListDto[] = []
