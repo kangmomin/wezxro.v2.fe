@@ -28,6 +28,7 @@
 						<div class="tpmenu__area main-mega-menu inner-header tpmenu__hover">
 							<nav class="tp-main-menu-content">
 								<ul>
+									{#if EN_NAME === "WEZXRO" }
 									<li class="has-dropdown">
 										<a rel="external" href="/">{EN_NAME}</a>
 										<ul class="tp-submenu submenu">
@@ -46,6 +47,10 @@
 											<li><a rel="external" href="/portfolios">포트폴리오</a></li>
 										</ul>
 									</li>
+									{:else}
+										<li><a rel="external" href="/FAQ">FAQ</a></li>
+										<li><a rel="external" href="/services">SERVICES</a></li>
+									{/if}
 									<li>
 										<a rel="external" href="/contact">고객센터</a>
 									</li>
