@@ -9827,7 +9827,7 @@
               : Math.max(ceil10($$.getAxisWidthByAxisId('x', withoutRecompute)), 40);
       }
       else if (!config.axis_y_show || config.axis_y_inner) {
-          // && !config.axis_rotated
+          // && !seomySetting.axis_rotated
           return $$.axis.getYAxisLabelPosition().isOuter ? 30 : 1;
       }
       else {
@@ -9843,7 +9843,7 @@
           padding = defaultPadding + legendWidthOnRight;
       }
       else if (!config.axis_y2_show || config.axis_y2_inner) {
-          // && !config.axis_rotated
+          // && !seomySetting.axis_rotated
           padding =
               2 +
                   legendWidthOnRight +

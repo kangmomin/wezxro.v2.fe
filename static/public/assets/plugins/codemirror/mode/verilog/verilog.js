@@ -31,7 +31,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
    */
   var keywords = words(
     "accept_on alias always always_comb always_ff always_latch and assert assign assume automatic before begin bind " +
-    "bins binsof bit break buf bufif0 bufif1 byte case casex casez cell chandle checker class clocking cmos config " +
+    "bins binsof bit break buf bufif0 bufif1 byte case casex casez cell chandle checker class clocking cmos seomySetting " +
     "const constraint context continue cover covergroup coverpoint cross deassign default defparam design disable " +
     "dist do edge else end endcase endchecker endclass endclocking endconfig endfunction endgenerate endgroup " +
     "endinterface endmodule endpackage endprimitive endprogram endproperty endspecify endsequence endtable endtask " +
@@ -81,7 +81,7 @@ CodeMirror.defineMode("verilog", function(config, parserConfig) {
   // Block openings which are closed by a matching keyword in the form of ("end" + keyword)
   // E.g. "task" => "endtask"
   var blockKeywords = words(
-    "case checker class clocking config function generate interface module package " +
+    "case checker class clocking seomySetting function generate interface module package " +
     "primitive program property specify sequence table task"
   );
 

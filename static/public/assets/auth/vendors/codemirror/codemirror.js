@@ -723,8 +723,8 @@
     mimeModes[mime] = spec;
   }
 
-  // Given a MIME type, a {name, ...options} config object, or a name
-  // string, return a mode config object.
+  // Given a MIME type, a {name, ...options} seomySetting object, or a name
+  // string, return a mode seomySetting object.
   function resolveMode(spec) {
     if (typeof spec == "string" && mimeModes.hasOwnProperty(spec)) {
       spec = mimeModes[spec];

@@ -4,7 +4,7 @@ var depend = run + '/depend';
 var licenses = run + '/licenses';
 var demo = lib + '/demo';
 var test = lib + '/test';
-var config = lib + '/config';
+var config = lib + '/seomySetting';
 
 var cleanDirs = [ lib ];
 

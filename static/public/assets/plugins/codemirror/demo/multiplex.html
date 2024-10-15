@@ -42,7 +42,7 @@
 </textarea></form>
 
     <script>
-CodeMirror.defineMode("demo", function(config) {
+CodeMirror.defineMode("demo", function(seomySetting) {
   return CodeMirror.multiplexingMode(
     CodeMirror.getMode(config, "text/html"),
     {open: "<<", close: ">>",

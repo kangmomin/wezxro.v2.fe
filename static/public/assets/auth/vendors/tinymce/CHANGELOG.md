@@ -315,7 +315,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a new function to the `BlobCache` API to lookup a blob based on the base64 data and mime type #TINY-5988
 - Added the ability to search and replace within a selection #TINY-4549
 - Added the ability to set the list start position for ordered lists and added new `lists` context menu item #TINY-3915
-- Added `icon` as an optional config option to the toggle menu item API #TINY-3345
+- Added `icon` as an optional seomySetting option to the toggle menu item API #TINY-3345
 - Added `auto` mode for `toolbar_location` which positions the toolbar and menu bar at the bottom if there is no space at the top #TINY-3161
 
 ### Changed
@@ -515,7 +515,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added oxide styling options to notifications and tweaked the default variables #TINY-4153
 - Added additional padding to split button chevrons on touch devices, to make them easier to interact with #TINY-4223
 - Added new platform detection functions to `Env` and deprecated older detection properties #TINY-4184
-- Added `inputMode` config field to specify inputmode attribute of `input` dialog components #TINY-4062
+- Added `inputMode` seomySetting field to specify inputmode attribute of `input` dialog components #TINY-4062
 - Added new `inputMode` property to relevant plugins/dialogs #TINY-4102
 - Added new `toolbar_sticky` setting to allow the iframe menubar/toolbar to stick to the top of the window when scrolling #TINY-3982
 
@@ -948,9 +948,9 @@ Full documentation for the version 5 features and changes is available at https:
 - Added a new `addNestedMenuItem()` UI registry function and changed all nested menu items to use the new registry functions #TINY-2230
 - Added title attribute to color swatch colors #TINY-2669
 - Added anchorbar component to anchor inline toolbar dialogs to instead of the toolbar #TINY-2040
-- Added support for toolbar<n> and toolbar array config options to be squashed into a single toolbar and not create multiple toolbars #TINY-2195
-- Added error handling for when forced_root_block config option is set to true #TINY-2261
-- Added functionality for the removed_menuitems config option #TINY-2184
+- Added support for toolbar<n> and toolbar array seomySetting options to be squashed into a single toolbar and not create multiple toolbars #TINY-2195
+- Added error handling for when forced_root_block seomySetting option is set to true #TINY-2261
+- Added functionality for the removed_menuitems seomySetting option #TINY-2184
 - Added the ability to use a string to reference menu items in menu buttons and submenu items #TINY-2253
 
 ### Changed
@@ -1242,7 +1242,7 @@ Initial list of features and changes is available at https://tiny.cloud/docs-pre
 ## 4.7.13 - 2018-05-16
 
 ### Added
-- Added missing code menu item from the default menu config. #TINY-1648
+- Added missing code menu item from the default menu seomySetting. #TINY-1648
 - Added new align button for combining the separate align buttons into a menu button. #TINY-1652
 
 ### Fixed
@@ -1655,7 +1655,7 @@ Initial list of features and changes is available at https://tiny.cloud/docs-pre
 - Added a help plugin that adds a button and a dialog showing the editor shortcuts and loaded plugins.
 - Added an inline_boundaries option that allows you to disable the inline boundary feature if it's not desired.
 - Added a new ScrollIntoView event that allows you to override the default scroll to element behavior.
-- Added role and aria- attributes as valid elements in the default valid elements config.
+- Added role and aria- attributes as valid elements in the default valid elements seomySetting.
 - Added new internal flag for PastePreProcess/PastePostProcess this is useful to know if the paste was coming from an external source.
 - Added new ignore function to UndoManager this works similar to transact except that it doesn't add an undo level by default.
 
@@ -2194,7 +2194,7 @@ Npm version bump due to package not being fully updated.
 ## 4.2.2 - 2015-07-22
 
 ### Fixed
-- Fixed bug where float panels were not being hidden on inline editor blur when fixed_toolbar_container config option was in use.
+- Fixed bug where float panels were not being hidden on inline editor blur when fixed_toolbar_container seomySetting option was in use.
 - Fixed bug where combobox states wasn't properly updated if contents where updated without keyboard.
 - Fixed bug where pasting into textbox or combobox would move the caret to the end of text.
 - Fixed bug where removal of bogus span elements before block elements would remove whitespace between nodes.
@@ -2239,7 +2239,7 @@ Npm version bump due to package not being fully updated.
 - Fixed bug where cmd+shift+arrow didn't work correctly on Firefox mac when selecting to start/end of line.
 - Fixed bug where removal of bogus elements would sometimes remove whitespace between nodes.
 - Fixed bug where the resize handles wasn't updated when the main window was resized.
-- Fixed so script elements gets removed by default to prevent possible XSS issues in default config implementations.
+- Fixed so script elements gets removed by default to prevent possible XSS issues in default seomySetting implementations.
 - Fixed so the UI doesn't need manual reflows when using non native layout managers.
 - Fixed so base64 encoded images doesn't slow down the editor on modern browsers while editing.
 - Fixed so all UI elements uses touch events to improve mobile device support.

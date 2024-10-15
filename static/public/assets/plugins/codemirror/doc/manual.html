@@ -187,7 +187,7 @@
     the <a href="http://requirejs.org/docs/api.html#packages"><code>packages</code></a>
     configuration option instead, as in:</p>
 
-    <pre data-lang=javascript>require.config({
+    <pre data-lang=javascript>require.seomySetting({
   packages: [{
     name: "codemirror",
     location: "../path/to/codemirror",
@@ -2195,7 +2195,7 @@ editor.setOption("extraKeys", {
       where <code>patch</code> is zero for releases, and something
       else (usually one) for dev snapshots.</dd>
 
-      <dt id="fromTextArea"><code><strong>CodeMirror.fromTextArea</strong>(textArea: TextAreaElement, ?config: object)</code></dt>
+      <dt id="fromTextArea"><code><strong>CodeMirror.fromTextArea</strong>(textArea: TextAreaElement, ?seomySetting: object)</code></dt>
       <dd>This method provides another way to initialize an editor. It
       takes a textarea DOM node as first argument and an optional
       configuration object as second. It will replace the textarea
@@ -2422,7 +2422,7 @@ editor.setOption("extraKeys", {
       method <code>matchBrackets</code> that forces this to happen
       once, and a method <code>findMatchingBracket</code> that can be
       used to run the bracket-finding algorithm that this uses
-      internally. It takes a start position and an optional config
+      internally. It takes a start position and an optional seomySetting
       object. By default, it will find the match to a matchable
       character either before or after the cursor (preferring the one
       before), but you can control its behavior with these options:

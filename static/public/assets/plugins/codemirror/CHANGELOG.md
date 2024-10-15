@@ -712,7 +712,7 @@ Presentation-related elements DOM elements are now marked as such to help screen
 
 ### Bug fixes
 
-Include rollup.config.js in NPM package, so that it can be used to build from source.
+Include rollup.SeomySetting.js in NPM package, so that it can be used to build from source.
 
 ## 5.22.0 (2016-12-20)
 

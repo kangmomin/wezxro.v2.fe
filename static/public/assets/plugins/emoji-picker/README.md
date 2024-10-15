@@ -19,7 +19,7 @@
 
   ```
     <!-- ** Don't forget to Add jQuery here ** -->
-    <script src="lib/js/config.js"></script>
+    <script src="lib/js/SeomySetting.js"></script>
     <script src="lib/js/util.js"></script>
     <script src="lib/js/jquery.emojiarea.js"></script>
     <script src="lib/js/emoji-picker.js"></script>

@@ -1,51 +1,19 @@
 <script>
+    import {seomySetting} from "$lib/rendingPage/theme/seomy/SeomySetting.js";
+    import {onMount} from "svelte";
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
-    import {onMount} from "svelte";
-    import {link} from 'svelte-routing';
     import Footer from "$lib/component/seomy/Footer.svelte";
 
     export let data
+
     let isLogin = false
 
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
 
     /** 메인 페이지 공통 설정 */
-    const config = {
-        firstSection: {
-            bannerContent: {
-                bannerTitle: {
-                    firstSection: "WEZXRO는",
-                    secondSection: [
-                        "블로그",
-                        "인스타",
-                        "트위터(x)"
-                    ],
-                    thirdSection: "에 홍보합니다."
-                },
-                bannerExplain: "All in one SEO for your business to give real impact\nconsultancy and analysis.!"
-            },
-            MainContactBtn: {
-                text: "서비스 이용해보기",
-                link: "/login"
-            },
-            phoneNumber: {
-                text: "문의하기",
-                number: "01012341234"
-            },
-            email: {
-                text: "wezxro@hwalaon.com"
-            },
-            links: {
-                facebook: "",
-                twitter: "",
-                instagram: "",
-                youtube: "",
-                linkedin: ""
-            }
-        }
-    }
+    const config = seomySetting[EN_NAME]
 
     onMount(() => {
         let token = localStorage.getItem("accessToken");
@@ -96,7 +64,7 @@
         <div class="offcanvas__content">
             <div class="offcanvas__top mb-50 d-flex justify-content-between align-items-center">
                 <div class="offcanvas__logo logo">
-                    <a href="/" use:link>
+                    <a href="/">
                         <img alt="logo" src="assets/img/logo/logo-pink.svg">
                     </a>
                 </div>
@@ -104,7 +72,7 @@
             <div class="tp-main-menu-mobile mb-35"></div>
             <div class="offcanvas__btn">
                 <a class="tp-btn w-100" href="{config.firstSection.MainContactBtn.link}">
-                    {config.firstSection.MainContactBtn.text}
+                    {@html config.firstSection.MainContactBtn.text}
                 </a>
             </div>
             <div class="offcanvas__contact mb-40">
@@ -140,19 +108,20 @@
                     <div class="banner-4">
                         <div class="banner-4-content">
                             <h4 class="banner-4-title cd-headline clip is-full-width">
-                                {config.firstSection.bannerContent.bannerTitle.firstSection}
+                                {@html config.firstSection.bannerContent.bannerTitle.firstSection}
                                 <br>
                                 <span class="cd-words-wrapper">
-                                {#each config.firstSection.bannerContent.bannerTitle.secondSection as text, idx}
-                                    {#if idx === 0}
-                                        <b class="is-visible">{text}</b>
-                                    {:else}
-                                        <b>{text}</b>
-                                    {/if}
-                                {/each}
-                           </span>
-                                {config.firstSection.bannerContent.bannerTitle.thirdSection}
+                                    {#each config.firstSection.bannerContent.bannerTitle.secondSection as text, idx}
+                                        {#if idx === 0}
+                                            <b class="is-visible p-0">{text}</b>
+                                        {:else}
+                                            <b class="p-0">{text}</b>
+                                        {/if}
+                                    {/each}
+                               </span>
+                                {@html config.firstSection.bannerContent.bannerTitle.thirdSection}
                             </h4>
+                            <br />
                             <p>{@html config.firstSection.bannerContent.bannerExplain.replaceAll("\n", "<br/>")}</p>
                             <div class="banner-4-btn mb-30">
                                 <a class="blue-btn" href="{config.firstSection.MainContactBtn.link}">

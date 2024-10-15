@@ -679,7 +679,7 @@ var pJS = function(tag_id, params){
         dy = p1.y - p2.y,
         dist = Math.sqrt(dx*dx + dy*dy);
 
-    /* draw a line between p1 and p2 if the distance between them is under the config distance */
+    /* draw a line between p1 and p2 if the distance between them is under the seomySetting distance */
     if(dist <= pJS.particles.line_linked.distance){
 
       var opacity_line = pJS.particles.line_linked.opacity - (dist / (1/pJS.particles.line_linked.opacity)) / pJS.particles.line_linked.distance;
@@ -1027,7 +1027,7 @@ var pJS = function(tag_id, params){
           dy_mouse = p.y - pJS.interactivity.mouse.pos_y,
           dist_mouse = Math.sqrt(dx_mouse*dx_mouse + dy_mouse*dy_mouse);
 
-      /* draw a line between the cursor and the particle if the distance between them is under the config distance */
+      /* draw a line between the cursor and the particle if the distance between them is under the seomySetting distance */
       if(dist_mouse <= pJS.interactivity.modes.grab.distance){
 
         var opacity_line = pJS.interactivity.modes.grab.line_linked.opacity - (dist_mouse / (1/pJS.interactivity.modes.grab.line_linked.opacity)) / pJS.interactivity.modes.grab.distance;
@@ -1521,7 +1521,7 @@ window.particlesJS = function(tag_id, params){
 
 window.particlesJS.load = function(tag_id, path_config_json, callback){
 
-  /* load json config */
+  /* load json seomySetting */
   var xhr = new XMLHttpRequest();
   xhr.open('GET', path_config_json);
   xhr.onreadystatechange = function (data) {
@@ -1532,7 +1532,7 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
         if(callback) callback();
       }else{
         console.log('Error pJS - XMLHttpRequest status: '+xhr.status);
-        console.log('Error pJS - File config not found');
+        console.log('Error pJS - File seomySetting not found');
       }
     }
   };

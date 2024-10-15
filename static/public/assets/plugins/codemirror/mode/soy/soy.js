@@ -378,7 +378,7 @@
               }
             }
           } else if (endTag) {
-            // Assume all tags with a closing tag are defined in the config.
+            // Assume all tags with a closing tag are defined in the seomySetting.
             tagError = true;
           }
           return (tagError ? "error " : "") + "keyword";

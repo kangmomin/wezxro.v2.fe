@@ -2,7 +2,7 @@
   'use strict';
   $(function() {
 
-    //basic config
+    //basic seomySetting
     if ($("#js-grid").length) {
       $("#js-grid").jsGrid({
         height: "500px",

@@ -5313,7 +5313,7 @@
       this._activeTrigger = {};
       this._popper = null; // Protected
 
-      this.config = this._getConfig(config);
+      this.seomySetting = this._getConfig(config);
       this.tip = null;
 
       this._setListeners();

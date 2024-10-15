@@ -3620,7 +3620,7 @@
         var _this = this;
         this.buildTemplates();
 
-        // Save rotate config for each item to persist its rotate, flip values
+        // Save rotate seomySetting for each item to persist its rotate, flip values
         // even after navigating to diferent slides
         this.rotateValuesList = {};
 

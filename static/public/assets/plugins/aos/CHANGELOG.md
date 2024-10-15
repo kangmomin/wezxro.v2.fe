@@ -43,7 +43,7 @@
 - Make `data-aos` attributes the default and only proper ones
 - Use maps and loops in Sass
 - Replace gulp with webpack
-- Rewrite Karma config and use webpack to bundle tests
+- Rewrite Karma seomySetting and use webpack to bundle tests
 - Upgrade to ES6
 - Update documentation
 - Update demos
