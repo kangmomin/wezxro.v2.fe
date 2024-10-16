@@ -208,8 +208,8 @@
                             </i>
                         </div>
                         <div class="services-content-4">
-                            <h5 class="title mb-20">{card.mainText}</h5>
-                            <p>{card.description}</p>
+                            <h5 class="title mb-20">{@html card.mainText}</h5>
+                            <p>{@html card.description}</p>
                             <div class="services-btn-4 p-relative">
                                 <a href="{card.readMore.link}">
                                     <span>{card.readMore.text}</span>

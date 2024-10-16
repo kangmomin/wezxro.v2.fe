@@ -1,6 +1,9 @@
 <script>
+    import {seomySetting} from "$lib/rendingPage/theme/seomy/SeomySetting.js";
+
     export let data
     const {EN_NAME} = data.props
+    const config = seomySetting[EN_NAME].footer
 </script>
 
 <footer>
@@ -19,39 +22,27 @@
                                     </a>
                                 </div>
                                 <div class="footer-widget-content">
-                                    <p class="footer-widget-text mb-20">This SEO is most reputed firm <br> which provides
-                                        various online <br> marketing </p>
+                                    <p class="footer-widget-text mb-20">{@html config.firstRow.content}</p>
                                     <div class="fooer-btn-4">
-                                        <a class="blue-btn" href="/login">Grow Traffic</a>
+                                        <a class="blue-btn" href="{config.firstRow.btn.link}">{config.firstRow.btn.text}</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        {#each config.listRow as row}
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="footer-widget  footer-4-col-2 pl-30 mb-40">
-                                <h4 class="footer-widget-title mb-15">Information</h4>
+                                <h4 class="footer-widget-title mb-15">{row.title}</h4>
                                 <div class="footer-widget-link">
                                     <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li><a href="/about">About Us</a></li>
-                                        <li><a href="/FAQ">FAQ</a></li>
-                                        <li><a href="/services">Services</a></li>
-                                        <li><a href="/portfolios">Portfolio</a></li>
+                                        {#each row.list as data}
+                                        <li><a href="{data.link}">{data.text}</a></li>
+                                        {/each}
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget  footer-4-col-3 mb-40">
-                                <h4 class="footer-widget-title mb-15">파트너</h4>
-                                <div class="footer-widget-link">
-                                    <ul>
-                                        <li><a href="/portfolios">포트폴리오</a></li>
-                                        <li><a href="/join-partner">파트너 신청하기</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        {/each}
                         <div class="col-lg-3 col-md-6 col-sm-8">
                             <div class="footer-widget  footer-4-col-4 mb-40">
                                 <h4 class="footer-widget-title mb-20">Subcribe.</h4>
