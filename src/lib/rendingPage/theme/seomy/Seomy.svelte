@@ -192,34 +192,27 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-wrapper text-center mb-60">
-                        <span>Why services Us</span>
-                        <h5 class="section-title-4">Our à services</h5>
+                        <span>{config.secondSection.subText}</span>
+                        <h5 class="section-title-4">{config.secondSection.mainText}</h5>
                     </div>
                 </div>
             </div>
             <div class="row">
+                {#each config.secondSection.cards as card, i}
                 <div class="col-lg-4 col-md-6">
                     <div class="services-item-4 text-center mb-55">
                         <div class="services-icon-4 mb-30">
-                            <img alt="" src="assets/img/shape/choose-4-shape-1.png">
+                            <img alt="" src="assets/img/shape/choose-4-shape-{i+1}.png">
                             <i>
-                                <svg fill="none" height="65" viewBox="0 0 65 65" width="65"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M23.3913 18.6022C27.0321 15.9133 35.5256 9.26806 38.3667 3.82084L38.3602 3.81737C38.7873 2.99837 39.7947 2.68738 40.6103 3.12271C40.992 3.32642 41.2641 3.65753 41.4018 4.03612L41.4024 4.03797L48.2132 22.7506L55.0248 41.465C55.3423 42.3375 54.8992 43.2999 54.0351 43.6144C53.5859 43.778 53.1113 43.7341 52.7145 43.5318C47.0056 41.2403 36.35 41.6053 31.8651 41.8837L23.3913 18.6022L23.3913 18.6022ZM30.0155 42.0171L22.2275 44.8517C19.2621 45.931 16.1218 45.688 13.4516 44.427C10.7813 43.166 8.57886 40.8861 7.48899 37.8918L7.28407 37.3287C6.19422 34.3344 6.4159 31.1722 7.65086 28.4898C8.88585 25.8074 11.1352 23.6027 14.1006 22.5234L21.8886 19.6888L30.0154 42.0171L30.0155 42.0171Z"
-                                          fill="#775AFC"/>
-                                    <path d="M52.2057 28.8515C53.0344 28.1427 53.6898 27.2648 54.1389 26.2894C54.9452 24.5384 55.0866 22.4731 54.3717 20.5091C53.6569 18.5451 52.2211 17.0539 50.4779 16.2308C49.5069 15.7723 48.4405 15.5211 47.3501 15.5107L52.2057 28.8514L52.2057 28.8515Z"
-                                          fill="#775AFC"/>
-                                    <path d="M19.4797 42.2723L25.489 40.0851C26.3531 39.7706 27.3111 40.223 27.6287 41.0956L33.2801 56.6226C33.5976 57.4951 33.1545 58.4575 32.2904 58.772L26.2812 60.9592C25.4171 61.2737 24.459 60.8213 24.1415 59.9487L18.4901 44.4217C18.1725 43.5492 18.6156 42.5868 19.4797 42.2723Z"
-                                          fill="#775AFC"/>
-                                </svg>
+                                <img src="{card.image}" width="65" height="65" alt="">
                             </i>
                         </div>
                         <div class="services-content-4">
-                            <h5 class="title mb-20">Digital Marketing</h5>
-                            <p>We develop digital strategies, products and services appreciated by clients.</p>
+                            <h5 class="title mb-20">{card.mainText}</h5>
+                            <p>{card.description}</p>
                             <div class="services-btn-4 p-relative">
-                                <a href="/">
-                                    <span>Read More</span>
+                                <a href="{card.readMore.link}">
+                                    <span>{card.readMore.text}</span>
                                     <i>
                                         <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -236,97 +229,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item-4 text-center mb-55">
-                        <div class="services-icon-4 mb-30">
-                            <img alt="" src="assets/img/shape/choose-4-shape-2.png">
-                            <i>
-                                <svg fill="none" height="57" viewBox="0 0 56 57" width="56"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.928711 13.8593C2.72083 7.78287 7.78916 2.71454 13.8656 0.922424C18.4859 -0.421664 21.6781 -0.309656 23.8902 1.34245C26.5504 3.33058 26.8584 6.91481 26.8584 9.46298V16.4354C26.8584 23.3239 23.7222 26.8241 17.5618 26.8241H9.52527C7.00511 26.8241 3.39287 26.5161 1.40474 23.8559C-0.303368 21.6718 -0.443378 18.4796 0.928711 13.8593Z"
-                                          fill="#FF8139"/>
-                                    <path d="M8.65652 31.8085C9.38457 30.9685 10.4486 30.4924 11.5407 30.4924H21.5654C26.4937 30.4924 30.4979 26.4882 30.4979 21.5599V11.5352C30.4979 10.4431 30.974 9.37907 31.814 8.65102C32.6261 7.92297 33.7462 7.58695 34.8102 7.72696C41.3907 8.56701 47.4391 12.1792 51.3873 17.6116C55.3636 23.072 56.8197 29.7364 55.5596 36.4008C53.7395 46.0335 46.039 53.734 36.3783 55.5541C34.8382 55.8621 33.2981 56.0021 31.758 56.0021C26.6897 56.0021 21.7894 54.434 17.6171 51.3818C12.1848 47.4335 8.57252 41.3851 7.73246 34.8047C7.59246 33.7127 7.92848 32.6206 8.65652 31.8085Z"
-                                          fill="#FF8139"/>
-                                </svg>
-                            </i>
-                        </div>
-                        <div class="services-content-4">
-                            <h5 class="title mb-20">SEO Analytics</h5>
-                            <p>We develop digital strategies, products and services appreciated by clients.</p>
-                            <div class="services-btn-4 p-relative">
-                                <a href="/">
-                                    <span>Read More</span>
-                                    <i>
-                                        <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.2871 1L17 6.71285L11.2871 12.4257" stroke="currentColor"
-                                                  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                                  stroke-width="1.5"/>
-                                            <path d="M1 6.71313H16.8397" stroke="currentColor" stroke-linecap="round"
-                                                  stroke-linejoin="round" stroke-miterlimit="10"
-                                                  stroke-width="1.5"/>
-                                        </svg>
-                                    </i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item-4 text-center mb-55">
-                        <div class="services-icon-4 mb-30">
-                            <img alt="" src="assets/img/shape/choose-4-shape-3.png">
-                            <i>
-                                <svg fill="none" height="96" viewBox="0 0 96 96" width="96"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <g filter="url(#filter0_d_1916_296)">
-                                        <path d="M66.6669 53.3331C64.0965 53.3331 61.7725 54.3719 60.0841 56.054L49.2446 49.628C49.9397 47.8878 50.3338 45.9915 50.3338 44C50.3338 42.0085 49.9397 40.1122 49.2425 38.372L60.0841 31.946C61.7725 33.6274 64.0965 34.6669 66.6669 34.6669C71.8231 34.6669 76 30.49 76 25.3331C76 20.179 71.8231 16 66.6669 16C61.5128 16 57.3331 20.179 57.3331 25.3331C57.3331 26.2333 57.5018 27.088 57.7391 27.9105L46.8702 34.3526C44.0898 30.9828 39.8793 28.8331 35.1669 28.8331C26.79 28.8331 20 35.6238 20 44C20 52.379 26.79 59.1669 35.1669 59.1669C39.8786 59.1669 44.0898 57.0179 46.8702 53.6474L57.7391 60.0895C57.5018 60.912 57.3331 61.7667 57.3331 62.6669C57.3331 67.8231 61.5128 72 66.6669 72C71.8231 72 76 67.8231 76 62.6669C76 57.5128 71.8231 53.3331 66.6669 53.3331Z"
-                                              fill="#3CD0FF"/>
-                                    </g>
-                                    <defs>
-                                        <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"
-                                                height="96" id="filter0_d_1916_296" width="96"
-                                                x="0" y="0">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                            <feColorMatrix in="SourceAlpha" result="hardAlpha"
-                                                           type="matrix"
-                                                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                                            <feOffset dy="4"/>
-                                            <feGaussianBlur stdDeviation="10"/>
-                                            <feComposite in2="hardAlpha" operator="out"/>
-                                            <feColorMatrix type="matrix"
-                                                           values="0 0 0 0 0.231373 0 0 0 0 0.815686 0 0 0 0 1 0 0 0 0.4 0"/>
-                                            <feBlend in2="BackgroundImageFix" mode="normal"
-                                                     result="effect1_dropShadow_1916_296"/>
-                                            <feBlend in="SourceGraphic" in2="effect1_dropShadow_1916_296" mode="normal"
-                                                     result="shape"/>
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </i>
-                        </div>
-                        <div class="services-content-4">
-                            <h5 class="title mb-20">Social Marketing</h5>
-                            <p>We develop digital strategies, products and services appreciated by clients.</p>
-                            <div class="services-btn-4 p-relative">
-                                <a href="/">
-                                    <span>Read More</span>
-                                    <i>
-                                        <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.2871 1L17 6.71285L11.2871 12.4257" stroke="currentColor"
-                                                  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                                  stroke-width="1.5"/>
-                                            <path d="M1 6.71313H16.8397" stroke="currentColor" stroke-linecap="round"
-                                                  stroke-linejoin="round" stroke-miterlimit="10"
-                                                  stroke-width="1.5"/>
-                                        </svg>
-                                    </i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/each}
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
@@ -334,9 +237,9 @@
                         <div class="servics-details-4 d-flex align-items-center justify-content-center">
                             <img alt="" src="assets/img/shape/header-rocket.png">
                             <p>
-                                You can also find our
-                                <a href="/services">
-                                    Services
+                                서비스 및 대행사, 패널 제작 문의는
+                                <a href="/contact">
+                                    고객센터
                                     <i class="d-none d-md-block">
                                         <svg fill="none" height="7" viewBox="0 0 60 7" width="60"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +248,7 @@
                                         </svg>
                                     </i>
                                 </a>
-                                to contact for the consulting.
+                                로 연락 부탁드립니다.
                             </p>
                         </div>
                     </div>
@@ -368,50 +271,63 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="tpbrand tpbrand-active-4 mb-170">
-                            <div class="tpbrand-item-4 mb-35">
-                                <img alt="" src="assets/img/brand/logo-3-1.png">
-                            </div>
-                            <div class="tpbrand-item-4 mb-35">
-                                <img alt="" src="assets/img/brand/logo-3-2.png">
-                            </div>
-                            <div class="tpbrand-item-4 mb-35">
-                                <img alt="" src="assets/img/brand/logo-3-3.png">
-                            </div>
-                            <div class="tpbrand-item-4 mb-35">
-                                <img alt="" src="assets/img/brand/logo-3-4.png">
-                            </div>
-                            <div class="tpbrand-item-4 mb-35">
-                                <img alt="" src="assets/img/brand/logo-3-5.png">
-                            </div>
-                            <div class="tpbrand-item-4 mb-35">
-                                <img alt="" src="assets/img/brand/logo-3-1.png">
-                            </div>
-                        </div>
+                        <div class="tpbrand tpbrand-active-4 mb-170 slick-initialized slick-slider slick-dotted">
+                            <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3978px; transform: translate3d(-1170px, 0px, 0px);"><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-2.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-4" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-3.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-4.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-5.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-1.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide50" aria-describedby="slick-slide-control50">
+                                <img src="assets/img/brand/logo-3-1.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide51" aria-describedby="slick-slide-control51">
+                                <img src="assets/img/brand/logo-3-2.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide52" aria-describedby="slick-slide-control52">
+                                <img src="assets/img/brand/logo-3-3.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide53" aria-describedby="slick-slide-control53">
+                                <img src="assets/img/brand/logo-3-4.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="4" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide54" aria-describedby="slick-slide-control54">
+                                <img src="assets/img/brand/logo-3-5.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide" data-slick-index="5" aria-hidden="true" style="width: 234px;" tabindex="-1" role="tabpanel" id="slick-slide55" aria-describedby="slick-slide-control55">
+                                <img src="assets/img/brand/logo-3-1.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-1.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-2.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="8" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-3.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="9" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-4.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="10" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-5.png" alt="">
+                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="11" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
+                                <img src="assets/img/brand/logo-3-1.png" alt="">
+                            </div></div></div>
+
+
+
+
+
+                            <ul class="slick-dots" style="" role="tablist"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control50" aria-controls="slick-slide50" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control51" aria-controls="slick-slide51" aria-label="2 of 2" tabindex="-1">2</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control52" aria-controls="slick-slide52" aria-label="3 of 2" tabindex="-1">3</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control53" aria-controls="slick-slide53" aria-label="4 of 2" tabindex="-1">4</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control54" aria-controls="slick-slide54" aria-label="5 of 2" tabindex="-1">5</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control55" aria-controls="slick-slide55" aria-label="6 of 2" tabindex="-1">6</button></li></ul></div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- wave-animation -->
         <div class="wave-bg">
-            <svg class="wave wave-1" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="wave wave-1">
                 <title>Wave</title>
                 <defs></defs>
-                <path d="M1920.000,58.998 L1920.000,164.998 L0.000,164.998 L0.000,119.999
-         C0.000,119.999 145.549,49.265 313.203,40.999 C525.449,30.533 672.724,94.775
-         866.895,101.761 C907.604,103.225 957.454,99.228 1007.943,88.724 C1145.929,60.014
-         1219.971,11.807 1403.910,2.999 C1450.093,0.787 1504.925,-13.381 1775.283,66.829
-         C1844.663,87.411 1920.000,58.998 1920.000,58.998 Z" id="feel-the-wave"/>
+                <path id="feel-the-wave" d="M 0 213.04064072078822 C 181.64285714285725 174.4674545919669 181.64285714285703 174.4674545919669 363.28571428571405 193.7540476563775 C 544.928571428571 213.04064072078822 544.928571428571 213.04064072078822 726.5714285714281 168.64536205176225 C 908.2142857142852 124.25008338273638 908.2142857142852 124.25008338273638 1089.857142857142 154.41372662253795 C 1271.499999999999 184.57736986233954 1271.499999999999 184.57736986233954 1453.1428571428562 160.52423702728655 C 1634.7857142857133 136.47110419223355 1634.7857142857133 136.47110419223355 1816.4285714285706 182.91294954068331 C 1998.071428571428 229.35479488913307 1998.071428571428 229.35479488913307 2179.714285714284 206.68970577821563 C 2361.357142857141 184.02461666729815 2361.357142857141 184.02461666729815 2542.999999999998 154.84848139145004 L 2543 8531.015625 L 0 8531.015625 Z" fill="rgba(255, 255, 255, 1)"></path>
             </svg>
 
-            <svg class="wave" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="wave">
                 <title>Wave</title>
-                <path d="M1093.910,5.685 C1317.402,-23.097 1421.263,80.301 1608.427,83.440
-         C1723.626,85.372 1799.711,52.828 1853.587,26.599 C1879.056,14.199
-         1920.000,11.439 1920.000,11.439 L1920.000,190.998 L0.000,190.998 L0.000,53.998
-         C0.000,53.998 27.746,55.576 50.698,61.929 C140.266,86.724 355.925,147.932
-         523.203,133.999 C648.841,123.533 727.916,98.315 790.555,81.220 C937.278,41.176
-         974.256,21.095 1093.910,5.685 Z" id="wave-two"/>
+                <path id="wave-two" d="M 0 156.10414462387877 C 158.93750000000054 181.28626242272586 158.93750000000054 181.2862624227259 317.87500000000097 168.69520352330233 C 476.81250000000085 156.1041446238788 476.8125000000011 156.1041446238788 635.7500000000016 184.5316017314728 C 794.6875000000016 212.95905883906687 794.6875000000016 212.95905883906687 953.6250000000016 190.10552459162486 C 1112.5625000000027 167.25199034418304 1112.5624999999973 167.25199034418304 1271.4999999999973 180.66263870570117 C 1430.4374999999973 194.0732870672194 1430.4374999999973 194.0732870672194 1589.3749999999973 164.25734828199154 C 1748.3124999999973 134.44140949676358 1748.3124999999973 134.44140949676358 1907.2499999999973 154.88271029727417 C 2066.1874999999945 175.3240110977847 2066.1874999999945 175.3240110977847 2225.1249999999945 160.53491622812484 C 2384.0624999999945 145.74582135846512 2384.0624999999945 145.74582135846512 2542.9999999999945 180.66263870570117 L 2543 8531.015625 L 0 8531.015625 Z" fill="#F7EFFD"></path>
             </svg>
         </div>
         <!-- wave-animation-end -->
