@@ -85,7 +85,7 @@ export const seomySetting = {
                             link: "/about"
                         }, {
                             text: "FAQ",
-                            link: "/faq"
+                            link: "/FAQ"
                         }, {
                             text: "Services",
                             link: "/services"
@@ -103,7 +103,7 @@ export const seomySetting = {
                             link: "/contact"
                         }, {
                             text: "파트너 신청하기",
-                            link: "/join-partners"
+                            link: "/join-partner"
                         }
                     ]
                 }
