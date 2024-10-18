@@ -46,7 +46,7 @@
 <body>
 <!--<Loader />-->
 <BackToTop/>
-<Header {data} />
+<Header {data}/>
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -77,8 +77,8 @@
             </div>
             <div class="offcanvas__contact mb-40">
                 <p class="offcanvas__contact-call">
-                    <a href="tel:{config.firstSection.phoneNumber.number}">
-                        {config.firstSection.phoneNumber.number}
+                    <a href="{config.firstSection.phoneNumber.link}">
+                        {config.firstSection.phoneNumber.text}
                     </a>
                 </p>
                 <p class="offcanvas__contact-mail">
@@ -121,7 +121,7 @@
                                </span>
                                 {@html config.firstSection.bannerContent.bannerTitle.thirdSection}
                             </h4>
-                            <br />
+                            <br/>
                             <p>{@html config.firstSection.bannerContent.bannerExplain.replaceAll("\n", "<br/>")}</p>
                             <div class="banner-4-btn mb-30">
                                 <a class="blue-btn" href="{config.firstSection.MainContactBtn.link}">
@@ -146,9 +146,11 @@
                                     </i>
                                 </div>
                                 <div class="contact-4-text">
-                                    <span>{config.firstSection.phoneNumber.text}</span>
-                                    <a href="tel:{config.firstSection.phoneNumber.number}">
-                                        {config.firstSection.phoneNumber.number}
+                                    <span style="cursor: pointer;" on:click={() => location.href = "contact"}>
+                                        {config.firstSection.phoneNumber.text}
+                                    </span>
+                                    <a href="{config.firstSection.phoneNumber.link}">
+                                        고객센터
                                     </a>
                                 </div>
                             </div>
@@ -199,43 +201,45 @@
             </div>
             <div class="row">
                 {#each config.secondSection.cards as card, i}
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item-4 text-center mb-55">
-                        <div class="services-icon-4 mb-30">
-                            <img alt="" src="assets/img/shape/choose-4-shape-{i+1}.png">
-                            <i>
-                                <img src="{card.image}" width="65" height="65" alt="">
-                            </i>
-                        </div>
-                        <div class="services-content-4">
-                            <h5 class="title mb-20">{@html card.mainText}</h5>
-                            <p>{@html card.description}</p>
-                            <div class="services-btn-4 p-relative">
-                                <a href="{card.readMore.link}">
-                                    <span>{card.readMore.text}</span>
-                                    <i>
-                                        <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.2871 1L17 6.71285L11.2871 12.4257" stroke="currentColor"
-                                                  stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                                  stroke-width="1.5"/>
-                                            <path d="M1 6.71313H16.8397" stroke="currentColor" stroke-linecap="round"
-                                                  stroke-linejoin="round" stroke-miterlimit="10"
-                                                  stroke-width="1.5"/>
-                                        </svg>
-                                    </i>
-                                </a>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="services-item-4 text-center mb-55">
+                            <div class="services-icon-4 mb-30">
+                                <img alt="" src="assets/img/shape/choose-4-shape-{i+1}.png">
+                                <i>
+                                    <img src="{card.image}" width="75" height="75" alt="">
+                                </i>
+                            </div>
+                            <div class="services-content-4">
+                                <h5 class="title mb-20">{@html card.mainText}</h5>
+                                <p>{@html card.description}</p>
+                                <div class="services-btn-4 p-relative">
+                                    <a href="{card.readMore.link}">
+                                        <span>{card.readMore.text}</span>
+                                        <i>
+                                            <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
+                                                 xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.2871 1L17 6.71285L11.2871 12.4257" stroke="currentColor"
+                                                      stroke-linecap="round" stroke-linejoin="round"
+                                                      stroke-miterlimit="10"
+                                                      stroke-width="1.5"/>
+                                                <path d="M1 6.71313H16.8397" stroke="currentColor"
+                                                      stroke-linecap="round"
+                                                      stroke-linejoin="round" stroke-miterlimit="10"
+                                                      stroke-width="1.5"/>
+                                            </svg>
+                                        </i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 {/each}
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="services-bottom text-center">
                         <div class="servics-details-4 d-flex align-items-center justify-content-center">
-                            <img alt="" src="assets/img/shape/header-rocket.png">
+                            <img alt="" height="17" src="assets/pictograms/serviceAndOem.png" width="17">
                             <p>
                                 서비스 및 대행사, 패널 제작 문의는
                                 <a href="/contact">
@@ -265,69 +269,146 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="brand-wrapper text-center">
-                            <h5 class="title">As Featured On:</h5>
+                            <h5 class="title">{config.thirdSection.mainBanner.text}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="tpbrand tpbrand-active-4 mb-170 slick-initialized slick-slider slick-dotted">
-                            <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3978px; transform: translate3d(-1170px, 0px, 0px);"><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-2.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-4" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-3.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-4.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-5.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-1.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide50" aria-describedby="slick-slide-control50">
-                                <img src="assets/img/brand/logo-3-1.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide51" aria-describedby="slick-slide-control51">
-                                <img src="assets/img/brand/logo-3-2.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide52" aria-describedby="slick-slide-control52">
-                                <img src="assets/img/brand/logo-3-3.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="3" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide53" aria-describedby="slick-slide-control53">
-                                <img src="assets/img/brand/logo-3-4.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="4" aria-hidden="false" style="width: 234px;" tabindex="0" role="tabpanel" id="slick-slide54" aria-describedby="slick-slide-control54">
-                                <img src="assets/img/brand/logo-3-5.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide" data-slick-index="5" aria-hidden="true" style="width: 234px;" tabindex="-1" role="tabpanel" id="slick-slide55" aria-describedby="slick-slide-control55">
-                                <img src="assets/img/brand/logo-3-1.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-1.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-2.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="8" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-3.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="9" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-4.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="10" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-5.png" alt="">
-                            </div><div class="tpbrand-item-4 mb-35 slick-slide slick-cloned" data-slick-index="11" id="" aria-hidden="true" style="width: 234px;" tabindex="-1">
-                                <img src="assets/img/brand/logo-3-1.png" alt="">
-                            </div></div></div>
+                            <div class="slick-list draggable">
+                                <div class="slick-track"
+                                     style="opacity: 1; width: 3978px; transform: translate3d(-1170px, 0px, 0px);">
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="-5" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-2.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="-4" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-3.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="-3" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-4.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="-2" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-5.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="-1" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-1.png">
+                                    </div>
+                                    <div aria-describedby="slick-slide-control50"
+                                         aria-hidden="false" class="tpbrand-item-4 mb-35 slick-slide slick-current slick-active" data-slick-index="0" id="slick-slide50"
+                                         role="tabpanel" style="width: 234px;" tabindex="0">
+                                        <img alt="" src="assets/img/brand/logo-3-1.png">
+                                    </div>
+                                    <div aria-describedby="slick-slide-control51" aria-hidden="false"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="1" id="slick-slide51" role="tabpanel"
+                                         style="width: 234px;" tabindex="0">
+                                        <img alt="" src="assets/img/brand/logo-3-2.png">
+                                    </div>
+                                    <div aria-describedby="slick-slide-control52" aria-hidden="false"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="2" id="slick-slide52" role="tabpanel"
+                                         style="width: 234px;" tabindex="0">
+                                        <img alt="" src="assets/img/brand/logo-3-3.png">
+                                    </div>
+                                    <div aria-describedby="slick-slide-control53" aria-hidden="false"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="3" id="slick-slide53" role="tabpanel"
+                                         style="width: 234px;" tabindex="0">
+                                        <img alt="" src="assets/img/brand/logo-3-4.png">
+                                    </div>
+                                    <div aria-describedby="slick-slide-control54" aria-hidden="false"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="4" id="slick-slide54" role="tabpanel"
+                                         style="width: 234px;" tabindex="0">
+                                        <img alt="" src="assets/img/brand/logo-3-5.png">
+                                    </div>
+                                    <div aria-describedby="slick-slide-control55" aria-hidden="true"
+                                         class="tpbrand-item-4 mb-35 slick-slide" data-slick-index="5" id="slick-slide55" role="tabpanel"
+                                         style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-1.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="6" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-1.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="7" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-2.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="8" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-3.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="9" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-4.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="10" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-5.png">
+                                    </div>
+                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
+                                         data-slick-index="11" id="" style="width: 234px;" tabindex="-1">
+                                        <img alt="" src="assets/img/brand/logo-3-1.png">
+                                    </div>
+                                </div>
+                            </div>
 
-
-
-
-
-                            <ul class="slick-dots" style="" role="tablist"><li class="slick-active" role="presentation"><button type="button" role="tab" id="slick-slide-control50" aria-controls="slick-slide50" aria-label="1 of 2" tabindex="0" aria-selected="true">1</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control51" aria-controls="slick-slide51" aria-label="2 of 2" tabindex="-1">2</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control52" aria-controls="slick-slide52" aria-label="3 of 2" tabindex="-1">3</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control53" aria-controls="slick-slide53" aria-label="4 of 2" tabindex="-1">4</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control54" aria-controls="slick-slide54" aria-label="5 of 2" tabindex="-1">5</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control55" aria-controls="slick-slide55" aria-label="6 of 2" tabindex="-1">6</button></li></ul></div>
+                            <ul class="slick-dots" role="tablist" style="">
+                                <li class="slick-active" role="presentation">
+                                    <button aria-controls="slick-slide50" aria-label="1 of 2" aria-selected="true"
+                                            id="slick-slide-control50" role="tab" tabindex="0"
+                                            type="button">1
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button aria-controls="slick-slide51" aria-label="2 of 2" id="slick-slide-control51"
+                                            role="tab" tabindex="-1" type="button">2
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button aria-controls="slick-slide52" aria-label="3 of 2" id="slick-slide-control52"
+                                            role="tab" tabindex="-1" type="button">3
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button aria-controls="slick-slide53" aria-label="4 of 2" id="slick-slide-control53"
+                                            role="tab" tabindex="-1" type="button">4
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button aria-controls="slick-slide54" aria-label="5 of 2" id="slick-slide-control54"
+                                            role="tab" tabindex="-1" type="button">5
+                                    </button>
+                                </li>
+                                <li role="presentation">
+                                    <button aria-controls="slick-slide55" aria-label="6 of 2" id="slick-slide-control55"
+                                            role="tab" tabindex="-1" type="button">6
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- wave-animation -->
         <div class="wave-bg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="wave wave-1">
+            <svg class="wave wave-1" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
                 <title>Wave</title>
                 <defs></defs>
-                <path id="feel-the-wave" d="M 0 213.04064072078822 C 181.64285714285725 174.4674545919669 181.64285714285703 174.4674545919669 363.28571428571405 193.7540476563775 C 544.928571428571 213.04064072078822 544.928571428571 213.04064072078822 726.5714285714281 168.64536205176225 C 908.2142857142852 124.25008338273638 908.2142857142852 124.25008338273638 1089.857142857142 154.41372662253795 C 1271.499999999999 184.57736986233954 1271.499999999999 184.57736986233954 1453.1428571428562 160.52423702728655 C 1634.7857142857133 136.47110419223355 1634.7857142857133 136.47110419223355 1816.4285714285706 182.91294954068331 C 1998.071428571428 229.35479488913307 1998.071428571428 229.35479488913307 2179.714285714284 206.68970577821563 C 2361.357142857141 184.02461666729815 2361.357142857141 184.02461666729815 2542.999999999998 154.84848139145004 L 2543 8531.015625 L 0 8531.015625 Z" fill="rgba(255, 255, 255, 1)"></path>
+                <path d="M 0 213.04064072078822 C 181.64285714285725 174.4674545919669 181.64285714285703 174.4674545919669 363.28571428571405 193.7540476563775 C 544.928571428571 213.04064072078822 544.928571428571 213.04064072078822 726.5714285714281 168.64536205176225 C 908.2142857142852 124.25008338273638 908.2142857142852 124.25008338273638 1089.857142857142 154.41372662253795 C 1271.499999999999 184.57736986233954 1271.499999999999 184.57736986233954 1453.1428571428562 160.52423702728655 C 1634.7857142857133 136.47110419223355 1634.7857142857133 136.47110419223355 1816.4285714285706 182.91294954068331 C 1998.071428571428 229.35479488913307 1998.071428571428 229.35479488913307 2179.714285714284 206.68970577821563 C 2361.357142857141 184.02461666729815 2361.357142857141 184.02461666729815 2542.999999999998 154.84848139145004 L 2543 8531.015625 L 0 8531.015625 Z"
+                      fill="rgba(255, 255, 255, 1)"
+                      id="feel-the-wave"></path>
             </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="wave">
+            <svg class="wave" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
                 <title>Wave</title>
-                <path id="wave-two" d="M 0 156.10414462387877 C 158.93750000000054 181.28626242272586 158.93750000000054 181.2862624227259 317.87500000000097 168.69520352330233 C 476.81250000000085 156.1041446238788 476.8125000000011 156.1041446238788 635.7500000000016 184.5316017314728 C 794.6875000000016 212.95905883906687 794.6875000000016 212.95905883906687 953.6250000000016 190.10552459162486 C 1112.5625000000027 167.25199034418304 1112.5624999999973 167.25199034418304 1271.4999999999973 180.66263870570117 C 1430.4374999999973 194.0732870672194 1430.4374999999973 194.0732870672194 1589.3749999999973 164.25734828199154 C 1748.3124999999973 134.44140949676358 1748.3124999999973 134.44140949676358 1907.2499999999973 154.88271029727417 C 2066.1874999999945 175.3240110977847 2066.1874999999945 175.3240110977847 2225.1249999999945 160.53491622812484 C 2384.0624999999945 145.74582135846512 2384.0624999999945 145.74582135846512 2542.9999999999945 180.66263870570117 L 2543 8531.015625 L 0 8531.015625 Z" fill="#F7EFFD"></path>
+                <path d="M 0 156.10414462387877 C 158.93750000000054 181.28626242272586 158.93750000000054 181.2862624227259 317.87500000000097 168.69520352330233 C 476.81250000000085 156.1041446238788 476.8125000000011 156.1041446238788 635.7500000000016 184.5316017314728 C 794.6875000000016 212.95905883906687 794.6875000000016 212.95905883906687 953.6250000000016 190.10552459162486 C 1112.5625000000027 167.25199034418304 1112.5624999999973 167.25199034418304 1271.4999999999973 180.66263870570117 C 1430.4374999999973 194.0732870672194 1430.4374999999973 194.0732870672194 1589.3749999999973 164.25734828199154 C 1748.3124999999973 134.44140949676358 1748.3124999999973 134.44140949676358 1907.2499999999973 154.88271029727417 C 2066.1874999999945 175.3240110977847 2066.1874999999945 175.3240110977847 2225.1249999999945 160.53491622812484 C 2384.0624999999945 145.74582135846512 2384.0624999999945 145.74582135846512 2542.9999999999945 180.66263870570117 L 2543 8531.015625 L 0 8531.015625 Z"
+                      fill="#F7EFFD"
+                      id="wave-two"></path>
             </svg>
         </div>
         <!-- wave-animation-end -->
@@ -358,119 +439,60 @@
                     <div class="feature-content-4 pl-70">
                         <div class="section-wrapper mb-40">
                             <span>Let us do the work</span>
-                            <h5 class="section-title-4 section-title-4-2">How we do It</h5>
+                            <h5 class="section-title-4 section-title-4-2">{config.fourthSection.title}</h5>
                         </div>
                         <ul class="feature-list-4">
-                            <li>
-                                <div class="feature-list-4-item p-relative d-flex">
-                                    <div class="feature-list-4-icon ">
-                                        <div class="feature-list-bg p-relative">
-                                            <i>
-                                                <svg fill="none" height="40" viewBox="0 0 44 40" width="44"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <g style="mix-blend-mode:multiply">
-                                                        <path class="main-bg"
-                                                              d="M4.66766 18.8519C-4.37425 32.8161 8.5593 40 19.4834 40C30.2244 40 42.3709 35.9136 42.3709 23.3559C42.3655 -8.96311 20.1854 -5.10428 4.66766 18.8519Z"
-                                                              fill="currentColor"/>
-                                                    </g>
-                                                    <path d="M0.886829 32.563C0.845942 32.563 0.805948 32.5509 0.771881 32.5281C0.737814 32.5053 0.711194 32.4729 0.695366 32.4349C0.679538 32.3968 0.675208 32.355 0.682925 32.3145C0.690641 32.274 0.710058 32.2367 0.738733 32.2073L8.96478 23.9395C9.00472 23.9178 9.05069 23.9101 9.09546 23.9176C9.14022 23.9251 9.18125 23.9474 9.21208 23.981C9.24291 24.0145 9.2618 24.0575 9.26578 24.1031C9.26975 24.1487 9.25859 24.1943 9.23404 24.2328L1.03493 32.5033C1.01546 32.5227 0.992326 32.538 0.966886 32.5483C0.941447 32.5585 0.914223 32.5635 0.886829 32.563V32.563Z"
-                                                          fill="white"/>
-                                                    <path d="M33.901 20.2052C33.8744 20.2053 33.8481 20.2001 33.8236 20.1899C33.7991 20.1796 33.7769 20.1645 33.7583 20.1455C33.7201 20.1064 33.6987 20.0537 33.6987 19.9989C33.6987 19.944 33.7201 19.8914 33.7583 19.8522C34.1056 19.4911 42.2751 11.0306 42.9887 10.55C43.0343 10.5237 43.0882 10.5159 43.1393 10.5281C43.1905 10.5403 43.2351 10.5717 43.2642 10.6159C43.2933 10.66 43.3047 10.7137 43.296 10.766C43.2873 10.8183 43.2593 10.8653 43.2175 10.8975C42.6548 11.2749 36.4132 17.6991 34.0625 20.1428C34.0415 20.1642 34.0163 20.1808 33.9884 20.1916C33.9606 20.2023 33.9308 20.207 33.901 20.2052V20.2052Z"
-                                                          fill="white"/>
+                            {#each config.fourthSection.content as content, idx}
+                                <li>
+                                    <div class="feature-list-4-item p-relative d-flex">
+                                        <div class="feature-list-4-icon ">
+                                            <div class="feature-list-bg p-relative">
+                                                <i>
+                                                    <svg fill="none" height="40" viewBox="0 0 44 40" width="44"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g style="mix-blend-mode:multiply">
+                                                            <path class="main-bg" style="color: {content.color}"
+                                                                  d="M4.66766 18.8519C-4.37425 32.8161 8.5593 40 19.4834 40C30.2244 40 42.3709 35.9136 42.3709 23.3559C42.3655 -8.96311 20.1854 -5.10428 4.66766 18.8519Z"
+                                                                  fill="currentColor"/>
+                                                        </g>
+                                                        <path d="M0.886829 32.563C0.845942 32.563 0.805948 32.5509 0.771881 32.5281C0.737814 32.5053 0.711194 32.4729 0.695366 32.4349C0.679538 32.3968 0.675208 32.355 0.682925 32.3145C0.690641 32.274 0.710058 32.2367 0.738733 32.2073L8.96478 23.9395C9.00472 23.9178 9.05069 23.9101 9.09546 23.9176C9.14022 23.9251 9.18125 23.9474 9.21208 23.981C9.24291 24.0145 9.2618 24.0575 9.26578 24.1031C9.26975 24.1487 9.25859 24.1943 9.23404 24.2328L1.03493 32.5033C1.01546 32.5227 0.992326 32.538 0.966886 32.5483C0.941447 32.5585 0.914223 32.5635 0.886829 32.563V32.563Z"
+                                                              fill="white"/>
+                                                        <path d="M33.901 20.2052C33.8744 20.2053 33.8481 20.2001 33.8236 20.1899C33.7991 20.1796 33.7769 20.1645 33.7583 20.1455C33.7201 20.1064 33.6987 20.0537 33.6987 19.9989C33.6987 19.944 33.7201 19.8914 33.7583 19.8522C34.1056 19.4911 42.2751 11.0306 42.9887 10.55C43.0343 10.5237 43.0882 10.5159 43.1393 10.5281C43.1905 10.5403 43.2351 10.5717 43.2642 10.6159C43.2933 10.66 43.3047 10.7137 43.296 10.766C43.2873 10.8183 43.2593 10.8653 43.2175 10.8975C42.6548 11.2749 36.4132 17.6991 34.0625 20.1428C34.0415 20.1642 34.0163 20.1808 33.9884 20.1916C33.9606 20.2023 33.9308 20.207 33.901 20.2052V20.2052Z"
+                                                              fill="white"/>
+                                                    </svg>
+                                                </i>
+                                                <b>{idx + 1}</b>
+                                                <span class="feature-bg-border-1"></span>
+                                                <span class="feature-bg-border-2"></span>
+                                                <span class="feature-bg-border-3"></span>
+                                                <span class="feature-bg-border-4"></span>
+                                            </div>
+                                        </div>
+                                        <div class="feature-list-4-content">
+                                            <h4 class="title">{content.title}</h4>
+                                            <p>{@html content.description}</p>
+                                            <br />
+                                        </div>
+                                        <div class="feature-4-shape-{idx + 1} d-none d-md-block">
+                                            {#if idx === 0}
+                                                <svg class="line-dash-path" fill="none" height="122"
+                                                     viewBox="0 0 38 122"
+                                                     width="38" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0.279297 1C41.9846 20.0005 55.1988 87.9525 2.74393 121.294"
+                                                          stroke="#A7ACB3" stroke-dasharray="4 4"/>
                                                 </svg>
-                                            </i>
-                                            <b>01</b>
-                                            <span class="feature-bg-border-1"></span>
-                                            <span class="feature-bg-border-2"></span>
-                                            <span class="feature-bg-border-3"></span>
-                                            <span class="feature-bg-border-4"></span>
+                                            {:else if idx === 1}
+                                                <svg class="line-dash-path" fill="none" height="122"
+                                                     viewBox="0 0 42 122" width="42" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M41.3076 1.22192C-1.33493 18.0137 -18.0874 85.181 32.5507 121.222"
+                                                          stroke="#A7ACB3" stroke-dasharray="4 4"></path>
+                                                </svg>
+                                            {/if}
                                         </div>
                                     </div>
-                                    <div class="feature-list-4-content">
-                                        <h4 class="title">Creative Ideas</h4>
-                                        <p>Keyword research and other market <br> research under the SEO analytics <br>
-                                            umbrella.</p>
-                                    </div>
-                                    <div class="feature-4-shape-1 d-none d-md-block">
-                                        <svg class="line-dash-path" fill="none" height="122" viewBox="0 0 38 122"
-                                             width="38" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0.279297 1C41.9846 20.0005 55.1988 87.9525 2.74393 121.294"
-                                                  stroke="#A7ACB3" stroke-dasharray="4 4"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="feature-list-4-item p-relative pl-100 d-flex">
-                                    <div class="feature-list-4-icon ">
-                                        <div class="feature-list-bg p-relative">
-                                            <i>
-                                                <svg fill="none" height="40" viewBox="0 0 44 40" width="44"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <g style="mix-blend-mode:multiply">
-                                                        <path class="main-bg main-bg-2"
-                                                              d="M4.66766 18.8519C-4.37425 32.8161 8.5593 40 19.4834 40C30.2244 40 42.3709 35.9136 42.3709 23.3559C42.3655 -8.96311 20.1854 -5.10428 4.66766 18.8519Z"
-                                                              fill="currentColor"/>
-                                                    </g>
-                                                    <path d="M0.886829 32.563C0.845942 32.563 0.805948 32.5509 0.771881 32.5281C0.737814 32.5053 0.711194 32.4729 0.695366 32.4349C0.679538 32.3968 0.675208 32.355 0.682925 32.3145C0.690641 32.274 0.710058 32.2367 0.738733 32.2073L8.96478 23.9395C9.00472 23.9178 9.05069 23.9101 9.09546 23.9176C9.14022 23.9251 9.18125 23.9474 9.21208 23.981C9.24291 24.0145 9.2618 24.0575 9.26578 24.1031C9.26975 24.1487 9.25859 24.1943 9.23404 24.2328L1.03493 32.5033C1.01546 32.5227 0.992326 32.538 0.966886 32.5483C0.941447 32.5585 0.914223 32.5635 0.886829 32.563V32.563Z"
-                                                          fill="white"/>
-                                                    <path d="M33.901 20.2052C33.8744 20.2053 33.8481 20.2001 33.8236 20.1899C33.7991 20.1796 33.7769 20.1645 33.7583 20.1455C33.7201 20.1064 33.6987 20.0537 33.6987 19.9989C33.6987 19.944 33.7201 19.8914 33.7583 19.8522C34.1056 19.4911 42.2751 11.0306 42.9887 10.55C43.0343 10.5237 43.0882 10.5159 43.1393 10.5281C43.1905 10.5403 43.2351 10.5717 43.2642 10.6159C43.2933 10.66 43.3047 10.7137 43.296 10.766C43.2873 10.8183 43.2593 10.8653 43.2175 10.8975C42.6548 11.2749 36.4132 17.6991 34.0625 20.1428C34.0415 20.1642 34.0163 20.1808 33.9884 20.1916C33.9606 20.2023 33.9308 20.207 33.901 20.2052V20.2052Z"
-                                                          fill="white"/>
-                                                </svg>
-                                            </i>
-                                            <b>02</b>
-                                            <span class="feature-bg-border-1"></span>
-                                            <span class="feature-bg-border-2"></span>
-                                            <span class="feature-bg-border-3"></span>
-                                            <span class="feature-bg-border-4"></span>
-                                        </div>
-                                    </div>
-                                    <div class="feature-list-4-content">
-                                        <h4 class="title">Data Collection</h4>
-                                        <p>Keyword research and other market <br> research under the SEO analytics <br>
-                                            umbrella.</p>
-                                    </div>
-                                    <div class="feature-4-shape-2 d-none d-md-block">
-                                        <svg class="line-dash-path" fill="none" height="122" viewBox="0 0 42 122"
-                                             width="42" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M41.3076 1.22192C-1.33493 18.0137 -18.0874 85.181 32.5507 121.222"
-                                                  stroke="#A7ACB3" stroke-dasharray="4 4"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="feature-list-4-item pl-30 d-flex">
-                                    <div class="feature-list-4-icon ">
-                                        <div class="feature-list-bg p-relative">
-                                            <i>
-                                                <svg fill="none" height="40" viewBox="0 0 44 40" width="44"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <g style="mix-blend-mode:multiply">
-                                                        <path class="main-bg main-bg-3"
-                                                              d="M4.66766 18.8519C-4.37425 32.8161 8.5593 40 19.4834 40C30.2244 40 42.3709 35.9136 42.3709 23.3559C42.3655 -8.96311 20.1854 -5.10428 4.66766 18.8519Z"
-                                                              fill="currentColor"/>
-                                                    </g>
-                                                    <path d="M0.886829 32.563C0.845942 32.563 0.805948 32.5509 0.771881 32.5281C0.737814 32.5053 0.711194 32.4729 0.695366 32.4349C0.679538 32.3968 0.675208 32.355 0.682925 32.3145C0.690641 32.274 0.710058 32.2367 0.738733 32.2073L8.96478 23.9395C9.00472 23.9178 9.05069 23.9101 9.09546 23.9176C9.14022 23.9251 9.18125 23.9474 9.21208 23.981C9.24291 24.0145 9.2618 24.0575 9.26578 24.1031C9.26975 24.1487 9.25859 24.1943 9.23404 24.2328L1.03493 32.5033C1.01546 32.5227 0.992326 32.538 0.966886 32.5483C0.941447 32.5585 0.914223 32.5635 0.886829 32.563V32.563Z"
-                                                          fill="white"/>
-                                                    <path d="M33.901 20.2052C33.8744 20.2053 33.8481 20.2001 33.8236 20.1899C33.7991 20.1796 33.7769 20.1645 33.7583 20.1455C33.7201 20.1064 33.6987 20.0537 33.6987 19.9989C33.6987 19.944 33.7201 19.8914 33.7583 19.8522C34.1056 19.4911 42.2751 11.0306 42.9887 10.55C43.0343 10.5237 43.0882 10.5159 43.1393 10.5281C43.1905 10.5403 43.2351 10.5717 43.2642 10.6159C43.2933 10.66 43.3047 10.7137 43.296 10.766C43.2873 10.8183 43.2593 10.8653 43.2175 10.8975C42.6548 11.2749 36.4132 17.6991 34.0625 20.1428C34.0415 20.1642 34.0163 20.1808 33.9884 20.1916C33.9606 20.2023 33.9308 20.207 33.901 20.2052V20.2052Z"
-                                                          fill="white"/>
-                                                </svg>
-                                            </i>
-                                            <b>03</b>
-                                            <span class="feature-bg-border-1"></span>
-                                            <span class="feature-bg-border-2"></span>
-                                            <span class="feature-bg-border-3"></span>
-                                            <span class="feature-bg-border-4"></span>
-                                        </div>
-                                    </div>
-                                    <div class="feature-list-4-content">
-                                        <h4 class="title">Targeting</h4>
-                                        <p>Keyword research and other market <br> research under the SEO analytics <br>
-                                            umbrella.</p>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            {/each}
+
                         </ul>
                     </div>
                 </div>
@@ -486,12 +508,9 @@
                 <div class="col-lg-6">
                     <div class="optimize-wrapperp pt-35">
                         <div class="section-wrapper mb-40">
-                            <span>Looking for best SEO results?</span>
-                            <h5 class="section-title-4 section-title-4-2">Organic Search <br> Engine Optimisation</h5>
-                            <p>
-                                So I said down the you owt to do with me absolutely bladdered, <br> amongst what a
-                                plonker brolly baking.
-                            </p>
+                            <span>{config.fifthSection.label}</span>
+                            <h5 class="section-title-4 section-title-4-2">{@html config.fifthSection.title}</h5>
+                            <p>{@html config.fifthSection.content}</p>
                         </div>
                         <div class="tpdrive-progress mb-25 pr-150">
                             <div class="tpdrive-bar-item mb-30">
