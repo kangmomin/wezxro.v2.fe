@@ -107,10 +107,10 @@
                 <div class="col-xxl-7 col-xl-10 col-lg-7">
                     <div class="banner-4">
                         <div class="banner-4-content">
-                            <h4 class="banner-4-title cd-headline clip is-full-width">
+                            <h4 class="banner-4-title cd-headline clip is-full-width mb-0">
                                 {@html config.firstSection.bannerContent.bannerTitle.firstSection}
-                                <br>
-                                <span class="cd-words-wrapper">
+                                <br/>
+                                <span class="cd-words-wrapper p-0">
                                     {#each config.firstSection.bannerContent.bannerTitle.secondSection as text, idx}
                                         {#if idx === 0}
                                             <b class="is-visible p-0">{text}</b>
@@ -121,9 +121,9 @@
                                </span>
                                 {@html config.firstSection.bannerContent.bannerTitle.thirdSection}
                             </h4>
-                            <br/>
-                            <p>{@html config.firstSection.bannerContent.bannerExplain.replaceAll("\n", "<br/>")}</p>
-                            <div class="banner-4-btn mb-30">
+                            <br style="margin-bottom: 6px"/>
+                            <p style="margin-bottom: 25px">{@html config.firstSection.bannerContent.bannerExplain.replaceAll("\n", "<br/>")}</p>
+                            <div class="banner-4-btn mb-25">
                                 <a class="blue-btn" href="{config.firstSection.MainContactBtn.link}">
                                     {config.firstSection.MainContactBtn.text}
                                 </a>
@@ -513,39 +513,26 @@
                             <p>{@html config.fifthSection.content}</p>
                         </div>
                         <div class="tpdrive-progress mb-25 pr-150">
+                            {#each config.fifthSection.data as data}
                             <div class="tpdrive-bar-item mb-30">
                                 <h4 class="tpdrive-bar-title mb-15">
-                                    Desktop Score
+                                    {data.title}
                                 </h4>
                                 <div class="tpdrive-bar-progress">
                                     <div class="progress">
                                         <div aria-valuemax="100" aria-valuemin="0"
                                              aria-valuenow="65" class="progress-bar wow slideInLeft" data-width="98%"
                                              data-wow-delay="0s" data-wow-duration=".8s" role="progressbar"
-                                             style="width: 98%; visibility: visible; animation-duration: 0.8s; animation-delay: 0s; animation-name: slideInLeft;">
-                                            <span>98</span>
+                                             style="width: {data.size}%; visibility: visible; animation-duration: 0.8s; animation-delay: 0s; animation-name: slideInLeft; background-color:{data.color}">
+                                            <span>{data.size}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tpdrive-bar-item yellow-bar">
-                                <h4 class="tpdrive-bar-title mb-15">
-                                    Development Skill
-                                </h4>
-                                <div class="tpdrive-bar-progress">
-                                    <div class="progress">
-                                        <div aria-valuemax="100" aria-valuemin="0"
-                                             aria-valuenow="84" class="progress-bar wow slideInLeft" data-width="84%"
-                                             data-wow-delay="0s" data-wow-duration=".8s" role="progressbar"
-                                             style="width: 65%; visibility: visible; animation-duration: 0.8s; animation-delay: 0s; animation-name: slideInLeft;">
-                                            <span>84</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {/each}
                         </div>
                         <div class="optimize-btn">
-                            <a class="blue-btn" href="/">Discover More</a>
+                            <a class="blue-btn" href="{config.fifthSection.btn.link}">{config.fifthSection.btn.text}</a>
                         </div>
                     </div>
                 </div>
@@ -582,6 +569,7 @@
                     <img alt="" class="counter-shape-4-5" src="assets/img/shape/counter-shape-4-5.png">
                 </div>
                 <div class="counter-wrapper d-flex align-items-center justify-content-between">
+                    {#each config.sixthSection.counter as c}
                     <div class="counter-item-4 d-flex">
                         <div class="counter-item-4-icon">
                             <i>
@@ -600,63 +588,12 @@
                         <div class="counter-item-4-content">
                             <h3 class="counter-item-4-count">
                                 <span class="purecounter" data-purecounter-duration="1"
-                                      data-purecounter-end="120">120</span>+
+                                      data-purecounter-end="{c.number}">{c.number}</span>+
                             </h3>
-                            <p>Successful Projects</p>
+                            <p>{c.text}</p>
                         </div>
                     </div>
-                    <div class="counter-item-4 d-flex">
-                        <div class="counter-item-4-icon">
-                            <i>
-                                <svg fill="none" height="23" viewBox="0 0 24 23" width="24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.0345 22.8965C9.52644 22.8965 8.10115 22.6069 6.75862 22.0276C5.41609 21.4483 4.24368 20.6575 3.24138 19.6552C2.23908 18.6529 1.44828 17.4805 0.868965 16.1379C0.289655 14.7954 0 13.3701 0 11.8621C0 10.3356 0.289655 8.90115 0.868965 7.55862C1.44828 6.21609 2.23908 5.04827 3.24138 4.05517C4.24368 3.06207 5.41609 2.27586 6.75862 1.69655C8.10115 1.11724 9.52644 0.827586 11.0345 0.827586C11.9172 0.827586 12.7678 0.924138 13.5862 1.11724C14.4046 1.31034 15.1816 1.5908 15.9172 1.95862C15.8437 2.12414 15.7931 2.29425 15.7655 2.46896C15.7379 2.64368 15.7241 2.83218 15.7241 3.03448C15.7241 3.16322 15.7287 3.28736 15.7379 3.4069C15.7471 3.52644 15.7701 3.65057 15.8069 3.77931C15.108 3.35632 14.3586 3.03448 13.5586 2.81379C12.7586 2.5931 11.9172 2.48276 11.0345 2.48276C8.44138 2.48276 6.22989 3.3931 4.4 5.21379C2.57012 7.03448 1.65517 9.25057 1.65517 11.8621C1.65517 14.4552 2.57012 16.6667 4.4 18.4965C6.22989 20.3264 8.44138 21.2414 11.0345 21.2414C13.646 21.2414 15.8621 20.3264 17.6828 18.4965C19.5034 16.6667 20.4138 14.4552 20.4138 11.8621C20.4138 11.1632 20.3402 10.4782 20.1931 9.80689C20.046 9.13563 19.8345 8.50575 19.5586 7.91724C19.7609 8.02759 19.9816 8.11494 20.2207 8.17931C20.4598 8.24368 20.708 8.27586 20.9655 8.27586H21.2138C21.2874 8.27586 21.3701 8.26667 21.4621 8.24827C21.6644 8.81839 21.8161 9.4023 21.9172 10C22.0184 10.5977 22.069 11.2184 22.069 11.8621C22.069 13.3701 21.7793 14.7954 21.2 16.1379C20.6207 17.4805 19.8345 18.6529 18.8414 19.6552C17.8483 20.6575 16.6805 21.4483 15.3379 22.0276C13.9954 22.6069 12.5609 22.8965 11.0345 22.8965ZM15.0621 10.4C15.4851 10.4 15.8391 10.2575 16.1241 9.97241C16.4092 9.68736 16.5517 9.33333 16.5517 8.91034C16.5517 8.48735 16.4092 8.13333 16.1241 7.84827C15.8391 7.56322 15.4851 7.42069 15.0621 7.42069C14.6391 7.42069 14.2851 7.56322 14 7.84827C13.7149 8.13333 13.5724 8.48735 13.5724 8.91034C13.5724 9.33333 13.7149 9.68736 14 9.97241C14.2851 10.2575 14.6391 10.4 15.0621 10.4ZM7.0069 10.4C7.42989 10.4 7.78391 10.2575 8.06897 9.97241C8.35402 9.68736 8.49655 9.33333 8.49655 8.91034C8.49655 8.48735 8.35402 8.13333 8.06897 7.84827C7.78391 7.56322 7.42989 7.42069 7.0069 7.42069C6.58391 7.42069 6.22988 7.56322 5.94483 7.84827C5.65977 8.13333 5.51724 8.48735 5.51724 8.91034C5.51724 9.33333 5.65977 9.68736 5.94483 9.97241C6.22988 10.2575 6.58391 10.4 7.0069 10.4ZM11.0345 17.9034C12.2483 17.9034 13.3655 17.577 14.3862 16.9241C15.4069 16.2713 16.1471 15.3839 16.6069 14.2621H5.46207C5.94023 15.3839 6.68506 16.2713 7.69655 16.9241C8.70805 17.577 9.82069 17.9034 11.0345 17.9034ZM20.1379 3.86207H18.7586C18.5195 3.86207 18.3218 3.78391 18.1655 3.62759C18.0092 3.47126 17.931 3.27356 17.931 3.03448C17.931 2.7954 18.0092 2.5977 18.1655 2.44138C18.3218 2.28506 18.5195 2.2069 18.7586 2.2069H20.1379V0.827586C20.1379 0.588506 20.2161 0.390804 20.3724 0.234483C20.5287 0.0781609 20.7264 0 20.9655 0C21.2046 0 21.4023 0.0781609 21.5586 0.234483C21.7149 0.390804 21.7931 0.588506 21.7931 0.827586V2.2069H23.1724C23.4115 2.2069 23.6092 2.28506 23.7655 2.44138C23.9218 2.5977 24 2.7954 24 3.03448C24 3.27356 23.9218 3.47126 23.7655 3.62759C23.6092 3.78391 23.4115 3.86207 23.1724 3.86207H21.7931V5.24138C21.7931 5.48046 21.7149 5.67816 21.5586 5.83448C21.4023 5.9908 21.2046 6.06896 20.9655 6.06896C20.7264 6.06896 20.5287 5.9908 20.3724 5.83448C20.2161 5.67816 20.1379 5.48046 20.1379 5.24138V3.86207Z"
-                                          fill="white"/>
-                                </svg>
-                            </i>
-                        </div>
-                        <div class="counter-item-4-content">
-                            <h3 class="counter-item-4-count">
-                                <span class="purecounter" data-purecounter-duration="1"
-                                      data-purecounter-end="180">180</span>+
-                            </h3>
-                            <p>Happy Customers</p>
-                        </div>
-                    </div>
-                    <div class="counter-item-4 d-flex">
-                        <div class="counter-item-4-icon">
-                            <i>
-                                <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18.6282 6.6753C18.5621 6.6643 18.4849 6.6643 18.4188 6.6753C16.8982 6.6203 15.686 5.37746 15.686 3.83765C15.686 2.26484 16.9533 1 18.529 1C20.1048 1 21.372 2.27584 21.372 3.83765C21.361 5.37746 20.1488 6.6203 18.6282 6.6753Z"
-                                          stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="1.5"/>
-                                    <path d="M17.493 14.6823C19.0027 14.9352 20.6666 14.6713 21.8346 13.8904C23.3883 12.8565 23.3883 11.1627 21.8346 10.1288C20.6556 9.34795 18.9696 9.08397 17.46 9.34794"
-                                          stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="1.5"/>
-                                    <path d="M5.37173 6.6753C5.43785 6.6643 5.51498 6.6643 5.5811 6.6753C7.10176 6.6203 8.31388 5.37746 8.31388 3.83765C8.31388 2.26484 7.04666 1 5.47091 1C3.89515 1 2.62793 2.27584 2.62793 3.83765C2.63895 5.37746 3.85107 6.6203 5.37173 6.6753Z"
-                                          stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="1.5"/>
-                                    <path d="M6.50688 14.6823C4.99724 14.9352 3.33333 14.6713 2.16529 13.8904C0.61157 12.8565 0.61157 11.1627 2.16529 10.1288C3.34435 9.34795 5.0303 9.08397 6.53994 9.34794"
-                                          stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="1.5"/>
-                                    <path d="M12.0193 14.8911C11.9532 14.8801 11.876 14.8801 11.8099 14.8911C10.2893 14.8361 9.07715 13.5933 9.07715 12.0535C9.07715 10.4807 10.3444 9.21582 11.9201 9.21582C13.4959 9.21582 14.7631 10.4917 14.7631 12.0535C14.7521 13.5933 13.54 14.8471 12.0193 14.8911Z"
-                                          stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="1.5"/>
-                                    <path d="M8.81226 18.3558C7.25854 19.3897 7.25854 21.0835 8.81226 22.1174C10.5753 23.2942 13.4624 23.2942 15.2255 22.1174C16.7792 21.0835 16.7792 19.3897 15.2255 18.3558C13.4734 17.19 10.5753 17.19 8.81226 18.3558Z"
-                                          stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                                          stroke-width="1.5"/>
-                                </svg>
-                            </i>
-                        </div>
-                        <div class="counter-item-4-content">
-                            <h3 class="counter-item-4-count">
-                                <span class="purecounter" data-purecounter-duration="1"
-                                      data-purecounter-end="64">64</span>+
-                            </h3>
-                            <p>Team Members</p>
-                        </div>
-                    </div>
+                    {/each}
                 </div>
             </div>
         </div>
@@ -968,8 +905,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-wrapper text-center mb-40">
-                        <span>Pricing Plans</span>
-                        <h5 class="section-title-4 section-title-4-2">Packages for everyone</h5>
+                        <span>{config.eighthSection.subTitle}</span>
+                        <h5 class="section-title-4 section-title-4-2">{config.eighthSection.title}</h5>
                     </div>
                 </div>
             </div>
@@ -981,8 +918,8 @@
                             <b class="switch"></b>
                         </div>
                         <div class="label-text">
-                            <label class="toggler toggler-price-active" id="filt-monthly-price">Billed Yearly</label>
-                            <label class="toggler" id="filt-yearly-price">Billed Monthy</label>
+                            <label class="toggler toggler-price-active mb-0 mt-5" id="filt-monthly-price">{config.eighthSection.billedOptions[0]}</label>
+                            <label class="toggler mb-0 mt-10" id="filt-yearly-price">{config.eighthSection.billedOptions[1]}</label>
                         </div>
                     </div>
                 </div>
@@ -1015,22 +952,22 @@
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>Essential</span>
-                                                        <h4 class="title">$36.00</h4>
+                                                        <span>{config.eighthSection.pricing.firstOption[0].title}</span>
+                                                        <h4 class="title">{config.eighthSection.pricing.firstOption[0].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head active text-center p-relative">
                                                         <div class="big-price-shape"></div>
                                                         <div class="sm-price-shape"></div>
-                                                        <span>Pro</span>
-                                                        <h4 class="title">$54.00</h4>
+                                                        <span>{config.eighthSection.pricing.firstOption[1].title}</span>
+                                                        <h4 class="title">{config.eighthSection.pricing.firstOption[1].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>Business</span>
-                                                        <h4 class="title">$89.00</h4>
+                                                        <span>{config.eighthSection.pricing.firstOption[2].title}</span>
+                                                        <h4 class="title">{@html config.eighthSection.pricing.firstOption[2].pricing}</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1041,168 +978,70 @@
                                 <!-- pricing-box -->
                                 <div class="pricing-box-4">
                                     <!-- pricing-item -->
+                                    {#each config.eighthSection.planOptions as opt, idx}
                                     <div class="row gx-0">
                                         <div class="price-custom-col-1">
                                             <div class="tppricing-4-title">
-                                                <h4 class="title">keyword Research</h4>
+                                                <h4 class="title">{opt}</h4>
                                             </div>
                                         </div>
                                         <div class="price-custom-col-2">
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right text-center">
-                                                        <p>100</p>
+                                                        <p>{config.eighthSection.pricing.firstOption[0].values[idx]}</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price active text-center">
-                                                        <p>200</p>
+                                                        <p>{config.eighthSection.pricing.firstOption[1].values[idx]}</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-left text-center">
-                                                        <p>250</p>
+                                                        <p>{config.eighthSection.pricing.firstOption[2].values[idx]}</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- pricing-item-end -->
+                                    {/each}
                                     <!-- pricing-item -->
                                     <div class="row gx-0">
                                         <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">On-page and SERP analysis</h4>
+                                            <div class="tppricing-4-title" style="border-bottom: 0">
+                                                <h4 class="title" style="font-size: x-small; color: gray;">
+                                                    *부가세 별도, 파트너 계약은 최소 3개월 이상 <br/>
+                                                    영구제 문의는 고객센터로 연락 부탁드립니다.
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>10</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>20</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>30</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">Tools for Agencies</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>Limited</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>Limited</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>Limited</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">Сontent Marketing</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>15 articles</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>30 articles</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>20 articles</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">Additional Features</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>5</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>10</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>15</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1"></div>
                                         <div class="price-custom-col-2">
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="#">Join this Plan</a>
+                                                            <a href="{config.eighthSection.pricing.firstOption[0].btn.link}">
+                                                                {config.eighthSection.pricing.firstOption[0].btn.text}
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price active tppricing-4-btn">
                                                         <p>
-                                                            <a href="#">Join this Plan</a>
+                                                            <a href="{config.eighthSection.pricing.firstOption[1].btn.link}">
+                                                                {config.eighthSection.pricing.firstOption[1].btn.text}
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="#">Join this Plan</a>
+                                                            <a href="{config.eighthSection.pricing.firstOption[2].btn.link}">
+                                                                {config.eighthSection.pricing.firstOption[2].btn.text}
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -1223,22 +1062,22 @@
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>Essential</span>
-                                                        <h4 class="title">$46.00</h4>
+                                                        <span>{config.eighthSection.pricing.secondOption[0].title}</span>
+                                                        <h4 class="title">{config.eighthSection.pricing.secondOption[0].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head active text-center p-relative">
                                                         <div class="big-price-shape"></div>
                                                         <div class="sm-price-shape"></div>
-                                                        <span>Pro</span>
-                                                        <h4 class="title">$64.00</h4>
+                                                        <span>{config.eighthSection.pricing.secondOption[1].title}</span>
+                                                        <h4 class="title">{config.eighthSection.pricing.secondOption[1].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>Business</span>
-                                                        <h4 class="title">$99.00</h4>
+                                                        <span>{config.eighthSection.pricing.secondOption[2].title}</span>
+                                                        <h4 class="title">{@html config.eighthSection.pricing.secondOption[2].pricing}</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1249,168 +1088,70 @@
                                 <!-- pricing-box -->
                                 <div class="pricing-box-4">
                                     <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">keyword Research</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price tppricing-right text-center">
-                                                        <p>50</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>150</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price tppricing-left text-center">
-                                                        <p>200</p>
-                                                    </div>
+                                    {#each config.eighthSection.planOptions as opt, idx}
+                                        <div class="row gx-0">
+                                            <div class="price-custom-col-1">
+                                                <div class="tppricing-4-title">
+                                                    <h4 class="title">{opt}</h4>
                                                 </div>
                                             </div>
+                                            <div class="price-custom-col-2">
+                                                <div class="row gx-0">
+                                                    <div class="col-4">
+                                                        <div class="tppricing-4-price tppricing-right text-center">
+                                                            <p>{config.eighthSection.pricing.secondOption[0].values[idx]}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="tppricing-4-price active text-center">
+                                                            <p>{config.eighthSection.pricing.secondOption[1].values[idx]}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="tppricing-4-price tppricing-left text-center">
+                                                            <p>{config.eighthSection.pricing.secondOption[2].values[idx]}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
+                                    {/each}
                                     <!-- pricing-item -->
                                     <div class="row gx-0">
                                         <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">On-page and SERP analysis</h4>
+                                            <div class="tppricing-4-title" style="border-bottom: 0">
+                                                <h4 class="title" style="font-size: x-small; color: gray;">
+                                                    *부가세 별도, 파트너 계약은 최소 3개월 이상 <br/>
+                                                    영구제 문의는 고객센터로 연락 부탁드립니다.
+                                                </h4>
                                             </div>
                                         </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>08</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>16</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>28</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">Tools for Agencies</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>Limited</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>Unlimited</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>Limited</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">Сontent Marketing</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>15 articles</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>45 articles</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>18 articles</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">Additional Features</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>4</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>12</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price text-center">
-                                                        <p>20</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- pricing-item-end -->
-                                    <!-- pricing-item -->
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1"></div>
                                         <div class="price-custom-col-2">
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="#">Join this Plan</a>
+                                                            <a href="{config.eighthSection.pricing.secondOption[0].btn.link}">
+                                                                {config.eighthSection.pricing.secondOption[0].btn.text}
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price active tppricing-4-btn">
                                                         <p>
-                                                            <a href="#">Join this Plan</a>
+                                                            <a href="{config.eighthSection.pricing.secondOption[1].btn.link}">
+                                                                {config.eighthSection.pricing.secondOption[1].btn.text}
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="#">Join this Plan</a>
+                                                            <a href="{config.eighthSection.pricing.secondOption[2].btn.link}">
+                                                                {config.eighthSection.pricing.secondOption[2].btn.text}
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -1476,7 +1217,7 @@
                                 <div class="tptestimonial-4-item">
                                     <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
                                         <div class="tptestimonial-4-rating-img mr-30">
-                                            <img alt="" src="assets/img/shape/testimonial-4-shape-2.png">
+                                            <img src="assets/img/shape/testimonial-4-shape-2.png" alt="">
                                         </div>
                                         <div class="review-star">
                                             <i class="fa-sharp fa-solid fa-star-sharp"></i>
@@ -1488,7 +1229,7 @@
                                     </div>
                                     <div class="tptestimonial-4-content d-flex">
                                         <div class="tptestimonial-4-icon mr-20">
-                                            <img alt="" src="assets/img/shape/quation-4.png">
+                                            <img src="assets/img/shape/quation-4.png" alt="">
                                         </div>
                                         <div class="tptestimonial-4-text">
                                             <p>
@@ -1507,7 +1248,7 @@
                                 <div class="tptestimonial-4-item">
                                     <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
                                         <div class="tptestimonial-4-rating-img mr-30">
-                                            <img alt="" src="assets/img/shape/testimonial-4-shape-2.png">
+                                            <img src="assets/img/shape/testimonial-4-shape-2.png" alt="">
                                         </div>
                                         <div class="review-star">
                                             <i class="fa-sharp fa-solid fa-star-sharp"></i>
@@ -1519,7 +1260,7 @@
                                     </div>
                                     <div class="tptestimonial-4-content d-flex">
                                         <div class="tptestimonial-4-icon mr-20">
-                                            <img alt="" src="assets/img/shape/quation-4.png">
+                                            <img src="assets/img/shape/quation-4.png" alt="">
                                         </div>
                                         <div class="tptestimonial-4-text">
                                             <p>

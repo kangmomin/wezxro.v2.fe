@@ -64,8 +64,8 @@
 								<div class="tpheader__sign d-none d-md-block">
 									<a rel="external" href="/login">로그인</a>
 								</div>
-								<div class="tpheader__sign ml-25 d-none d-md-block">
-									<a rel="external" href="/join">회원가입</a>
+								<div class="tpheader__sign ml-25 d-none d-md-block" style="background-color: #05A2E9; padding: 8px 10px; border-radius: 6px">
+									<a class="text-white p-10" rel="external" href="/join">회원가입</a>
 								</div>
 								<div class="offcanvas-btn d-xl-none ml-20">
 									<button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
