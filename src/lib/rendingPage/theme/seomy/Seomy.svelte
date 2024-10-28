@@ -11,6 +11,14 @@
 
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
+    let slideIdx = 0
+    let currentTabIdx = 0
+    let targetValue = 0, currentValue = 0
+
+    $: if (slideIdx * 508 !== targetValue) {
+        targetValue = (slideIdx % seomySetting[EN_NAME].nineSection.options[currentTabIdx].contents.length) * 508;
+        animateValueChange();
+    }
 
     /** 메인 페이지 공통 설정 */
     const config = seomySetting[EN_NAME]
@@ -19,6 +27,23 @@
         let token = localStorage.getItem("accessToken");
         if (token) isLogin = true
     })
+
+    const animateValueChange = () => {
+        const speed = 30
+        // 목표값에 도달할 때까지 1씩 증가
+        const updateValue = () => {
+            if (currentValue < targetValue) {
+                currentValue += 10;
+                if (currentValue > targetValue) currentValue = targetValue
+                requestAnimationFrame(updateValue);
+            } else if (currentValue > targetValue) {
+                currentValue -= 10;
+                if (currentValue < targetValue) currentValue = targetValue
+                requestAnimationFrame(updateValue);
+            }
+        };
+        updateValue();
+    }
 </script>
 
 <svelte:head>
@@ -47,6 +72,12 @@
 <!--<Loader />-->
 <BackToTop/>
 <Header {data}/>
+
+<style>
+    #contact:hover {
+        color: var(--tp-theme-blue);
+    }
+</style>
 
 <!-- offcanvas area start -->
 <div class="offcanvas__area">
@@ -146,7 +177,7 @@
                                     </i>
                                 </div>
                                 <div class="contact-4-text">
-                                    <span style="cursor: pointer;" on:click={() => location.href = "contact"}>
+                                    <span on:click={() => location.href = "contact"} style="cursor: pointer;">
                                         {config.firstSection.phoneNumber.text}
                                     </span>
                                     <a href="{config.firstSection.phoneNumber.link}">
@@ -300,32 +331,39 @@
                                         <img alt="" src="assets/img/brand/logo-3-1.png">
                                     </div>
                                     <div aria-describedby="slick-slide-control50"
-                                         aria-hidden="false" class="tpbrand-item-4 mb-35 slick-slide slick-current slick-active" data-slick-index="0" id="slick-slide50"
+                                         aria-hidden="false"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-current slick-active"
+                                         data-slick-index="0" id="slick-slide50"
                                          role="tabpanel" style="width: 234px;" tabindex="0">
                                         <img alt="" src="assets/img/brand/logo-3-1.png">
                                     </div>
                                     <div aria-describedby="slick-slide-control51" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="1" id="slick-slide51" role="tabpanel"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="1"
+                                         id="slick-slide51" role="tabpanel"
                                          style="width: 234px;" tabindex="0">
                                         <img alt="" src="assets/img/brand/logo-3-2.png">
                                     </div>
                                     <div aria-describedby="slick-slide-control52" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="2" id="slick-slide52" role="tabpanel"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="2"
+                                         id="slick-slide52" role="tabpanel"
                                          style="width: 234px;" tabindex="0">
                                         <img alt="" src="assets/img/brand/logo-3-3.png">
                                     </div>
                                     <div aria-describedby="slick-slide-control53" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="3" id="slick-slide53" role="tabpanel"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="3"
+                                         id="slick-slide53" role="tabpanel"
                                          style="width: 234px;" tabindex="0">
                                         <img alt="" src="assets/img/brand/logo-3-4.png">
                                     </div>
                                     <div aria-describedby="slick-slide-control54" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="4" id="slick-slide54" role="tabpanel"
+                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="4"
+                                         id="slick-slide54" role="tabpanel"
                                          style="width: 234px;" tabindex="0">
                                         <img alt="" src="assets/img/brand/logo-3-5.png">
                                     </div>
                                     <div aria-describedby="slick-slide-control55" aria-hidden="true"
-                                         class="tpbrand-item-4 mb-35 slick-slide" data-slick-index="5" id="slick-slide55" role="tabpanel"
+                                         class="tpbrand-item-4 mb-35 slick-slide" data-slick-index="5"
+                                         id="slick-slide55" role="tabpanel"
                                          style="width: 234px;" tabindex="-1">
                                         <img alt="" src="assets/img/brand/logo-3-1.png">
                                     </div>
@@ -471,7 +509,7 @@
                                         <div class="feature-list-4-content">
                                             <h4 class="title">{content.title}</h4>
                                             <p>{@html content.description}</p>
-                                            <br />
+                                            <br/>
                                         </div>
                                         <div class="feature-4-shape-{idx + 1} d-none d-md-block">
                                             {#if idx === 0}
@@ -514,21 +552,22 @@
                         </div>
                         <div class="tpdrive-progress mb-25 pr-150">
                             {#each config.fifthSection.data as data}
-                            <div class="tpdrive-bar-item mb-30">
-                                <h4 class="tpdrive-bar-title mb-15">
-                                    {data.title}
-                                </h4>
-                                <div class="tpdrive-bar-progress">
-                                    <div class="progress">
-                                        <div aria-valuemax="100" aria-valuemin="0"
-                                             aria-valuenow="65" class="progress-bar wow slideInLeft" data-width="98%"
-                                             data-wow-delay="0s" data-wow-duration=".8s" role="progressbar"
-                                             style="width: {data.size}%; visibility: visible; animation-duration: 0.8s; animation-delay: 0s; animation-name: slideInLeft; background-color:{data.color}">
-                                            <span>{data.size}</span>
+                                <div class="tpdrive-bar-item mb-30">
+                                    <h4 class="tpdrive-bar-title mb-15">
+                                        {data.title}
+                                    </h4>
+                                    <div class="tpdrive-bar-progress">
+                                        <div class="progress">
+                                            <div aria-valuemax="100" aria-valuemin="0"
+                                                 aria-valuenow="65" class="progress-bar wow slideInLeft"
+                                                 data-width="{data.size}%"
+                                                 data-wow-delay="0s" data-wow-duration=".8s" role="progressbar"
+                                                 style="width: {data.size}%; visibility: visible; animation-duration: 0.8s; animation-delay: 0s; animation-name: slideInLeft; background-color:{data.color}">
+                                                <span>{data.size}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             {/each}
                         </div>
                         <div class="optimize-btn">
@@ -570,29 +609,29 @@
                 </div>
                 <div class="counter-wrapper d-flex align-items-center justify-content-between">
                     {#each config.sixthSection.counter as c}
-                    <div class="counter-item-4 d-flex">
-                        <div class="counter-item-4-icon">
-                            <i>
-                                <svg fill="none" height="28" viewBox="0 0 18 28" width="18"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.1967 8.97496L11.1834 8.82992V3.78816H12.2602V7.60474L15.4619 4.19164V0.614587H2.53824V4.19164L5.73933 7.60474V3.78816H6.81615V8.82992L5.80313 8.97496L1.46143 4.34574V0H16.5387V4.34574L12.1967 8.97496Z"
-                                          fill="white"/>
-                                    <path d="M9 27.708C4.03724 27.708 0 23.7472 0 18.8786C0 14.0101 4.03724 10.0493 9 10.0493C13.9628 10.0493 18 14.0101 18 18.8786C18 23.7472 13.9628 27.708 9 27.708ZM9 11.1259C4.6311 11.1259 1.07681 14.6037 1.07681 18.8786C1.07681 23.1533 4.6311 26.6312 9 26.6312C13.3689 26.6312 16.9232 23.1533 16.9232 18.8786C16.9232 14.6037 13.3689 11.1259 9 11.1259Z"
-                                          fill="white"/>
-                                    <path d="M5.27975 24.3296L6.70115 20.0441L2.96191 17.3825H7.58359L9.00014 13.1113L10.4164 17.3825H15.0384L11.2991 20.0441L12.7195 24.3296L9.00014 21.6803L5.27975 24.3296ZM9.00014 20.3585L10.6609 21.5414L10.0269 19.6285L11.6688 18.4596H9.63896L9.00014 16.5329L8.36132 18.4596H6.3318L7.97394 19.6285L7.33943 21.5414L9.00014 20.3585Z"
-                                          fill="white"/>
-                                    <path d="M9.65103 4.31689H8.57422V8.78997H9.65103V4.31689Z" fill="white"/>
-                                </svg>
-                            </i>
-                        </div>
-                        <div class="counter-item-4-content">
-                            <h3 class="counter-item-4-count">
+                        <div class="counter-item-4 d-flex">
+                            <div class="counter-item-4-icon">
+                                <i>
+                                    <svg fill="none" height="28" viewBox="0 0 18 28" width="18"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1967 8.97496L11.1834 8.82992V3.78816H12.2602V7.60474L15.4619 4.19164V0.614587H2.53824V4.19164L5.73933 7.60474V3.78816H6.81615V8.82992L5.80313 8.97496L1.46143 4.34574V0H16.5387V4.34574L12.1967 8.97496Z"
+                                              fill="white"/>
+                                        <path d="M9 27.708C4.03724 27.708 0 23.7472 0 18.8786C0 14.0101 4.03724 10.0493 9 10.0493C13.9628 10.0493 18 14.0101 18 18.8786C18 23.7472 13.9628 27.708 9 27.708ZM9 11.1259C4.6311 11.1259 1.07681 14.6037 1.07681 18.8786C1.07681 23.1533 4.6311 26.6312 9 26.6312C13.3689 26.6312 16.9232 23.1533 16.9232 18.8786C16.9232 14.6037 13.3689 11.1259 9 11.1259Z"
+                                              fill="white"/>
+                                        <path d="M5.27975 24.3296L6.70115 20.0441L2.96191 17.3825H7.58359L9.00014 13.1113L10.4164 17.3825H15.0384L11.2991 20.0441L12.7195 24.3296L9.00014 21.6803L5.27975 24.3296ZM9.00014 20.3585L10.6609 21.5414L10.0269 19.6285L11.6688 18.4596H9.63896L9.00014 16.5329L8.36132 18.4596H6.3318L7.97394 19.6285L7.33943 21.5414L9.00014 20.3585Z"
+                                              fill="white"/>
+                                        <path d="M9.65103 4.31689H8.57422V8.78997H9.65103V4.31689Z" fill="white"/>
+                                    </svg>
+                                </i>
+                            </div>
+                            <div class="counter-item-4-content">
+                                <h3 class="counter-item-4-count">
                                 <span class="purecounter" data-purecounter-duration="1"
                                       data-purecounter-end="{c.number}">{c.number}</span>+
-                            </h3>
-                            <p>{c.text}</p>
+                                </h3>
+                                <p>{c.text}</p>
+                            </div>
                         </div>
-                    </div>
                     {/each}
                 </div>
             </div>
@@ -611,30 +650,23 @@
                     <div class="portfolio-4-wrapper">
                         <div class="portfolio-4 mt-20">
                             <div class="section-wrapper mb-20">
-                                <span>Our Case Studies</span>
-                                <h5 class="section-title-4 section-title-4-2">Creative <br> Works we done</h5>
+                                <span>{config.nineSection.subTitle}</span>
+                                <h5 class="section-title-4 section-title-4-2">{@html config.nineSection.title}</h5>
                             </div>
                         </div>
                         <div class="portfolio-tab-4 mb-35">
                             <div aria-orientation="vertical" class="nav flex-column nav-pills me-3" id="v-pills-tab"
                                  role="tablist">
-                                <button aria-controls="v-pills-home" aria-selected="false" class="nav-link "
-                                        data-bs-target="#v-pills-home" data-bs-toggle="pill" id="v-pills-home-tab"
-                                        role="tab" type="button">All Work
-                                </button>
-                                <button aria-controls="v-pills-profile" aria-selected="true" class="nav-link active"
-                                        data-bs-target="#v-pills-profile" data-bs-toggle="pill" id="v-pills-profile-tab"
-                                        role="tab" type="button">Marketing
-                                </button>
-                                <button aria-controls="v-pills-messages" aria-selected="false" class="nav-link"
-                                        data-bs-target="#v-pills-messages" data-bs-toggle="pill"
-                                        id="v-pills-messages-tab"
-                                        role="tab" type="button">Web Design
-                                </button>
-                                <button aria-controls="v-pills-design" aria-selected="false" class="nav-link"
-                                        data-bs-target="#v-pills-design" data-bs-toggle="pill" id="v-pills-design-tab"
-                                        role="tab" type="button">Branding
-                                </button>
+                                {#each config.nineSection.options as btn, idx}
+                                    <button aria-controls="v-pills-{btn.id}" aria-selected="{idx === 0}"
+                                            on:click={() => currentTabIdx = idx}
+                                            class="nav-link {idx === 0 ? 'active': ''}"
+                                            data-bs-target="#v-pills-{btn.id}" data-bs-toggle="pill"
+                                            id="v-pills-{btn.id}-tab"
+                                            role="tab" type="button">{btn.title}
+                                    </button>
+                                {/each}
+                                <!--                                <p class="text-gray font-italic" style="font-size: 10px">{@html config.nineSection.noticeText}</p>-->
                             </div>
                         </div>
                         <div class="nav-tab-slider-4">
@@ -666,231 +698,66 @@
                 <div class="col-lg-7">
                     <div class="tab-content-4">
                         <div class="tab-content" id="v-pills-tabContent">
-                            <div aria-labelledby="v-pills-home-tab" class="tab-pane fade" id="v-pills-home"
-                                 role="tabpanel">
-                                <div class="protfolio-wrapper-4 portfolio-4-active">
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-3.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
+                            {#each config.nineSection.options as opt, idx}
+                                <div aria-labelledby="v-pills-{opt.id}-tab"
+                                     class="tab-pane fade {idx === 0 ? 'active show': ''}" id="v-pills-{opt.id}"
+                                     role="tabpanel">
+                                    <div class="protfolio-wrapper-4 portfolio-4-active slick-initialized slick-slider">
+                                        <div class="prv-testi-case slick-arrow" style="" on:click={() => slideIdx++}>
+                                        <span>
+                                            <svg
+                                                    fill="none" height="14" viewBox="0 0 8 14" width="8"
+                                                    xmlns="http://www.w3.org/2000/svg"><path
+                                                    d="M7.707.293a1 1 0 0 1 0 1.414L2.414 7l5.293 5.293a1 1 0 0 1-1.414 1.414l-6-6a1 1 0 0 1 0-1.414l6-6a1 1 0 0 1 1.414 0z"
+                                                    fill="#9f9fa9"
+                                                    fill-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                        </div>
+
+                                        <div class="slick-list draggable">
+                                            <div class="slick-track"
+                                                 style="opacity: 1; width: 4064px; transform: translate3d({currentValue}px, 0px, 0px);">
+                                                {#each opt.contents as content, c_idx}
+                                                    <div class="portfolio-4-item-single slick-slide slick-current slick-active"
+                                                         tabindex="{idx}" style="width: 508px;" data-slick-index="{c_idx * -1}"
+                                                         aria-hidden="false">
+                                                        <div class="portfolio-4-item p-relative">
+                                                            <div class="portfolio-4-thumb">
+                                                                <img src="{content.image}" alt="">
+                                                            </div>
+                                                            <div class="portfolio-4-content">
+                                                                <div class="portfolio-4-content-top">
+                                                                    <span>{content.subTitle}</span>
+                                                                    <h4 class="title">{content.title}</h4>
+                                                                </div>
+                                                                <div class="portfolio-4-content-bottom">
+                                                                    <a href="{config.nineSection.linkBtn.link}" tabindex="0">
+                                                                        {config.nineSection.linkBtn.text} <i class="fa-light fa-plus"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {/each}
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Online Media Management</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-8.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div aria-labelledby="v-pills-profile-tab" class="tab-pane fade show active"
-                                 id="v-pills-profile"
-                                 role="tabpanel">
-                                <div class="protfolio-wrapper-4 portfolio-4-active">
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-2.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-1.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Online Media Management</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-3.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
+                                        <div class="next-testi-case slick-arrow" style="" on:click={() => slideIdx--}>
+                                            <span>
+                                                <svg
+                                                        fill="none" height="14" viewBox="0 0 8 14" width="8"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                            d="M.293 13.707a1 1 0 0 1 0-1.414L5.586 7 .293 1.707A1 1 0 1 1 1.707.293l6 6a1 1 0 0 1 0 1.414l-6 6a1 1 0 0 1-1.414 0z"
+                                                            fill="#9f9fa9"
+                                                            fill-rule="evenodd">
+                                                    </path>
+                                                </svg>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div aria-labelledby="v-pills-messages-tab" class="tab-pane fade" id="v-pills-messages"
-                                 role="tabpanel">
-                                <div class="protfolio-wrapper-4 portfolio-4-active">
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-5.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-6.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Online Media Management</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-2.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div aria-labelledby="v-pills-design-tab" class="tab-pane fade" id="v-pills-design"
-                                 role="tabpanel">
-                                <div class="protfolio-wrapper-4 portfolio-4-active">
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-7.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-8.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Online Media Management</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="portfolio-4-item-single">
-                                        <div class="portfolio-4-item p-relative">
-                                            <div class="portfolio-4-thumb">
-                                                <img alt="" src="assets/img/portfolio/portfolio-4/portfolio-bg-1.jpg">
-                                            </div>
-                                            <div class="portfolio-4-content">
-                                                <div class="portfolio-4-content-top">
-                                                    <span>WEB DESIGN</span>
-                                                    <h4 class="title">Tips for the good UI design</h4>
-                                                </div>
-                                                <div class="portfolio-4-content-bottom">
-                                                    <a href="/">View Case Study <i
-                                                            class="fa-light fa-plus"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {/each}
                         </div>
                     </div>
                 </div>
@@ -918,8 +785,10 @@
                             <b class="switch"></b>
                         </div>
                         <div class="label-text">
-                            <label class="toggler toggler-price-active mb-0 mt-5" id="filt-monthly-price">{config.eighthSection.billedOptions[0]}</label>
-                            <label class="toggler mb-0 mt-10" id="filt-yearly-price">{config.eighthSection.billedOptions[1]}</label>
+                            <label class="toggler toggler-price-active mb-0 mt-5"
+                                   id="filt-monthly-price">{config.eighthSection.billedOptions[0]}</label>
+                            <label class="toggler mb-0 mt-10"
+                                   id="filt-yearly-price">{config.eighthSection.billedOptions[1]}</label>
                         </div>
                     </div>
                 </div>
@@ -979,32 +848,32 @@
                                 <div class="pricing-box-4">
                                     <!-- pricing-item -->
                                     {#each config.eighthSection.planOptions as opt, idx}
-                                    <div class="row gx-0">
-                                        <div class="price-custom-col-1">
-                                            <div class="tppricing-4-title">
-                                                <h4 class="title">{opt}</h4>
-                                            </div>
-                                        </div>
-                                        <div class="price-custom-col-2">
-                                            <div class="row gx-0">
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price tppricing-right text-center">
-                                                        <p>{config.eighthSection.pricing.firstOption[0].values[idx]}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price active text-center">
-                                                        <p>{config.eighthSection.pricing.firstOption[1].values[idx]}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="tppricing-4-price tppricing-left text-center">
-                                                        <p>{config.eighthSection.pricing.firstOption[2].values[idx]}</p>
-                                                    </div>
+                                        <div class="row gx-0">
+                                            <div class="price-custom-col-1">
+                                                <div class="tppricing-4-title">
+                                                    <h4 class="title">{opt}</h4>
                                                 </div>
                                             </div>
+                                            <div class="price-custom-col-2">
+                                                <div class="row gx-0">
+                                                    <div class="col-4">
+                                                        <div class="tppricing-4-price tppricing-right text-center">
+                                                            <p>{config.eighthSection.pricing.firstOption[0].values[idx]}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="tppricing-4-price active text-center">
+                                                            <p>{config.eighthSection.pricing.firstOption[1].values[idx]}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="tppricing-4-price tppricing-left text-center">
+                                                            <p>{config.eighthSection.pricing.firstOption[2].values[idx]}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
                                     {/each}
                                     <!-- pricing-item -->
                                     <div class="row gx-0">
@@ -1210,14 +1079,14 @@
                     <div class="tp-testimonial-4 pb-60">
                         <div class="testimonial-4-wrap mb-40 pl-70">
                             <div class="section-wrapper mb-50">
-                                <span>Testimonials</span>
-                                <h5 class="section-title-4 section-title-4-2">What Clients Say</h5>
+                                <span>{config.tenSection.subTitle}</span>
+                                <h5 class="section-title-4 section-title-4-2">{config.tenSection.title}</h5>
                             </div>
                             <div class="testimonial-4-wrapper tptestimonial-4-active">
                                 <div class="tptestimonial-4-item">
                                     <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
                                         <div class="tptestimonial-4-rating-img mr-30">
-                                            <img src="assets/img/shape/testimonial-4-shape-2.png" alt="">
+                                            <img alt="" src="assets/img/shape/testimonial-4-shape-2.png">
                                         </div>
                                         <div class="review-star">
                                             <i class="fa-sharp fa-solid fa-star-sharp"></i>
@@ -1229,7 +1098,7 @@
                                     </div>
                                     <div class="tptestimonial-4-content d-flex">
                                         <div class="tptestimonial-4-icon mr-20">
-                                            <img src="assets/img/shape/quation-4.png" alt="">
+                                            <img alt="" src="assets/img/shape/quation-4.png">
                                         </div>
                                         <div class="tptestimonial-4-text">
                                             <p>
@@ -1248,7 +1117,7 @@
                                 <div class="tptestimonial-4-item">
                                     <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
                                         <div class="tptestimonial-4-rating-img mr-30">
-                                            <img src="assets/img/shape/testimonial-4-shape-2.png" alt="">
+                                            <img alt="" src="assets/img/shape/testimonial-4-shape-2.png">
                                         </div>
                                         <div class="review-star">
                                             <i class="fa-sharp fa-solid fa-star-sharp"></i>
@@ -1260,7 +1129,7 @@
                                     </div>
                                     <div class="tptestimonial-4-content d-flex">
                                         <div class="tptestimonial-4-icon mr-20">
-                                            <img src="assets/img/shape/quation-4.png" alt="">
+                                            <img alt="" src="assets/img/shape/quation-4.png">
                                         </div>
                                         <div class="tptestimonial-4-text">
                                             <p>
@@ -1314,57 +1183,27 @@
         <div class="container">
             <div class="tpreview-4-wrapper pb-30 mb-30 pt-55">
                 <div class="row">
+                    {#each config.reviewSection as review, idx}
                     <div class="col-lg-4 col-md-6">
                         <div class="tpreview-4 text-center mb-30">
                             <div class="tpreview-4-icon mb-15">
-                                <img alt="" src="assets/img/icon/review-4-logo-1.png">
+                                <img alt="" src="{review.image}">
                             </div>
+                            <h4 class="title">{review.title}</h4>
                             <div class="tpreview-4-content">
-                                <p>4.58 out of 5 stars from 1,045 reviews</p>
+                                <p>{review.description}</p>
                                 <div class="review-star">
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                                    {#each Array(review.star) as _, idx}
+                                        <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                                    {/each}
+                                    {#each Array(5 - review.star) as _, idx}
+                                        <i class="fa-sharp fa-light fa-star-sharp"></i>
+                                    {/each}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tpreview-4 review-side-border text-center mb-30">
-                            <div class="tpreview-4-icon mb-15">
-                                <img alt="" src="assets/img/icon/review-4-logo-2.png">
-                            </div>
-                            <div class="tpreview-4-content">
-                                <p>4.58 out of 5 stars from 1,045 reviews</p>
-                                <div class="review-star">
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="tpreview-4 text-center mb-30">
-                            <div class="tpreview-4-icon mb-15">
-                                <img alt="" src="assets/img/icon/review-4-logo-3.png">
-                            </div>
-                            <div class="tpreview-4-content">
-                                <p>4.58 out of 5 stars from 1,045 reviews</p>
-                                <div class="review-star">
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                    <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/each}
                 </div>
             </div>
         </div>
@@ -1390,14 +1229,14 @@
                     <div class="tpcontact-4 mt-30 mb-50">
                         <div class="section-wrapper mb-20">
                             <span>Get in touch</span>
-                            <h5 class="section-title-4 section-title-4-2">Lets work <br>Together</h5>
+                            <h5 class="section-title-4 section-title-4-2">{@html config.contactSection.title}</h5>
                         </div>
                         <div class="tpcontact-4-content">
-                            <p>Just tell us your requirements and we will help you!</p>
-                            <a class="phone mb-5" href="tel:0123456789">+(800) 2563 123</a>
-                            <a class="mail mb-35" href="mailto:info@company.com">info@company.com</a>
+                            <p>{config.contactSection.description}</p>
+                            <a class="phone mb-5" href="tel:{config.contactSection.tel}">{config.contactSection.tel}</a>
+                            <a class="mail mb-35" href="mailto:{config.contactSection.email}">{config.contactSection.email}</a>
                             <div class="tpcontact-4-content-btn">
-                                <a href="/contact">Call us Now</a>
+                                <a href="{config.contactSection.btn.link}">{config.contactSection.btn.text}</a>
                             </div>
                         </div>
                     </div>
@@ -1410,32 +1249,32 @@
                                     <div class="row gx-6">
                                         <div class="col-lg-6">
                                             <div class="tpcontact-form-input mb-20">
-                                                <input placeholder="Full name" type="text">
+                                                <input placeholder="{config.contactSection.inputs[0]}" type="text">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="tpcontact-form-input mb-20">
-                                                <input placeholder="Email Address" type="email">
+                                                <input placeholder="{config.contactSection.inputs[1]}" type="email">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="tpcontact-form-input mb-20">
-                                                <input placeholder="Phone number" type="text">
+                                                <input placeholder="{config.contactSection.inputs[2]}" type="text">
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="tpcontact-form-input mb-20">
-                                                <input placeholder="Website" type="text">
+                                                <input placeholder="{config.contactSection.inputs[3]}" type="text">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="tpcontact-form-textarea mb-25">
-                                                <textarea name="message" placeholder="Message"></textarea>
+                                                <textarea name="message" placeholder="{config.contactSection.inputs[4]}"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="tpcontact-form-submit">
-                                        <button>Send Message</button>
+                                        <button>{config.contactSection.inputs[5]}</button>
                                     </div>
                                 </div>
                             </form>
@@ -1514,39 +1353,19 @@
     <section class="award-area pb-80">
         <div class="container">
             <div class="row">
+                {#each config.awardSection as award}
                 <div class="col-lg-4 col-md-6">
                     <div class="tpaward text-center mb-30">
                         <div class="tpaward-icon mb-15">
-                            <img alt="" src="assets/img/shape/award-shape-1.png">
+                            <img alt="" src="{award.icon}">
                         </div>
                         <div class="tpaward-content">
-                            <h4 class="title mb-5">Best of the Year</h4>
-                            <p>Best Apps - Apple</p>
+                            <h4 class="title mb-5">{award.title}</h4>
+                            <p>{award.content}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="tpaward tpaward-border text-center mb-30">
-                        <div class="tpaward-icon mb-15">
-                            <img alt="" src="assets/img/shape/award-shape-2.png">
-                        </div>
-                        <div class="tpaward-content">
-                            <h4 class="title mb-5">Best of the Year</h4>
-                            <p>Best Apps - Google</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="tpaward text-center mb-30">
-                        <div class="tpaward-icon mb-15">
-                            <img alt="" src="assets/img/shape/award-shape-3.png">
-                        </div>
-                        <div class="tpaward-content">
-                            <h4 class="title mb-5">Best of the Year</h4>
-                            <p>Innovation by Design - Fast Company</p>
-                        </div>
-                    </div>
-                </div>
+                {/each}
             </div>
         </div>
     </section>

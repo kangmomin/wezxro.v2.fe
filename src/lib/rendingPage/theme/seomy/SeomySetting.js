@@ -67,7 +67,7 @@ export const seomySetting = {
         },
         thirdSection: {
             mainBanner: {
-                text: "WEZXRO 포트폴리오"
+                text: "WEZXRO 서비스 제공 플랫폼"
             }
         },
         fourthSection: {
@@ -138,7 +138,7 @@ export const seomySetting = {
                     {
                         title: "PREMIUM",
                         pricing: "₩3,000,000",
-                        values: ["o", "+ 브랜딩", "+ 컨설팅", "65%", "x"],
+                        values: ["○", "+ 브랜딩", "+ 컨설팅", "65%", "⨉"],
                         btn: {
                             link: "#",
                             text: "플랜 자세히 보기"
@@ -147,7 +147,7 @@ export const seomySetting = {
                     {
                         title: "ENTERPRISE",
                         pricing: "₩5,000,000",
-                        values: ["+ 전체 아웃소싱", "+ 기업 맞춤 제작", "+ 전용 자료 전달", "77%", "o"],
+                        values: ["+ 전체 아웃소싱", "+ 기업 맞춤 제작", "+ 전용 자료 전달", "77%", "○"],
                         btn: {
                             link: "#",
                             text: "플랜 자세히 보기"
@@ -155,7 +155,7 @@ export const seomySetting = {
                     },
                     {
                         title: "전속 파트너 (영구제)",
-                        pricing: "<a href='/contact'>고객센터</a>",
+                        pricing: "<a href='/contact' id='contact'>고객센터</a>",
                         values: ["상담 후 협의", "상담 후 협의", "상담 후 협의", "77% ~ 95%", "상담 후 협의"],
                         btn: {
                             link: "#",
@@ -167,7 +167,7 @@ export const seomySetting = {
                     {
                         title: "STANDARD",
                         pricing: "₩100,000",
-                        values: ["x", "o", "o", "55%", "x"],
+                        values: ["⨉", "○", "○", "55%", "⨉"],
                         btn: {
                             link: "#",
                             text: "플랜 자세히 보기"
@@ -176,7 +176,7 @@ export const seomySetting = {
                     {
                         title: "PREMIUM",
                         pricing: "₩300,000",
-                        values: ["o", "+ 브랜딩", "+ 컨설팅", "65%", "x"],
+                        values: ["○", "+ 브랜딩", "+ 컨설팅", "65%", "⨉"],
                         btn: {
                             link: "#",
                             text: "플랜 자세히 보기"
@@ -185,7 +185,7 @@ export const seomySetting = {
                     {
                         title: "ENTERPRISE",
                         pricing: "₩500,000",
-                        values: ["+ 전체 아웃소싱", "+ 기업 맞춤 제작", "+ 전용 자료 전달", "77%", "o"],
+                        values: ["+ 전체 아웃소싱", "+ 기업 맞춤 제작", "+ 전용 자료 전달", "77%", "○"],
                         btn: {
                             link: "#",
                             text: "플랜 자세히 보기"
@@ -194,11 +194,140 @@ export const seomySetting = {
                 ]
             }
         },
+        nineSection: {
+            subTitle: "Our Partner Systems",
+            title: "WEZXRO<br/>파트너 시스템",
+            options: [
+                {
+                    id: "profit",
+                    title: "패널 수익 Panel Profit",
+                    contents: [
+                        {
+                            title: "test1",
+                            subTitle: "test1",
+                            image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                        },{
+                            title: "test2",
+                            subTitle: "test2",
+                            image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                        },{
+                            title: "test3",
+                            subTitle: "test3",
+                            image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                        }
+                    ]
+                },
+                {
+                    id: "design",
+                    title: "디자인 Design",
+                    contents: [{
+                        title: "test1",
+                        subTitle: "test1",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    },{
+                        title: "test2",
+                        subTitle: "test2",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    },{
+                        title: "test3",
+                        subTitle: "test3",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    }]
+                },
+                {
+                    id: "manual",
+                    title: "매뉴얼 Manual",
+                    contents: [{
+                        title: "test1",
+                        subTitle: "test1",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    },{
+                        title: "test2",
+                        subTitle: "test2",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    },{
+                        title: "test3",
+                        subTitle: "test3",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    }]
+                },
+                {
+                    id: "price",
+                    title: "도매가 Wholesale Price",
+                    contents: [{
+                        title: "test1",
+                        subTitle: "test1",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    },{
+                        title: "test2",
+                        subTitle: "test2",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    },{
+                        title: "test3",
+                        subTitle: "test3",
+                        image: "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                    }]
+                }
+            ],
+            noticeText: "*파트너 계약 체결 시, 추가적인 비공개 매뉴얼이 전달됩니다. <br/> 파트너 플랜에 따라 매뉴얼 갯수와 도매가격 등이 달라집니다.",
+            linkBtn: {
+                text: "포트폴리오 바로가기",
+                link: "#"
+            },
+        },
+        tenSection: {
+            subTitle: "Honest Reviews",
+            title: "클라이언트분들의 솔직한 후기"
+        },
+        reviewSection: [
+            {
+                image: "assets/img/icon/review-4-logo-1.png",
+                title: "인스타그램 서비스",
+                description: "주문 5000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                star: 5
+            }, {
+                image: "assets/img/icon/review-4-logo-2.png",
+                title: "텔레그램 서비스",
+                description: "주문 8000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                star: 5
+            }, {
+                image: "assets/img/icon/review-4-logo-3.png",
+                title: "유튜브 서비스",
+                description: "주문 3000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                star: 5
+            }
+        ],
+        contactSection: {
+            title: "함께 일합시다.<br/>함께 성공합시다.",
+            description: "원하시는 조건 및 이루고 싶으신 목표를 위제로에게 말씀해주세요!",
+            tel: "+(82) 010-3971-5538",
+            email: "wezxro@hwalaon.com",
+            btn: {
+                text: "즉시 통화하기",
+                link: "/contact"
+            },
+            inputs: ["성/이름", "이메일 주소", "전화번호", "웹사이트", "메세지", "메세지 전송"]
+        },
+        awardSection: [
+            {
+                icon: "assets/img/shape/award-shape-1.png",
+                title: "화라온 HWALAON",
+                content: "위제로 헤드 오피스"
+            }, {
+                icon: "assets/img/shape/award-shape-2.png",
+                title: "리오브 LEOWVW",
+                content: "위제로 단독 광고 계약 체결"
+            }, {
+                icon: "assets/img/shape/award-shape-3.png",
+                title: "퀄리치 KWLRICH",
+                content: "위제로 파트너 솔루션 협력"
+            }
+        ],
         footer: {
             firstRow: {
-                content: `This SEO is most reputed firm <br/> which provides various online <br/> marketing`,
+                content: `WE가 ZXRO에서부터 함께 만들어 나갑니다.<br/>WE is made together from ZXRO.`,
                 btn: {
-                    text: "Get Trafic",
+                    text: "서비스 둘러보기",
                     link: "/login"
                 }
             },
@@ -207,36 +336,55 @@ export const seomySetting = {
                     title: "WEZXRO",
                     list: [
                         {
-                            text: "Home",
+                            text: "HOME",
                             link: "/"
                         }, {
-                            text: "About Us",
+                            text: "ABOUT US",
                             link: "/about"
                         }, {
                             text: "FAQ",
                             link: "/FAQ"
                         }, {
-                            text: "Services",
+                            text: "SERVICES",
                             link: "/services"
                         }, {
-                            text: "Portfolio",
-                            link: "/portfolios"
-                        }
+                            text: "고객센터",
+                            link: "/contact"
+                        },
                     ]
                 },
                 {
-                    title: "파트너",
+                    title: "PARTNER",
                     list: [
                         {
-                            text: "고객센터",
-                            link: "/contact"
-                        }, {
                             text: "파트너 신청하기",
                             link: "/join-partner"
+                        }, {
+                            text: "포트폴리오",
+                            link: "/portfolios"
                         }
                     ]
                 }
-            ]
+            ],
+            lastRow: {
+                title: "CONTACT US",
+                list: [
+                    {
+                        text: "파트너 신청하기",
+                        link: "/join-partner"
+                    }, {
+                        text: "포트폴리오",
+                        link: "/portfolios"
+                    }
+                ]
+            },
+            links: {
+                instagram: "https://www.instagram.com/wezxro/",
+                katalk: "http://pf.kakao.com/_feGHxj",
+                telegram: "https://t.me/wezxro",
+                hwalaon: "https://hwalaon.com"
+            },
+            copyright: "© 2024 Copyrights by <a target=\"_blank\" href=\"https://hwalaon.com\">HWALAON.</a> All Rights Reserved."
         }
     }
 }
