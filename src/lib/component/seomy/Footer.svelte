@@ -50,7 +50,7 @@
                             <div class="footer-widget footer-4-col-4 mb-40">
                                 <h4 class="footer-widget-title mb-20">{config.lastRow.title}</h4>
                                 <div class="footer-widget-content mb-40">
-                                    <p class="footer-widget-text mb-20">24시간 연중무휴 고객센터 운영 中</p>
+                                    <p class="footer-widget-text mb-20">24시간 연중무휴 고객센터 운영</p>
                                     <form action="#">
                                         <div class="p-relative">
                                             <div class="footer-widget-newsletter-input mb-15">

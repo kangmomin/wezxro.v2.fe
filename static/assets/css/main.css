@@ -2761,7 +2761,7 @@ div.test img {
   font-weight: 600;
   font-size: 18px;
   line-height: 1;
-  background: linear-gradient(90deg, #501E9C 0%, #A44CEE 43.75%, #FF847F 100%);
+  background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -19626,7 +19626,7 @@ div.price-open {
 }
 
 .brand-bg-3 {
-  background: linear-gradient(91.91deg, #501E9C 5.01%, #A44CEE 43.79%, #FF847F 93.65%);
+  background: linear-gradient(91.91deg, #719BE3 5.01%, #58C1F0 43.79%, #71E3E3 93.65%);
 }
 
 .brand-wrapper .title {

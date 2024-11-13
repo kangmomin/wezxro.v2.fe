@@ -4,10 +4,12 @@
     import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
     import {goto} from "$app/navigation";
     import Footer from "$lib/component/seomy/Footer.svelte";
+    import {seomySetting} from "$lib/rendingPage/theme/seomy/SeomySetting.js";
 
     export let data
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
+    const config = seomySetting[EN_NAME].about
 
     if (EN_NAME !== "WEZXRO") goto("/error")
 </script>
@@ -105,11 +107,14 @@
                 <div class="row">
                     <div class="col-xxl-12">
                         <div class="breadcrumb__content p-relative z-index-1">
-                            <h3 class="breadcrumb__title">About Us</h3>
+                            <h3 class="breadcrumb__title">{config.breadcrumb.title}</h3>
                             <div class="breadcrumb__list">
-                                <span><a href="/">Home</a></span>
-                                <span class="dvdr"></span>
-                                <span>About Us</span>
+                                {#each config.breadcrumb.list as item, idx}
+                                    {#if idx !== 0}
+                                        <span class="dvdr" style="margin-left: 10px"></span>
+                                    {/if}
+                                    <span><a href="{item.link}">{item.context}</a></span>
+                                {/each}
                             </div>
                         </div>
                     </div>
@@ -131,8 +136,8 @@
                     <div class="col-lg-6">
                         <div class="about-inner-content">
                             <span>Welcome</span>
-                            <h4 class="about-inner-title">Working Hard to Make SEO Easy. Together</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit.</p>
+                            <h4 style="font-size: 53px" class="about-inner-title">{@html config.about.title}</h4>
+                            <p>{@html config.about.content}</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +154,7 @@
                 <div class="col-lg-2 offset-lg-5 col-md-4">
                     <div class="brand-wrapper ">
                         <div class="brand-inner-content">
-                            <h4 class="brand-inner-title">Scroll down <br> to explore more</h4>
+                            <h4 class="brand-inner-title">{@html config.brand.innerTitle}</h4>
                             <a href="#our-misson">
                                 <i>
                                     <svg fill="none" height="30" viewBox="0 0 20 30" width="20"

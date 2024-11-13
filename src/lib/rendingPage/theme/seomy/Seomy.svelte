@@ -21,7 +21,7 @@
     }
 
     /** 메인 페이지 공통 설정 */
-    const config = seomySetting[EN_NAME]
+    const config = seomySetting[EN_NAME].main
 
     onMount(() => {
         let token = localStorage.getItem("accessToken");
@@ -1236,7 +1236,7 @@
                             <a class="phone mb-5" href="tel:{config.contactSection.tel}">{config.contactSection.tel}</a>
                             <a class="mail mb-35" href="mailto:{config.contactSection.email}">{config.contactSection.email}</a>
                             <div class="tpcontact-4-content-btn">
-                                <a href="{config.contactSection.btn.link}">{config.contactSection.btn.text}</a>
+                                <a href="tel:{config.contactSection.btn.link}">{config.contactSection.btn.text}</a>
                             </div>
                         </div>
                     </div>

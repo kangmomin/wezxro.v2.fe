@@ -44,7 +44,7 @@
 										<a rel="external" href="/">PARTNER</a>
 										<ul class="tp-submenu submenu">
 											<li><a rel="external" href="/join-partner">파트너 신청하기</a></li>
-											<li><a rel="external" href="/portfolios">포트폴리오</a></li>
+											<li><a rel="external" href="/portfolios">파트너 포트폴리오</a></li>
 										</ul>
 									</li>
 									{:else}
