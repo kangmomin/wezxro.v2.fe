@@ -4,6 +4,7 @@
 
     export let data
 
+    console.log(data.props)
     const EN_NAME = data.props.EN_NAME
     const joinInfo = {
         email: "",
@@ -13,8 +14,8 @@
     }
 
     const join = async () => {
+        console.log(joinInfo)
         let res = await api.post("/u/join", joinInfo);
-        console.log(res)
 
         if (res === null) return;
 

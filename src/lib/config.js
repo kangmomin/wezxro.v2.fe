@@ -5,5 +5,5 @@ export const env = {
     CLIENT_KEY: envConfig.VITE_KEY,
     HOST: envConfig.VITE_HOST,
     THEME: envConfig.VITE_THEME,
-    DOMAIN: envConfig.DOMAIN
+    DOMAIN: envConfig.VITE_DOMAIN
 }

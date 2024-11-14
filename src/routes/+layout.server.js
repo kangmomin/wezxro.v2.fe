@@ -7,7 +7,8 @@ export function load({ fetch, params }) {
             "EN_NAME": env.EN_NAME,
             "DOMAIN": env.DOMAIN,
             "favicon": `/public/assets/logo/${env.EN_NAME.toLowerCase()}/logo.png`,
-            "THEME": env.THEME
+            "THEME": env.THEME,
+            "CLIENT_KEY": env.CLIENT_KEY
         }
     }
 }
