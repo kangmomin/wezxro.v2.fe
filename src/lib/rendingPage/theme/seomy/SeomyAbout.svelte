@@ -9,7 +9,7 @@
     export let data
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
-    const config = seomySetting[EN_NAME].about
+    const config = seomySetting[EN_NAME]?.about ?? seomySetting["WEZXRO"].about
 
     if (EN_NAME !== "WEZXRO") goto("/error")
 </script>

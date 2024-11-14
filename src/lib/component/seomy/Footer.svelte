@@ -3,7 +3,7 @@
 
     export let data
     const {EN_NAME} = data.props
-    const config = seomySetting[EN_NAME].footer
+    const config = seomySetting[EN_NAME]?.footer ?? seomySetting["WEZXRO"].footer
 </script>
 
 <footer>

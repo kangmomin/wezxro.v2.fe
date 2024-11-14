@@ -21,7 +21,7 @@
     }
 
     /** 메인 페이지 공통 설정 */
-    const config = seomySetting[EN_NAME].main
+    const config = seomySetting[EN_NAME]?.main ?? seomySetting["WEZXRO"].main
 
     onMount(() => {
         let token = localStorage.getItem("accessToken");
