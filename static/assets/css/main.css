@@ -154,7 +154,7 @@
   --tp-theme-green: #59BA41;
   --tp-theme-apple: #F5F1EB;
   --tp-theme-dark-blue: #1E2B8A;
-  --tp-theme-blue: #775AFC;
+  --tp-theme-blue: #05A2E9;
   --tp-border-1: #F0F1F4;
   --tp-border-5: #000;
 }
@@ -18276,7 +18276,7 @@ div.price-open {
   font-weight: 600;
   font-size: 16px;
   line-height: 45px;
-  color: #775AFC;
+  color: var(--tp-theme-blue);
   position: relative;
 }
 .portfolio-tab-4 .nav-pills .nav-link.active::before, .portfolio-tab-4 .nav-pills .show > .nav-link::before {
