@@ -22,10 +22,21 @@
 
     /** 메인 페이지 공통 설정 */
     const config = seomySetting[EN_NAME]?.main ?? seomySetting["WEZXRO"].main
+    const theme = seomySetting[EN_NAME]?.theme ?? seomySetting["WEZXRO"].theme
 
     onMount(() => {
         let token = localStorage.getItem("accessToken");
         if (token) isLogin = true
+
+        // --------- theme 설정 ---------
+        const root = document.documentElement;
+
+        if (seomySetting[EN_NAME] !== null) {
+            Object.entries(seomySetting[EN_NAME].theme).forEach(([key, value]) => {
+                root.style.setProperty(`--tp-${key}`, value);
+            });
+        }
+        // --------- theme 설정 ---------
     })
 
     const animateValueChange = () => {
@@ -65,6 +76,7 @@
         <link href="assets/css/modernizr.css" rel="stylesheet">
         <link href="assets/css/spacing.css" rel="stylesheet">
         <link href="assets/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     </head>
 </svelte:head>
 
@@ -144,9 +156,9 @@
                                 <span class="cd-words-wrapper p-0">
                                     {#each config.firstSection.bannerContent.bannerTitle.secondSection as text, idx}
                                         {#if idx === 0}
-                                            <b class="is-visible p-0">{text}</b>
+                                            <b class="is-visible p-0" style="{theme.defaultGradientText}">{text}</b>
                                         {:else}
-                                            <b class="p-0">{text}</b>
+                                            <b class="p-0" style="{theme.defaultGradientText}">{text}</b>
                                         {/if}
                                     {/each}
                                </span>
@@ -165,13 +177,13 @@
                                         <svg fill="none" height="26" viewBox="0 0 26 26" width="26"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path d="M24.964 20.596C24.964 21.028 24.868 21.472 24.664 21.904C24.46 22.336 24.196 22.744 23.848 23.128C23.26 23.776 22.612 24.244 21.88 24.544C21.16 24.844 20.38 25 19.54 25C18.316 25 17.008 24.712 15.628 24.124C14.248 23.536 12.868 22.744 11.5 21.748C10.12 20.74 8.812 19.624 7.564 18.388C6.328 17.14 5.212 15.832 4.216 14.464C3.232 13.096 2.44 11.728 1.864 10.372C1.288 9.004 1 7.696 1 6.448C1 5.632 1.144 4.852 1.432 4.132C1.72 3.4 2.176 2.728 2.812 2.128C3.58 1.372 4.42 1 5.308 1C5.644 1 5.98 1.072 6.28 1.216C6.592 1.36 6.868 1.576 7.084 1.888L9.868 5.812C10.084 6.112 10.24 6.388 10.348 6.652C10.456 6.904 10.516 7.156 10.516 7.384C10.516 7.672 10.432 7.96 10.264 8.236C10.108 8.512 9.88 8.8 9.592 9.088L8.68 10.036C8.548 10.168 8.488 10.324 8.488 10.516C8.488 10.612 8.5 10.696 8.524 10.792C8.56 10.888 8.596 10.96 8.62 11.032C8.836 11.428 9.208 11.944 9.736 12.568C10.276 13.192 10.852 13.828 11.476 14.464C12.124 15.1 12.748 15.688 13.384 16.228C14.008 16.756 14.524 17.116 14.932 17.332C14.992 17.356 15.064 17.392 15.148 17.428C15.244 17.464 15.34 17.476 15.448 17.476C15.652 17.476 15.808 17.404 15.94 17.272L16.852 16.372C17.152 16.072 17.44 15.844 17.716 15.7C17.992 15.532 18.268 15.448 18.568 15.448C18.796 15.448 19.036 15.496 19.3 15.604C19.564 15.712 19.84 15.868 20.14 16.072L24.112 18.892C24.424 19.108 24.64 19.36 24.772 19.66C24.892 19.96 24.964 20.26 24.964 20.596Z"
-                                                  stroke="#05A2E9" stroke-miterlimit="10" stroke-width="1.5"/>
+                                                  stroke="{theme.main}" stroke-miterlimit="10" stroke-width="1.5"/>
                                             <path d="M20.7996 9.40038C20.7996 8.68038 20.2356 7.57638 19.3956 6.67638C18.6276 5.84838 17.6076 5.20038 16.5996 5.20038"
                                                   opacity="0.4"
-                                                  stroke="#05A2E9" stroke-linecap="round" stroke-linejoin="round"
+                                                  stroke="{theme.main}" stroke-linecap="round" stroke-linejoin="round"
                                                   stroke-width="1.5"/>
                                             <path d="M24.9996 9.4C24.9996 4.756 21.2436 1 16.5996 1" opacity="0.4"
-                                                  stroke="#05A2E9" stroke-linecap="round" stroke-linejoin="round"
+                                                  stroke="{theme.main}" stroke-linecap="round" stroke-linejoin="round"
                                                   stroke-width="1.5"/>
                                         </svg>
                                     </i>
@@ -225,7 +237,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-wrapper text-center mb-60">
-                        <span>{config.secondSection.subText}</span>
+                        <span style="{theme.defaultGradientText}">{config.secondSection.subText}</span>
                         <h5 class="section-title-4">{config.secondSection.mainText}</h5>
                     </div>
                 </div>
@@ -249,11 +261,11 @@
                                         <i>
                                             <svg fill="none" height="14" viewBox="0 0 18 14" width="18"
                                                  xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11.2871 1L17 6.71285L11.2871 12.4257" stroke="#05A2E9"
+                                                <path d="M11.2871 1L17 6.71285L11.2871 12.4257" stroke="{theme.main}"
                                                       stroke-linecap="round" stroke-linejoin="round"
                                                       stroke-miterlimit="10"
                                                       stroke-width="1.5"/>
-                                                <path d="M1 6.71313H16.8397" stroke="#05A2E9"
+                                                <path d="M1 6.71313H16.8397" stroke="{theme.main}"
                                                       stroke-linecap="round"
                                                       stroke-linejoin="round" stroke-miterlimit="10"
                                                       stroke-width="1.5"/>
@@ -279,7 +291,7 @@
                                         <svg fill="none" height="7" viewBox="0 0 60 7" width="60"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1.19582 4.26135C22.5561 -1.51199 38.7792 0.327797 59.246 6.22031"
-                                                  stroke="#05A2E9" stroke-linecap="round"/>
+                                                  stroke="{theme.main}" stroke-linecap="round"/>
                                         </svg>
                                     </i>
                                 </a>
@@ -306,127 +318,15 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="tpbrand tpbrand-active-4 mb-170 slick-initialized slick-slider slick-dotted">
-                            <div class="slick-list draggable">
-                                <div class="slick-track"
-                                     style="opacity: 1; width: 3978px; transform: translate3d(-1170px, 0px, 0px);">
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="-5" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-2.png">
+                        <div class="swiper mySwiper mb-200" style="height: 200px">
+                            <div class="swiper-wrapper">
+                                {#each Array.from({length: 19}) as _, idx}
+                                    <div class="swiper-slide">
+                                        <img alt="" src="assets/img/icon/{idx + 1}.png">
                                     </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="-4" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-3.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="-3" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-4.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="-2" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-5.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="-1" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-1.png">
-                                    </div>
-                                    <div aria-describedby="slick-slide-control50"
-                                         aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-current slick-active"
-                                         data-slick-index="0" id="slick-slide50"
-                                         role="tabpanel" style="width: 234px;" tabindex="0">
-                                        <img alt="" src="assets/img/brand/logo-3-1.png">
-                                    </div>
-                                    <div aria-describedby="slick-slide-control51" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="1"
-                                         id="slick-slide51" role="tabpanel"
-                                         style="width: 234px;" tabindex="0">
-                                        <img alt="" src="assets/img/brand/logo-3-2.png">
-                                    </div>
-                                    <div aria-describedby="slick-slide-control52" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="2"
-                                         id="slick-slide52" role="tabpanel"
-                                         style="width: 234px;" tabindex="0">
-                                        <img alt="" src="assets/img/brand/logo-3-3.png">
-                                    </div>
-                                    <div aria-describedby="slick-slide-control53" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="3"
-                                         id="slick-slide53" role="tabpanel"
-                                         style="width: 234px;" tabindex="0">
-                                        <img alt="" src="assets/img/brand/logo-3-4.png">
-                                    </div>
-                                    <div aria-describedby="slick-slide-control54" aria-hidden="false"
-                                         class="tpbrand-item-4 mb-35 slick-slide slick-active" data-slick-index="4"
-                                         id="slick-slide54" role="tabpanel"
-                                         style="width: 234px;" tabindex="0">
-                                        <img alt="" src="assets/img/brand/logo-3-5.png">
-                                    </div>
-                                    <div aria-describedby="slick-slide-control55" aria-hidden="true"
-                                         class="tpbrand-item-4 mb-35 slick-slide" data-slick-index="5"
-                                         id="slick-slide55" role="tabpanel"
-                                         style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-1.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="6" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-1.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="7" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-2.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="8" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-3.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="9" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-4.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="10" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-5.png">
-                                    </div>
-                                    <div aria-hidden="true" class="tpbrand-item-4 mb-35 slick-slide slick-cloned"
-                                         data-slick-index="11" id="" style="width: 234px;" tabindex="-1">
-                                        <img alt="" src="assets/img/brand/logo-3-1.png">
-                                    </div>
-                                </div>
+                                {/each}
                             </div>
-
-                            <ul class="slick-dots" role="tablist" style="">
-                                <li class="slick-active" role="presentation">
-                                    <button aria-controls="slick-slide50" aria-label="1 of 2" aria-selected="true"
-                                            id="slick-slide-control50" role="tab" tabindex="0"
-                                            type="button">1
-                                    </button>
-                                </li>
-                                <li role="presentation">
-                                    <button aria-controls="slick-slide51" aria-label="2 of 2" id="slick-slide-control51"
-                                            role="tab" tabindex="-1" type="button">2
-                                    </button>
-                                </li>
-                                <li role="presentation">
-                                    <button aria-controls="slick-slide52" aria-label="3 of 2" id="slick-slide-control52"
-                                            role="tab" tabindex="-1" type="button">3
-                                    </button>
-                                </li>
-                                <li role="presentation">
-                                    <button aria-controls="slick-slide53" aria-label="4 of 2" id="slick-slide-control53"
-                                            role="tab" tabindex="-1" type="button">4
-                                    </button>
-                                </li>
-                                <li role="presentation">
-                                    <button aria-controls="slick-slide54" aria-label="5 of 2" id="slick-slide-control54"
-                                            role="tab" tabindex="-1" type="button">5
-                                    </button>
-                                </li>
-                                <li role="presentation">
-                                    <button aria-controls="slick-slide55" aria-label="6 of 2" id="slick-slide-control55"
-                                            role="tab" tabindex="-1" type="button">6
-                                    </button>
-                                </li>
-                            </ul>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -445,7 +345,7 @@
             <svg class="wave" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
                 <title>Wave</title>
                 <path d="M 0 156.10414462387877 C 158.93750000000054 181.28626242272586 158.93750000000054 181.2862624227259 317.87500000000097 168.69520352330233 C 476.81250000000085 156.1041446238788 476.8125000000011 156.1041446238788 635.7500000000016 184.5316017314728 C 794.6875000000016 212.95905883906687 794.6875000000016 212.95905883906687 953.6250000000016 190.10552459162486 C 1112.5625000000027 167.25199034418304 1112.5624999999973 167.25199034418304 1271.4999999999973 180.66263870570117 C 1430.4374999999973 194.0732870672194 1430.4374999999973 194.0732870672194 1589.3749999999973 164.25734828199154 C 1748.3124999999973 134.44140949676358 1748.3124999999973 134.44140949676358 1907.2499999999973 154.88271029727417 C 2066.1874999999945 175.3240110977847 2066.1874999999945 175.3240110977847 2225.1249999999945 160.53491622812484 C 2384.0624999999945 145.74582135846512 2384.0624999999945 145.74582135846512 2542.9999999999945 180.66263870570117 L 2543 8531.015625 L 0 8531.015625 Z"
-                      fill="#F7EFFD"
+                      fill="{theme.common1}"
                       id="wave-two"></path>
             </svg>
         </div>
@@ -476,7 +376,7 @@
                 <div class="col-lg-6">
                     <div class="feature-content-4 pl-70">
                         <div class="section-wrapper mb-40">
-                            <span>Let us do the work</span>
+                            <span style="{theme.defaultGradientText}">Let us do the work</span>
                             <h5 class="section-title-4 section-title-4-2">{config.fourthSection.title}</h5>
                         </div>
                         <ul class="feature-list-4">
@@ -599,7 +499,7 @@
     <!-- counter-area-start -->
     <section class="counter-area pb-140">
         <div class="container">
-            <div class="counter-bg-4 p-relative fix">
+            <div class="counter-bg-4 p-relative fix" style="{theme.defaultGradientAreaHtml}">
                 <div class="counter-shape-4  d-none d-md-block">
                     <img alt="" class="counter-shape-4-1" src="assets/img/shape/counter-shape-4-1.png">
                     <img alt="" class="counter-shape-4-2" src="assets/img/shape/counter-shape-4-2.png">
@@ -650,7 +550,7 @@
                     <div class="portfolio-4-wrapper">
                         <div class="portfolio-4 mt-20">
                             <div class="section-wrapper mb-20">
-                                <span>{config.nineSection.subTitle}</span>
+                                <span style="{theme.defaultGradientText}">{config.nineSection.subTitle}</span>
                                 <h5 class="section-title-4 section-title-4-2">{@html config.nineSection.title}</h5>
                             </div>
                         </div>
@@ -772,7 +672,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-wrapper text-center mb-40">
-                        <span>{config.eighthSection.subTitle}</span>
+                        <span style="{theme.defaultGradientText}">{config.eighthSection.subTitle}</span>
                         <h5 class="section-title-4 section-title-4-2">{config.eighthSection.title}</h5>
                     </div>
                 </div>
@@ -790,20 +690,6 @@
                             <label class="toggler mb-0 mt-10"
                                    id="filt-yearly-price">{config.eighthSection.billedOptions[1]}</label>
                         </div>
-                    </div>
-                </div>
-                <div class="tppricing-shape-4">
-                    <div class="tppricing-shape-1">
-                        <img alt="" src="assets/img/shape/pricing-4-shape-3.png">
-                    </div>
-                    <div class="tppricing-shape-3">
-                        <svg fill="none" height="59" viewBox="0 0 86 59" width="86" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 39.5506C8 21.0506 23.7 -11.5494 30.5 6.05057C39 28.0506 33 68.5508 63 48.0508C71.5 44.0508 78 41.5508 85 58.0508"
-                                  stroke="currentColor" stroke-dasharray="4 4" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div class="tppricing-shape-2">
-                        <img alt="" src="assets/img/shape/pricing-4-shape-2.png">
                     </div>
                 </div>
             </div>
@@ -862,7 +748,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <div class="tppricing-4-price active text-center">
+                                                        <div class="tppricing-4-price active text-center" >
                                                             <p>{config.eighthSection.pricing.firstOption[1].values[idx]}</p>
                                                         </div>
                                                     </div>
@@ -1187,7 +1073,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="tpreview-4 text-center mb-30">
                             <div class="tpreview-4-icon mb-15">
-                                <img alt="" src="{review.image}">
+                                <img alt="" src="{review.image}" width="77px">
                             </div>
                             <h4 class="title">{review.title}</h4>
                             <div class="tpreview-4-content">
@@ -1228,7 +1114,7 @@
                 <div class="col-lg-6">
                     <div class="tpcontact-4 mt-30 mb-50">
                         <div class="section-wrapper mb-20">
-                            <span>Get in touch</span>
+                            <span style="{theme.defaultGradientText}">Get in touch</span>
                             <h5 class="section-title-4 section-title-4-2">{@html config.contactSection.title}</h5>
                         </div>
                         <div class="tpcontact-4-content">
@@ -1295,7 +1181,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 ">
                     <div class="section-wrapper mb-50">
-                        <span>What's Going On</span>
+                        <span style="{theme.defaultGradientText}">What's Going On</span>
                         <h5 class="section-title-4 section-title-4-2">Company blog & Insights</h5>
                     </div>
                 </div>
@@ -1396,4 +1282,17 @@
 <script src="assets/js/wavify.js"></script>
 <script src="assets/js/animate-headline.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+<script>
+    setTimeout(() => {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 7,
+            spaceBetween: 50,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    }, 100)
+</script>
 </body>

@@ -1,5 +1,45 @@
 export const seomySetting = {
     WEZXRO: {
+        theme: {
+            defaultGradientText: "background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
+            defaultGradientAreaHtml: "background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)",
+            defaultGradientArea: "linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)",
+            main: "#05A2E9",
+            white: "#ffffff",
+            black: "#000",
+            common1: "#3EB9FF",
+            common2: "#ABBF78",
+            common3: "#FFB876",
+            common4: "#FFA0C9",
+            common5: "#E4F7FF",
+            common6: "#FFF2D6",
+            common7: "#E3E8FF",
+            common8: "#FFE4E4",
+            common9: "#D2F8EC",
+            common10: "#FFE4F3",
+            common11: "#010F1C",
+            headingPrimary: "#0C1338",
+            headingSecondary: "#0F1123",
+            grey1: "#6C6E76",
+            grey2: "#93959F",
+            grey3: "#565764",
+            grey4: "#666666",
+            grey5: "#8A8A8D",
+            grey6: "#C3C4CD",
+            grey7: "#414250",
+            grey8: "#55585B",
+            textBody: "#565764",
+            text1: "#271D3A",
+            themePrimary: "#4260FF",
+            themeSecondary: "#131683",
+            theme3: "#05003B",
+            themeGreen: "#59BA41",
+            themeApple: "#F5F1EB",
+            themeDarkBlue: "#1E2B8A",
+            themeBlue: "#05A2E9",
+            border1: "#F0F1F4",
+            border5: "#000"
+        },
         main: {
             firstSection: {
                 bannerContent: {
@@ -73,6 +113,7 @@ export const seomySetting = {
             },
             fourthSection: {
                 title: "WEZXRO 사용방법",
+                captionTheme: "color: linear-gradient(91.91deg, #719BE3 5.01%, #58C1F0 43.79%, #71E3E3 93.65%",
                 content: [
                     {
                         title: "위제로 회원가입",
@@ -282,17 +323,17 @@ export const seomySetting = {
             },
             reviewSection: [
                 {
-                    image: "assets/img/icon/review-4-logo-1.png",
+                    image: "assets/img/icon/instagram.png",
                     title: "인스타그램 서비스",
                     description: "주문 5000건 리뷰, 5점 만점에 평균 4.7점 이상.",
                     star: 5
                 }, {
-                    image: "assets/img/icon/review-4-logo-2.png",
+                    image: "assets/img/icon/telegram.png",
                     title: "텔레그램 서비스",
                     description: "주문 8000건 리뷰, 5점 만점에 평균 4.7점 이상.",
                     star: 5
                 }, {
-                    image: "assets/img/icon/review-4-logo-3.png",
+                    image: "assets/img/icon/youtube.png",
                     title: "유튜브 서비스",
                     description: "주문 3000건 리뷰, 5점 만점에 평균 4.7점 이상.",
                     star: 5

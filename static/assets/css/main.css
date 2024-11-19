@@ -116,6 +116,7 @@
 
 :root {
   /** @font family declaration */
+  --tp-defaultGradientArea: "linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)";
   --tp-ff-body: 'Urbanist', sans-serif;
   --tp-ff-heading: 'Urbanist', sans-serif;
   --tp-ff-p: 'Urbanist', sans-serif;
@@ -148,7 +149,7 @@
   --tp-grey-8: #55585B;
   --tp-text-body: #565764;
   --tp-text-1: #271D3A;
-  --tp-theme-primary: #4260FF;
+  --tp-theme-primary: #05A2E9;
   --tp-theme-secondary: #131683;
   --tp-theme-3: #05003B;
   --tp-theme-green: #59BA41;
@@ -9323,7 +9324,7 @@ blockquote cite::before {
   }
 }
 .banner-4-title b {
-  background: linear-gradient(90deg, #501E9C 0%, #A44CEE 43.75%, #FF847F 100%);
+  background: linear-gradient(91.91deg, #719BE3 5.01%, #58C1F0 43.79%, #71E3E3 93.65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -12164,7 +12165,7 @@ blockquote cite::before {
   box-shadow: 0px 4px 6px rgba(1, 15, 28, 0.1);
 }
 .pricing-box-4 .active.tppricing-4-price::before {
-  background-color: #8E76FF;
+  background-color: var(--tp-common-1);
 }
 
 .tppricing-4-head {
@@ -14308,7 +14309,6 @@ div.price-open {
   font-size: 24px;
   line-height: 24px;
   letter-spacing: -0.02em;
-  color: #FF6C66;
   display: block;
 }
 .tpcontact-4-content .phone:hover {
@@ -14355,7 +14355,7 @@ div.price-open {
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(69.83deg, #501E9C -8.16%, #A44CEE 49.19%, #FF847F 102.99%);
+  background: var(--tp-defaultGradientArea);
   mix-blend-mode: normal;
   box-shadow: 0px 20px 40px rgba(36, 7, 66, 0.13);
   border-radius: 20px;
@@ -23084,5 +23084,28 @@ div.price-open {
   -o-transform: translateY(-2px);
   transform: translateY(-2px);
 }
-
+#ch-plugin {
+  bottom: 100px !important; /* 위로 100px 이동 */
+  right: 30px !important;  /* 필요하면 옆 간격도 조정 */
+}
 /*# sourceMappingURL=main.css.map */
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

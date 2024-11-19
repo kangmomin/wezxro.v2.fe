@@ -4,6 +4,57 @@
     export let data
     const {EN_NAME} = data.props
     const config = seomySetting[EN_NAME]?.footer ?? seomySetting["WEZXRO"].footer
+    const theme = seomySetting[EN_NAME]?.theme ?? seomySetting["WEZXRO"].theme
+
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        (function () {
+            const w = window;
+            if (w.ChannelIO) {
+                return w.console.error('ChannelIO script included twice.');
+            }
+            const ch = function () {
+                ch.c(arguments);
+            };
+            ch.q = [];
+            ch.c = function (args) {
+                ch.q.push(args);
+            };
+            w.ChannelIO = ch;
+
+            function l() {
+                if (w.ChannelIOInitialized) {
+                    return;
+                }
+                w.ChannelIOInitialized = true;
+                const s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+                const x = document.getElementsByTagName('script')[0];
+                if (x.parentNode) {
+                    x.parentNode.insertBefore(s, x);
+                }
+            }
+
+            if (document.readyState === 'complete') {
+                l();
+            } else {
+                w.addEventListener('DOMContentLoaded', l);
+                w.addEventListener('load', l);
+            }
+        })();
+
+        // ChannelIO boot configuration
+        ChannelIO('boot', {
+            pluginKey: '0f97bf1a-6cbc-437e-94a6-279431a903f9', // Replace with your actual plugin key
+        });
+
+        return () => {
+            ChannelIO('shutdown'); // Cleanup on component unmount
+        };
+    });
 </script>
 
 <footer>
