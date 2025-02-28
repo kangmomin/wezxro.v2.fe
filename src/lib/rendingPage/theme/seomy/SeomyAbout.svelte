@@ -4,7 +4,7 @@
     import VersionNotice from "$lib/component/seomy/VersionNotice.svelte";
     import {goto} from "$app/navigation";
     import Footer from "$lib/component/seomy/Footer.svelte";
-    import {seomySetting} from "$lib/rendingPage/theme/seomy/SeomySetting.js";
+    import seomySetting from "$lib/rendingPage/theme/seomy/SeomySetting.js";
 
     export let data
     const EN_NAME = data.props.EN_NAME,
