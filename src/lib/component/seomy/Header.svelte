@@ -1,14 +1,21 @@
 <script>
+	import seomySetting from "$lib/rendingPage/theme/seomy/SeomySetting";
+	import { SetThemeStyle } from "$lib/util/SetThemeStyle";
 	import {onMount} from "svelte";
 
 	export let data
 
 	const {EN_NAME} = data.props
 	let isLogin = false
+	const config = seomySetting[EN_NAME]?.main ?? seomySetting["WEZXRO"].main
+    const theme = seomySetting[EN_NAME]?.theme ?? seomySetting["WEZXRO"].theme
+
 
 	onMount(() => {
 		let token = localStorage.getItem("accessToken");
 		if (token) isLogin = true
+		
+		SetThemeStyle(theme)
 	})
 </script>
 
@@ -20,7 +27,7 @@
 					<div class="col-xl-2 col-lg-6 col-sm-4 col-6">
 						<div class="tplogo__area">
 							<a rel="external" href="/">
-								<img alt="logo" src="/public/assets\logo\{EN_NAME.toLowerCase()}\logo_fit_black.png">
+								<img alt="logo" src="/public/assets/logo/{EN_NAME.toLowerCase()}/logo_fit_black.png">
 							</a>
 						</div>
 					</div>
@@ -64,7 +71,7 @@
 								<div class="tpheader__sign d-none d-md-block">
 									<a rel="external" href="/login">로그인</a>
 								</div>
-								<div class="tpheader__sign ml-25 d-none d-md-block" style="background-color: #05A2E9; padding: 8px 10px; border-radius: 6px">
+								<div class="tpheader__sign ml-25 d-none d-md-block" style="    background-color: var(--tp-theme-blue);; padding: 8px 10px; border-radius: 6px">
 									<a class="text-white p-10" rel="external" href="/join">회원가입</a>
 								</div>
 								<div class="offcanvas-btn d-xl-none ml-20">

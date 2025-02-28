@@ -1,9 +1,10 @@
 <script>
-    import {seomySetting} from "$lib/rendingPage/theme/seomy/SeomySetting.js";
+    import seomySetting from "$lib/rendingPage/theme/seomy/SeomySetting.js";
     import {onMount} from "svelte";
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
+	import { SetThemeStyle } from "$lib/util/SetThemeStyle";
 
     export let data
 
@@ -14,7 +15,7 @@
     let slideIdx = 0
     let currentTabIdx = 0
     let targetValue = 0, currentValue = 0
-
+    
     $: if (slideIdx * 508 !== targetValue) {
         targetValue = (slideIdx % seomySetting[EN_NAME].nineSection.options[currentTabIdx].contents.length) * 508;
         animateValueChange();
@@ -28,15 +29,7 @@
         let token = localStorage.getItem("accessToken");
         if (token) isLogin = true
 
-        // --------- theme 설정 ---------
-        const root = document.documentElement;
-
-        if (seomySetting[EN_NAME] !== null) {
-            Object.entries(seomySetting[EN_NAME].theme).forEach(([key, value]) => {
-                root.style.setProperty(`--tp-${key}`, value);
-            });
-        }
-        // --------- theme 설정 ---------
+        SetThemeStyle(theme)
     })
 
     const animateValueChange = () => {
@@ -965,7 +958,7 @@
                     <div class="tp-testimonial-4 pb-60">
                         <div class="testimonial-4-wrap mb-40 pl-70">
                             <div class="section-wrapper mb-50">
-                                <span>{config.tenSection.subTitle}</span>
+                                <span style="{theme.defaultGradientText}">{config.tenSection.subTitle}</span>
                                 <h5 class="section-title-4 section-title-4-2">{config.tenSection.title}</h5>
                             </div>
                             <div class="testimonial-4-wrapper tptestimonial-4-active">
