@@ -119,30 +119,41 @@ export default {
             }
         },
         fourthSection: {
-            title: "WEZXRO 사용방법",
+            banner: {
+                url: "assets/img/banner/easyToUse.gif",
+                // 이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정
+                isRound: false
+            },
+            title: "WEODUS 사용방법",
             captionTheme: "color: linear-gradient(91.91deg, #E5D85C 5.01%, #FAED7D 43.79%, #FAF4C0 93.65%",
             content: [
                 {
-                    title: "위제로 회원가입",
-                    description: "우측 상단의 <b>'회원가입'</b> 클릭해 주시고, <br/>가입 후 위제로 대시보드에 접속해 주시면 됩니다.",
-                    color: "#F5D101"
+                    title: "위오더스 회원가입",
+                    description: "우측 상단의 <b>\"회원가입\"</b> 클릭해 주시고, <br/>가입 후 위오더스 대시보드에 접속해 주시면 됩니다.",
+                    color: "#39DDB8"
                 },
                 {
                     title: "예치금 충전하기",
                     description: "대시보드에서 좌측 카테고리를 보시면, <br /> <b>'충전 신청'</b> 클릭 후 예치금 충전해 주시면 됩니다.",
-                    color: "#05A2E9"
+                    color: "#FFE819"
                 },
                 {
                     title: "서비스 주문하기",
                     description: "좌측 카테고리에 <b>'주문하기'</b> 클릭 한 뒤, <br />서비스를 선택하고 링크와 수량을 입력하시면 자동 주문 완료!",
-                    color: "#6369DB"
+                    color: "#05A2E9"
                 }
             ]
         },
         fifthSection: {
+            banner: {
+                url: "assets/img/banner/wd_optimize.png",
+                bg1Url: "",
+                bg2Url: "", 
+                bgThumbUrl: "",
+            },
             label: "Looking for best AD results?",
-            title: "WEZXRO는 완벽합니다!<br/>갖추어진 시스템부터 <br/> 인프라까지 완벽합니다!",
-            content: "위제로는 완벽을 가장 중요시 생각합니다, 오차 없는 자동화 시스템으로 <br/> 24시간 연중무휴 완벽한 서비스를 이용하실 수 있습니다.",
+            title: "비전을 실현하는 완벽한 파트너!<br/>당신의 시간과 노력을 위오더스가 아껴드리겠습니다!",
+            content: "24시간 연중무휴 완벽한 서비스를 제공합니다",
             data: [
                 {
                     title: "서비스 자동 주문 성공 비율",
@@ -156,7 +167,7 @@ export default {
                 },
             ],
             btn: {
-                text: "WEZXRO 소개",
+                text: "WEODUS 소개",
                 link: "/about"
             }
         },
@@ -179,7 +190,7 @@ export default {
         seventhSection: {},
         eighthSection: {
             subTitle: "Pricing Partner Plans",
-            title: "WEZXRO 파트너 플랜",
+            title: "WEODUS 파트너 플랜",
             billedOptions: ["파트너 계약 연정액", "파트너 계약 월정액"],
             planOptions: ["자체 사이트 제작 및 서버 세팅", "로고, 배너 및 디자인 제작", "매뉴얼 및 노하우 교육 자료 전달", "위제로 모든 서비스 도매가 (평균)", "패널 제작 권한 및 매뉴얼 전달"],
             pricing: {
@@ -245,7 +256,7 @@ export default {
         },
         nineSection: {
             subTitle: "Our Partner Systems",
-            title: "WEZXRO<br/>파트너 시스템",
+            title: "WEODUS<br/>파트너 시스템",
             options: [
                 {
                     id: "profit",
@@ -347,9 +358,9 @@ export default {
             }
         ],
         contactSection: {
-            title: "함께 일합시다.<br/>함께 성공합시다.",
-            description: "원하시는 조건 및 이루고 싶으신 목표를 위제로에게 말씀해주세요!",
-            tel: "+(82) 010-3971-5538",
+            title: "디지털 시대를 리드하는 마케팅 파트너<br/>트렌드를 넘어 미래를 디자인하다.",
+            description: "고객의 니즈를 맞추기 위해서 바로 weodus가 더 노력하겠습니다.",
+            tel: "+(82) 010-6296-1338",
             email: "wezxro@hwalaon.com",
             btn: {
                 text: "즉시 통화하기",
@@ -405,7 +416,7 @@ export default {
         },
         listRow: [
             {
-                title: "WEZXRO",
+                title: "WEODUS",
                 list: [
                     {
                         text: "HOME",

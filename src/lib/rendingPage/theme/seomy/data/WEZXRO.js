@@ -111,6 +111,11 @@ export default {
             }
         },
         fourthSection: {
+            banner: {
+                url: "assets/img/banner/choose-2.png",
+                // 이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정
+                isRound: false
+            },
             title: "WEZXRO 사용방법",
             captionTheme: "color: linear-gradient(91.91deg, #719BE3 5.01%, #58C1F0 43.79%, #71E3E3 93.65%",
             content: [

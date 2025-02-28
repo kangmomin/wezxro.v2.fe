@@ -352,7 +352,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="tpchoose-thumb p-relative mb-50">
-                        <img alt="" class="tpchoose-border-anim" src="assets/img/banner/choose-2.png">
+                        <img alt="" 
+                            class={config.fourthSection.banner.isRound ? "tpchoose-border-anim" : ""} 
+                            src={config.fourthSection.banner.url ?? "assets/img/banner/choose-2.png"}>
                         <div class="tpchoose-shape d-none d-lg-block">
                             <div class="tpchoose-shape-one d-none d-md-block">
                                 <img alt="" src="assets/img/shape/choose-shape-1.png">
@@ -439,14 +441,14 @@
                 <div class="col-lg-6">
                     <div class="optimize-wrapperp pt-35">
                         <div class="section-wrapper mb-40">
-                            <span>{config.fifthSection.label}</span>
+                            <span style={theme.defaultGradientText}>{config.fifthSection.label}</span>
                             <h5 class="section-title-4 section-title-4-2">{@html config.fifthSection.title}</h5>
                             <p>{@html config.fifthSection.content}</p>
                         </div>
                         <div class="tpdrive-progress mb-25 pr-150">
                             {#each config.fifthSection.data as data}
                                 <div class="tpdrive-bar-item mb-30">
-                                    <h4 class="tpdrive-bar-title mb-15">
+                                    <h4 class="tpdrive-bar-title mb-15" style="line-height: 15px;">
                                         {data.title}
                                     </h4>
                                     <div class="tpdrive-bar-progress">
@@ -471,16 +473,25 @@
                 <div class="col-lg-6">
                     <div class="optimize-thumb text-end p-relative pt-35">
                         <div class="optimize-thumb-img">
-                            <img alt="" src="assets/img/bg/optimize-bg.png">
+                            {#if (config.fifthSection.banner.bgThumbUrl)}
+                                <img alt="" src="{config.fifthSection.banner.bgThumbUrl}">
+                            {:else}
+                                <!-- 투명 이미지 적용 -->
+                                <img alt="" src="assets/img/bg/optimize-bg.png" class="invisible">
+                            {/if}
                         </div>
                         <div class="optimize-shape">
-                            <img alt="" class="optimize-shape-1" src="assets/img/bg/optimize-bg-2.png">
-                            <img alt="" class="optimize-shape-2 d-none d-md-block"
-                                 data-parallax='{`{"y": 50, "smoothness": 20}`}'
-                                 src="assets/img/shape/optimize-shape-2.png">
-                            <img alt="" class="optimize-shape-3 d-none d-md-block"
-                                 data-parallax='{`{"y": 50, "smoothness": 20}`}'
-                                 src="assets/img/shape/optimize-shape-1.png">
+                            <img alt="" class="optimize-shape-1" src={config.fifthSection.banner.url}>
+                            {#if (!config.fifthSection.banner.bg1Url)}
+                                <img alt="" class="optimize-shape-2 d-none d-md-block"
+                                    data-parallax='{`{"y": 50, "smoothness": 20}`}'
+                                    src={config.fifthSection.banner.bg1Url}>
+                            {/if}
+                            {#if (!config.fifthSection.banner.bg2Url)}
+                                <img alt="" class="optimize-shape-3 d-none d-md-block"
+                                    data-parallax='{`{"y": 50, "smoothness": 20}`}'
+                                    src={config.fifthSection.banner.bg2Url}>
+                            {/if}
                         </div>
                     </div>
                 </div>
