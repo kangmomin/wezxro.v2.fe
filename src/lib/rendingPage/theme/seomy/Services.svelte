@@ -2,10 +2,18 @@
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
+	import SeomySetting from "./SeomySetting";
+	import { onMount } from "svelte";
 
     export let data
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
+
+    /** 메인 페이지 공통 설정 */
+    const config = SeomySetting[EN_NAME]?.service ?? SeomySetting["WEZXRO"].service
+    const theme = SeomySetting[EN_NAME]?.theme ?? SeomySetting["WEZXRO"].theme
+
+    onMount(() => SetThemeStyle(theme))
 </script>
 <svelte:head>
     <meta charset="utf-8">
@@ -108,10 +116,9 @@
                     <div class="about-inner-wrap">
                         <div class="about-inner-content-2 d-flex align-items-center mb-45">
                             <span>What</span>
-                            <h4 class="about-inner-title-2">Expect great <br> things from your SEO agency.!</h4>
+                            <h4 class="about-inner-title-2">{config.about.title}</h4>
                         </div>
-                        <p class="pl-30">Iterative approaches to corporate strategy foster collaborative thinking to further <br> the overall  value. Leverage agile frameworks to provide a robust high level over <br> views. In an ideal world this text wouldn’t exist.
-                        </p>
+                        <p class="pl-30">{config.about.subTitle}</p>
                     </div>
                 </div>
             </div>
@@ -127,77 +134,19 @@
                     <div class="tpservices">
                         <div class="tpservices-list">
                             <ul>
+                                {#each config.services as s, idx}
                                 <li>
                                     <div class="tpservices-wrapper">
                                         <div class="tpservices-img mb-35">
-                                            <img src="assets/img/services/services-1-icon-1.png" alt="">
+                                            <img src="{s.image}" alt="">
                                         </div>
                                         <div class="tpservices-content">
-                                            <span>Social Marketing</span>
-                                            <h4 class="tpservices-title"><a href="/">Instant account activation <br> if instant
-                                                access.</a></h4>
+                                            <span>{s.title}</span>
+                                            <h4 class="tpservices-title"><a href="{s.link}">{s.description}</a></h4>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="tpservices-wrapper tpservices-item2">
-                                        <div class="tpservices-img mb-35">
-                                            <img src="assets/img/services/services-1-icon-2.png" alt="">
-                                        </div>
-                                        <div class="tpservices-content">
-                                            <span>SEO Optimization</span>
-                                            <h4 class="tpservices-title"><a href="/">Services activation <br> if need
-                                                access.</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tpservices-wrapper tpservices-item3">
-                                        <div class="tpservices-img mb-35">
-                                            <img src="assets/img/services/services-1-icon-3.png" alt="">
-                                        </div>
-                                        <div class="tpservices-content">
-                                            <span>One Page SEO</span>
-                                            <h4 class="tpservices-title"><a href="/">Account activation <br> if instant
-                                                access.</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tpservices-wrapper tpservices-item4">
-                                        <div class="tpservices-img mb-35">
-                                            <img src="assets/img/services/services-1-icon-4.png" alt="">
-                                        </div>
-                                        <div class="tpservices-content">
-                                            <span>Content Marketing</span>
-                                            <h4 class="tpservices-title"><a href="services-social-media.html">SEO account activation <br> if instant
-                                                access.</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tpservices-wrapper tpservices-item5">
-                                        <div class="tpservices-img mb-35">
-                                            <img src="assets/img/services/services-1-icon-5.png" alt="">
-                                        </div>
-                                        <div class="tpservices-content">
-                                            <span>Email Marketing</span>
-                                            <h4 class="tpservices-title"><a href="/">Email Marketing activation <br> if instant
-                                                access.</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="tpservices-wrapper tpservices-item6">
-                                        <div class="tpservices-img mb-35">
-                                            <img src="assets/img/services/services-1-icon-6.png" alt="">
-                                        </div>
-                                        <div class="tpservices-content">
-                                            <span>Keyword Research</span>
-                                            <h4 class="tpservices-title"><a href="/">Keyword Research activation <br> if instant access.</a></h4>
-                                        </div>
-                                    </div>
-                                </li>
+                                {/each}
                             </ul>
                         </div>
                     </div>
@@ -236,10 +185,9 @@
         </div>
         <div class="about-inner-box">
             <div class="about-inner-content-3">
-                <span>Best SEO results?</span>
-                <h4 class="about-inner-title-3">Time to climb the rankings.</h4>
-                <p>Et proin odio elit tortor quis pretium ut. <br> A Perth SEO agency that'll help you ascend <br> to your goals.!
-                </p>
+                <span>{config.aboutInner.subTitle}</span>
+                <h4 class="about-inner-title-3">{config.aboutInner.title}</h4>
+                <p>{config.aboutInner.content}</p>
                 <ul class="about-inner-list">
                     <li><i class="fa-sharp fa-solid fa-circle-check"></i> Mimics Google Search</li>
                     <li><i class="fa-sharp fa-solid fa-circle-check"></i> Purchase Intent Searches</li>
@@ -257,7 +205,7 @@
                 <div class="col-lg-7">
                     <div class="seo-5-thumb p-relative mb-40">
                         <div class="seo-5-main-bg">
-                            <img src="assets/img/bg/seo-5-bg-1.png" alt="">
+                            <img src="{config.project.image}" alt="">
                         </div>
                         <div class="seo-5-shape d-none d-md-block">
                             <div class="seo-5-shape-one">
@@ -279,45 +227,25 @@
                     <div class="seo-5 mt-30 mb-40">
                         <div class="section-3 mb-40">
                             <span class="section-3-sub-title">Best SEO results?</span>
-                            <div class="section-3-title">Optimize your website easier</div>
+                            <div class="section-3-title">당신의 계정을 빠르고 쉽게 최적화하세요!</div>
                         </div>
                         <ul class="seo-5-list mb-50">
+                            {#each config.project.content as s, idx}
                             <li>
                                 <div class="seo-5-list-item d-flex">
                                     <div class="seo-5-list-icon">
                                         <i class="fa-sharp fa-solid fa-circle-check"></i>
                                     </div>
                                     <div class="seo-5-list-text">
-                                        <h4 class="title">Performance</h4>
-                                        <p>Slow pages,too-large CSS or HTML</p>
+                                        <h4 class="title">{s.title}</h4>
+                                        <p>{s.description}</p>
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="seo-5-list-item d-flex">
-                                    <div class="seo-5-list-icon">
-                                        <i class="fa-sharp fa-solid fa-circle-check"></i>
-                                    </div>
-                                    <div class="seo-5-list-text">
-                                        <h4 class="title">Localization</h4>
-                                        <p>All issues with hrefiang,language</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="seo-5-list-item d-flex">
-                                    <div class="seo-5-list-icon">
-                                        <i class="fa-sharp fa-solid fa-circle-check"></i>
-                                    </div>
-                                    <div class="seo-5-list-text">
-                                        <h4 class="title">Content quality</h4>
-                                        <p>Unconsolidated duplicate page</p>
-                                    </div>
-                                </div>
-                            </li>
+                            {/each}
                         </ul>
                         <div class="seo-5-btn">
-                            <a href="/services" class="light-blue-btn">Learn More</a>
+                            <a href="/services" class="light-blue-btn" id="seo5Btn">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -343,7 +271,7 @@
                         <div class="tpprice-switch p-relative mb-40">
                             <div class="tpsection__content pt-65 mb-20">
                                 <div class="tpbanner__sub-title mb-15">
-                                    <span>Our Pricing</span>
+                                    <span>{config.pricing.subTitle}</span>
                                     <i>
                                         <svg width="114" height="37" viewBox="0 0 114 37" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                             <rect y="-0.000488281" width="114" height="37" fill="url(#pattern0)" fill-opacity="0.08"/>
@@ -356,7 +284,7 @@
                                         </svg>
                                     </i>
                                 </div>
-                                <h2 class="tpsection__title mb-25">Choose Your Product.</h2>
+                                <h2 class="tpsection__title mb-25">{config.pricing.title}</h2>
                             </div>
                             <div class="tpprice-switch-wrapper">
                                 <label class="toggler toggler--is-active" id="filt-monthly">Pay Monthly</label>
@@ -704,10 +632,10 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="cta-content mt-40">
-                        <h4 class="cta-title">Grow your business today</h4>
+                        <h4 class="cta-title">{config.cta.title}</h4>
                         <p>Enim cras in eget urna. Ut proin integer tempor, bibendum  <br> quam ullamcorper faucibus</p>
                         <div class="cta-btn">
-                            <a class="tp-btn" href="/contact">Get in Touch</a>
+                            <a class="tp-btn" href="{config.cta.btn.link}">{config.cta.btn.text}</a>
                         </div>
                     </div>
                 </div>
@@ -757,3 +685,15 @@
 <script src="assets/js/ajax-form.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
+
+<style>
+    #seo5Btn {
+        background-color: var(--tp-theme-blue);
+        border: 1px solid var(--tp-theme-blue);
+    }
+    #seo5Btn:hover {
+        background-color: white;
+        color: var(--tp-theme-blue);
+        border: 1px solid var(--tp-theme-blue);
+    }
+</style>

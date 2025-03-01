@@ -442,6 +442,84 @@ export default {
             }
         }
     },
+    service: {
+        about: {
+            title: "SEO에이전시의 서비스를 확인하세요!",
+            subTitle: "기업의 성장을 위해선 연속적인 접근 방식은 문제해결의 큰 가치를 가져다줍니다.",
+        },
+        services: [
+            {
+                title: "소셜 마케팅",
+                description: "빠른 접근성을 가진 계정활성화의 상황",
+                image: "assets/img/services/services-1-icon-1.png",
+                link: "/"
+            },
+            {
+                title: "SEO최적화",
+                description: "서비스의 최적화 접근이 필요한 상황",
+                image: "assets/img/services/services-1-icon-1.png",
+                link: "/"
+            },
+            {
+                title: "원 페이지 SEO",
+                description: "즉각 계정 활성화가 가능한 상황",
+                image: "assets/img/services/services-1-icon-1.png",
+                link: "/"
+            },
+            {
+                title: "콘텐츠 마케팅",
+                description: "SEO의 계정의 즉각접근이 필요한 상황",
+                image: "assets/img/services/services-1-icon-1.png",
+                link: "/"
+            },
+            {
+                title: "이메일 마케팅",
+                description: "이메일 마케팅의 즉각 접근이 가능한 상황",
+                image: "assets/img/services/services-1-icon-1.png",
+                link: "/"
+            },
+            {
+                title: "키워드 리서치",
+                description: "이메일 마케팅의 즉각 접근이 가능한 상황",
+                image: "assets/img/services/services-1-icon-1.png",
+                link: "/"
+            },
+        ],
+        aboutInner: {
+            subTitle: "Best SEO results?",
+            title: "SEO의 가치를 높일 방법입니다!",
+            content: "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!",
+        },
+        project: {
+            title: "당신의 계정을 빠르고 쉽게 최적화하세요!",
+            image: "assets/img/services/wb-project.jpg",
+            content: [
+                {
+                    title: "기능",
+                    description: "답답한 페이지,너무큰 CSS"
+                },
+                {
+                    title: "현지활성도",
+                    description: "언어 문제의 해결"
+                },
+                {
+                    title: "콘텐츠",
+                    description: "복합적인 중복페이지 해결"
+                }
+            ]
+        },
+        pricing: {
+            subTitle: "가격 선택",
+            title: "필요한 상품을 선택하세요!",
+        },
+        cta: {
+            title: "성공적인 비즈니스 상승!",
+            btn: {
+                text: "요청하기",
+                link: "/contact"
+            }
+        }
+    },
     footer: {
         firstRow: {
             content: `WE가 ZXRO에서부터 함께 만들어 나갑니다.<br/>WE is made together from ZXRO.`,
