@@ -2,10 +2,18 @@
     import BackToTop from "$lib/component/seomy/BackToTop.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
     import Footer from "$lib/component/seomy/Footer.svelte";
+	import SeomySetting from "./SeomySetting";
+	import { onMount } from "svelte";
 
     export let data
     const EN_NAME = data.props.EN_NAME,
         KR_NAME = data.props.KR_NAME
+
+    /** 메인 페이지 공통 설정 */
+    const config = SeomySetting[EN_NAME]?.faq ?? SeomySetting["WEZXRO"].faq
+    const theme = SeomySetting[EN_NAME]?.theme ?? SeomySetting["WEZXRO"].theme
+
+    onMount(() => SetThemeStyle(theme))
 </script>
 
 <svelte:head>
@@ -82,7 +90,7 @@
 
     <!-- breadcrumb-area-start -->
     <section class="breadcrumb-area breadcrumb-2-bg pb-130 pt-195"
-             data-background="assets/img/breadcrumb/breadcrumb-bg-3.jpg">
+             data-background="{config.faq.background}">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -107,20 +115,21 @@
                 <div class="col-lg-6">
                     <div class="tp-faq-wrapper mb-80">
                         <div class="tpsection-wrapper mb-25">
-                            <h2 class="tpsection-title-two mb-40">Frequently<br> Asked
+                            <h2 class="tpsection-title-two mb-40">
+                                {@html config.faq.title.main}
                                 <span>
-                              Questions
-                              <svg width="306" height="31" viewBox="0 0 306 31" fill="none"
-                                   xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M2.89242 18.9903C2.89242 18.9903 192.778 -5.15589 299.226 12.3064"
-                                       stroke="#FFCE5A" stroke-width="5" stroke-linecap="round"></path>
-                                 <path d="M3.2201 14.9796C3.2201 14.9796 196.633 -0.186388 302.688 21.9968"
-                                       stroke="#FFCE5A" stroke-width="5" stroke-linecap="round"></path>
-                              </svg>
-                           </span>
+                                    {config.faq.title.highlight}
+                                    <svg width="306" height="31" viewBox="0 0 306 31" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.89242 18.9903C2.89242 18.9903 192.778 -5.15589 299.226 12.3064"
+                                        stroke="#FFCE5A" stroke-width="5" stroke-linecap="round"></path>
+                                        <path d="M3.2201 14.9796C3.2201 14.9796 196.633 -0.186388 302.688 21.9968"
+                                        stroke="#FFCE5A" stroke-width="5" stroke-linecap="round"></path>
+                                    </svg>
+                                </span>
                             </h2>
-                            <p>Can’t find what you are looking for?</p>
-                            <b>We would like to chat with you.</b>
+                            <p>{config.faq.subContent}</p>
+                            <b>{config.faq.content}</b>
                         </div>
                         <div class="tp-faq-img p-relative">
                         <span>
@@ -139,66 +148,22 @@
                 <div class="col-lg-6">
                     <div class="tp-accordion tp-green-accordion">
                         <div class="accordion mb-35" id="accordionExample">
+                            {#each config.faq.accordion as a, idx}
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
+                                <h2 class="accordion-header" id="{idx}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Why Is SEO Important?
+                                            data-bs-target="#collapse{idx}" aria-expanded="false" aria-controls="collapse{idx}">
+                                        {a.title}
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                <div id="collapse{idx}" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                      data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        Choosing the best SEO Agency means research, research and more research. Checking
-                                        through reviews, team credentials, and getting proposals and audits.
+                                        {a.description}
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Why Is SEO Important For Small Business?
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Choosing the best SEO Agency means research, research and more research. Checking
-                                        through reviews, team credentials, and getting proposals and audits.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                        How do I choose the best SEO Agency?
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse show"
-                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Choosing the best SEO Agency means research, research and more research. Checking
-                                        through reviews, team credentials, and getting proposals and audits.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        How do SEO Agencies work?
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                     data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        Choosing the best SEO Agency means research, research and more research. Checking
-                                        through reviews, team credentials, and getting proposals and audits.
-                                    </div>
-                                </div>
-                            </div>
+                            {/each}
                         </div>
                         <div class="tp-accordion-btn">
                             <a href="#">Load More Questions <i class="fa-light fa-arrow-right"></i></a>
@@ -261,10 +226,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="tpsection-wrapper text-center mb-50">
-                        <p>No time to wait ? Call us ☕️ 🍞</p>
-                        <h2 class="tpsection-title-two">Let’s Collaboration With <br>
+                        <p>{config.cta.subTitle}</p>
+                        <h2 class="tpsection-title-two">{config.cta.title.main}<br>
                             <span class="big-shape2">
-                           Our SEO Expert
+                           {config.cta.title.highlight}
                            <svg width="305" height="31" viewBox="0 0 305 31" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                               <path d="M2.6805 18.9903C2.6805 18.9903 192.566 -5.15589 299.014 12.3064" stroke="#FFCE5A"
@@ -280,8 +245,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="tpcta-wrapper text-center">
-                        <a class="tpcta-btn mr-5" href="#">+44 123 654 7890</a>
-                        <a class="green-btn" href="#">Contact Us</a>
+                        <a class="tpcta-btn mr-5" href="#">{config.cta.phone.number}</a>
+                        <a class="green-btn" href="#">{config.cta.phone.text}</a>
                     </div>
                 </div>
             </div>

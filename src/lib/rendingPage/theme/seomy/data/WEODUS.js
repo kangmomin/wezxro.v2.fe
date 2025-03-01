@@ -406,6 +406,42 @@ export default {
             innerTitle: "아래로 스크롤하여 <br/> 자세히 살펴보기"
         }
     },
+    faq: {
+        faq: {
+            background: "assets/img/banner/wd-faq-banner.png",
+            title: {
+                main: "궁금한 ",
+                highlight: "질문들"
+            },
+            subContent: "",
+            content: "궁금하신 내용,찾는것이 있으시다면 눌러주세요!",
+            accordion: [
+                {
+                    title: "seo가 중요한 어떤 비즈니스이든 seo가 쓰이는 이유는 뭔가요?",
+                    description: "비즈니스의 최적화된 seo에이전시를 고르기위한 방법은 뭔가요?"
+                },
+                {
+                    title: "비즈니스의 최적화된 seo에이전시를 고르기위한 방법은 뭔가요?",
+                    description: ""
+                },
+                {
+                    title: "seo 에이전시의 운영방식은 어떻게 되나요?",
+                    description: ""
+                },
+            ]
+        },
+        cta: {
+            subTitle: "기다릴 시간이 없나요? 연락주세요!",
+            title: {
+                main: "seo전문가",
+                highlight: "같이 성장해 나갑시다!"
+            },
+            phone: {
+                number: "+82 010-2429-1834",
+                text: "연락 해주시면됩니다!"
+            }
+        }
+    },
     footer: {
         firstRow: {
             content: `WE가 ZXRO에서부터 함께 만들어 나갑니다.<br/>WE is made together from ZXRO.`,
