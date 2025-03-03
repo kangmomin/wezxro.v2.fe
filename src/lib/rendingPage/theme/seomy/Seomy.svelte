@@ -17,7 +17,7 @@
     let targetValue = 0, currentValue = 0
     
     $: if (slideIdx * 508 !== targetValue) {
-        targetValue = (slideIdx % seomySetting[EN_NAME].nineSection.options[currentTabIdx].contents.length) * 508;
+        targetValue = (slideIdx % seomySetting[EN_NAME].portfolio.options[currentTabIdx].contents.length) * 508;
         animateValueChange();
     }
 
@@ -47,6 +47,25 @@
             }
         };
         updateValue();
+    }
+
+    const calcStarCnt = (star) => {
+        const maxStars = 5;
+        // 정수 부분(전부 채워진 별)
+        let fullStars = Math.floor(star);
+
+        // 소수점 부분이 0.25 ~ 0.75 사이면 반 별 처리
+        let fractionalPart = star - fullStars;
+        let hasHalfStar = fractionalPart >= 0.25 && fractionalPart < 0.75;
+
+        // 빈 별 개수 계산
+        let emptyStars = maxStars - fullStars - (hasHalfStar ? 1 : 0);
+
+        return {
+            fullStars,
+            hasHalfStar,
+            emptyStars
+        }
     }
 </script>
 
@@ -167,18 +186,22 @@
                             <div class="contact-4 d-flex align-items-center">
                                 <div class="contact-4-icon">
                                     <i>
-                                        <svg fill="none" height="26" viewBox="0 0 26 26" width="26"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M24.964 20.596C24.964 21.028 24.868 21.472 24.664 21.904C24.46 22.336 24.196 22.744 23.848 23.128C23.26 23.776 22.612 24.244 21.88 24.544C21.16 24.844 20.38 25 19.54 25C18.316 25 17.008 24.712 15.628 24.124C14.248 23.536 12.868 22.744 11.5 21.748C10.12 20.74 8.812 19.624 7.564 18.388C6.328 17.14 5.212 15.832 4.216 14.464C3.232 13.096 2.44 11.728 1.864 10.372C1.288 9.004 1 7.696 1 6.448C1 5.632 1.144 4.852 1.432 4.132C1.72 3.4 2.176 2.728 2.812 2.128C3.58 1.372 4.42 1 5.308 1C5.644 1 5.98 1.072 6.28 1.216C6.592 1.36 6.868 1.576 7.084 1.888L9.868 5.812C10.084 6.112 10.24 6.388 10.348 6.652C10.456 6.904 10.516 7.156 10.516 7.384C10.516 7.672 10.432 7.96 10.264 8.236C10.108 8.512 9.88 8.8 9.592 9.088L8.68 10.036C8.548 10.168 8.488 10.324 8.488 10.516C8.488 10.612 8.5 10.696 8.524 10.792C8.56 10.888 8.596 10.96 8.62 11.032C8.836 11.428 9.208 11.944 9.736 12.568C10.276 13.192 10.852 13.828 11.476 14.464C12.124 15.1 12.748 15.688 13.384 16.228C14.008 16.756 14.524 17.116 14.932 17.332C14.992 17.356 15.064 17.392 15.148 17.428C15.244 17.464 15.34 17.476 15.448 17.476C15.652 17.476 15.808 17.404 15.94 17.272L16.852 16.372C17.152 16.072 17.44 15.844 17.716 15.7C17.992 15.532 18.268 15.448 18.568 15.448C18.796 15.448 19.036 15.496 19.3 15.604C19.564 15.712 19.84 15.868 20.14 16.072L24.112 18.892C24.424 19.108 24.64 19.36 24.772 19.66C24.892 19.96 24.964 20.26 24.964 20.596Z"
-                                                  stroke="{theme.main}" stroke-miterlimit="10" stroke-width="1.5"/>
-                                            <path d="M20.7996 9.40038C20.7996 8.68038 20.2356 7.57638 19.3956 6.67638C18.6276 5.84838 17.6076 5.20038 16.5996 5.20038"
-                                                  opacity="0.4"
-                                                  stroke="{theme.main}" stroke-linecap="round" stroke-linejoin="round"
-                                                  stroke-width="1.5"/>
-                                            <path d="M24.9996 9.4C24.9996 4.756 21.2436 1 16.5996 1" opacity="0.4"
-                                                  stroke="{theme.main}" stroke-linecap="round" stroke-linejoin="round"
-                                                  stroke-width="1.5"/>
-                                        </svg>
+                                        {#if config.firstSection.phoneNumber.icon}
+                                            <img src="{config.firstSection.phoneNumber.icon}" alt="" width="26" height="26">
+                                        {:else}
+                                            <svg fill="none" height="26" viewBox="0 0 26 26" width="26"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M24.964 20.596C24.964 21.028 24.868 21.472 24.664 21.904C24.46 22.336 24.196 22.744 23.848 23.128C23.26 23.776 22.612 24.244 21.88 24.544C21.16 24.844 20.38 25 19.54 25C18.316 25 17.008 24.712 15.628 24.124C14.248 23.536 12.868 22.744 11.5 21.748C10.12 20.74 8.812 19.624 7.564 18.388C6.328 17.14 5.212 15.832 4.216 14.464C3.232 13.096 2.44 11.728 1.864 10.372C1.288 9.004 1 7.696 1 6.448C1 5.632 1.144 4.852 1.432 4.132C1.72 3.4 2.176 2.728 2.812 2.128C3.58 1.372 4.42 1 5.308 1C5.644 1 5.98 1.072 6.28 1.216C6.592 1.36 6.868 1.576 7.084 1.888L9.868 5.812C10.084 6.112 10.24 6.388 10.348 6.652C10.456 6.904 10.516 7.156 10.516 7.384C10.516 7.672 10.432 7.96 10.264 8.236C10.108 8.512 9.88 8.8 9.592 9.088L8.68 10.036C8.548 10.168 8.488 10.324 8.488 10.516C8.488 10.612 8.5 10.696 8.524 10.792C8.56 10.888 8.596 10.96 8.62 11.032C8.836 11.428 9.208 11.944 9.736 12.568C10.276 13.192 10.852 13.828 11.476 14.464C12.124 15.1 12.748 15.688 13.384 16.228C14.008 16.756 14.524 17.116 14.932 17.332C14.992 17.356 15.064 17.392 15.148 17.428C15.244 17.464 15.34 17.476 15.448 17.476C15.652 17.476 15.808 17.404 15.94 17.272L16.852 16.372C17.152 16.072 17.44 15.844 17.716 15.7C17.992 15.532 18.268 15.448 18.568 15.448C18.796 15.448 19.036 15.496 19.3 15.604C19.564 15.712 19.84 15.868 20.14 16.072L24.112 18.892C24.424 19.108 24.64 19.36 24.772 19.66C24.892 19.96 24.964 20.26 24.964 20.596Z"
+                                                    stroke="{theme.main}" stroke-miterlimit="10" stroke-width="1.5"/>
+                                                <path d="M20.7996 9.40038C20.7996 8.68038 20.2356 7.57638 19.3956 6.67638C18.6276 5.84838 17.6076 5.20038 16.5996 5.20038"
+                                                    opacity="0.4"
+                                                    stroke="{theme.main}" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5"/>
+                                                <path d="M24.9996 9.4C24.9996 4.756 21.2436 1 16.5996 1" opacity="0.4"
+                                                    stroke="{theme.main}" stroke-linecap="round" stroke-linejoin="round"
+                                                    stroke-width="1.5"/>
+                                            </svg>
+                                        {/if}
                                     </i>
                                 </div>
                                 <div class="contact-4-text">
@@ -371,7 +394,7 @@
                 <div class="col-lg-6">
                     <div class="feature-content-4 pl-70">
                         <div class="section-wrapper mb-40">
-                            <span style="{theme.defaultGradientText}">Let us do the work</span>
+                            <span style="{theme.defaultGradientText}">{config.fourthSection.caption}</span>
                             <h5 class="section-title-4 section-title-4-2">{config.fourthSection.title}</h5>
                         </div>
                         <ul class="feature-list-4">
@@ -458,7 +481,7 @@
                                                  data-width="{data.size}%"
                                                  data-wow-delay="0s" data-wow-duration=".8s" role="progressbar"
                                                  style="width: {data.size}%; visibility: visible; animation-duration: 0.8s; animation-delay: 0s; animation-name: slideInLeft; background-color:{data.color}">
-                                                <span>{data.size}</span>
+                                                <span style="border: 2.5px solid {data.color}">{data.size}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -554,14 +577,14 @@
                     <div class="portfolio-4-wrapper">
                         <div class="portfolio-4 mt-20">
                             <div class="section-wrapper mb-20">
-                                <span style="{theme.defaultGradientText}">{config.nineSection.subTitle}</span>
-                                <h5 class="section-title-4 section-title-4-2">{@html config.nineSection.title}</h5>
+                                <span style="{theme.defaultGradientText}">{config.portfolio.subTitle}</span>
+                                <h5 class="section-title-4 section-title-4-2">{@html config.portfolio.title}</h5>
                             </div>
                         </div>
                         <div class="portfolio-tab-4 mb-35">
                             <div aria-orientation="vertical" class="nav flex-column nav-pills me-3" id="v-pills-tab"
                                  role="tablist">
-                                {#each config.nineSection.options as btn, idx}
+                                {#each config.portfolio.options as btn, idx}
                                     <button aria-controls="v-pills-{btn.id}" aria-selected="{idx === 0}"
                                             on:click={() => currentTabIdx = idx}
                                             class="nav-link {idx === 0 ? 'active': ''}"
@@ -570,7 +593,7 @@
                                             role="tab" type="button">{btn.title}
                                     </button>
                                 {/each}
-                                <!--                                <p class="text-gray font-italic" style="font-size: 10px">{@html config.nineSection.noticeText}</p>-->
+                                <!--                                <p class="text-gray font-italic" style="font-size: 10px">{@html config.portfolio.noticeText}</p>-->
                             </div>
                         </div>
                         <div class="nav-tab-slider-4">
@@ -602,7 +625,7 @@
                 <div class="col-lg-7">
                     <div class="tab-content-4">
                         <div class="tab-content" id="v-pills-tabContent">
-                            {#each config.nineSection.options as opt, idx}
+                            {#each config.portfolio.options as opt, idx}
                                 <div aria-labelledby="v-pills-{opt.id}-tab"
                                      class="tab-pane fade {idx === 0 ? 'active show': ''}" id="v-pills-{opt.id}"
                                      role="tabpanel">
@@ -636,8 +659,8 @@
                                                                     <h4 class="title">{content.title}</h4>
                                                                 </div>
                                                                 <div class="portfolio-4-content-bottom">
-                                                                    <a href="{config.nineSection.linkBtn.link}" tabindex="0">
-                                                                        {config.nineSection.linkBtn.text} <i class="fa-light fa-plus"></i>
+                                                                    <a href="{config.portfolio.linkBtn.link}" tabindex="0">
+                                                                        {config.portfolio.linkBtn.text} <i class="fa-light fa-plus"></i>
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -676,8 +699,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-wrapper text-center mb-40">
-                        <span style="{theme.defaultGradientText}">{config.eighthSection.subTitle}</span>
-                        <h5 class="section-title-4 section-title-4-2">{config.eighthSection.title}</h5>
+                        <span style="{theme.defaultGradientText}">{config.pricing.subTitle}</span>
+                        <h5 class="section-title-4 section-title-4-2">{config.pricing.title}</h5>
                     </div>
                 </div>
             </div>
@@ -690,9 +713,9 @@
                         </div>
                         <div class="label-text">
                             <label class="toggler toggler-price-active mb-0 mt-5"
-                                   id="filt-monthly-price">{config.eighthSection.billedOptions[0]}</label>
+                                   id="filt-monthly-price">{config.pricing.billedOptions[0]}</label>
                             <label class="toggler mb-0 mt-10"
-                                   id="filt-yearly-price">{config.eighthSection.billedOptions[1]}</label>
+                                   id="filt-yearly-price">{config.pricing.billedOptions[1]}</label>
                         </div>
                     </div>
                 </div>
@@ -711,22 +734,22 @@
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>{config.eighthSection.pricing.firstOption[0].title}</span>
-                                                        <h4 class="title">{config.eighthSection.pricing.firstOption[0].pricing}</h4>
+                                                        <span>{config.pricing.pricing.firstOption[0].title}</span>
+                                                        <h4 class="title">{config.pricing.pricing.firstOption[0].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head active text-center p-relative">
                                                         <div class="big-price-shape"></div>
                                                         <div class="sm-price-shape"></div>
-                                                        <span>{config.eighthSection.pricing.firstOption[1].title}</span>
-                                                        <h4 class="title">{config.eighthSection.pricing.firstOption[1].pricing}</h4>
+                                                        <span>{config.pricing.pricing.firstOption[1].title}</span>
+                                                        <h4 class="title">{config.pricing.pricing.firstOption[1].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>{config.eighthSection.pricing.firstOption[2].title}</span>
-                                                        <h4 class="title">{@html config.eighthSection.pricing.firstOption[2].pricing}</h4>
+                                                        <span>{config.pricing.pricing.firstOption[2].title}</span>
+                                                        <h4 class="title">{@html config.pricing.pricing.firstOption[2].pricing}</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -737,7 +760,7 @@
                                 <!-- pricing-box -->
                                 <div class="pricing-box-4">
                                     <!-- pricing-item -->
-                                    {#each config.eighthSection.planOptions as opt, idx}
+                                    {#each config.pricing.planOptions as opt, idx}
                                         <div class="row gx-0">
                                             <div class="price-custom-col-1">
                                                 <div class="tppricing-4-title">
@@ -748,17 +771,17 @@
                                                 <div class="row gx-0">
                                                     <div class="col-4">
                                                         <div class="tppricing-4-price tppricing-right text-center">
-                                                            <p>{config.eighthSection.pricing.firstOption[0].values[idx]}</p>
+                                                            <p>{config.pricing.pricing.firstOption[0].values[idx]}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="tppricing-4-price active text-center" >
-                                                            <p>{config.eighthSection.pricing.firstOption[1].values[idx]}</p>
+                                                            <p>{config.pricing.pricing.firstOption[1].values[idx]}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="tppricing-4-price tppricing-left text-center">
-                                                            <p>{config.eighthSection.pricing.firstOption[2].values[idx]}</p>
+                                                            <p>{config.pricing.pricing.firstOption[2].values[idx]}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -780,8 +803,8 @@
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="{config.eighthSection.pricing.firstOption[0].btn.link}">
-                                                                {config.eighthSection.pricing.firstOption[0].btn.text}
+                                                            <a href="{config.pricing.pricing.firstOption[0].btn.link}">
+                                                                {config.pricing.pricing.firstOption[0].btn.text}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -789,8 +812,8 @@
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price active tppricing-4-btn">
                                                         <p>
-                                                            <a href="{config.eighthSection.pricing.firstOption[1].btn.link}">
-                                                                {config.eighthSection.pricing.firstOption[1].btn.text}
+                                                            <a href="{config.pricing.pricing.firstOption[1].btn.link}">
+                                                                {config.pricing.pricing.firstOption[1].btn.text}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -798,8 +821,8 @@
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="{config.eighthSection.pricing.firstOption[2].btn.link}">
-                                                                {config.eighthSection.pricing.firstOption[2].btn.text}
+                                                            <a href="{config.pricing.pricing.firstOption[2].btn.link}">
+                                                                {config.pricing.pricing.firstOption[2].btn.text}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -821,22 +844,22 @@
                                             <div class="row gx-0">
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>{config.eighthSection.pricing.secondOption[0].title}</span>
-                                                        <h4 class="title">{config.eighthSection.pricing.secondOption[0].pricing}</h4>
+                                                        <span>{config.pricing.pricing.secondOption[0].title}</span>
+                                                        <h4 class="title">{config.pricing.pricing.secondOption[0].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head active text-center p-relative">
                                                         <div class="big-price-shape"></div>
                                                         <div class="sm-price-shape"></div>
-                                                        <span>{config.eighthSection.pricing.secondOption[1].title}</span>
-                                                        <h4 class="title">{config.eighthSection.pricing.secondOption[1].pricing}</h4>
+                                                        <span>{config.pricing.pricing.secondOption[1].title}</span>
+                                                        <h4 class="title">{config.pricing.pricing.secondOption[1].pricing}</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div class="tppricing-4-head text-center">
-                                                        <span>{config.eighthSection.pricing.secondOption[2].title}</span>
-                                                        <h4 class="title">{@html config.eighthSection.pricing.secondOption[2].pricing}</h4>
+                                                        <span>{config.pricing.pricing.secondOption[2].title}</span>
+                                                        <h4 class="title">{@html config.pricing.pricing.secondOption[2].pricing}</h4>
                                                     </div>
                                                 </div>
                                             </div>
@@ -847,7 +870,7 @@
                                 <!-- pricing-box -->
                                 <div class="pricing-box-4">
                                     <!-- pricing-item -->
-                                    {#each config.eighthSection.planOptions as opt, idx}
+                                    {#each config.pricing.planOptions as opt, idx}
                                         <div class="row gx-0">
                                             <div class="price-custom-col-1">
                                                 <div class="tppricing-4-title">
@@ -858,17 +881,17 @@
                                                 <div class="row gx-0">
                                                     <div class="col-4">
                                                         <div class="tppricing-4-price tppricing-right text-center">
-                                                            <p>{config.eighthSection.pricing.secondOption[0].values[idx]}</p>
+                                                            <p>{config.pricing.pricing.secondOption[0].values[idx]}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="tppricing-4-price active text-center">
-                                                            <p>{config.eighthSection.pricing.secondOption[1].values[idx]}</p>
+                                                            <p>{config.pricing.pricing.secondOption[1].values[idx]}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="tppricing-4-price tppricing-left text-center">
-                                                            <p>{config.eighthSection.pricing.secondOption[2].values[idx]}</p>
+                                                            <p>{config.pricing.pricing.secondOption[2].values[idx]}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -890,8 +913,8 @@
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="{config.eighthSection.pricing.secondOption[0].btn.link}">
-                                                                {config.eighthSection.pricing.secondOption[0].btn.text}
+                                                            <a href="{config.pricing.pricing.secondOption[0].btn.link}">
+                                                                {config.pricing.pricing.secondOption[0].btn.text}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -899,8 +922,8 @@
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price active tppricing-4-btn">
                                                         <p>
-                                                            <a href="{config.eighthSection.pricing.secondOption[1].btn.link}">
-                                                                {config.eighthSection.pricing.secondOption[1].btn.text}
+                                                            <a href="{config.pricing.pricing.secondOption[1].btn.link}">
+                                                                {config.pricing.pricing.secondOption[1].btn.text}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -908,8 +931,8 @@
                                                 <div class="col-4">
                                                     <div class="tppricing-4-price tppricing-right tppricing-4-btn">
                                                         <p>
-                                                            <a href="{config.eighthSection.pricing.secondOption[2].btn.link}">
-                                                                {config.eighthSection.pricing.secondOption[2].btn.text}
+                                                            <a href="{config.pricing.pricing.secondOption[2].btn.link}">
+                                                                {config.pricing.pricing.secondOption[2].btn.text}
                                                             </a>
                                                         </p>
                                                     </div>
@@ -929,6 +952,7 @@
     </section>
     <!-- pricing-area-end -->
 
+    {#if (config.testimonial.isUse)}
     <!-- testimonial-area-start -->
     <section class="testimonial-area pb-60 scene fix">
         <div class="container">
@@ -969,8 +993,8 @@
                     <div class="tp-testimonial-4 pb-60">
                         <div class="testimonial-4-wrap mb-40 pl-70">
                             <div class="section-wrapper mb-50">
-                                <span style="{theme.defaultGradientText}">{config.tenSection.subTitle}</span>
-                                <h5 class="section-title-4 section-title-4-2">{config.tenSection.title}</h5>
+                                <span style="{theme.defaultGradientText}">{config.testimonial.subTitle}</span>
+                                <h5 class="section-title-4 section-title-4-2">{config.testimonial.title}</h5>
                             </div>
                             <div class="testimonial-4-wrapper tptestimonial-4-active">
                                 <div class="tptestimonial-4-item">
@@ -1067,6 +1091,7 @@
         </div>
     </section>
     <!-- testimonial-area-end -->
+     {/if}
 
     <!-- review-area-start -->
     <div class="review-area tpreview-4 pb-105">
@@ -1083,10 +1108,13 @@
                             <div class="tpreview-4-content">
                                 <p>{review.description}</p>
                                 <div class="review-star">
-                                    {#each Array(review.star) as _, idx}
+                                    {#each Array(calcStarCnt(review.star).fullStars) as _, idx}
                                         <i class="fa-sharp fa-solid fa-star-sharp"></i>
                                     {/each}
-                                    {#each Array(5 - review.star) as _, idx}
+                                    {#if calcStarCnt(review.star).hasHalfStar}
+                                        <i class="fa-sharp fa-regular fa-star-sharp-half-stroke"></i>
+                                    {/if}
+                                    {#each Array(calcStarCnt(review.star).emptyStars) as _, idx}
                                         <i class="fa-sharp fa-light fa-star-sharp"></i>
                                     {/each}
                                 </div>
@@ -1118,7 +1146,7 @@
                 <div class="col-lg-6">
                     <div class="tpcontact-4 mt-30 mb-50">
                         <div class="section-wrapper mb-20">
-                            <span style="{theme.defaultGradientText}">Get in touch</span>
+                            <span style="{theme.defaultGradientText}">{config.contactSection.caption}</span>
                             <h5 class="section-title-4 section-title-4-2">{@html config.contactSection.title}</h5>
                         </div>
                         <div class="tpcontact-4-content">
@@ -1176,6 +1204,7 @@
     </section>
     <!-- contact-area-end -->
 
+    {#if (config.blog.isUse)}
     <!-- blog-area-start -->
     <section class="blog-area pb-50 p-relative fix">
         <div class="tpblog-4-shape wow bounceIn d-none d-lg-block" data-wow-delay=".6s" data-wow-duration=".6s">
@@ -1237,13 +1266,15 @@
             </div>
         </div>
     </section>
+    {/if}
     <!-- blog-area-end -->
 
+    {#if (config.award.isUse)}
     <!-- award-area-start -->
     <section class="award-area pb-80">
         <div class="container">
             <div class="row">
-                {#each config.awardSection as award}
+                {#each config.award as award}
                 <div class="col-lg-4 col-md-6">
                     <div class="tpaward text-center mb-30">
                         <div class="tpaward-icon mb-15">
@@ -1260,6 +1291,7 @@
         </div>
     </section>
     <!-- award-area-end -->
+    {/if}
 </main>
 
 <Footer {data}/>

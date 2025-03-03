@@ -90,7 +90,7 @@
 
     <!-- breadcrumb-area-start -->
     <section class="breadcrumb-area breadcrumb-2-bg pb-130 pt-195"
-             data-background="{config.faq.background}">
+             data-background="{config.banner}">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-12">
@@ -227,7 +227,7 @@
                 <div class="col-lg-8">
                     <div class="tpsection-wrapper text-center mb-50">
                         <p>{config.cta.subTitle}</p>
-                        <h2 class="tpsection-title-two">{config.cta.title.main}<br>
+                        <h2 class="tpsection-title-two">{@html config.cta.title.main}<br>
                             <span class="big-shape2">
                            {config.cta.title.highlight}
                            <svg width="305" height="31" viewBox="0 0 305 31" fill="none"

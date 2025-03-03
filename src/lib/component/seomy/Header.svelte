@@ -7,7 +7,7 @@
 
 	const {EN_NAME} = data.props
 	let isLogin = false
-	const config = seomySetting[EN_NAME]?.main ?? seomySetting["WEZXRO"].main
+	const config = seomySetting[EN_NAME]?.header ?? seomySetting["WEZXRO"].header
     const theme = seomySetting[EN_NAME]?.theme ?? seomySetting["WEZXRO"].theme
 
 
@@ -20,14 +20,16 @@
 </script>
 
 <header>
-	<div class="tptransparent__header header-spaces" id="header-sticky">
+	<div class="tptransparent__header header-spaces" id="header-sticky"
+		 style="background-color: {config.defaultColor};"
+	>
 		<div class="container">
 			<div class="tp-mega-menu-wrapper">
 				<div class="row align-items-center">
 					<div class="col-xl-2 col-lg-6 col-sm-4 col-6">
 						<div class="tplogo__area">
 							<a rel="external" href="/">
-								<img alt="logo" src="/public/assets/logo/{EN_NAME.toLowerCase()}/logo_fit_black.png">
+								<img alt="logo" src="/public/assets/logo/{EN_NAME.toLowerCase()}/logo.png">
 							</a>
 						</div>
 					</div>

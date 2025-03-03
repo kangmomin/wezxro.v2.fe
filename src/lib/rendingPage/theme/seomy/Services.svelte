@@ -156,6 +156,7 @@
     </section>
     <!-- services-area-end -->
 
+    {#if config.aboutInner.isUse}
     <!-- about-area-start -->
     <section class="about-area p-relative pt-170 pb-180" data-background="assets/img/banner/about-inner-bg.jpg">
         <div class="fix">
@@ -197,7 +198,7 @@
         </div>
     </section>
     <!-- about-area-end -->
-
+    {/if}
     <!-- project-seo-area-start -->
     <section class="project-area project-inner-height pb-120 pt-140">
         <div class="container">
@@ -226,8 +227,8 @@
                 <div class="col-lg-5">
                     <div class="seo-5 mt-30 mb-40">
                         <div class="section-3 mb-40">
-                            <span class="section-3-sub-title">Best SEO results?</span>
-                            <div class="section-3-title">당신의 계정을 빠르고 쉽게 최적화하세요!</div>
+                            <span class="section-3-sub-title">{config.project.caption}</span>
+                            <div class="section-3-title">{config.project.title}</div>
                         </div>
                         <ul class="seo-5-list mb-50">
                             {#each config.project.content as s, idx}
@@ -245,7 +246,7 @@
                             {/each}
                         </ul>
                         <div class="seo-5-btn">
-                            <a href="/services" class="light-blue-btn" id="seo5Btn">Learn More</a>
+                            <a href="{config.project.btn.text}" class="light-blue-btn" id="seo5Btn">{config.project.btn.text}</a>
                         </div>
                     </div>
                 </div>
@@ -287,12 +288,12 @@
                                 <h2 class="tpsection__title mb-25">{config.pricing.title}</h2>
                             </div>
                             <div class="tpprice-switch-wrapper">
-                                <label class="toggler toggler--is-active" id="filt-monthly">Pay Monthly</label>
+                                <label class="toggler toggler--is-active" id="filt-monthly">{config.pricing.option[0].name}</label>
                                 <div class="toggle">
                                     <input type="checkbox" id="switcher" class="tp-check">
                                     <b class="switch"></b>
                                 </div>
-                                <label class="toggler" id="filt-yearly">Pay Yearly</label>
+                                <label class="toggler" id="filt-yearly">{config.pricing.option[1].name}</label>
                             </div>
                             <div class="tpprice-shape">
                                 <div class="tpprice-shape-two d-none d-lg-block">
@@ -306,62 +307,39 @@
                             <div id="monthly" class="wrapper-full">
                                 <div class="tpprice pl-40">
                                     <div class="row">
+                                        {#each config.pricing.option[0].plans as p}
                                         <div class="col-lg-6 col-md-6">
                                             <div class="tppricing mb-30">
                                                 <div class="tppricing-head">
                                                     <div class="tppricing-icon mb-30">
-                                                        <i><img src="assets/img/icon/pricing-icon-1.png" alt=""></i>
+                                                        <i><img src="{p.icon}" alt=""></i>
                                                     </div>
-                                                    <h3 class="tppricing-title mb-50">Diamond Pack</h3>
+                                                    <h3 class="tppricing-title mb-50">{p.title}</h3>
                                                 </div>
                                                 <div class="tppricing-content">
                                                     <div class="tppricing-feature mb-45">
                                                         <ul>
-                                                            <li><i class="fa-light fa-check"></i> 999 Email</li>
-                                                            <li><i class="fa-light fa-check"></i> 3gb Hosting</li>
-                                                            <li><i class="fa-light fa-check"></i> Email & Live chat.</li>
-                                                            <li class="tppricing-inactive"><i class="fa-light fa-check"></i> 1
-                                                                Domain</li>
+                                                            {#each p.features as f, idx}
+                                                                <!-- 마지막 피쳐인 경우 판단 -->
+                                                                {#if idx === p.features.length - 1}
+                                                                    <li class="tppricing-inactive"><i class="fa-light fa-check"></i> {f}</li>
+                                                                {:else}
+                                                                    <li><i class="fa-light fa-check"></i> {f}</li>
+                                                                {/if}
+                                                            {/each}
                                                         </ul>
                                                     </div>
                                                     <div class="tppricing-price mb-40">
-                                                        <h4 class="tppricing-price-title">$19.99</h4>
-                                                        <span>up to 10 user + 1.99 per user</span>
-                                                    </div>
-                                                    <div class="tppricing-btn-two">
-                                                        <a href="#" class="tp-btn-blue">Get Started</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="tppricing mb-30">
-                                                <div class="tppricing-head">
-                                                    <div class="tppricing-icon mb-30">
-                                                        <i><img src="assets/img/icon/pricing-icon-2.png" alt=""></i>
-                                                    </div>
-                                                    <h3 class="tppricing-title mb-50">Gold Plan</h3>
-                                                </div>
-                                                <div class="tppricing-content">
-                                                    <div class="tppricing-feature mb-45">
-                                                        <ul>
-                                                            <li><i class="fa-light fa-check"></i> Unlimited Email</li>
-                                                            <li><i class="fa-light fa-check"></i> 5gb Hosting</li>
-                                                            <li><i class="fa-light fa-check"></i> Email & Live chat.</li>
-                                                            <li class="tppricing-inactive"><i class="fa-light fa-check"></i> 3
-                                                                Domain</li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tppricing-price mb-40">
-                                                        <h4 class="tppricing-price-title">$120.99</h4>
-                                                        <span>up to 10 user + 1.99 per user</span>
+                                                        <h4 class="tppricing-price-title">{p.pricing}</h4>
+                                                        <span>{p.comment}</span>
                                                     </div>
                                                     <div class="tppricing-btn">
-                                                        <a href="/contact" class="tp-btn-blue">Get Started</a>
+                                                        <a href="{p.btn.link}" class="tp-btn-blue">{p.btn.text}</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        {/each}
                                     </div>
                                     <div class="tpprice-shape d-none d-lg-block">
                                         <div class="tpprice-shape-two">
@@ -376,62 +354,39 @@
                             <div id="hourly" class="wrapper-full hide">
                                 <div class="tpprice pl-40">
                                     <div class="row">
+                                        {#each config.pricing.option[1].plans as p}
                                         <div class="col-lg-6 col-md-6">
                                             <div class="tppricing mb-30">
                                                 <div class="tppricing-head">
                                                     <div class="tppricing-icon mb-30">
-                                                        <i><img src="assets/img/icon/pricing-icon-1.png" alt=""></i>
+                                                        <i><img src="{p.icon}" alt=""></i>
                                                     </div>
-                                                    <h3 class="tppricing-title mb-50">Diamond Pack</h3>
+                                                    <h3 class="tppricing-title mb-50">{p.title}</h3>
                                                 </div>
                                                 <div class="tppricing-content">
                                                     <div class="tppricing-feature mb-45">
                                                         <ul>
-                                                            <li><i class="fa-light fa-check"></i> 999 Email</li>
-                                                            <li><i class="fa-light fa-check"></i> 3gb Hosting</li>
-                                                            <li><i class="fa-light fa-check"></i> Email & Live chat.</li>
-                                                            <li class="tppricing-inactive"><i class="fa-light fa-check"></i> 1 Domain
-                                                            </li>
+                                                            {#each p.features as f, idx}
+                                                                <!-- 마지막 피쳐인 경우 판단 -->
+                                                                {#if idx === p.features.length - 1}
+                                                                    <li class="tppricing-inactive"><i class="fa-light fa-check"></i> {f}</li>
+                                                                {:else}
+                                                                    <li><i class="fa-light fa-check"></i> {f}</li>
+                                                                {/if}
+                                                            {/each}
                                                         </ul>
                                                     </div>
                                                     <div class="tppricing-price mb-40">
-                                                        <h4 class="tppricing-price-title">$209.99</h4>
-                                                        <span>up to 10 user + 1.99 per user</span>
-                                                    </div>
-                                                    <div class="tppricing-btn-two">
-                                                        <a href="#" class="tp-btn-blue">Get Started</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <div class="tppricing mb-30">
-                                                <div class="tppricing-head">
-                                                    <div class="tppricing-icon mb-30">
-                                                        <i><img src="assets/img/icon/pricing-icon-2.png" alt=""></i>
-                                                    </div>
-                                                    <h3 class="tppricing-title mb-50">Gold Plan</h3>
-                                                </div>
-                                                <div class="tppricing-content">
-                                                    <div class="tppricing-feature mb-45">
-                                                        <ul>
-                                                            <li><i class="fa-light fa-check"></i> 499 Email</li>
-                                                            <li><i class="fa-light fa-check"></i> 2gb Hosting</li>
-                                                            <li><i class="fa-light fa-check"></i> Email & Live chat.</li>
-                                                            <li class="tppricing-inactive"><i class="fa-light fa-check"></i> 1 Domain
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tppricing-price mb-40">
-                                                        <h4 class="tppricing-price-title">$320.99</h4>
-                                                        <span>up to 10 user + 1.99 per user</span>
+                                                        <h4 class="tppricing-price-title">{p.pricing}</h4>
+                                                        <span>{p.comment}</span>
                                                     </div>
                                                     <div class="tppricing-btn">
-                                                        <a href="#" class="tp-btn-blue">Get Started</a>
+                                                        <a href="{p.btn.link}" class="tp-btn-blue">{p.btn.text}</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        {/each}
                                     </div>
                                     <div class="tpprice-shape d-none d-lg-block">
                                         <div class="tpprice-shape-two">
@@ -451,6 +406,7 @@
     </section>
     <!-- pricing-area-end -->
 
+    {#if config.testimonial.isUse}
     <!-- testimonial-area-start -->
     <section class="testimonial-area pt-20 pb-40">
         <div class="container">
@@ -563,6 +519,7 @@
         </div>
     </section>
     <!-- testimonial-area-end -->
+     {/if}
 
     <!-- review-area-start -->
     <div class="review-area tpreview-4">
@@ -633,7 +590,7 @@
                 <div class="col-lg-5">
                     <div class="cta-content mt-40">
                         <h4 class="cta-title">{config.cta.title}</h4>
-                        <p>Enim cras in eget urna. Ut proin integer tempor, bibendum  <br> quam ullamcorper faucibus</p>
+                        <p>{@html config.cta.description}</p>
                         <div class="cta-btn">
                             <a class="tp-btn" href="{config.cta.btn.link}">{config.cta.btn.text}</a>
                         </div>
@@ -642,7 +599,7 @@
                 <div class="col-lg-7 align-self-end">
                     <div class="cta-thumb p-relative">
                         <div class="cta-main-bg d-flex justify-content-end">
-                            <img src="assets/img/banner/cta-inner-bg-1.png" alt="">
+                            <img src="{config.cta.image}" alt="">
                         </div>
                         <div class="cta-shape">
                             <div class="cta-shape-1 d-none d-lg-block">
