@@ -1,22 +1,29 @@
 {
     "theme": {
+        "__comment1__": "기본 그라디언트 색상들",
         "defaultGradientText": "background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
         "defaultGradientAreaHtml": "background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)",
         "defaultGradientArea": "linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)",
+        
+        "__comment2__": "메인 컬러 (헤더 회원가입 버튼 등)",
         "main": "#05A2E9",
+
         "white": "#ffffff",
         "black": "#000",
-        "common1": "#3EB9FF",
-        "common2": "#ABBF78",
-        "common3": "#FFB876",
-        "common4": "#FFA0C9",
-        "common5": "#E4F7FF",
-        "common6": "#FFF2D6",
-        "common7": "#E3E8FF",
-        "common8": "#FFE4E4",
-        "common9": "#D2F8EC",
-        "common10": "#FFE4F3",
-        "common11": "#010F1C",
+
+        "__comment3__": "wave 아래 영역",
+        "common-1": "#3EB9FF",
+        
+        "common-2": "#ABBF78",
+        "common-3": "#FFB876",
+        "common-4": "#FFA0C9",
+        "common-5": "#E4F7FF",
+        "common-6": "#FFF2D6",
+        "common-7": "#E3E8FF",
+        "common-8": "#FFE4E4",
+        "common-9": "#D2F8EC",
+        "common-10": "#FFE4F3",
+        "common-11": "#010F1C",
         "headingPrimary": "#0C1338",
         "headingSecondary": "#0F1123",
         "grey1": "#6C6E76",
@@ -29,13 +36,19 @@
         "grey8": "#55585B",
         "textBody": "#565764",
         "text1": "#271D3A",
-        "themePrimary": "#4260FF",
-        "themeSecondary": "#131683",
+        
+        "__comment4__": "메인 컬러 동일 적용",
+        "theme-primary": "#4260FF",
+        "theme-secondary": "#131683",
+        
         "theme3": "#05003B",
         "themeGreen": "#59BA41",
         "themeApple": "#F5F1EB",
         "themeDarkBlue": "#1E2B8A",
+
+        "__comment5__": "메인 컬러 동일 적용",
         "themeBlue": "#05A2E9",
+
         "border1": "#F0F1F4",
         "border5": "#000"
     },
@@ -61,7 +74,9 @@
             },
             "phoneNumber": {
                 "text": "CONTACT",
-                "link": "/contact"
+                "link": "/contact",
+                "__comment__": "기본 아이콘 사용시 빈 문자열 사용. ex) 'icon': ''",
+                "icon": ""
             },
             "email": {
                 "text": "wezxro@hwalaon.com"
@@ -113,11 +128,11 @@
         "fourthSection": {
             "banner": {
                 "url": "assets/img/banner/choose-2.png",
-                "__comment1__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
+                "__comment5__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
                 "isRound": false
             },
             "title": "WEZXRO 사용방법",
-            "captionTheme": "color: linear-gradient(91.91deg, #719BE3 5.01%, #58C1F0 43.79%, #71E3E3 93.65%",
+            "caption": "",
             "content": [
                 {
                     "title": "위제로 회원가입",
@@ -137,6 +152,12 @@
             ]
         },
         "fifthSection": {
+            "banner": {
+                "url": "assets/img/bg/optimize-bg-2.png",
+                "bg1Url": "",
+                "bg2Url": "", 
+                "bgThumbUrl": ""
+            },
             "label": "Looking for best AD results?",
             "title": "WEZXRO는 완벽합니다!<br/>갖추어진 시스템부터 <br/> 인프라까지 완벽합니다!",
             "content": "위제로는 완벽을 가장 중요시 생각합니다, 오차 없는 자동화 시스템으로 <br/> 24시간 연중무휴 완벽한 서비스를 이용하실 수 있습니다.",
@@ -173,8 +194,7 @@
                 }
             ]
         },
-        "seventhSection": {},
-        "eighthSection": {
+        "pricing": {
             "subTitle": "Pricing Partner Plans",
             "title": "WEZXRO 파트너 플랜",
             "billedOptions": ["파트너 계약 연정액", "파트너 계약 월정액"],
@@ -240,7 +260,7 @@
                 ]
             }
         },
-        "nineSection": {
+        "portfolio": {
             "subTitle": "Our Partner Systems",
             "title": "WEZXRO<br/>파트너 시스템",
             "options": [
@@ -321,7 +341,8 @@
                 "link": "#"
             }
         },
-        "tenSection": {
+        "testimonial": {
+            "isUse": true,
             "subTitle": "Honest Reviews",
             "title": "클라이언트분들의 솔직한 후기"
         },
@@ -344,6 +365,7 @@
             }
         ],
         "contactSection": {
+            "caption": "Get in touch",
             "title": "함께 일합시다.<br/>함께 성공합시다.",
             "description": "원하시는 조건 및 이루고 싶으신 목표를 위제로에게 말씀해주세요!",
             "tel": "+(82) 010-3971-5538",
@@ -354,7 +376,10 @@
             },
             "inputs": ["성/이름", "이메일 주소", "전화번호", "웹사이트", "메세지", "메세지 전송"]
         },
-        "awardSection": [
+        "blog": {
+            "isUse": true
+        },
+        "award": [
             {
                 "icon": "assets/img/shape/award-shape-1.png",
                 "title": "화라온 HWALAON",
@@ -391,6 +416,211 @@
         "brand": {
             "innerTitle": "아래로 스크롤하여 <br/> 자세히 살펴보기"
         }
+    },
+    "faq": {
+        "banner": "assets/img/banner/lotoal-sub-page-banner.png",
+        "faq": {
+            "title": {
+                "main": "궁금한 ",
+                "highlight": "질문들"
+            },
+            "subContent": "",
+            "content": "궁금하신 내용,찾는것이 있으시다면 눌러주세요!",
+            "accordion": [
+                {
+                    "title": "SEO가 중요한 이유는 무엇인가요?",
+                    "description": ""
+                },
+                {
+                    "title": "SEO가 매출에 큰 도움이 되나요?",
+                    "description": "가장 효과적인 SEO 서비스를 제공하는 광고대행사를 선택하는 방법은 무엇인가요?"
+                },
+                {
+                    "title": "SEO 광고대행사는 어떤식 으로 서비스를 제공하나요?",
+                    "description": ""
+                }
+            ]
+        },
+        "cta": {
+            "subTitle": "기다릴 시간이 없나요? 연락주세요!",
+            "title": {
+                "main": "<span style=\"border-bottom: 5px solid blue;\">SEO 전문</span> 광고대행사와 협력해 보세요!",
+                "highlight": ""
+            },
+            "phone": {
+                "number": "+(82) 010-5918-1225",
+                "text": "문의하기"
+            }
+        }
+    },
+    "service": {
+        "banner": "assets/img/banner/lotoal-sub-page-banner.png",
+        "about": {
+            "title": "SEO 전문 광고대행사로부터 확실한 성과를 획득 해보세요!",
+            "subTitle": "SEO 서비스는 보다 효과적인 마케팅을 찾고있던 귀하의 고민을 제거 시켜 줄 것 입니다. 합리적인 가격에 마케팅에 대한 고민을 해소해보세요."
+        },
+        "services": [
+            {
+                "title": "소셜 마케팅",
+                "description": "즉시 접속이 가능하고 계정 또한 즉시 활성화됩니다",
+                "image": "assets/img/services/lotoal-thread-logo.png",
+                "link": "/"
+            },
+            {
+                "title": "SEO최적화",
+                "description": "서비스 최적화가 필요할시 사용되며 필요시 서비스가 활성화됩니다.",
+                "image": "assets/img/services/lotoal-seo-optimization.jpg",
+                "link": "/"
+            },
+            {
+                "title": "원 페이지 SEO",
+                "description": "계정이 즉시 활성화 됩니다",
+                "image": "assets/img/services/lotoal-one-click-seo.png",
+                "link": "/"
+            },
+            {
+                "title": "콘텐츠 마케팅",
+                "description": "보다 효율적이게 SEO 계정이 즉시 활성화됩니다.",
+                "image": "assets/img/services/lotoal-contents-marketing.jpg",
+                "link": "/"
+            },
+            {
+                "title": "이메일 마케팅",
+                "description": "1대1 위주의 이메일 마케팅이 즉시 활성화 됩니다.",
+                "image": "assets/img/services/lotoal-email-marketing.jpg",
+                "link": "/"
+            },
+            {
+                "title": "키워드 리서치",
+                "description": "키워드 조사 , 알고리즘 , 트래픽 조율이 즉시 활성화됩니다.",
+                "image": "assets/img/services/lotoal-trapic-research.png",
+                "link": "/"
+            }
+        ],
+        "aboutInner": {
+            "isUse": false,
+            "subTitle": "Best SEO results?",
+            "title": "SEO의 가치를 높일 방법입니다!",
+            "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!"
+        },
+        "project": {
+            "caption": "",
+            "title": "웹사이트 최적화를 위한 서비스 설명",
+            "image": "assets/img/services/lotoal-project.png",
+            "content": [
+                {
+                    "title": "성능",
+                    "description": "느린 페이지 및 cs 수정"
+                },
+                {
+                    "title": "현지화",
+                    "description": "언어 관련 모든 패치"
+                },
+                {
+                    "title": "콘텐츠 품질",
+                    "description": "통합되지 않은 중복 페이지 제거"
+                }
+            ],
+            "btn": {
+                "text": "서비스 둘러보기",
+                "link": "/services"
+            }
+        },
+        "pricing": {
+            "subTitle": "가격 선택",
+            "title": "필요한 서비스를 선택해주세요",
+            "option": [
+                {
+                    "name": "월별 결제",
+                    "plans": [
+                        {
+                            "icon": "assets/img/icon/pricing-icon-1.png",
+                            "title": "다이아몬드 팩",
+                            "pricing": "₩500,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "999 이메일",
+                                "3gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "1 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        },
+                        {
+                            "icon": "assets/img/icon/pricing-icon-2.png",
+                            "title": "트리니티 팩",
+                            "pricing": "₩1,000,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "무제한 이메일",
+                                "5gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "3 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "name": "연간 결제",
+                    "plans": [
+                        {
+                            "icon": "assets/img/icon/pricing-icon-1.png",
+                            "title": "다이아몬드 팩",
+                            "pricing": "₩500,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "999 이메일",
+                                "3gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "1 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        },
+                        {
+                            "icon": "assets/img/icon/pricing-icon-2.png",
+                            "title": "트리니티 팩",
+                            "pricing": "₩1,000,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "무제한 이메일",
+                                "5gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "3 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "testimonial": {
+            "isUse": false
+        },
+        "cta": {
+            "title": "지금 바로 당신의 비즈니스를 시작해보세요!",
+            "description": "Start your business right now!",
+            "image": "assets/img/services/lotoal-service-cta.png",
+            "btn": {
+                "text": "요청하기",
+                "link": "/contact"
+            }
+        }
+    },
+    "header": {
+        "defaultColor": "#FFFFFF"
     },
     "footer": {
         "firstRow": {
