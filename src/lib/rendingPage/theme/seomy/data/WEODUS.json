@@ -45,7 +45,10 @@
         "themeGreen": "#59BA41",
         "themeApple": "#F5F1EB",
         "themeDarkBlue": "#1E2B8A",
+
+        "__comment5__": "메인 컬러 동일 적용",
         "themeBlue": "#05A2E9",
+        
         "border1": "#F0F1F4",
         "border5": "#000"
     },
@@ -188,7 +191,6 @@
                 }
             ]
         },
-        "seventhSection": {},
         "pricing": {
             "subTitle": "Pricing Partner Plans",
             "title": "WEODUS 파트너 플랜",
@@ -336,7 +338,8 @@
                 "link": "#"
             }
         },
-        "tenSection": {
+        "testimonial": {
+            "isUse": false,
             "subTitle": "Honest Reviews",
             "title": "클라이언트분들의 솔직한 후기"
         },
@@ -359,6 +362,7 @@
             }
         ],
         "contactSection": {
+            "caption": "Get in touch",
             "title": "디지털 시대를 리드하는 마케팅 파트너<br/>트렌드를 넘어 미래를 디자인하다.",
             "description": "고객의 니즈를 맞추기 위해서 바로 weodus가 더 노력하겠습니다.",
             "tel": "+(82) 010-6296-1338",
@@ -369,7 +373,10 @@
             },
             "inputs": ["성/이름", "이메일 주소", "전화번호", "웹사이트", "메세지", "메세지 전송"]
         },
-        "awardSection": [
+        "blog": {
+            "isUse": false
+        },
+        "award": [
             {
                 "icon": "assets/img/shape/award-shape-1.png",
                 "title": "화라온 HWALAON",
@@ -408,8 +415,8 @@
         }
     },
     "faq": {
+        "banner": "assets/img/banner/wd-faq-banner.png",
         "faq": {
-            "background": "assets/img/banner/wd-faq-banner.png",
             "title": {
                 "main": "궁금한 ",
                 "highlight": "질문들"
@@ -444,6 +451,7 @@
         }
     },
     "service": {
+        "banner": "assets/img/banner/wd-faq-banner.png",
         "about": {
             "title": "SEO에이전시의 서비스를 확인하세요!",
             "subTitle": "기업의 성장을 위해선 연속적인 접근 방식은 문제해결의 큰 가치를 가져다줍니다."
@@ -493,6 +501,7 @@
             "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!"
         },
         "project": {
+            "caption": "Best SEO results?",
             "title": "당신의 계정을 빠르고 쉽게 최적화하세요!",
             "image": "assets/img/services/wb-project.jpg",
             "content": [
@@ -508,19 +517,108 @@
                     "title": "콘텐츠",
                     "description": "복합적인 중복페이지 해결"
                 }
-            ]
+            ],
+            "btn": {
+                "text": "Learn More",
+                "link": "/services"
+            }
         },
         "pricing": {
             "subTitle": "가격 선택",
-            "title": "필요한 상품을 선택하세요!"
+            "title": "필요한 상품을 선택하세요!",
+            "option": [
+                {
+                    "name": "월별 결제",
+                    "plans": [
+                        {
+                            "icon": "assets/img/icon/pricing-icon-1.png",
+                            "title": "다이아몬드",
+                            "pricing": "₩500,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "999 이메일",
+                                "3gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "1 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        },
+                        {
+                            "icon": "assets/img/icon/pricing-icon-2.png",
+                            "title": "골드",
+                            "pricing": "₩1,000,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "무제한 이메일",
+                                "5gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "3 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "name": "연간 결제",
+                    "plans": [
+                        {
+                            "icon": "assets/img/icon/pricing-icon-1.png",
+                            "title": "다이아몬드",
+                            "pricing": "₩500,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "999 이메일",
+                                "3gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "1 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        },
+                        {
+                            "icon": "assets/img/icon/pricing-icon-2.png",
+                            "title": "골드",
+                            "pricing": "₩1,000,000",
+                            "comment": "최대 10명의 사용자 + 사용자당 추가금",
+                            "features": [
+                                "무제한 이메일",
+                                "5gb 호스팅",
+                                "이메일 및 실시간 채팅",
+                                "3 도메인"
+                            ],
+                            "btn": {
+                                "text": "주문하기",
+                                "link": "/contact"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "testimonial": {
+            "isUse": true
         },
         "cta": {
             "title": "성공적인 비즈니스 상승!",
+            "image": "assets/img/banner/cta-inner-bg-1.png",
+            "description": "Enim cras in eget urna. Ut proin integer tempor, bibendum  <br/> quam ullamcorper faucibus",
             "btn": {
                 "text": "요청하기",
                 "link": "/contact"
             }
         }
+    },
+    "header": {
+        "__comment__": "헤더 투명색으로 하려면 빈 값으로 입력",
+        "defaultColor": ""
     },
     "footer": {
         "firstRow": {
