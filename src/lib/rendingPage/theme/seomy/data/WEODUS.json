@@ -73,6 +73,7 @@
             "phoneNumber": {
                 "text": "CONTACT",
                 "link": "/contact",
+                "__comment__": "기본 아이콘 사용시 빈 문자열 사용. ex) 'icon': ''",
                 "icon": "assets/pictograms/lotoal-phone-pictogram.png"
             },
             "email": {
