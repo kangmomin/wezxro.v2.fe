@@ -605,7 +605,7 @@
             "isUse": false
         },
         "cta": {
-            "title": "지금 바로 당신의 비즈니스를 시작해보세요!",
+            "title": "지금 바로 당신의 <br/> 비즈니스를 시작해보세요!",
             "description": "Start your business right now!",
             "image": "assets/img/services/lotoal-service-cta.png",
             "btn": {
