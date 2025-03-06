@@ -1,15 +1,15 @@
 {
     "theme": {
         "__comment1__": "기본 그라디언트 색상들",
-        "defaultGradientText": "background: linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
-        "defaultGradientAreaHtml": "background: linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%)",
-        "defaultGradientArea": "linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%)",
+        "defaultGradientText": "background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
+        "defaultGradientAreaHtml": "background: linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)",
+        "defaultGradientArea": "linear-gradient(90deg, #719BE3 0%, #58C1F0 43.75%, #71E3E3 100%)",
         "__comment2__": "메인 컬러 (헤더 회원가입 버튼 등)",
-        "main": "#000000",
-        "white": "#f6f6f7",
+        "main": "#05A2E9",
+        "white": "#ffffff",
         "black": "#000",
         "__comment3__": "wave 아래 영역",
-        "common-1": "#f6f6f7",
+        "common-1": "#3EB9FF",
         "common-2": "#ABBF78",
         "common-3": "#FFB876",
         "common-4": "#FFA0C9",
@@ -33,14 +33,14 @@
         "textBody": "#565764",
         "text1": "#271D3A",
         "__comment4__": "메인 컬러 동일 적용",
-        "theme-primary": "#4343ED",
-        "theme-secondary": "#000000",
+        "theme-primary": "#4260FF",
+        "theme-secondary": "#131683",
         "theme3": "#05003B",
         "themeGreen": "#59BA41",
         "themeApple": "#F5F1EB",
         "themeDarkBlue": "#1E2B8A",
         "__comment5__": "메인 컬러 동일 적용",
-        "themeBlue": "#000000",
+        "themeBlue": "#05A2E9",
         "border1": "#F0F1F4",
         "border5": "#000"
     },
@@ -48,11 +48,17 @@
         "firstSection": {
             "bannerContent": {
                 "bannerTitle": {
-                    "firstSection": "더 효율적인 <br/> 광고 대행사 <br/> <i style='color: var(--tp-theme-primary); font-style: normal'>LOTOAL</i> <br>입니다",
-                    "secondSection": [],
-                    "thirdSection": ""
+                    "firstSection": "WEZXRO는",
+                    "secondSection": [
+                        "광고/마케팅",
+                        "자동화 패널 제작",
+                        "검색 엔진 최적화",
+                        "실시간 상위 노출",
+                        "수익형 광고 대행"
+                    ],
+                    "thirdSection": "<br/>PRO 입니다!"
                 },
-                "bannerExplain": "LOTOAL에선 그 어떤 한계도 존재하지않습니다<br/>There are no limits in LOTOAL"
+                "bannerExplain": "WE가 ZXRO에서부터 함께 만들어 나갑니다.<br/>WE is made together from ZXRO."
             },
             "MainContactBtn": {
                 "text": "서비스 둘러보기",
@@ -62,7 +68,7 @@
                 "text": "CONTACT",
                 "link": "/contact",
                 "__comment__": "기본 아이콘 사용시 빈 문자열 사용. ex) 'icon': ''",
-                "icon": "assets/pictograms/lotoal-phone-pictogram.png"
+                "icon": ""
             },
             "email": {
                 "text": "wezxro@hwalaon.com"
@@ -76,115 +82,119 @@
             }
         },
         "secondSection": {
-            "subText": "",
-            "mainText": "LOTOAL 서비스",
+            "isUse": true,
+            "subText": "Why Services us",
+            "mainText": "WEZXRO 서비스",
             "cards": [
                 {
-                    "mainText": "검색 엔진 최적화(SEO)",
-                    "description": "웹사이트 구조및 키워드 최적화 , 트래픽 개선을 통 한 검색 노출 극대화까지 자동화된 SEO 마케팅을 통해 효율적인 상위노출이 가능합니다.",
+                    "mainText": "검색엔진 최적화",
+                    "description": "검색 엔진 최적화 전문가들이 맞춤형 <br />순위 상승 전략을 제안드립니다.",
                     "image": "/assets/pictograms/seo.png",
                     "readMore": {
                         "link": "/services",
-                        "text": "Read More"
+                        "text": "자세히 보기"
                     }
                 },
                 {
-                    "mainText": "소셜 미디어 마케팅",
-                    "description": "다양한 고객층 확보 및 확실한 인원유입을 통하여 귀하의 매출을 극대화 시켜줍니다.",
+                    "mainText": "소셜미디어 마케팅",
+                    "description": "넓은 고객층 접근, 상호 작용 증대를 위해서는 <br />소셜미디어 마케팅은 필수입니다.",
                     "image": "/assets/pictograms/socialMediaMarketing.png",
                     "readMore": {
                         "link": "/services",
-                        "text": "Read More"
+                        "text": "자세히 보기"
                     }
                 },
                 {
                     "mainText": "마케팅 자동화 패널",
-                    "description": "일반적인 광고대행사보다 저렴한 가격 , 최고의 퀄리티로 귀하의 웹사이트를 자동화할수있습니다. <br/> 24시간 가동되는 사이트는 업무 효율을 2배 이상 높여줍니다.",
+                    "description": "돈은 열심히가 아닌 똑똑하게 모든 것이<br />자동화인 패널을 이용하여 벌어야 합니다.",
                     "image": "/assets/pictograms/marketingPanel.png",
                     "readMore": {
                         "link": "/services",
-                        "text": "Read More"
+                        "text": "자세히 보기"
                     }
                 }
             ]
         },
         "thirdSection": {
             "mainBanner": {
-                "text": "LOTOAL 서비스 제공 플랫폼"
+                "text": "WEZXRO 서비스 제공 플랫폼"
             }
         },
         "fourthSection": {
             "banner": {
-                "url": "assets/img/icon/lotoal-working-man.png",
+                "url": "assets/img/banner/choose-2.png",
                 "__comment5__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
                 "isRound": false
             },
-            "title": "LOTOAL 사용방법",
+            "title": "WEZXRO 사용방법",
             "caption": "",
             "content": [
                 {
-                    "title": "LOTOAL 회원가입",
-                    "description": "우측 상단의 <b>\"회원가입\"</b>을 클릭하여<br/>원하는 결제방식으로 예치금을 충전해주세요.",
+                    "title": "위제로 회원가입",
+                    "description": "우측 상단의 <b>'회원가입'</b> 클릭해 주시고, <br/>가입 후 위제로 대시보드에 접속해 주시면 됩니다.",
                     "color": "#F5D101"
                 },
                 {
                     "title": "예치금 충전하기",
-                    "description": "좌측 카테고리에서 <b>\"충전신청:\"</b>을 클릭하여 <br/> 원하는 결제방식으로 예치금을 충전해주세요.",
+                    "description": "대시보드에서 좌측 카테고리를 보시면, <br /> <b>'충전 신청'</b> 클릭 후 예치금 충전해 주시면 됩니다.",
                     "color": "#05A2E9"
                 },
                 {
                     "title": "서비스 주문하기",
-                    "description": "좌측 카테고리에서 <b>\"주문하기\"</b>를 클릭하고 서비스 선택 후<br/> 안내에 따라 링크 혹은 수량을 입력해주세요.",
+                    "description": "좌측 카테고리에 <b>'주문하기'</b> 클릭 한 뒤, <br />서비스를 선택하고 링크와 수량을 입력하시면 자동 주문 완료!",
                     "color": "#6369DB"
                 }
             ]
         },
         "fifthSection": {
             "banner": {
-                "url": "assets/img/banner/lotoal-optimize.png",
+                "url": "assets/img/bg/optimize-bg-2.png",
                 "bg1Url": "",
                 "bg2Url": "",
                 "bgThumbUrl": ""
             },
-            "label": "",
-            "title": "LOTOAL의 체계적인 서비스로 귀하의 매출을 최대치로 끌어올려드리겠습니다!",
-            "content": "LOTOAL은 광고대행 원청으로써 가장 저렴한 가격으로 완벽한 서비스를 제공합니다. 오차가 존재하지 않는 자동화 시스템을 통하여 언제 어디서든 편리하게 서비스 이용이 가능합니다.",
+            "label": "Looking for best AD results?",
+            "title": "WEZXRO는 완벽합니다!<br/>갖추어진 시스템부터 <br/> 인프라까지 완벽합니다!",
+            "content": "위제로는 완벽을 가장 중요시 생각합니다, 오차 없는 자동화 시스템으로 <br/> 24시간 연중무휴 완벽한 서비스를 이용하실 수 있습니다.",
             "data": [
                 {
                     "title": "서비스 자동 주문 성공 비율",
                     "size": 100,
-                    "color": "#6EC857"
+                    "color": "#05A2E9"
                 },
                 {
                     "title": "고객센터 10분 내 응답 비율",
                     "size": 83,
-                    "color": "#012602"
+                    "color": "#F5D101"
                 }
             ],
             "btn": {
-                "text": "LOTOAL 소개",
+                "isUse": true,
+                "text": "WEZXRO 소개",
                 "link": "/about"
             }
         },
         "sixthSection": {
+            "isUse": true,
             "counter": [
                 {
-                    "text": "현재까지 제공 된 서비스",
-                    "number": 3000
+                    "text": "현재까지 처리 된 주문",
+                    "number": 50000
                 },
                 {
                     "text": "현재까지 회원가입 횟수",
-                    "number": 850
+                    "number": 3300
                 },
                 {
-                    "text": "공식 파트너 및 대행사",
-                    "number": 30
+                    "text": "위제로 공식 파트너 및 대행사",
+                    "number": 80
                 }
             ]
         },
         "pricing": {
-            "subTitle": "",
-            "title": "LOTOAL 파트너 플랜",
+            "isUse": true,
+            "subTitle": "Pricing Partner Plans",
+            "title": "WEZXRO 파트너 플랜",
             "billedOptions": [
                 "파트너 계약 연정액",
                 "파트너 계약 월정액"
@@ -193,13 +203,13 @@
                 "자체 사이트 제작 및 서버 세팅",
                 "로고, 배너 및 디자인 제작",
                 "매뉴얼 및 노하우 교육 자료 전달",
-                "로토알 모든 서비스 도매가 (평균)",
+                "위제로 모든 서비스 도매가 (평균)",
                 "패널 제작 권한 및 매뉴얼 전달"
             ],
             "pricing": {
                 "firstOption": [
                     {
-                        "title": "PREMIUM CLASS",
+                        "title": "PREMIUM",
                         "pricing": "₩3,000,000",
                         "values": [
                             "○",
@@ -214,7 +224,7 @@
                         }
                     },
                     {
-                        "title": "FIRST CLASS",
+                        "title": "ENTERPRISE",
                         "pricing": "₩5,000,000",
                         "values": [
                             "+ 전체 아웃소싱",
@@ -261,7 +271,7 @@
                         }
                     },
                     {
-                        "title": "PREMIUM CLASS",
+                        "title": "PREMIUM",
                         "pricing": "₩300,000",
                         "values": [
                             "○",
@@ -276,7 +286,7 @@
                         }
                     },
                     {
-                        "title": "FIRST CLASS",
+                        "title": "ENTERPRISE",
                         "pricing": "₩500,000",
                         "values": [
                             "+ 전체 아웃소싱",
@@ -294,9 +304,9 @@
             }
         },
         "portfolio": {
-            "isUse": false,
-            "subTitle": "",
-            "title": "LOTOAL<br/>파트너 시스템",
+            "isUse": true,
+            "subTitle": "Our Partner Systems",
+            "title": "WEZXRO<br/>파트너 시스템",
             "options": [
                 {
                     "id": "profit",
@@ -390,39 +400,78 @@
             }
         },
         "testimonial": {
-            "isUse": false,
+            "isUse": true,
             "subTitle": "Honest Reviews",
-            "title": "클라이언트분들의 솔직한 후기"
+            "title": "클라이언트분들의 <br/>솔직한 후기",
+            "contents": [
+                {
+                    "star": 4.5,
+                    "comment": "it's amaging",
+                    "writer": "Kangmomin",
+                    "info": "back-end dev of hwalaon1"
+                },
+                {
+                    "star": 4.5,
+                    "comment": "it's amaging",
+                    "writer": "Kangmomin",
+                    "info": "back-end dev of hwalaon2"
+                },
+                {
+                    "star": 4.5,
+                    "comment": "it's amaging",
+                    "writer": "Kangmomin",
+                    "info": "back-end dev of hwalaon3"
+                },
+                {
+                    "star": 4.5,
+                    "comment": "it's amaging",
+                    "writer": "Kangmomin",
+                    "info": "back-end dev of hwalaon4"
+                },
+                {
+                    "star": 4.5,
+                    "comment": "it's amaging",
+                    "writer": "Kangmomin",
+                    "info": "back-end dev of hwalaon5"
+                },
+                {
+                    "star": 4.5,
+                    "comment": "it's amaging",
+                    "writer": "Kangmomin",
+                    "info": "back-end dev of hwalaon6"
+                }
+            ]
         },
         "reviewSection": [
             {
                 "image": "assets/img/icon/instagram.png",
                 "title": "인스타그램 서비스",
-                "description": "주문 500건 5점 만점에 평균 4.4점 이상",
-                "star": 4.4
+                "description": "주문 5000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                "star": 5
             },
             {
                 "image": "assets/img/icon/telegram.png",
                 "title": "텔레그램 서비스",
-                "description": "주문 900건 리뷰 5점 만점에 평균 4.8점 이상",
-                "star": 4.8
+                "description": "주문 8000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                "star": 5
             },
             {
                 "image": "assets/img/icon/youtube.png",
                 "title": "유튜브 서비스",
-                "description": "주문 800건 리뷰 5점 만점에 평균 4.6점 이상",
-                "star": 4.6
+                "description": "주문 3000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                "star": 5
             }
         ],
         "contactSection": {
-            "caption": "",
-            "title": "당사가 귀하를 업계최고로 만들어드리겠습니다.",
-            "description": "당신의 꿈과 목표를 LOTOAL이 실현시켜 드릴 수 있습니다!",
-            "tel": "+(82) 010-5918-1225",
-            "email": "rian36dgd@gmail.com",
+            "isUse": true,
+            "caption": "Get in touch",
+            "title": "함께 일합시다.<br/>함께 성공합시다.",
+            "description": "원하시는 조건 및 이루고 싶으신 목표를 위제로에게 말씀해주세요!",
+            "tel": "+(82) 010-3971-5538",
+            "email": "wezxro@hwalaon.com",
             "btn": {
                 "text": "즉시 통화하기",
-                "link": "01059181225"
+                "link": "01039715538"
             },
             "inputs": [
                 "성/이름",
@@ -434,25 +483,29 @@
             ]
         },
         "blog": {
-            "isUse": false,
-            "caption": "What's Going On",
-            "title": "Company blog & Insights",
+            "isUse": true,
+            "caption": "Our Results",
+            "title": "수 많은 결과물 중 일부",
+            "moreBtn": {
+                "text": "광고/제휴 문의",
+                "link": "#"
+            },
             "cards": [
                 {
-                    "caption": "SEO agency",
-                    "title": "Wins 2023 good design london Award",
-                    "content": "The annual good design Awards is london oldest prestigious.",
+                    "caption": "라이브커머스 서포트",
+                    "title": "중고명품 라이브커머스 <br/> 전문적인 서포트",
+                    "content": "라이브 시청자 및 상위노출 작업 진행하였고, 팔로워 서비스를 이용하여 수월한 운영이 가능하도록 도왔습니다.",
                     "image": "assets/img/blog/wd-blog-1.jpg",
                     "__comment__": "date 서식은 Nev 21,2023 이런 식",
-                    "date": "Nev 21, 2024"
+                    "date": "2024년"
                 },
                 {
-                    "caption": "SEO agency",
-                    "title": "Wins 2023 good design london Award",
-                    "content": "The annual good design Awards is london oldest prestigious.",
+                    "caption": "소셜미디어 마케팅",
+                    "title": "처음부터 끝까지 ‘모두’ <br/> 위제로만의 ‘노하우’로 마케팅",
+                    "content": "처음부터 끝까지 위제로만의 노하우로 마케팅하여 효과를 극대화하였습니다, 효과를 만들 자신이 없다면 시작하지 않습니다.",
                     "image": "assets/img/blog/wd-blog-2.jpg",
                     "__comment__": "date 서식은 Nev 21,2023 이런 식",
-                    "date": "Nev 21, 2024"
+                    "date": "2025년"
                 }
             ]
         },
@@ -489,8 +542,89 @@
             ]
         },
         "about": {
+            "caption": "Efficient",
             "title": "클릭 한번에 끝나는 광고.<br />최소 비용으로 최대 효과.",
-            "content": "위제로보다 효과가 더 좋은 광고 회사는 있겠지만, 금액대비 효율이 더 높은 광고 회사는 보지 못했습니다."
+            "content": "위제로보다 효과가 더 좋은 광고 회사는 있겠지만, <br/> 금액대비 효율이 더 높은 광고 회사는 보지 못했습니다."
+        },
+        "process": {
+            "caption": "How we do it",
+            "title": "위제로와 함께하는 성공",
+            "contents": [
+                {
+                    "text": "서비스 주문 전, 고객센터에 서비스를 이용하여 원하시는 결과를 자세히 말씀해 주세요.",
+                    "color": "var(--tp-common-1)"
+                },
+                {
+                    "text": "고객님이 원하는 결과를 위해 가장 효율적이면서도, 적합한 서비스를 추천해 드립니다.",
+                    "color": "var(--tp-common-2)"
+                },
+                {
+                    "text": "결과에 도달하지 못했을 경우를 대비하여, 서비스 주문 후에도 전략적으로 광고/마케팅을 도와드립니다.",
+                    "color": "var(--tp-common-3)"
+                },
+                {
+                    "text": "결과에 도달한다면 그것이 위제로가 생각하는 함께하는 성공입니다!",
+                    "color": "var(--tp-common-4)"
+                }
+            ]
+        },
+        "mission": {
+            "content": [
+                {
+                    "image": "public/assets/logo/wezxro/logo_fit_black.png",
+                    "text": "리오브 LEOWVW의 단독 광고 집행을 위제로가 담당하고 있습니다. 인스타그램, 카카오톡채널, 카카오톡 오픈채팅방, 번개장터, 스마트스토어, 당근마켓, 헬로마켓, 후르츠패밀리 등 오픈마켓과 명품 전문 플랫폼을 직접 관리하고 있습니다. 바이럴 마케팅을 통하여 리오브의 상품이 더욱더 원활하게 판매되도록 기여하고 있습니다."
+                },
+                {
+                    "image": "assets/img/kwlrich.png",
+                    "text": "퀄리치 KWLRICH와 위제로가 함께 파트너 솔루션을 협력하고 있습니다, 퀄리치 솔루션의 가격 측정 및 소셜미디어와 플랫폼의 마케팅 부분은 위제로가 직접 집행하고 있습니다. 퀄리치에서 제공하는 솔루션은 위제로 파트너 솔루션과는 방향이 다르지만, 함께 성장이라는 키워드에 두 회사 모두 포인트를 두고 있습니다."
+                }
+            ]
+        },
+        "counter": {
+            "contents": [
+                {
+                    "info": "1만회 이상의 주문",
+                    "data": 10,
+                    "__comment__": "data 의 단위 optional",
+                    "unit": "K",
+                    "image": "assets/img/shape/counter-shape-1.png"
+                },
+                {
+                    "info": "3천명 이상의 유저",
+                    "data": 3,
+                    "unit": "K",
+                    "image": "assets/img/shape/counter-shape-2.png"
+                },
+                {
+                    "info": "80곳 이상의 파트너사",
+                    "data": 80,
+                    "unit": "",
+                    "image": "assets/img/shape/counter-shape-3.png"
+                }
+            ]
+        },
+        "company": {
+            "title": "Discovery our culture",
+            "subTitle": "More 15,000 Companies & partners <br/> trusted & choice SEOMY."
+        },
+        "award": {
+            "contents": [
+                {
+                    "logo": "assets/img/shape/award-shape-1.png",
+                    "title": "화라온 HWALAON",
+                    "subTitle": "위제로 헤드 오피스"
+                },
+                {
+                    "logo": "assets/img/shape/award-shape-2.png",
+                    "title": "리오브 LEOWVW",
+                    "subTitle": "위제로 단독 광고 계약 체결"
+                },
+                {
+                    "logo": "assets/img/shape/award-shape-3.png",
+                    "title": "퀄리치 KWLRICH",
+                    "subTitle": "위제로 파트너 솔루션 협력"
+                }
+            ]
         },
         "brand": {
             "innerTitle": "아래로 스크롤하여 <br/> 자세히 살펴보기"
@@ -521,7 +655,7 @@
             ]
         },
         "brandArea": {
-            "isUse": false
+            "isUse": true
         },
         "cta": {
             "subTitle": "기다릴 시간이 없나요? 연락주세요!",
@@ -729,16 +863,33 @@
             ]
         },
         "review": {
-            "isUse": false
+            "isUse": true
         },
         "cta": {
-            "title": "지금 바로 당신의 <br/> 비즈니스를 시작해보세요!",
+            "title": "지금 바로 당신의 비즈니스를 시작해보세요!",
             "description": "Start your business right now!",
             "image": "assets/img/services/lotoal-service-cta.png",
             "btn": {
                 "text": "요청하기",
                 "link": "/contact"
             }
+        }
+    },
+    "contact": {
+        "contact": {
+            "title": "문제가 있을때",
+            "content": "문의사항이나 as를 받아야할 상황이면 연락주세요!",
+            "email": "adiviy@naver.com",
+            "phone": {
+                "number": "01012341234",
+                "isUse": false
+            },
+            "contactUs": {
+                "isUse": false
+            }
+        },
+        "map": {
+            "isUse": false
         }
     },
     "header": {
@@ -755,7 +906,7 @@
         },
         "listRow": [
             {
-                "title": "WEODUS",
+                "title": "WEZXRO",
                 "list": [
                     {
                         "text": "HOME",
@@ -772,10 +923,6 @@
                     {
                         "text": "SERVICES",
                         "link": "/services"
-                    },
-                    {
-                        "text": "고객센터",
-                        "link": "/contact"
                     }
                 ]
             },
@@ -787,8 +934,12 @@
                         "link": "/join-partner"
                     },
                     {
-                        "text": "포트폴리오",
+                        "text": "파트너 포트폴리오",
                         "link": "/portfolios"
+                    },
+                    {
+                        "text": "고객센터",
+                        "link": "/contact"
                     }
                 ]
             }
@@ -812,6 +963,6 @@
             "telegram": "https://t.me/wezxro",
             "hwalaon": "https://hwalaon.com"
         },
-        "copyright": "© 2024 Copyrights by <a target=\"_blank\" href=\"https://hwalaon.com\">HWALAON.</a> All Rights Reserved."
+        "copyright": "© 2025 Copyrights by <a target=\"_blank\" href=\"https://wezxro.com\">wezxro.</a> All Rights Reserved."
     }
 }
