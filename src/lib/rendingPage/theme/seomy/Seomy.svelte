@@ -1006,7 +1006,7 @@
                                 <span style="{theme.defaultGradientText}">{config.testimonial.subTitle}</span>
                                 <h5 class="section-title-4 section-title-4-2">{config.testimonial.title}</h5>
                             </div>
-                            <div class="testimonial-4-wrapper tptestimonial-4-active">
+                            <div class="testimonial-4-wrapper tptestimonial-4-active slider-active">
                                 <div class="tptestimonial-4-item">
                                     <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
                                         <div class="tptestimonial-4-rating-img mr-30">
@@ -1309,12 +1309,11 @@
 <Footer {data}/>
 
 <!-- JS here -->
-<script src="assets/js/vendor/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="assets/js/vendor/waypoints.js"></script>
 <script src="assets/js/bootstrap-bundle.js"></script>
 <script src="assets/js/meanmenu.js"></script>
 <script src="assets/js/swiper-bundle.js"></script>
-<script src="assets/js/slick.js"></script>
 <script src="assets/js/nouislider.js"></script>
 <script src="assets/js/magnific-popup.js"></script>
 <script src="assets/js/parallax.js"></script>
@@ -1330,6 +1329,7 @@
 <script src="assets/js/wavify.js"></script>
 <script src="assets/js/animate-headline.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script>
     setTimeout(() => {

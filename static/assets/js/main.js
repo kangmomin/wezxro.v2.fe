@@ -622,8 +622,8 @@
 			fade: true,
 			rtl: rtl_setting,
 			arrows: true,
-			prevArrow: '<button type="button" class="slick-prev"><i class="far fa-arrow-left"></i></button>',
-			nextArrow: '<button type="button" class="slick-next"><i class="far fa-arrow-right"></i></button>',
+			prevArrow: '.prv-testi-case',
+			nextArrow: '.next-testi-case',
 			responsive: [{
 				breakpoint: 767,
 				settings: {
