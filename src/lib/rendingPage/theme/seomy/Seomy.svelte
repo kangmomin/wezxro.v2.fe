@@ -56,7 +56,7 @@
 
         // 소수점 부분이 0.25 ~ 0.75 사이면 반 별 처리
         let fractionalPart = star - fullStars;
-        let hasHalfStar = fractionalPart >= 0.25 && fractionalPart < 0.75;
+        let hasHalfStar = fractionalPart >= 0.25 && fractionalPart < 1;
 
         // 빈 별 개수 계산
         let emptyStars = maxStars - fullStars - (hasHalfStar ? 1 : 0);
@@ -566,6 +566,7 @@
     </section>
     <!-- counter-area-end -->
 
+    {#if config.portfolio.isUse }
     <!-- portfolio-area-start -->
     <section class="portfolio-area portfolio-4-bg pb-140 mb-115 fix p-relative">
         <div class="portfolio-4-main-bg-shape">
@@ -692,6 +693,7 @@
         </div>
     </section>
     <!-- portfolio-area-end -->
+    {/if}
 
     <!-- pricing-area-start -->
     <section class="pricing-area tp-price-parent tppricing-box-active pb-170 fix">

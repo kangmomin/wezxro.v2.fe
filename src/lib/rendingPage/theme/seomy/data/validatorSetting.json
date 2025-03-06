@@ -33,7 +33,7 @@
         "textBody": "#565764",
         "text1": "#271D3A",
         "__comment4__": "메인 컬러 동일 적용",
-        "theme-primary": "#000000",
+        "theme-primary": "#4343ED",
         "theme-secondary": "#000000",
         "theme3": "#05003B",
         "themeGreen": "#59BA41",
@@ -61,6 +61,7 @@
             "phoneNumber": {
                 "text": "CONTACT",
                 "link": "/contact",
+                "__comment__": "기본 아이콘 사용시 빈 문자열 사용. ex) 'icon': ''",
                 "icon": "assets/pictograms/lotoal-phone-pictogram.png"
             },
             "email": {
@@ -123,24 +124,24 @@
             "content": [
                 {
                     "title": "LOTOAL 회원가입",
-                    "description": "우측 상단의 <b>\"회원가입\"</b>을 클릭하여<br/>이메일 기재후 로그인해주세요.<br/>(비로그인 주문 고객센터 별도 문의)",
+                    "description": "우측 상단의 <b>\"회원가입\"</b>을 클릭하여<br/>원하는 결제방식으로 예치금을 충전해주세요.",
                     "color": "#F5D101"
                 },
                 {
                     "title": "예치금 충전하기",
-                    "description": "좌측 카테고리에서 <b>\"충전신청\"</b>을 클릭하여 원하는 결제방식으로 예치금을 충전해주세요.",
+                    "description": "좌측 카테고리에서 <b>\"충전신청:\"</b>을 클릭하여 <br/> 원하는 결제방식으로 예치금을 충전해주세요.",
                     "color": "#05A2E9"
                 },
                 {
                     "title": "서비스 주문하기",
-                    "description": "좌측 카테고리에서 <b>\"주문하기\"</b>를 클릭하고 서비스 선택 후 안내에 따라 링크 혹은 수량을 입력해주세요.",
+                    "description": "좌측 카테고리에서 <b>\"주문하기\"</b>를 클릭하고 서비스 선택 후<br/> 안내에 따라 링크 혹은 수량을 입력해주세요.",
                     "color": "#6369DB"
                 }
             ]
         },
         "fifthSection": {
             "banner": {
-                "url": "assets/img/banner/wd_optimize.png",
+                "url": "assets/img/banner/lotoal-optimize.png",
                 "bg1Url": "",
                 "bg2Url": "",
                 "bgThumbUrl": ""
@@ -293,6 +294,7 @@
             }
         },
         "portfolio": {
+            "isUse": false,
             "subTitle": "",
             "title": "LOTOAL<br/>파트너 시스템",
             "options": [
@@ -432,7 +434,27 @@
             ]
         },
         "blog": {
-            "isUse": false
+            "isUse": false,
+            "caption": "What's Going On",
+            "title": "Company blog & Insights",
+            "cards": [
+                {
+                    "caption": "SEO agency",
+                    "title": "Wins 2023 good design london Award",
+                    "content": "The annual good design Awards is london oldest prestigious.",
+                    "image": "assets/img/blog/wd-blog-1.jpg",
+                    "__comment__": "date 서식은 Nev 21,2023 이런 식",
+                    "date": "Nev 21, 2024"
+                },
+                {
+                    "caption": "SEO agency",
+                    "title": "Wins 2023 good design london Award",
+                    "content": "The annual good design Awards is london oldest prestigious.",
+                    "image": "assets/img/blog/wd-blog-2.jpg",
+                    "__comment__": "date 서식은 Nev 21,2023 이런 식",
+                    "date": "Nev 21, 2024"
+                }
+            ]
         },
         "award": [
             {
@@ -498,6 +520,9 @@
                 }
             ]
         },
+        "brandArea": {
+            "isUse": false
+        },
         "cta": {
             "subTitle": "기다릴 시간이 없나요? 연락주세요!",
             "title": {
@@ -558,7 +583,12 @@
             "isUse": false,
             "subTitle": "Best SEO results?",
             "title": "SEO의 가치를 높일 방법입니다!",
-            "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!"
+            "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!",
+            "mainBg": "assets/img/banner/wd-background.png",
+            "inner": [
+                "assets/img/banner/wd-background.png",
+                "assets/img/banner/wd-background.png"
+            ]
         },
         "project": {
             "caption": "",
@@ -664,10 +694,45 @@
             ]
         },
         "testimonial": {
+            "isUse": false,
+            "reviews": [
+                {
+                    "avatar": "assets/img/services/wd-testimonial-1.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-2.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-3.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-4.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-5.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                }
+            ]
+        },
+        "review": {
             "isUse": false
         },
         "cta": {
-            "title": "지금 바로 당신의 비즈니스를 시작해보세요!",
+            "title": "지금 바로 당신의 <br/> 비즈니스를 시작해보세요!",
             "description": "Start your business right now!",
             "image": "assets/img/services/lotoal-service-cta.png",
             "btn": {
@@ -677,6 +742,7 @@
         }
     },
     "header": {
+        "__comment__": "헤더 투명색으로 하려면 빈 값으로 입력",
         "defaultColor": "#FFFFFF"
     },
     "footer": {

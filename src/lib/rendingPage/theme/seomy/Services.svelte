@@ -437,6 +437,7 @@
     <!-- testimonial-area-end -->
      {/if}
 
+     {#if config.review.isUse }
     <!-- review-area-start -->
     <div class="review-area tpreview-4">
         <div class="container">
@@ -498,6 +499,7 @@
         </div>
     </div>
     <!-- review-area-end -->
+     {/if}
 
     <!-- cta-area-start -->
     <section class="cta-area pt-15">
@@ -505,7 +507,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="cta-content mt-40">
-                        <h4 class="cta-title">{config.cta.title}</h4>
+                        <h4 class="cta-title">{@html config.cta.title}</h4>
                         <p>{@html config.cta.description}</p>
                         <div class="cta-btn">
                             <a class="tp-btn" href="{config.cta.btn.link}">{config.cta.btn.text}</a>
