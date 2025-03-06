@@ -269,15 +269,7 @@
                         {
                             "title": "test1",
                             "subTitle": "test1",
-                            "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                        },{
-                            "title": "test2",
-                            "subTitle": "test2",
-                            "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                        },{
-                            "title": "test3",
-                            "subTitle": "test3",
-                            "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                            "image": "assets/img/portfolio/wd-portfolio-image.jpg"
                         }
                     ]
                 },
@@ -287,15 +279,7 @@
                     "contents": [{
                         "title": "test1",
                         "subTitle": "test1",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                    },{
-                        "title": "test2",
-                        "subTitle": "test2",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                    },{
-                        "title": "test3",
-                        "subTitle": "test3",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                        "image": "assets/img/portfolio/wd-portfolio-image.jpg"
                     }]
                 },
                 {
@@ -304,15 +288,7 @@
                     "contents": [{
                         "title": "test1",
                         "subTitle": "test1",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                    },{
-                        "title": "test2",
-                        "subTitle": "test2",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                    },{
-                        "title": "test3",
-                        "subTitle": "test3",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                        "image": "assets/img/portfolio/wd-portfolio-image.jpg"
                     }]
                 },
                 {
@@ -321,15 +297,7 @@
                     "contents": [{
                         "title": "test1",
                         "subTitle": "test1",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                    },{
-                        "title": "test2",
-                        "subTitle": "test2",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
-                    },{
-                        "title": "test3",
-                        "subTitle": "test3",
-                        "image": "assets/img/portfolio/portfolio-4/portfolio-bg-4.jpg"
+                        "image": "assets/img/portfolio/wd-portfolio-image.jpg"
                     }]
                 }
             ],
@@ -375,7 +343,28 @@
             "inputs": ["성/이름", "이메일 주소", "전화번호", "웹사이트", "메세지", "메세지 전송"]
         },
         "blog": {
-            "isUse": false
+            "isUse": true,
+            "caption":"What's Going On",
+            "title": "Company blog & Insights",
+            "cards": [
+                {
+                    "caption": "SEO agency",
+                    "title": "Wins 2023 good design london Award",
+                    "content": "The annual good design Awards is london oldest prestigious.",
+                    "image": "assets/img/blog/wd-blog-1.jpg",
+                    "__comment__": "date 서식은 Nev 21,2023 이런 식",
+                    "date": "Nev 21, 2024"
+                },
+                {
+                    "caption": "SEO agency",
+                    "title": "Wins 2023 good design london Award",
+                    "content": "The annual good design Awards is london oldest prestigious.",
+                    "image": "assets/img/blog/wd-blog-2.jpg",
+                    "__comment__": "date 서식은 Nev 21,2023 이런 식",
+                    "date": "Nev 21, 2024"
+                }
+            ]
+
         },
         "award": [
             {
@@ -439,6 +428,9 @@
                 }
             ]
         },
+        "brandArea": {
+            "isUse": false
+        },
         "cta": {
             "subTitle": "기다릴 시간이 없나요? 연락주세요!",
             "title": {
@@ -499,7 +491,12 @@
             "isUse": true,
             "subTitle": "Best SEO results?",
             "title": "SEO의 가치를 높일 방법입니다!",
-            "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!"
+            "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!",
+            "mainBg": "assets/img/banner/wd-background.png",
+            "inner": [
+                "assets/img/banner/wd-background.png",
+                "assets/img/banner/wd-background.png"
+            ]
         },
         "project": {
             "caption": "Best SEO results?",
@@ -605,7 +602,39 @@
             ]
         },
         "testimonial": {
-            "isUse": true
+            "isUse": true,
+            "reviews": [
+                {
+                    "avatar": "assets/img/services/wd-testimonial-1.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-2.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-3.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-4.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                },
+                {
+                    "avatar": "assets/img/services/wd-testimonial-5.png",
+                    "comment": "I'm the kind of person who obsesses over and hand-tunes the performance of my websites. By now, I think I've used pretty much every tool and technique out there to save bytes and milliseconds. SEOMY stood out was surprised by approach.!",
+                    "author": "i am writer",
+                    "job": "reviewer"
+                }
+            ]
         },
         "cta": {
             "title": "성공적인 비즈니스 상승!",

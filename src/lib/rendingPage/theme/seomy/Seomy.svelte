@@ -651,7 +651,7 @@
                                                          aria-hidden="false">
                                                         <div class="portfolio-4-item p-relative">
                                                             <div class="portfolio-4-thumb">
-                                                                <img src="{content.image}" alt="">
+                                                                <img style="height: 570px" src="{content.image}" alt="">
                                                             </div>
                                                             <div class="portfolio-4-content">
                                                                 <div class="portfolio-4-content-top">
@@ -1214,8 +1214,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 ">
                     <div class="section-wrapper mb-50">
-                        <span style="{theme.defaultGradientText}">What's Going On</span>
-                        <h5 class="section-title-4 section-title-4-2">Company blog & Insights</h5>
+                        <span style="{theme.defaultGradientText}">{@html config.blog.caption}</span>
+                        <h5 class="section-title-4 section-title-4-2">{@html config.blog.title}</h5>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -1227,16 +1227,15 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="tpblog-4 p-relative mb-60">
-                        <div class="tpblog-4-thumb" data-background="assets/img/blog/blog-4-bg-1.jpg"></div>
+                        <div class="tpblog-4-thumb" data-background="{config.blog.cards[0].image}"></div>
                         <div class="row justify-content-end">
                             <div class="col-lg-7 col-md-7">
                                 <div class="tpblog-4-content">
-                                    <h5 class="tpblog-4-content-sub-tilte">SEO agency</h5>
-                                    <h4 class="tpblog-4-content-title"><a href="/">Wins 2023 good design
-                                        london Award</a></h4>
-                                    <p>The annual good design Awards <br> is london oldest prestigious.</p>
+                                    <h5 class="tpblog-4-content-sub-tilte">{config.blog.cards[0].caption}</h5>
+                                    <h4 class="tpblog-4-content-title"><a href="/">{@html config.blog.cards[0].title}</a></h4>
+                                    <p>{@html config.blog.cards[0].content}</p>
                                     <div class="tpblog-4-info">
-                                        <span>Nev 21,2023</span>
+                                        <span>{config.blog.cards[0].date}</span>
                                         <span><a href="#"><i>By</i> Admin</a></span>
                                     </div>
                                 </div>
@@ -1245,17 +1244,16 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="tpblog-4 mb-60">
-                        <div class="tpblog-4-thumb" data-background="assets/img/blog/blog-4-bg-2.jpg"></div>
+                    <div class="tpblog-4 p-relative mb-60">
+                        <div class="tpblog-4-thumb" data-background="{config.blog.cards[1].image}"></div>
                         <div class="row justify-content-end">
-                            <div class="col-md-7 ">
+                            <div class="col-lg-7 col-md-7">
                                 <div class="tpblog-4-content">
-                                    <h5 class="tpblog-4-content-sub-tilte">SEO agency</h5>
-                                    <h4 class="tpblog-4-content-title"><a href="/">Me in resolution
-                                        pianoforte continuing</a></h4>
-                                    <p>The annual good design Awards <br> is london oldest prestigious.</p>
+                                    <h5 class="tpblog-4-content-sub-tilte">{config.blog.cards[1].caption}</h5>
+                                    <h4 class="tpblog-4-content-title"><a href="/">{@html config.blog.cards[1].title}</a></h4>
+                                    <p>{@html config.blog.cards[1].content}</p>
                                     <div class="tpblog-4-info">
-                                        <span>Nev 21,2023</span>
+                                        <span>{config.blog.cards[1].date}</span>
                                         <span><a href="#"><i>By</i> Admin</a></span>
                                     </div>
                                 </div>

@@ -221,7 +221,7 @@
     <!-- social-area-end -->
 
     <!-- cta-area-start -->
-    <section class="cta-area pt-105">
+    <section class="cta-area pt-105 {!config.brandArea.isUse ? "pb-85" : ''} ">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -254,6 +254,7 @@
     </section>
     <!-- cta-area-end -->
 
+    {#if config.brandArea.isUse}
     <!-- brand-area-start -->
     <div class="brand-area pb-30 pt-85">
         <div class="container">
@@ -293,6 +294,7 @@
         </div>
     </div>
     <!-- brand-area-end -->
+    {/if}
 
 </main>
 <Footer {data} />
