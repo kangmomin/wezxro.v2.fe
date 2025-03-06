@@ -1004,20 +1004,25 @@
                         <div class="testimonial-4-wrap mb-40 pl-70">
                             <div class="section-wrapper mb-50">
                                 <span style="{theme.defaultGradientText}">{config.testimonial.subTitle}</span>
-                                <h5 class="section-title-4 section-title-4-2">{config.testimonial.title}</h5>
+                                <h5 class="section-title-4 section-title-4-2">{@html config.testimonial.title}</h5>
                             </div>
                             <div class="testimonial-4-wrapper tptestimonial-4-active slider-active">
+                                {#each config.testimonial.contents as review}
                                 <div class="tptestimonial-4-item">
                                     <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
                                         <div class="tptestimonial-4-rating-img mr-30">
                                             <img alt="" src="assets/img/shape/testimonial-4-shape-2.png">
                                         </div>
                                         <div class="review-star">
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                                            {#each Array(calcStarCnt(review.star).fullStars) as _, idx}
+                                                <i class="fa-sharp fa-solid fa-star-sharp"></i>
+                                            {/each}
+                                            {#if calcStarCnt(review.star).hasHalfStar}
+                                                <i class="fa-sharp fa-regular fa-star-sharp-half-stroke"></i>
+                                            {/if}
+                                            {#each Array(calcStarCnt(review.star).emptyStars) as _, idx}
+                                                <i class="fa-sharp fa-light fa-star-sharp"></i>
+                                            {/each}
                                         </div>
                                     </div>
                                     <div class="tptestimonial-4-content d-flex">
@@ -1026,49 +1031,16 @@
                                         </div>
                                         <div class="tptestimonial-4-text">
                                             <p>
-                                                As a strategy consultancy, we’re constantly multiple
-                                                projects which meant we had little resources left our
-                                                online marketing. we were also reluctant to partner
-                                                with marketing agencies as most package.!
+                                                {review.comment}
                                             </p>
                                             <div class="tptestimonial-4-author">
-                                                <h4 class="title">Nathalie Grossman</h4>
-                                                <span>CEO of Advisor Fuel</span>
+                                                <h4 class="title">{review.writer}</h4>
+                                                <span>{review.info}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tptestimonial-4-item">
-                                    <div class="tptestimonial-4-rating d-flex align-items-center mb-25">
-                                        <div class="tptestimonial-4-rating-img mr-30">
-                                            <img alt="" src="assets/img/shape/testimonial-4-shape-2.png">
-                                        </div>
-                                        <div class="review-star">
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                            <i class="fa-sharp fa-solid fa-star-sharp"></i>
-                                        </div>
-                                    </div>
-                                    <div class="tptestimonial-4-content d-flex">
-                                        <div class="tptestimonial-4-icon mr-20">
-                                            <img alt="" src="assets/img/shape/quation-4.png">
-                                        </div>
-                                        <div class="tptestimonial-4-text">
-                                            <p>
-                                                As a strategy consultancy, we’re constantly multiple
-                                                projects which meant we had little resources left our
-                                                online marketing. we were also reluctant to partner
-                                                with marketing agencies as most package.!
-                                            </p>
-                                            <div class="tptestimonial-4-author">
-                                                <h4 class="title">Nathalie Grossman</h4>
-                                                <span>CEO of Advisor Fuel</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {/each}
                             </div>
                         </div>
                         <div class="testimonial-arrow-4 pl-110">
@@ -1234,7 +1206,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="blog-all-btn text-lg-end mb-40">
-                        <a class="blue-btn" href="/">More Articles</a>
+                        <a class="blue-btn" href="{config.blog.moreBtn.link}">{config.blog.moreBtn.text}</a>
                     </div>
                 </div>
             </div>
@@ -1250,7 +1222,7 @@
                                     <p>{@html config.blog.cards[0].content}</p>
                                     <div class="tpblog-4-info">
                                         <span>{config.blog.cards[0].date}</span>
-                                        <span><a href="#"><i>By</i> Admin</a></span>
+                                        <span><a href="#"><i>By</i> {EN_NAME}</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -1268,7 +1240,7 @@
                                     <p>{@html config.blog.cards[1].content}</p>
                                     <div class="tpblog-4-info">
                                         <span>{config.blog.cards[1].date}</span>
-                                        <span><a href="#"><i>By</i> Admin</a></span>
+                                        <span><a href="#"><i>By</i> {EN_NAME}</a></span>
                                     </div>
                                 </div>
                             </div>

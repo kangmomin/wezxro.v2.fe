@@ -135,7 +135,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="about-inner-content">
-                            <span>Welcome</span>
+                            <span>{config.about.caption}</span>
                             <h4 style="font-size: 53px" class="about-inner-title">{@html config.about.title}</h4>
                             <p>{@html config.about.content}</p>
                         </div>
@@ -209,7 +209,7 @@
                 <div class="col-lg-12">
                     <div class="tpsection__wrapper text-center mb-70">
                         <div class="tpbanner__sub-title mb-15">
-                            <span>How we do it</span>
+                            <span>{config.process.caption}</span>
                             <i>
                                 <svg fill="none" height="38" viewBox="0 0 124 38" width="124"
                                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -226,7 +226,7 @@
                                 </svg>
                             </i>
                         </div>
-                        <h2 class="tpsection__title">Helping others Succeed</h2>
+                        <h2 class="tpsection__title">{config.process.title}</h2>
                     </div>
                 </div>
             </div>
@@ -235,62 +235,34 @@
                     <img alt="" src="assets/img/shape/process-rocket.png">
                 </div>
                 <div class="row">
+                    {#each config.process.contents as c, i}
                     <div class="col-lg-3 col-md-6">
                         <div class="tpprocess__item p-relative mb-40">
                             <div class="tpprocess__wrapper">
-                                <span class="tpprocess__count mb-25">1</span>
-                                <h4 class="tpprocess__title">Brainstorming and Creative <br> ideas & Research</h4>
+                                <span class="tpprocess__count mb-25" style="background-color: {c.color}">{i + 1}</span>
+                                <h4 class="tpprocess__title">{@html c.text}</h4>
                             </div>
                             <div class="tpprocess-shape-one d-none d-md-block">
-                                <svg fill="none" height="15" viewBox="0 0 112 15" width="112"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path class="line-dash-path"
-                                          d="M1 8.56464C18.4695 1.84561 64.9267 -6.52437 111 13.7479"
-                                          stroke="#A6A8B0" stroke-dasharray="4 5"/>
-                                </svg>
+                                {#if !(i == config.process.contents.length-1)}
+                                    {#if i % 2 == 0}
+                                    <svg fill="none" height="15" viewBox="0 0 112 15" width="112"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path class="line-dash-path"
+                                            d="M1 8.56464C18.4695 1.84561 64.9267 -6.52437 111 13.7479"
+                                            stroke="#A6A8B0" stroke-dasharray="4 5"/>
+                                    </svg>
+                                    {:else}
+                                    <svg fill="none" height="15" viewBox="0 0 112 15" width="112" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="line-dash-path" 
+                                            d="M1 6.43536C18.4695 13.1544 64.9267 21.5244 111 1.25212" 
+                                            stroke="#A6A8B0" stroke-dasharray="4 5"></path>
+                                    </svg>
+                                    {/if}
+                                {/if}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="tpprocess__item p-relative ml-30 mb-40">
-                            <div class="tpprocess__wrapper tpprocess__two">
-                                <span class="tpprocess__count mb-25">2</span>
-                                <h4 class="tpprocess__title">Fully-Automated Keyword <br> Grouping</h4>
-                            </div>
-                            <div class="tpprocess-shape-two d-none d-lg-block">
-                                <svg fill="none" height="15" viewBox="0 0 112 15" width="112"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path class="line-dash-path"
-                                          d="M1 6.43536C18.4695 13.1544 64.9267 21.5244 111 1.25212"
-                                          stroke="#A6A8B0" stroke-dasharray="4 5"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="tpprocess__item p-relative ml-55 mb-40">
-                            <div class="tpprocess__wrapper tpprocess__three">
-                                <span class="tpprocess__count mb-25">3</span>
-                                <h4 class="tpprocess__title">Building the strategy to <br> boost Your Sales</h4>
-                            </div>
-                            <div class="tpprocess-shape-three d-none d-md-block">
-                                <svg fill="none" height="15" viewBox="0 0 112 15" width="112"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path class="line-dash-path"
-                                          d="M1 8.56464C18.4695 1.84561 64.9267 -6.52437 111 13.7479" stroke="#A6A8B0"
-                                          stroke-dasharray="4 5"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="tpprocess__item d-flex justify-content-end mb-40">
-                            <div class="tpprocess__wrapper tpprocess__four">
-                                <span class="tpprocess__count mb-25">4</span>
-                                <h4 class="tpprocess__title">Helping to achieve more <br> People</h4>
-                            </div>
-                        </div>
-                    </div>
+                    {/each}
                 </div>
             </div>
         </div>
@@ -303,9 +275,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="mission-content ">
-                        <span><img alt="" src="assets/img/shape/about-5-shape-1.svg"></span>
-                        <p>e are in business to develop an SEO software that allows anyone to independently optimize and
-                            promote a website on the web, regardless of the level of expertise.</p>
+                        <span><img alt="" src="{config.mission.content[0].image}" style="width: 170px"></span>
+                        <p>{@html config.mission.content[0].text}</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -330,10 +301,8 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="mission-content">
-                            <span><img alt="" src="assets/img/shape/about-5-shape-2.svg"></span>
-                            <p>We aim to constantly improve the user experience, functionality, and support to provide
-                                the
-                                best possible options for search engine optimization.</p>
+                            <span><img alt="" src="{config.mission.content[1].image}" style="width: 170px"></span>
+                            <p>{@html config.mission.content[1].text}</p>
                         </div>
                     </div>
                 </div>
@@ -347,6 +316,7 @@
         <div class="container">
             <div class="counter-border">
                 <div class="row">
+                    {#each config.counter.contents as c, i}
                     <div class="col-lg-4 col-md-6">
                         <div class="inner-counter">
                             <div class="inner-counter-shape">
@@ -355,50 +325,16 @@
                             <div class="inner-counter-count d-flex align-items-center ml-45">
                                 <div class="inner-counter-list">
                               <span class="purecounter" data-purecounter-duration="1"
-                                    data-purecounter-end="25">25</span>
+                                    data-purecounter-end="{c.data}">{c.data} </span><span>{c.unit}</span>
                                     <i class="fa-regular fa-plus"></i>
                                 </div>
                                 <div class="inner-counter-info">
-                              <span>Years <br>
-                                 Of Experience</span>
+                                    <span>{c.info}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="inner-counter ml-70">
-                            <div class="inner-counter-shape inner-counter-shape-2">
-                                <img alt="" src="assets/img/shape/counter-shape-2.png">
-                            </div>
-                            <div class="inner-counter-count d-flex align-items-center">
-                                <div class="inner-counter-list">
-                                    <span class="purecounter" data-purecounter-duration="1"
-                                          data-purecounter-end="340"></span>
-                                    <i class="fa-regular fa-plus"></i>
-                                </div>
-                                <div class="inner-counter-info">
-                                    <span>Project <br> Complite</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="inner-counter d-flex justify-content-end">
-                            <div class="inner-counter-shape inner-counter-shape-3">
-                                <img alt="" src="assets/img/shape/counter-shape-3.png">
-                            </div>
-                            <div class="inner-counter-count d-flex align-items-center">
-                                <div class="inner-counter-list">
-                              <span class="purecounter" data-purecounter-duration="1"
-                                    data-purecounter-end="25">25</span>
-                                    <i class="fa-regular fa-plus"></i>
-                                </div>
-                                <div class="inner-counter-info">
-                                    <span>Satisfied Clients On <br> 24 Countries</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/each}
                 </div>
             </div>
         </div>
@@ -412,8 +348,8 @@
                 <div class="col-lg-4 col-md-6 ">
                     <div class="company-wrap">
                         <div class="company-content">
-                            <h4 class="company-title">Discovery our culture</h4>
-                            <p>More 15,000 Companies & partners <br> trusted & choice SEOMY.</p>
+                            <h4 class="company-title">{config.company.title}</h4>
+                            <p>{@html config.company.subTitle}</p>
                         </div>
                         <div class="company-thumb">
                             <img alt="" src="assets/img/banner/company-1.jpg">
@@ -440,39 +376,19 @@
     <section class="award-area pb-60">
         <div class="container">
             <div class="row">
+                {#each config.award.contents as c, i}
                 <div class="col-lg-4 col-md-6">
-                    <div class="tpaward text-center mb-30">
+                    <div class="tpaward text-center mb-30 {i !== 0 && i !== config.award.contents.length - 1 ? "tpaward-border" : ""}">
                         <div class="tpaward-icon mb-15">
-                            <img alt="" src="assets/img/shape/award-shape-1.png">
+                            <img alt="" src="{c.logo}">
                         </div>
                         <div class="tpaward-content">
-                            <h4 class="title mb-5">Best of the Year</h4>
-                            <p>Best Apps - Apple</p>
+                            <h4 class="title mb-5">{@html c.title}</h4>
+                            <p>{@html c.subTitle}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="tpaward tpaward-border text-center mb-30">
-                        <div class="tpaward-icon mb-15">
-                            <img alt="" src="assets/img/shape/award-shape-2.png">
-                        </div>
-                        <div class="tpaward-content">
-                            <h4 class="title mb-5">Best of the Year</h4>
-                            <p>Best Apps - Google</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="tpaward text-center mb-30">
-                        <div class="tpaward-icon mb-15">
-                            <img alt="" src="assets/img/shape/award-shape-3.png">
-                        </div>
-                        <div class="tpaward-content">
-                            <h4 class="title mb-5">Best of the Year</h4>
-                            <p>Innovation by Design - Fast Company</p>
-                        </div>
-                    </div>
-                </div>
+                {/each}
             </div>
         </div>
     </section>
@@ -650,7 +566,7 @@
 <script src="assets/js/magnific-popup.js"></script>
 <script src="assets/js/parallax.js"></script>
 <script src="assets/js/nice-select.js"></script>
-<script src="assets/js/wow.js"></script>
+<script src="https://wowjs.uk/dist/wow.min.js"></script>
 <script src="assets/js/isotope-pkgd.js"></script>
 <script src="assets/js/imagesloaded-pkgd.js"></script>
 <script src="assets/js/purecounter.js"></script>
