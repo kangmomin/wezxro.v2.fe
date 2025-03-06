@@ -1,9 +1,17 @@
 <script>
     import Footer from "$lib/component/seomy/Footer.svelte";
     import Header from "$lib/component/seomy/Header.svelte";
+	import { onMount } from "svelte";
+	import SeomySetting from "./SeomySetting";
 
     export let data
     const {EN_NAME, KR_NAME} = data.props
+
+    /** 메인 페이지 공통 설정 */
+    const config = SeomySetting[EN_NAME]?.contact ?? SeomySetting["WEZXRO"].contact
+    const theme = SeomySetting[EN_NAME]?.theme ?? SeomySetting["WEZXRO"].theme
+
+    onMount(() => SetThemeStyle(theme))
 </script>
 <svelte:head>
     <meta charset="utf-8">
@@ -81,11 +89,10 @@
             <div class="row">
                 <div class="col-xl-5 col-lg-6">
                     <div class="contact-content mb-30">
-                        <h4 class="contact-title">Get in Touch</h4>
-                        <p>If you need help with your account or have questions about <br> credit sesame, please visit our
-                            Help center.!</p>
+                        <h4 class="contact-title">{@html config.contact.title}</h4>
+                        <p>{@html config.contact.content}</p>
                         <div class="contact-info">
-                            <a href="mailto:Info@contact.com" class="contact-mail mb-15">
+                            <a href="mailto:{config.contact.email}" class="contact-mail mb-15">
                            <span>
                               <svg width="22" height="17" viewBox="0 0 22 17" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +108,7 @@
                                        stroke-linejoin="round" />
                               </svg>
                            </span>
-                                Info@contact.com
+                                {config.contact.email}
                                 <i>
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +119,8 @@
                                     </svg>
                                 </i>
                             </a>
-                            <a href="tel:0123456789" class="contact-mail mb-20">
+                            {#if config.contact.phone.isUse}
+                            <a href="tel:{config.contact.phone.number}" class="contact-mail mb-20">
                            <span>
                               <svg width="22" height="21" viewBox="0 0 22 21" fill="none"
                                    xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +138,7 @@
                                          stroke="#565764" stroke-linecap="round" stroke-linejoin="round" />
                               </svg>
                            </span>
-                                +1 415 704 6387
+                           {config.contact.phone.number}
                                 <i>
                                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
@@ -141,6 +149,7 @@
                                     </svg>
                                 </i>
                             </a>
+                            {/if}
                         </div>
                         <div class="contact-social">
                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -150,6 +159,7 @@
                         </div>
                     </div>
                 </div>
+                {#if config.contact.contactUs.isUse}
                 <div class="offset-xl-1 col-xl-6 col-lg-6">
                     <div class="contact-form">
                         <h4 class="contact-form-title">Contact Us</h4>
@@ -178,11 +188,13 @@
                         <p class="ajax-response"></p>
                     </div>
                 </div>
+                {/if}
             </div>
         </div>
     </section>
     <!-- contact-area-end -->
 
+    {#if config.map.isUse }
     <!-- map-area-start -->
     <section class="map-area map-wrapper">
         <div class="container">
@@ -258,6 +270,7 @@
         </div>
     </section>
     <!-- map-area-end -->
+     {/if}
 
 </main>
 

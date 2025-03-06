@@ -247,6 +247,7 @@
     </div>
     <!-- banner-area-end -->
 
+    {#if config.secondSection.isUse }
     <!-- services-area-start -->
     <section class="services-area pb-120">
         <div class="container">
@@ -320,6 +321,7 @@
         </div>
     </section>
     <!-- services-area-end -->
+     {/if}
 
     <!-- brand-area-start -->
     <section class="brand-area brand-bg-3 mb-120 p-relative">
@@ -488,9 +490,11 @@
                                 </div>
                             {/each}
                         </div>
+                        {#if config.fifthSection.btn.isUse }
                         <div class="optimize-btn">
                             <a class="blue-btn" href="{config.fifthSection.btn.link}">{config.fifthSection.btn.text}</a>
                         </div>
+                        {/if}
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -523,6 +527,7 @@
     </section>
     <!-- optimize-area-end -->
 
+    {#if config.sixthSection.isUse}
     <!-- counter-area-start -->
     <section class="counter-area pb-140">
         <div class="container">
@@ -565,6 +570,7 @@
         </div>
     </section>
     <!-- counter-area-end -->
+    {/if}
 
     {#if config.portfolio.isUse }
     <!-- portfolio-area-start -->
@@ -695,6 +701,7 @@
     <!-- portfolio-area-end -->
     {/if}
 
+    {#if config.pricing.isUse }
     <!-- pricing-area-start -->
     <section class="pricing-area tp-price-parent tppricing-box-active pb-170 fix">
         <div class="container">
@@ -953,6 +960,7 @@
         </div>
     </section>
     <!-- pricing-area-end -->
+    {/if}
 
     {#if (config.testimonial.isUse)}
     <!-- testimonial-area-start -->
@@ -1095,6 +1103,7 @@
     <!-- testimonial-area-end -->
      {/if}
 
+    {#if config.reviewSection.isUse}
     <!-- review-area-start -->
     <div class="review-area tpreview-4 pb-105">
         <div class="container">
@@ -1129,7 +1138,9 @@
         </div>
     </div>
     <!-- review-area-end -->
+    {/if}
 
+    {#if config.contactSection.isUse}
     <!-- contact-area-start -->
     <section class="contact-area p-relative contact-bg-4 pb-65 mb-60">
         <div class="contact-main-shape-bg d-none d-md-block">
@@ -1205,6 +1216,7 @@
         </div>
     </section>
     <!-- contact-area-end -->
+    {/if}
 
     {#if (config.blog.isUse)}
     <!-- blog-area-start -->

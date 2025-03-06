@@ -165,9 +165,11 @@
                             </div>
                             {/each}
                         </div>
+                        {#if config.faq.accordion.isUseLoadMoreBtn}
                         <div class="tp-accordion-btn">
                             <a href="#">Load More Questions <i class="fa-light fa-arrow-right"></i></a>
                         </div>
+                        {/if}
                     </div>
                 </div>
             </div>
@@ -220,6 +222,7 @@
     </div>
     <!-- social-area-end -->
 
+    {#if config.brandArea.isUse}
     <!-- cta-area-start -->
     <section class="cta-area pt-105 {!config.brandArea.isUse ? "pb-85" : ''} ">
         <div class="container">
@@ -253,6 +256,7 @@
         </div>
     </section>
     <!-- cta-area-end -->
+    {/if}
 
     {#if config.brandArea.isUse}
     <!-- brand-area-start -->
