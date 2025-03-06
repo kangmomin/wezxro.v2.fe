@@ -124,7 +124,7 @@
         },
         "fourthSection": {
             "banner": {
-                "url": "assets/img/icon/lotoal-working-man.png",
+                "url": "assets/img/ad-how-to-use.png",
                 "__comment5__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
                 "isRound": false
             },
@@ -143,14 +143,14 @@
                 },
                 {
                     "title": "서비스 주문하기",
-                    "description": "대시보드에서 좌측 상단에 있는 <b style='color: blue'>주문하기에</b> 들어가셔서 원하시는 카테고리 서비스 링크 수량 입력해주시면 자동 주문 완료입니다. <br/> <i style='color: red; font-size:10px'>주의사항:인스타그람 주문하실때 비공계이신 분들은 주문 넣으실때 비공계를 해제하셔야합니다.",
+                    "description": "대시보드에서 좌측 상단에 있는 <b style='color: blue'>주문하기에</b> 들어가셔서 원하시는 카테고리 서비스 링크 수량 입력해주시면 자동 주문 완료입니다. <br/> <i style='color: red; font-size:10px'>주의사항:인스타그람 주문하실때 비공계이신 분들은 주문 넣으실때 비공계를 해제하셔야합니다.</i>",
                     "color": "#6369DB"
                 }
             ]
         },
         "fifthSection": {
             "banner": {
-                "url": "assets/img/banner/lotoal-optimize.png",
+                "url": "assets/img/banner/ad-main-optimize.png",
                 "bg1Url": "",
                 "bg2Url": "", 
                 "bgThumbUrl": ""
