@@ -143,7 +143,7 @@
                 },
                 {
                     "title": "서비스 주문하기",
-                    "description": "대시보드에서 좌측 상단에 있는 <b style='color: blue'>주문하기에</b> 들어가셔서 원하시는 카테고리 서비스 링크 수량 입력해주시면 자동 주문 완료입니다. <br/> <i style='color: red; font-size:10px'>주의사항:인스타그람 주문하실때 비공계이신 분들은 주문 넣으실때 비공계를 해제하셔야합니다.</i>",
+                    "description": "대시보드에서 좌측 상단에 있는 <b style='color: blue'>주문하기에</b> 들어가셔서 원하시는 카테고리 서비스 링크 수량 입력해주시면 자동 주문 완료입니다. <br/> <i style='color: red; font-size:10px'>주의사항:인스타그램 주문하실때 비공계이신 분들은 주문 넣으실때 비공계를 해제하셔야합니다.</i>",
                     "color": "#6369DB"
                 }
             ]
@@ -157,7 +157,7 @@
             },
             "label": "Looking for best AD For results?",
             "title": "ADIVIY는 완벽합니다",
-            "content": "시스템 서비스 등등 모든 것을 갖췄습니다",
+            "content": "시스템 서비스 인프라구축 고객응대 서비스 등등 완벽하게 구축했습니다!",
             "data": [
                 {
                     "title": "서비스 자동 주문 성공 비율",
@@ -448,7 +448,7 @@
                 "highlight": "질문들"
             },
             "subContent": "",
-            "content": "궁금한 내용이 있다면 +버튼을 눌러주세요!",
+            "content": "궁금한 내용이 있다면 +버튼을 눌러주세요! <br/> 추가로 궁금한게 있으시면 고객센터로 문의 주세요!",
             "accordion": [
                 {
                     "title": "주문하면 서비스는 언제 제공되나요?",
@@ -459,7 +459,8 @@
                     "description": "저희는 타업체와 다르기 때문에 빠지는 일이 없습니다! 빠진다면 1개월내로는 as 가능합니다!"
                 }
             ],
-            "isUseLoadMoreBtn": false
+            "isUseLoadMoreBtn": false,
+            "isShapeUse": false
         },
         "brandArea": {
             "isUse": false
