@@ -48,7 +48,7 @@
         "themeDarkBlue": "#1E2B8A",
 
         "__comment5__": "메인 컬러 동일 적용",
-        "themeBlue": "#B564FE",
+        "theme-blue": "#B564FE",
 
         "border1": "#F0F1F4",
         "border5": "#000"

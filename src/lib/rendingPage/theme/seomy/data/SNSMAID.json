@@ -1,18 +1,18 @@
 {
     "theme": {
         "__comment1__": "기본 그라디언트 색상들",
-        "defaultGradientText": "background: linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
-        "defaultGradientAreaHtml": "background: linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%)",
-        "defaultGradientArea": "linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%)",
+        "defaultGradientText": "background: linear-gradient(90deg, #BB78C8 0%, #DCA6E0 43.75%, #F9D3F8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
+        "defaultGradientAreaHtml": "background: linear-gradient(90deg, #BB78C8 0%, #DCA6E0 43.75%, #F9D3F8 100%)",
+        "defaultGradientArea": "linear-gradient(90deg, #BB78C8 0%, #DCA6E0 43.75%, #F9D3F8 100%)",
         
         "__comment2__": "메인 컬러 (헤더 회원가입 버튼 등)",
-        "main": "#000000",
+        "main": "#38c6f9",
         
         "white": "#f6f6f7",
         "black": "#000",
         
         "__comment3__": "wave 아래 영역",
-        "common-1": "#f6f6f7",
+        "common-1": "#38c6f9",
 
         "common-2": "#ABBF78",
         "common-3": "#FFB876",
@@ -39,15 +39,16 @@
 
         "__comment4__": "메인 컬러 동일 적용",
         "theme-primary": "#4343ED",
-        "theme-secondary": "#000000",
+        "theme-secondary": "#38c6f9",
 
         "theme3": "#05003B",
-        "themeGreen": "#59BA41",
+        "__comment6__": "버튼 색상",
+        "theme-green": "blue",
         "themeApple": "#F5F1EB",
         "themeDarkBlue": "#1E2B8A",
 
         "__comment5__": "메인 컬러 동일 적용",
-        "theme-blue": "#000000",
+        "theme-blue": "#38c6f9",
 
         "border1": "#F0F1F4",
         "border5": "#000"
@@ -56,15 +57,15 @@
         "firstSection": {
             "bannerContent": {
                 "bannerTitle": {
-                    "firstSection": "ADIVIY는",
+                    "firstSection": "계정 관리의 모든 것",
                     "secondSection": [
-                        "SNS"
                     ],
-                    "thirdSection": "전문가 입니다!"
+                    "thirdSection": "sns 메이드에서 쉽고 간편하게"
                 },
-                "bannerExplain": ""
+                "bannerExplain": "sns메이드에서 최고의 서비스를 제공합니다!"
             },
             "MainContactBtn": {
+                "isUse": true,
                 "text": "서비스 둘러보기",
                 "link": "/login"
             },
@@ -86,30 +87,30 @@
             }
         },
         "secondSection": {
-            "isUse": false,
+            "isUse": true,
             "subText": "",
-            "mainText": "LOTOAL 서비스",
+            "mainText": "sns메이드 서비스",
             "cards": [
                 {
-                    "mainText": "검색 엔진 최적화(SEO)",
-                    "description": "웹사이트 구조및 키워드 최적화 , 트래픽 개선을 통 한 검색 노출 극대화까지 자동화된 SEO 마케팅을 통해 효율적인 상위노출이 가능합니다.",
-                    "image": "/assets/pictograms/seo.png",
+                    "mainText": "24시 자동화 시스템",
+                    "description": "주말 공휴일 상관없이 24시 주문 즉시 작업됩니다.",
+                    "image": "/assets/img/snsmaid-service-1.png",
                     "readMore": {
                         "link": "/services",
                         "text": "Read More"
                     }
                 }, {
-                    "mainText": "소셜 미디어 마케팅",
-                    "description": "다양한 고객층 확보 및 확실한 인원유입을 통하여 귀하의 매출을 극대화 시켜줍니다.",
-                    "image": "/assets/pictograms/socialMediaMarketing.png",
+                    "mainText": "다양한 맞춤형 주문 서비스",
+                    "description": "인스타그램을 포함한 모든 sns의 상세한 주문이 가능합니다.",
+                    "image": "/assets/img/snsmaid-service-2.png",
                     "readMore": {
                         "link": "/services",
                         "text": "Read More"
                     }
                 }, {
-                    "mainText": "마케팅 자동화 패널",
-                    "description": "일반적인 광고대행사보다 저렴한 가격 , 최고의 퀄리티로 귀하의 웹사이트를 자동화할수있습니다. <br/> 24시간 가동되는 사이트는 업무 효율을 2배 이상 높여줍니다.",
-                    "image": "/assets/pictograms/marketingPanel.png",
+                    "mainText": "개인정보 보안시스템",
+                    "description": "회원님의 소중한 개인정보를 최우선적으로 보호합니다.",
+                    "image": "/assets/img/snsmaid-service-3.png",
                     "readMore": {
                         "link": "/services",
                         "text": "Read More"
@@ -119,45 +120,45 @@
         },
         "thirdSection": {
             "mainBanner": {
-                "text": "어디비 서비스 제공 플랫폼"
+                "text": "SNS 메이드 서비스 제공 플랫폼"
             }
         },
         "fourthSection": {
             "banner": {
-                "url": "assets/img/ad-how-to-use.png",
+                "url": "assets/img/snsmaid-how-to-use.png",
                 "__comment5__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
                 "isRound": false
             },
-            "title": "ADIVIY 주문 방법",
+            "title": "sns메이드 사용방법",
             "caption": "",
             "content": [
                 {
-                    "title": "어디비 회원가입",
-                    "description": "우측상단에 있는 <b style='color: blue'>회원가입</b> 버튼 누르셔서 회원가입 해주세요.",
-                    "color": "#F5D101"
+                    "title": "sns메이드 회원가입",
+                    "description": "우측 상단의 \"회원가입\" 클릭해 주시고, 가입 후 sns메이드 대시보드에 접속해 주시면 됩니다.",
+                    "color": "pink"
                 },
                 {
                     "title": "예치금 충전하기",
-                    "description": "대시보드에서 좌측 상단에 있는 <b style='color: blue'>충전 신청</b> 클릭 후 예치금 충전해 주시면 됩니다.",
-                    "color": "#05A2E9"
+                    "description": "대시보드에서 좌측 카테고리를 보시면, '충전 신청' 클릭 후 예치금 충전해 주시면 됩니다.",
+                    "color": "yellow"
                 },
                 {
                     "title": "서비스 주문하기",
-                    "description": "대시보드에서 좌측 상단에 있는 <b style='color: blue'>주문하기에</b> 들어가셔서 원하시는 카테고리 서비스 링크 수량 입력해주시면 자동 주문 완료입니다. <br/> <i style='color: red; font-size:10px'>주의사항:인스타그램 주문하실때 비공계이신 분들은 주문 넣으실때 비공계를 해제하셔야합니다.</i>",
-                    "color": "#6369DB"
+                    "description": "좌측 카테고리에 '주문하기' 클릭한뒤, 서비스를 선택하고 링크와 수량을 입력하시면 자동 주문 완료!",
+                    "color": "blue"
                 }
             ]
         },
         "fifthSection": {
             "banner": {
-                "url": "assets/img/banner/ad-main-optimize.png",
+                "url": "assets/img/banner/snsmaid-main-optimize.png",
                 "bg1Url": "",
                 "bg2Url": "", 
                 "bgThumbUrl": ""
             },
             "label": "Looking for best AD For results?",
-            "title": "ADIVIY는 완벽합니다",
-            "content": "시스템 서비스 인프라구축 고객응대 서비스 등등 완벽하게 구축했습니다!",
+            "title": "다양한 마케팅 서비스를 통해 SNS가 만드는 대표님의 경쟁력을 느껴보세요.",
+            "content": "모든 SNS를 24시 자동화로 셀프 관리가 가능합니다.",
             "data": [
                 {
                     "title": "서비스 자동 주문 성공 비율",
@@ -171,8 +172,8 @@
                 }
             ],
             "btn": {
-                "isUse": false,
-                "text": "ADIVIY 소개",
+                "isUse": true,
+                "text": "FOLLOUS 소개",
                 "link": "/about"
             }
         },
@@ -366,12 +367,12 @@
             }
         ],
         "contactSection": {
-            "isUse": false,
+            "isUse": true,
             "caption": "",
-            "title": "당사가 귀하를 업계최고로 만들어드리겠습니다.",
-            "description": "당신의 꿈과 목표를 LOTOAL이 실현시켜 드릴 수 있습니다!",
-            "tel": "+(82) 010-5918-1225",
-            "email": "rian36dgd@gmail.com",
+            "title": "디지털 시대를 리드하는 마케팅 파트너 트렌드를 넘어 미래를 디자인하다.",
+            "description": "고객의 니즈를 맞추기 위해서 바로 follous가 더노력하겠습니다.",
+            "tel": "+(82) 010-5658-5600",
+            "email": "",
             "btn": {
                 "text": "즉시 통화하기",
                 "link": "01059181225"
@@ -441,91 +442,107 @@
         }
     },
     "faq": {
-        "banner": "assets/img/banner/lotoal-sub-page-banner.png",
+        "banner": "assets/img/banner/follous-banner.png",
         "faq": {
             "title": {
-                "main": "자주 물어보시는 ",
-                "highlight": "질문들"
+                "main": "자주 묻는 ",
+                "highlight": "질문"
             },
             "subContent": "",
-            "content": "궁금한 내용이 있다면 +버튼을 눌러주세요! <br/> 추가로 궁금한게 있으시면 고객센터로 문의 주세요!",
+            "content": "궁금하신 내용, 찾는 것이 있으시다면 눌러주세요!",
             "accordion": [
                 {
-                    "title": "주문하면 서비스는 언제 제공되나요?",
-                    "description": "자동화라서 주문완료되면 바로 들어갑니다!"
+                    "title": "정확한 상담을 위한 1:1 오픈채팅",
+                    "description": "<a href='#' style='color: blue'>여기</a>를 눌러 카카오톡 상담을 시작하기"
                 },
                 {
-                    "title": "주문을 넣고나서 줄어드는 부분은 있나요?",
-                    "description": "저희는 타업체와 다르기 때문에 빠지는 일이 없습니다! 빠진다면 1개월내로는 as 가능합니다!"
+                    "title": "주문 처리 시간은 얼마나 걸리나요?",
+                    "description": "일반적으로 주문 후 즉시 작업이 시작되며, 대부분의 서비스는 24시간 이내에 완료됩니다. 단, 주문량이 많거나 서비스 특성에 따라 처리 시간이 달라질 수 있습니다.!"
+                },
+                {
+                    "title": "작업 된 수량이 줄어 들 수 있나요?",
+                    "description": "각 SNS 플랫폼 정책에 따라 작업된 수량이 소량 감소할 수 있습니다. 이는 모든 SNS 마케팅 서비스에서 발생할 수 있는 자연스러운 현상입니다. 수량 감소 시 1:1 오픈채팅을 통해 문의주시거나 자동으로 재작업이 진행됩니다."
+                },
+                {
+                    "title": "주문링크에는 어떤것을 입력해야 하나요?",
+                    "description": "인스타그램의 경우 프로필 URL 또는 게시물 URL을, 유튜브는 채널 URL 또는 영상 URL을 입력해 주세요. 정확한 URL 입력이 중요하며, 잘못된 URL 입력 시 작업이 불가능할 수 있습니다."
+                },
+                {
+                    "title": "주문링크를 잘못 입력하였습니다.",
+                    "description": "주문링크를 잘못 입력하신 경우, 작업이 시작되기 전이라면 고객센터를 통해 수정이 가능합니다. 이미 작업이 시작된 경우에는 수정이 불가능하니, 주문 시 링크를 정확하게 입력해 주시기 바랍니다."
                 }
             ],
-            "isUseLoadMoreBtn": false,
-            "isShapeUse": false
+            "shape": {
+                "isUse": true,
+                "url": "/assets/pictograms/snsmaid-kakaotalk.png",
+                "linkTo": "https://www.kakaocorp.com/page/"
+            }
         },
         "brandArea": {
             "isUse": false
         },
         "cta": {
+            "isUse": false,
             "subTitle": "기다릴 시간이 없나요? 연락주세요!",
             "title": {
-                "main": "<span style=\"border-bottom: 5px solid blue;\">SEO 전문</span> 광고대행사와 협력해 보세요!",
-                "highlight": ""
+                "main": "함께 협력합시다.",
+                "highlight": "우리의 SEO 전문가"
             },
             "phone": {
-                "number": "+(82) 010-5918-1225",
-                "text": "문의하기"
+                "number": "+82 010-5658-5600",
+                "text": "연락 해주시면 됩니다!"
             }
         }
     },
     "service": {
-        "banner": "assets/img/banner/lotoal-sub-page-banner.png",
+        "banner": "assets/img/banner/follous-banner.png",
         "about": {
-            "title": "SEO 전문 광고대행사로부터 확실한 성과를 획득 해보세요!",
-            "subTitle": "SEO 서비스는 보다 효과적인 마케팅을 찾고있던 귀하의 고민을 제거 시켜 줄 것 입니다. 합리적인 가격에 마케팅에 대한 고민을 해소해보세요."
+            "title": "SNS메이드에선 모든 SNS서비스가 가능합니다!",
+            "subTitle": "당신의 계정을 최고퀄리티의 마케팅 서비스로 만들어나가보세요!"
         },
         "services": [
             {
-                "title": "소셜 마케팅",
-                "description": "즉시 접속이 가능하고 계정 또한 즉시 활성화됩니다",
-                "image": "assets/img/services/lotoal-thread-logo.png",
+                "title": "인스타그램 팔로워",
+                "description": "빠른 접근성을 가진 계정 활성화의 상황",
+                "image": "assets/pictograms/snsmaid-instagram.png",
                 "link": "/"
             },
             {
-                "title": "SEO최적화",
-                "description": "서비스 최적화가 필요할시 사용되며 필요시 서비스가 활성화됩니다.",
-                "image": "assets/img/services/lotoal-seo-optimization.jpg",
+                "title": "인스타그램 좋아요",
+                "description": "서비스의 최적화 접근이 필요한 상황",
+                "image": "assets/pictograms/snsmaid-instagram.png",
                 "link": "/"
             },
             {
-                "title": "원 페이지 SEO",
-                "description": "계정이 즉시 활성화 됩니다",
-                "image": "assets/img/services/lotoal-one-click-seo.png",
+                "title": "인스타그램 조회수",
+                "description": "즉각 계정 활성화가 가능한 상황",
+                "image": "assets/pictograms/snsmaid-instagram.png",
                 "link": "/"
             },
             {
-                "title": "콘텐츠 마케팅",
-                "description": "보다 효율적이게 SEO 계정이 즉시 활성화됩니다.",
-                "image": "assets/img/services/lotoal-contents-marketing.jpg",
+                "title": "페이스북 팔로워",
+                "description": "SEO의 계정의 즉각 접근이 필요한 상황",
+                "image": "assets/pictograms/snsmaid-facebook.png",
                 "link": "/"
             },
             {
-                "title": "이메일 마케팅",
-                "description": "1대1 위주의 이메일 마케팅이 즉시 활성화 됩니다.",
-                "image": "assets/img/services/lotoal-email-marketing.jpg",
+                "title": "페이스북 좋아요",
+                "description": "이메일 마케팅의 즉각 접근이 가능한 상황",
+                "image": "assets/pictograms/snsmaid-facebook.png",
                 "link": "/"
             },
             {
-                "title": "키워드 리서치",
-                "description": "키워드 조사 , 알고리즘 , 트래픽 조율이 즉시 활성화됩니다.",
-                "image": "assets/img/services/lotoal-trapic-research.png",
+                "title": "페이스북 페이지 팔로워",
+                "description": "알고리즘, 키워드 연구 활성화를 빠르게 가능한 경우",
+                "image": "assets/pictograms/snsmaid-facebook.png",
                 "link": "/"
             }
         ],
         "aboutInner": {
-            "isUse": false,
+            "isUse": true,
             "subTitle": "Best SEO results?",
             "title": "SEO의 가치를 높일 방법입니다!",
-            "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!",
+            "content": "상승을 위한 SEO 에이전시는 당신의 상향을 원합니다!",
             "mainBg": "assets/img/banner/wd-background.png",
             "inner": [
                 "assets/img/banner/wd-background.png",
@@ -534,20 +551,20 @@
         },
         "project": {
             "caption": "",
-            "title": "웹사이트 최적화를 위한 서비스 설명",
-            "image": "assets/img/services/lotoal-project.png",
+            "title": "당신의 계정을 빠르고 쉽게 최적화하세요!",
+            "image": "assets/img/services/follous-project.png",
             "content": [
                 {
-                    "title": "성능",
-                    "description": "느린 페이지 및 cs 수정"
+                    "title": "기능",
+                    "description": "답답한 페이지, 너무 큰 CSS"
                 },
                 {
-                    "title": "현지화",
-                    "description": "언어 관련 모든 패치"
+                    "title": "현지활성도",
+                    "description": "언어 문제의 해결"
                 },
                 {
-                    "title": "콘텐츠 품질",
-                    "description": "통합되지 않은 중복 페이지 제거"
+                    "title": "콘텐츠",
+                    "description": "복합적인 중복 페이지 해결"
                 }
             ],
             "btn": {
@@ -557,7 +574,7 @@
         },
         "pricing": {
             "subTitle": "가격 선택",
-            "title": "필요한 서비스를 선택해주세요",
+            "title": "필요한 상품을 선택하세요!",
             "option": [
                 {
                     "name": "월별 결제",
@@ -671,12 +688,12 @@
             ]
         },
         "review": { 
-            "isUse": false
+            "isUse": true
         },
         "cta": {
-            "title": "지금 바로 당신의 <br/> 비즈니스를 시작해보세요!",
+            "title": "성공적인 비즈니스 상승!",
             "description": "Start your business right now!",
-            "image": "assets/img/services/lotoal-service-cta.png",
+            "image": "assets/img/services/follous-service-cta.png",
             "btn": {
                 "text": "요청하기",
                 "link": "/contact"
