@@ -1,12 +1,12 @@
 {
     "theme": {
         "__comment1__": "기본 그라디언트 색상들",
-        "defaultGradientText": "background: linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
-        "defaultGradientAreaHtml": "background: linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%)",
-        "defaultGradientArea": "linear-gradient(90deg, #000000 0%, #000000 43.75%, #000000 100%)",
+        "defaultGradientText": "background: linear-gradient(90deg, #E5D85C 0%, #FAED7D 43.75%, #FAF4C0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;",
+        "defaultGradientAreaHtml": "background: linear-gradient(90deg, #E5D85C 0%, #FAED7D 43.75%, #FAF4C0 100%)",
+        "defaultGradientArea": "linear-gradient(90deg, #E5D85C 0%, #FAED7D 43.75%, #FAF4C0 100%)",
         
         "__comment2__": "메인 컬러 (헤더 회원가입 버튼 등)",
-        "main": "#000000",
+        "main": "#FFE819",
         
         "white": "#f6f6f7",
         "black": "#000",
@@ -39,7 +39,7 @@
 
         "__comment4__": "메인 컬러 동일 적용",
         "theme-primary": "#4343ED",
-        "theme-secondary": "#000000",
+        "theme-secondary": "#FFE819",
 
         "theme3": "#05003B",
         "themeGreen": "#59BA41",
@@ -47,7 +47,7 @@
         "themeDarkBlue": "#1E2B8A",
 
         "__comment5__": "메인 컬러 동일 적용",
-        "theme-blue": "#000000",
+        "theme-blue": "#FFE819",
 
         "border1": "#F0F1F4",
         "border5": "#000"
@@ -124,7 +124,7 @@
         },
         "fourthSection": {
             "banner": {
-                "url": "assets/img/ad-how-to-use.png",
+                "url": "assets/img/ad-how-to-use.avif",
                 "__comment5__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
                 "isRound": false
             },

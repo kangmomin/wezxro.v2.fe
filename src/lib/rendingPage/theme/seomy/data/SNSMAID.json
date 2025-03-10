@@ -59,8 +59,9 @@
                 "bannerTitle": {
                     "firstSection": "계정 관리의 모든 것",
                     "secondSection": [
+                        "SNS 메이드"
                     ],
-                    "thirdSection": "sns 메이드에서 쉽고 간편하게"
+                    "thirdSection": ""
                 },
                 "bannerExplain": "sns메이드에서 최고의 서비스를 제공합니다!"
             },
