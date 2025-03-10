@@ -128,8 +128,8 @@
                                     </svg>
                                 </span>
                             </h2>
-                            <p>{config.faq.subContent}</p>
-                            <b>{config.faq.content}</b>
+                            <p>{@html config.faq.subContent}</p>
+                            <b>{@html config.faq.content}</b>
                         </div>
                         {#if config.faq.isShapeUse === undefined || config.faq.isShapeUse }
                         <div class="tp-faq-img p-relative">
@@ -155,13 +155,13 @@
                                 <h2 class="accordion-header" id="{idx}">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                             data-bs-target="#collapse{idx}" aria-expanded="false" aria-controls="collapse{idx}">
-                                        {a.title}
+                                        {@html a.title}
                                     </button>
                                 </h2>
                                 <div id="collapse{idx}" class="accordion-collapse collapse" aria-labelledby="headingThree"
                                      data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        {a.description}
+                                        {@html a.description}
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +224,7 @@
     </div>
     <!-- social-area-end -->
 
-    {#if config.brandArea.isUse}
+    {#if config.cta.isUse === undefined || config.cta.isUse}
     <!-- cta-area-start -->
     <section class="cta-area pt-105 {!config.brandArea.isUse ? "pb-85" : ''} ">
         <div class="container">
@@ -251,7 +251,7 @@
                 <div class="col-lg-6">
                     <div class="tpcta-wrapper text-center">
                         <a class="tpcta-btn mr-5" href="#">{config.cta.phone.number}</a>
-                        <a class="green-btn" href="#">{config.cta.phone.text}</a>
+                        <a class="green-btn" href="tel:{config.cta.phone.number}">{config.cta.phone.text}</a>
                     </div>
                 </div>
             </div>

@@ -363,7 +363,7 @@
             <svg class="wave" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
                 <title>Wave</title>
                 <path d="M 0 156.10414462387877 C 158.93750000000054 181.28626242272586 158.93750000000054 181.2862624227259 317.87500000000097 168.69520352330233 C 476.81250000000085 156.1041446238788 476.8125000000011 156.1041446238788 635.7500000000016 184.5316017314728 C 794.6875000000016 212.95905883906687 794.6875000000016 212.95905883906687 953.6250000000016 190.10552459162486 C 1112.5625000000027 167.25199034418304 1112.5624999999973 167.25199034418304 1271.4999999999973 180.66263870570117 C 1430.4374999999973 194.0732870672194 1430.4374999999973 194.0732870672194 1589.3749999999973 164.25734828199154 C 1748.3124999999973 134.44140949676358 1748.3124999999973 134.44140949676358 1907.2499999999973 154.88271029727417 C 2066.1874999999945 175.3240110977847 2066.1874999999945 175.3240110977847 2225.1249999999945 160.53491622812484 C 2384.0624999999945 145.74582135846512 2384.0624999999945 145.74582135846512 2542.9999999999945 180.66263870570117 L 2543 8531.015625 L 0 8531.015625 Z"
-                      fill="{theme.common1}"
+                      fill="{theme["common-1"]}"
                       id="wave-two"></path>
             </svg>
         </div>
@@ -379,7 +379,8 @@
                     <div class="tpchoose-thumb p-relative mb-50">
                         <img alt="" 
                             class={config.fourthSection.banner.isRound ? "tpchoose-border-anim" : ""} 
-                            src={config.fourthSection.banner.url ?? "assets/img/banner/choose-2.png"}>
+                            src={config.fourthSection.banner.url ?? "assets/img/banner/choose-2.png"}
+                            width="487px">
                         <div class="tpchoose-shape d-none d-lg-block">
                             <div class="tpchoose-shape-one d-none d-md-block">
                                 <img alt="" src="assets/img/shape/choose-shape-1.png">
@@ -508,7 +509,7 @@
                             {/if}
                         </div>
                         <div class="optimize-shape">
-                            <img alt="" class="optimize-shape-1" src={config.fifthSection.banner.url}>
+                            <img alt="" class="optimize-shape-1" src={config.fifthSection.banner.url} width="520px">
                             {#if (!config.fifthSection.banner.bg1Url)}
                                 <img alt="" class="optimize-shape-2 d-none d-md-block"
                                     data-parallax='{`{"y": 50, "smoothness": 20}`}'

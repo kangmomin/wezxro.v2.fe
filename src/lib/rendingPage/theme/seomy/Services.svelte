@@ -138,7 +138,7 @@
                                 <li>
                                     <div class="tpservices-wrapper">
                                         <div class="tpservices-img mb-35">
-                                            <img src="{s.image}" alt="">
+                                            <img src="{s.image}" alt="" width="110px">
                                         </div>
                                         <div class="tpservices-content">
                                             <span>{s.title}</span>
@@ -196,7 +196,7 @@
                 <div class="col-lg-7">
                     <div class="seo-5-thumb p-relative mb-40">
                         <div class="seo-5-main-bg">
-                            <img src="{config.project.image}" alt="">
+                            <img src="{config.project.image}" alt="" width="500px">
                         </div>
                         <div class="seo-5-shape d-none d-md-block">
                             <div class="seo-5-shape-one">
@@ -517,7 +517,7 @@
                 <div class="col-lg-7 align-self-end">
                     <div class="cta-thumb p-relative">
                         <div class="cta-main-bg d-flex justify-content-end">
-                            <img src="{config.cta.image}" alt="">
+                            <img src="{config.cta.image}" alt="" width="480px">
                         </div>
                         <div class="cta-shape">
                             <div class="cta-shape-1 d-none d-lg-block">
