@@ -460,7 +460,9 @@
                 }
             ],
             "isUseLoadMoreBtn": false,
-            "isShapeUse": false
+            "shape": {
+                "isUse": false
+            }
         },
         "brandArea": {
             "isUse": false
