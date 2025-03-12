@@ -50,13 +50,15 @@
         "theme-blue": "#000000",
 
         "border1": "#F0F1F4",
-        "border5": "#000"
+        "border5": "#000",
+
+        "_basic_swiper-pagination-bullet": "#FFFFFF"
     },
     "main": {
         "firstSection": {
             "bannerContent": {
                 "bannerTitle": {
-                    "firstSection": "더 효율적인 <br/> 광고 대행사 <br/> <i style='color: var(--tp-theme-primary); font-style: normal'>LOTOAL</i> <br>입니다",
+                    "firstSection": "더 효율적인 <br/> 광고 대행사 <br/> <i style='color: var(--tp-theme-primary); font-style: normal'>LOTOAL</i>",
                     "secondSection": [
                     ],
                     "thirdSection": ""
@@ -342,7 +344,7 @@
             "subTitle": "Honest Reviews",
             "title": "클라이언트분들의 솔직한 후기"
         },
-        "reviewSection": [
+        "review": [
             {
                 "image": "assets/img/icon/instagram.png",
                 "title": "인스타그램 서비스",
@@ -456,7 +458,12 @@
                     "title": "SEO 광고대행사는 어떤식 으로 서비스를 제공하나요?",
                     "description": ""
                 }
-            ]
+            ],
+            "shape": {
+                "isUse": true,
+                "url": "",
+                "linkTo": "https://www.kakaocorp.com/page/"
+            }
         },
         "brandArea": {
             "isUse": false

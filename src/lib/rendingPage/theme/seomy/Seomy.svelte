@@ -1076,13 +1076,13 @@
     <!-- testimonial-area-end -->
      {/if}
 
-    {#if config.reviewSection.isUse}
+    {#if config.review.isUse}
     <!-- review-area-start -->
     <div class="review-area tpreview-4 pb-105">
         <div class="container">
             <div class="tpreview-4-wrapper pb-30 mb-30 pt-55">
                 <div class="row">
-                    {#each config.reviewSection as review, idx}
+                    {#each config.review.contents as review, idx}
                     <div class="col-lg-4 col-md-6">
                         <div class="tpreview-4 text-center mb-30">
                             <div class="tpreview-4-icon mb-15">
@@ -1259,7 +1259,7 @@
     <section class="award-area pb-80">
         <div class="container">
             <div class="row">
-                {#each config.award as award}
+                {#each config.award.contents as award}
                 <div class="col-lg-4 col-md-6">
                     <div class="tpaward text-center mb-30">
                         <div class="tpaward-icon mb-15">

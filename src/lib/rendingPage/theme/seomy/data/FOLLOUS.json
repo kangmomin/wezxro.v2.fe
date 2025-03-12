@@ -350,7 +350,7 @@
             "subTitle": "Honest Reviews",
             "title": "클라이언트분들의 솔직한 후기"
         },
-        "reviewSection": [
+        "review": [
             {
                 "image": "assets/img/icon/instagram.png",
                 "title": "인스타그램 서비스",
@@ -467,7 +467,11 @@
                 }
             ],
             "isUseLoadMoreBtn": false,
-            "isShapeUse": false
+            "shape": {
+                "isUse": true,
+                "url": "",
+                "linkTo": "https://www.kakaocorp.com/page/"
+            }
         },
         "brandArea": {
             "isUse": false

@@ -355,7 +355,7 @@
                 }
             ]
         },
-        "reviewSection": [
+        "review": [
             {
                 "image": "assets/img/icon/instagram.png",
                 "title": "인스타그램 서비스",
@@ -554,7 +554,12 @@
                     "title": "seo 에이전시의 운영방식은 어떻게 되나요?",
                     "description": ""
                 }
-            ]
+            ],
+            "shape": {
+                "isUse": true,
+                "url": "",
+                "lintTo": "#"
+            }
         },
         "brandArea": {
             "isUse": false

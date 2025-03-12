@@ -8,7 +8,8 @@ export const SetThemeStyle = (themeData) => {
     
     if (themeData !== null) {
         for (const [key, value] of Object.entries(themeData)) {
-            root.style.setProperty(`--tp-${key}`, value);
+            if (key.startsWith("_basic_")) root.style.setProperty(`${key}`, value);
+            else root.style.setProperty(`--tp-${key}`, value);
         }
         
         root.style.setProperty("--tp-theme-blue", themeData.main);

@@ -124,7 +124,7 @@
             "banner": {
                 "url": "assets/img/banner/choose-2.png",
                 "__comment5__": "이미지가 네모로 뜨는게 아니라 둥근 모양으로 뜨게 하기 위해 isRound: true로 설정",
-                "isRound": false
+                "isRound": true
             },
             "title": "WEZXRO 사용방법",
             "caption": "",
@@ -442,26 +442,29 @@
                 }
             ]
         },
-        "reviewSection": [
-            {
-                "image": "assets/img/icon/instagram.png",
-                "title": "인스타그램 서비스",
-                "description": "주문 5000건 리뷰, 5점 만점에 평균 4.7점 이상.",
-                "star": 5
-            },
-            {
-                "image": "assets/img/icon/telegram.png",
-                "title": "텔레그램 서비스",
-                "description": "주문 8000건 리뷰, 5점 만점에 평균 4.7점 이상.",
-                "star": 5
-            },
-            {
-                "image": "assets/img/icon/youtube.png",
-                "title": "유튜브 서비스",
-                "description": "주문 3000건 리뷰, 5점 만점에 평균 4.7점 이상.",
-                "star": 5
-            }
-        ],
+        "review": {
+            "isUse": true,
+            "contents": [
+                {
+                    "image": "assets/img/icon/instagram.png",
+                    "title": "인스타그램 서비스",
+                    "description": "주문 5000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                    "star": 5
+                },
+                {
+                    "image": "assets/img/icon/telegram.png",
+                    "title": "텔레그램 서비스",
+                    "description": "주문 8000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                    "star": 5
+                },
+                {
+                    "image": "assets/img/icon/youtube.png",
+                    "title": "유튜브 서비스",
+                    "description": "주문 3000건 리뷰, 5점 만점에 평균 4.7점 이상.",
+                    "star": 5
+                }
+            ]
+        },
         "contactSection": {
             "isUse": true,
             "caption": "Get in touch",
@@ -509,23 +512,26 @@
                 }
             ]
         },
-        "award": [
-            {
-                "icon": "assets/img/shape/award-shape-1.png",
-                "title": "화라온 HWALAON",
-                "content": "위제로 헤드 오피스"
-            },
-            {
-                "icon": "assets/img/shape/award-shape-2.png",
-                "title": "리오브 LEOWVW",
-                "content": "위제로 단독 광고 계약 체결"
-            },
-            {
-                "icon": "assets/img/shape/award-shape-3.png",
-                "title": "퀄리치 KWLRICH",
-                "content": "위제로 파트너 솔루션 협력"
-            }
-        ]
+        "award": {
+            "isUse": true,
+            "contents": [
+                {
+                    "icon": "assets/img/shape/award-shape-1.png",
+                    "title": "화라온 HWALAON",
+                    "content": "위제로 헤드 오피스"
+                },
+                {
+                    "icon": "assets/img/shape/award-shape-2.png",
+                    "title": "리오브 LEOWVW",
+                    "content": "위제로 단독 광고 계약 체결"
+                },
+                {
+                    "icon": "assets/img/shape/award-shape-3.png",
+                    "title": "퀄리치 KWLRICH",
+                    "content": "위제로 파트너 솔루션 협력"
+                }
+            ]
+        }
     },
     "about": {
         "breadcrumb": {
@@ -544,7 +550,7 @@
         "about": {
             "caption": "Efficient",
             "title": "클릭 한번에 끝나는 광고.<br />최소 비용으로 최대 효과.",
-            "content": "위제로보다 효과가 더 좋은 광고 회사는 있겠지만, <br/> 금액대비 효율이 더 높은 광고 회사는 보지 못했습니다."
+            "content": "위제로보다 뛰어난 광고 회사가 있을 수는 있어도, 금액대비 더 높은 효율을 보여주는 회사는 오직 위제로뿐입니다."
         },
         "process": {
             "caption": "How we do it",
@@ -652,7 +658,12 @@
                     "title": "SEO 광고대행사는 어떤식 으로 서비스를 제공하나요?",
                     "description": ""
                 }
-            ]
+            ],
+            "shape": {
+                "isUse": true,
+                "url": "",
+                "linkTo": "https://www.kakaocorp.com/page/"
+            }
         },
         "brandArea": {
             "isUse": true
@@ -714,7 +725,7 @@
             }
         ],
         "aboutInner": {
-            "isUse": false,
+            "isUse": true,
             "subTitle": "Best SEO results?",
             "title": "SEO의 가치를 높일 방법입니다!",
             "content": "상승을 위한 SEO에이전시는 당신의 상향을 원합니다!",
@@ -828,7 +839,7 @@
             ]
         },
         "testimonial": {
-            "isUse": false,
+            "isUse": true,
             "reviews": [
                 {
                     "avatar": "assets/img/services/wd-testimonial-1.png",
@@ -882,14 +893,14 @@
             "email": "adiviy@naver.com",
             "phone": {
                 "number": "01012341234",
-                "isUse": false
+                "isUse": true
             },
             "contactUs": {
-                "isUse": false
+                "isUse": true
             }
         },
         "map": {
-            "isUse": false
+            "isUse": true
         }
     },
     "header": {
